@@ -5,6 +5,11 @@
 :root {
   background-color: black;
   color: white;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 450" opacity="1"><defs><filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="130" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g filter="url(%23bbblurry-filter)"><ellipse rx="277.5" ry="150" cx="554.7493175159801" cy="16.81421175870028" fill="hsla(212, 100%, 19%, 1.00)"></ellipse><ellipse rx="277.5" ry="150" cx="244.17045177112925" cy="9.458125721324564" fill="hsla(272, 100%, 26%, 1.00)"></ellipse></g></svg>');
+  background-repeat: no-repeat;
+  background-size: 200rem;
+  background-position: center;
+  background-position-y: px;
 }
 
 body {

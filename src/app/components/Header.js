@@ -18,7 +18,7 @@ export default function Header() {
             height={20}
           />
         </a>
-        <nav class="hidden md:flex">
+        <nav class="">
           <a
             href="#"
             class="mx-4 text-white"

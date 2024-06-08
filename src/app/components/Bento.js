@@ -32,11 +32,14 @@ async function Bento() {
       className="flex h-[200svh] content-center items-center justify-center lg:h-[100svh]"
     >
       <div className="relative flex h-[80svh] w-[20rem] flex-col justify-center gap-4 lg:grid lg:h-[90svh] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2">
-        <div className="relative z-10 col-span-4 row-span-1 flex items-center justify-center text-wrap rounded-lg backdrop-blur-xl lg:col-span-4">
+        <div
+          id="bd3"
+          className="animate-fade animate-once animate-ease-in-out relative z-10 col-span-4 row-span-1 flex items-center justify-center text-wrap rounded-lg backdrop-blur-xl lg:col-span-4"
+        >
           {esp.map((españa) => (
             <div
               key={españa.id}
-              className="content-center justify-center rounded-lg bg-opacity-50 text-center backdrop-blur-sm"
+              className="animate-fade animate-once animate-ease-in-out content-center justify-center rounded-lg bg-opacity-50 text-center backdrop-blur-sm"
             >
               <p
                 className={`m-0 p-0 text-[8rem] ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
@@ -48,8 +51,11 @@ async function Bento() {
             </div>
           ))}
         </div>
-        <div className="0 col-span-6 row-span-1 min-h-full min-w-full content-center justify-center overflow-hidden rounded-lg p-2 backdrop-blur-xl">
-          <div className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center md:grid-cols-3 md:grid-rows-4 lg:grid-cols-4">
+        <div
+          id="bd2"
+          className="animate-fade animate-once animate-ease-in-out 0 col-span-6 row-span-1 min-h-full min-w-full content-center justify-center overflow-hidden rounded-lg p-2 backdrop-blur-xl"
+        >
+          <div className="animate-fade animate-once animate-ease-in-out grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center md:grid-cols-3 md:grid-rows-4 lg:grid-cols-4">
             {cuencas.map((cuenca) => (
               <div
                 className={`content-center overflow-hidden whitespace-normal rounded-md bg-opacity-50 p-1 text-sm transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
@@ -64,11 +70,14 @@ async function Bento() {
           </div>
         </div>
 
-        <div className="col-span-5 rounded-lg backdrop-blur-xl">
-          <h1 className="pt-5 text-center text-xl font-bold text-green-200">
+        <div
+          id="bd1"
+          className="animate-fade animate-once animate-ease-in-out col-span-5 overflow-auto rounded-lg backdrop-blur-xl"
+        >
+          <h1 className="animate-fade animate-once animate-ease-in-out pt-5 text-center text-xl font-bold text-green-200">
             Mayor Variacion Semanal
           </h1>
-          <div className="p-2">
+          <div className="animate-fade animate-once animate-ease-in-out p-2">
             <table className="m-auto w-[70%] table-auto">
               <caption className="text-left font-bold italic text-green-200">
                 CUENCA
@@ -105,7 +114,7 @@ async function Bento() {
           </div>
         </div>
 
-        <div className="col-span-5 rounded-lg backdrop-blur-xl"></div>
+        <div className="animate-fade animate-once animate-ease-in-out col-span-5 rounded-lg backdrop-blur-xl"></div>
       </div>
     </section>
   )

@@ -4,11 +4,11 @@ async function Bento() {
   return (
     <section
       id="bento"
-      className="flex h-svh content-center items-center justify-center"
+      className="flex h-screen content-center items-center justify-center"
     >
       <div className="flex h-[80svh] w-[20rem] flex-col justify-center gap-4 lg:grid lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2">
         <div className="col-span-4 row-span-1 text-wrap rounded-lg outline outline-slate-500 backdrop-blur-md lg:col-span-4"></div>
-        <div className="col-span-6 row-span-1 overflow-hidden rounded-lg outline outline-slate-500 backdrop-blur-md">
+        <div className="col-span-6 row-span-1 min-h-full min-w-full overflow-hidden rounded-lg outline outline-slate-500 backdrop-blur-md">
           <div className="grid min-h-full min-w-full grid-cols-2 grid-rows-4 gap-2 p-2 text-center md:grid-cols-3 lg:grid-cols-4">
             {cuencas.map((cuenca) => (
               <div

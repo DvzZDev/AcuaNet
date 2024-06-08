@@ -12,7 +12,7 @@ async function Bento() {
           <div className="grid h-full w-full grid-cols-2 grid-rows-4 gap-3 p-2 text-center md:grid-cols-3 lg:grid-cols-4">
             {cuencas.map((cuenca) => (
               <div
-                className="content-center overflow-auto whitespace-normal rounded-md border border-white"
+                className={`content-center overflow-hidden whitespace-normal rounded-md border border-white p-1 text-sm ${getColor(cuenca.porcentaje_embalsada)}`}
                 key={cuenca.id_cuenca}
               >
                 <div>
@@ -32,6 +32,19 @@ async function Bento() {
       </div>
     </section>
   )
+}
+function getColor(porcentaje) {
+  if (porcentaje >= 90) {
+    return 'bg-blue-500 text-white font-bold'
+  } else if (porcentaje >= 70) {
+    return 'bg-green-500 text-black font-bold'
+  } else if (porcentaje >= 50) {
+    return 'bg-yellow-500 text-black font-bold'
+  } else if (porcentaje >= 30) {
+    return 'bg-orange-500 text-white font-bold'
+  } else {
+    return 'bg-red-500 text-white font-bold'
+  }
 }
 
 export default Bento

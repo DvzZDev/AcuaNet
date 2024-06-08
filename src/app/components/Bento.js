@@ -1,5 +1,4 @@
 import '@fontsource-variable/comfortaa'
-import Piramid from './Piramid'
 import {
   FetchCuencas,
   FetchCuencaVariacion,

@@ -10,12 +10,13 @@
   background-size: 200rem;
   background-position: center;
   background-position-y: -20px;
+  font-family: 'Onest Variable', sans-serif;
 }
 
 body {
   font-family: 'Onest Variable', sans-serif;
 }
-p{
+p {
   font-family: 'Onest Variable', sans-serif;
 }
 
@@ -40,6 +41,11 @@ p{
 
 h1 {
   font-weight: 200;
+}
+
+table {
+  font-family: 'Comfortaa Variable', system-ui;
+  color: #c0bfb7;
 }
 
 #bento {

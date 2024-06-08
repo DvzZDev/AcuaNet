@@ -10,7 +10,7 @@ function Titulo() {
             AcuaEs
           </strong>
           <h1 className="md: z-30 animate-gradient bg-gradient-to-r from-pink-700 via-blue-500 to-green-400 bg-300% bg-clip-text px-6 text-center text-[2rem] text-transparent">
-            Consulta las mediciones hidrograficas de España en un solo 
+            Consulta las mediciones hidrograficas de España en un solo
             <strong> click</strong>
           </h1>
         </div>

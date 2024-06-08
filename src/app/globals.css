@@ -15,6 +15,9 @@
 body {
   font-family: 'Onest Variable', sans-serif;
 }
+p{
+  font-family: 'Onest Variable', sans-serif;
+}
 
 .animate-gradient {
   background-size: 300%;

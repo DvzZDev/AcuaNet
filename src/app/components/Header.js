@@ -4,12 +4,12 @@ export default function Header() {
   return (
     <header
       id="header-nav"
-      class="fixed top-0 z-50 w-full px-6 py-4 backdrop-blur-2xl"
+      className="fixed top-0 z-50 w-full px-6 py-4 backdrop-blur-2xl"
     >
-      <div class="container mx-auto flex items-center justify-between">
+      <div className="container mx-auto flex items-center justify-between">
         <a
           href="#"
-          class="text-3xl font-bold text-white"
+          className="text-3xl font-bold text-white"
         >
           <Image
             src="/logo.png"
@@ -18,22 +18,22 @@ export default function Header() {
             height={20}
           />
         </a>
-        <nav class="">
+        <nav className="">
           <a
             href="#"
-            class="mx-4 text-white"
+            className="mx-4 text-white"
           >
             Inicio
           </a>
           <a
             href="#"
-            class="mx-4 text-white"
+            className="mx-4 text-white"
           >
             Cuencas
           </a>
           <a
             href="#"
-            class="mx-4 text-white"
+            className="mx-4 text-white"
           >
             Embalses
           </a>

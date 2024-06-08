@@ -33,4 +33,6 @@ const SvgComponent = () => (
     </g>
   </svg>
 )
+
+
 export default SvgComponent

@@ -12,7 +12,7 @@ export default function Header() {
           className="text-3xl font-bold text-white"
         >
           <Image
-            src="/logo.png"
+            src="/Logo2.png"
             alt="logo"
             width={30}
             height={20}

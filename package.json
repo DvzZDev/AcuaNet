@@ -12,7 +12,8 @@
     "@fontsource-variable/onest": "^5.0.4",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-typed": "^2.0.12"
   },
   "devDependencies": {
     "eslint": "^8",

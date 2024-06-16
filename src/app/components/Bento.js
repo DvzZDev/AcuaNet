@@ -79,7 +79,7 @@ async function Bento() {
             Mayor Variacion Semanal
           </h1>
           <div className="p-2">
-            <table className="m-auto mb-2 w-[70%]">
+            <table className="m-auto mb-2 w-[92%]">
               <caption className="text-left text-[14px] font-extrabold text-[#e1ff38]">
                 CUENCA
               </caption>
@@ -96,7 +96,7 @@ async function Bento() {
               </tbody>
             </table>
 
-            <table className="m-auto w-[70%] p-3">
+            <table className="m-auto w-[92%] p-3">
               <caption className="text-left text-[14px] font-extrabold text-[#e1ff38]">
                 EMBALSE
               </caption>

@@ -34,12 +34,12 @@ async function Bento() {
       <div className="relative flex h-[80svh] w-[20rem] flex-col justify-center gap-7 lg:grid lg:h-[90svh] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         <div
           id="bd3"
-          className="relative z-10 col-span-4 row-span-1 flex animate-fade items-center justify-center text-wrap rounded-lg backdrop-blur-xl animate-once animate-ease-in-out lg:col-span-4"
+          className="relative z-10 col-span-4 row-span-1 flex animate-fade items-center justify-center text-wrap rounded-lg backdrop-blur-lg animate-once animate-ease-in-out lg:col-span-4"
         >
           {esp.map((españa) => (
             <div
               key={españa.id}
-              className="animate-fade content-center justify-center rounded-lg bg-opacity-50 text-center backdrop-blur-sm animate-once animate-ease-in-out"
+              className="animate-fade content-center justify-center rounded-lg bg-opacity-50 text-center backdrop-blur-lg animate-once animate-ease-in-out"
             >
               <h2 className="text-[2rem] text-[#7387f9]">Reserva</h2>
               <p
@@ -54,7 +54,7 @@ async function Bento() {
         </div>
         <div
           id="bd2"
-          className="0 col-span-6 row-span-1 min-h-full min-w-full content-center justify-center rounded-lg p-2 backdrop-blur-xl"
+          className="0 col-span-6 row-span-1 min-h-full min-w-full content-center justify-center rounded-lg p-2 backdrop-blur-"
         >
           <div className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4">
             {cuencas.map((cuenca) => (
@@ -73,7 +73,7 @@ async function Bento() {
 
         <div
           id="bd1"
-          className="col-span-5 flex flex-col content-center justify-center rounded-lg backdrop-blur-xl"
+          className="col-span-5 flex flex-col content-center justify-center rounded-lg backdrop-blur-lg"
         >
           <h1 className="pt-2 text-center text-2xl font-normal text-[#7387f9]">
             Mayor Variacion Semanal
@@ -115,7 +115,7 @@ async function Bento() {
           </div>
         </div>
 
-        <div className="col-span-5 rounded-lg backdrop-blur-xl"></div>
+        <div className="col-span-5 rounded-lg backdrop-blur-lg"></div>
       </div>
     </section>
   )

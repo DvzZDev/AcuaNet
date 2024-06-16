@@ -79,7 +79,7 @@ async function Bento() {
             Mayor Variacion Semanal
           </h1>
           <div className="p-2">
-            <table className="m-auto mb-2 w-[92%]">
+            <table className="m-auto mb-2 w-[92%] lg:w-[77%]">
               <caption className="text-left text-[14px] font-extrabold text-[#e1ff38]">
                 CUENCA
               </caption>
@@ -89,14 +89,14 @@ async function Bento() {
                     className="transition-all hover:scale-105 hover:text-[#e1ff38]"
                     key={variacion.cuenca}
                   >
-                    <td className="text-[14px]">{variacion.cuenca.replace(/_/g, ' ')}</td>
-                    <td className="w-[50%] text-right text-[14px] lg:w-auto">{`${variacion.porcentaje_variacion} %`}</td>
+                    <td className="text-[15px]">{variacion.cuenca.replace(/_/g, ' ')}</td>
+                    <td className="w-[50%] text-right text-[15px] lg:w-auto">{`${variacion.porcentaje_variacion} %`}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            <table className="m-auto w-[92%] p-3">
+            <table className="m-auto w-[92%] p-3 lg:w-[77%]">
               <caption className="text-left text-[14px] font-extrabold text-[#e1ff38]">
                 EMBALSE
               </caption>
@@ -106,8 +106,8 @@ async function Bento() {
                     className="transition-all hover:scale-105 hover:text-[#e1ff38]"
                     key={variacion.nombre_embalse}
                   >
-                    <td className="text-[14px]">{variacion.nombre_embalse}</td>
-                    <td className="text-right text-[14px]">{`${variacion.variacion_ultima_semanapor} %`}</td>
+                    <td className="text-[15px]">{variacion.nombre_embalse}</td>
+                    <td className="text-right text-[15px]">{`${variacion.variacion_ultima_semanapor} %`}</td>
                   </tr>
                 ))}
               </tbody>

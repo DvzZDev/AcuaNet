@@ -12,9 +12,9 @@ export default function Header() {
           className="text-3xl font-bold text-white"
         >
           <Image
-            src="/Logo2.png"
+            src="/Logo.svg"
             alt="logo"
-            width={30}
+            width={40}
             height={20}
           />
         </a>

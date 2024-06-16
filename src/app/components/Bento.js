@@ -54,7 +54,7 @@ async function Bento() {
         </div>
         <div
           id="bd2"
-          className="0 col-span-6 row-span-1 min-h-full min-w-full content-center justify-center rounded-lg p-2 backdrop-blur-"
+          className="0 col-span-6 row-span-1 min-h-full min-w-full content-center justify-center rounded-lg p-2 backdrop-blur-lg"
         >
           <div className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4">
             {cuencas.map((cuenca) => (

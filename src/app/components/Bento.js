@@ -35,7 +35,7 @@ async function Bento() {
     >
       {/* Div Global */}
 
-      <div className="m-24 flex flex-col justify-center gap-7 lg:grid lg:h-[90svh] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3 lg:m-0">
+      <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[90svh] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
 
         <div className="z-10 col-span-4 row-span-1 flex animate-fade items-center justify-center text-wrap rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4">
@@ -105,8 +105,8 @@ async function Bento() {
             </table>
             {/* Segunda Tabla */}
 
-            <table className="m-auto w-[92%] p-3 lg:w-[85%] text-[16px]" >
-              <caption className="text-left font-extrabold text-[#e1ff38] text-[16px]">
+            <table className="m-auto w-[92%] p-3 text-[16px] lg:w-[85%]">
+              <caption className="text-left text-[16px] font-extrabold text-[#e1ff38]">
                 Embalse
               </caption>
               <tbody>

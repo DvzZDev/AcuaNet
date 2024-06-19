@@ -20,6 +20,10 @@ module.exports = {
         telmaMedium: ['Telma-Medium'],
         telmaRegular: ['Telma-Regular'],
       },
+      colors: {
+        textprimary: '#e9ead6',
+        'custom-blue': '#F1FAFF',
+      },
       backdropBlur: {
         xs: '2px',
         sm: '4px',
@@ -45,9 +49,6 @@ module.exports = {
       },
       animation: {
         gradient: 'animatedgradient 6s ease infinite alternate',
-      },
-      colors: {
-        'custom-blue': '#F1FAFF',
       },
     },
   },

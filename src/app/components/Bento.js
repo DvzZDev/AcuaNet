@@ -82,7 +82,7 @@ async function Bento() {
             Pluviometros últimas horas (l/m2)
           </h1>
           <div className="flex flex-col content-center justify-center px-2 text-[15px] lg:text-[16px]">
-            <table className="">
+            <table className="text-textprimary">
               <thead className="text-left text-[#47ff63ab]">
                 <tr>
                   <th className="px-1">Pluviometro</th>
@@ -124,7 +124,7 @@ async function Bento() {
               <caption className="text-left font-extrabold text-[#47ff63ab]">
                 Cuenca
               </caption>
-              <tbody>
+              <tbody className="text-textprimary">
                 {variacionCuencas.map((variacion) => (
                   <tr
                     className="transition-all hover:scale-105 hover:text-[#0b92e4]"
@@ -142,7 +142,7 @@ async function Bento() {
               <caption className="text-left text-[16px] font-extrabold text-[#47ff63ab]">
                 Embalse
               </caption>
-              <tbody>
+              <tbody className="text-textprimary">
                 {variacionEmbalses.map((variacion) => (
                   <tr
                     className="transition-all hover:scale-105 hover:text-[#0b92e4]"

@@ -48,23 +48,31 @@ export default function Header() {
         <nav className="hidden md:flex">
           {/* Enlaces */}
           <Link href="/cuencas">
-            <span className="mx-4 text-white">Cuencas</span>
+            <h2 className="mx-4 text-textprimary transition-all hover:scale-110 hover:text-green-300">
+              Cuencas
+            </h2>
           </Link>
           <Link href="/embalses">
-            <span className="mx-4 text-white">Embalses</span>
+            <h2 className="mx-4 text-textprimary transition-all hover:scale-110 hover:text-green-300">
+              Embalses
+            </h2>
           </Link>
           <Link href="/pluviometros">
-            <span className="mx-4 text-white">Pluviometros</span>
+            <h2 className="mx-4 text-textprimary transition-all hover:scale-110 hover:text-green-300">
+              Pluviometros
+            </h2>
           </Link>
           <Link href="/">
-            <span className="mx-4 text-white">Quienes Somos</span>
+            <h2 className="mx-4 text-textprimary transition-all hover:scale-110 hover:text-green-300">
+              Quienes Somos
+            </h2>
           </Link>
 
           {/* Formulario de búsqueda */}
           <form className="relative">
             <input
               placeholder="Buscador"
-              className="w-[10rem] rounded-md bg-slate-900 bg-opacity-70 pl-2 pr-10 focus:outline-none"
+              className="w-[10rem] rounded-md bg-slate-900 bg-opacity-70 pl-2 pr-10 outline-none transition-all focus:bg-slate-900 focus:bg-opacity-100 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-opacity-50"
             />
             <button className="absolute right-0 top-0 h-full rounded-md bg-transparent bg-opacity-70 px-2">
               <Image
@@ -86,7 +94,7 @@ export default function Header() {
         <form className="relative">
           <input
             placeholder="Buscador"
-            className="w-[16rem] rounded-md bg-slate-900 bg-opacity-70 pl-2 pr-10 focus:outline-none"
+            className="w-[15rem] rounded-md bg-slate-900 bg-opacity-70 pl-2 pr-10 outline-none transition-all focus:bg-slate-900 focus:bg-opacity-100 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-opacity-50"
           />
           <button className="absolute right-0 top-0 h-full rounded-md bg-transparent bg-opacity-70 px-2">
             <Image
@@ -100,16 +108,16 @@ export default function Header() {
 
         {/* Enlaces */}
         <Link href="/cuencas">
-          <span className="mx-4 text-white">Cuencas</span>
+          <span className="mx-4 text-white hover:text-green-300 transition-all">Cuencas</span>
         </Link>
         <Link href="/embalses">
-          <span className="mx-4 text-white">Embalses</span>
+          <span className="mx-4 text-white hover:text-green-300 transition-all">Embalses</span>
         </Link>
         <Link href="/pluviometros">
-          <span className="mx-4 text-white">Pluviometros</span>
+          <span className="mx-4 text-white hover:text-green-300 transition-all">Pluviometros</span>
         </Link>
         <Link href="/">
-          <span className="mx-4 text-white">Quienes Somos</span>
+          <span className="mx-4 text-white hover:text-green-300 transition-all">Quienes Somos</span>
         </Link>
       </nav>
     </header>

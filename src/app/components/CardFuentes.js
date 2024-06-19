@@ -13,7 +13,7 @@ function CardFuentes({ image, title }) {
         />
       </div>
       <div>
-        <h1 className="pt-5 text-center text-xl text-[#e9ead6]"> {title} </h1>
+        <h1 className="pt-5 text-center text-xl text-textprimary"> {title} </h1>
       </div>
     </article>
   )

@@ -14,6 +14,12 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      fontFamily: {
+        telma: ['Telma-Light'],
+        telmaBold: ['Telma-Bold'],
+        telmaMedium: ['Telma-Medium'],
+        telmaRegular: ['Telma-Regular'],
+      },
       backdropBlur: {
         xs: '2px',
         sm: '4px',
@@ -24,7 +30,8 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       keyframes: {
         animatedgradient: {

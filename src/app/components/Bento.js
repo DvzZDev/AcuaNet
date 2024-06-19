@@ -64,7 +64,7 @@ async function Bento() {
           <div className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4">
             {cuencas.map((cuenca) => (
               <div
-                className={`content-center whitespace-normal rounded-md bg-opacity-70 p-1 text-sm transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
+                className={`content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-sm transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
                 key={cuenca.id_cuenca}
               >
                 <div>

@@ -5,7 +5,7 @@ import {
   FetchEmbalsesVariacion,
   FetchEsp,
   FetchPluvis,
-} from '../data'
+} from '../lib/data'
 
 function getColor(porcentaje) {
   if (porcentaje >= 80) {
@@ -28,7 +28,7 @@ async function Bento() {
   const esp = await FetchEsp()
   const pluvis = await FetchPluvis()
 
-  return (
+   return (
     <section
       id="bento"
       className="flex h-full content-center items-center justify-center lg:h-[100svh]"

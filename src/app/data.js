@@ -28,7 +28,11 @@ export async function FetchEsp() {
 
 export async function FetchPluvis() {
   const url = 'https://api-acua-production.up.railway.app/Api/pluvis'
-  const response = await fetch(url)
+  const response = await fetch(url, {
+    headers: {
+      'Cache-Control': 'no-cache',
+    },
+  })
   const data = await response.json()
   return data
 }

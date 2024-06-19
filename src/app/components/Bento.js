@@ -8,16 +8,16 @@ import {
 } from '../data'
 
 function getColor(porcentaje) {
-  if (porcentaje >= 90) {
-    return 'bg-blue-500 text-white font-bold'
-  } else if (porcentaje >= 70) {
-    return 'bg-green-500 text-white font-bold'
-  } else if (porcentaje >= 50) {
-    return 'bg-yellow-500 text-white font-bold'
-  } else if (porcentaje >= 30) {
-    return 'bg-orange-500 text-white font-bold'
+  if (porcentaje >= 80) {
+    return 'bg-blue-200 text-blue-900 font-bold text-[17px]'
+  } else if (porcentaje >= 60) {
+    return 'bg-green-200 text-green-900 font-bold text-[17px]'
+  } else if (porcentaje >= 40) {
+    return 'bg-yellow-200 text-yellow-900 font-bold text-[17px]'
+  } else if (porcentaje >= 20) {
+    return 'bg-orange-200 text-orange-950 font-bold text-[17px]'
   } else {
-    return 'bg-red-500 text-white font-bold'
+    return 'bg-red-200 text-red-900 font-bold text-[17px]'
   }
 }
 
@@ -77,24 +77,57 @@ async function Bento() {
         </div>
         {/* Tercera Col */}
 
-        <div
-          id="bd1"
-          className="col-span-5 rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm"
-        >
-          <h1 className="pt-2 text-center text-2xl font-normal text-[#7387f9]">
+        <div className="col-span-6 rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm">
+          <h1 className="p-2 text-center text-2xl font-normal text-[#7387f9]">
+            Pluviometros últimas horas (l/m2)
+          </h1>
+          <div className="flex flex-col content-center justify-center px-2 text-[15px] lg:text-[16px]">
+            <table className="">
+              <thead className="text-left text-[#47ff63ab]">
+                <tr>
+                  <th className="px-1">Pluviometro</th>
+                  <th className="px-1 text-right">Prov</th>
+                  <th className="px-1 text-right">1h</th>
+                  <th className="px-1 text-right">6h</th>
+                  <th className="px-1 text-right">12h</th>
+                  <th className="px-1 text-right">24h</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pluvis.map((pluvi) => (
+                  <tr
+                    className="transition-all hover:scale-105 hover:text-[#0b92e4]"
+                    key={pluvi.id_pluviometro}
+                  >
+                    <td className="p-1">{pluvi.nombre}</td>
+                    <td className="p-1 text-right">{pluvi.provincia}</td>
+                    <td className="p-1 text-right">{pluvi.h1}</td>
+                    <td className="p-1 text-right">{pluvi.h6}</td>
+                    <td className="p-1 text-right">{pluvi.h12}</td>
+                    <td className="p-1 text-right">{pluvi.h24}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Cuarta Coluna */}
+        <div className="col-span-4 rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm">
+          <h1 className="p-2 text-center text-2xl font-normal text-[#7387f9]">
             Mayor Variacion Semanal
           </h1>
-          <div className="flex flex-col content-center justify-center p-2">
+          <div className="flex flex-col content-center justify-center px-3">
             {/* Primera Tabla */}
 
-            <table className="m-auto mb-2 w-[92%] text-[16px] lg:w-[85%]">
-              <caption className="text-left font-extrabold text-[#e1ff38]">
+            <table className="mb-1 w-full text-[16px]">
+              <caption className="text-left font-extrabold text-[#47ff63ab]">
                 Cuenca
               </caption>
               <tbody>
                 {variacionCuencas.map((variacion) => (
                   <tr
-                    className="transition-all hover:scale-105 hover:text-[#a9ff38f7]"
+                    className="transition-all hover:scale-105 hover:text-[#0b92e4]"
                     key={variacion.cuenca}
                   >
                     <td className="">{variacion.cuenca.replace(/_/g, ' ')}</td>
@@ -105,55 +138,18 @@ async function Bento() {
             </table>
             {/* Segunda Tabla */}
 
-            <table className="m-auto w-[92%] p-3 text-[16px] lg:w-[85%]">
-              <caption className="text-left text-[16px] font-extrabold text-[#e1ff38]">
+            <table className="w-full p-3 text-[16px]">
+              <caption className="text-left text-[16px] font-extrabold text-[#47ff63ab]">
                 Embalse
               </caption>
               <tbody>
                 {variacionEmbalses.map((variacion) => (
                   <tr
-                    className="transition-all hover:scale-105 hover:text-[#a9ff38f7]"
+                    className="transition-all hover:scale-105 hover:text-[#0b92e4]"
                     key={variacion.nombre_embalse}
                   >
                     <td className="">{variacion.nombre_embalse}</td>
                     <td className="text-right">{`${variacion.variacion_ultima_semanapor} %`}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Cuarta Col */}
-
-        <div className="col-span-5 rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm">
-          <h1 className="pt-2 text-center text-2xl font-normal text-[#7387f9]">
-            Pluviometros últimas horas (l/m2)
-          </h1>
-          <div className="flex flex-col content-center justify-center p-2 text-[15px] lg:text-[16px]">
-            <table className="">
-              <thead className="text-left text-[#e1ff38]">
-                <tr>
-                  <th className="px-1">Pluviometro</th>
-                  <th className="px-1">Prov</th>
-                  <th className="px-1">1h</th>
-                  <th className="px-1">6h</th>
-                  <th className="px-1">12h</th>
-                  <th className="px-1">24h</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pluvis.map((pluvi) => (
-                  <tr
-                    className="transition-all hover:scale-105 hover:text-[#a9ff38f7]"
-                    key={pluvi.id_pluviometro}
-                  >
-                    <td className="p-1">{pluvi.nombre}</td>
-                    <td className="p-1">{pluvi.provincia}</td>
-                    <td className="p-1">{pluvi.h1}</td>
-                    <td className="p-1">{pluvi.h6}</td>
-                    <td className="p-1">{pluvi.h12}</td>
-                    <td className="p-1">{pluvi.h24}</td>
                   </tr>
                 ))}
               </tbody>

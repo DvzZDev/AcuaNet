@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource-variable/comfortaa": "^5.0.20",
     "@fontsource-variable/onest": "^5.0.4",
+    "@vercel/speed-insights": "^1.0.12",
     "autoprefixer": "^10.4.19",
     "next": "14.2.3",
     "react": "^18",

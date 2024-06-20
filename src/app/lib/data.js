@@ -49,8 +49,10 @@ export async function FetchEsp() {
   const data = await response.json()
   return data
 }
-
 export async function FetchPluvis() {
+  const controller = new AbortController();
+  const signal = controller.signal;
+
   const url = 'https://api-acua-production.up.railway.app/Api/pluvis'
   const response = await fetch(url, {
     headers: {
@@ -58,6 +60,7 @@ export async function FetchPluvis() {
       Pragma: 'no-cache',
       Expires: '0',
     },
+    signal
   })
   const data = await response.json()
   return data

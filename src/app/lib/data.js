@@ -1,3 +1,5 @@
+import { revalidate } from '../components/Bento'
+
 export async function FetchCuencas() {
   const url = 'https://api-acua-production.up.railway.app/api/cuencas'
   const response = await fetch(url, {
@@ -50,17 +52,9 @@ export async function FetchEsp() {
   return data
 }
 export async function FetchPluvis() {
-  const controller = new AbortController();
-  const signal = controller.signal;
-
   const url = 'https://api-acua-production.up.railway.app/Api/pluvis'
   const response = await fetch(url, {
-    headers: {
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      Pragma: 'no-cache',
-      Expires: '0',
-    },
-    signal
+    next: { revalidate: 60 },
   })
   const data = await response.json()
   return data

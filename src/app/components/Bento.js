@@ -7,6 +7,11 @@ import {
   FetchPluvis,
 } from '../lib/data'
 
+export const revalidate = 0 //Very important
+
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
+
 function getColor(porcentaje) {
   if (porcentaje >= 80) {
     return 'bg-blue-200 text-blue-900 font-bold text-[18px]'

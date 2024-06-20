@@ -18,7 +18,4 @@ export default function Home() {
   )
 }
 
-// Configuración de regeneración estática incremental
-export const revalidate = 60
-export const dynamic = 'force-dynamic'
-export const fetchCache = 'force-no-store'
+

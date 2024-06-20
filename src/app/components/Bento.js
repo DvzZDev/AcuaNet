@@ -7,8 +7,7 @@ import {
   FetchPluvis,
 } from '../lib/data'
 
-export const revalidate = 0 //Very important
-
+export const revalidate = 60
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 

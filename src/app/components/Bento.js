@@ -7,8 +7,6 @@ import {
   FetchPluvis,
 } from '../lib/data'
 
-
-
 function getColor(porcentaje) {
   if (porcentaje >= 80) {
     return 'bg-blue-200 text-blue-900 font-bold text-[18px]'
@@ -41,11 +39,11 @@ async function Bento() {
       <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[90svh] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
 
-        <div className="z-10 col-span-4 row-span-1 flex animate-fade items-center justify-center text-wrap rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4">
+        <div className="z-10 col-span-4 row-span-1 flex items-center justify-center text-wrap rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4">
           {esp.map((españa) => (
             <div
               key={españa.id}
-              className="animate-fade content-center justify-center rounded-lg text-center animate-once animate-ease-in-out"
+              className="content-center justify-center rounded-lg text-center animate-once animate-ease-in-out"
             >
               <h2 className="text-[2rem] text-[#7387f9]">Reserva</h2>
               <p

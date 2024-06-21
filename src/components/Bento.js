@@ -1,4 +1,6 @@
 import '@fontsource-variable/comfortaa'
+import { Link } from 'next-view-transitions'
+
 import {
   FetchCuencas,
   FetchCuencaVariacion,
@@ -64,15 +66,19 @@ async function Bento() {
         >
           <div className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4">
             {cuencas.map((cuenca) => (
-              <div
-                className={`nwhitespace-normal flex flex-col content-center items-center justify-center rounded-md bg-opacity-70 p-1 text-sm transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
-                key={cuenca.id_cuenca}
-              >
-                <div className="flex flex-col content-center items-center justify-center">
-                  <p>{cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}</p>
-                  <p>{`${cuenca.porcentaje_embalsada} %`} </p>
-                </div>
-              </div>
+              <>
+                <Link href={`/cuencas/${cuenca.cuenca}`}>
+                  <div
+                    className={`nwhitespace-normal flex h-full flex-col content-center items-center justify-center rounded-md bg-opacity-70 p-1 text-sm transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
+                    key={cuenca.id_cuenca}
+                  >
+                    <div className="flex flex-col content-center items-center justify-center">
+                      <p>{cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}</p>
+                      <p>{`${cuenca.porcentaje_embalsada} %`} </p>
+                    </div>
+                  </div>
+                </Link>
+              </>
             ))}
           </div>
         </div>
@@ -129,9 +135,13 @@ async function Bento() {
                 {variacionCuencas.map((variacion) => (
                   <tr
                     className="transition-all hover:scale-105 hover:text-[#0b92e4]"
-                    key={variacion.cuenca}
+                    key={variacion.id_cuenca}
                   >
-                    <td className="">{variacion.cuenca.replace(/_/g, ' ')}</td>
+                    <td>
+                      <Link href={`/cuencas/${variacion.cuenca}`}>
+                        <p>{variacion.cuenca.replace(/_/g, ' ')}</p>
+                      </Link>
+                    </td>
                     <td className="w-[50%] text-right lg:w-auto">{`${variacion.porcentaje_variacion} %`}</td>
                   </tr>
                 ))}

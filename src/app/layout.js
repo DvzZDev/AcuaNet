@@ -1,5 +1,6 @@
 import './globals.css'
-import { SpeedInsights } from '@vercel/speed-insights/next'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 export const metadata = {
   title: 'AcuaEs',
@@ -9,7 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

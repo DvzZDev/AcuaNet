@@ -4,7 +4,7 @@ import Type from './Type'
 function Intro() {
   return (
     <>
-      <section className="relative flex h-screen animate-fade-up flex-col items-center pt-28 animate-once animate-ease-in-out md:pt-48">
+      <section id='intromain' className="relative flex h-screen animate-fade-up flex-col items-center pt-28 animate-once animate-ease-in-out md:pt-48">
         <div className="flex flex-col xl:w-[60%]">
           <strong className="z-30 animate-gradient bg-gradient-to-r from-pink-700 via-blue-500 to-green-400 bg-300% bg-clip-text text-center font-telma text-[5rem] text-transparent sm:text-[7rem]">
             AcuaEs

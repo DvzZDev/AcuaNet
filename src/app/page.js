@@ -1,7 +1,7 @@
 import Intro from '@/components/Intro'
 import Bento from '@/components/Bento'
 import Fuentes from '@/components/Fuentes'
-import SkeletonBento from '@/skeletrons/BentoSkeleton'
+import SkeletonBento from '@/skeletons/'
 import { Suspense } from 'react'
 
 export const revalidate = 60
@@ -16,6 +16,7 @@ export default function Home() {
         <Bento />
       </Suspense>
       <Fuentes />
+      <SkeletonBento />
     </>
   )
 }

@@ -47,7 +47,7 @@ export default function Navbar() {
           />
 
           {/* Navegación */}
-          <nav className="hidden md:flex ">
+          <nav className="hidden md:flex">
             {/* Enlaces */}
             <Link href="/cuencas">
               <h2 className="mx-4 text-textprimary transition-all hover:scale-110 hover:text-green-300">
@@ -90,7 +90,7 @@ export default function Navbar() {
 
         {/* Menú móvil */}
         <nav
-          className={`${isMenuOpen ? 'mt-5 m-auto flex h-[70%] flex-col items-center justify-center gap-4 text-2xl' : 'hidden'}`}
+          className={`${isMenuOpen ? 'm-auto mt-5 flex animate-fade-up flex-col items-center justify-center gap-4 text-2xl transition-all' : 'hidden'}`}
         >
           {/* Formulario de búsqueda */}
           <form className="relative">

@@ -12,7 +12,7 @@ export default function Navbar() {
     <>
       <div
         id="header-nav"
-        className={`fixed top-0 z-50 w-full px-3 py-2 backdrop-blur-2xl ${isMenuOpen ? 'h-full bg-[#2e0b8e2a] transition-all' : 'h-[3.6rem] transition-all'}`}
+        className={`fixed top-0 z-50 w-full px-3 py-2 backdrop-blur-2xl ${isMenuOpen ? 'h-[40%] bg-[#040513] transition-all' : 'h-[3.6rem] transition-all'}`}
       >
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo */}

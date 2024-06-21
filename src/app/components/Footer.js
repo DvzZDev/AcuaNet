@@ -3,7 +3,7 @@ import Link from 'next/link'
 function Footer() {
   return (
     <footer className="flex h-[12rem] flex-col items-center justify-center bg-[#040513]">
-      <nav className="text-textfooter flex gap-3">
+      <nav className="flex flex-wrap gap-3 text-wrap text-textfooter mx-5 justify-center">
         <Link href="/cuencas">
           <span className="inline-block transition-all hover:scale-105">Cuencas</span>
         </Link>
@@ -80,8 +80,10 @@ function Footer() {
         </Link>
       </div>
 
-      <div className="">
-        <p className="text-textfooter">Hecho con ❤️ por @DvzZDev</p>
+      <div className="text-textfooter">
+        <span>Hecho con </span>
+        <span className="animate-pulse">❤️</span>
+        <span> por @DvzZDev</span>
       </div>
     </footer>
   )

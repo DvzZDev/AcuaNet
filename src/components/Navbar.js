@@ -7,6 +7,7 @@ import { useState } from 'react'
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const closeMenu = () => setIsMenuOpen(false)
 
   return (
     <>
@@ -23,6 +24,7 @@ export default function Navbar() {
               alt="logo"
               width={35}
               height={20}
+              onClick={closeMenu}
             />
           </Link>
 
@@ -109,22 +111,22 @@ export default function Navbar() {
           </form>
 
           {/* Enlaces */}
-          <Link href="/cuencas">
+          <Link href="/cuencas" onClick={closeMenu}>
             <span className="mx-4 text-white transition-all hover:text-green-300">
               Cuencas
             </span>
           </Link>
-          <Link href="/embalses">
+          <Link href="/embalses" onClick={closeMenu}>
             <span className="mx-4 text-white transition-all hover:text-green-300">
               Embalses
             </span>
           </Link>
-          <Link href="/pluviometros">
+          <Link href="/pluviometros" onClick={closeMenu}>
             <span className="mx-4 text-white transition-all hover:text-green-300">
               Pluviometros
             </span>
           </Link>
-          <Link href="/">
+          <Link href="/" onClick={closeMenu}>
             <span className="mx-4 text-white transition-all hover:text-green-300">
               Quienes Somos
             </span>

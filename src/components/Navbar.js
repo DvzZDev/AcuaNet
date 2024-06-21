@@ -12,7 +12,7 @@ export default function Navbar() {
     <>
       <div
         id="header-nav"
-        className={`fixed top-0 z-50 w-full px-3 py-2 backdrop-blur-2xl transition-all ${isMenuOpen ? 'h-[40%] bg-[#040513]' : 'h-[0%] bg-transparent'}`}
+        className={`fixed top-0 z-50 w-full px-3 py-2 backdrop-blur-2xl transition-all duration-500 ${isMenuOpen ? 'h-[50%] bg-[#040513]' : 'h-[0%] bg-transparent'}`}
         style={{ willChange: 'max-height' }}
       >
         <div className="container mx-auto flex items-center justify-between">

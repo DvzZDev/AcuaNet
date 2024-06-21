@@ -53,4 +53,7 @@ module.exports = {
     },
   },
   plugins: ['prettier-plugin-tailwindcss', require('tailwindcss-animated')],
+  experimental: {
+    optimizeUniversalDefaults: true
+  }
 }

@@ -1,5 +1,5 @@
-import Intro from '@/components/cuencas/intro'
-import Bento from '@/components/cuencas/bento'
+import Intro from '@/components/cuencas/IntroCuencas'
+import Bento from '@/components/cuencas/BentoCuencas'
 import { Suspense } from 'react'
 import SkeletonBento from '@/components/BentoSkeletonCuencas'
 

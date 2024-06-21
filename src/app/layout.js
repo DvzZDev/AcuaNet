@@ -13,7 +13,9 @@ export default function RootLayout({ children }) {
     <ViewTransitions>
       <html lang="es">
         <body>
-          <Navbar />
+          <header className="h-[3.6rem]">
+            <Navbar />
+          </header>
           {children}
           <Footer />
         </body>

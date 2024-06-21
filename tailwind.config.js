@@ -22,7 +22,7 @@ module.exports = {
       },
       colors: {
         textprimary: '#e9ead6',
-        'custom-blue': '#F1FAFF',
+        textfooter: '#6b7280',
       },
       backdropBlur: {
         xs: '2px',

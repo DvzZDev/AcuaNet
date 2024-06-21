@@ -6,7 +6,7 @@ function Intro() {
     <>
       <section className="relative flex h-screen animate-fade-up flex-col items-center pt-28 animate-once animate-ease-in-out md:pt-48">
         <div className="flex flex-col xl:w-[60%]">
-          <strong className="font-telma z-30 animate-gradient bg-gradient-to-r from-pink-700 via-blue-500 to-green-400 bg-300% bg-clip-text text-center text-[5rem] text-transparent sm:text-[7rem]">
+          <strong className="z-30 animate-gradient bg-gradient-to-r from-pink-700 via-blue-500 to-green-400 bg-300% bg-clip-text text-center font-telma text-[5rem] text-transparent sm:text-[7rem]">
             AcuaEs
           </strong>
           <h1 className="z-30 animate-gradient bg-gradient-to-r from-pink-700 via-blue-500 to-green-400 bg-300% bg-clip-text px-6 text-center text-[2rem] text-transparent lg:text-[3rem]">

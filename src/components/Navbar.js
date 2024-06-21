@@ -12,7 +12,8 @@ export default function Navbar() {
     <>
       <div
         id="header-nav"
-        className={`fixed top-0 z-50 w-full px-3 py-2 backdrop-blur-2xl ${isMenuOpen ? 'h-[40%] bg-[#040513] transition-all' : 'h-[3.6rem] transition-all'}`}
+        className={`fixed top-0 z-50 w-full px-3 py-2 backdrop-blur-2xl transition-all ${isMenuOpen ? 'h-[40%] bg-[#040513]' : 'h-[0%] bg-transparent'}`}
+        style={{ willChange: 'max-height' }}
       >
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo */}
@@ -46,7 +47,7 @@ export default function Navbar() {
           />
 
           {/* Navegación */}
-          <nav className="hidden md:flex">
+          <nav className="hidden md:flex ">
             {/* Enlaces */}
             <Link href="/cuencas">
               <h2 className="mx-4 text-textprimary transition-all hover:scale-110 hover:text-green-300">
@@ -89,7 +90,7 @@ export default function Navbar() {
 
         {/* Menú móvil */}
         <nav
-          className={`${isMenuOpen ? 'm-auto flex h-[70%] flex-col items-center justify-center gap-4 text-2xl' : 'hidden'}`}
+          className={`${isMenuOpen ? 'mt-5 m-auto flex h-[70%] flex-col items-center justify-center gap-4 text-2xl' : 'hidden'}`}
         >
           {/* Formulario de búsqueda */}
           <form className="relative">

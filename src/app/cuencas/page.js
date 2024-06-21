@@ -1,7 +1,7 @@
 import Intro from '@/components/cuencas/intro'
 import Bento from '@/components/cuencas/bento'
 import { Suspense } from 'react'
-import SkeletonBento from '@/skeletons/BentoSkeletonCuencas'
+import SkeletonBento from '@/components/BentoSkeletonCuencas'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'

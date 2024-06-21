@@ -16,7 +16,6 @@ export default function Home() {
         <Bento />
       </Suspense>
       <Fuentes />
-      <SkeletonBento />
     </>
   )
 }

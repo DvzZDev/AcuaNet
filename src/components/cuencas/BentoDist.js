@@ -1,14 +1,17 @@
+import { FetchCuencas } from '@/lib/data'
 import Image from 'next/image'
 import EmbalseGrafico from './Grafico'
-function BentoDist({
-  cuenca,
-  embalsada,
-  capacidad,
-  variacion,
-  porcentaje_embalsada,
-  porcentaje_variacion,
-  foto,
-}) {
+
+async function BentoDist(url) {
+  const cuenca = await FetchCuencas()
+  // Acceder a cuencaid dentro del objeto url
+  const cuencaid = url.url.cuencaid
+  // Decodificar cuencaid
+  const decodedCuencaid = decodeURIComponent(cuencaid)
+
+  const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaid)
+  console.log(decodedCuencaid) // Ahora esto imprimirá el cuencaid decodificado
+
   return (
     <div className="mx-4 flex min-h-full w-[20rem] flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
       {/* Primera Columna */}
@@ -18,7 +21,7 @@ function BentoDist({
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Agua</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
-              {embalsada}
+              {resCuenca.embalsada}
             </span>
             <span className="text-lg">hm³</span>
           </div>
@@ -32,7 +35,7 @@ function BentoDist({
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Capacidad</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
-              {capacidad}
+              {resCuenca.capacidad}
             </span>
             <span className="text-lg">hm³</span>
           </div>
@@ -46,7 +49,7 @@ function BentoDist({
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
-              {variacion}
+              {resCuenca.variacion}
             </span>
             <span className="text-lg">hm³</span>
           </div>
@@ -64,7 +67,7 @@ function BentoDist({
             </h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
               <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
-                {porcentaje_variacion}
+                {resCuenca.porcentaje_variacion}
               </span>
               <span className="text-lg">%</span>
             </div>
@@ -77,13 +80,13 @@ function BentoDist({
       {/* Quinta Columna */}
 
       <div className="col-span-2 row-span-3 rounded-lg bg-slate-700 transition-all hover:scale-105">
-        <EmbalseGrafico porcentaje={porcentaje_embalsada} />
+        <EmbalseGrafico porcentaje={resCuenca.porcentaje_embalsada} />
       </div>
       {/* Sexta Columna */}
 
       <div className="relative col-span-4 row-span-4 overflow-hidden rounded-lg bg-slate-700 transition-all hover:scale-125">
         <Image
-          src={foto}
+          src={resCuenca.foto}
           alt={`Foto sobre la cuenca hidrográfica del ${cuenca}`}
           layout="fill"
         />

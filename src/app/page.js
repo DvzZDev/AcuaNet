@@ -1,7 +1,7 @@
-import Intro from '@/components/Intro'
-import Bento from '@/components/Bento'
-import Fuentes from '@/components/Fuentes'
-import SkeletonBento from '@/components/BentoSkeleton'
+import Intro from '@/components/landing/Intro'
+import Bento from '@/components/landing/Bento'
+import Fuentes from '@/components/landing/Fuentes'
+import SkeletonBento from '@/components/landing/BentoSkeleton'
 import { Suspense } from 'react'
 
 export const revalidate = 60

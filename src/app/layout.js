@@ -1,6 +1,6 @@
 import './globals.css'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import Navbar from '@/components/global/Navbar'
+import Footer from '@/components/global/Footer'
 import { ViewTransitions } from 'next-view-transitions'
 
 export const metadata = {

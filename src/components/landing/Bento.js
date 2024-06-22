@@ -7,7 +7,7 @@ import {
   FetchEmbalsesVariacion,
   FetchEsp,
   FetchPluvis,
-} from '../lib/data'
+} from '../../lib/data'
 
 function getColor(porcentaje) {
   if (porcentaje >= 80) {

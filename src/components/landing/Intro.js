@@ -1,5 +1,5 @@
 import '@fontsource-variable/onest'
-import Arrow from './landing/Arrow'
+import Arrow from './Arrow'
 import Type from './Type'
 function Intro() {
   return (

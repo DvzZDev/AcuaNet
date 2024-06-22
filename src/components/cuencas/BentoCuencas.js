@@ -1,6 +1,10 @@
 import { FetchCuencas } from '@/lib/data'
 import { Link } from 'next-view-transitions'
 
+export const revalidate = 60
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
+
 async function bento() {
   function getColor(porcentaje) {
     if (porcentaje >= 80) {

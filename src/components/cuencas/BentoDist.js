@@ -10,65 +10,65 @@ function BentoDist({
   foto,
 }) {
   return (
-    <div className="mx-4 flex min-h-full w-[20rem] flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 md:h-[40rem] md:w-[60rem]">
+    <div className="mx-4 flex min-h-full w-[20rem] flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
       {/* Primera Columna */}
 
-      <div className="hover:scale-105 transition-all col-span-2 row-span-3 rounded bg-slate-700">
+      <div className="col-span-2 row-span-3 rounded bg-slate-700 transition-all hover:scale-105">
         <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">Agua</h1>
+          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Agua</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-5xl font-black sm:text-4xl md:text-5xl">
+            <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
               {embalsada}
             </span>
-            <span className="text-md">hm³</span>
+            <span className="text-lg">hm³</span>
           </div>
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">Embalsada</h1>
+          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalsada</h1>
         </article>
       </div>
       {/* Segunda Columna */}
 
-      <div className="hover:scale-105 transition-all col-span-2 row-span-3 rounded bg-slate-700">
+      <div className="col-span-2 row-span-3 rounded bg-slate-700 transition-all hover:scale-105">
         <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">Capacidad</h1>
+          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Capacidad</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-5xl font-black sm:text-4xl md:text-5xl">
+            <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
               {capacidad}
             </span>
-            <span className="text-md">hm³</span>
+            <span className="text-lg">hm³</span>
           </div>
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">Total</h1>
+          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Total</h1>
         </article>
       </div>
       {/* Tercera Columna */}
 
-      <div className="hover:scale-105 transition-all col-span-2 row-span-3 rounded-lg bg-slate-700">
+      <div className="col-span-2 row-span-3 rounded-lg bg-slate-700 transition-all hover:scale-105">
         <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">Variacion</h1>
+          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-5xl font-black sm:text-4xl md:text-5xl">
+            <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
               {variacion}
             </span>
-            <span className="text-md">hm³</span>
+            <span className="text-lg">hm³</span>
           </div>
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">
+          <h1 className="text-center text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
             Sem. Anterior
           </h1>
         </article>
       </div>
       {/* Cuarta Columna */}
-      <div className="hover:scale-105 transition-all col-span-2 row-span-3 rounded-lg bg-slate-700">
+      <div className="col-span-2 row-span-3 rounded-lg bg-slate-700 transition-all hover:scale-105">
         <div className="flex h-full items-center justify-center">
           <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
-            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">
+            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
               Porcentaje
             </h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              <span className="text-5xl font-black sm:text-4xl md:text-5xl">
+              <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
                 {porcentaje_variacion}
               </span>
-              <span className="text-md">%</span>
+              <span className="text-lg">%</span>
             </div>
-            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">
+            <h1 className="text-center text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
               Sem. Anterior
             </h1>
           </article>
@@ -76,12 +76,12 @@ function BentoDist({
       </div>
       {/* Quinta Columna */}
 
-      <div className="hover:scale-105 transition-all col-span-2 row-span-3 rounded-lg bg-slate-700">
+      <div className="col-span-2 row-span-3 rounded-lg bg-slate-700 transition-all hover:scale-105">
         <EmbalseGrafico porcentaje={porcentaje_embalsada} />
       </div>
       {/* Sexta Columna */}
 
-      <div className="relative col-span-4 row-span-4 overflow-hidden rounded-lg bg-slate-700 hover:scale-125 transition-all ">
+      <div className="relative col-span-4 row-span-4 overflow-hidden rounded-lg bg-slate-700 transition-all hover:scale-125">
         <Image
           src={foto}
           alt={`Foto sobre la cuenca hidrográfica del ${cuenca}`}
@@ -90,9 +90,9 @@ function BentoDist({
       </div>
       {/* Septima Columna */}
 
-      <div className="hover:scale-105 transition-all col-span-2 row-span-3 rounded-lg bg-slate-700">
+      <div className="col-span-2 row-span-3 rounded-lg bg-slate-700 transition-all hover:scale-105">
         <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">Embalses</h1>
+          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalses</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <div className="animate-wiggle animate-infinite">
               <svg
@@ -148,7 +148,7 @@ function BentoDist({
               </svg>
             </div>
           </div>
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl md:text-3xl">Cuenca</h1>
+          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Cuenca</h1>
         </article>
       </div>
     </div>

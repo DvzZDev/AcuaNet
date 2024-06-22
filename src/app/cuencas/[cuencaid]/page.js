@@ -1,6 +1,7 @@
 import { FetchCuencas, FetchEmbalses } from '@/lib/data'
 import BentoDist from '@/components/cuencas/BentoDist'
 import Divider from '@/components/cuencas/Divider'
+import SkeletonBentoDist from '@/components/skeletons/SkeletonBentoDinst'
 import { Suspense } from 'react'
 
 export const revalidate = 60
@@ -20,7 +21,7 @@ async function Page({ params }) {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<SkeletonBentoDist />}>
         <div className="justify-center">
           <h1 className="mb-2 text-center font-telma text-[2.5rem] text-textprimary sm:mt-10 sm:text-6xl">
             {resCuenca.cuenca}

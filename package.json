@@ -13,9 +13,12 @@
     "@fontsource-variable/onest": "^5.0.4",
     "@vercel/speed-insights": "^1.0.12",
     "autoprefixer": "^10.4.19",
+    "chart.js": "^4.4.3",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "next": "14.2.3",
     "next-view-transitions": "^0.2.0",
     "react": "^18",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-typed": "^2.0.12"
   },

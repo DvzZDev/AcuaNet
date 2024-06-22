@@ -29,7 +29,6 @@ async function Bento() {
   const variacionEmbalses = await FetchEmbalsesVariacion()
   const esp = await FetchEsp()
   const pluvis = await FetchPluvis()
-  console.log(pluvis)
 
   return (
     <section

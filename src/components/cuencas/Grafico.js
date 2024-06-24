@@ -44,12 +44,12 @@ const EmbalseGrafico = ({ porcentaje }) => {
   }
 
   return (
-    <div className="relative flex sm:h-full w-full items-center justify-center my-3 sm:my-0">
+    <div className="relative my-3 flex h-[14rem] w-[14rem] items-center justify-center rounded-lg bg-slate-700 sm:my-0 sm:h-full sm:w-full">
       <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-xl font-black text-transparent sm:text-sm lg:text-xl">
         {`${porcentaje.toFixed(2)} %`}
       </span>
 
-      <div className="flex h-[15rem] w-[15rem] items-center justify-center sm:h-[7.8rem] sm:w-[7.8rem] lg:h-[12rem] lg:w-[12rem]">
+      <div className="flex h-[12rem] w-[12rem] items-center justify-center sm:h-[7.8rem] sm:w-[7.8rem] lg:h-[12rem] lg:w-[12rem]">
         <Doughnut
           data={data}
           options={options}

@@ -13,8 +13,7 @@ export default function Navbar() {
     <>
       <div
         id="header-nav"
-        className={`fixed top-0 z-50 w-full px-3 py-2 backdrop-blur-2xl transition-all duration-500 ${isMenuOpen ? 'h-[50%] bg-[#040513]' : 'h-[0%] bg-transparent'}`}
-        style={{ willChange: 'max-height' }}
+        className={`fixed top-0 z-50 w-full px-3 py-2 backdrop-blur-2xl transition-all duration-500 ${isMenuOpen ? 'h-[50%] bg-[#040513]' : 'h-[6%]'}`}
       >
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo */}
@@ -111,22 +110,34 @@ export default function Navbar() {
           </form>
 
           {/* Enlaces */}
-          <Link href="/cuencas" onClick={closeMenu}>
+          <Link
+            href="/cuencas"
+            onClick={closeMenu}
+          >
             <span className="mx-4 text-white transition-all hover:text-green-300">
               Cuencas
             </span>
           </Link>
-          <Link href="/embalses" onClick={closeMenu}>
+          <Link
+            href="/embalses"
+            onClick={closeMenu}
+          >
             <span className="mx-4 text-white transition-all hover:text-green-300">
               Embalses
             </span>
           </Link>
-          <Link href="/pluviometros" onClick={closeMenu}>
+          <Link
+            href="/pluviometros"
+            onClick={closeMenu}
+          >
             <span className="mx-4 text-white transition-all hover:text-green-300">
               Pluviometros
             </span>
           </Link>
-          <Link href="/" onClick={closeMenu}>
+          <Link
+            href="/"
+            onClick={closeMenu}
+          >
             <span className="mx-4 text-white transition-all hover:text-green-300">
               Quienes Somos
             </span>

@@ -4,20 +4,16 @@ import EmbalseGrafico from './Grafico'
 
 async function BentoDist(url) {
   const cuenca = await FetchCuencas()
-  // Acceder a cuencaid dentro del objeto url
   const cuencaid = url.url.cuencaid
-  // Decodificar cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
-
   const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaid)
-  console.log(decodedCuencaid) // Ahora esto imprimirá el cuencaid decodificado
 
   return (
-    <div className="mx-4 flex min-h-full w-[20rem] flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
+    <div className="mx-4 flex min-h-full w-[20rem] flex-col gap-4 transition-all sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
       {/* Primera Columna */}
 
-      <div className="col-span-2 row-span-3 rounded bg-slate-700 transition-all hover:scale-105">
-        <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
+      <div className="flex justify-center rounded-lg hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
+        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Agua</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
@@ -30,8 +26,8 @@ async function BentoDist(url) {
       </div>
       {/* Segunda Columna */}
 
-      <div className="col-span-2 row-span-3 rounded bg-slate-700 transition-all hover:scale-105">
-        <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
+      <div className="flex justify-center hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
+        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Capacidad</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
@@ -44,8 +40,8 @@ async function BentoDist(url) {
       </div>
       {/* Tercera Columna */}
 
-      <div className="col-span-2 row-span-3 rounded-lg bg-slate-700 transition-all hover:scale-105">
-        <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
+      <div className="flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
+        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
@@ -59,42 +55,39 @@ async function BentoDist(url) {
         </article>
       </div>
       {/* Cuarta Columna */}
-      <div className="col-span-2 row-span-3 rounded-lg bg-slate-700 transition-all hover:scale-105">
-        <div className="flex h-full items-center justify-center">
-          <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
-            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
-              Porcentaje
-            </h1>
-            <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
-                {resCuenca.porcentaje_variacion}
-              </span>
-              <span className="text-lg">%</span>
-            </div>
-            <h1 className="text-center text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
-              Sem. Anterior
-            </h1>
-          </article>
-        </div>
+      <div className="flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
+        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
+          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
+          <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+            <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
+              {resCuenca.porcentaje_variacion}
+            </span>
+            <span className="text-lg">hm³</span>
+          </div>
+          <h1 className="text-center text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
+            Sem. Anterior
+          </h1>
+        </article>
       </div>
       {/* Quinta Columna */}
 
-      <div className="col-span-2 row-span-3 rounded-lg bg-slate-700 transition-all hover:scale-105">
+      <div className="col-span-2 row-span-3 flex justify-center rounded-lg transition-all hover:scale-105">
         <EmbalseGrafico porcentaje={resCuenca.porcentaje_embalsada} />
       </div>
       {/* Sexta Columna */}
-
-      <div className="relative col-span-4 row-span-4 overflow-hidden rounded-lg bg-slate-700 transition-all hover:scale-125">
-        <Image
-          src={resCuenca.foto}
-          alt={`Foto sobre la cuenca hidrográfica del ${cuenca}`}
-          layout="fill"
-        />
+      <div className="relative col-span-4 row-span-4 flex justify-center transition-all hover:scale-105">
+        <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-hidden rounded-lg bg-slate-700 transition-all hover:scale-125 sm:h-full sm:w-full">
+          <Image
+            src={resCuenca.foto}
+            alt={`Foto sobre la cuenca hidrográfica del ${cuenca}`}
+            layout="fill"
+          />
+        </div>
       </div>
       {/* Septima Columna */}
 
-      <div className="col-span-2 row-span-3 rounded-lg bg-slate-700 transition-all hover:scale-105">
-        <article className="flex h-[17rem] flex-col items-center justify-around px-4 sm:h-full">
+      <div className="flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
+        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalses</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <div className="animate-wiggle animate-infinite">

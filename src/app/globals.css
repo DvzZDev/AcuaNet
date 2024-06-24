@@ -85,3 +85,7 @@ table {
   font-display: swap;
   font-style: normal;
 }
+
+.iconoredes:hover {
+  fill: #ffd700;
+}

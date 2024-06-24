@@ -76,7 +76,7 @@ export default function Navbar() {
             <form className="relative">
               <input
                 placeholder="Buscador"
-                className="w-[10rem] rounded-md bg-slate-900 bg-opacity-70 pl-2 pr-10 outline-none transition-all focus:bg-slate-900 focus:bg-opacity-100 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-opacity-50"
+                className="w-[10rem] rounded-md bg-slate-900 bg-opacity-70 pl-2 pr-10 outline-none transition-all focus:bg-slate-900 focus:bg-opacity-100 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
               />
               <button className="absolute right-0 top-0 h-full rounded-md bg-transparent bg-opacity-70 px-2">
                 <Image

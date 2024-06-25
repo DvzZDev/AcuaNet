@@ -11,7 +11,7 @@ function page() {
   return (
     <>
       <Intro title={'Embalses'} />
-      <section className="h-screen bg-bgcolor">
+      <section className="bg-bgcolor">
         <Suspense fallback={<SkeletonTableEmbalse />}>
           <Tabledata />
         </Suspense>

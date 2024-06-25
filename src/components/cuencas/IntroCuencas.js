@@ -1,11 +1,14 @@
-function intro() {
+import Divider from './Divider'
+
+function intro({ title }) {
   return (
-    <section className="">
+    <section>
       <div className="flex justify-center">
         <h1 className="mb-2 text-center font-telma text-[2.5rem] text-textsecondary sm:mt-10 sm:text-6xl">
-          Cuencas Hidrograficas
+          {title}
         </h1>
       </div>
+      <Divider />
     </section>
   )
 }

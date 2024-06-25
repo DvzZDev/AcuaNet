@@ -10,7 +10,7 @@ export const fetchCache = 'force-no-store'
 function page() {
   return (
     <>
-      <Intro />
+      <Intro title={'Cuencas Hidrográficas'} />
       <Suspense fallback={<SkeletonCuencas />}>
         <Bento />
       </Suspense>

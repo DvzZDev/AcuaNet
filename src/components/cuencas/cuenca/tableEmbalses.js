@@ -82,7 +82,7 @@ function TableEmbalses(props) {
           Embalses
         </h1>
         <div
-          className={`${show ? 'w-[10rem] border-[#e8e9d5]' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
+          className={`${show ? 'w-[10rem] border-white' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
         >
           <button
             className="transition-transform duration-150 active:scale-90"

@@ -9,8 +9,8 @@ import {
   getFilteredRowModel,
 } from '@tanstack/react-table'
 
-function TableEmbalses(props) {
-  console.log(props)
+function TableData(props) {
+  const resdata = props.props
   const columns = useMemo(
     () => [
       {
@@ -18,21 +18,25 @@ function TableEmbalses(props) {
         accessorKey: 'nombre_embalse',
       },
       {
-        header: 'Embalsada % ',
+        header: 'Cuenca',
+        accessorKey: 'nombre_cuenca',
+      },
+      {
+        header: 'Agua Embalsada (%)',
         accessorKey: 'agua_embalsadapor',
       },
       {
-        header: 'Agua Embalsada',
+        header: 'Agua Embalsada (hm³)',
         accessorKey: 'agua_embalsada',
       },
       {
-        header: 'Capacidad Total',
+        header: 'Capacidad Total (hm³)',
         accessorKey: 'capacidad_total',
       },
     ],
     []
   )
-  const [data, setData] = useState(props.dataFetched)
+  const [data, setData] = useState(resdata)
 
   const [sorting, setSorting] = useState([])
   const [filtered, setFiltered] = useState('')
@@ -113,7 +117,10 @@ function TableEmbalses(props) {
         </thead>
         <tbody className="bg-[#1b0e51]">
           {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
+            <tr
+              key={row.id}
+              className="odd:bg-[#1b0e51] even:bg-[#1f1745]"
+            >
               {row.getVisibleCells().map((cell, index) => (
                 <td
                   key={cell.id}
@@ -214,4 +221,4 @@ function TableEmbalses(props) {
   )
 }
 
-export default TableEmbalses
+export default TableData

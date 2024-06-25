@@ -1,5 +1,5 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef } from 'react'
 import {
   useReactTable,
   getCoreRowModel,
@@ -8,9 +8,11 @@ import {
   getSortedRowModel,
   getFilteredRowModel,
 } from '@tanstack/react-table'
+import { mkConfig, generateCsv, download } from 'export-to-csv'
 
 function TableEmbalses(props) {
-  console.log(props)
+  const resdata = props.dataFetched[0].nombre_cuenca
+
   const columns = useMemo(
     () => [
       {
@@ -53,19 +55,45 @@ function TableEmbalses(props) {
     onGlobalFilterChange: setFiltered,
   })
 
+  const [show, setShow] = useState(false)
+  const inputRef = useRef(null)
+  const handleButtonClick = () => {
+    setShow((prevShow) => !prevShow)
+    inputRef.current?.focus()
+  }
+  const csvConfig = mkConfig({
+    fieldSeparator: ',',
+    filename: resdata,
+    decimalSeparator: '.',
+    useKeysAsHeaders: true,
+  })
+  const exportExcel = (rows) => {
+    const rowData = rows.map((row) => row.original)
+    const csv = generateCsv(csvConfig)(rowData)
+    download(csvConfig)(csv)
+  }
+
   return (
     <div className="mx-5">
-      <div className="my-4 flex justify-end">
-        <div className="relative">
-          <div className="absolute right-1 top-1 h-[15px] w-[15px]">
+      <div className="relative flex h-16 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4">
+        <h1
+          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform font-telma text-4xl text-textsecondary transition-all sm:text-4xl ${show ? 'opacity-0' : 'opacity-100'}`}
+        >
+          Embalses
+        </h1>
+        <div
+          className={`${show ? 'w-[10rem] border-[#e8e9d5]' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
+        >
+          <button
+            className="transition-transform duration-150 active:scale-90"
+            onClick={handleButtonClick}
+          >
             <svg
               fill="#c0bfb7"
-              viewBox="-1.6 -1.6 35.20 35.20"
-              version="1.1"
-              stroke="#c0bfb7"
-              stroke-width="1.216"
-              width={15}
-              height={15}
+              enable-background="new 0 0 32 32"
+              height="20"
+              width={20}
+              viewBox="4 4 24 24"
             >
               <g
                 id="SVGRepo_bgCarrier"
@@ -77,27 +105,71 @@ function TableEmbalses(props) {
                 stroke-linejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
-                {' '}
-                <path d="M31.707 30.282l-9.717-9.776c1.811-2.169 2.902-4.96 2.902-8.007 0-6.904-5.596-12.5-12.5-12.5s-12.5 5.596-12.5 12.5 5.596 12.5 12.5 12.5c3.136 0 6.002-1.158 8.197-3.067l9.703 9.764c0.39 0.39 1.024 0.39 1.415 0s0.39-1.023 0-1.415zM12.393 23.016c-5.808 0-10.517-4.709-10.517-10.517s4.708-10.517 10.517-10.517c5.808 0 10.516 4.708 10.516 10.517s-4.709 10.517-10.517 10.517z"></path>{' '}
+                <path
+                  d="M27.414,24.586l-5.077-5.077C23.386,17.928,24,16.035,24,14c0-5.514-4.486-10-10-10S4,8.486,4,14 s4.486,10,10,10c2.035,0,3.928-0.614,5.509-1.663l5.077,5.077c0.78,0.781,2.048,0.781,2.828,0 C28.195,26.633,28.195,25.367,27.414,24.586z M7,14c0-3.86,3.14-7,7-7s7,3.14,7,7s-3.14,7-7,7S7,17.86,7,14z"
+                  id="XMLID_223_"
+                ></path>
               </g>
             </svg>
-          </div>
+          </button>
+
           <input
             value={filtered}
             onChange={(e) => setFiltered(e.target.value)}
-            className="h-6 w-36 rounded-sm bg-slate-900 outline-none transition-all focus:bg-opacity-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+            className={`w-full bg-transparent px-1 outline-none transition-all focus:bg-opacity-100 focus:outline-none`}
             type="text"
+            autoFocus={show}
+            ref={inputRef}
           />
         </div>
+
+        <button
+          type="button"
+          className="transition-transform duration-150 active:scale-90"
+          onClick={() => exportExcel(table.getFilteredRowModel().rows)}
+        >
+          <svg
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="5 2 14 20"
+            width={20}
+            height={20}
+          >
+            {' '}
+            <g
+              id="SVGRepo_bgCarrier"
+              stroke-width="0"
+            ></g>{' '}
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>{' '}
+            <g id="SVGRepo_iconCarrier">
+              {' '}
+              <g id="Interface / Download">
+                {' '}
+                <path
+                  id="Vector"
+                  d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
+                  stroke="#c0bfb7"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{' '}
+              </g>{' '}
+            </g>{' '}
+          </svg>
+        </button>
       </div>
-      <table className="border border-[#040513] text-sm sm:text-xl">
-        <thead className="overflow-clip bg-[#040513]">
+      <table className="border border-[#040513] text-xs sm:text-sm md:text-xl">
+        <thead className="bg-[#040513]">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
                 <th
                   onClick={header.column.getToggleSortingHandler()}
-                  className={`table-auto text-left sm:p-4 ${index === 0 ? 'w-[14rem] sm:w-[17rem]' : 'w-auto text-center'}`}
+                  className={`table-auto cursor-pointer p-1 pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? 'w-[14rem] transition-transform duration-150 active:scale-90 sm:w-[17rem]' : index === 1 ? 'w-[15rem] transition-transform duration-150 active:scale-90' : 'w-auto text-center transition-transform duration-150 active:scale-90'}`}
                   key={header.id}
                 >
                   {header.column.columnDef.header}
@@ -113,11 +185,14 @@ function TableEmbalses(props) {
         </thead>
         <tbody className="bg-[#1b0e51]">
           {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
+            <tr
+              key={row.id}
+              className="odd:bg-[#1b0e51] even:bg-[#1f1745]"
+            >
               {row.getVisibleCells().map((cell, index) => (
                 <td
                   key={cell.id}
-                  className={`p-4 ${index === 0 ? 'rounded-l' : ''} ${index === row.getVisibleCells().length - 1 ? 'rounded-r' : ''}`}
+                  className="p-1 py-2 sm:p-4"
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
@@ -127,22 +202,22 @@ function TableEmbalses(props) {
         </tbody>
       </table>
 
-      <div className="my-4 flex justify-between">
+      <div className="flex justify-between rounded-b-xl bg-[#040513] p-2">
         <div>
-          <p className="w-6 rounded-sm bg-slate-600 text-center">
+          <p className="mt-1 w-6 rounded-sm text-center">
             {table.getState().pagination.pageIndex + 1}
           </p>
         </div>
         <div className="flex gap-4">
           <button
             onClick={() => table.firstPage()}
-            className="w-7 rounded-sm bg-slate-600"
+            className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
           >
             1
           </button>
           <button
             onClick={() => table.previousPage()}
-            className="flex w-7 items-center justify-center rounded-sm bg-slate-600"
+            className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
           >
             <svg
               viewBox="0 0 24 24"
@@ -173,7 +248,7 @@ function TableEmbalses(props) {
           </button>
           <button
             onClick={() => table.nextPage()}
-            className="flex w-7 items-center justify-center rounded-sm bg-slate-600"
+            className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
           >
             <svg
               viewBox="0 0 24 24"
@@ -204,7 +279,7 @@ function TableEmbalses(props) {
           </button>
           <button
             onClick={() => table.lastPage()}
-            className="w-7 rounded-sm bg-slate-600"
+            className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
           >
             {table.getPageCount() - 1}
           </button>

@@ -11,7 +11,8 @@ import {
 import { mkConfig, generateCsv, download } from 'export-to-csv'
 
 function TableEmbalses(props) {
-  const resdata = props.dataFetched[0].nombre_cuenca
+  const resdata = props.link
+  console.log(props.dataFetched)
 
   const columns = useMemo(
     () => [

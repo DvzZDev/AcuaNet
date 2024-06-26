@@ -6,13 +6,17 @@ async function TableEmbalsesData(url) {
   const embalse = await FetchEmbalses()
   const cuencaid = url.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
-  const cuencaCrop = decodedCuencaid.replace(/_/g, ' ')
-  const resEmbalse = embalse.filter((elemento) => elemento.nombre_cuenca === cuencaCrop)
+  const resEmbalse = embalse.filter(
+    (elemento) => (elemento.nombre_cuenca = decodedCuencaid)
+  )
 
   return (
-    <section className="mt-20 mb-10 md:mt-0">
+    <section className="mb-10 mt-20 md:mt-0">
       <div>
-        <TableEmbalses dataFetched={resEmbalse} />
+        <TableEmbalses
+          dataFetched={resEmbalse}
+          link={decodedCuencaid}
+        />
       </div>
     </section>
   )

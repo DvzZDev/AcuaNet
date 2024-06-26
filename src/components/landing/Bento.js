@@ -37,7 +37,7 @@ async function Bento() {
     >
       {/* Div Global */}
 
-      <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[50rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
+      <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[50remw] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
 
         <div className="z-10 col-span-4 row-span-1 flex items-center justify-center text-wrap rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4">

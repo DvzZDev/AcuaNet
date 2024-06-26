@@ -51,16 +51,16 @@ export default function Navbar() {
           <nav className="hidden text-textprimary md:flex">
             {/* Enlaces */}
             <Link href="/cuencas">
-              <h2 className="mx-4 transition-all hover:scale-110">Cuencas</h2>
+              <h2 className="hover: glow mx-4 transition-all">Cuencas</h2>
             </Link>
             <Link href="/embalses">
-              <h2 className="mx-4 transition-all hover:scale-110">Embalses</h2>
+              <h2 className="hover: glow mx-4 transition-all">Embalses</h2>
             </Link>
             <Link href="/pluviometros">
-              <h2 className="mx-4 transition-all hover:scale-110">Pluviometros</h2>
+              <h2 className="hover: glow mx-4 transition-all">Pluviometros</h2>
             </Link>
             <Link href="/">
-              <h2 className="mx-4 transition-all hover:scale-110">Quienes Somos</h2>
+              <h2 className="hover: glow mx-4 transition-all">Quienes Somos</h2>
             </Link>
 
             {/* Formulario de búsqueda */}

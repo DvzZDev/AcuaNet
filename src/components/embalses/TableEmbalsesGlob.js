@@ -77,7 +77,7 @@ function TableData(props) {
 
   return (
     <div className="mx-5">
-      <div className="mt-5 sm:mt-8 flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4">
+      <div className="mt-5 flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4 sm:mt-8">
         <div
           className={`${show ? 'w-[10rem] border-white' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
         >
@@ -197,7 +197,7 @@ function TableData(props) {
         </tbody>
       </table>
 
-      <div className="flex mb-5 sm:mb-10 justify-between rounded-b-xl bg-[#040513] p-2">
+      <div className="mb-5 flex justify-between rounded-b-xl bg-[#040513] p-2 sm:mb-10">
         <div>
           <p className="mt-1 w-6 rounded-sm text-center">
             {table.getState().pagination.pageIndex + 1}

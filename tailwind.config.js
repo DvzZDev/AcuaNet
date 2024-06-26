@@ -15,10 +15,11 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        telma: ['Telma-Light'],
-        telmaBold: ['Telma-Bold'],
-        telmaMedium: ['Telma-Medium'],
-        telmaRegular: ['Telma-Regular'],
+        telma: ['TelmaLight'],
+        telmaBold: ['TelmaBold'],
+        telmaMedium: ['TelmaMedium'],
+        telmaRegular: ['TelmaRegular'],
+        telmaBlack: ['TelmaBlack'],
       },
       colors: {
         textprimary: '#e9ead6',

@@ -59,7 +59,7 @@ export default function Navbar() {
             <Link href="/pluviometros">
               <h2 className="hover: glow mx-4 transition-all">Pluviometros</h2>
             </Link>
-            <Link href="/">
+            <Link href="/quienes_somos">
               <h2 className="hover: glow mx-4 transition-all">Quienes Somos</h2>
             </Link>
 
@@ -125,7 +125,7 @@ export default function Navbar() {
             <span className="mx-4 transition-all hover:text-green-300">Pluviometros</span>
           </Link>
           <Link
-            href="/"
+            href="/quienes_somos"
             onClick={closeMenu}
             className="animate-fade-down animate-delay-300"
           >

@@ -9,6 +9,8 @@ const SvgComponent = () => (
       strokeWidth={10}
       markerEnd="url(#a)"
       d="M140.331 226.935q299-444 259 259 279-353 259 259"
+      width={300}
+      height={300}
     />
     <defs>
       <marker

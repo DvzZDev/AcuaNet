@@ -33,25 +33,25 @@ async function Bento() {
   return (
     <section
       id="bento"
-      className="flex h-full content-center items-center justify-center lg:h-[100svh]"
+      className="flex h-full content-center items-center justify-center lg:h-svh"
     >
       {/* Div Global */}
 
-      <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[50remw] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
+      <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
 
         <div className="z-10 col-span-4 row-span-1 flex items-center justify-center text-wrap rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4">
           {esp.map((españa) => (
             <div
               key={españa.id}
-              className="content-center justify-center rounded-lg text-center animate-once animate-ease-in-out"
+              className="flex h-full w-full flex-col content-center justify-evenly rounded-lg text-center"
             >
               <h2 className="text-6xl text-[#7387f9]">Reserva</h2>
               <span
-                className={`inline-block font-telmaBlack text-[9rem] ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
+                className={`inline-block font-telma font-bold text-[9rem] leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
               >
                 {`${españa.porcentaje_embalsado}`}
-                <strong className="font-telmaBlack text-[5rem]">%</strong>
+                <strong className="text-[3rem]">%</strong>
               </span>
               <h2 className="text-6xl text-[#7387f9]">Nacional</h2>
             </div>
@@ -87,8 +87,8 @@ async function Bento() {
           <h1 className="p-2 text-center text-2xl font-normal text-[#7387f9]">
             Pluviometros últimas horas (l/m2)
           </h1>
-          <div className="flex flex-col content-center justify-center px-2 text-[15px] lg:text-[16px] ">
-            <table className="text-textprimary ">
+          <div className="flex flex-col content-center justify-center px-2 text-[15px] lg:text-[16px]">
+            <table className="text-textprimary">
               <thead className="text-left text-[#47ff63ab]">
                 <tr>
                   <th className="px-1">Pluviometro</th>

@@ -59,7 +59,7 @@ export default function Navbar() {
             <Link href="/pluviometros">
               <h2 className="hover: glow mx-4 transition-all">Pluviometros</h2>
             </Link>
-            <Link href="/quienes_somos">
+            <Link href="/quienesSomos">
               <h2 className="hover: glow mx-4 transition-all">Quienes Somos</h2>
             </Link>
 

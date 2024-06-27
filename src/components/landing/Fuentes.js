@@ -53,13 +53,13 @@ function Fuentes() {
           <Image
             src="/Logo.svg"
             alt="Fuentes"
-            width={120}
-            height={150}
+            width={70}
+            height={70}
           />
         </div>
-        <h1 className="pt-1 font-telma text-[70px] text-[#ffd700]">AcuaEs</h1>
+        <h1 className="pt-1 font-telma text-[80px] text-[#ffd700]">AcuaEs</h1>
 
-        <div className="mt-2 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-10 text-2xl text-textprimary ">
+        <div className="mt-2 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-10 text-2xl text-textprimary">
           <h1>Datos de fuentes</h1>{' '}
           <strong className="ml-2 content-center text-[#ffd700]">Oficiales</strong>
         </div>
@@ -75,7 +75,6 @@ function Fuentes() {
           arrows={false}
           ssr={true}
           customDot={<CustomDot />}
-          ç
         >
           <div className="flex justify-center">
             <CardFuentes

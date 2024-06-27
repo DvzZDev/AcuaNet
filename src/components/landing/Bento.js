@@ -48,7 +48,7 @@ async function Bento() {
             >
               <h2 className="text-6xl text-[#7387f9]">Reserva</h2>
               <span
-                className={`inline-block font-telma font-bold text-[9rem] leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
+                className={`inline-block font-telma text-[9rem] font-bold leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
               >
                 {`${españa.porcentaje_embalsado}`}
                 <strong className="text-[3rem]">%</strong>
@@ -68,7 +68,7 @@ async function Bento() {
               <>
                 <Link href={`/cuencas/${cuenca.cuenca}`}>
                   <div
-                    className={`nwhitespace-normal flex h-full flex-col content-center items-center justify-center rounded-md bg-opacity-70 p-1 text-sm transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
+                    className={`nwhitespace-normal flex h-full flex-col content-center items-center justify-center rounded-md bg-opacity-70 p-1 text-[14px] transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
                     key={cuenca.id_cuenca}
                   >
                     <div className="flex flex-col content-center items-center justify-center">

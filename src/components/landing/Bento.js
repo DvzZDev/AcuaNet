@@ -40,7 +40,7 @@ async function Bento() {
       <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
 
-        <div className="z-10 col-span-4 row-span-1 flex items-center justify-center text-wrap rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4">
+        <div className="col-span-4 row-span-1 flex items-center justify-center text-wrap rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4">
           {esp.map((españa) => (
             <div
               key={españa.id}
@@ -61,14 +61,14 @@ async function Bento() {
 
         <div
           id="bd2"
-          className="0 col-span-6 row-span-1 min-h-full min-w-full content-center justify-center rounded-lg bg-blue-950 bg-opacity-70 p-2 backdrop-blur-sm"
+          className="0 col-span-6 row-span-1 min-h-full min-w-full content-center justify-center rounded-lg bg-[#0a0d30] bg-opacity-90 p-2 backdrop-blur-sm"
         >
           <div className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4">
             {cuencas.map((cuenca) => (
               <>
                 <Link href={`/cuencas/${cuenca.cuenca}`}>
                   <div
-                    className={`nwhitespace-normal flex h-full flex-col content-center items-center justify-center rounded-md bg-opacity-70 p-1 text-[14px] transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
+                    className={`nwhitespace-normal flex h-full flex-col content-center items-center justify-center rounded-md bg-opacity-90 p-1 text-[14px] transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
                     key={cuenca.id_cuenca}
                   >
                     <div className="flex flex-col content-center items-center justify-center">
@@ -83,7 +83,7 @@ async function Bento() {
         </div>
         {/* Tercera Col */}
 
-        <div className="col-span-6 rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm">
+        <div className="col-span-6 rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm">
           <h1 className="p-2 text-center text-2xl font-normal text-[#7387f9]">
             Pluviometros últimas horas (l/m2)
           </h1>
@@ -119,7 +119,7 @@ async function Bento() {
         </div>
 
         {/* Cuarta Coluna */}
-        <div className="col-span-4 rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm">
+        <div className="col-span-4 rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm">
           <h1 className="p-2 text-center text-2xl font-normal text-[#7387f9]">
             Mayor Variacion Semanal
           </h1>

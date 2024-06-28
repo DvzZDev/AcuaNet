@@ -1,19 +1,23 @@
 import '@fontsource-variable/onest'
-import Arrow from './Arrow'
 import Type from './Type'
-function Intro() {
+import { FetchEmbalses } from '@/lib/data'
+import Arrow from './Arrow'
+
+export const revalidate = 60
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
+
+async function Intro() {
+  const datares = await FetchEmbalses()
   return (
-    <>
-      <section
-        id="intromain"
-        className="flex h-svh animate-fade-up flex-col items-center pt-11 animate-once animate-ease-in-out"
-      >
+    <section className="flex h-svh animate-fade-up flex-col items-center animate-once animate-ease-in-out sm:pt-11 md:pt-20">
+      <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           data-name="Capa 1"
           viewBox="96.65 47.91 306.7 404.17"
-          width={300}
-          height={300}
+          width={100}
+          height={100}
         >
           <defs>
             <linearGradient
@@ -44,26 +48,60 @@ function Intro() {
             className="cls-1"
           ></path>
         </svg>
-        <div className="flex flex-col xl:w-[60%]">
-          <strong className="mb-8 text-center font-telma text-[5rem] leading-none text-textsecondary sm:text-[7rem]">
-            AcuaEs
-          </strong>
-          <h1 className="px-6 text-center text-[2rem] text-[#fbffb8] lg:text-[3rem]">
-            Consulta las mediciones hidrograficas de España en un solo
-            <strong className="text-textsecondary"> click</strong>
-          </h1>
-        </div>
+      </div>
+      <div className="flex flex-col xl:w-[60%]">
+        <strong className="mb-8 text-center font-telma text-[5rem] leading-none text-textsecondary sm:text-[7rem]">
+          AcuaEs
+        </strong>
+        <h1 className="lg:text-[4rem h-auto w-[24rem] px-4 text-center text-[40px] text-[#fbffb8] sm:w-full sm:text-[50px]">
+          Consulta las mediciones hidrograficas de España en un solo
+          <span className="text-[50px] font-bold text-textsecondary sm:text-[55px]">
+            {' '}
+            click
+          </span>
+        </h1>
+      </div>
 
-        <form className="md:text-base< z-10 my-14 flex max-h-16 w-[17rem] justify-between rounded-xl border-2 border-solid border-slate-400 p-1 text-sm transition-all focus-within:border-blue-300 sm:w-[20rem] sm:text-base md:w-[25rem]">
-          <Type />
-          <button className="text-slate-400">Buscar</button>
-        </form>
-        <div className="mt-5 h-[1rem] w-[10rem]">
-          <Arrow />
-        </div>
-        <div className="flex h-screen flex-col items-center justify-end"></div>
-      </section>
-    </>
+      <Type data={datares} />
+      <div className="mt-24 w-[13rem]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+        >
+          <path
+            fill="none"
+            stroke="hsl(282, 100%, 75%)"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={10}
+            markerEnd="url(#a)"
+            d="M140.331 226.935q299-444 259 259 279-353 259 259"
+            width={50}
+            height={50}
+          />
+          <defs>
+            <marker
+              id="a"
+              markerHeight={10}
+              markerWidth={10}
+              orient="auto"
+              refX={5}
+              refY={5}
+              viewBox="0 0 10 10"
+            >
+              <path
+                fill="none"
+                stroke="hsl(282, 100%, 75%)"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.667}
+                d="m1.667 7.5 5-2.5-5-2.5"
+              />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </section>
   )
 }
 

@@ -26,7 +26,7 @@ async function Page({ params }) {
         <div>
           <Suspense
             fallback={
-              <div className='animate-spin animate-duration-500 mb-14'>
+              <div className="mb-14 animate-spin animate-duration-500">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"

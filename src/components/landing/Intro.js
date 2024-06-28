@@ -16,8 +16,8 @@ async function Intro() {
           xmlns="http://www.w3.org/2000/svg"
           data-name="Capa 1"
           viewBox="96.65 47.91 306.7 404.17"
-          width={100}
-          height={100}
+          width={60}
+          height={60}
         >
           <defs>
             <linearGradient
@@ -50,12 +50,12 @@ async function Intro() {
         </svg>
       </div>
       <div className="flex flex-col xl:w-[60%]">
-        <strong className="mb-8 text-center font-telma text-[5rem] leading-none text-textsecondary sm:text-[7rem]">
-          AcuaEs
+        <strong className="mb-4 text-center font-telma text-[3rem] leading-none text-textsecondary sm:text-[7rem]">
+          AcuaNet
         </strong>
-        <h1 className="lg:text-[4rem h-auto w-[24rem] px-4 text-center text-[40px] text-[#fbffb8] sm:w-full sm:text-[50px]">
+        <h1 className="h-auto px-4 text-center text-[30px] w-80 text-[#fbffb8] sm:w-full sm:text-[50px] lg:text-[4rem]">
           Consulta las mediciones hidrograficas de España en un solo
-          <span className="text-[50px] font-bold text-textsecondary sm:text-[55px]">
+          <span className="text-[30px] font-bold text-textsecondary sm:text-[55px]">
             {' '}
             click
           </span>

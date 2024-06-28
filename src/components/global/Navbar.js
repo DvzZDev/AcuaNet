@@ -19,7 +19,7 @@ export default function Navbar({ data }) {
       >
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
+          {/* <Link href="/">
             <Image
               src="/Logo.svg"
               alt="logo"
@@ -27,7 +27,7 @@ export default function Navbar({ data }) {
               height={45}
               onClick={closeMenu}
             />
-          </Link>
+          </Link> */}
 
           {/* Icono de menú */}
           <Image

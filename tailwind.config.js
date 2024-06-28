@@ -14,6 +14,9 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      animationDelay: {
+        400: '400ms',
+      },
       fontFamily: {
         telma: ['TelmaLight'],
         telmaBold: ['TelmaBold'],

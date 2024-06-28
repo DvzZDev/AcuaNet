@@ -2,6 +2,7 @@ import './globals.css'
 import Navbar from '@/components/global/Navbar'
 import Footer from '@/components/global/Footer'
 import { ViewTransitions } from 'next-view-transitions'
+import NavBarData from '@/components/global/NavBarData'
 
 export const metadata = {
   title: 'AcuaEs',
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
       <html lang="es">
         <body>
           <header className="h-[3.6rem]">
-            <Navbar />
+            <NavBarData />
           </header>
           {children}
           <Footer />

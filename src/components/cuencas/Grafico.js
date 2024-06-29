@@ -28,16 +28,16 @@ const EmbalseGrafico = ({ porcentaje }) => {
     maintainAspectRatio: true, // Cambiado a false para permitir ajustar la altura y anchura
     plugins: {
       datalabels: {
-        color: '#fff',
-        anchor: 'end',
+        color: '#e9ead6',
+        anchor: 'center',
         align: 'start',
         offset: -10,
         font: {
           weight: 'bold',
-          size: 16,
+          size: 20,
         },
         formatter: function (value) {
-          return value.toFixed(2) + '%'
+          return value.toFixed(0)
         },
       },
     },
@@ -45,8 +45,9 @@ const EmbalseGrafico = ({ porcentaje }) => {
 
   return (
     <div className="relative my-3 flex h-[14rem] w-[14rem] items-center justify-center rounded-lg bg-slate-700 sm:my-0 sm:h-full sm:w-full">
-      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-xl font-black text-transparent sm:text-sm lg:text-xl">
-        {`${porcentaje.toFixed(2)} %`}
+      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-5xl font-black text-transparent sm:text-2xl lg:text-5xl">
+        {`${porcentaje.toFixed(0)}`}
+        <span className="text-lg">%</span>
       </span>
 
       <div className="flex h-[12rem] w-[12rem] items-center justify-center sm:h-[7.8rem] sm:w-[7.8rem] lg:h-[12rem] lg:w-[12rem]">

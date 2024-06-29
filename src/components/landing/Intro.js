@@ -10,14 +10,13 @@ export const fetchCache = 'force-no-store'
 async function Intro() {
   const datares = await FetchEmbalses()
   return (
-    <section className="flex h-svh animate-fade-up flex-col items-center animate-once animate-ease-in-out sm:pt-11 md:pt-20">
-      <div>
+    <section className="flex h-full animate-fade-up flex-col items-center animate-once animate-ease-in-out">
+      <div className="mb-6 mt-10 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           data-name="Capa 1"
           viewBox="96.65 47.91 306.7 404.17"
-          width={60}
-          height={60}
+          style={{ width: '100%', height: 'auto' }}
         >
           <defs>
             <linearGradient
@@ -50,12 +49,13 @@ async function Intro() {
         </svg>
       </div>
       <div className="flex flex-col xl:w-[60%]">
-        <strong className="mb-4 text-center font-telma text-[3rem] leading-none text-textsecondary sm:text-[7rem]">
+        <strong className="mb-4 w-full text-center font-telma text-[55px] leading-none text-textsecondary sm:text-[5rem]">
           AcuaNet
         </strong>
-        <h1 className="h-auto px-4 text-center text-[30px] w-80 text-[#fbffb8] sm:w-full sm:text-[50px] lg:text-[4rem]">
+
+        <h1 className="h-auto max-w-80 px-4 text-center text-[30px] text-[#fbffb8] sm:max-w-full sm:text-[40px] lg:text-[3rem]">
           Consulta las mediciones hidrograficas de España en un solo
-          <span className="text-[30px] font-bold text-textsecondary sm:text-[55px]">
+          <span className="text-[30px] font-bold text-textsecondary sm:text-[40px] lg:text-[3rem]">
             {' '}
             click
           </span>
@@ -63,7 +63,7 @@ async function Intro() {
       </div>
 
       <Type data={datares} />
-      <div className="mt-24 w-[13rem]">
+      <div className="mt-24 w-[8rem] sm:w-[13rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 800 800"

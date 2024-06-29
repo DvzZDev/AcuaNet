@@ -33,7 +33,7 @@ async function Bento() {
   return (
     <section
       id="bento"
-      className="flex h-full content-center items-center justify-center lg:h-svh"
+      className="flex min-h-full items-center justify-center lg:h-svh"
     >
       {/* Div Global */}
 

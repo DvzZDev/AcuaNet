@@ -1,7 +1,7 @@
 async function bento() {
   return (
-    <section className="flex h-full items-center justify-center bg-[#070922]">
-      <div className="m-10 grid min-h-[45rem] w-[70%] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
+    <section className="flex h-full justify-center bg-[#070922]">
+      <div className="m-10 mt-2 grid min-h-[40rem] w-[60rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
         {Array.from({ length: 16 }).map((_, index) => (
           <div
             className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.4rem] transition-all hover:scale-110`}

@@ -198,7 +198,7 @@ function TableData(props) {
                     </Link>
                   ) : index === 1 ? (
                     <Link
-                      href={`/cuencas/${encodeURIComponent(cell.getValue('nombre_cuenca'))}`}
+                      href={`/cuencas/${cell.getValue('nombre_cuenca').replace(/ /g, '_')}`}
                     >
                       {cell.getValue('nombre_cuenca')}
                     </Link>

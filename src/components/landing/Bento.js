@@ -68,12 +68,14 @@ async function Bento() {
               <>
                 <Link href={`/cuencas/${cuenca.cuenca}`}>
                   <div
-                    className={`nwhitespace-normal flex h-full flex-col content-center items-center justify-center rounded-md bg-opacity-90 p-1 text-[14px] transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
+                    className={`nwhitespace-normal flex h-full flex-col content-center items-center justify-center rounded-md bg-opacity-90 p-1 transition-all hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
                     key={cuenca.id_cuenca}
                   >
                     <div className="flex flex-col content-center items-center justify-center">
-                      <p>{cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}</p>
-                      <p>{`${cuenca.porcentaje_embalsada} %`} </p>
+                      <p className="text-[14px]">
+                        {cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}
+                      </p>
+                      <p className="text-[14px]">{`${cuenca.porcentaje_embalsada} %`} </p>
                     </div>
                   </div>
                 </Link>

@@ -6,7 +6,11 @@ async function BentoDist(url) {
   const cuenca = await FetchCuencas()
   const cuencaid = url.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
-  const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaid)
+  const decodedCuencaidNM = decodedCuencaid.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  const resCuenca = cuenca.find(
+    (cuenca) =>
+      cuenca.cuenca === decodedCuencaidNM
+  )
 
   return (
     <div className="mx-4 flex min-h-full w-full flex-col gap-4 transition-all sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">

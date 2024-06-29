@@ -12,7 +12,7 @@ async function BentoDist(url) {
     <div className="mx-4 flex min-h-full w-full flex-col gap-4 transition-all sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
       {/* Primera Columna */}
 
-      <div className="flex justify-center rounded-lg hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
+      <div className="order-1 flex justify-center rounded-lg hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Agua</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -26,7 +26,7 @@ async function BentoDist(url) {
       </div>
       {/* Segunda Columna */}
 
-      <div className="flex justify-center hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
+      <div className="order-2 flex justify-center hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Capacidad</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -38,9 +38,14 @@ async function BentoDist(url) {
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Total</h1>
         </article>
       </div>
-      {/* Tercera Columna */}
+      {/* Quinta Columna (movida a la tercera posición) */}
 
-      <div className="flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
+      <div className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg transition-all hover:scale-105 sm:order-6">
+        <EmbalseGrafico porcentaje={resCuenca.porcentaje_embalsada} />
+      </div>
+      {/* Tercera Columna (movida a la cuarta posición) */}
+
+      <div className="order-4 flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -54,8 +59,8 @@ async function BentoDist(url) {
           </h1>
         </article>
       </div>
-      {/* Cuarta Columna */}
-      <div className="flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
+      {/* Cuarta Columna (movida a la quinta posición) */}
+      <div className="order-5 flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -69,25 +74,21 @@ async function BentoDist(url) {
           </h1>
         </article>
       </div>
-      {/* Quinta Columna */}
-
-      <div className="col-span-2 row-span-3 flex justify-center rounded-lg transition-all hover:scale-105">
-        <EmbalseGrafico porcentaje={resCuenca.porcentaje_embalsada} />
-      </div>
       {/* Sexta Columna */}
-      <div className="relative col-span-4 row-span-4 flex justify-center transition-all hover:scale-105">
+      <div className="relative order-6 col-span-4 row-span-4 flex justify-center transition-all hover:scale-105">
         <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-hidden rounded-lg bg-slate-700 transition-all hover:scale-125 sm:h-full sm:w-full">
           <Image
             src={resCuenca.foto}
             alt={`Foto sobre la cuenca hidrográfica del ${cuenca}`}
             layout="fill"
+            priority
           />
         </div>
       </div>
       {/* Septima Columna */}
       <div
         id="embalses-div"
-        className="flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3"
+        className="order-7 flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalses</h1>

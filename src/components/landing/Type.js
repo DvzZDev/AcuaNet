@@ -55,7 +55,7 @@ function Type({ data }) {
           loop
         >
           <input
-            className="w-[210px] text-textprimary bg-transparent text-[18px] placeholder-slate-400 placeholder-opacity-40 focus:outline-none sm:w-[250px] md:w-[330px]"
+            className="w-[210px] bg-transparent text-[18px] text-textprimary placeholder-slate-400 placeholder-opacity-40 focus:outline-none sm:w-[250px] md:w-[330px]"
             type="text"
             onChange={typeHandler}
             value={type}

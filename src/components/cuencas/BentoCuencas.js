@@ -22,8 +22,8 @@ async function bento() {
 
   const cuencas = await FetchCuencas()
   return (
-    <section className="flex h-full items-center justify-center bg-[#070922]">
-      <div className="m-10 grid min-h-[45rem] w-[70%] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
+    <section className="flex h-full justify-center bg-[#070922]">
+      <div className="m-10 mt-2 grid min-h-[40rem] w-[60rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
         {cuencas.map((cuenca) => (
           <>
             <Link href={`/cuencas/${cuenca.cuenca}`}>

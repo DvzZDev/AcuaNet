@@ -1,5 +1,6 @@
 'use client'
 import { useState, useMemo, useRef } from 'react'
+import { Link } from 'next-view-transitions'
 import {
   useReactTable,
   getCoreRowModel,
@@ -33,6 +34,7 @@ function TableEmbalses(props) {
     ],
     []
   )
+  console.log(columns[0].accessorKey)
   const [data, setData] = useState(props.dataFetched)
 
   const [sorting, setSorting] = useState([])
@@ -193,7 +195,15 @@ function TableEmbalses(props) {
                   key={cell.id}
                   className="p-1 py-2 sm:p-4"
                 >
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  {index === 0 ? (
+                    <Link
+                      href={`/embalses/${encodeURIComponent(cell.getValue('nombreEmbalse'))}`}
+                    >
+                      {cell.getValue('nombreEmbalse')}
+                    </Link>
+                  ) : (
+                    cell.getValue('nombreEmbalse')
+                  )}
                 </td>
               ))}
             </tr>

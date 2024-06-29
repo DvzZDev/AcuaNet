@@ -9,6 +9,7 @@ import {
   getFilteredRowModel,
 } from '@tanstack/react-table'
 import { mkConfig, generateCsv, download } from 'export-to-csv'
+import { Link } from 'next-view-transitions'
 
 function TableData(props) {
   const resdata = props.props
@@ -189,7 +190,21 @@ function TableData(props) {
                   key={cell.id}
                   className="py-2 sm:p-4"
                 >
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  {index === 0 ? (
+                    <Link
+                      href={`/embalses/${encodeURIComponent(cell.getValue('nombreEmbalse'))}`}
+                    >
+                      {cell.getValue('nombreEmbalse')}
+                    </Link>
+                  ) : index === 1 ? (
+                    <Link
+                      href={`/cuencas/${encodeURIComponent(cell.getValue('nombre_cuenca'))}`}
+                    >
+                      {cell.getValue('nombre_cuenca')}
+                    </Link>
+                  ) : (
+                    cell.getValue(index === 0 ? 'nombreEmbalse' : 'nombre_cuenca')
+                  )}
                 </td>
               ))}
             </tr>

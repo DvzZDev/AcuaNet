@@ -45,7 +45,7 @@ function Type({ data }) {
             errHandler()
           }
         }}
-        className="z-10 mt-8 flex max-h-16 w-[17rem] justify-between rounded-xl border-2 border-solid border-slate-400 p-1 text-sm transition-all focus-within:border-blue-300 sm:w-[20rem] sm:text-base md:w-[25rem] md:text-base"
+        className="z-10 mt-8 flex max-h-16 w-[17rem] justify-between rounded-xl border-2 border-solid border-slate-400 p-1 text-sm transition-all focus-within:border-slate-300 sm:w-[20rem] sm:text-base md:w-[25rem] md:text-base"
       >
         <ReactTyped
           strings={['Orellana', 'Tajo', 'Ebro', 'San Juan', 'Guadalquivir', 'etc...']}
@@ -55,7 +55,7 @@ function Type({ data }) {
           loop
         >
           <input
-            className="w-[210px] text-[18dapx] bg-transparent placeholder-slate-400 placeholder-opacity-40 focus:outline-none sm:w-[250px] md:w-[330px]"
+            className="w-[210px] text-textprimary bg-transparent text-[18px] placeholder-slate-400 placeholder-opacity-40 focus:outline-none sm:w-[250px] md:w-[330px]"
             type="text"
             onChange={typeHandler}
             value={type}
@@ -78,7 +78,7 @@ function Type({ data }) {
               <li
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion.nombre_embalse)}
-                className="transition-all px-2 py-1 cursor-pointer hover:bg-slate-950 hover:bg-opacity-25"
+                className="cursor-pointer px-2 py-1 transition-all hover:bg-slate-950 hover:bg-opacity-25"
               >
                 {suggestion.nombre_embalse}
               </li>

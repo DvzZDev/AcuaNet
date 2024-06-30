@@ -51,8 +51,8 @@ table {
 }
 
 #bento {
-  /* background-image: url(/bentobg.svg),
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(7, 9, 34, 1) 100%); */
+  background-image: url(/bentobg.svg),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(7, 9, 34, 1) 100%);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

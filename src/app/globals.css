@@ -5,12 +5,13 @@
 body {
   background-color: black;
   color: white;
-  background-image: url(/image.svg);
-  background-repeat: no-repeat;
+  /* background-image: url(/image.svg); */
+  /* background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  background-position: top center;
+  background-position: top center; */
+  background-color: black;
   font-family: 'Onest Variable', sans-serif;
 }
 
@@ -21,12 +22,12 @@ p {
   font-family: 'Onest Variable', sans-serif;
 }
 
-.animate-gradient {
+/* .animate-gradient {
   background-size: 300%;
   -webkit-animation: animatedgradient 6s ease infinite alternate;
   -moz-animation: animatedgradient 6s ease infinite alternate;
   animation: animatedgradient 6s ease infinite alternate;
-}
+} */
 
 @keyframes animatedgradient {
   0% {
@@ -50,8 +51,8 @@ table {
 }
 
 #bento {
-  background-image: url(/bentobg.svg),
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(7, 9, 34, 1) 100%);
+  /* background-image: url(/bentobg.svg),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(7, 9, 34, 1) 100%); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -14,9 +14,7 @@ body {
   font-family: 'Onest Variable', sans-serif;
   scroll-behavior: smooth;
 }
-@media (max-width: 600px) {
-  background-size: 100rem;
-}
+
 
 body {
   font-family: 'Onest Variable', sans-serif;

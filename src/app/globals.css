@@ -5,7 +5,7 @@
 body {
   background-color: black;
   color: white;
-  background-image: url(/bbblurry.svg);
+  /* background-image: url(/bbblurry.svg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

@@ -16,8 +16,7 @@ const EmbalseGrafico = ({ porcentaje }) => {
     datasets: [
       {
         data: [porcentaje, 100 - porcentaje],
-        backgroundColor: ['#09f', '#070922'],
-        hoverBackgroundColor: ['#235b80', '#f18d4e'],
+        backgroundColor: ['#0046FF', '#0E0034'],
         borderWidth: 0,
       },
     ],
@@ -30,7 +29,7 @@ const EmbalseGrafico = ({ porcentaje }) => {
       datalabels: {
         color: '#e9ead6',
         anchor: 'center',
-        align: 'start',
+        align: 'center',
         offset: -10,
         font: {
           weight: 'bold',

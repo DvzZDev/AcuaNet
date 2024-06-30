@@ -5,7 +5,7 @@
 body {
   background-color: black;
   color: white;
-  background-image: url(/image.svg);
+  background-image: url(/bbblurryy.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -51,7 +51,7 @@ table {
 }
 
 #bento {
-  background-image: url(/bentobg.svg),
+  background-image: url(/test.png),
     linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(7, 9, 34, 1) 100%);
   background-position: center;
   background-size: cover;

@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import EmbalseData from '@/components/embalses/EmbalseData'
+import SkeeltonBentoEmbalseDist from '@/components/skeletons/SkeeltonBentoEmbalseDist'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -7,7 +8,7 @@ export const fetchCache = 'force-no-store'
 
 async function page({ params }) {
   return (
-    <Suspense fallback={<p>loading...</p>}>
+    <Suspense fallback={<SkeeltonBentoEmbalseDist />}>
       <EmbalseData url={params} />
     </Suspense>
   )

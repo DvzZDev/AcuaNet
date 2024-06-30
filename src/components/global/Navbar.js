@@ -14,7 +14,7 @@ export default function Navbar({ data }) {
   return (
     <div
       id="header-nav"
-      className={`flex items-center flex-col fixed top-0 w-full px-3 py-2 uppercase backdrop-blur-3xl transition-all duration-500 ${isMenuOpen ? 'z-10 h-screen bg-[#040513]' : 'z-10 h-[5rem]'}`}
+      className={`fixed top-0 flex w-full flex-col items-center px-3 py-2 uppercase backdrop-blur-3xl transition-all duration-500 ${isMenuOpen ? 'z-10 h-screen bg-[#040513]' : 'z-10 h-[5rem]'}`}
     >
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
@@ -49,18 +49,30 @@ export default function Navbar({ data }) {
         />
 
         {/* Navegación */}
-        <nav className="hidden md:flex text-xl text-textprimary">
+        <nav className="hidden text-xl text-textprimary md:flex">
           {/* Enlaces */}
-          <Link href="/cuencas" className="mx-4 transition-all hover:glow">
+          <Link
+            href="/cuencas"
+            className="glow mx-4 transition-all"
+          >
             Cuencas
           </Link>
-          <Link href="/embalses" className="mx-4 transition-all hover:glow">
+          <Link
+            href="/embalses"
+            className="glow mx-4 transition-all"
+          >
             Embalses
           </Link>
-          <Link href="/pluviometros" className="mx-4 transition-all hover:glow">
+          <Link
+            href="/pluviometros"
+            className="glow mx-4 transition-all"
+          >
             Pluviometros
           </Link>
-          <Link href="/quienesSomos" className="mx-4 transition-all hover:glow">
+          <Link
+            href="/quienesSomos"
+            className="glow mx-4 transition-all"
+          >
             Quienes Somos
           </Link>
 
@@ -70,24 +82,45 @@ export default function Navbar({ data }) {
       </div>
 
       {/* Menú móvil */}
-      <nav className={`${isMenuOpen ? 'mt-12 flex flex-col items-center gap-12 text-2xl text-textprimary' : 'hidden'}`}>
+      <nav
+        className={`${isMenuOpen ? 'mt-12 flex flex-col items-center gap-12 text-2xl text-textprimary' : 'hidden'}`}
+      >
         {/* Enlaces */}
-        <Link href="/cuencas" onClick={closeMenu} className="animate-fade-down animate-delay-0 mx-4 transition-all hover:text-green-300">
+        <Link
+          href="/cuencas"
+          onClick={closeMenu}
+          className="mx-4 animate-fade-down transition-all animate-delay-0 hover:text-green-300"
+        >
           Cuencas
         </Link>
-        <Link href="/embalses" onClick={closeMenu} className="animate-fade-down animate-delay-100 mx-4 transition-all hover:text-green-300">
+        <Link
+          href="/embalses"
+          onClick={closeMenu}
+          className="mx-4 animate-fade-down transition-all animate-delay-100 hover:text-green-300"
+        >
           Embalses
         </Link>
-        <Link href="/pluviometros" onClick={closeMenu} className="animate-fade-down animate-delay-200 mx-4 transition-all hover:text-green-300">
+        <Link
+          href="/pluviometros"
+          onClick={closeMenu}
+          className="mx-4 animate-fade-down transition-all animate-delay-200 hover:text-green-300"
+        >
           Pluviometros
         </Link>
-        <Link href="/quienes_somos" onClick={closeMenu} className="animate-fade-down animate-delay-300 mx-4 transition-all hover:text-green-300">
+        <Link
+          href="/quienes_somos"
+          onClick={closeMenu}
+          className="mx-4 animate-fade-down transition-all animate-delay-300 hover:text-green-300"
+        >
           Quienes Somos
         </Link>
 
         {/* Formulario de búsqueda */}
         <div className="animate-fade-down animate-delay-400">
-          <SearchMov closeMenu={closeMenu} data={data} />
+          <SearchMov
+            closeMenu={closeMenu}
+            data={data}
+          />
         </div>
       </nav>
     </div>

@@ -48,7 +48,7 @@ function Type({ data }) {
         className="z-10 mt-8 flex max-h-16 w-[17rem] justify-between rounded-xl border-2 border-solid border-slate-400 p-1 text-sm transition-all focus-within:border-slate-300 sm:w-[20rem] sm:text-base md:w-[25rem] md:text-base"
       >
         <ReactTyped
-          strings={['Orellana', 'Tajo', 'Ebro', 'San Juan', 'Guadalquivir', 'etc...']}
+          strings={['Embalses...', 'Orellana', 'Cijara', 'San Juan', 'Alcantara', 'etc...']}
           typeSpeed={40}
           backSpeed={50}
           attr="placeholder"

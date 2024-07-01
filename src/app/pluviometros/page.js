@@ -1,6 +1,18 @@
+import Intro from '@/components/cuencas/IntroCuencas'
+import Tabledata from '@/components/pluviometros/Tabledata'
+
+export const revalidate = 60
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
+
 function page() {
   return (
-    <div>page</div>
+    <>
+      <Intro title={'Pluviómetros'} />
+      <section className="flex min-h-screen justify-center bg-bgcolor">
+        <Tabledata />
+      </section>
+    </>
   )
 }
 

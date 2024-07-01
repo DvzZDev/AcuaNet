@@ -11,9 +11,10 @@ export const fetchCache = 'force-no-store'
 export default function Home() {
   return (
     <>
-      <Suspense fallback={<p>Loading...</p>}>
+      {/* Acordarse de quitar el suspense aqui y dentro de intro */}
+      
         <Intro />
-      </Suspense>
+      
       <Suspense fallback={<SkeletonBento />}>
         <Bento />
       </Suspense>

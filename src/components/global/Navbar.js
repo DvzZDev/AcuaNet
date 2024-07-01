@@ -14,7 +14,7 @@ export default function Navbar({ data }) {
   return (
     <div
       id="header-nav"
-      className={`fixed top-0 flex w-full flex-col items-center px-3 py-2 uppercase backdrop-blur-3xl transition-all duration-500 ${isMenuOpen ? 'z-10 h-screen bg-[#040513]' : 'z-10 h-[5rem]'}`}
+      className={`fixed top-0 flex w-full flex-col items-center px-3 py-2 uppercase transition-all duration-500 ${isMenuOpen ? 'z-10 h-screen bg-[#040513]' : 'z-10 h-[5rem]'}`}
     >
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}

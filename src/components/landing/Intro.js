@@ -2,6 +2,7 @@ import '@fontsource-variable/onest'
 import Type from './Type'
 import { FetchEmbalses } from '@/lib/data'
 import Arrow from './Arrow'
+import { Suspense } from 'react'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -61,8 +62,9 @@ async function Intro() {
           </span>
         </h1>
       </div>
-
-      <Type data={datares} />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Type data={datares} />
+      </Suspense>
       <div className="mt-24 w-[8rem] sm:w-[13rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"

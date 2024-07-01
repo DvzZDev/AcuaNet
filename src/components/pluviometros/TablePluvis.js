@@ -79,7 +79,6 @@ function TablePluvis(props) {
     const csv = generateCsv(csvConfig)(rowData)
     download(csvConfig)(csv)
   }
-  console.log(props)
 
   return (
     <div className="mx-5">
@@ -163,14 +162,14 @@ function TablePluvis(props) {
           </svg>
         </button>
       </div>
-      <table className="border border-[#040513] text-xs sm:text-sm md:text-xl">
+      <table className="border border-[#040513] text-sm sm:text-sm md:text-xl">
         <thead className="bg-[#040513]">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
                 <th
                   onClick={header.column.getToggleSortingHandler()}
-                  className={`table-auto cursor-pointer pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? 'w-[14rem] transition-transform duration-150 active:scale-90 sm:w-[17rem]' : index === 1 ? 'w-[15rem] transition-transform duration-150 active:scale-90' : 'w-auto text-center transition-transform duration-150 active:scale-90'}`}
+                  className={`table-auto cursor-pointer pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? 'w-[14rem] transition-transform duration-150 active:scale-90 sm:w-[17rem]' : index === 1 ? 'w-[2rem] transition-transform duration-150 active:scale-90' : 'w-auto text-center transition-transform duration-150 active:scale-90'}`}
                   key={header.id}
                 >
                   {header.column.columnDef.header}

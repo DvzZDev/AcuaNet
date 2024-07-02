@@ -112,6 +112,12 @@ table {
   animation-range: 0 250px;
 }
 
+@media screen and (max-width: 763px) {
+  #header-nav {
+    animation: none;
+  }
+}
+
 @keyframes blur {
   to {
     box-shadow:

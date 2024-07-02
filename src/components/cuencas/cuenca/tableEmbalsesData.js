@@ -7,7 +7,7 @@ async function TableEmbalsesData(url) {
   const cuencaid = url.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
   const resEmbalse = embalse.filter(
-    (elemento) => (elemento.nombre_cuenca = decodedCuencaid)
+    (elemento) => elemento.nombre_cuenca === decodedCuencaid
   )
 
   return (

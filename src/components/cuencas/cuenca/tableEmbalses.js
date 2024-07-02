@@ -34,9 +34,7 @@ function TableEmbalses(props) {
     ],
     []
   )
-  console.log(columns[0].accessorKey)
   const [data, setData] = useState(props.dataFetched)
-
   const [sorting, setSorting] = useState([])
   const [filtered, setFiltered] = useState('')
 

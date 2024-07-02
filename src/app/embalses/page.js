@@ -9,7 +9,7 @@ export const fetchCache = 'force-no-store'
 
 function page() {
   return (
-    <section className="mt-10">
+    <section className="mt-5">
       <Intro title={'Embalses'} />
       <section className="bg-bgcolor">
         <Suspense fallback={<SkeletonTableEmbalse />}>

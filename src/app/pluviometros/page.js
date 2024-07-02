@@ -9,7 +9,7 @@ function page() {
   return (
     <>
       <Intro title={'Pluviómetros'} />
-      <section className="flex min-h-screen justify-center bg-bgcolor">
+      <section className="flex justify-center bg-bgcolor">
         <Tabledata />
       </section>
     </>

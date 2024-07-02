@@ -70,7 +70,7 @@ function TablePluvis(props) {
   }
   const csvConfig = mkConfig({
     fieldSeparator: ',',
-    filename: resdata,
+    filename: 'Puviometros',
     decimalSeparator: '.',
     useKeysAsHeaders: true,
   })
@@ -162,7 +162,7 @@ function TablePluvis(props) {
           </svg>
         </button>
       </div>
-      <table className="border border-[#040513] text-sm sm:text-sm md:text-xl">
+      <table className="border border-[#040513] text-sm sm:text-xl md:text-xl">
         <thead className="bg-[#040513]">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>

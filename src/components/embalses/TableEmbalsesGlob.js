@@ -158,7 +158,7 @@ function TableData(props) {
           </svg>
         </button>
       </div>
-      <table className="border border-[#040513] text-sm sm:text-xl ">
+      <table className="border border-[#040513] text-xs sm:text-xl ">
         <thead className="bg-[#040513]">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>

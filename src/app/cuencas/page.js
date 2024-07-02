@@ -9,12 +9,12 @@ export const fetchCache = 'force-no-store'
 
 function page() {
   return (
-    <>
+    <section className='mt-10'>
       <Intro title={'Cuencas Hidrográficas'} />
       <Suspense fallback={<SkeletonCuencas />}>
         <Bento />
       </Suspense>
-    </>
+    </section>
   )
 }
 

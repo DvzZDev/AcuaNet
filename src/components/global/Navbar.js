@@ -118,7 +118,7 @@ export default function Navbar({ data }) {
 
         {/* Menú móvil */}
         <nav
-          className={`${isMenuOpen ? 'mt-12 flex flex-col items-center gap-12 text-2xl text-textprimary' : 'hidden'}`}
+          className={`${isMenuOpen ? 'flex flex-col items-center gap-12 text-2xl text-textprimary' : 'hidden'}`}
         >
           <Link
             href="/cuencas"

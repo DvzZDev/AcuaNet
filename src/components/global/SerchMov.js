@@ -2,11 +2,12 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
-function SearchMov({ data, closeMenu }) {
+function SearchMov({ data }) {
   const router = useRouter()
   const [type, setType] = useState('')
   const [suggestions, setSuggestions] = useState([])
   const [err, setErr] = useState(false)
+  const [fine, setFine] = useState(false)
 
   const errHandler = () => {
     setErr(true)
@@ -30,7 +31,8 @@ function SearchMov({ data, closeMenu }) {
     setType(nombreEmbalse)
     setSuggestions([])
     router.push(`/embalses/${nombreEmbalse.toLowerCase()}`)
-    closeMenu()
+    setFine(true)
+    setType('')
   }
 
   const handleSubmit = (e) => {
@@ -40,16 +42,18 @@ function SearchMov({ data, closeMenu }) {
     )
     if (selectedEmbalse) {
       router.push(`/embalses/${type.toLowerCase()}`)
-      closeMenu()
+      setFine(true)
+      setType('')
     } else {
       errHandler()
+      setFine(false)
     }
   }
 
   return (
-    <div className="z-20">
+    <div>
       <form
-        className="relative w-[16rem]"
+        className="relative ml-3"
         onSubmit={handleSubmit}
       >
         <input
@@ -61,18 +65,19 @@ function SearchMov({ data, closeMenu }) {
             setErr(false)
             typeHandler(e)
           }}
-          className={`mx-4 w-[15rem] rounded-md bg-slate-900 bg-opacity-70 p-1 pr-10 outline-none transition-all placeholder:text-textprimary placeholder:opacity-60 focus:bg-slate-900 focus:bg-opacity-100 focus:outline-none focus:ring-2 ${err ? 'placeholder:text-red-500 focus:ring-red-500' : 'focus:ring-blue-300 focus:ring-opacity-50'}`}
+          className={`text-textprim h-8 w-[16rem] rounded-sm border-b bg-transparent bg-opacity-70 pl-7 pr-10 outline-none transition-all placeholder:opacity-60 focus:bg-slate-900 focus:bg-opacity-30 focus:outline-none ${err ? 'border-red-500 placeholder:text-red-500' : ''} ${fine ? 'border-green-500 placeholder:text-green-500' : ''}`}
         />
         <button
           type="submit"
-          className="absolute right-0 top-0 h-full rounded-md bg-transparent bg-opacity-70 px-2"
+          className="absolute left-0 top-0 h-full rounded-md bg-transparent bg-opacity-70 px-1"
         >
           <svg
-            fill="#c0bfb7"
+            fill={err ? '#EF4444' : fine ? '#10B981' : '#6B7280'}
             enable-background="new 0 0 32 32"
             height={17}
             width={20}
             viewBox="4 4 24 24"
+            className="transition-all"
           >
             <g
               id="SVGRepo_bgCarrier"
@@ -93,9 +98,9 @@ function SearchMov({ data, closeMenu }) {
         </button>
       </form>
 
-      <div className="">
+      <div className="absolute ml-3 text-sm">
         {suggestions.length > 0 && (
-          <ul className="left-0 mx-4 mt-5 flex w-[15rem] animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] p-4 text-[1rem] text-textprimary animate-delay-0 animate-duration-300 animate-ease-in-out">
+          <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] p-4 text-textprimary animate-duration-300 animate-ease-in-out">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <li
                 key={index}

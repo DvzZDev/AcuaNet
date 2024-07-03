@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
-function SearchMov({ data }) {
+function SearchMov({ data, closeMenu }) {
   const router = useRouter()
   const [type, setType] = useState('')
   const [suggestions, setSuggestions] = useState([])
@@ -33,6 +33,7 @@ function SearchMov({ data }) {
     router.push(`/embalses/${nombreEmbalse.toLowerCase()}`)
     setFine(true)
     setType('')
+    closeMenu()
   }
 
   const handleSubmit = (e) => {
@@ -44,6 +45,7 @@ function SearchMov({ data }) {
       router.push(`/embalses/${type.toLowerCase()}`)
       setFine(true)
       setType('')
+      closeMenu()
     } else {
       errHandler()
       setFine(false)
@@ -100,7 +102,7 @@ function SearchMov({ data }) {
 
       <div className="absolute ml-3 text-sm">
         {suggestions.length > 0 && (
-          <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] p-4 text-textprimary animate-duration-300 animate-ease-in-out">
+          <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] p-4 text-textprimary animate-delay-0 animate-duration-300 animate-ease-in-out">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <li
                 key={index}

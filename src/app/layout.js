@@ -3,6 +3,7 @@ import Navbar from '@/components/global/Navbar'
 import Footer from '@/components/global/Footer'
 import { ViewTransitions } from 'next-view-transitions'
 import NavBarData from '@/components/global/NavBarData'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: 'AcuaEs',
@@ -14,9 +15,11 @@ export default function RootLayout({ children }) {
     <ViewTransitions>
       <html lang="es">
         <body>
-          <header className="h-[3.6rem]">
-            <NavBarData />
-          </header>
+          <Suspense>
+            <header className="h-[3.6rem]">
+              <NavBarData />
+            </header>
+          </Suspense>
           {children}
           <Footer />
         </body>

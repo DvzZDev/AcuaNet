@@ -142,7 +142,7 @@ export default function Navbar({ data }) {
             Pluviometros
           </Link>
           <Link
-            href="/quienes_somos"
+            href="/quienesSomos"
             onClick={closeMenu}
             className="animate-fade-down transition-all animate-delay-300 hover:text-green-300"
           >

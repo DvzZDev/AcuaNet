@@ -17,7 +17,7 @@ function CardAb() {
         />
       </div>
       <div className="rounded-b-md bg-slate-700 p-3 px-5">
-        <h1 className="mb-2 text-2xl text-textprimary">
+        <h1 className="mb-2 text-2xl text-textprimary font-black">
           David <span className="text-textsecondary">Esteban</span>
         </h1>
         <p className="mb-3 text-textprimary">

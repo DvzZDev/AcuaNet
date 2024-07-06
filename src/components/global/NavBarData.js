@@ -1,5 +1,6 @@
 import { FetchEmbalses } from '@/lib/data'
 import Navbar from './Navbar'
+import { Suspense } from 'react'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -10,4 +11,12 @@ async function NavBarData() {
   return <Navbar data={embalses} />
 }
 
-export default NavBarData
+function App() {
+  return (
+    <Suspense fallback={<></>}>
+      <NavBarData />
+    </Suspense>
+  )
+}
+
+export default App

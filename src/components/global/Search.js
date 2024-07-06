@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { Suspense } from 'react'
 
 function Search({ data }) {
   const router = useRouter()
@@ -97,22 +98,23 @@ function Search({ data }) {
           </svg>
         </button>
       </form>
-
-      <div className="absolute ml-3 text-sm">
-        {suggestions.length > 0 && (
-          <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] p-4 text-textprimary animate-duration-300 animate-ease-in-out">
-            {suggestions.slice(0, 5).map((suggestion, index) => (
-              <li
-                key={index}
-                onClick={() => handleSuggestionClick(suggestion.nombre_embalse)}
-                className="cursor-pointer hover:bg-slate-950 hover:bg-opacity-25"
-              >
-                {suggestion.nombre_embalse}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <Suspense fallback={<></>}>
+        <div className="absolute ml-3 text-sm">
+          {suggestions.length > 0 && (
+            <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] p-4 text-textprimary animate-duration-300 animate-ease-in-out">
+              {suggestions.slice(0, 5).map((suggestion, index) => (
+                <li
+                  key={index}
+                  onClick={() => handleSuggestionClick(suggestion.nombre_embalse)}
+                  className="cursor-pointer hover:bg-slate-950 hover:bg-opacity-25"
+                >
+                  {suggestion.nombre_embalse}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </Suspense>
     </div>
   )
 }

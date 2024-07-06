@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <ViewTransitions>
       <html lang="es">
         <body>
-          <Suspense>
+          <Suspense fallback={<></>}>
             <header className="h-[3.6rem]">
               <NavBarData />
             </header>

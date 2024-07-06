@@ -7,9 +7,15 @@ export const revalidate = 60
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
+export const metadata = {
+  title: 'Cuencas Hidrográficas - AcuaNet',
+  description:
+    'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+}
+
 function page() {
   return (
-    <section className='mt-5'>
+    <section className="mt-5">
       <Intro title={'Cuencas Hidrográficas'} />
       <Suspense fallback={<SkeletonCuencas />}>
         <Bento />

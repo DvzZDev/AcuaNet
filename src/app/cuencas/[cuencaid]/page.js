@@ -10,6 +10,13 @@ export const revalidate = 60
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
+export function generateMetadata({ params }) {
+  return {
+    title: `${params.cuencaid} - AcuaNet`,
+    description: `Cuenca del ${params.cuencaid}`,
+  }
+}
+
 async function Page({ params }) {
   return (
     <>

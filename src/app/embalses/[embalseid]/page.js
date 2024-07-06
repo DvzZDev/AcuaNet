@@ -6,7 +6,14 @@ export const revalidate = 60
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
-async function page({ params }) {
+export function generateMetadata({ params }) {
+  return {
+    title: `${params.embalseid} - AcuaNet`,
+    description: `Embalse  ${params.embalseid}`,
+  }
+}
+
+async function Page({ params }) {
   return (
     <Suspense fallback={<SkeeltonBentoEmbalseDist />}>
       <EmbalseData url={params} />
@@ -14,4 +21,4 @@ async function page({ params }) {
   )
 }
 
-export default page
+export default Page

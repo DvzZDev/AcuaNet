@@ -3,29 +3,17 @@
 @tailwind utilities;
 
 body {
-  background-color: black;
   color: white;
   background-image: url(/bbblurryy.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-position: top center;
+  background-position: 10%;
   background-color: black;
-  font-family: 'Onest Variable', sans-serif;
-}
-
-body {
-  font-family: 'Onest Variable', sans-serif;
-}
-p {
   font-family: 'Onest Variable', sans-serif;
 }
 
 .animate-gradient {
   background-size: 300%;
-  -webkit-animation: animatedgradient 6s ease infinite alternate;
-  -moz-animation: animatedgradient 6s ease infinite alternate;
   animation: animatedgradient 6s ease infinite alternate;
 }
 
@@ -50,14 +38,6 @@ table {
   color: #c0bfb7;
 }
 
-#bento {
-  background-image: url(/test.png),
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(7, 9, 34, 1) 100%);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 @font-face {
   font-family: 'TelmaLight';
   src: url('/Fonts/Telma_Complete/Fonts/WEB/fonts/Telma-Light.woff2') format('woff2');
@@ -65,6 +45,7 @@ table {
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'TelmaBlack';
   src: url('/Fonts/Telma_Complete/Fonts/WEB/fonts/Telma-Black.woff2') format('woff2');
@@ -72,6 +53,7 @@ table {
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'TelmaRegular';
   src: url('/Fonts/Telma_Complete/Fonts/WEB/fonts/Telma-Regular.woff2') format('woff2');
@@ -89,14 +71,7 @@ table {
   transition: text-shadow 0.5s ease-in-out;
 }
 
-.glow:hover {
-  text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 32px #0fa,
-    0 0 42px #0fa;
-}
+.glow:hover,
 .glow.active-glow {
   text-shadow:
     0 0 7px #fff,

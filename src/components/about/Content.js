@@ -1,9 +1,18 @@
 import Image from 'next/image'
 import CardAb from '@/components/about/CardAb'
+import Head from 'next/head'
 
 function Content() {
   return (
     <section className="bg-[#070922] p-6 pb-20">
+      <Head>
+        <title>My page title</title>
+        <meta
+          property="og:title"
+          content="My page title"
+          key="title"
+        />
+      </Head>
       <div className="flex flex-col items-center justify-center gap-8 sm:gap-10 md:gap-12">
         <article className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-2 md:gap-12">
           <div className="relative flex h-40 w-full items-center overflow-hidden rounded-lg sm:h-72 md:h-96">

@@ -127,3 +127,7 @@ table {
     backdrop-filter: blur(10px);
   }
 }
+
+#about {
+  max-width: 75ch;
+}

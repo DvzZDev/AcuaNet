@@ -4,7 +4,7 @@ function SkeletonBento() {
   return (
     <section
       id="bento"
-      className="flex min-h-full content-center items-center justify-center lg:h-[100svh]"
+      className="flex min-h-full items-center justify-center bg-gradient-to-t from-[#070922] via-[#070922] to-transparent lg:h-svh"
     >
       {/* Div Global */}
       <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[90svh] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">

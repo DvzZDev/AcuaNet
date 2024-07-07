@@ -44,7 +44,7 @@ function Type({ data }) {
       <h1 className={`animate-jump pl-1 text-red-500 ${err ? 'flex' : 'hidden'}`}>
         Embalse no encontrado
       </h1>
-      <div className="relative">
+      <div className="relative z-20">
         {suggestions.length > 0 && (
           <ul className="absolute mt-5 flex w-full animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] text-textprimary animate-duration-300 animate-ease-in-out">
             {suggestions.slice(0, 5).map((suggestion, index) => (
@@ -59,7 +59,6 @@ function Type({ data }) {
           </ul>
         )}
       </div>
-
     </div>
   )
 }

@@ -1,15 +1,12 @@
 import '@fontsource-variable/onest'
 import Type from './Type'
-import Arrow from './Arrow'
 import nombreEmbalses from '../../lib/nombresEmbalses.json'
-export const revalidate = 60
-export const dynamic = 'force-dynamic'
-export const fetchCache = 'force-no-store'
+import Image from 'next/image'
 
 async function Intro() {
   const datares = nombreEmbalses
   return (
-    <section className="flex h-full animate-fade-up flex-col items-center animate-once animate-ease-in-out">
+    <section className="flex flex-col items-center">
       <div className="mb-6 mt-10 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -61,43 +58,15 @@ async function Intro() {
         </h1>
       </div>
       <Type data={datares} />
-      <div className="mt-24 w-[8rem] sm:w-[13rem]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 800 800"
-        >
-          <path
-            fill="none"
-            stroke="hsl(282, 100%, 75%)"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={10}
-            markerEnd="url(#a)"
-            d="M140.331 226.935q299-444 259 259 279-353 259 259"
-            width={50}
-            height={50}
-          />
-          <defs>
-            <marker
-              id="a"
-              markerHeight={10}
-              markerWidth={10}
-              orient="auto"
-              refX={5}
-              refY={5}
-              viewBox="0 0 10 10"
-            >
-              <path
-                fill="none"
-                stroke="hsl(282, 100%, 75%)"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.667}
-                d="m1.667 7.5 5-2.5-5-2.5"
-              />
-            </marker>
-          </defs>
-        </svg>
+      <div className="mt-24 h-[15rem] w-[12rem] opacity-70">
+        <Image
+          src="/guss.webp"
+          alt="hero"
+          width={500}
+          height={500}
+          layout="responsive"
+          objectFit="cover"
+        />
       </div>
     </section>
   )

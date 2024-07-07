@@ -6,7 +6,7 @@ import Image from 'next/image'
 async function Intro() {
   const datares = nombreEmbalses
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col items-center h-svh">
       <div className="mb-6 mt-10 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"

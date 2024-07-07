@@ -4,8 +4,9 @@ import { ViewTransitions } from 'next-view-transitions'
 import NavBarData from '@/components/global/NavBarData'
 
 export const metadata = {
-  title: 'AcuaEs',
-  description: 'En AcuaEs nos importa el agua y el medio ambiente',
+  title: 'AcuaNet',
+  description:
+    'AcuaNet es una plataforma que te permite conocer el estado de los embalses, pluviómetros y cuencas hidrográficas de España con datos actualizados',
 }
 
 export default function RootLayout({ children }) {

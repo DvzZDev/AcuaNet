@@ -2,6 +2,7 @@
 'use client'
 import { ReactTyped } from 'react-typed'
 import AutoCompleteHook from '@/hooks/AutoComplete'
+
 function Type({ data }) {
   const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } =
     AutoCompleteHook(data)
@@ -58,6 +59,7 @@ function Type({ data }) {
           </ul>
         )}
       </div>
+
     </div>
   )
 }

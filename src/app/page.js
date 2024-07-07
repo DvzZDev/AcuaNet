@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <>
       {/* Acordarse de quitar el suspense aqui y dentro de intro */}
-      
-        <Intro />
-      
+
+      <Intro />
+
       <Suspense fallback={<SkeletonBento />}>
         <Bento />
       </Suspense>

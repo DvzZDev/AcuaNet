@@ -1,21 +1,22 @@
-import Image from 'next/image'
 import Intro from '@/components/cuencas/IntroCuencas'
-function page() {
+import Content from '@/components/about/Content'
+import Head from 'next/head'
+
+export const metadata = {
+  title: 'Sobre Nosotros',
+  description:
+    'Conoce más sobre el equipo de AcuaNet y cómo trabajamos para brindarte información actualizada sobre los embalses de agua en España',
+}
+
+function Page() {
   return (
     <>
-      <Intro title={'Sobre Nosotros'} />
-      <section className="min-h-screen bg-[#070922]">
-        <div className='relative w-[25rem] h-[20rem]'>
-          <Image
-            src="/yo.png"
-            layout='fill'
-            alt="yo"
-            unoptimized 
-          />
-        </div>
+      <section className="mt-5">
+        <Intro title="Sobre Nosotros" />
+        <Content />
       </section>
     </>
   )
 }
 
-export default page
+export default Page

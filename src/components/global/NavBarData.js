@@ -6,4 +6,12 @@ function NavBarData() {
   return <Navbar data={embalses} />
 }
 
-export default NavBarData
+function App() {
+  return (
+    <Suspense fallback={<></>}>
+      <NavBarData />
+    </Suspense>
+  )
+}
+
+export default App

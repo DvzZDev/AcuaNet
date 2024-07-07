@@ -1,4 +1,5 @@
 'use client'
+
 import AutoCompleteHook from '@/hooks/AutoComplete'
 
 function Search({ data }) {
@@ -71,6 +72,7 @@ function Search({ data }) {
           </ul>
         )}
       </div>
+
     </div>
   )
 }

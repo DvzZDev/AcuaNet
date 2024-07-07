@@ -17,6 +17,9 @@ module.exports = {
       animationDelay: {
         400: '400ms',
       },
+      animationDuration: {
+        2000: '2000ms',
+      },
       fontFamily: {
         telma: ['TelmaLight'],
         telmaBold: ['TelmaBold'],

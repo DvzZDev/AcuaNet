@@ -31,7 +31,7 @@ async function Bento() {
   const pluvis = await FetchPluvis()
 
   return (
-    <section className="flex min-h-full items-center justify-center bg-gradient-to-t from-[#070922] via-[#070922] to-transparent lg:h-svh">
+    <section className="flex min-h-full items-center justify-center bg-gradient-to-t from-[#070922] via-[#070922] to-transparent lg:h-screen">
       {/* Div Global */}
 
       <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">

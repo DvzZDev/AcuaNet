@@ -6,7 +6,7 @@ import Image from 'next/image'
 async function Intro() {
   const datares = nombreEmbalses
   return (
-    <section className="flex min-h-svh flex-col items-center">
+    <section className="flex h-auto flex-col items-center">
       <div className="mb-6 mt-10 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,20 +45,20 @@ async function Intro() {
         </svg>
       </div>
       <div className="flex flex-col xl:w-[60%]">
-        <strong className="mb-4 w-full text-center font-telma text-[55px] leading-none text-textsecondary sm:text-[5rem]">
+        <strong className="mb-4 w-full text-center font-telma text-[64px] leading-none text-textsecondary sm:text-[5rem]">
           AcuaNet
         </strong>
 
-        <h1 className="h-auto max-w-80 px-4 text-center text-[30px] text-[#fbffb8] sm:max-w-full sm:text-[40px] lg:text-[3rem]">
+        <h1 className="h-auto max-w-80 px-4 text-center text-[33px] text-[#fbffb8] sm:max-w-full sm:text-[40px] lg:text-[3rem]">
           Consulta las mediciones hidrograficas de España en un solo
-          <span className="text-[30px] font-bold text-textsecondary sm:text-[40px] lg:text-[3rem]">
+          <span className="text-[33px] font-bold text-textsecondary sm:text-[40px] lg:text-[3rem]">
             {' '}
             click
           </span>
         </h1>
       </div>
       <Type data={datares} />
-      {/* <div className="mt-24 h-[15rem] w-[12rem] opacity-70">
+      <div className="animate-duration-2000 mt-24 h-[15rem] w-[12rem] animate-pulse opacity-70 animate-infinite">
         <Image
           src="/guss.webp"
           alt="hero"
@@ -67,7 +67,7 @@ async function Intro() {
           layout="responsive"
           objectFit="cover"
         />
-      </div> */}
+      </div>
     </section>
   )
 }

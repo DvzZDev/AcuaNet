@@ -31,7 +31,7 @@ async function Bento() {
   const pluvis = await FetchPluvis()
 
   return (
-    <section className="flex min-h-full items-center justify-center bg-gradient-to-t from-[#070922] via-[#070922] to-transparent py-8 lg:h-screen lg:py-0">
+    <section className="flex min-h-full items-center justify-center bg-gradient-to-t from-bgcolor via-bgcolor to-transparent py-8 lg:h-full lg:py-0">
       {/* Div Global */}
       <div className="mx-4 my-8 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
@@ -126,9 +126,12 @@ async function Bento() {
           <div className="flex flex-col content-center justify-center px-3">
             {/* Primera Tabla */}
             <table className="mb-1 w-full text-[16px]">
-              <caption className="text-left font-extrabold text-[#47ff63ab]">
-                Cuenca
-              </caption>
+              <thead className="text-[16px] font-extrabold text-[#47ff63ab]">
+                <tr>
+                  <th className="text-left">Cuenca</th>
+                  <th className="text-right">%</th>
+                </tr>
+              </thead>
               <tbody className="text-textprimary">
                 {variacionCuencas.map((variacion) => (
                   <tr
@@ -140,7 +143,7 @@ async function Bento() {
                         <p>{variacion.cuenca.replace(/_/g, ' ')}</p>
                       </Link>
                     </td>
-                    <td className="w-[50%] text-right lg:w-auto">{`${variacion.porcentaje_variacion} %`}</td>
+                    <td className="w-[50%] text-right lg:w-auto">{`${variacion.porcentaje_variacion}`}</td>
                   </tr>
                 ))}
               </tbody>
@@ -157,7 +160,7 @@ async function Bento() {
                     key={variacion.nombre_embalse}
                   >
                     <td className="">{variacion.nombre_embalse}</td>
-                    <td className="text-right">{`${variacion.variacion_ultima_semanapor} %`}</td>
+                    <td className="text-right">{`${variacion.variacion_ultima_semanapor}`}</td>
                   </tr>
                 ))}
               </tbody>

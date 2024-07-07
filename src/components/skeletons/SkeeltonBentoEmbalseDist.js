@@ -5,10 +5,10 @@ import Divider from '../cuencas/Divider'
 function EmbalseContent({ data }) {
   return (
     <>
-      <div className="m-auto h-14 lg:w-[30rem] w-[15rem] sm:w-[20rem] rounded-lg bg-slate-700 text-center font-telma text-[2.5rem] text-textsecondary sm:mt-10 sm:text-6xl animate-pulse"></div>
+      <div className="m-auto h-14 w-[15rem] animate-pulse rounded-lg bg-slate-700 text-center font-telma text-[2.5rem] text-textsecondary sm:mt-10 sm:w-[20rem] sm:text-6xl lg:w-[30rem]"></div>
       <Divider />
 
-      <section className="flex min-h-[40rem] justify-center bg-[#070922] p-4 lg:pt-1 text-white mb-5">
+      <section className="mb-5 flex min-h-[40rem] justify-center bg-bgcolor p-4 text-white lg:pt-1">
         <div className="mx-4 flex min-h-full w-full animate-pulse flex-col gap-4 transition-all sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
           {/* Primera Columna */}
 

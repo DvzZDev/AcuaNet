@@ -14,7 +14,7 @@ function EmbalseContent({ data }) {
   // 'misma_semana_10años': 2.414,
   // 'misma_semana_10añospor': 76.42
   return (
-    <section className="mb-4 flex min-h-[40rem] justify-center bg-[#070922] p-4 text-white lg:pt-1">
+    <section className="mb-4 flex min-h-[40rem] justify-center bg-bgcolor p-4 text-white lg:pt-1">
       <div className="mx-4 flex min-h-full w-full flex-col gap-4 transition-all sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
         {/* Primera Columna */}
 

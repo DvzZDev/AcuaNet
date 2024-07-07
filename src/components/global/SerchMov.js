@@ -59,7 +59,7 @@ function SearchMov({ data, closeMenu, isMenuOpen }) {
 
       <div className="absolute ml-3 text-sm">
         {suggestions.length > 0 && (
-          <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] p-4 text-textprimary animate-delay-0 animate-duration-300 animate-ease-in-out">
+          <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-bgcolor p-4 text-textprimary animate-delay-0 animate-duration-300 animate-ease-in-out">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <li
                 key={index}

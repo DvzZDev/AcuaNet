@@ -1,6 +1,6 @@
 async function bento() {
   return (
-    <section className="flex h-full justify-center bg-[#070922]">
+    <section className="flex h-full justify-center bg-bgcolor">
       <div className="m-10 mt-2 grid min-h-[40rem] w-[60rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
         {Array.from({ length: 16 }).map((_, index) => (
           <div

@@ -46,7 +46,7 @@ function Type({ data }) {
       </h1>
       <div className="relative z-20">
         {suggestions.length > 0 && (
-          <ul className="absolute mt-5 flex w-full animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] text-textprimary animate-duration-300 animate-ease-in-out">
+          <ul className="absolute mt-5 flex w-full animate-fade-down flex-col gap-2 rounded-lg bg-bgcolor text-textprimary animate-duration-300 animate-ease-in-out">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <li
                 key={index}

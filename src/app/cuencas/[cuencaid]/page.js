@@ -24,7 +24,7 @@ async function Page({ params }) {
         <Title url={params} />
       </Suspense>
       <Divider />
-      <section className="flex min-h-full flex-col items-center justify-center bg-[#070922]">
+      <section className="flex min-h-full flex-col items-center justify-center bg-bgcolor">
         <div className="flex min-h-[42rem] justify-center">
           <Suspense fallback={<SkeletonBentoDist />}>
             <BentoDist url={params} />

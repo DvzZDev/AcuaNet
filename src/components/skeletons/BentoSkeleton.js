@@ -4,13 +4,13 @@ function SkeletonBento() {
   return (
     <section
       id="bento"
-      className="flex h-full content-center items-center justify-center lg:h-[100svh]"
+      className="flex min-h-full content-center items-center justify-center lg:h-[100svh]"
     >
       {/* Div Global */}
       <div className="m-24 flex flex-col justify-center gap-7 lg:m-0 lg:grid lg:h-[90svh] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
         <div className="z-10 col-span-4 row-span-1 flex items-center justify-center text-wrap rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4">
-          <div className=" content-center justify-center rounded-lg text-center animate-once animate-ease-in-out">
+          <div className="content-center justify-center rounded-lg text-center animate-once animate-ease-in-out">
             <h2 className="text-6xl text-[#7387f9]">Reserva</h2>
             <div className="m-0 p-0 text-[8rem]">
               <div className="m-auto h-[210px] w-[210px] animate-pulse rounded-xl bg-blue-800"></div>

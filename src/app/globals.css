@@ -70,16 +70,15 @@ table {
 
 .glow {
   text-shadow: 0 0 1px;
-  transition: text-shadow 0.5s ease-in-out;
+  transition: text-shadow 0.3s ease-in-out;
 }
-
 .glow:hover {
   text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 32px #0fa,
-    0 0 42px #0fa;
+    0 0 7px rgb(76, 0, 255),
+    /* Azul intenso */ 0 0 10px rgb(115, 0, 255),
+    /* Azul intenso */ 0 0 21px rgb(72, 0, 255),
+    /* Azul intenso */ 0 0 32px #8a2be2,
+    /* Azul morado (Blue Violet) */ 0 0 42px #8a2be2; /* Azul morado (Blue Violet) */
 }
 
 #header-nav {

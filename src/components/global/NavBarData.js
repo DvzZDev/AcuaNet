@@ -1,12 +1,8 @@
-import { FetchEmbalses } from '@/lib/data'
 import Navbar from './Navbar'
+import nombreEmbalses from '../../lib/nombresEmbalses.json'
 
-export const revalidate = 60
-export const dynamic = 'force-dynamic'
-export const fetchCache = 'force-no-store'
-
-async function NavBarData() {
-  const embalses = await FetchEmbalses()
+function NavBarData() {
+  const embalses = nombreEmbalses
   return <Navbar data={embalses} />
 }
 

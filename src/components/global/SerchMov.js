@@ -1,56 +1,17 @@
 'use client'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 
-function SearchMov({ data, closeMenu }) {
-  const router = useRouter()
-  const [type, setType] = useState('')
-  const [suggestions, setSuggestions] = useState([])
-  const [err, setErr] = useState(false)
-  const [fine, setFine] = useState(false)
+import AutoCompleteHook from '@/hooks/AutoComplete'
 
-  const errHandler = () => {
-    setErr(true)
-    setType('')
-  }
-
-  const typeHandler = (e) => {
-    const inputValue = e.target.value
-    setType(inputValue)
-    if (inputValue) {
-      const filteredSuggestions = data.filter((embalse) =>
-        embalse.nombre_embalse.toLowerCase().startsWith(inputValue.toLowerCase())
-      )
-      setSuggestions(filteredSuggestions)
-    } else {
-      setSuggestions([])
-    }
-  }
-
-  const handleSuggestionClick = (nombreEmbalse) => {
-    setType(nombreEmbalse)
-    setSuggestions([])
-    router.push(`/embalses/${nombreEmbalse.toLowerCase()}`)
-    setFine(true)
-    setType('')
-    closeMenu()
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const selectedEmbalse = data.find(
-      (embalse) => embalse.nombre_embalse.toLowerCase() === type.toLowerCase()
-    )
-    if (selectedEmbalse) {
-      router.push(`/embalses/${type.toLowerCase()}`)
-      setFine(true)
-      setType('')
-      closeMenu()
-    } else {
-      errHandler()
-      setFine(false)
-    }
-  }
+function SearchMov({ data, closeMenu, isMenuOpen }) {
+  const {
+    type,
+    suggestions,
+    err,
+    fine,
+    handletype,
+    handleSuggestionClick,
+    handleSubmit,
+  } = AutoCompleteHook(data, closeMenu, isMenuOpen)
 
   return (
     <div>
@@ -62,11 +23,7 @@ function SearchMov({ data, closeMenu }) {
           type="text"
           placeholder={err ? 'No Encontrado' : 'Buscador'}
           value={type}
-          onChange={(e) => {
-            setType(e.target.value)
-            setErr(false)
-            typeHandler(e)
-          }}
+          onChange={handletype}
           className={`text-textprim h-8 w-[16rem] rounded-sm border-b bg-transparent bg-opacity-70 pl-7 pr-10 outline-none transition-all placeholder:opacity-60 focus:bg-slate-900 focus:bg-opacity-30 focus:outline-none ${err ? 'border-red-500 placeholder:text-red-500' : ''} ${fine ? 'border-green-500 placeholder:text-green-500' : ''}`}
         />
         <button
@@ -106,10 +63,10 @@ function SearchMov({ data, closeMenu }) {
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <li
                 key={index}
-                onClick={() => handleSuggestionClick(suggestion.nombre_embalse)}
+                onClick={() => handleSuggestionClick(suggestion)}
                 className="cursor-pointer hover:bg-slate-950 hover:bg-opacity-25"
               >
-                {suggestion.nombre_embalse}
+                {suggestion}
               </li>
             ))}
           </ul>

@@ -11,6 +11,8 @@ export default function Navbar({ data }) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
 
+  console.log(isMenuOpen)
+
   return (
     <div
       id="header-nav"
@@ -152,6 +154,7 @@ export default function Navbar({ data }) {
             <SearchMov
               closeMenu={closeMenu}
               data={data}
+              isMenuOpen={isMenuOpen}
             />
           </div>
         </nav>

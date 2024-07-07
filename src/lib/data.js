@@ -1,3 +1,4 @@
+const apikey = process.env.API_KEY
 export async function FetchCuencas() {
   const url = process.env.REACT_APP_CUENCAS
   const response = await fetch(url, {
@@ -5,6 +6,7 @@ export async function FetchCuencas() {
       'Cache-Control': 'no-cache, no-store, must-revalidate',
       Pragma: 'no-cache',
       Expires: '0',
+      'x-api-key': apikey,
     },
   })
   const data = await response.json()
@@ -18,6 +20,7 @@ export async function FetchCuencaVariacion() {
       'Cache-Control': 'no-cache, no-store, must-revalidate',
       Pragma: 'no-cache',
       Expires: '0',
+      'x-api-key': apikey,
     },
   })
   const data = await response.json()
@@ -31,6 +34,7 @@ export async function FetchEmbalsesVariacion() {
       'Cache-Control': 'no-cache, no-store, must-revalidate',
       Pragma: 'no-cache',
       Expires: '0',
+      'x-api-key': apikey,
     },
   })
   const data = await response.json()
@@ -44,6 +48,7 @@ export async function FetchEsp() {
       'Cache-Control': 'no-cache, no-store, must-revalidate',
       Pragma: 'no-cache',
       Expires: '0',
+      'x-api-key': apikey,
     },
   })
   const data = await response.json()
@@ -52,7 +57,12 @@ export async function FetchEsp() {
 export async function FetchPluvis() {
   const url = process.env.REACT_APP_PLUVIOMETROS
   const response = await fetch(url, {
-    next: { revalidate: 60 },
+    headers: {
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      Pragma: 'no-cache',
+      Expires: '0',
+      'x-api-key': apikey,
+    },
   })
   const data = await response.json()
   return data
@@ -60,14 +70,28 @@ export async function FetchPluvis() {
 
 export async function FetchEmbalses() {
   const url = process.env.REACT_APP_EMBALSES
-  const response = await fetch(url)
+  const response = await fetch(url, {
+    headers: {
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      Pragma: 'no-cache',
+      Expires: '0',
+      'x-api-key': apikey,
+    },
+  })
   const data = await response.json()
   return data
 }
 
 export async function FetchPluvisGlob() {
   const url = process.env.REACT_APP_PLUVIOMETROSGLOB
-  const response = await fetch(url)
+  const response = await fetch(url, {
+    headers: {
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      Pragma: 'no-cache',
+      Expires: '0',
+      'x-api-key': apikey,
+    },
+  })
   const data = await response.json()
   return data
 }

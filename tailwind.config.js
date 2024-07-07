@@ -32,6 +32,7 @@ module.exports = {
         textfooter: '#6b7280',
         textsecondary: '#ffd700',
         bgcolor: '#070922',
+        
       },
       backdropBlur: {
         xs: '2px',

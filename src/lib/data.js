@@ -1,5 +1,5 @@
 export async function FetchCuencas() {
-  const url = 'https://api-acua-production.up.railway.app/api/cuencas'
+  const url = process.env.REACT_APP_CUENCAS
   const response = await fetch(url, {
     headers: {
       'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -12,7 +12,7 @@ export async function FetchCuencas() {
 }
 
 export async function FetchCuencaVariacion() {
-  const url = 'https://api-acua-production.up.railway.app/api/variacion/cuencas'
+  const url = process.env.REACT_APP_VARIACION_CUENCA
   const response = await fetch(url, {
     headers: {
       'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -25,7 +25,7 @@ export async function FetchCuencaVariacion() {
 }
 
 export async function FetchEmbalsesVariacion() {
-  const url = 'https://api-acua-production.up.railway.app/api/variacion/embalses'
+  const url = process.env.REACT_APP_VARIACION_EMBALSES
   const response = await fetch(url, {
     headers: {
       'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -38,7 +38,7 @@ export async function FetchEmbalsesVariacion() {
 }
 
 export async function FetchEsp() {
-  const url = 'https://api-acua-production.up.railway.app/api/esp'
+  const url = process.env.REACT_APP_ESP
   const response = await fetch(url, {
     headers: {
       'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -50,7 +50,7 @@ export async function FetchEsp() {
   return data
 }
 export async function FetchPluvis() {
-  const url = 'https://api-acua-production.up.railway.app/Api/pluvis'
+  const url = process.env.REACT_APP_PLUVIOMETROS
   const response = await fetch(url, {
     next: { revalidate: 60 },
   })
@@ -59,14 +59,14 @@ export async function FetchPluvis() {
 }
 
 export async function FetchEmbalses() {
-  const url = 'https://api-acua-production.up.railway.app/Api/embalses'
+  const url = process.env.REACT_APP_EMBALSES
   const response = await fetch(url)
   const data = await response.json()
   return data
 }
 
 export async function FetchPluvisGlob() {
-  const url = 'https://api-acua-production.up.railway.app/api/pluvisglob'
+  const url = process.env.REACT_APP_PLUVIOMETROSGLOB
   const response = await fetch(url)
   const data = await response.json()
   return data

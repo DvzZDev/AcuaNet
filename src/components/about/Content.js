@@ -66,7 +66,6 @@ function Content() {
               alt="Embalse"
               layout="fill"
               objectFit="cover"
-              unoptimized
               draggable={false}
             />
           </div>

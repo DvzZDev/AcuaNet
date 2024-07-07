@@ -11,13 +11,12 @@ function CardAb() {
           alt="Equipo de AcuaNet"
           layout="fill"
           objectFit="cover"
-          unoptimized
           draggable={false}
           className="rounded-t-md"
         />
       </div>
       <div className="rounded-b-md bg-slate-700 p-3 px-5">
-        <h1 className="mb-2 text-2xl text-textprimary font-black">
+        <h1 className="mb-2 text-2xl font-black text-textprimary">
           David <span className="text-textsecondary">Esteban</span>
         </h1>
         <p className="mb-3 text-textprimary">

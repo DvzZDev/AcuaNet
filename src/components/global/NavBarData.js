@@ -7,11 +7,7 @@ function NavBarData() {
 }
 
 function App() {
-  return (
-    <Suspense fallback={<></>}>
-      <NavBarData />
-    </Suspense>
-  )
+  return <NavBarData />
 }
 
 export default App

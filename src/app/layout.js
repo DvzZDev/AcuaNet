@@ -1,9 +1,7 @@
 import './globals.css'
-import Navbar from '@/components/global/Navbar'
 import Footer from '@/components/global/Footer'
 import { ViewTransitions } from 'next-view-transitions'
 import NavBarData from '@/components/global/NavBarData'
-import { Suspense } from 'react'
 
 export const metadata = {
   title: 'AcuaNet',
@@ -16,11 +14,9 @@ export default function RootLayout({ children }) {
     <ViewTransitions>
       <html lang="es">
         <body>
-          <Suspense fallback={<></>}>
-            <header className="h-[3.6rem]">
-              <NavBarData />
-            </header>
-          </Suspense>
+          <header className="h-[3.6rem]">
+            <NavBarData />
+          </header>
           {children}
           <Footer />
         </body>

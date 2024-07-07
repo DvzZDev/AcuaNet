@@ -1,15 +1,13 @@
 import '@fontsource-variable/onest'
 import Type from './Type'
-import { FetchEmbalses } from '@/lib/data'
 import Arrow from './Arrow'
-import { Suspense } from 'react'
-
+import nombreEmbalses from '../../lib/nombresEmbalses.json'
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
 async function Intro() {
-  const datares = await FetchEmbalses()
+  const datares = nombreEmbalses
   return (
     <section className="flex h-full animate-fade-up flex-col items-center animate-once animate-ease-in-out">
       <div className="mb-6 mt-10 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
@@ -62,9 +60,7 @@ async function Intro() {
           </span>
         </h1>
       </div>
-      <Suspense fallback={<p>Loading...</p>}>
-        <Type data={datares} />
-      </Suspense>
+      <Type data={datares} />
       <div className="mt-24 w-[8rem] sm:w-[13rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"

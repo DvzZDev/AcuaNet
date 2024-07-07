@@ -1,55 +1,17 @@
 'use client'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Suspense } from 'react'
+
+import AutoCompleteHook from '@/hooks/AutoComplete'
 
 function Search({ data }) {
-  const router = useRouter()
-  const [type, setType] = useState('')
-  const [suggestions, setSuggestions] = useState([])
-  const [err, setErr] = useState(false)
-  const [fine, setFine] = useState(false)
-
-  const errHandler = () => {
-    setErr(true)
-    setType('')
-  }
-
-  const typeHandler = (e) => {
-    const inputValue = e.target.value
-    setType(inputValue)
-    if (inputValue) {
-      const filteredSuggestions = data.filter((embalse) =>
-        embalse.nombre_embalse.toLowerCase().startsWith(inputValue.toLowerCase())
-      )
-      setSuggestions(filteredSuggestions)
-    } else {
-      setSuggestions([])
-    }
-  }
-
-  const handleSuggestionClick = (nombreEmbalse) => {
-    setType(nombreEmbalse)
-    setSuggestions([])
-    router.push(`/embalses/${nombreEmbalse.toLowerCase()}`)
-    setFine(true)
-    setType('')
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const selectedEmbalse = data.find(
-      (embalse) => embalse.nombre_embalse.toLowerCase() === type.toLowerCase()
-    )
-    if (selectedEmbalse) {
-      router.push(`/embalses/${type.toLowerCase()}`)
-      setFine(true)
-      setType('')
-    } else {
-      errHandler()
-      setFine(false)
-    }
-  }
+  const {
+    type,
+    suggestions,
+    err,
+    fine,
+    handletype,
+    handleSuggestionClick,
+    handleSubmit,
+  } = AutoCompleteHook(data)
 
   return (
     <div>
@@ -61,11 +23,7 @@ function Search({ data }) {
           type="text"
           placeholder={err ? 'No Encontrado' : 'Buscador'}
           value={type}
-          onChange={(e) => {
-            setType(e.target.value)
-            setErr(false)
-            typeHandler(e)
-          }}
+          onChange={handletype}
           className={`text-textprim h-8 w-[16rem] rounded-sm border-b bg-transparent bg-opacity-70 pl-7 pr-10 outline-none transition-all placeholder:opacity-60 focus:bg-slate-900 focus:bg-opacity-30 focus:outline-none ${err ? 'border-red-500 placeholder:text-red-500' : ''} ${fine ? 'border-green-500 placeholder:text-green-500' : ''}`}
         />
         <button
@@ -98,23 +56,23 @@ function Search({ data }) {
           </svg>
         </button>
       </form>
-      <Suspense fallback={<></>}>
-        <div className="absolute ml-3 text-sm">
-          {suggestions.length > 0 && (
-            <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] p-4 text-textprimary animate-duration-300 animate-ease-in-out">
-              {suggestions.slice(0, 5).map((suggestion, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleSuggestionClick(suggestion.nombre_embalse)}
-                  className="cursor-pointer hover:bg-slate-950 hover:bg-opacity-25"
-                >
-                  {suggestion.nombre_embalse}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </Suspense>
+
+      <div className="absolute ml-3 text-sm">
+        {suggestions.length > 0 && (
+          <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-[#070922] p-4 text-textprimary animate-duration-300 animate-ease-in-out">
+            {suggestions.slice(0, 5).map((suggestion, index) => (
+              <li
+                key={index}
+                onClick={() => handleSuggestionClick(suggestion)}
+                className="cursor-pointer hover:bg-slate-950 hover:bg-opacity-25"
+              >
+                {suggestion}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
     </div>
   )
 }

@@ -12,6 +12,7 @@
     "@fontsource-variable/comfortaa": "^5.0.20",
     "@fontsource-variable/onest": "^5.0.4",
     "@nextui-org/button": "^2.0.34",
+    "@nextui-org/image": "^2.0.29",
     "@nextui-org/modal": "^2.0.36",
     "@nextui-org/system": "^2.2.2",
     "@nextui-org/theme": "^2.2.6",

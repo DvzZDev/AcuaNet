@@ -5,22 +5,22 @@ function Footer() {
     <footer className="flex h-[12rem] flex-col items-center justify-center bg-[#040513]">
       <nav className="mx-5 flex flex-wrap justify-center gap-3 text-wrap text-textfooter">
         <Link href="/cuencas">
-          <span className="hover:text-textsecondary inline-block transition-all hover:scale-105">
+          <span className="inline-block transition-all hover:scale-105 hover:text-textsecondary">
             Cuencas
           </span>
         </Link>
         <Link href="/embalses">
-          <span className="hover:text-textsecondary inline-block transition-all hover:scale-105">
+          <span className="inline-block transition-all hover:scale-105 hover:text-textsecondary">
             Embalses
           </span>
         </Link>
         <Link href="/pluviometros">
-          <span className="hover:text-textsecondary inline-block transition-all hover:scale-105">
+          <span className="inline-block transition-all hover:scale-105 hover:text-textsecondary">
             Pluviometros
           </span>
         </Link>
-        <Link href="/quienes-somos">
-          <span className="hover:text-textsecondary inline-block transition-all hover:scale-105">
+        <Link href="/quienesSomos">
+          <span className="inline-block transition-all hover:scale-105 hover:text-textsecondary">
             Quienes Somos
           </span>
         </Link>

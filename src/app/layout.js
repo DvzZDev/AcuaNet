@@ -2,6 +2,7 @@ import './globals.css'
 import Footer from '@/components/global/Footer'
 import { ViewTransitions } from 'next-view-transitions'
 import NavBarData from '@/components/global/NavBarData'
+import { CSPostHogProvider } from './providers'
 
 export const metadata = {
   title: 'AcuaNet',
@@ -11,16 +12,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ViewTransitions>
-      <html lang="es">
-        <body>
-          <header className="h-[3.6rem]">
-            <NavBarData />
-          </header>
-          {children}
-          <Footer />
-        </body>
-      </html>
-    </ViewTransitions>
+    <CSPostHogProvider>
+      <ViewTransitions>
+        <html lang="es">
+          <body>
+            <header className="h-[3.6rem]">
+              <NavBarData />
+            </header>
+            {children}
+            <Footer />
+          </body>
+        </html>
+      </ViewTransitions>
+    </CSPostHogProvider>
   )
 }

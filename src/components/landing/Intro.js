@@ -58,7 +58,7 @@ async function Intro() {
         </h1>
       </div>
       <Type data={datares} />
-      <div className="mt-24 h-[15rem] w-[12rem] animate-pulse opacity-70 animate-duration-2000 animate-infinite">
+      <div className="mt-24 h-[15rem] w-[12rem] animate-pulse opacity-90 animate-duration-2000 animate-infinite">
         <Image
           src="/guss.webp"
           alt="hero"
@@ -66,6 +66,7 @@ async function Intro() {
           height={500}
           layout="responsive"
           objectFit="cover"
+          draggable="false"
         />
       </div>
     </section>

@@ -10,6 +10,7 @@ function CardFuentes({ image, title }) {
           width={500}
           height={500}
           draggable={false}
+          loading="lazy"
         />
       </div>
       <div className="h-[100px]">

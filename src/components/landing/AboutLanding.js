@@ -1,5 +1,7 @@
-import Image from 'next/image'
+import { Image } from '@nextui-org/image'
 import { Link } from 'next-view-transitions'
+import { Button } from '@nextui-org/button'
+import NextImage from 'next/image'
 
 function AboutLanding() {
   return (
@@ -7,7 +9,7 @@ function AboutLanding() {
       <div className="flex flex-col items-center justify-center">
         <section className="mx-8 grid h-full max-w-[70rem] grid-cols-1 gap-10 md:grid-cols-2">
           <div className="col-span-1 mt-10 flex flex-col">
-            <h1 className="text-left font-telma text-[40px] leading-none text-[#ffd700] sm:text-[50px]">
+            <h1 className="text-center font-telma text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left">
               Conoce a Nuestro Equipo
             </h1>
             <p className="mt-6 text-xl leading-relaxed text-textprimary">
@@ -21,7 +23,7 @@ function AboutLanding() {
             </p>
             <div className="flex w-full justify-center">
               <Link href="/quienesSomos">
-                <button className="m-auto mt-6 rounded-lg bg-[#091c34] p-3 text-lg font-bold text-[#ffd700] transition-all animate-infinite hover:animate-wiggle">
+                <button className="m-auto mt-6 rounded-lg bg-[#091c34] p-3 text-lg font-bold text-[#ffd700] transition-all animate-infinite hover:animate-wiggle hover:brightness-90">
                   Conócenos!
                 </button>
               </Link>
@@ -35,8 +37,11 @@ function AboutLanding() {
                 width={500}
                 height={500}
                 className="rounded-lg shadow-lg"
+                isBlurred={true}
+                draggable={false}
+                loading='lazy'
               />
-              <div className="absolute bottom-[-70px] left-4 right-[-15px] rounded-lg bg-[#0a2038] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]">
+              <div className="absolute bottom-[-70px] left-4 right-[-15px] z-20 rounded-lg bg-[#0a2038] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]">
                 <p className="text-base text-white">
                   ¡Hola! Soy David, creador de AcuaNet. Te invito a conocer más sobre qué
                   me inspiró a crear AcuaNet.

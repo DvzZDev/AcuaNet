@@ -11,12 +11,10 @@ export default function Navbar({ data }) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
 
-  console.log(isMenuOpen)
-
   return (
     <div
       id="header-nav"
-      className={`fixed w-full p-4 transition-all duration-500 ${isMenuOpen ? 'z-10 h-screen bg-[#040513d6] backdrop-blur-md' : 'z-10 h-[5rem]'}`}
+      className={`fixed z-20 w-full p-4 transition-all duration-500 ${isMenuOpen ? 'z-10 h-screen bg-[#040513d6] backdrop-blur-md' : 'z-30 h-[5rem]'}`}
     >
       <div className="container mx-auto flex flex-col items-center justify-between gap-10 uppercase lg:flex-row xl:px-28">
         {/* Logo */}

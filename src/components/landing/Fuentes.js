@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import CardFuentes from './CardFuentes'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
@@ -49,7 +48,7 @@ function Fuentes() {
       className="h-auto bg-bgcolor"
     >
       <article className="flex flex-col items-center justify-center">
-        <h1 className="pt-1 text-center font-telma text-[40px] text-[#ffd700] sm:text-[50px]">
+        <h1 className="pt-1 sm:pt-20 text-center font-telma text-[40px] text-[#ffd700] sm:text-[50px]">
           Fuentes Oficiales
         </h1>
 

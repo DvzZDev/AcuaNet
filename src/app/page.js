@@ -3,7 +3,6 @@ import Bento from '@/components/landing/Bento'
 import Fuentes from '@/components/landing/Fuentes'
 import SkeletonBento from '@/components/skeletons/BentoSkeleton'
 import AboutLanding from '@/components/landing/AboutLanding'
-
 import { Suspense } from 'react'
 
 export const revalidate = 60

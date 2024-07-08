@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 body {
-  color: white;
   background-image: url(/bbblurryy.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
   background-color: #000000;
   font-family: 'Onest Variable', sans-serif;
-  margin: 0;
-  height: 100vh;
 }
 
 .animate-gradient {
@@ -103,8 +103,6 @@ table {
   }
 }
 
-#pp{
-  max-width: 75ch
+#pp {
+  max-width: 75ch;
 }
-
-

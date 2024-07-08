@@ -6,7 +6,7 @@ import Image from 'next/image'
 async function Intro() {
   const datares = nombreEmbalses
   return (
-    <section className="flex h-svh flex-col items-center">
+    <section className="containerr flex h-svh flex-col items-center">
       <div className="mb-6 mt-4 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ async function Intro() {
         </h1>
       </div>
       <Type data={datares} />
-      <div className="animate-duration-2000 mt-24 h-[15rem] w-[12rem] animate-pulse opacity-70 animate-infinite">
+      <div className="mt-24 h-[15rem] w-[12rem] animate-pulse opacity-70 animate-duration-2000 animate-infinite">
         <Image
           src="/guss.webp"
           alt="hero"

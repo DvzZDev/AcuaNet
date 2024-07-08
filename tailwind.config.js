@@ -1,9 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+const { nextui } = require('@nextui-org/theme')
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@nextui-org/theme/dist/components/(modal|button).js',
   ],
   theme: {
     screens: {
@@ -32,7 +34,6 @@ module.exports = {
         textfooter: '#6b7280',
         textsecondary: '#ffd700',
         bgcolor: '#070922',
-        
       },
       backdropBlur: {
         xs: '2px',
@@ -44,8 +45,16 @@ module.exports = {
       },
     },
   },
-  plugins: ['prettier-plugin-tailwindcss', require('tailwindcss-animated')],
+  plugins: [
+    'prettier-plugin-tailwindcss',
+    require('tailwindcss-animated'),
+    nextui({
+      defaultTheme: 'dark',
+      defaultExtendTheme: 'dark',
+    }),
+  ],
   experimental: {
     optimizeUniversalDefaults: true,
   },
+  darkMode: 'class',
 }

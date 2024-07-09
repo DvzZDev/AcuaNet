@@ -103,6 +103,12 @@ export default function Navbar({ data }) {
               Pluviometros
             </Link>
             <Link
+              href="/contacto"
+              className="glow transition-all"
+            >
+              Contacto
+            </Link>
+            <Link
               href="/quienesSomos"
               className="glow transition-all"
             >

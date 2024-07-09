@@ -1,6 +1,7 @@
 import Intro from '@/components/cuencas/IntroCuencas'
 import Content from '@/components/about/Content'
 import Head from 'next/head'
+export const runtime = 'edge'
 
 export const metadata = {
   title: 'Sobre Nosotros',

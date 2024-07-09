@@ -16,6 +16,7 @@ if (typeof window !== 'undefined') {
     persistence: cookieConsentGiven() === 'yes' ? 'localStorage+cookie' : 'memory',
   })
 }
+
 export function Providers({ children }) {
   return (
     <PostHogProvider client={posthog}>

@@ -93,7 +93,8 @@ function page() {
             de GitHub:
             <a
               href="https://github.com/DvzZDev/ACUA-Landing"
-              className="text-blue-500 underline"ç
+              className="text-blue-500 underline"
+              ç
               target="_blank"
             >
               {' '}

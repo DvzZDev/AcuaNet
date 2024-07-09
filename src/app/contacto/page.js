@@ -5,6 +5,11 @@ export const revalidate = 60
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
+export const metadata = {
+  title: 'Contacto - AcuaNet',
+  description: '¿Tienes alguna duda o comentario? Contáctanos y te responderemos en 48h.',
+}
+
 function page() {
   return (
     <>

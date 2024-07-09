@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
 export const metadata = {
-  title: 'Sobre Nosotros',
+  title: 'Sobre Nosotros - AcuaNet',
   description:
     'Conoce más sobre el equipo de AcuaNet y cómo trabajamos para brindarte información actualizada sobre los embalses de agua en España',
 }

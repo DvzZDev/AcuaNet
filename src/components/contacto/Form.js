@@ -1,4 +1,5 @@
 'use client'
+
 import { useForm } from 'react-hook-form'
 import { Input, Textarea } from '@nextui-org/input'
 import { Button } from '@nextui-org/button'
@@ -34,39 +35,37 @@ function Form() {
       return
     }
 
-    fetch('/api/turnstile', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        turnstileToken: turnstileResponse,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          emailjs
-            .sendForm(
-              'service_cryt5gv',
-              'template_a1j0bze',
-              form.current,
-              'ig09SV7KNYzL-JgK-'
-            )
-            .then((response) => {
-              'Email sent successfully:', response.status, response.text
-            })
-            .catch((error) => {
-              console.error('Error sending email:', error)
-            })(data)
+    try {
+      const response = await fetch('/api/turnstile', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          turnstileToken: turnstileResponse,
+        }),
+      })
+      const result = await response.json()
+
+      if (result.success) {
+        try {
+          const emailResponse = await emailjs.sendForm(
+            'service_cryt5gv',
+            'template_a1j0bze',
+            form.current,
+            'ig09SV7KNYzL-JgK-'
+          )
+          console.log('Email sent successfully:', emailResponse.status, emailResponse.text)
           setSend(true)
-        } else {
-          console.error('Turnstile verification failed:', data.error)
+        } catch (error) {
+          console.error('Error sending email:', error)
         }
-      })
-      .catch((error) => {
-        console.error('Error in Turnstile verification:', error)
-      })
+      } else {
+        console.error('Turnstile verification failed:', result.error)
+      }
+    } catch (error) {
+      console.error('Error in Turnstile verification:', error)
+    }
   }
 
   return (
@@ -93,10 +92,10 @@ function Form() {
               errors.nombre?.type === 'required'
                 ? 'First name is required'
                 : errors.nombre?.type === 'minLength'
-                  ? 'First name must be at least 3 characters'
-                  : errors.nombre?.type === 'maxLength'
-                    ? 'First name must be less than 20 characters'
-                    : ''
+                ? 'First name must be at least 3 characters'
+                : errors.nombre?.type === 'maxLength'
+                ? 'First name must be less than 20 characters'
+                : ''
             }
             variant="underlined"
             {...register('nombre', { required: true, minLength: 3, maxLength: 20 })}
@@ -116,10 +115,10 @@ function Form() {
               errors.apellidos?.type === 'required'
                 ? 'Last name is required'
                 : errors.apellidos?.type === 'minLength'
-                  ? 'Last name must be at least 3 characters'
-                  : errors.apellidos?.type === 'maxLength'
-                    ? 'Last name must be less than 40 characters'
-                    : ''
+                ? 'Last name must be at least 3 characters'
+                : errors.apellidos?.type === 'maxLength'
+                ? 'Last name must be less than 40 characters'
+                : ''
             }
             variant="underlined"
             {...register('apellidos', { required: true, minLength: 3, maxLength: 40 })}
@@ -160,10 +159,10 @@ function Form() {
               errors.asunto?.type === 'required'
                 ? 'Subject is required'
                 : errors.asunto?.type === 'minLength'
-                  ? 'Subject must be at least 3 characters'
-                  : errors.asunto?.type === 'maxLength'
-                    ? 'Subject must be less than 100 characters'
-                    : ''
+                ? 'Subject must be at least 3 characters'
+                : errors.asunto?.type === 'maxLength'
+                ? 'Subject must be less than 100 characters'
+                : ''
             }
             variant="underlined"
             {...register('asunto', { required: true, minLength: 3, maxLength: 100 })}
@@ -181,10 +180,10 @@ function Form() {
               errors.mensaje?.type === 'required'
                 ? 'Message is required'
                 : errors.mensaje?.type === 'minLength'
-                  ? 'Message must be at least 20 characters'
-                  : errors.mensaje?.type === 'maxLength'
-                    ? 'Message must be less than 3000 characters'
-                    : ''
+                ? 'Message must be at least 20 characters'
+                : errors.mensaje?.type === 'maxLength'
+                ? 'Message must be less than 3000 characters'
+                : ''
             }
             variant="underlined"
             {...register('mensaje', { required: true, minLength: 20, maxLength: 3000 })}

@@ -1,9 +1,7 @@
 import Intro from '@/components/cuencas/IntroCuencas'
 import Form from '@/components/contacto/Form'
 
-export const revalidate = 60
-export const dynamic = 'force-dynamic'
-export const fetchCache = 'force-no-store'
+
 
 function page() {
   return (

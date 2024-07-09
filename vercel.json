@@ -1,7 +1,10 @@
 {
   "routes": [
     {
-      "src": "/.*"
+      "src": "/.*",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate"
+      }
     }
   ]
 }

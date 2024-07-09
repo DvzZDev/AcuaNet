@@ -103,16 +103,16 @@ export default function Navbar({ data }) {
               Pluviometros
             </Link>
             <Link
-              href="/contacto"
-              className="glow transition-all"
-            >
-              Contacto
-            </Link>
-            <Link
               href="/quienesSomos"
               className="glow transition-all"
             >
               Quienes Somos
+            </Link>
+            <Link
+              href="/contacto"
+              className="glow transition-all"
+            >
+              Contacto
             </Link>
           </nav>
 
@@ -153,6 +153,13 @@ export default function Navbar({ data }) {
             className="animate-fade-down transition-all animate-delay-300 hover:text-green-300"
           >
             Quienes Somos
+          </Link>
+          <Link
+            href="/contacto"
+            onClick={closeMenu}
+            className="animate-fade-down transition-all animate-delay-300 hover:text-green-300"
+          >
+            Contacto
           </Link>
           <div className="animate-fade-down animate-delay-400">
             <SearchMov

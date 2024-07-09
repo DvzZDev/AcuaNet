@@ -2,28 +2,45 @@
 import { useForm } from 'react-hook-form'
 import { Input, Textarea } from '@nextui-org/input'
 import { Button } from '@nextui-org/button'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import emailjs from 'emailjs-com'
 
 function Form() {
-  const [send, setSend] = useState(false)
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
+    script.async = true
+    document.body.appendChild(script)
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
 
+  const [send, setSend] = useState(false)
   const form = useRef()
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
-  const onSubmit = async (data) => {
-    const recaptchaToken = await executeRecaptcha('contact_form')
 
-    fetch('/api/recaptchasubmit', {
+  const onSubmit = async (data) => {
+    const turnstileResponse = document
+      .querySelector('.cf-turnstile')
+      .querySelector('input[name="cf-turnstile-response"]').value
+
+    if (!turnstileResponse) {
+      console.error('Turnstile response is missing.')
+      return
+    }
+
+    fetch('/api/turnstile', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        recaptchaToken: recaptchaToken,
+        turnstileToken: turnstileResponse,
       }),
     })
       .then((response) => response.json())
@@ -34,22 +51,21 @@ function Form() {
               'service_cryt5gv',
               'template_a1j0bze',
               form.current,
-              'ig09SV7KNYzL-JgJ-'
+              'ig09SV7KNYzL-JgK-'
             )
             .then((response) => {
-              console.log('Email sent successfully:', response.status, response.text)
+              'Email sent successfully:', response.status, response.text
             })
             .catch((error) => {
               console.error('Error sending email:', error)
-            })
-          console.log(data)
+            })(data)
           setSend(true)
         } else {
-          console.error('reCAPTCHA verification failed:', data.error)
+          console.error('Turnstile verification failed:', data.error)
         }
       })
       .catch((error) => {
-        console.error('Error in reCAPTCHA verification:', error)
+        console.error('Error in Turnstile verification:', error)
       })
   }
 
@@ -175,6 +191,13 @@ function Form() {
             aria-invalid={errors.mensaje ? 'true' : 'false'}
             className={`${send ? 'hidden' : 'block'} bg-slate-950 text-2xl`}
           />
+          <div className={`${send ? 'hidden' : 'block'}`}>
+            <div
+              className="cf-turnstile"
+              data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+              data-response-field-name="cf-turnstile-response"
+            ></div>
+          </div>
           <Button
             variant="flat"
             className={`${send ? 'hidden' : 'block'} bg-blue-950 text-xl text-textsecondary`}

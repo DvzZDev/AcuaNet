@@ -5,12 +5,12 @@ async function Title(url) {
   const cuenca = await FetchCuencas()
   const cuencaid = url.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
-  const decodedCuencaidNM = decodedCuencaid.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-  const resCuenca = cuenca.find(
-    (cuenca) =>
-      cuenca.cuenca === decodedCuencaidNM
+  const decodedCuencaidNM = decodedCuencaid
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+  const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaidNM)(
+    decodedCuencaidNM
   )
-  console.log(decodedCuencaidNM)
 
   return (
     <div className="justify-center">

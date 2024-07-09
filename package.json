@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-    
   },
   "dependencies": {
     "@fontsource-variable/comfortaa": "^5.0.20",
@@ -16,6 +15,7 @@
     "@nextui-org/image": "^2.0.29",
     "@nextui-org/input": "^2.2.2",
     "@nextui-org/modal": "^2.0.36",
+    "@nextui-org/spinner": "^2.0.30",
     "@nextui-org/system": "^2.2.2",
     "@nextui-org/theme": "^2.2.6",
     "@tanstack/react-table": "^8.17.3",

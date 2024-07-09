@@ -18,6 +18,7 @@ function Form() {
   }, [])
 
   const [send, setSend] = useState(false)
+  const [loading, setLoading] = useState(false)
   const form = useRef()
   const {
     register,
@@ -49,13 +50,13 @@ function Form() {
 
       if (result.success) {
         try {
+          setLoading(true)
           const emailResponse = await emailjs.sendForm(
             'service_cryt5gv',
             'template_a1j0bze',
             form.current,
             'ig09SV7KNYzL-JgK-'
-          )
-          console.log('Email sent successfully:', emailResponse.status, emailResponse.text)
+          )('Email sent successfully:', emailResponse.status, emailResponse.text)
           setSend(true)
         } catch (error) {
           console.error('Error sending email:', error)
@@ -92,10 +93,10 @@ function Form() {
               errors.nombre?.type === 'required'
                 ? 'First name is required'
                 : errors.nombre?.type === 'minLength'
-                ? 'First name must be at least 3 characters'
-                : errors.nombre?.type === 'maxLength'
-                ? 'First name must be less than 20 characters'
-                : ''
+                  ? 'First name must be at least 3 characters'
+                  : errors.nombre?.type === 'maxLength'
+                    ? 'First name must be less than 20 characters'
+                    : ''
             }
             variant="underlined"
             {...register('nombre', { required: true, minLength: 3, maxLength: 20 })}
@@ -115,10 +116,10 @@ function Form() {
               errors.apellidos?.type === 'required'
                 ? 'Last name is required'
                 : errors.apellidos?.type === 'minLength'
-                ? 'Last name must be at least 3 characters'
-                : errors.apellidos?.type === 'maxLength'
-                ? 'Last name must be less than 40 characters'
-                : ''
+                  ? 'Last name must be at least 3 characters'
+                  : errors.apellidos?.type === 'maxLength'
+                    ? 'Last name must be less than 40 characters'
+                    : ''
             }
             variant="underlined"
             {...register('apellidos', { required: true, minLength: 3, maxLength: 40 })}
@@ -159,10 +160,10 @@ function Form() {
               errors.asunto?.type === 'required'
                 ? 'Subject is required'
                 : errors.asunto?.type === 'minLength'
-                ? 'Subject must be at least 3 characters'
-                : errors.asunto?.type === 'maxLength'
-                ? 'Subject must be less than 100 characters'
-                : ''
+                  ? 'Subject must be at least 3 characters'
+                  : errors.asunto?.type === 'maxLength'
+                    ? 'Subject must be less than 100 characters'
+                    : ''
             }
             variant="underlined"
             {...register('asunto', { required: true, minLength: 3, maxLength: 100 })}
@@ -180,10 +181,10 @@ function Form() {
               errors.mensaje?.type === 'required'
                 ? 'Message is required'
                 : errors.mensaje?.type === 'minLength'
-                ? 'Message must be at least 20 characters'
-                : errors.mensaje?.type === 'maxLength'
-                ? 'Message must be less than 3000 characters'
-                : ''
+                  ? 'Message must be at least 20 characters'
+                  : errors.mensaje?.type === 'maxLength'
+                    ? 'Message must be less than 3000 characters'
+                    : ''
             }
             variant="underlined"
             {...register('mensaje', { required: true, minLength: 20, maxLength: 3000 })}
@@ -199,12 +200,14 @@ function Form() {
           </div>
           <Button
             variant="flat"
-            className={`${send ? 'hidden' : 'block'} bg-blue-950 text-xl text-textsecondary`}
+            className={`${send ? 'hidden' : 'block'} bg-blue-950 pt-1 text-xl text-textsecondary`}
             radius="sm"
             type="submit"
+            isLoading={loading ? true : false}
           >
-            Enviar
+            {loading ? '' : 'Enviar'}
           </Button>
+
           <div
             className={`${send ? 'flex' : 'hidden'} flex h-full flex-col items-center justify-center rounded-lg p-8 text-center shadow-lg`}
           >

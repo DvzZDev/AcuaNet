@@ -37,6 +37,7 @@ function Form() {
     }
 
     try {
+      setLoading(true)
       const response = await fetch('/api/turnstile', {
         method: 'POST',
         headers: {
@@ -50,14 +51,18 @@ function Form() {
 
       if (result.success) {
         try {
-          setLoading(true)
           const emailResponse = await emailjs.sendForm(
             'service_cryt5gv',
             'template_a1j0bze',
             form.current,
             'ig09SV7KNYzL-JgK-'
-          )('Email sent successfully:', emailResponse.status, emailResponse.text)
-          setSend(true)
+          )
+
+          if (emailResponse.status === 200) {
+            setSend(true)
+          } else {
+            console.error('Error sending email:', emailResponse.text)
+          }
         } catch (error) {
           console.error('Error sending email:', error)
         }
@@ -66,6 +71,8 @@ function Form() {
       }
     } catch (error) {
       console.error('Error in Turnstile verification:', error)
+    } finally {
+      setLoading(false) // Ensure spinner is hidden after the request
     }
   }
 
@@ -203,7 +210,7 @@ function Form() {
             className={`${send ? 'hidden' : 'block'} bg-blue-950 pt-1 text-xl text-textsecondary`}
             radius="sm"
             type="submit"
-            isLoading={loading ? true : false}
+            isLoading={loading}
           >
             {loading ? '' : 'Enviar'}
           </Button>

@@ -6,11 +6,11 @@ export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
 export const metadata = {
-  title: 'Contacto - AcuaNet',
+  title: 'Quienes Somos - AcuaNet',
   description:
     '¿Tienes alguna duda o comentario, quieres reportar un bug? Contáctanos y te responderemos en 48h.',
   openGraph: {
-    title: 'Contacto - AcuaNet',
+    title: 'Quienes Somos - AcuaNet',
     description:
       '¿Tienes alguna duda o comentario, quieres reportar un bug? Contáctanos y te responderemos en 48h.',
     url: 'https://acuanet.es/cuencas',
@@ -33,7 +33,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contacto - AcuaNet',
+    title: 'Quienes Somos - AcuaNet',
     description:
       '¿Tienes alguna duda o comentario, quieres reportar un bug? Contáctanos y te responderemos en 48h.',
     creator: '@_DvzZ_',

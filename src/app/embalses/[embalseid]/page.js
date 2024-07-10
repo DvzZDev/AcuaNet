@@ -8,10 +8,9 @@ export const fetchCache = 'force-no-store'
 
 export function generateMetadata({ params }) {
   return {
-    title: `${params.embalseid.charAt(0).toUpperCase()}${params.embalseid.slice(1)} - AcuaNet`,
+    title: `${params.embalseid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,
     openGraph: {
-      title: `${params.embalseid.charAt(0).toUpperCase()}${params.embalseid.slice(1)} - AcuaNet`,
-      url: 'https://acuanet.es/cuencas',
+      title: `${params.embalseid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,      url: 'https://acuanet.es/cuencas',
       siteName: 'AcuaES',
       images: [
         {
@@ -31,8 +30,7 @@ export function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${params.embalseid.charAt(0).toUpperCase()}${params.embalseid.slice(1)} - AcuaNet`,
-      creator: '@_DvzZ_',
+      title: `${params.embalseid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,      creator: '@_DvzZ_',
       images: ['https://i.imgur.com/Jpt5ENb.png'],
     },
   }

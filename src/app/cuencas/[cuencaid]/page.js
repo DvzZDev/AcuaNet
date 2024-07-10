@@ -12,10 +12,10 @@ export const fetchCache = 'force-no-store'
 
 export function generateMetadata({ params }) {
   return {
-    title: `${params.cuencaid.charAt(0).toUpperCase()}${params.cuencaid.slice(1)} - AcuaNet`,
+    title: `${params.cuencaid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.cuencaid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,
     description: `Conulta las mediciones hidrográficas de la cuenca del ${params.cuencaid}`,
     openGraph: {
-      title: `${params.cuencaid.charAt(0).toUpperCase()}${params.cuencaid.slice(1)} - AcuaNet`,
+      title: `${params.cuencaid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.cuencaid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,
       description: `Conulta las mediciones hidrográficas de la cuenca del ${params.cuencaid}`,
       url: 'https://acuanet.es/cuencas',
       siteName: 'AcuaES',
@@ -37,7 +37,7 @@ export function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${params.cuencaid.charAt(0).toUpperCase()}${params.cuencaid.slice(1)} - AcuaNet`,
+      title: `${params.cuencaid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.cuencaid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,
       description: `Conulta las mediciones hidrográficas de la cuenca del ${params.cuencaid}`,
       creator: '@_DvzZ_',
       images: ['https://i.imgur.com/Jpt5ENb.png'],

@@ -13,21 +13,26 @@ export const metadata = {
   image: 'https://i.imgur.com/Jpt5ENb.png',
 
   openGraph: {
-    // Campos específicos para Twitter
-    twitterCard: 'summary_large_image', // Tipo de tarjeta de Twitter
-    twitterCreator: '@_DvzZ_', // Usuario de Twitter para créditos de la tarjeta
-
-    // Campos específicos para Open Graph (og)
-    ogTitle: 'Cuencas Hidrográficas - AcuaNet',
-    ogDescription:
+    title: 'Cuencas Hidrográficas - AcuaNet',
+    description:
       'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
-    ogUrl: 'https://acuanet.es/cuencas',
-    ogImage: {
-      url: 'https://i.imgur.com/Jpt5ENb.png',
-      alt: 'Imagen para Open Graph',
-    },
-    ogType: 'website', // Tipo de objeto (website, article, etc.)
-    ogLocale: 'es_ES', // Localización
+    url: 'https://acuanet.es/cuencas',
+    siteName: 'AcuaES',
+    images: [
+      {
+        url: 'https://i.imgur.com/Jpt5ENb.png',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://i.imgur.com/Jpt5ENb.png',
+        width: 1800,
+        height: 1600,
+        alt: 'My custom alt',
+      },
+    ],
+    locale: 'es_ES',
+    type: 'website',
   },
 }
 

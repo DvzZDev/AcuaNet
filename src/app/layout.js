@@ -5,13 +5,27 @@ import { Providers } from './providers'
 import ModalCookies from '@/components/landing/ModalCookies'
 
 export const metadata = {
-  title: 'AcuaNet - Monitorización Hidrográfica de España',
+  // Campos generales
+  title: 'Cuencas Hidrográficas - AcuaNet',
   description:
-    'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
-  url: 'https://acuanet.es',
+    'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+  url: 'https://acuanet.es/cuencas',
   image: 'https://i.imgur.com/Jpt5ENb.png',
-  twitterCreator: '@_DvzZ_',
+
+  // Campos específicos para Twitter
+  twitterCard: 'summary_large_image', // Tipo de tarjeta de Twitter
+  twitterCreator: '@_DvzZ_', // Usuario de Twitter para créditos de la tarjeta
+
+  // Campos específicos para Open Graph (og)
+  ogTitle: 'Cuencas Hidrográficas - AcuaNet',
+  ogDescription:
+    'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+  ogUrl: 'https://acuanet.es/cuencas',
+  ogImage: 'https://i.imgur.com/Jpt5ENb.png',
+  ogType: 'website', // Tipo de objeto (website, article, etc.)
+  ogLocale: 'es_ES', // Localización
 }
+
 export default function RootLayout({ children }) {
   return (
     <html lang="es">

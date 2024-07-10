@@ -5,18 +5,17 @@ import { Providers } from './providers'
 import ModalCookies from '@/components/landing/ModalCookies'
 
 export const metadata = {
-  // Campos generales
-  title: 'Cuencas Hidrográficas - AcuaNet',
+  title: 'AcuaNet - Monitorización Hidrográfica de España',
   description:
-    'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
-  url: 'https://acuanet.es/cuencas',
+    'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
+  url: 'https://acuanet.es',
   image: 'https://i.imgur.com/Jpt5ENb.png',
 
   openGraph: {
-    title: 'Cuencas Hidrográficas - AcuaNet',
+    title: 'AcuaNet - Monitorización Hidrográfica de España',
     description:
-      'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
-    url: 'https://acuanet.es/cuencas',
+      'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
+    url: 'https://acuanet.es',
     siteName: 'AcuaES',
     images: [
       {

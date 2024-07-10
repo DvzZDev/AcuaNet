@@ -91,8 +91,8 @@ function Form() {
             label="Nombre"
             className={`${send ? 'hidden' : 'block'} bg-slate-950`}
             classNames={{
-              input: 'text-lg leading-none text-textprimary',
-              label: 'text-lg leading-none text-textprimary mb-2',
+              input: 'text-lg leading-none active:   ',
+              label: 'text-lg leading-none mb-2',
             }}
             isRequired
             isInvalid={!!errors.nombre}
@@ -114,8 +114,8 @@ function Form() {
             label="Apellidos"
             className={`${send ? 'hidden' : 'block'} bg-slate-950 text-2xl`}
             classNames={{
-              input: 'text-lg leading-none text-textprimary',
-              label: 'text-lg leading-none text-textprimary mb-2',
+              input: 'text-lg leading-none ',
+              label: 'text-lg leading-none  mb-2',
             }}
             isRequired
             isInvalid={!!errors.apellidos}
@@ -123,13 +123,13 @@ function Form() {
               errors.apellidos?.type === 'required'
                 ? 'Last name is required'
                 : errors.apellidos?.type === 'minLength'
-                  ? 'Last name must be at least 3 characters'
+                  ? 'Last name must be at least 5 characters'
                   : errors.apellidos?.type === 'maxLength'
                     ? 'Last name must be less than 40 characters'
                     : ''
             }
             variant="underlined"
-            {...register('apellidos', { required: true, minLength: 3, maxLength: 40 })}
+            {...register('apellidos', { required: true, minLength: 5, maxLength: 40 })}
             aria-invalid={errors.apellidos ? 'true' : 'false'}
           />
           <Input
@@ -137,8 +137,8 @@ function Form() {
             label="Email de contacto"
             className={`${send ? 'hidden' : 'block'} bg-slate-950 text-2xl`}
             classNames={{
-              input: 'text-lg leading-none text-textprimary',
-              label: 'text-lg leading-none text-textprimary mb-2',
+              input: 'text-lg leading-none ',
+              label: 'text-lg leading-none  mb-2',
             }}
             isRequired
             isInvalid={!!errors.email}
@@ -158,8 +158,8 @@ function Form() {
             label="Asunto"
             className={`${send ? 'hidden' : 'block'} bg-slate-950 text-2xl`}
             classNames={{
-              input: 'text-lg leading-none text-textprimary',
-              label: 'text-lg leading-none text-textprimary mb-2',
+              input: 'text-lg leading-none ',
+              label: 'text-lg leading-none  mb-2',
             }}
             isRequired
             isInvalid={!!errors.asunto}
@@ -167,13 +167,13 @@ function Form() {
               errors.asunto?.type === 'required'
                 ? 'Subject is required'
                 : errors.asunto?.type === 'minLength'
-                  ? 'Subject must be at least 3 characters'
+                  ? 'Subject must be at least 5 characters'
                   : errors.asunto?.type === 'maxLength'
                     ? 'Subject must be less than 100 characters'
                     : ''
             }
             variant="underlined"
-            {...register('asunto', { required: true, minLength: 3, maxLength: 100 })}
+            {...register('asunto', { required: true, minLength: 5, maxLength: 100 })}
             aria-invalid={errors.asunto ? 'true' : 'false'}
           />
           <Textarea
@@ -181,8 +181,8 @@ function Form() {
             label="Mensaje"
             isInvalid={!!errors.mensaje}
             classNames={{
-              input: 'text-lg leading-none text-textprimary',
-              label: 'text-lg leading-none text-textprimary mb-2',
+              input: 'text-lg leading-none ',
+              label: 'text-lg leading-none  mb-2',
             }}
             errorMessage={
               errors.mensaje?.type === 'required'
@@ -233,9 +233,7 @@ function Form() {
             <h1 className="mt-7 text-3xl font-bold text-textsecondary">
               ¡Gracias por tu mensaje!
             </h1>
-            <p className="mt-4 text-xl text-textprimary">
-              Te responderemos en menos de 48 horas.
-            </p>
+            <p className="mt-4 text-xl">Te responderemos en menos de 48 horas.</p>
           </div>
         </div>
       </form>
@@ -244,4 +242,3 @@ function Form() {
 }
 
 export default Form
- 

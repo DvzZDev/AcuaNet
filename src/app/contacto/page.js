@@ -7,8 +7,12 @@ export const fetchCache = 'force-no-store'
 
 export const metadata = {
   title: 'Quienes Somos - AcuaNet',
+  description:
+    '¿Tienes alguna duda o comentario, quieres reportar un bug? Contáctanos y te responderemos en 48h.',
   openGraph: {
     title: 'Quienes Somos - AcuaNet',
+    description:
+      '¿Tienes alguna duda o comentario, quieres reportar un bug? Contáctanos y te responderemos en 48h.',
     url: 'https://acuanet.es/cuencas',
     siteName: 'AcuaES',
     images: [
@@ -30,6 +34,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Quienes Somos - AcuaNet',
+    description:
+      '¿Tienes alguna duda o comentario, quieres reportar un bug? Contáctanos y te responderemos en 48h.',
     creator: '@_DvzZ_',
     images: ['https://i.imgur.com/Jpt5ENb.png'],
   },

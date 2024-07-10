@@ -9,8 +9,11 @@ export const fetchCache = 'force-no-store'
 
 export const metadata = {
   title: 'Embalses de España - AcuaNet',
+  description: 'Información actualizada sobre los embalses de España y su estado actual',
   openGraph: {
     title: 'Embalses de España - AcuaNet',
+    description:
+      'Información actualizada sobre los embalses de España y su estado actual',
     url: 'https://acuanet.es/cuencas',
     siteName: 'AcuaES',
     images: [

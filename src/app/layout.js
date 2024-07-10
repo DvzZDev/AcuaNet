@@ -32,7 +32,8 @@ export const metadata = {
       siteId: '1467726470533754880',
       creator: '@nextjs',
       creatorId: '1467726470533754880',
-      images: ['https://nextjs.org/og.png'], // Must be an absolute URL
+      images: ['https://i.imgur.com/Jpt5ENb.png'], // Must be an absolute URL
+
     },
   },
 }

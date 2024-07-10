@@ -9,18 +9,15 @@ export const fetchCache = 'force-no-store'
 
 export const metadata = {
   title: 'Cuencas Hidrográficas - AcuaNet',
-  description:
-    'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+  description: 'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
   url: 'https://acuanet.es/cuencas',
   image: 'https://i.imgur.com/Jpt5ENb.png',
   twitterCreator: '@_DvzZ_',
   card: 'summary_large_image',
 
   openGraph: {
-    card: 'summary_large_image',
     title: 'Cuencas Hidrográficas - AcuaNet',
-    description:
-      'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+    description: 'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
     url: 'https://acuanet.es/cuencas',
     siteName: 'AcuaES',
     images: [
@@ -38,6 +35,18 @@ export const metadata = {
     ],
     locale: 'es_ES',
     type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cuencas Hidrográficas - AcuaNet',
+    description: 'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+    images: [
+      {
+        url: 'https://i.imgur.com/Jpt5ENb.png',
+      },
+    ],
+    creator: '@_DvzZ_',
   },
 }
 

@@ -11,6 +11,9 @@ export const metadata = {
   title: 'Cuencas Hidrográficas - AcuaNet',
   description:
     'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+  url: 'https://acuanet.es/cuencas',
+  image: 'https://i.imgur.com/Jpt5ENb.png',
+  twitterCreator: '@_DvzZ_',
 }
 
 function page() {

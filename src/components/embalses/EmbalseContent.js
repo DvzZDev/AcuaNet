@@ -4,17 +4,8 @@ import Image from 'next/image'
 import { Link } from 'next-view-transitions'
 
 function EmbalseContent({ data }) {
-  // agua_embalsada: 3103,
-  // agua_embalsadapor: 98.2,
-  // variacion_ultima_semana: -27,
-  // variacion_ultima_semanapor: -0.85,
-  // capacidad_total: 3160,
-  // 'misma_semana_ultimo_año': 2.351,
-  // 'misma_semana_ultimo_añopor': 74.4,
-  // 'misma_semana_10años': 2.414,
-  // 'misma_semana_10añospor': 76.42
   return (
-    <section className="mb-4 flex min-h-[40rem] justify-center bg-bgcolor p-4 text-white lg:pt-1">
+    <section className="flex min-h-[40rem] justify-center bg-bgcolor p-4 pb-4 text-white lg:pt-1">
       <div className="mx-4 flex min-h-full w-full flex-col gap-4 transition-all sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
         {/* Primera Columna */}
 
@@ -123,10 +114,10 @@ function EmbalseContent({ data }) {
 
         <div
           id="embalses-div"
-          className="order-7 flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3"
+          className="order-7 flex items-center justify-center rounded-lg hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
         >
           <Link href={'/embalses'}>
-            <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
+            <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent gap-4">
               <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
                 Todos los
               </h1>

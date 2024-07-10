@@ -10,7 +10,6 @@ export const metadata = {
   description:
     'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
   url: 'https://acuanet.es/cuencas',
-  image: 'https://i.imgur.com/Jpt5ENb.png',
 
   // Campos específicos para Twitter
   twitterCard: 'summary_large_image', // Tipo de tarjeta de Twitter
@@ -21,10 +20,7 @@ export const metadata = {
   ogDescription:
     'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
   ogUrl: 'https://acuanet.es/cuencas',
-  ogImage: {
-    url: 'https://i.imgur.com/Jpt5ENb.png',
-    alt: 'Imagen para Open Graph',
-  },
+  ogImage: {},
   ogType: 'website', // Tipo de objeto (website, article, etc.)
   ogLocale: 'es_ES', // Localización
 }

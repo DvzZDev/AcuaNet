@@ -8,8 +8,8 @@ export const fetchCache = 'force-no-store'
 
 export function generateMetadata({ params }) {
   return {
-    title: `${params.embalseid} - AcuaNet`,
-    description: `Embalse  ${params.embalseid}`,
+    title: `${params.embalseid.charAt(0).toUpperCase()}${params.embalseid.slice(1)} - AcuaNet`,
+    description: `Consulta las mediciones hidrograficas en el embalse de ${params.embalseid}`,
   }
 }
 

@@ -12,11 +12,10 @@ export const fetchCache = 'force-no-store'
 
 export function generateMetadata({ params }) {
   return {
-    title: `${params.cuencaid} - AcuaNet`,
-    description: `Cuenca del ${params.cuencaid}`,
+    title: `${params.cuencaid.charAt(0).toUpperCase()}${params.cuencaid.slice(1)} - AcuaNet`,
+    description: `Conulta las mediciones hidrográficas de la cuenca del ${params.cuencaid}`,
   }
 }
-
 
 async function Page({ params }) {
   return (

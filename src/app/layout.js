@@ -6,14 +6,16 @@ import ModalCookies from '@/components/landing/ModalCookies'
 
 export const metadata = {
   title: 'AcuaNet - Monitorización Hidrográfica de España',
-  description: 'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
+  description:
+    'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
 
   openGraph: {
     url: 'https://acuanet.es',
     siteName: 'AcuaNet',
     type: 'website',
     title: 'AcuaNet - Monitorización Hidrográfica de España',
-    description: 'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
+    description:
+      'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
     images: [
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',
@@ -22,16 +24,16 @@ export const metadata = {
         alt: 'AcuaNet - Monitorización Hidrográfica',
       },
     ],
-  },
-
-  twitter: {
-    cardType: 'summary_large_image',
-    site: '@AcuaNet',
-    creator: '@AcuaNet',
-    title: 'AcuaNet - Monitorización Hidrográfica de España',
-    description: 'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
-    image: 'https://i.imgur.com/Jpt5ENb.png',
-    imageAlt: 'AcuaNet - Monitorización Hidrográfica',
+    
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Next.js',
+      description: 'The React Framework for the Web',
+      siteId: '1467726470533754880',
+      creator: '@nextjs',
+      creatorId: '1467726470533754880',
+      images: ['https://nextjs.org/og.png'], // Must be an absolute URL
+    },
   },
 }
 

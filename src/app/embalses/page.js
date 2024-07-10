@@ -35,8 +35,6 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Embalses de España - AcuaNet',
-    description:
-      'Información actualizada sobre los embalses de España y su estado actual',
     creator: '@_DvzZ_',
     images: ['https://i.imgur.com/Jpt5ENb.png'],
   },

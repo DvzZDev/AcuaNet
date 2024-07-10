@@ -34,7 +34,6 @@ export function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       title: `${params.embalseid.charAt(0).toUpperCase()}${params.embalseid.slice(1)} - AcuaNet`,
-      description: `Consulta las mediciones hidrográficas del embalse de ${params.embalseid}`,
       creator: '@_DvzZ_',
       images: ['https://i.imgur.com/Jpt5ENb.png'],
     },

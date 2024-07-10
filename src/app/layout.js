@@ -21,7 +21,10 @@ export const metadata = {
   ogDescription:
     'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
   ogUrl: 'https://acuanet.es/cuencas',
-  ogImage: 'https://i.imgur.com/Jpt5ENb.png',
+  ogImage: {
+    url: 'https://i.imgur.com/Jpt5ENb.png',
+    alt: 'Imagen para Open Graph',
+  },
   ogType: 'website', // Tipo de objeto (website, article, etc.)
   ogLocale: 'es_ES', // Localización
 }

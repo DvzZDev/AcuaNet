@@ -27,12 +27,18 @@ export const metadata = {
 
     twitter: {
       card: 'summary_large_image',
-      title: 'Next.js',
-      description: 'The React Framework for the Web',
-      siteId: '1467726470533754880',
-      creator: '@nextjs',
-      creatorId: '1467726470533754880',
-      images: ['https://i.imgur.com/Jpt5ENb.png'],
+      title: 'AcuaNet - Monitorización Hidrográfica de España',
+      description:
+        'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
+      creator: '@_DvzZ_',
+      images: [
+        {
+          url: 'https://i.imgur.com/Jpt5ENb.png',
+          width: 1200,
+          height: 630,
+          alt: 'Og image',
+        },
+      ],
     },
   },
 }

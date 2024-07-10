@@ -5,9 +5,22 @@ import { Providers } from './providers'
 import ModalCookies from '@/components/landing/ModalCookies'
 
 export const metadata = {
-  title: 'AcuaNet',
+  title: 'AcuaNet - Monitorización Hidrográfica de España',
   description:
-    'AcuaNet es una plataforma que te permite conocer el estado de los embalses, pluviómetros y cuencas hidrográficas de España con datos actualizados',
+    'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
+
+  url: 'https://acuanet.es',
+  siteName: 'AcuaNet',
+  locale: 'es_ES',
+  type: 'website',
+  images: [
+    {
+      url: 'https://i.imgur.com/Jpt5ENb.png',
+      width: 1200,
+      height: 630,
+      alt: 'AcuaNet - Monitorización Hidrográfica de España',
+    },
+  ],
 }
 
 export default function RootLayout({ children }) {

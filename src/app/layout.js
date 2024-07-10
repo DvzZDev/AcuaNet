@@ -9,18 +9,20 @@ export const metadata = {
   description:
     'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
 
-  url: 'https://acuanet.es',
-  siteName: 'AcuaNet',
-  locale: 'es_ES',
-  type: 'website',
-  images: [
-    {
-      url: 'https://i.imgur.com/Jpt5ENb.png',
-      width: 1200,
-      height: 630,
-      alt: 'AcuaNet - Monitorización Hidrográfica de España',
-    },
-  ],
+  openGraph: {
+    title: 'AcuaNet - Monitorización Hidrográfica de España',
+    description:
+      'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
+    url: 'https://nextjs.org',
+    siteName: 'AcuanNet',
+    images: [
+      {
+        url: 'https://i.imgur.com/Jpt5ENb.png',
+        width: 1600,
+        height: 630,
+      },
+    ],
+  },
 }
 
 export default function RootLayout({ children }) {

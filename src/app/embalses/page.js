@@ -15,7 +15,7 @@ export const metadata = {
     description:
       'Información actualizada sobre los embalses de España y su estado actual',
     url: 'https://acuanet.es/cuencas',
-    siteName: 'AcuaES',
+    siteName: 'AcuaNet',
     images: [
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',

@@ -18,7 +18,7 @@ export function generateMetadata({ params }) {
       title: `${params.cuencaid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.cuencaid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,
       description: `Conulta las mediciones hidrográficas de la cuenca del ${params.cuencaid}`,
       url: 'https://acuanet.es/cuencas',
-      siteName: 'AcuaES',
+      siteName: 'AcuaNet',
       images: [
         {
           url: 'https://i.imgur.com/Jpt5ENb.png',

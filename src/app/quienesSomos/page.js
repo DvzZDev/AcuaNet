@@ -15,7 +15,7 @@ export const metadata = {
     description:
       'Conoce más sobre el equipo de AcuaNet y cómo trabajamos para brindarte información actualizada sobre los embalses de agua en España',
     url: 'https://acuanet.es/cuencas',
-    siteName: 'AcuaES',
+    siteName: 'AcuaNet',
     images: [
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',

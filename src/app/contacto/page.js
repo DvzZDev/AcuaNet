@@ -14,7 +14,7 @@ export const metadata = {
     description:
       '¿Tienes alguna duda o comentario, quieres reportar un bug? Contáctanos y te responderemos en 48h.',
     url: 'https://acuanet.es/cuencas',
-    siteName: 'AcuaES',
+    siteName: 'AcuaNet',
     images: [
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',

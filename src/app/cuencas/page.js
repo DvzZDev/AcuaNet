@@ -1,22 +1,24 @@
 // app/cuencas/page.js
 
-import Intro from '@/components/cuencas/IntroCuencas';
-import Bento from '@/components/cuencas/BentoCuencas';
-import { Suspense } from 'react';
-import SkeletonCuencas from '@/components/skeletons/SkeletonCuencas';
+import Intro from '@/components/cuencas/IntroCuencas'
+import Bento from '@/components/cuencas/BentoCuencas'
+import { Suspense } from 'react'
+import SkeletonCuencas from '@/components/skeletons/SkeletonCuencas'
 
-export const revalidate = 60;
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
+export const revalidate = 60
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
 
 export const metadata = {
   title: 'Cuencas Hidrográficas - AcuaNet',
-  description: 'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+  description:
+    'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
   openGraph: {
     title: 'Cuencas Hidrográficas - AcuaNet',
-    description: 'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+    description:
+      'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
     url: 'https://acuanet.es/cuencas',
-    siteName: 'AcuaES',
+    siteName: 'AcuaNet',
     images: [
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',
@@ -36,11 +38,12 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Cuencas Hidrográficas - AcuaNet',
-    description: 'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
+    description:
+      'Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas',
     creator: '@_DvzZ_',
     images: ['https://i.imgur.com/Jpt5ENb.png'],
   },
-};
+}
 
 function CuencasPage() {
   return (
@@ -50,7 +53,7 @@ function CuencasPage() {
         <Bento />
       </Suspense>
     </section>
-  );
+  )
 }
 
-export default CuencasPage;
+export default CuencasPage

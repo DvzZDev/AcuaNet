@@ -16,7 +16,7 @@ export const metadata = {
     description:
       'Conoce más sobre los pluviómetros de España y cómo se gestionan los recursos hídricos en cada uno de ellos',
     url: 'https://acuanet.es/cuencas',
-    siteName: 'AcuaES',
+    siteName: 'AcuaNet',
     images: [
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',

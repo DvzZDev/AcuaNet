@@ -65,7 +65,7 @@ function Footer() {
         </Link>
         <Link
           className="transition-all hover:scale-110"
-          href="https://www.instagram.com/dvz_z_z/"
+          href="https://www.instagram.com/dvzz.dev/"
           target="_blank"
         >
           <svg

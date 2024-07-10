@@ -24,7 +24,7 @@ export const metadata = {
         alt: 'AcuaNet - Monitorización Hidrográfica',
       },
     ],
-    
+
     twitter: {
       card: 'summary_large_image',
       title: 'Next.js',
@@ -32,8 +32,7 @@ export const metadata = {
       siteId: '1467726470533754880',
       creator: '@nextjs',
       creatorId: '1467726470533754880',
-      images: ['https://i.imgur.com/Jpt5ENb.png'], // Must be an absolute URL
-
+      images: ['https://i.imgur.com/Jpt5ENb.png'],
     },
   },
 }

@@ -17,6 +17,7 @@ export function generateMetadata({ params }) {
   }
 }
 
+
 async function Page({ params }) {
   return (
     <>

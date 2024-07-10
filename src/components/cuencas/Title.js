@@ -8,9 +8,7 @@ async function Title(url) {
   const decodedCuencaidNM = decodedCuencaid
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-  const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaidNM)(
-    decodedCuencaidNM
-  )
+  const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaidNM)
 
   return (
     <div className="justify-center">

@@ -78,7 +78,7 @@ function TableData(props) {
 
   return (
     <div className="mx-5">
-      <div className="pt-5 flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4 sm:mt-8">
+      <div className=" flex md:h-14 h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4 sm:mt-8">
         <div
           className={`${show ? 'w-[10rem] border-white' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
         >

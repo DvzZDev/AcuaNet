@@ -9,10 +9,8 @@ export const fetchCache = 'force-no-store'
 export function generateMetadata({ params }) {
   return {
     title: `${params.embalseid.charAt(0).toUpperCase()}${params.embalseid.slice(1)} - AcuaNet`,
-    description: `Consulta las mediciones hidrográficas del embalse de ${params.embalseid}`,
     openGraph: {
       title: `${params.embalseid.charAt(0).toUpperCase()}${params.embalseid.slice(1)} - AcuaNet`,
-      description: `Consulta las mediciones hidrográficas del embalse de ${params.embalseid}`,
       url: 'https://acuanet.es/cuencas',
       siteName: 'AcuaES',
       images: [

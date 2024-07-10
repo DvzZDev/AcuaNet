@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import './globals.css'
 import Footer from '@/components/global/Footer'
 import NavBarData from '@/components/global/NavBarData'
 import { Providers } from './providers'
@@ -12,10 +12,9 @@ export const metadata = {
   image: 'https://i.imgur.com/Jpt5ENb.png',
   twitterCreator: '@_DvzZ_',
 }
-
 export default function RootLayout({ children }) {
   return (
-    <>
+    <html lang="es">
       <body>
         <Providers>
           <header className="h-[3.6rem]">
@@ -26,6 +25,6 @@ export default function RootLayout({ children }) {
           <Footer />
         </Providers>
       </body>
-    </>
+    </html>
   )
 }

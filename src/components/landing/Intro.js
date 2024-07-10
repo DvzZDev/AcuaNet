@@ -7,7 +7,7 @@ async function Intro() {
   const datares = nombreEmbalses
   return (
     <section className="containerr flex h-screen flex-col items-center">
-      <div className="mb-6 mt-4 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
+      <div className="mb-6 mt-4 flex w-[3rem] max-w-xs animate-fade-up justify-center sm:mt-24 sm:w-[5rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           data-name="Capa 1"
@@ -45,11 +45,11 @@ async function Intro() {
         </svg>
       </div>
       <div className="flex flex-col xl:w-[60%]">
-        <strong className="mb-4 w-full text-center font-telma text-[64px] leading-none text-textsecondary sm:text-[5rem]">
+        <strong className="mb-4 w-full animate-fade-up text-center font-telma text-[64px] leading-none text-textsecondary animate-delay-100 sm:text-[5rem]">
           AcuaNet
         </strong>
 
-        <h1 className="h-auto max-w-80 px-4 text-center text-[33px] text-[#fbffb8] sm:max-w-full sm:text-[40px] lg:text-[3rem]">
+        <h1 className="h-auto max-w-80 animate-fade-up px-4 text-center text-[33px] text-[#fbffb8] animate-delay-200 sm:max-w-full sm:text-[40px] lg:text-[3rem]">
           Consulta las mediciones hidrograficas de España en un solo
           <span className="text-[33px] font-bold text-textsecondary sm:text-[40px] lg:text-[3rem]">
             {' '}
@@ -57,8 +57,10 @@ async function Intro() {
           </span>
         </h1>
       </div>
-      <Type data={datares} />
-      <div className="mt-24 h-[15rem] w-[12rem] animate-pulse opacity-90 animate-duration-2000 animate-infinite">
+      <div className="animate-fade-up animate-delay-300">
+        <Type data={datares} />
+      </div>
+      <div className="mt-24 h-[15rem] w-[12rem] animate-jump-in opacity-90 animate-delay-500">
         <Image
           src="/guss.webp"
           alt="hero"
@@ -67,6 +69,7 @@ async function Intro() {
           layout="responsive"
           objectFit="cover"
           draggable="false"
+          className="animate-pulse animate-duration-2000 animate-infinite"
         />
       </div>
     </section>

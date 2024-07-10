@@ -126,6 +126,13 @@ export default function Navbar({ data }) {
         <nav
           className={`${isMenuOpen ? 'flex flex-col items-center gap-12 text-2xl text-textprimary' : 'hidden'}`}
         >
+          <div className="animate-fade-down animate-delay-400 z-20">
+            <SearchMov
+              closeMenu={closeMenu}
+              data={data}
+              isMenuOpen={isMenuOpen}
+            />
+          </div>
           <Link
             href="/cuencas"
             onClick={closeMenu}
@@ -161,13 +168,6 @@ export default function Navbar({ data }) {
           >
             Contacto
           </Link>
-          <div className="animate-fade-down animate-delay-400">
-            <SearchMov
-              closeMenu={closeMenu}
-              data={data}
-              isMenuOpen={isMenuOpen}
-            />
-          </div>
         </nav>
       </div>
     </div>

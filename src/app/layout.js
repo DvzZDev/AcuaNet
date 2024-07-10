@@ -6,19 +6,32 @@ import ModalCookies from '@/components/landing/ModalCookies'
 
 export const metadata = {
   title: 'AcuaNet - Monitorización Hidrográfica de España',
-  description:
-    'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
+  description: 'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
 
   openGraph: {
-    url: 'https://nextjs.org',
-    siteName: 'AcuanNet',
+    url: 'https://acuanet.es',
+    siteName: 'AcuaNet',
+    type: 'website',
+    title: 'AcuaNet - Monitorización Hidrográfica de España',
+    description: 'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
     images: [
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',
         width: 1600,
         height: 630,
+        alt: 'AcuaNet - Monitorización Hidrográfica',
       },
     ],
+  },
+
+  twitter: {
+    cardType: 'summary_large_image',
+    site: '@AcuaNet',
+    creator: '@AcuaNet',
+    title: 'AcuaNet - Monitorización Hidrográfica de España',
+    description: 'Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. En AcuaNet, te ofrecemos datos precisos y actualizados cada seis horas para una gestión eficiente de los recursos hídricos.',
+    image: 'https://i.imgur.com/Jpt5ENb.png',
+    imageAlt: 'AcuaNet - Monitorización Hidrográfica',
   },
 }
 

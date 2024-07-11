@@ -1,9 +1,8 @@
-// app/cuencas/page.js
-
 import Intro from '@/components/cuencas/IntroCuencas'
 import Bento from '@/components/cuencas/BentoCuencas'
 import { Suspense } from 'react'
 import SkeletonCuencas from '@/components/skeletons/SkeletonCuencas'
+import WidgetShareGlob from '@/components/contacto/WidgetShareGlob'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -20,11 +19,6 @@ export const metadata = {
     url: 'https://acuanet.es/cuencas',
     siteName: 'AcuaNet',
     images: [
-      {
-        url: 'https://i.imgur.com/Jpt5ENb.png',
-        width: 800,
-        height: 600,
-      },
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',
         width: 1800,
@@ -45,15 +39,17 @@ export const metadata = {
   },
 }
 
-function CuencasPage() {
+function Page() {
+  console.log()
   return (
     <section className="mt-5">
       <Intro title={'Cuencas Hidrográficas'} />
       <Suspense fallback={<SkeletonCuencas />}>
         <Bento />
       </Suspense>
+      <WidgetShareGlob page={'cuencas'} />
     </section>
   )
 }
 
-export default CuencasPage
+export default Page

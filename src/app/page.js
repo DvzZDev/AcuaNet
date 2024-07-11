@@ -24,11 +24,6 @@ export const metadata = {
     images: [
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',
-        width: 800,
-        height: 600,
-      },
-      {
-        url: 'https://i.imgur.com/Jpt5ENb.png',
         width: 1800,
         height: 1600,
         alt: 'My custom alt',

@@ -49,7 +49,11 @@ async function Page({ params }) {
       <Suspense fallback={<SkeeltonBentoEmbalseDist />}>
         <EmbalseData url={params} />
       </Suspense>
-      <WidgetShare {...params} />
+      <WidgetShare
+        url={params}
+        alter={'embalseid'}
+        page={'embalses'}
+      />
     </>
   )
 }

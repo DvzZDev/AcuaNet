@@ -5,6 +5,7 @@ import TableEmbalsesData from '@/components/cuencas/cuenca/tableEmbalsesData'
 import SkeletonTitleCuencas from '@/components/skeletons/SkeletonTitleCuenca'
 import SkeletonBentoDist from '@/components/skeletons/SkeletonBentoDinst'
 import { Suspense } from 'react'
+import WidgetShare from '@/components/contacto/WidgetShare'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -100,6 +101,11 @@ async function Page({ params }) {
           </Suspense>
         </div>
       </section>
+      <WidgetShare
+        url={params}
+        alter={'cuencaid'}
+        page={'cuencas'}
+      />
     </>
   )
 }

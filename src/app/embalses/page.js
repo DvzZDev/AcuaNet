@@ -2,6 +2,7 @@ import Intro from '@/components/cuencas/IntroCuencas'
 import Tabledata from '@/components/embalses/TableData'
 import { Suspense } from 'react'
 import SkeletonTableEmbalse from '@/components/skeletons/SkeletonTableEmbalse'
+import WidgetShareGlob from '@/components/contacto/WidgetShareGlob'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -17,11 +18,6 @@ export const metadata = {
     url: 'https://acuanet.es/cuencas',
     siteName: 'AcuaNet',
     images: [
-      {
-        url: 'https://i.imgur.com/Jpt5ENb.png',
-        width: 800,
-        height: 600,
-      },
       {
         url: 'https://i.imgur.com/Jpt5ENb.png',
         width: 1800,
@@ -49,6 +45,7 @@ function page() {
           <Tabledata />
         </Suspense>
       </section>
+      <WidgetShareGlob page={'embalses'} />
     </section>
   )
 }

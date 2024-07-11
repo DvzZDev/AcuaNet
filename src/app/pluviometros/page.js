@@ -2,6 +2,7 @@ import Intro from '@/components/cuencas/IntroCuencas'
 import Tabledata from '@/components/pluviometros/Tabledata'
 import SkeletonPluviometros from '@/components/skeletons/SkeletonPluviometros'
 import { Suspense } from 'react'
+import WidgetShareGlob from '@/components/contacto/WidgetShareGlob'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -47,6 +48,7 @@ function page() {
           <Tabledata />
         </Suspense>
       </section>
+      <WidgetShareGlob page={'pluviometros'} />
     </section>
   )
 }

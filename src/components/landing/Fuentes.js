@@ -134,6 +134,7 @@ function Fuentes() {
               key={card.title}
               className="flex justify-center"
               variants={childVariants(delays[index])}
+              viewport={{ once: true, amount: 0.8 }}
             >
               <CardFuentes
                 image={card.image}

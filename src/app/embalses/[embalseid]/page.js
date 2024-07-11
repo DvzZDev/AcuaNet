@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import EmbalseData from '@/components/embalses/EmbalseData'
 import SkeeltonBentoEmbalseDist from '@/components/skeletons/SkeeltonBentoEmbalseDist'
+import WidgetShare from '@/components/contacto/WidgetShare'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -40,9 +41,12 @@ export function generateMetadata({ params }) {
 
 async function Page({ params }) {
   return (
-    <Suspense fallback={<SkeeltonBentoEmbalseDist />}>
-      <EmbalseData url={params} />
-    </Suspense>
+    <>
+      <Suspense fallback={<SkeeltonBentoEmbalseDist />}>
+        <EmbalseData url={params} />
+      </Suspense>
+      <WidgetShare {...params} />
+    </>
   )
 }
 

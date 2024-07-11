@@ -118,6 +118,7 @@ function Fuentes() {
         variants={containerVariants}
         initial="initial"
         whileInView="animate"
+        viewport={{ once: true, amount: 0.8 }}
       >
         <Carousel
           responsive={responsive}

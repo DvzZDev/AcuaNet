@@ -10,9 +10,12 @@ export const fetchCache = 'force-no-store'
 export function generateMetadata({ params }) {
   return {
     title: `${params.embalseid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,
+    description: `Información sobre el embalse de ${params.embalseid.replace(/%20/g, ' ')}`,
+
     openGraph: {
       title: `${params.embalseid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,
-      url: 'https://acuanet.es/cuencas',
+      description: `Información sobre el embalse de ${params.embalseid.replace(/%20/g, ' ')}`,
+      url: `https://acuanet.es/embalses/${params.embalseid}`,
       siteName: 'AcuaNet',
       images: [
         {
@@ -33,6 +36,7 @@ export function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       title: `${params.embalseid.replace(/%20/g, ' ').charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, ' ').slice(1).toLowerCase()} - AcuaNet`,
+      description: `Información sobre el embalse de ${params.embalseid.replace(/%20/g, ' ')}`,
       creator: '@_DvzZ_',
       images: ['https://i.imgur.com/Jpt5ENb.png'],
     },

@@ -52,10 +52,7 @@ function WidgetShare(props) {
               key={Whatsapp}
               startContent={<Whatsapp className={iconClasses} />}
               onClick={() =>
-                shareOnWhatsApp(
-                  `https://acuanet.es/embalses/${props.embalseid} |
-                  Mediciones Embalse de ${props.embalseid.replace(/%20/g, ' ')} `
-                )
+                shareOnWhatsApp(`https://acuanet.es/embalses/${props.embalseid}`)
               }
             >
               WhatsApp

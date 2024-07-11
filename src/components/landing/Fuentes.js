@@ -2,6 +2,7 @@
 import CardFuentes from './CardFuentes'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import { motion } from 'framer-motion'
 
 function CustomDot({ onClick, ...rest }) {
   const { active } = rest
@@ -23,9 +24,33 @@ function CustomDot({ onClick, ...rest }) {
 }
 
 function Fuentes() {
+  const delays = [1, 1.2, 1.3, 1.4]
+  const cardData = [
+    { image: '/aemet.png', title: 'Agencia Estatal de Meteorología' },
+    {
+      image: '/miteco.png',
+      title: 'Ministerio para la Transición Ecológica y el Reto Demográfico',
+    },
+    { image: '/sahi.png', title: 'Sistema Automático de Información Hidrológica' },
+    { image: '/embalsesnet.png', title: 'Embalses.net' },
+  ]
+
+  const containerVariants = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const childVariants = (delay) => ({
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0, transition: { delay } },
+  })
+
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -42,25 +67,58 @@ function Fuentes() {
       items: 1,
     },
   }
+
   return (
     <section
       id="fuentes"
       className="h-auto bg-bgcolor"
     >
       <article className="flex flex-col items-center justify-center">
-        <h1 className="pt-1 sm:pt-20 text-center font-telma text-[40px] text-[#ffd700] sm:text-[50px]">
+        <motion.h1
+          initial="initial"
+          variants={{
+            initial: { opacity: 0, x: 50 },
+            animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+          }}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.8 }}
+          className="pt-1 text-center font-telma text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
+        >
           Fuentes Oficiales
-        </h1>
+        </motion.h1>
 
-        <div className="mt-2 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-6 text-2xl text-textprimary sm:py-10">
-          <h1 className="mx-3 text-center">
+        <motion.div
+          initial="initial"
+          variants={{
+            initial: { width: 0 },
+            animate: { width: '100%', transition: { duration: 0.5, delay: 0.5 } },
+          }}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.8 }}
+          className="mt-2 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-6 text-2xl text-textprimary sm:py-10"
+        >
+          <motion.h1
+            initial="initial"
+            variants={{
+              initial: { opacity: 0, scale: 0 },
+              animate: { opacity: 1, scale: 1, transition: { duration: 0.3, delay: 1 } },
+            }}
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.8 }}
+            className="mx-3 text-center"
+          >
             Datos Actualizados Cada{' '}
             <strong className="ml-2 content-center text-[#ffd700]">6 horas</strong>
-          </h1>
-        </div>
+          </motion.h1>
+        </motion.div>
       </article>
 
-      <div className="m-auto mt-10 sm:w-[35rem] md:w-[40rem] lg:w-[60rem] xl:w-[80rem]">
+      <motion.div
+        className="m-auto mt-10 sm:w-[35rem] md:w-[40rem] lg:w-[60rem] xl:w-[80rem]"
+        variants={containerVariants}
+        initial="initial"
+        whileInView="animate"
+      >
         <Carousel
           responsive={responsive}
           infinite={true}
@@ -71,32 +129,20 @@ function Fuentes() {
           ssr={true}
           customDot={<CustomDot />}
         >
-          <div className="flex justify-center">
-            <CardFuentes
-              image="/aemet.png"
-              title="Agencia Estatal de Meteorología"
-            />
-          </div>
-          <div className="flex justify-center">
-            <CardFuentes
-              image="/miteco.png"
-              title="Ministerio para la Transición Ecológica y el Reto Demográfico"
-            />
-          </div>
-          <div className="flex justify-center">
-            <CardFuentes
-              image="/sahi.png"
-              title="Sistema Automático de Información Hidrológica"
-            />
-          </div>
-          <div className="flex h-full items-center justify-center">
-            <CardFuentes
-              image="/embalsesnet.png"
-              title="Embalses.net"
-            />
-          </div>
+          {cardData.map((card, index) => (
+            <motion.div
+              key={card.title}
+              className="flex justify-center"
+              variants={childVariants(delays[index])}
+            >
+              <CardFuentes
+                image={card.image}
+                title={card.title}
+              />
+            </motion.div>
+          ))}
         </Carousel>
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -1,15 +1,26 @@
+'use client'
 import React from 'react'
 import EmbalseGrafico from '../cuencas/Grafico'
-import Image from 'next/image'
 import { Link } from 'next-view-transitions'
+import { motion } from 'framer-motion'
 
 function EmbalseContent({ data }) {
   return (
     <section className="flex min-h-[40rem] justify-center bg-bgcolor p-4 pb-4 text-white lg:pt-1">
-      <div className="mx-4 flex min-h-full w-full flex-col gap-4 transition-all sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
+      <div className="mx-4 flex min-h-full w-full flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
         {/* Primera Columna */}
 
-        <div className="order-1 flex justify-center rounded-lg hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+          variants={{
+            initial: { opacity: 0, y: 50 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.8, delay: 0.1 }}
+          className="order-1 flex justify-center rounded-lg sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
+        >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
             <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Agua</h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -20,10 +31,20 @@ function EmbalseContent({ data }) {
             </div>
             <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalsada</h1>
           </article>
-        </div>
+        </motion.div>
         {/* Segunda Columna */}
 
-        <div className="order-2 flex justify-center hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1, transition: { delay: 0.2 } }}
+          variants={{
+            initial: { opacity: 0, y: 50 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.8, delay: 0.2 }}
+          className="order-2 flex justify-center sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
+        >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
             <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Capacidad</h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -34,15 +55,35 @@ function EmbalseContent({ data }) {
             </div>
             <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Total</h1>
           </article>
-        </div>
+        </motion.div>
         {/* Quinta Columna (movida a la tercera posición) */}
 
-        <div className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg transition-all hover:scale-105 sm:order-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1, transition: { delay: 0.3 } }}
+          variants={{
+            initial: { opacity: 0, y: 50 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.8, delay: 0.3 }}
+          className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg sm:order-6"
+        >
           <EmbalseGrafico porcentaje={data.agua_embalsadapor} />
-        </div>
+        </motion.div>
         {/* Tercera Columna (movida a la cuarta posición) */}
 
-        <div className="order-4 flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1, transition: { delay: 0.4 } }}
+          variants={{
+            initial: { opacity: 0, y: 50 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.8, delay: 0.4 }}
+          className="order-4 flex justify-center sm:col-span-2 sm:row-span-3"
+        >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
             <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -55,9 +96,19 @@ function EmbalseContent({ data }) {
               Sem. Anterior
             </h1>
           </article>
-        </div>
+        </motion.div>
         {/* Cuarta Columna (movida a la quinta posición) */}
-        <div className="order-5 flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1, transition: { delay: 0.5 } }}
+          variants={{
+            initial: { opacity: 0, y: 50 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.8, delay: 0.5 }}
+          className="order-5 flex justify-center sm:col-span-2 sm:row-span-3"
+        >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
             <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -70,54 +121,112 @@ function EmbalseContent({ data }) {
               Sem. Anterior
             </h1>
           </article>
-        </div>
+        </motion.div>
         {/* Sexta Columna */}
-        <div className="relative order-6 col-span-4 row-span-5 flex justify-center transition-all">
-          <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-hidden rounded-lg transition-all sm:h-full sm:w-full">
+        <div className="relative order-6 col-span-4 row-span-5 flex justify-center">
+          <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-hidden rounded-lg sm:h-full sm:w-full">
             <div className="grid h-full w-full grid-cols-4 grid-rows-4 gap-1 md:gap-4">
-              <div className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary transition-all hover:scale-95">
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1, transition: { delay: 0.6 } }}
+                variants={{
+                  initial: { opacity: 0, y: 50 },
+                  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                }}
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.8, delay: 0.6 }}
+                className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
+              >
                 <h1 className="text-center text-[17px] lg:text-2xl">Misma Semana</h1>
                 <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-3xl md:text-4xl">
                   <span>{data.misma_semana_ultimo_año}</span>
                   <span className="text-sm">hm³</span>
                 </div>
                 <h1 className="text-center text-[17px] lg:text-2xl">hace 1 año</h1>
-              </div>
-              <div className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary transition-all hover:scale-95">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1, transition: { delay: 0.7 } }}
+                variants={{
+                  initial: { opacity: 0, y: 50 },
+                  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                }}
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.8, delay: 0.7 }}
+                className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
+              >
                 <h1 className="text-center text-[17px] lg:text-2xl">Misma Semana</h1>
-                <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-3xl md:text-4xl">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1, transition: { delay: 0.8 } }}
+                  variants={{
+                    initial: { opacity: 0, y: 50 },
+                    animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                  }}
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.8, delay: 0.8 }}
+                  className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-3xl md:text-4xl"
+                >
                   <span>{data.misma_semana_ultimo_añopor}</span>
                   <span className="text-sm">%</span>
-                </div>
+                </motion.div>
                 <h1 className="text-center text-[17px] lg:text-2xl">hace 1 año</h1>
-              </div>
-              <div className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary transition-all hover:scale-95">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1, transition: { delay: 0.9 } }}
+                variants={{
+                  initial: { opacity: 0, y: 50 },
+                  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                }}
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.8, delay: 0.9 }}
+                className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
+              >
                 <h1 className="text-center text-[17px] lg:text-2xl">Misma Semana</h1>
                 <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-3xl md:text-4xl">
                   <span>{data.misma_semana_10años}</span>
                   <span className="text-sm">hm³</span>
                 </div>
                 <h1 className="text-center text-[17px] lg:text-2xl">hace 10 años</h1>
-              </div>
-              <div className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary transition-all hover:scale-95">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1, transition: { delay: 1 } }}
+                variants={{
+                  initial: { opacity: 0, y: 50 },
+                  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                }}
+                whileInView="animate"
+                viewport={{ once: true, amount: 1, delay: 0.2 }}
+                className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
+              >
                 <h1 className="text-center text-[17px] lg:text-2xl">Misma Semana</h1>
                 <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-3xl md:text-4xl">
                   <span>{data.misma_semana_10añospor}</span>
                   <span className="text-sm">%</span>
                 </div>
                 <h1 className="text-center text-[17px] lg:text-2xl">hace 10 años</h1>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
         {/* Septima Columna */}
 
-        <div
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1, transition: { delay: 1.1 } }}
+          variants={{
+            initial: { opacity: 0, y: 50 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.8, delay: 1.1 }}
           id="embalses-div"
-          className="order-7 flex items-center justify-center rounded-lg hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
+          className="order-7 flex items-center justify-center rounded-lg sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
         >
           <Link href={'/embalses'}>
-            <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent gap-4">
+            <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around gap-4 rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
               <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
                 Todos los
               </h1>
@@ -152,7 +261,7 @@ function EmbalseContent({ data }) {
               </h1>
             </article>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

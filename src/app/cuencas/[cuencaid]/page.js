@@ -6,6 +6,7 @@ import SkeletonTitleCuencas from '@/components/skeletons/SkeletonTitleCuenca'
 import SkeletonBentoDist from '@/components/skeletons/SkeletonBentoDinst'
 import { Suspense } from 'react'
 import WidgetShare from '@/components/contacto/WidgetShare'
+import BentoDataUnique from '@/components/cuencas/BentoDataUnique'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -56,7 +57,7 @@ async function Page({ params }) {
       <section className="flex min-h-full flex-col items-center justify-center bg-bgcolor">
         <div className="flex min-h-[42rem] justify-center">
           <Suspense fallback={<SkeletonBentoDist />}>
-            <BentoDist url={params} />
+            <BentoDataUnique url={params} />
           </Suspense>
         </div>
         <div>

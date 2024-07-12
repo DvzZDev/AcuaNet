@@ -1,11 +1,13 @@
-import { FetchCuencas } from '@/lib/data'
+'use client'
 import { Link } from 'next-view-transitions'
+import { motion } from 'framer-motion'
 
-export const revalidate = 60
-export const dynamic = 'force-dynamic'
-export const fetchCache = 'force-no-store'
+function BentoCuencas(props) {
+  const cuencas = props.data
+  const delays = [
+    0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
+  ]
 
-async function bento() {
   function getColor(porcentaje) {
     if (porcentaje >= 80) {
       return 'bg-blue-200 text-blue-900 font-bold text-[18px]'
@@ -20,14 +22,28 @@ async function bento() {
     }
   }
 
-  const cuencas = await FetchCuencas()
   return (
     <section className="flex h-full justify-center bg-bgcolor">
       <div className="m-10 mt-2 grid min-h-[40rem] w-[60rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
-        {cuencas.map((cuenca) => (
+        {cuencas.map((cuenca, index) => (
           <>
             <Link href={`/cuencas/${cuenca.cuenca}`}>
-              <div
+              <motion.div
+                initial="initial"
+                variants={{
+                  initial: { opacity: 0 },
+                  animate: {
+                    opacity: 1,
+                    viewport: { once: true },
+                    transition: {
+                      duration: 0.3,
+                      ease: 'easeOut',
+                      delay: delays[index],
+                    },
+                  },
+                }}
+                whileInView="animate"
+                animate="animate"
                 className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.4rem] transition-all duration-150 hover:scale-105 active:scale-95 ${getColor(cuenca.porcentaje_embalsada)}`}
                 key={cuenca.cuenca}
                 style={{ cursor: 'pointer' }}
@@ -39,7 +55,7 @@ async function bento() {
                     {`${cuenca.porcentaje_embalsada} hm³`} de {`${cuenca.capacidad} hm³`}{' '}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </Link>
           </>
         ))}
@@ -48,4 +64,4 @@ async function bento() {
   )
 }
 
-export default bento
+export default BentoCuencas

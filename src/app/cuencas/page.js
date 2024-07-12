@@ -3,6 +3,7 @@ import Bento from '@/components/cuencas/BentoCuencas'
 import { Suspense } from 'react'
 import SkeletonCuencas from '@/components/skeletons/SkeletonCuencas'
 import WidgetShareGlob from '@/components/contacto/WidgetShareGlob'
+import BentoData from '@/components/cuencas/BentoData'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -45,7 +46,9 @@ function Page() {
     <section className="mt-5">
       <Intro title={'Cuencas Hidrográficas'} />
       <Suspense fallback={<SkeletonCuencas />}>
-        <Bento />
+        <BentoData>
+          <Bento />
+        </BentoData>
       </Suspense>
       <WidgetShareGlob page={'cuencas'} />
     </section>

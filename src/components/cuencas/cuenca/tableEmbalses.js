@@ -10,6 +10,7 @@ import {
   getFilteredRowModel,
 } from '@tanstack/react-table'
 import { mkConfig, generateCsv, download } from 'export-to-csv'
+import { motion } from 'framer-motion'
 
 function TableEmbalses(props) {
   const resdata = props.link
@@ -71,15 +72,28 @@ function TableEmbalses(props) {
     const csv = generateCsv(csvConfig)(rowData)
     download(csvConfig)(csv)
   }
+  const delays = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
 
   return (
     <div className="mx-5">
       <div className="relative flex h-16 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4">
-        <h1
+        <motion.h1
+          initial="initial"
+          variants={{
+            initial: { opacity: 0 },
+            animate: { opacity: 1 },
+            transition: { duration: 0.5 },
+          }}
+          viewport={{
+            once: true,
+            amount: 0.6,
+            margin: '-50px',
+          }}
+          whileInView="animate"
           className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform font-telma text-4xl text-textsecondary transition-all sm:text-4xl ${show ? 'opacity-0' : 'opacity-100'}`}
         >
           Embalses
-        </h1>
+        </motion.h1>
         <div
           className={`${show ? 'w-[10rem] border-white' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
         >
@@ -166,7 +180,19 @@ function TableEmbalses(props) {
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
-                <th
+                <motion.th
+                  initial="initial"
+                  variants={{
+                    initial: { opacity: 0 },
+                    animate: { opacity: 1 },
+                    transition: { duration: 0.5 },
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.6,
+                    margin: '-50px',
+                  }}
+                  whileInView="animate"
                   onClick={header.column.getToggleSortingHandler()}
                   className={`table-auto cursor-pointer p-1 pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? 'w-[14rem] transition-transform duration-150 active:scale-90 sm:w-[17rem]' : index === 1 ? 'w-[15rem] transition-transform duration-150 active:scale-90' : 'w-auto text-center transition-transform duration-150 active:scale-90'}`}
                   key={header.id}
@@ -177,14 +203,26 @@ function TableEmbalses(props) {
                       ? '↑'
                       : '↓'
                     : ''}
-                </th>
+                </motion.th>
               ))}
             </tr>
           ))}
         </thead>
         <tbody className="bg-[#1b0e51]">
-          {table.getRowModel().rows.map((row) => (
-            <tr
+          {table.getRowModel().rows.map((row, index) => (
+            <motion.tr
+              initial="initial"
+              variants={{
+                initial: { opacity: 0 },
+                animate: { opacity: 1 },
+                transition: { duration: 0.5 },
+              }}
+              viewport={{
+                once: true,
+                amount: 0.6,
+                margin: '-50px',
+              }}
+              whileInView="animate"
               key={row.id}
               className="odd:bg-[#1b0e51] even:bg-[#1f1745]"
             >
@@ -204,12 +242,26 @@ function TableEmbalses(props) {
                   )}
                 </td>
               ))}
-            </tr>
+            </motion.tr>
           ))}
         </tbody>
       </table>
 
-      <div className="flex justify-between rounded-b-xl bg-[#040513] p-2">
+      <motion.div
+        initial="initial"
+        variants={{
+          initial: { opacity: 0 },
+          animate: { opacity: 1 },
+          transition: { duration: 0.5 },
+        }}
+        viewport={{
+          once: true,
+          amount: 0.6,
+          margin: '-50px',
+        }}
+        whileInView="animate"
+        className="flex justify-between rounded-b-xl bg-[#040513] p-2"
+      >
         <div>
           <p className="mt-1 w-6 rounded-sm text-center">
             {table.getState().pagination.pageIndex + 1}
@@ -291,7 +343,7 @@ function TableEmbalses(props) {
             {table.getPageCount() - 1}
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

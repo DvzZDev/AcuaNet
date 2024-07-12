@@ -1,22 +1,35 @@
-import { FetchCuencas } from '@/lib/data'
-import Image from 'next/image'
+'use client'
 import EmbalseGrafico from './Grafico'
+import { motion, useScroll } from 'framer-motion'
+import { Image } from '@nextui-org/image'
+import { useRef } from 'react'
 
-async function BentoDist(url) {
-  const cuenca = await FetchCuencas()
-  const cuencaid = url.url.cuencaid
+function BentoDist(props) {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['end end', 'start start'],
+  })
+
+  const cuenca = props.data
+  const cuencaid = props.params.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
-  const decodedCuencaidNM = decodedCuencaid.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-  const resCuenca = cuenca.find(
-    (cuenca) =>
-      cuenca.cuenca === decodedCuencaidNM
-  )
+  const decodedCuencaidNM = decodedCuencaid
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+  const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaidNM)
 
   return (
-    <div className="mx-4 flex min-h-full w-full flex-col gap-4 transition-all sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
-      {/* Primera Columna */}
-
-      <div className="order-1 flex justify-center rounded-lg hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
+    <div className="mx-4 flex min-h-full w-full flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
+      <motion.div
+        ref={ref}
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: 'spring', duration: 0.5 }}
+        key="agua"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        className="order-1 flex justify-center rounded-lg sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
+      >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Agua</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -27,10 +40,16 @@ async function BentoDist(url) {
           </div>
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalsada</h1>
         </article>
-      </div>
-      {/* Segunda Columna */}
+      </motion.div>
 
-      <div className="order-2 flex justify-center hover:scale-105 sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700">
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: 'spring', duration: 0.5 }}
+        key="agua"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        className="order-2 flex justify-center sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
+      >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Capacidad</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -41,15 +60,27 @@ async function BentoDist(url) {
           </div>
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Total</h1>
         </article>
-      </div>
-      {/* Quinta Columna (movida a la tercera posición) */}
+      </motion.div>
 
-      <div className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg transition-all hover:scale-105 sm:order-6">
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: 'spring', duration: 0.5 }}
+        key="agua"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg sm:order-6"
+      >
         <EmbalseGrafico porcentaje={resCuenca.porcentaje_embalsada} />
-      </div>
-      {/* Tercera Columna (movida a la cuarta posición) */}
+      </motion.div>
 
-      <div className="order-4 flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: 'spring', duration: 0.5 }}
+        key="agua"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        className="order-4 flex justify-center sm:col-span-2 sm:row-span-3"
+      >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -62,9 +93,16 @@ async function BentoDist(url) {
             Sem. Anterior
           </h1>
         </article>
-      </div>
-      {/* Cuarta Columna (movida a la quinta posición) */}
-      <div className="order-5 flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3">
+      </motion.div>
+
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: 'spring', duration: 0.5 }}
+        key="agua"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        className="order-5 flex justify-center sm:col-span-2 sm:row-span-3"
+      >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -77,22 +115,35 @@ async function BentoDist(url) {
             Sem. Anterior
           </h1>
         </article>
-      </div>
-      {/* Sexta Columna */}
-      <div className="relative order-6 col-span-4 row-span-4 flex justify-center transition-all hover:scale-105">
-        <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-hidden rounded-lg bg-slate-700 transition-all hover:scale-125 sm:h-full sm:w-full">
+      </motion.div>
+
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: 'spring', duration: 0.5 }}
+        key="agua"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        className="relative order-6 col-span-4 row-span-4 flex justify-center"
+      >
+        <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-visible rounded-lg bg-slate-700 sm:h-full sm:w-full">
           <Image
             src={resCuenca.foto}
             alt={`Foto sobre la cuenca hidrográfica del ${cuenca}`}
             layout="fill"
             priority
+            isBlurred={true}
+            isZoomed={true}
           />
         </div>
-      </div>
-      {/* Septima Columna */}
-      <div
-        id="embalses-div"
-        className="order-7 flex justify-center transition-all hover:scale-105 sm:col-span-2 sm:row-span-3"
+      </motion.div>
+
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: 'spring', duration: 0.5 }}
+        key="agua"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        className="order-7 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalses</h1>
@@ -128,7 +179,7 @@ async function BentoDist(url) {
           </div>
           <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Cuenca</h1>
         </article>
-      </div>
+      </motion.div>
     </div>
   )
 }

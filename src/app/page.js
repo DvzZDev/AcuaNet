@@ -1,5 +1,3 @@
-// app/page.js
-
 import Intro from '@/components/landing/Intro'
 import Bento from '@/components/landing/Bento'
 import Fuentes from '@/components/landing/Fuentes'

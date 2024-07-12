@@ -24,7 +24,7 @@ export const metadata = {
         url: 'https://i.imgur.com/Jpt5ENb.png',
         width: 1800,
         height: 1600,
-        alt: 'My custom alt',
+        alt: 'OG Image',
       },
     ],
     locale: 'es_ES',

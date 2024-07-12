@@ -63,7 +63,7 @@ async function Intro() {
       <div className="mt-24 h-[15rem] w-[12rem] animate-jump-in opacity-90 animate-delay-500">
         <Image
           src="/guss.webp"
-          alt="hero"
+          alt="image from a separator"
           width={500}
           height={500}
           layout="responsive"

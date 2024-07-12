@@ -83,6 +83,7 @@ function AboutLanding() {
                 viewport={{ once: true, amount: 0.8 }}
               >
                 <Image
+                  as={NextImage}
                   src="/yo22.webp"
                   alt="Foto del creador de AcuaNet"
                   width={500}

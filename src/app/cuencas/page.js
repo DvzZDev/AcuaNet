@@ -41,7 +41,7 @@ export const metadata = {
 }
 
 function Page() {
-  console.log()
+  ()
   return (
     <section className="mt-5">
       <Intro title={'Cuencas Hidrográficas'} />

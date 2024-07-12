@@ -35,18 +35,9 @@ h1 {
   font-weight: 200;
 }
 
-
 table {
   font-family: 'Comfortaa Variable', system-ui;
   color: #c0bfb7;
-}
-
-@font-face {
-  font-family: 'TelmaLight';
-  src: url('/Fonts/Telma_Complete/Fonts/WEB/fonts/Telma-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
 }
 
 @font-face {

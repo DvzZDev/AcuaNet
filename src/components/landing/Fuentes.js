@@ -11,17 +11,19 @@ function CustomDot({ onClick, ...rest }) {
   const inactiveStyle = 'h-2 w-2 bg-gray-400 rounded-full'
 
   return (
-    <button
-      type="button"
-      aria-label="Dot"
-      onClick={onClick}
-      style={{
-        display: 'inline-block',
-        margin: '0 8px',
-      }}
-    >
-      <div className={`${active ? activeStyle : inactiveStyle} `}></div>
-    </button>
+    <li>
+      <button
+        type="button"
+        aria-label="Dot"
+        onClick={onClick}
+        style={{
+          display: 'inline-block',
+          margin: '0 8px',
+        }}
+      >
+        <div className={`${active ? activeStyle : inactiveStyle} `}></div>
+      </button>
+    </li>
   )
 }
 
@@ -84,7 +86,7 @@ function Fuentes() {
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}
-          className="pt-1 text-center font-telma text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
+          className="font-telma pt-1 text-center text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
         >
           Fuentes Oficiales
         </motion.h1>

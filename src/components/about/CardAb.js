@@ -33,6 +33,7 @@ function CardAb() {
               className="transition-all hover:scale-110"
               href="https://github.com/DvzZDev/ACUA-Landing"
               target="_blank"
+              aria-label="GitHub de David Esteban"
             >
               <svg
                 viewBox="0 0 256 250"
@@ -47,6 +48,7 @@ function CardAb() {
               </svg>
             </Link>
             <Link
+              aria-label="X de David Esteban"
               className="transition-all hover:scale-110"
               href="https://x.com/_DvzZ_"
               target="_blank"
@@ -63,6 +65,7 @@ function CardAb() {
               </svg>
             </Link>
             <Link
+              aria-label="Instagram de David Esteban"
               className="transition-all hover:scale-110"
               href="https://www.instagram.com/dvz_z_z/"
               target="_blank"

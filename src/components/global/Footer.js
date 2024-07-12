@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions"
+import { Link } from 'next-view-transitions'
 
 function Footer() {
   return (
@@ -31,6 +31,7 @@ function Footer() {
 
       <div className="m-6 flex gap-3">
         <Link
+          aria-label="Github de David Esteban"
           className="transition-all hover:scale-110"
           href="https://github.com/DvzZDev/ACUA-Landing"
           target="_blank"
@@ -48,6 +49,7 @@ function Footer() {
           </svg>
         </Link>
         <Link
+          aria-label="X de David Esteban"
           className="transition-all hover:scale-110"
           href="https://x.com/_DvzZ_"
           target="_blank"
@@ -64,6 +66,7 @@ function Footer() {
           </svg>
         </Link>
         <Link
+          aria-label="Instagram de David Esteban"
           className="transition-all hover:scale-110"
           href="https://www.instagram.com/dvzz.dev/"
           target="_blank"

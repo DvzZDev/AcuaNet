@@ -87,6 +87,8 @@ function TablePluvis(props) {
           className={`${show ? 'w-[10rem] border-white' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
         >
           <button
+            type="button"
+            aria-label="Buscar"
             onClick={handleButtonClick}
             className="transition-transform duration-150 active:scale-90"
           >
@@ -124,6 +126,7 @@ function TablePluvis(props) {
           />
         </div>
         <button
+          aria-label="Exportar a Excel"
           type="button"
           className="transition-transform duration-150 active:scale-90"
           onClick={() => exportExcel(table.getFilteredRowModel().rows)}
@@ -210,12 +213,16 @@ function TablePluvis(props) {
         </div>
         <div className="flex gap-4">
           <button
+            type="button"
+            aria-label="Primera Página"
             onClick={() => table.firstPage()}
             className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
           >
             1
           </button>
           <button
+            type="button"
+            aria-label="Página Anterior"
             onClick={() => table.previousPage()}
             className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
           >
@@ -247,6 +254,8 @@ function TablePluvis(props) {
             </svg>
           </button>
           <button
+            type="button"
+            aria-label="Página Siguiente"
             onClick={() => table.nextPage()}
             className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
           >
@@ -278,6 +287,8 @@ function TablePluvis(props) {
             </svg>
           </button>
           <button
+            type="button"
+            aria-label="Última Página"
             onClick={() => table.lastPage()}
             className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
           >

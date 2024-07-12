@@ -90,7 +90,7 @@ function TableEmbalses(props) {
             margin: '-50px',
           }}
           whileInView="animate"
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform font-telma text-4xl text-textsecondary transition-all sm:text-4xl ${show ? 'opacity-0' : 'opacity-100'}`}
+          className={`font-telma absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-4xl text-textsecondary transition-all sm:text-4xl ${show ? 'opacity-0' : 'opacity-100'}`}
         >
           Embalses
         </motion.h1>
@@ -98,6 +98,8 @@ function TableEmbalses(props) {
           className={`${show ? 'w-[10rem] border-white' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
         >
           <button
+            type="button"
+            aria-label="Buscar"
             className="transition-transform duration-150 active:scale-90"
             onClick={handleButtonClick}
           >
@@ -138,6 +140,7 @@ function TableEmbalses(props) {
 
         <button
           type="button"
+          aria-label="Exportar a Excel"
           className="transition-transform duration-150 active:scale-90"
           onClick={() => exportExcel(table.getFilteredRowModel().rows)}
         >
@@ -269,12 +272,16 @@ function TableEmbalses(props) {
         </div>
         <div className="flex gap-4">
           <button
+            type="button"
+            aria-label="Primera Página"
             onClick={() => table.firstPage()}
             className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
           >
             1
           </button>
           <button
+            type="button"
+            aria-label="Página Anterior"
             onClick={() => table.previousPage()}
             className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
           >
@@ -306,6 +313,8 @@ function TableEmbalses(props) {
             </svg>
           </button>
           <button
+            type="button"
+            aria-label="Página Siguiente"
             onClick={() => table.nextPage()}
             className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
           >
@@ -337,6 +346,8 @@ function TableEmbalses(props) {
             </svg>
           </button>
           <button
+            type="button"
+            aria-label="Última Página"
             onClick={() => table.lastPage()}
             className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
           >

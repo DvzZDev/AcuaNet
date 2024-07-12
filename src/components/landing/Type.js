@@ -35,8 +35,9 @@ function Type({ data }) {
           />
         </ReactTyped>
         <button
+          aria-label="Buscar"
           className="text-slate-400"
-          type="submit"
+          type="button"
         >
           Buscar
         </button>

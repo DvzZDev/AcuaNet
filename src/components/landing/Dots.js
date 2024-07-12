@@ -7,6 +7,8 @@ function Dot({ onClick, ...rest }) {
 
   return (
     <button
+      type="button"
+      aria-label="Dot"
       onClick={onClick}
       style={{
         display: 'inline-block',

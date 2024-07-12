@@ -18,7 +18,7 @@ function WidgetShareGlob(props) {
     <div className="fixed bottom-4 right-4">
       <Dropdown>
         <DropdownTrigger>
-          <Button>
+          <Button type='button' aria-label='Desplegar menu'>
             <svg
               viewBox="0 0 24 24"
               fill="none"

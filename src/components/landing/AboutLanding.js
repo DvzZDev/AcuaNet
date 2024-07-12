@@ -19,7 +19,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="text-center font-telma text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
+              className="font-telma text-center text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
             >
               Conoce a Nuestro Equipo
             </motion.h1>
@@ -61,7 +61,11 @@ function AboutLanding() {
               className="flex w-full justify-center"
             >
               <Link href="/quienesSomos">
-                <button className="m-auto mt-6 rounded-lg bg-[#091c34] p-3 text-lg font-bold text-[#ffd700] transition-all animate-infinite hover:animate-wiggle hover:brightness-90">
+                <button
+                  type="button"
+                  aria-label="Conócenos"
+                  className="m-auto mt-6 rounded-lg bg-[#091c34] p-3 text-lg font-bold text-[#ffd700] transition-all animate-infinite hover:animate-wiggle hover:brightness-90"
+                >
                   Conócenos!
                 </button>
               </Link>

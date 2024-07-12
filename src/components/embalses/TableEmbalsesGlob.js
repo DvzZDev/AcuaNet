@@ -78,11 +78,13 @@ function TableData(props) {
 
   return (
     <div className="mx-5">
-      <div className=" flex md:h-14 h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4 sm:mt-8">
+      <div className="flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4 sm:mt-8 md:h-14">
         <div
           className={`${show ? 'w-[10rem] border-white' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
         >
           <button
+            type="button"
+            aria-label="Buscar"
             onClick={handleButtonClick}
             className="transition-transform duration-150 active:scale-90"
           >
@@ -121,6 +123,7 @@ function TableData(props) {
         </div>
         <button
           type="button"
+          aria-label="Exportar a Excel"
           className="transition-transform duration-150 active:scale-90"
           onClick={() => exportExcel(table.getFilteredRowModel().rows)}
         >
@@ -158,7 +161,7 @@ function TableData(props) {
           </svg>
         </button>
       </div>
-      <table className="border border-[#040513] text-xs sm:text-xl ">
+      <table className="border border-[#040513] text-xs sm:text-xl">
         <thead className="bg-[#040513]">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -220,12 +223,16 @@ function TableData(props) {
         </div>
         <div className="flex gap-4">
           <button
+            type="button"
+            aria-label='Primera página'
             onClick={() => table.firstPage()}
             className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
           >
             1
           </button>
           <button
+            type='button'
+            aria-label='Página anterior'
             onClick={() => table.previousPage()}
             className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
           >
@@ -257,6 +264,8 @@ function TableData(props) {
             </svg>
           </button>
           <button
+            type='button'
+            aria-label='Página siguiente'
             onClick={() => table.nextPage()}
             className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
           >
@@ -288,6 +297,8 @@ function TableData(props) {
             </svg>
           </button>
           <button
+            type='button'
+            aria-label='Última página'
             onClick={() => table.lastPage()}
             className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
           >

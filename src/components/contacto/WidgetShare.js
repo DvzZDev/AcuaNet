@@ -19,7 +19,10 @@ function WidgetShare(props) {
     <div className="fixed bottom-4 right-4">
       <Dropdown>
         <DropdownTrigger>
-          <Button>
+          <Button
+            aria-label="Desplegar Menu"
+            type="button"
+          >
             <svg
               viewBox="0 0 24 24"
               fill="none"

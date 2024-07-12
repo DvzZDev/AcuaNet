@@ -27,7 +27,8 @@ function Search({ data }) {
           className={`text-textprim h-8 w-[16rem] rounded-sm border-b bg-transparent bg-opacity-70 pl-7 pr-10 outline-none transition-all placeholder:opacity-60 focus:bg-slate-900 focus:bg-opacity-30 focus:outline-none ${err ? 'border-red-500 placeholder:text-red-500' : ''} ${fine ? 'border-green-500 placeholder:text-green-500' : ''}`}
         />
         <button
-          type="submit"
+          type="button"
+          aria-label='Buscar'
           className="absolute left-0 top-0 h-full rounded-md bg-transparent bg-opacity-70 px-1"
         >
           <svg

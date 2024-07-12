@@ -112,6 +112,8 @@ export default function ModalCookies() {
                 </ModalBody>
                 <ModalFooter>
                   <Button
+                    type='button'
+                    aria-label='Recharzar'
                     color="danger"
                     variant="light"
                     onPress={onClose}
@@ -120,6 +122,8 @@ export default function ModalCookies() {
                     Recharzar
                   </Button>
                   <Button
+                    type='button'
+                    aria-label='Aceptar'
                     color="primary"
                     variant="flat"
                     onPress={onClose}

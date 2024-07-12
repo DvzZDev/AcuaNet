@@ -47,7 +47,7 @@ function BentoDist(props) {
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0.1 } }}
         className="order-2 flex justify-center sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
@@ -67,7 +67,7 @@ function BentoDist(props) {
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0.2 } }}
         className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg sm:order-6"
       >
         <EmbalseGrafico porcentaje={resCuenca.porcentaje_embalsada} />
@@ -78,7 +78,7 @@ function BentoDist(props) {
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0.3 } }}
         className="order-4 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
@@ -100,7 +100,7 @@ function BentoDist(props) {
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0.4 } }}
         className="order-5 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
@@ -122,7 +122,7 @@ function BentoDist(props) {
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0.5 } }}
         className="relative order-6 col-span-4 row-span-4 flex justify-center"
       >
         <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-visible rounded-lg bg-slate-700 sm:h-full sm:w-full">
@@ -142,7 +142,7 @@ function BentoDist(props) {
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        animate={{ opacity: 1, scale: 1, transition: { delay: 0.6 } }}
         className="order-7 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">

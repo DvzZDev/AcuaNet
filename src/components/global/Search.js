@@ -28,12 +28,12 @@ function Search({ data }) {
         />
         <button
           type="button"
-          aria-label='Buscar'
+          aria-label="Buscar"
           className="absolute left-0 top-0 h-full rounded-md bg-transparent bg-opacity-70 px-1"
         >
           <svg
             fill={err ? '#EF4444' : fine ? '#10B981' : '#6B7280'}
-            enable-background="new 0 0 32 32"
+            enableBackground="new 0 0 32 32"
             height={17}
             width={20}
             viewBox="4 4 24 24"
@@ -41,12 +41,12 @@ function Search({ data }) {
           >
             <g
               id="SVGRepo_bgCarrier"
-              stroke-width="0"
+              strokeWidth="0"
             ></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
               <path

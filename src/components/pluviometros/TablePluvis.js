@@ -94,19 +94,19 @@ function TablePluvis(props) {
           >
             <svg
               fill="#c0bfb7"
-              enable-background="new 0 0 32 32"
+              enableBackground="new 0 0 32 32"
               height="20"
               width={20}
               viewBox="4 4 24 24"
             >
               <g
                 id="SVGRepo_bgCarrier"
-                stroke-width="0"
+                strokeWidth="0"
               ></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 <path
@@ -141,12 +141,12 @@ function TablePluvis(props) {
             {' '}
             <g
               id="SVGRepo_bgCarrier"
-              stroke-width="0"
+              strokeWidth="0"
             ></g>{' '}
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></g>{' '}
             <g id="SVGRepo_iconCarrier">
               {' '}
@@ -156,9 +156,9 @@ function TablePluvis(props) {
                   id="Vector"
                   d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
                   stroke="#c0bfb7"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>{' '}
               </g>{' '}
             </g>{' '}
@@ -234,21 +234,21 @@ function TablePluvis(props) {
             >
               <g
                 id="SVGRepo_bgCarrier"
-                stroke-width="0"
+                strokeWidth="0"
               ></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {' '}
                 <path
                   d="M6 12H18M6 12L11 7M6 12L11 17"
                   stroke="#ffffff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>{' '}
               </g>
             </svg>
@@ -267,21 +267,21 @@ function TablePluvis(props) {
             >
               <g
                 id="SVGRepo_bgCarrier"
-                stroke-width="0"
+                strokeWidth="0"
               ></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {' '}
                 <path
                   d="M6 12H18M18 12L13 7M18 12L13 17"
                   stroke="#ffffff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>{' '}
               </g>
             </svg>

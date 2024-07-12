@@ -5,7 +5,7 @@
       <stop offset="100%" stop-color="hsl(230, 55%, 70%)"/>
     </linearGradient>
   </defs>
-  <g fill="none" stroke="url(#a)" stroke-linecap="round" stroke-width="2.5">
+  <g fill="none" stroke="url(#a)" strokeLinecap="round" strokeWidth="2.5">
     <path stroke-dasharray="94 43" d="M0 660q355.5-260 711-260t711 260" opacity=".48"/>
     <path stroke-dasharray="38 35" d="M0 640q355.5-240 711-240t711 240" opacity=".9"/>
     <path stroke-dasharray="142 124" d="M0 620q355.5-220 711-220t711 220" opacity=".19"/>

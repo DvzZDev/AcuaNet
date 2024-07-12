@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="5 5 14 14">
 
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_bgCarrier" strokeWidth="0"/>
 
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"/>
 
-<g id="SVGRepo_iconCarrier"> <path d="M6 6L18 18M18 6L6 18" stroke="#c1bf9e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: #3591e0;"/> </g>
+<g id="SVGRepo_iconCarrier"> <path d="M6 6L18 18M18 6L6 18" stroke="#c1bf9e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: #3591e0;"/> </g>
 
 </svg>

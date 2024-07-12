@@ -6,16 +6,18 @@ function Dot({ onClick, ...rest }) {
   const inactiveStyle = 'h-2 w-2 bg-gray-400 rounded-full'
 
   return (
-    <button
-      type="button"
-      aria-label="Dot"
-      onClick={onClick}
-      style={{
-        display: 'inline-block',
-        margin: '0 8px',
-      }}
-    >
-      <div className={active ? activeStyle : inactiveStyle}></div>
-    </button>
+    <li>
+      <button
+        type="button"
+        aria-label="Dot"
+        onClick={onClick}
+        style={{
+          display: 'inline-block',
+          margin: '0 8px',
+        }}
+      >
+        <div className={active ? activeStyle : inactiveStyle}></div>
+      </button>
+    </li>
   )
 }

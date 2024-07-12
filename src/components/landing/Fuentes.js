@@ -30,13 +30,13 @@ function CustomDot({ onClick, ...rest }) {
 function Fuentes() {
   const delays = [1, 1.2, 1.3, 1.4]
   const cardData = [
-    { image: '/aemet.png', title: 'Agencia Estatal de Meteorología' },
+    { image: '/aemet.webp', title: 'Agencia Estatal de Meteorología' },
     {
-      image: '/miteco.png',
+      image: '/miteco.webp',
       title: 'Ministerio para la Transición Ecológica y el Reto Demográfico',
     },
-    { image: '/sahi.png', title: 'Sistema Automático de Información Hidrológica' },
-    { image: '/embalsesnet.png', title: 'Embalses.net' },
+    { image: '/sahi.webp', title: 'Sistema Automático de Información Hidrológica' },
+    { image: '/embalsesnet.webp', title: 'Embalses.net' },
   ]
 
   const containerVariants = {

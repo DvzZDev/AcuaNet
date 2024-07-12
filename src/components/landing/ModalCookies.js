@@ -106,7 +106,6 @@ export default function ModalCookies() {
                       href="/legal"
                       aria-label="Política de Privacidad y Términos y Condiciones"
                     >
-                      {' '}
                       aqui
                     </Link>
                   </p>

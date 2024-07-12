@@ -22,6 +22,7 @@ export default function Navbar({ data }) {
           <Link
             href="/"
             className="flex-shrink-0"
+            aria-label="Ir a la página principal"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +127,7 @@ export default function Navbar({ data }) {
         <nav
           className={`${isMenuOpen ? 'flex flex-col items-center gap-12 text-2xl text-textprimary' : 'hidden'}`}
         >
-          <div className="animate-fade-down animate-delay-400 z-20">
+          <div className="z-20 animate-fade-down animate-delay-400">
             <SearchMov
               closeMenu={closeMenu}
               data={data}

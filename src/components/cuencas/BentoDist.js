@@ -1,16 +1,9 @@
 'use client'
 import EmbalseGrafico from './Grafico'
-import { motion, useScroll } from 'framer-motion'
-import { Image } from '@nextui-org/image'
-import { useRef } from 'react'
+import { delay, motion, useScroll } from 'framer-motion'
+import Image from 'next/image'
 
 function BentoDist(props) {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['end end', 'start start'],
-  })
-
   const cuenca = props.data
   const cuencaid = props.params.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
@@ -18,16 +11,21 @@ function BentoDist(props) {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
   const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaidNM)
+  const delays = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 
   return (
     <div className="mx-4 flex min-h-full w-full flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
       <motion.div
-        ref={ref}
         whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0 } }}
+        variants={{
+          initial: { opacity: 0, scale: 0 },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] } },
+        }}
+        initial="initial"
+        viewport={{ once: true }}
+        whileInView="animate"
         className="order-1 flex justify-center rounded-lg sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
@@ -46,8 +44,13 @@ function BentoDist(props) {
         whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0.1 } }}
+        variants={{
+          initial: { opacity: 0, scale: 0 },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[1] } },
+        }}
+        initial="initial"
+        viewport={{ once: true }}
+        whileInView="animate"
         className="order-2 flex justify-center sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
@@ -66,8 +69,13 @@ function BentoDist(props) {
         whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0.2 } }}
+        variants={{
+          initial: { opacity: 0, scale: 0 },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[2] } },
+        }}
+        initial="initial"
+        viewport={{ once: true }}
+        whileInView="animate"
         className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg sm:order-6"
       >
         <EmbalseGrafico porcentaje={resCuenca.porcentaje_embalsada} />
@@ -77,8 +85,13 @@ function BentoDist(props) {
         whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0.3 } }}
+        variants={{
+          initial: { opacity: 0, scale: 0 },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[3] } },
+        }}
+        initial="initial"
+        viewport={{ once: true }}
+        whileInView="animate"
         className="order-4 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
@@ -99,8 +112,13 @@ function BentoDist(props) {
         whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0.4 } }}
+        variants={{
+          initial: { opacity: 0, scale: 0 },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[4] } },
+        }}
+        initial="initial"
+        viewport={{ once: true }}
+        whileInView="animate"
         className="order-5 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
@@ -121,8 +139,13 @@ function BentoDist(props) {
         whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0.5 } }}
+        variants={{
+          initial: { opacity: 0, scale: 0 },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[5] } },
+        }}
+        initial="initial"
+        viewport={{ once: true }}
+        whileInView="animate"
         className="relative order-6 col-span-4 row-span-4 flex justify-center"
       >
         <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-visible rounded-lg bg-slate-700 sm:h-full sm:w-full">
@@ -131,18 +154,23 @@ function BentoDist(props) {
             alt={`Foto sobre la cuenca hidrográfica del ${cuenca}`}
             layout="fill"
             priority
-            isBlurred={true}
-            isZoomed={true}
+            className="rounded-lg"
           />
         </div>
       </motion.div>
 
       <motion.div
-        whileHover={{ scale: 1.1 }}
-        transition={{ type: 'spring', duration: 0.5 }}
+        whileInView="animate"
+        whileHover="hover"
         key="agua"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1, transition: { delay: 0.6 } }}
+        variants={{
+          initial: { opacity: 0, scale: 0 },
+          hover: { scale: 1.1, transition: { delay: 0 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[6] } },
+        }}
+        initial="initial"
+        transition={{ type: 'spring' }}
+        viewport={{ once: true }}
         className="order-7 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">

@@ -12,12 +12,10 @@ async function TableEmbalsesData(url) {
 
   return (
     <section className="mb-10 mt-20 md:mt-0">
-      <div>
-        <TableEmbalses
-          dataFetched={resEmbalse}
-          link={decodedCuencaid}
-        />
-      </div>
+      <TableEmbalses
+        dataFetched={resEmbalse}
+        link={decodedCuencaid}
+      />
     </section>
   )
 }

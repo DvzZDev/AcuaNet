@@ -36,14 +36,12 @@ function BentoCuencas(props) {
                     opacity: 1,
                     viewport: { once: true },
                     transition: {
-                      duration: 0.3,
-                      ease: 'easeOut',
                       delay: delays[index],
                     },
                   },
                 }}
                 whileInView="animate"
-                animate="animate"
+                viewport={{ once: true }}
                 className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.4rem] transition-all duration-150 hover:scale-105 active:scale-95 ${getColor(cuenca.porcentaje_embalsada)}`}
                 key={cuenca.cuenca}
                 style={{ cursor: 'pointer' }}

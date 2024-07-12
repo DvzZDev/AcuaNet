@@ -30,7 +30,7 @@ module.exports = {
       },
       colors: {
         textprimary: '#e9ead6',
-        textfooter: '#6b7280',
+        textfooter: '#717887',
         textsecondary: '#ffd700',
         bgcolor: '#070922',
       },

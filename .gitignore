@@ -36,7 +36,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
 # seo
 robots.txt
 sitemap.xml

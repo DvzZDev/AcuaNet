@@ -7,7 +7,6 @@ const sitemapConfig = {
     const urlEmbalses = process.env.EMBALSES
     const apikey = process.env.API_KEY
 
-    // Obtener nombres de cuencas
     const cuencasResponse = await fetch(urlCuencas, {
       headers: {
         'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -17,7 +16,6 @@ const sitemapConfig = {
       },
     }).then((res) => res.json())
 
-    // Generar rutas para cuencas
     const pathsCuencas = cuencasResponse.map((cuenca) => ({
       loc: `${sitemapConfig.siteUrl}cuencas/${cuenca.cuenca.replace(/_/g, '-').replace(/ /g, '%20')}`,
       changefreq: 'daily',
@@ -25,7 +23,6 @@ const sitemapConfig = {
       lastmod: new Date().toISOString(),
     }))
 
-    // Obtener nombres de embalses
     const embalsesResponse = await fetch(urlEmbalses, {
       headers: {
         'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -35,7 +32,6 @@ const sitemapConfig = {
       },
     }).then((res) => res.json())
 
-    // Generar rutas para embalses
     const pathsEmbalses = embalsesResponse.map((embalse) => ({
       loc: `${sitemapConfig.siteUrl}embalses/${embalse.nombre_embalse.replace(/ /g, '%20').toLowerCase()}`,
       changefreq: 'daily',

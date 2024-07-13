@@ -1,6 +1,6 @@
 import Intro from '@/components/landing/Intro'
 import Bento from '@/components/landing/Bento'
-// import Fuentes from '@/components/landing/Fuentes'
+import Fuentes from '@/components/landing/Fuentes'
 import SkeletonBento from '@/components/skeletons/BentoSkeleton'
 import AboutLanding from '@/components/landing/AboutLanding'
 import { Suspense } from 'react'
@@ -46,7 +46,7 @@ export default function Home() {
       <Suspense fallback={<SkeletonBento />}>
         <Bento />
       </Suspense>
-      {/* <Fuentes /> */}
+      <Fuentes />
       <AboutLanding />
     </>
   )

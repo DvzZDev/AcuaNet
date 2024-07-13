@@ -27,7 +27,7 @@ function BentoCuencas(props) {
       <div className="m-10 mt-2 grid min-h-[40rem] w-[60rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
         {cuencas.map((cuenca, index) => (
           <>
-            <Link href={`/cuencas/${cuenca.cuenca.replace("_","-")}`}>
+            <Link href={`/cuencas/${cuenca.cuenca}`}>
               <motion.div
                 initial="initial"
                 variants={{

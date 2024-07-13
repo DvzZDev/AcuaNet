@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 function BentoDist(props) {
   const cuenca = props.data
-  const cuencaid = props.params.url.cuencaid.replace(/-/g, '_')
+  const cuencaid = props.params.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
   const decodedCuencaidNM = decodedCuencaid
     .normalize('NFD')

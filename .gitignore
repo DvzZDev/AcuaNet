@@ -36,21 +36,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
-# Logs y Temp Files 
-logs/
-temp/
-
-# Ignore robots.txt
+# seo
 robots.txt
-
-# Ignore Sitemap Files
-sitemap.xml
-sitemap-0.xml
-sitemap.js
-
-
-robots.txt
-next-sitemap.config.js
 sitemap.xml
 sitemap-0.xml

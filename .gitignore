@@ -35,17 +35,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-
-# Logs y Temp Files 
-logs/
-temp/
-
-# Ignore robots.txt
-robots.txt
-
-# Ignore Sitemap Files
-sitemap.xml
-sitemap-0.xml
-sitemap.js
-

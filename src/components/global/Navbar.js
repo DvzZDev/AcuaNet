@@ -105,7 +105,7 @@ export default function Navbar({ data }) {
             </Link>
             <Link
               href="/quienesSomos"
-              className="glow transition-all"
+              className="glow transition-all text-nowrap"
             >
               Quienes Somos
             </Link>

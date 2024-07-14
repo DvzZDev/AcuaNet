@@ -1,7 +1,7 @@
 'use client'
 import EmbalseGrafico from './Grafico'
 import { delay, motion, useScroll } from 'framer-motion'
-import Image from "next/legacy/image"
+import Image from 'next/image'
 
 function BentoDist(props) {
   const cuenca = props.data

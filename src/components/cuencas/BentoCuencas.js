@@ -67,7 +67,7 @@ function BentoCuencas(props) {
         ))}
       </div>
     </section>
-  );
+  )
 }
 
 export default BentoCuencas

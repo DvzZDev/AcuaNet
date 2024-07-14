@@ -44,7 +44,7 @@ export function generateMetadata({ params }) {
       creator: '@_DvzZ_',
       images: ['https://i.imgur.com/Jpt5ENb.png'],
     },
-  };
+  }
 }
 
 async function Page({ params }) {

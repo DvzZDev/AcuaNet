@@ -258,7 +258,7 @@ function Bento(props) {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
 
 export default Bento

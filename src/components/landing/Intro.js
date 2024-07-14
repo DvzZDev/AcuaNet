@@ -1,7 +1,7 @@
 import '@fontsource-variable/onest'
 import Type from './Type'
 import nombreEmbalses from '../../lib/nombresEmbalses.json'
-import Image from "next/legacy/image"
+import Image from 'next/image'
 
 async function Intro() {
   const datares = nombreEmbalses

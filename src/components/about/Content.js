@@ -1,23 +1,51 @@
+'use client'
 import CardAb from '@/components/about/CardAb'
 import { Image } from '@nextui-org/image'
 import NextImage from 'next/image'
+import { delay, motion } from 'framer-motion'
+
+const delays = [0.1, 0.2, 0.3, 0.4, 0.5]
 
 function Content() {
+  const variants = (deln) => ({
+    initial: { opacity: 0, y: 50 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, type: 'spring', stiffness: 150, delay: delays[deln] },
+    },
+  })
+
   return (
     <section className="bg-bgcolor p-6 pb-20">
       <div className="flex flex-col items-center justify-center gap-8 sm:gap-10 md:gap-12">
         <article className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-2 md:gap-12">
-          <Image
-            as={NextImage}
-            src="/orellana.webp"
-            alt="Embalse de Orellana en Badajoz, España"
-            width={1200}
-            height={1200}
-            draggable={false}
-            isBlurred={true}
-          />
+          <motion.div
+            initial="initial"
+            variants={variants(0)}
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <Image
+              as={NextImage}
+              src="/orellana.webp"
+              alt="Embalse de Orellana en Badajoz, España"
+              width={1200}
+              height={1200}
+              draggable={false}
+              isBlurred={true}
+              initial="initial"
+              WhileInView="animate"
+            />
+          </motion.div>
 
-          <div className="text-white">
+          <motion.div
+            className="text-white"
+            initial="initial"
+            variants={variants(1)}
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             <h2 className="mb-6 text-3xl font-bold text-textsecondary md:text-4xl">
               ¿Quiénes Somos?
             </h2>
@@ -33,11 +61,17 @@ function Content() {
               complejos puede resultar complicado. Por eso, trabajamos duro para que la
               información que te damos sea clara y fácil de entender.
             </p>
-          </div>
+          </motion.div>
         </article>
 
         <article className="grid w-full max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-2 md:gap-12">
-          <div className="flex my-1 h-full w-full items-center overflow-visible rounded-lg sm:hidden">
+          <motion.div
+            initial="initial"
+            variants={variants(0)}
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="my-1 flex h-full w-full items-center overflow-visible rounded-lg sm:hidden"
+          >
             <Image
               as={NextImage}
               src="/embalse.webp"
@@ -47,8 +81,14 @@ function Content() {
               draggable={false}
               isBlurred={true}
             />
-          </div>
-          <div className="text-white">
+          </motion.div>
+          <motion.div
+            initial="initial"
+            variants={variants(2)}
+            whileInView="animate"
+            className="text-white"
+            viewport={{ once: true }}
+          >
             <h2 className="mb-6 text-3xl font-bold text-textsecondary md:text-4xl">
               Nuestro Propósito
             </h2>
@@ -63,26 +103,45 @@ function Content() {
               objetivo es que todos puedan acceder rápidamente a la información de los
               embalses sin complicaciones.
             </p>
-          </div>
-
-          <Image
-            as={NextImage}
-            src="/embalse.webp"
-            alt="Embalse de Orellana en Badajoz, España"
-            width={1200}
-            height={1200}
-            draggable={false}
-            isBlurred={true}
-            className="hidden sm:block"
-          />
+          </motion.div>
+          <motion.div
+            initial="initial"
+            variants={variants(3)}
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <Image
+              as={NextImage}
+              src="/embalse.webp"
+              alt="Embalse de Orellana en Badajoz, España"
+              width={1200}
+              height={1200}
+              draggable={false}
+              isBlurred={true}
+              className="hidden sm:block"
+            />
+          </motion.div>
         </article>
       </div>
 
       <article className="mt-14 flex flex-col items-center">
-        <h1 className="mb-10 text-center text-3xl font-bold text-textsecondary md:text-4xl">
+        <motion.h1
+          initial="initial"
+          variants={variants(0)}
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="mb-10 text-center text-3xl font-bold text-textsecondary md:text-4xl"
+        >
           Conoce a Nuestro Equipo
-        </h1>
-        <CardAb />
+        </motion.h1>
+        <motion.div
+          initial="initial"
+          variants={variants(1)}
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <CardAb />
+        </motion.div>
       </article>
     </section>
   )

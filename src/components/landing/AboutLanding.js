@@ -1,8 +1,8 @@
 'use client'
 import { Image } from '@nextui-org/image'
+import NextImage from 'next/image'
 import { Link } from 'next-view-transitions'
 import { Button } from '@nextui-org/button'
-import NextImage from 'next/image'
 import { motion } from 'framer-motion'
 
 function AboutLanding() {
@@ -19,7 +19,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="font-telma text-center text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
+              className="f text-center font-telmaRegular text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
             >
               Conoce a Nuestro Equipo
             </motion.h1>
@@ -83,7 +83,6 @@ function AboutLanding() {
                 viewport={{ once: true, amount: 0.8 }}
               >
                 <Image
-                  as={NextImage}
                   src="/yo22.webp"
                   alt="Foto del creador de AcuaNet"
                   width={500}

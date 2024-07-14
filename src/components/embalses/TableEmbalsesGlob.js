@@ -9,6 +9,7 @@ import {
   getFilteredRowModel,
 } from '@tanstack/react-table'
 import { mkConfig, generateCsv, download } from 'export-to-csv'
+import { motion } from 'framer-motion'
 import { Link } from 'next-view-transitions'
 
 function TableData(props) {
@@ -76,17 +77,44 @@ function TableData(props) {
     inputRef.current?.focus()
   }
 
+  //Animations
+  const variants = (index) => ({
+    initial: { opacity: 0, y: 20 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, type: 'spring', stiffness: 150, delay: index * 0.1 },
+    },
+  })
+
   return (
     <div className="mx-5">
       <div className="flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4 sm:mt-8 md:h-14">
-        <div
-          className={`${show ? 'w-[10rem] border-white' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
+        <motion.div
+          viewport={{
+            once: true,
+          }}
+          initial={{ width: '0rem', opacity: 0 }}
+          animate={{
+            width: show ? '12rem' : '0rem',
+            opacity: show ? 1 : 0,
+          }}
+          whileInView="animate"
+          variants={variants(0)}
+          className="flex h-6 border-b border-transparent border-white bg-transparent outline-none"
         >
-          <button
+          <motion.button
+            whileTap={{
+              scale: 0.9,
+              backgroundColor: '#1f1745',
+              borderColor: '#1f1745',
+            }}
             type="button"
             aria-label="Buscar"
             onClick={handleButtonClick}
-            className="transition-transform duration-150 active:scale-90"
+            viewport={{
+              once: true,
+            }}
           >
             <svg
               fill="#c0bfb7"
@@ -111,20 +139,29 @@ function TableData(props) {
                 ></path>
               </g>
             </svg>
-          </button>
-          <input
+          </motion.button>
+          <motion.input
             value={filtered}
             onChange={(e) => setFiltered(e.target.value)}
-            className={`w-full bg-transparent px-1 outline-none transition-all focus:bg-opacity-100 focus:outline-none`}
+            className="w-full bg-transparent px-1 outline-none"
             type="text"
             autoFocus={show}
             ref={inputRef}
+            viewport={{
+              once: true,
+            }}
           />
-        </div>
-        <button
-          type="button"
+        </motion.div>
+        <motion.button
+          initial="initial"
+          whileInView="animate"
+          variants={variants(0)}
           aria-label="Exportar a Excel"
-          className="transition-transform duration-150 active:scale-90"
+          type="button"
+          className="duration-150 active:scale-90"
+          viewport={{
+            once: true,
+          }}
           onClick={() => exportExcel(table.getFilteredRowModel().rows)}
         >
           <svg
@@ -159,16 +196,22 @@ function TableData(props) {
               </g>{' '}
             </g>{' '}
           </svg>
-        </button>
+        </motion.button>
       </div>
       <table className="border border-[#040513] text-xs sm:text-xl">
         <thead className="bg-[#040513]">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
-                <th
+                <motion.th
+                  viewport={{
+                    once: true,
+                  }}
+                  initial="initial"
+                  variants={variants(index)}
+                  whileInView="animate"
                   onClick={header.column.getToggleSortingHandler()}
-                  className={`table-auto cursor-pointer pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? 'w-[14rem] transition-transform duration-150 active:scale-90 sm:w-[17rem]' : index === 1 ? 'w-[15rem] transition-transform duration-150 active:scale-90' : 'w-auto text-center transition-transform duration-150 active:scale-90'}`}
+                  className={`table-auto cursor-pointer pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? 'w-[14rem] duration-150 active:scale-90 sm:w-[17rem]' : index === 1 ? 'w-[15rem] duration-150 active:scale-90' : 'w-auto text-center duration-150 active:scale-90'}`}
                   key={header.id}
                 >
                   {header.column.columnDef.header}
@@ -177,7 +220,7 @@ function TableData(props) {
                       ? '↑'
                       : '↓'
                     : ''}
-                </th>
+                </motion.th>
               ))}
             </tr>
           ))}
@@ -189,52 +232,83 @@ function TableData(props) {
               className="odd:bg-[#1b0e51] even:bg-[#1f1745]"
             >
               {row.getVisibleCells().map((cell, index) => (
-                <td
+                <motion.td
+                  initial="initial"
+                  variants={variants(index)}
+                  whileInView="animate"
                   key={cell.id}
                   className="py-2 sm:p-4"
+                  viewport={{
+                    once: true,
+                  }}
                 >
                   {index === 0 ? (
                     <Link
-                      href={`/embalses/${encodeURIComponent(cell.getValue('nombreEmbalse'))}`}
+                      href={`/embalses/${encodeURIComponent(cell.getValue('nombre_embalse'))}`}
                     >
-                      {cell.getValue('nombreEmbalse')}
+                      {cell.getValue('nombre_embalse')}
                     </Link>
                   ) : index === 1 ? (
                     <Link
-                      href={`/cuencas/${cell.getValue('nombre_cuenca').replace(/ /g, '_')}`}
+                      href={`/cuencas/${encodeURIComponent(cell.getValue('nombre_cuenca'))}`}
                     >
                       {cell.getValue('nombre_cuenca')}
                     </Link>
                   ) : (
-                    cell.getValue(index === 0 ? 'nombreEmbalse' : 'nombre_cuenca')
+                    flexRender(cell.column.columnDef.cell, cell.getContext())
                   )}
-                </td>
+                </motion.td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
-
       <div className="mb-5 flex justify-between rounded-b-xl bg-[#040513] p-2 sm:mb-10">
-        <div>
-          <p className="mt-1 w-6 rounded-sm text-center">
+        <motion.div
+          initial="initial"
+          variants={variants(0)}
+          whileInView="animate"
+          key={0}
+          viewport={{
+            once: true,
+          }}
+        >
+          <motion.p
+            initial="initial"
+            variants={variants(1)}
+            whileInView="animate"
+            key={1}
+            viewport={{
+              once: true,
+            }}
+            className="mt-1 w-6 rounded-sm text-center"
+          >
             {table.getState().pagination.pageIndex + 1}
-          </p>
-        </div>
-        <div className="flex gap-4">
+          </motion.p>
+        </motion.div>
+        <motion.div
+          initial="initial"
+          variants={variants(2)}
+          whileInView="animate"
+          key={2}
+          viewport={{
+            once: true,
+          }}
+          className="flex gap-4"
+        >
           <button
             type="button"
-            aria-label="Primera página"
+            aria-label="Primera Página"
             onClick={() => table.firstPage()}
-            className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
+            className="w-7 rounded-sm duration-150 active:scale-90"
           >
             1
           </button>
           <button
             type="button"
-            aria-label="Página anterior"
+            aria-label="Página Anterior"
             onClick={() => table.previousPage()}
-            className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
+            className="flex w-7 items-center justify-center rounded-sm duration-150 active:scale-90"
           >
             <svg
               viewBox="0 0 24 24"
@@ -265,9 +339,9 @@ function TableData(props) {
           </button>
           <button
             type="button"
-            aria-label="Página siguiente"
+            aria-label="Página Siguiente"
             onClick={() => table.nextPage()}
-            className="flex w-7 items-center justify-center rounded-sm transition-transform duration-150 active:scale-90"
+            className="flex w-7 items-center justify-center rounded-sm duration-150 active:scale-90"
           >
             <svg
               viewBox="0 0 24 24"
@@ -298,13 +372,13 @@ function TableData(props) {
           </button>
           <button
             type="button"
-            aria-label="Última página"
+            aria-label="Última Página"
             onClick={() => table.lastPage()}
-            className="w-7 rounded-sm transition-transform duration-150 active:scale-90"
+            className="w-7 rounded-sm duration-150 active:scale-90"
           >
             {table.getPageCount() - 1}
           </button>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

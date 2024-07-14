@@ -4,6 +4,7 @@ import Fuentes from '@/components/landing/Fuentes'
 import SkeletonBento from '@/components/skeletons/BentoSkeleton'
 import AboutLanding from '@/components/landing/AboutLanding'
 import { Suspense } from 'react'
+import ContactLanding from '@/components/landing/ContactLanding'
 import BentoDataLandin from '@/components/landing/BentoDataLanding'
 
 export const revalidate = 60
@@ -45,11 +46,11 @@ export default function Home() {
     <>
       <Intro />
       <Suspense fallback={<SkeletonBento />}>
-        {/* <Bento /> */}
         <BentoDataLandin />
       </Suspense>
       <Fuentes />
       <AboutLanding />
+      <ContactLanding />
     </>
   )
 }

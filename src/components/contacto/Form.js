@@ -238,7 +238,7 @@ function Form() {
         </div>
       </form>
     </section>
-  )
+  );
 }
 
 export default Form

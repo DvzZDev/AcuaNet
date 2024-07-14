@@ -1,7 +1,7 @@
 'use client'
 import CardAb from '@/components/about/CardAb'
 import { Image } from '@nextui-org/image'
-import NextImage from 'next/image'
+import NextImage from "next/legacy/image"
 import { delay, motion } from 'framer-motion'
 
 const delays = [0.1, 0.2, 0.3, 0.4, 0.5]

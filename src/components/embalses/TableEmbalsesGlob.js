@@ -307,7 +307,7 @@ function TableData(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default TableData

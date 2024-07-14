@@ -16,7 +16,7 @@ async function Title(url) {
         {resCuenca.cuenca.replace(/_/g, ' ')}
       </h1>
     </div>
-  )
+  );
 }
 
 export default Title

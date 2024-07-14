@@ -14,7 +14,7 @@ function CardFuentes({ image, title }) {
         />
       </div>
       <div className="h-[100px]">
-        <h1 className="pt-5 text-center text-xl text-textprimary"> {title} </h1>
+        <h1 className="pt-5 text-center text-2xl text-textprimary"> {title} </h1>
       </div>
     </article>
   )

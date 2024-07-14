@@ -94,12 +94,12 @@ function Fuentes() {
         <motion.div
           initial="initial"
           variants={{
-            initial: { width: 0 },
-            animate: { width: '100%', transition: { duration: 0.5, delay: 0.5 } },
+            initial: { width: 0, borderColor: "#ffd700" },
+            animate: { width: '100%', borderColor:"#1a1c4d", transition: { duration: 0.8, delay: 0.5 } },
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}
-          className="mt-5 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-6 text-2xl text-textprimary sm:py-10"
+          className="mt-5 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-6 text-3xl text-textprimary sm:py-10"
         >
           <motion.h1
             initial="initial"

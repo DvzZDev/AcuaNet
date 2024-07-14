@@ -144,10 +144,10 @@ function ContactLanding() {
             initial="initial"
             variants={{
               initial: { opacity: 0, y: 50 },
-              animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              animate: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.9 } },
             }}
             whileInView="animate"
-            viewport={{ once: true, amount: 0.8, delay: 0.9 }}
+            viewport={{ once: true, amount: 0.8 }}
             type="button"
             aria-label="Conócenos"
             className="m-auto mt-3 rounded-lg bg-[#091c34] p-3 text-xl font-bold text-[#ffd700] hover:animate-wiggle hover:brightness-90"

@@ -81,7 +81,7 @@ function Form() {
       <form
         ref={form}
         onSubmit={handleSubmit(onSubmit)}
-        className="my-20 flex justify-center sm:mt-2"
+        className="my-20 flex animate-fade-up justify-center sm:mt-2"
       >
         <div
           className={`flex min-h-[30rem] w-[20rem] flex-col gap-4 rounded-lg bg-slate-950 p-4 sm:w-[30rem]`}

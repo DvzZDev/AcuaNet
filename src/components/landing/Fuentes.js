@@ -99,7 +99,7 @@ function Fuentes() {
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}
-          className="mt-2 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-6 text-2xl text-textprimary sm:py-10"
+          className="mt-5 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-6 text-2xl text-textprimary sm:py-10"
         >
           <motion.h1
             initial="initial"

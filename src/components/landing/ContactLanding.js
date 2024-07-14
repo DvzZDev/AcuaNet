@@ -6,7 +6,7 @@ import { Link } from 'next-view-transitions'
 
 function ContactLanding() {
   return (
-    <section className="flex flex-col justify-center bg-bgcolor px-5 pb-32 pt-5">
+    <section className="flex flex-col justify-center bg-bgcolor pb-32">
       <motion.h1
         initial="initial"
         variants={{
@@ -20,7 +20,7 @@ function ContactLanding() {
         Contactanos
       </motion.h1>
       <div className="flex justify-center bg-bgcolor pt-10">
-        <div className="grid w-[40rem] grid-cols-2 grid-rows-2 gap-5">
+        <div className="grid w-[50rem] grid-cols-2 grid-rows-2 gap-5">
           <motion.div
             initial="initial"
             variants={{
@@ -76,7 +76,7 @@ function ContactLanding() {
               </svg>
             </div>
             <span className="p-2 text-center text-2xl">
-              ¿Has encontrado alguna cosa que no deberia estar ahi?
+              ¿Hay algo que no debería estar ahí?
             </span>
           </motion.div>
           <motion.div
@@ -150,7 +150,7 @@ function ContactLanding() {
             viewport={{ once: true, amount: 0.8, delay: 0.9 }}
             type="button"
             aria-label="Conócenos"
-            className="m-auto mt-6 rounded-lg bg-[#091c34] p-3 text-xl font-bold text-[#ffd700] hover:animate-wiggle hover:brightness-90"
+            className="m-auto mt-3 rounded-lg bg-[#091c34] p-3 text-xl font-bold text-[#ffd700] hover:animate-wiggle hover:brightness-90"
           >
             Formulario
           </motion.button>

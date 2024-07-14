@@ -24,7 +24,7 @@ function BentoCuencas(props) {
 
   return (
     <section className="flex h-full justify-center bg-bgcolor">
-      <div className="m-10 mt-2 grid min-h-[40rem] w-[60rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
+      <div className="m-10 mt-2 grid min-h-[40rem] w-[65rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
         {cuencas.map((cuenca, index) => (
           <>
             <Link href={`/cuencas/${cuenca.cuenca}`}>
@@ -51,10 +51,10 @@ function BentoCuencas(props) {
                 whileInView="animate"
                 whileHover="hover"
                 viewport={{ once: true }}
-                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.5rem] ${getColor(cuenca.porcentaje_embalsada)}`}
+                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.51rem] ${getColor(cuenca.porcentaje_embalsada)}`}
                 key={cuenca.cuenca}
               >
-                <div className="flex flex-col content-center items-center justify-center">
+                <div className="flex flex-col content-center items-center justify-center p-2">
                   <p>{cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}</p>
                   <p>{`${cuenca.porcentaje_embalsada} %`} </p>
                   <p>

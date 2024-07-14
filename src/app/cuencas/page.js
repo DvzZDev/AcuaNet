@@ -43,7 +43,7 @@ export const metadata = {
 function Page() {
   return (
     <section className="mt-5">
-      <Intro title={'Cuencas Hidrográficas'} />
+      <Intro title={'Cuencas Hidrograficas'} />
       <Suspense fallback={<SkeletonCuencas />}>
         <BentoData>
           <Bento />

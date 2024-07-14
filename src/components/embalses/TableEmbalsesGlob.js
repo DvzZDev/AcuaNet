@@ -294,7 +294,7 @@ function TableData(props) {
           viewport={{
             once: true,
           }}
-          className="flex gap-4"
+          className="flex gap-4 text-lg"
         >
           <button
             type="button"

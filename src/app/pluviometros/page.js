@@ -42,7 +42,7 @@ export const metadata = {
 function page() {
   return (
     <section className="mt-5">
-      <Intro title={'Pluviómetros'} />
+      <Intro title={'Pluviometros'} />
       <section className="flex justify-center bg-bgcolor">
         <Suspense fallback={<SkeletonPluviometros />}>
           <Tabledata />

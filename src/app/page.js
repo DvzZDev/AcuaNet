@@ -4,6 +4,7 @@ import Fuentes from '@/components/landing/Fuentes'
 import SkeletonBento from '@/components/skeletons/BentoSkeleton'
 import AboutLanding from '@/components/landing/AboutLanding'
 import { Suspense } from 'react'
+import BentoDataLandin from '@/components/landing/BentoDataLanding'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -44,7 +45,8 @@ export default function Home() {
     <>
       <Intro />
       <Suspense fallback={<SkeletonBento />}>
-        <Bento />
+        {/* <Bento /> */}
+        <BentoDataLandin />
       </Suspense>
       <Fuentes />
       <AboutLanding />

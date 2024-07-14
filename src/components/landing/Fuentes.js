@@ -138,8 +138,8 @@ function Fuentes() {
             <motion.div
               key={card.title}
               className="flex justify-center"
-              variants={childVariants(1)}
-              viewport={{ once: true, amount: 0.8 }}
+              variants={childVariants(0.5)}
+              viewport={{ once: true }}
             >
               <CardFuentes
                 image={card.image}

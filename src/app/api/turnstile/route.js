@@ -26,7 +26,6 @@ export async function POST(request) {
 
     // Verificar si la verificación de Turnstile fue exitosa
     if (!data.success) {
-      console.error('La verificación de Turnstile falló:', data['error-codes'])
       return NextResponse.json(
         { error: 'La verificación de Turnstile falló' },
         { status: 400 }
@@ -35,7 +34,6 @@ export async function POST(request) {
 
     return NextResponse.json(data)
   } catch (error) {
-    console.error('Error al enviar Turnstile:', error)
     return NextResponse.json({ error: 'Error interno del servidor' }, { status: 500 })
   }
 }

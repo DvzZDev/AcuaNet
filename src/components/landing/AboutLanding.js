@@ -1,8 +1,6 @@
 'use client'
 import { Image } from '@nextui-org/image'
-import NextImage from 'next/image'
 import { Link } from 'next-view-transitions'
-import { Button } from '@nextui-org/button'
 import { motion } from 'framer-motion'
 
 function AboutLanding() {
@@ -83,10 +81,10 @@ function AboutLanding() {
                 viewport={{ once: true, amount: 0.8 }}
               >
                 <Image
-                  src="/yo22.webp"
-                  alt="Foto del creador de AcuaNet"
                   width={500}
                   height={500}
+                  src="/yo22.webp"
+                  alt="Foto del creador de AcuaNet"
                   className="rounded-lg shadow-lg"
                   isBlurred={true}
                   draggable={false}

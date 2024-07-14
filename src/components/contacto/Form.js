@@ -32,7 +32,7 @@ function Form() {
       .querySelector('input[name="cf-turnstile-response"]').value
 
     if (!turnstileResponse) {
-      console.error('Turnstile response is missing.')
+      ;('Turnstile response is missing.')
       return
     }
 
@@ -61,16 +61,16 @@ function Form() {
           if (emailResponse.status === 200) {
             setSend(true)
           } else {
-            console.error('Error sending email:', emailResponse.text)
+            'Error sending email:', emailResponse.text
           }
         } catch (error) {
-          console.error('Error sending email:', error)
+          'Error sending email:', error
         }
       } else {
-        console.error('Turnstile verification failed:', result.error)
+        'Turnstile verification failed:', result.error
       }
     } catch (error) {
-      console.error('Error in Turnstile verification:', error)
+      'Error in Turnstile verification:', error
     } finally {
       setLoading(false) // Ensure spinner is hidden after the request
     }

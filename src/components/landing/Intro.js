@@ -68,7 +68,7 @@ async function Intro() {
           height={500}
           layout="responsive"
           objectFit="cover"
-          draggable="false"
+          draggable={false}
           className="animate-pulse animate-duration-2000 animate-infinite"
         />
       </div>

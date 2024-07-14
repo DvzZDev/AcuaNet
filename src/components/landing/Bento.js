@@ -32,6 +32,7 @@ function Bento(props) {
       transition: { duration: 1, type: 'spring', stiffness: 100, delay: i * 0.1 },
     },
   })
+
   const variantss = (index) => ({
     initial: { opacity: 0, scale: 0.5 },
     animate: {
@@ -60,17 +61,10 @@ function Bento(props) {
           viewport={{ once: true, margin: '-70px' }}
           className="col-span-4 row-span-1 flex justify-center text-wrap rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4"
         >
-          {esp.map((españa) => (
-            <div
-              key={españa.id}
-              className="flex h-full w-full flex-col content-center justify-evenly rounded-lg text-center"
-            >
+          {esp.map((españa, index) => (
+            <div key={españa.id} className="flex h-full w-full flex-col content-center justify-evenly rounded-lg text-center">
               <h2 className="text-6xl text-[#7387f9]">Reserva</h2>
-              <span
-                className={`inline-block font-telmaRegular text-[9rem] font-bold leading-none ${
-                  españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'
-                }`}
-              >
+              <span className={`inline-block font-telmaRegular text-[9rem] font-bold leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}>
                 {`${españa.porcentaje_embalsado}`}
                 <strong className="text-[3rem]">%</strong>
               </span>
@@ -78,6 +72,7 @@ function Bento(props) {
             </div>
           ))}
         </motion.div>
+
         {/*   Segunda col */}
         <motion.div
           initial="initial"
@@ -109,33 +104,25 @@ function Bento(props) {
             className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4"
           >
             {cuencas.map((cuenca, index) => (
-              <>
-                <Link
-                  href={`/cuencas/${cuenca.cuenca}`}
-                  key={cuenca.id_cuenca}
+              <Link href={`/cuencas/${cuenca.cuenca}`} key={cuenca.id_cuenca}>
+                <motion.div
+                  initial="initial"
+                  variants={variants(index)}
+                  whileInView="animate"
+                  viewport={{ once: true, margin: '200px' }}
+                  whileHover={{ scale: 1.1 }}
+                  className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
                 >
-                  <motion.div
-                    initial="initial"
-                    variants={variants(index)}
-                    whileInView="animate"
-                    viewport={{ once: true, margin: '200px' }}
-                    whileHover={{ scale: 1.1 }}
-                    className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 hover:scale-110 ${getColor(
-                      cuenca.porcentaje_embalsada
-                    )}`}
-                  >
-                    <div className="flex flex-col content-center items-center justify-center">
-                      <p className="text-[14px]">
-                        {cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}
-                      </p>
-                      <p className="text-[14px]">{`${cuenca.porcentaje_embalsada} %`}</p>
-                    </div>
-                  </motion.div>
-                </Link>
-              </>
+                  <div className="flex flex-col content-center items-center justify-center">
+                    <p className="text-[14px]">{cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}</p>
+                    <p className="text-[14px]">{`${cuenca.porcentaje_embalsada} %`}</p>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </motion.div>
+
         {/* Tercera Col */}
         <motion.div
           initial="initial"
@@ -180,10 +167,6 @@ function Bento(props) {
                     viewport={{ once: true }}
                     className="hover:scale-105 hover:text-[#0b92e4]"
                     key={pluvi.id_pluviometro}
-                    // whileHover={{
-                    //   scale: 0.95,
-                    //   transition: { duration: 0.2 },
-                    // }}
                   >
                     <td className="p-1">{pluvi.nombre}</td>
                     <td className="p-1 text-right">{pluvi.provincia}</td>
@@ -197,6 +180,7 @@ function Bento(props) {
             </table>
           </div>
         </motion.div>
+
         {/* Cuarta Coluna */}
         <motion.div
           initial="initial"
@@ -255,16 +239,16 @@ function Bento(props) {
                 Embalse
               </caption>
               <tbody className="text-textprimary">
-                {variacionEmbalses.map((variacion, indexs) => (
+                {variacionEmbalses.map((variacion, index) => (
                   <motion.tr
-                    variants={variantss(indexs)}
+                    variants={variantss(index)}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
                     className="hover:scale-105 hover:text-[#0b92e4]"
                     key={variacion.nombre_embalse}
                   >
-                    <td className="">{variacion.nombre_embalse}</td>
+                    <td>{variacion.nombre_embalse}</td>
                     <td className="text-right">{`${variacion.variacion_ultima_semanapor}`}</td>
                   </motion.tr>
                 ))}

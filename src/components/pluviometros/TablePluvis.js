@@ -10,7 +10,6 @@ import {
 } from '@tanstack/react-table'
 import { mkConfig, generateCsv, download } from 'export-to-csv'
 import { motion } from 'framer-motion'
-import { Pagination, PaginationItem, PaginationCursor } from '@nextui-org/pagination'
 function TablePluvis(props) {
   const resdata = props.data
   const columns = useMemo(

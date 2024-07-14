@@ -49,14 +49,14 @@ function Content() {
             <h2 className="mb-6 text-3xl font-bold text-textsecondary md:text-4xl">
               ¿Quiénes Somos?
             </h2>
-            <p className="mb-6 text-base leading-relaxed text-textprimary md:text-lg">
+            <p className="mb-6 text-base leading-relaxed text-textprimary md:text-2xl">
               En AcuaNet, nos enfocamos en hacer tu experiencia sencilla y agradable.
               Utilizamos métodos avanzados para brindarte datos actualizados sobre los
               niveles de los embalses, garantizando información precisa al instante.
               Nuestra interfaz amigable te permite encontrar lo que necesitas de manera
               rápida y sin complicaciones.
             </p>
-            <p className="text-base leading-relaxed text-textprimary md:text-lg">
+            <p className="text-base leading-relaxed text-textprimary md:text-2xl">
               Sabemos que gestionar datos de fuentes desactualizadas y sitios web
               complejos puede resultar complicado. Por eso, trabajamos duro para que la
               información que te damos sea clara y fácil de entender.
@@ -92,12 +92,12 @@ function Content() {
             <h2 className="mb-6 text-3xl font-bold text-textsecondary md:text-4xl">
               Nuestro Propósito
             </h2>
-            <p className="mb-6 text-base leading-relaxed text-textprimary md:text-lg">
+            <p className="mb-6 text-base leading-relaxed text-textprimary md:text-2xl">
               Recuerdo lo frustrante que era antes de salir a pescar, cuando tenía que
               buscar el nivel del embalse en sitios web complicados y difíciles de usar.
               Esa frustración me inspiró a crear AcuaNet.
             </p>
-            <p className="text-base leading-relaxed text-textprimary md:text-lg">
+            <p className="text-base leading-relaxed text-textprimary md:text-2xl">
               Como estudiante de desarrollo web, decidí poner en práctica lo que he
               aprendido para desarrollar una plataforma que sea fácil y eficiente. Mi
               objetivo es que todos puedan acceder rápidamente a la información de los

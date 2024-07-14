@@ -29,14 +29,14 @@ function BentoDist(props) {
         className="order-1 flex justify-center rounded-lg sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Agua</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Agua</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
+            <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.embalsada}
             </span>
-            <span className="text-lg">hm³</span>
+            <span className="text-xl">hm³</span>
           </div>
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalsada</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Embalsada</h1>
         </article>
       </motion.div>
 
@@ -54,14 +54,14 @@ function BentoDist(props) {
         className="order-2 flex justify-center sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Capacidad</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Capacidad</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
+            <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.capacidad}
             </span>
-            <span className="text-lg">hm³</span>
+            <span className="text-xl">hm³</span>
           </div>
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Total</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Total</h1>
         </article>
       </motion.div>
 
@@ -95,14 +95,14 @@ function BentoDist(props) {
         className="order-4 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variacion</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
+            <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.variacion}
             </span>
-            <span className="text-lg">hm³</span>
+            <span className="text-xl">hm³</span>
           </div>
-          <h1 className="text-center text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
+          <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
             Sem. Anterior
           </h1>
         </article>
@@ -122,14 +122,14 @@ function BentoDist(props) {
         className="order-5 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variacion</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
+            <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.porcentaje_variacion}
             </span>
-            <span className="text-lg">hm³</span>
+            <span className="text-xl">hm³</span>
           </div>
-          <h1 className="text-center text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
+          <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
             Sem. Anterior
           </h1>
         </article>
@@ -174,7 +174,7 @@ function BentoDist(props) {
         className="order-7 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalses</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Embalses</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <div className="animate-wiggle animate-infinite">
               <svg
@@ -205,7 +205,7 @@ function BentoDist(props) {
               </svg>
             </div>
           </div>
-          <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Cuenca</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Cuenca</h1>
         </article>
       </motion.div>
     </div>

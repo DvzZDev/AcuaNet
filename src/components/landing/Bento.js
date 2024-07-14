@@ -62,9 +62,14 @@ function Bento(props) {
           className="col-span-4 row-span-1 flex justify-center text-wrap rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4"
         >
           {esp.map((españa, index) => (
-            <div key={españa.id} className="flex h-full w-full flex-col content-center justify-evenly rounded-lg text-center">
+            <div
+              key={españa.id}
+              className="flex h-full w-full flex-col content-center justify-evenly rounded-lg text-center"
+            >
               <h2 className="text-6xl text-[#7387f9]">Reserva</h2>
-              <span className={`inline-block font-telmaRegular text-[9rem] font-bold leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}>
+              <span
+                className={`inline-block font-telmaRegular text-[9rem] font-bold leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
+              >
                 {`${españa.porcentaje_embalsado}`}
                 <strong className="text-[3rem]">%</strong>
               </span>
@@ -104,8 +109,12 @@ function Bento(props) {
             className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4"
           >
             {cuencas.map((cuenca, index) => (
-              <Link href={`/cuencas/${cuenca.cuenca}`} key={cuenca.id_cuenca}>
+              <Link
+                href={`/cuencas/${cuenca.cuenca}`}
+                key={cuenca.id_cuenca}
+              >
                 <motion.div
+                  key={index}
                   initial="initial"
                   variants={variants(index)}
                   whileInView="animate"
@@ -114,8 +123,10 @@ function Bento(props) {
                   className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
                 >
                   <div className="flex flex-col content-center items-center justify-center">
-                    <p className="text-[14px]">{cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}</p>
-                    <p className="text-[14px]">{`${cuenca.porcentaje_embalsada} %`}</p>
+                    <p className="text-[18px]">
+                      {cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}
+                    </p>
+                    <p className="text-[18px]">{`${cuenca.porcentaje_embalsada} %`}</p>
                   </div>
                 </motion.div>
               </Link>

@@ -22,14 +22,14 @@ function EmbalseContent({ data }) {
           className="order-1 flex justify-center rounded-lg sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
         >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
-            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Agua</h1>
+            <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Agua</h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
+              <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
                 {data.agua_embalsada}
               </span>
-              <span className="text-lg">hm³</span>
+              <span className="text-xl">hm³</span>
             </div>
-            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Embalsada</h1>
+            <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Embalsada</h1>
           </article>
         </motion.div>
         {/* Segunda Columna */}
@@ -46,14 +46,14 @@ function EmbalseContent({ data }) {
           className="order-2 flex justify-center sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
         >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
-            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Capacidad</h1>
+            <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Capacidad</h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
+              <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
                 {data.capacidad_total}
               </span>
-              <span className="text-lg">hm³</span>
+              <span className="text-xl">hm³</span>
             </div>
-            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Total</h1>
+            <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Total</h1>
           </article>
         </motion.div>
         {/* Quinta Columna (movida a la tercera posición) */}
@@ -85,14 +85,14 @@ function EmbalseContent({ data }) {
           className="order-4 flex justify-center sm:col-span-2 sm:row-span-3"
         >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
+            <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variacion</h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
+              <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
                 {data.variacion_ultima_semana}
               </span>
-              <span className="text-lg">hm³</span>
+              <span className="text-xl">hm³</span>
             </div>
-            <h1 className="text-center text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
+            <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
               Sem. Anterior
             </h1>
           </article>
@@ -110,14 +110,14 @@ function EmbalseContent({ data }) {
           className="order-5 flex justify-center sm:col-span-2 sm:row-span-3"
         >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-            <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">Variacion</h1>
+            <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variacion</h1>
             <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              <span className="text-5xl font-black sm:text-4xl lg:text-5xl">
+              <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
                 {data.variacion_ultima_semanapor}
               </span>
-              <span className="text-lg">%</span>
+              <span className="text-xl">%</span>
             </div>
-            <h1 className="text-center text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
+            <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
               Sem. Anterior
             </h1>
           </article>
@@ -137,12 +137,12 @@ function EmbalseContent({ data }) {
                 viewport={{ once: true, amount: 0.8, delay: 0.6 }}
                 className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
               >
-                <h1 className="text-center text-[17px] lg:text-2xl">Misma Semana</h1>
-                <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-3xl md:text-4xl">
+                <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
+                <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-4xl md:text-4xl">
                   <span>{data.misma_semana_ultimo_año}</span>
                   <span className="text-sm">hm³</span>
                 </div>
-                <h1 className="text-center text-[17px] lg:text-2xl">hace 1 año</h1>
+                <h1 className="text-center text-[17px] lg:text-3xl">hace 1 año</h1>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
@@ -155,7 +155,7 @@ function EmbalseContent({ data }) {
                 viewport={{ once: true, amount: 0.8, delay: 0.7 }}
                 className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
               >
-                <h1 className="text-center text-[17px] lg:text-2xl">Misma Semana</h1>
+                <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1, transition: { delay: 0.8 } }}
@@ -165,12 +165,12 @@ function EmbalseContent({ data }) {
                   }}
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.8, delay: 0.8 }}
-                  className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-3xl md:text-4xl"
+                  className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-4xl md:text-4xl"
                 >
                   <span>{data.misma_semana_ultimo_añopor}</span>
                   <span className="text-sm">%</span>
                 </motion.div>
-                <h1 className="text-center text-[17px] lg:text-2xl">hace 1 año</h1>
+                <h1 className="text-center text-[17px] lg:text-3xl">hace 1 año</h1>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
@@ -183,12 +183,12 @@ function EmbalseContent({ data }) {
                 viewport={{ once: true, amount: 0.8, delay: 0.9 }}
                 className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
               >
-                <h1 className="text-center text-[17px] lg:text-2xl">Misma Semana</h1>
-                <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-3xl md:text-4xl">
+                <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
+                <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-4xl md:text-4xl">
                   <span>{data.misma_semana_10años}</span>
                   <span className="text-sm">hm³</span>
                 </div>
-                <h1 className="text-center text-[17px] lg:text-2xl">hace 10 años</h1>
+                <h1 className="text-center text-[17px] lg:text-3xl">hace 10 años</h1>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
@@ -201,12 +201,12 @@ function EmbalseContent({ data }) {
                 viewport={{ once: true, amount: 1, delay: 0.2 }}
                 className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
               >
-                <h1 className="text-center text-[17px] lg:text-2xl">Misma Semana</h1>
-                <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-3xl md:text-4xl">
+                <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
+                <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-4xl md:text-4xl">
                   <span>{data.misma_semana_10añospor}</span>
                   <span className="text-sm">%</span>
                 </div>
-                <h1 className="text-center text-[17px] lg:text-2xl">hace 10 años</h1>
+                <h1 className="text-center text-[17px] lg:text-3xl">hace 10 años</h1>
               </motion.div>
             </div>
           </div>
@@ -227,7 +227,7 @@ function EmbalseContent({ data }) {
         >
           <Link href={'/embalses'}>
             <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around gap-4 rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
-              <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
+              <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
                 Todos los
               </h1>
               <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -256,7 +256,7 @@ function EmbalseContent({ data }) {
                   </svg>
                 </div>
               </div>
-              <h1 className="text-3xl text-[#e9ead6] sm:text-2xl lg:text-3xl">
+              <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
                 Embalses
               </h1>
             </article>

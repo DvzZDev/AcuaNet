@@ -19,7 +19,7 @@ function CardAb() {
         <h1 className="mb-2 text-2xl font-black text-textprimary">
           David <span className="text-textsecondary">Esteban</span>
         </h1>
-        <p className="mb-3 text-textprimary">
+        <p className="mb-3 text-lg text-textprimary">
           ¡Hola! Soy estudiante de desarrollo de software, creé AcuaNet para ver
           rápidamente los niveles de mis embalses favoritos y compartir esta información
           con otras personas.

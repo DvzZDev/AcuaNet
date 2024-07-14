@@ -84,7 +84,7 @@ export default function Navbar({ data }) {
 
         <div className="mx-4 flex w-full items-center justify-between leading-none lg:w-auto lg:flex-grow">
           {/* Navegación */}
-          <nav className="hidden gap-4 text-2xl leading-none text-textprimary lg:flex lg:items-center">
+          <nav className="hidden gap-4 text-center text-2xl leading-none text-textprimary lg:flex lg:items-center">
             <Link
               href="/cuencas"
               className="glow transition-all"

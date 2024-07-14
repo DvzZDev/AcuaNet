@@ -81,12 +81,12 @@ function Fuentes() {
         <motion.h1
           initial="initial"
           variants={{
-            initial: { opacity: 0, x: 50 },
-            animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+            initial: { opacity: 0, y: 50 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}
-          className="font-telma pt-1 text-center text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
+          className="pt-1 text-center font-telmaRegular text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
         >
           Fuentes Oficiales
         </motion.h1>
@@ -138,7 +138,7 @@ function Fuentes() {
             <motion.div
               key={card.title}
               className="flex justify-center"
-              variants={childVariants(delays[index])}
+              variants={childVariants(1)}
               viewport={{ once: true, amount: 0.8 }}
             >
               <CardFuentes

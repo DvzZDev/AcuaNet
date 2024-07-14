@@ -43,7 +43,7 @@ async function Bento() {
             >
               <h2 className="text-6xl text-[#7387f9]">Reserva</h2>
               <span
-                className={`inline-block font-telma text-[9rem] font-bold leading-none ${
+                className={`inline-block font-telmaRegular text-[9rem] font-bold leading-none ${
                   españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'
                 }`}
               >

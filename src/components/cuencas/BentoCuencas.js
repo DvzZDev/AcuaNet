@@ -1,6 +1,6 @@
 'use client'
 import { Link } from 'next-view-transitions'
-import { motion } from 'framer-motion'
+import { motion, spring } from 'framer-motion'
 
 function BentoCuencas(props) {
   const cuencas = props.data
@@ -31,20 +31,28 @@ function BentoCuencas(props) {
               <motion.div
                 initial="initial"
                 variants={{
-                  initial: { opacity: 0 },
+                  hover: {
+                    scale: 1.1,
+                    transition: { duration: 0.1 },
+                  },
+                  initial: { opacity: 0, y: -100 },
                   animate: {
                     opacity: 1,
+                    y: 0,
                     viewport: { once: true },
                     transition: {
-                      delay: delays[index],
+                      delay: index * 0.1,
+                      duration: 0.1,
+                      type: 'spring',
+                      stiffness: 100,
                     },
                   },
                 }}
                 whileInView="animate"
+                whileHover="hover"
                 viewport={{ once: true }}
-                className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.4rem] transition-all duration-150 hover:scale-105 active:scale-95 ${getColor(cuenca.porcentaje_embalsada)}`}
+                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.4rem] ${getColor(cuenca.porcentaje_embalsada)}`}
                 key={cuenca.cuenca}
-                style={{ cursor: 'pointer' }}
               >
                 <div className="flex flex-col content-center items-center justify-center">
                   <p>{cuenca.cuenca.replace(/_/g, ' ').replace(/-/g, ' ')}</p>

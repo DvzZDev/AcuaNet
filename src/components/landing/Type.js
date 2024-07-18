@@ -1,10 +1,20 @@
 'use client'
 import { ReactTyped } from 'react-typed'
 import AutoCompleteHook from '@/hooks/AutoComplete'
+import { motion } from 'framer-motion'
 
 function Type({ data }) {
   const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } =
     AutoCompleteHook(data)
+
+  const variants = {
+    initial: { y: 40, opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, type: 'spring', stiffness: 120 },
+    },
+  }
 
   return (
     <div>
@@ -34,22 +44,36 @@ function Type({ data }) {
           Buscar
         </button>
       </form>
-      <h1 className={`animate-jump pl-1 text-red-500 ${err ? 'flex' : 'hidden'}`}>
+      <h1 className={`pl-1 text-red-500 ${err ? 'flex' : 'hidden'}`}>
         Embalse no encontrado
       </h1>
-      <div className="relative z-20">
+      <div className="relative">
         {suggestions.length > 0 && (
-          <ul className="absolute mt-5 flex w-full animate-fade-down flex-col gap-2 rounded-lg bg-bgcolor text-textprimary animate-duration-300 animate-ease-in-out">
+          <motion.ul
+            initial="initial"
+            animate="animate"
+            variants={variants}
+            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-bgcolor text-xl text-textprimary"
+          >
             {suggestions.slice(0, 5).map((suggestion, index) => (
-              <li
+              <motion.li
+                initial="initial"
+                animate="animate"
+                variants={{
+                  initial: { opacity: 0 },
+                  animate: {
+                    opacity: 1,
+                    transition: { duration: 0.5 },
+                  },
+                }}
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
-                className="cursor-pointer px-2 py-1 transition-all hover:bg-slate-950 hover:bg-opacity-25"
+                className="z-30 cursor-pointer px-2 py-1 hover:bg-slate-950 hover:bg-opacity-25"
               >
                 {suggestion}
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         )}
       </div>
     </div>

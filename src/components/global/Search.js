@@ -1,6 +1,7 @@
 'use client'
 
 import AutoCompleteHook from '@/hooks/AutoComplete'
+import { motion } from 'framer-motion'
 
 function Search({ data }) {
   const {
@@ -12,6 +13,15 @@ function Search({ data }) {
     handleSuggestionClick,
     handleSubmit,
   } = AutoCompleteHook(data)
+
+  const variants = {
+    initial: { y: 40, opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, type: 'spring', stiffness: 120 },
+    },
+  }
 
   return (
     <div>
@@ -58,19 +68,33 @@ function Search({ data }) {
         </button>
       </form>
 
-      <div className="absolute ml-3 text-sm">
+      <div className="absolute ml-3 text-xl normal-case">
         {suggestions.length > 0 && (
-          <ul className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-bgcolor p-4 text-textprimary animate-duration-300 animate-ease-in-out">
+          <motion.ul
+            initial="initial"
+            animate="animate"
+            variants={variants}
+            className="mt-5 flex w-[16rem] animate-fade-down flex-col gap-2 rounded-lg bg-bgcolor p-4 text-textprimary animate-duration-300 animate-ease-in-out"
+          >
             {suggestions.slice(0, 5).map((suggestion, index) => (
-              <li
+              <motion.li
+                initial="initial"
+                animate="animate"
+                variants={{
+                  initial: { opacity: 0 },
+                  animate: {
+                    opacity: 1,
+                    transition: { duration: 0.5 },
+                  },
+                }}
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
                 className="cursor-pointer hover:bg-slate-950 hover:bg-opacity-25"
               >
                 {suggestion}
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         )}
       </div>
     </div>

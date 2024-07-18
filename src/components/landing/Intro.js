@@ -6,7 +6,7 @@ import Image from 'next/image'
 async function Intro() {
   const datares = nombreEmbalses
   return (
-    <section className="containerr flex h-screen flex-col items-center">
+    <section className="flex h-screen flex-col items-center">
       <div className="mb-6 mt-4 flex w-[3rem] max-w-xs animate-fade-up justify-center sm:mt-24 sm:w-[5rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ async function Intro() {
         </svg>
       </div>
       <div className="flex flex-col xl:w-[60%]">
-        <strong className="font-NecoBold mb-4 w-full animate-fade-up text-center text-[64px] leading-none text-textsecondary animate-delay-100 sm:text-[5rem]">
+        <strong className="mb-4 w-full animate-fade-up text-center font-NecoBold text-[64px] leading-none text-textsecondary animate-delay-100 sm:text-[5rem]">
           AcuaNet
         </strong>
 
@@ -57,7 +57,7 @@ async function Intro() {
           </span>
         </h1>
       </div>
-      <div className="animate-fade-up animate-delay-300">
+      <div className="z-30 animate-fade-up animate-delay-300">
         <Type data={datares} />
       </div>
       <div className="mt-24 h-[15rem] w-[12rem] animate-jump-in opacity-90 animate-delay-500">

@@ -11,10 +11,19 @@ export default function Navbar({ data }) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
 
+  const variants = {
+    initial: { y: 40, opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, type: 'spring', stiffness: 120 },
+    },
+  }
+
   return (
     <div
       id="header-nav"
-      className={`fixed z-20 w-full p-4 transition-all duration-500 ${isMenuOpen ? 'z-10 h-screen bg-[#040513d6] backdrop-blur-md' : 'z-30 h-[5rem]'}`}
+      className={`fixed z-20 w-full p-4 transition-all duration-500 ${isMenuOpen ? 'z-50 h-screen bg-[#040513d6] backdrop-blur-md' : 'z-30 h-[5rem]'}`}
     >
       <div className="container mx-auto flex flex-col items-center justify-between gap-10 uppercase lg:flex-row xl:px-28">
         {/* Logo */}
@@ -105,7 +114,7 @@ export default function Navbar({ data }) {
             </Link>
             <Link
               href="/quienesSomos"
-              className="glow transition-all text-nowrap"
+              className="glow text-nowrap transition-all"
             >
               Quienes Somos
             </Link>
@@ -127,7 +136,7 @@ export default function Navbar({ data }) {
         <nav
           className={`${isMenuOpen ? 'flex flex-col items-center gap-12 text-2xl text-textprimary' : 'hidden'}`}
         >
-          <div className="z-20 animate-fade-down animate-delay-400">
+          <div className="z-50 animate-fade-down animate-delay-400">
             <SearchMov
               closeMenu={closeMenu}
               data={data}

@@ -21,7 +21,7 @@ function CustomDot({ onClick, ...rest }) {
           margin: '0 8px',
         }}
       >
-        <div className={`${active ? activeStyle : inactiveStyle} `}></div>
+        <div className={`${active ? activeStyle : inactiveStyle}  `}></div>
       </button>
     </li>
   )
@@ -141,7 +141,7 @@ function Fuentes() {
           {cardData.map((card, index) => (
             <motion.div
               key={card.title}
-              className="flex justify-center"
+              className="flex justify-center mb-4"
               variants={childVariants(0.5)}
               viewport={{ once: true }}
             >

@@ -90,7 +90,7 @@ function TablePluvis(props) {
   })
 
   return (
-    <div className="mx-5">
+    <div className="mx-5 my-5 min-h-screen">
       <div className="mt-5 flex h-12 items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4 sm:mt-2">
         <motion.div
           viewport={{
@@ -200,8 +200,8 @@ function TablePluvis(props) {
           </svg>
         </motion.button>
       </div>
-      <table className="border border-[#040513] text-xs sm:text-xl md:text-xl">
-        <thead className="bg-[#040513]">
+      <table className="border border-[#040513]">
+        <thead className="bg-[#040513] text-sm sm:text-xl">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
@@ -227,7 +227,7 @@ function TablePluvis(props) {
             </tr>
           ))}
         </thead>
-        <tbody className="bg-[#1b0e51]">
+        <tbody className="text-md bg-[#1b0e51] sm:text-xl">
           {table.getRowModel().rows.map((row) => (
             <tr
               key={row.id}
@@ -239,7 +239,7 @@ function TablePluvis(props) {
                   variants={variants(index)}
                   whileInView="animate"
                   key={cell.id}
-                  className="py-2 sm:p-4"
+                  className="px-2 py-5 sm:p-4"
                   viewport={{
                     once: true,
                   }}

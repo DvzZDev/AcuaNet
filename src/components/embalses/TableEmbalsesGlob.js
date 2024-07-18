@@ -88,7 +88,7 @@ function TableData(props) {
   })
 
   return (
-    <div className="mx-5">
+    <div className="mx-5 mt-5 h-screen">
       <div className="flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4 sm:mt-8 md:h-14">
         <motion.div
           viewport={{
@@ -211,7 +211,7 @@ function TableData(props) {
                   variants={variants(index)}
                   whileInView="animate"
                   onClick={header.column.getToggleSortingHandler()}
-                  className={`table-auto cursor-pointer pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? 'w-[14rem] duration-150 active:scale-90 sm:w-[17rem]' : index === 1 ? 'w-[15rem] duration-150 active:scale-90' : 'w-auto text-center duration-150 active:scale-90'}`}
+                  className={`table-auto cursor-pointer pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? 'w-[14rem] px-2 duration-150 active:scale-90 sm:w-[17rem]' : index === 1 ? 'w-[15rem] duration-150 active:scale-90' : 'w-auto text-center duration-150 active:scale-90'}`}
                   key={header.id}
                 >
                   {header.column.columnDef.header}
@@ -237,7 +237,7 @@ function TableData(props) {
                   variants={variants(index)}
                   whileInView="animate"
                   key={cell.id}
-                  className="py-2 sm:p-4"
+                  className="px-2 py-5 text-lg sm:p-4"
                   viewport={{
                     once: true,
                   }}

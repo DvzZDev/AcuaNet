@@ -27,7 +27,7 @@ function EmbalseContent({ data }) {
               <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
                 {data.agua_embalsada}
               </span>
-              <span className="text-xl">hm³</span>
+              <span className="text-2xl font-bold">hm³</span>
             </div>
             <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Embalsada</h1>
           </article>
@@ -51,7 +51,7 @@ function EmbalseContent({ data }) {
               <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
                 {data.capacidad_total}
               </span>
-              <span className="text-xl">hm³</span>
+              <span className="text-2xl font-bold">hm³</span>
             </div>
             <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Total</h1>
           </article>
@@ -90,7 +90,7 @@ function EmbalseContent({ data }) {
               <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
                 {data.variacion_ultima_semana}
               </span>
-              <span className="text-xl">hm³</span>
+              <span className="text-2xl font-bold">hm³</span>
             </div>
             <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
               Sem. Anterior
@@ -115,7 +115,7 @@ function EmbalseContent({ data }) {
               <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
                 {data.variacion_ultima_semanapor}
               </span>
-              <span className="text-xl">%</span>
+              <span className="text-2xl font-black">%</span>
             </div>
             <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
               Sem. Anterior
@@ -140,7 +140,7 @@ function EmbalseContent({ data }) {
                 <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
                 <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-4xl md:text-4xl">
                   <span>{data.misma_semana_ultimo_año}</span>
-                  <span className="text-sm">hm³</span>
+                  <span className="text-lg font-bold">hm³</span>
                 </div>
                 <h1 className="text-center text-[17px] lg:text-3xl">hace 1 año</h1>
               </motion.div>
@@ -168,7 +168,7 @@ function EmbalseContent({ data }) {
                   className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-4xl md:text-4xl"
                 >
                   <span>{data.misma_semana_ultimo_añopor}</span>
-                  <span className="text-sm">%</span>
+                  <span className="text-lg font-bold">%</span>
                 </motion.div>
                 <h1 className="text-center text-[17px] lg:text-3xl">hace 1 año</h1>
               </motion.div>
@@ -186,7 +186,7 @@ function EmbalseContent({ data }) {
                 <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
                 <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-4xl md:text-4xl">
                   <span>{data.misma_semana_10años}</span>
-                  <span className="text-sm">hm³</span>
+                  <span className="text-lg font-bold">hm³</span>
                 </div>
                 <h1 className="text-center text-[17px] lg:text-3xl">hace 10 años</h1>
               </motion.div>
@@ -204,7 +204,7 @@ function EmbalseContent({ data }) {
                 <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
                 <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-4xl md:text-4xl">
                   <span>{data.misma_semana_10añospor}</span>
-                  <span className="text-sm">%</span>
+                  <span className="text-lg font-bold">%</span>
                 </div>
                 <h1 className="text-center text-[17px] lg:text-3xl">hace 10 años</h1>
               </motion.div>

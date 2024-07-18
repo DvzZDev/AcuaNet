@@ -86,7 +86,7 @@ function Fuentes() {
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}
-          className="font-NecoBold pt-1 text-center text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
+          className="pt-1 text-center font-NecoBold text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
         >
           Fuentes Oficiales
         </motion.h1>
@@ -115,7 +115,7 @@ function Fuentes() {
             viewport={{ once: true, amount: 0.8 }}
             className="mx-3 text-center"
           >
-            Datos Actualizados Cada{' '}
+            Datos Actualizados Cada
             <strong className="ml-2 content-center text-[#ffd700]">6 horas</strong>
           </motion.h1>
         </motion.div>

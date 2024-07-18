@@ -44,7 +44,7 @@ function Bento(props) {
 
   return (
     <section className="flex min-h-full flex-col items-center justify-center bg-gradient-to-t from-bgcolor via-bgcolor to-transparent py-8 lg:h-full lg:py-0">
-      <h1 className="font-NecoBold pb-7 text-center text-6xl font-black text-textsecondary">
+      <h1 className="text-center font-NecoBold text-[40px] font-black text-textsecondary sm:text-[50px] md:pb-7">
         Resumen Global
       </h1>
       {/* Div Global */}
@@ -70,12 +70,12 @@ function Bento(props) {
               className="flex h-full w-full flex-col content-center justify-evenly rounded-lg text-center"
             >
               <h2 className="text-6xl text-[#7387f9]">Reserva</h2>
-              <span
-                className={`font-NecoBold inline-block text-[9rem] font-bold leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
+              <p
+                className={`inline-block text-[9rem] font-bold mb-4 leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
               >
                 {`${españa.porcentaje_embalsado}`}
                 <strong className="text-[3rem]">%</strong>
-              </span>
+              </p>
               <h2 className="text-6xl text-[#7387f9]">Nacional</h2>
             </div>
           ))}

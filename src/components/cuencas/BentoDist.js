@@ -34,7 +34,7 @@ function BentoDist(props) {
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.embalsada}
             </span>
-            <span className="text-xl">hm³</span>
+            <span className="text-xl font-black">hm³</span>
           </div>
           <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Embalsada</h1>
         </article>
@@ -59,7 +59,7 @@ function BentoDist(props) {
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.capacidad}
             </span>
-            <span className="text-xl">hm³</span>
+            <span className="text-xl font-black">hm³</span>
           </div>
           <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Total</h1>
         </article>
@@ -100,7 +100,7 @@ function BentoDist(props) {
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.variacion}
             </span>
-            <span className="text-xl">hm³</span>
+            <span className="text-xl font-black">hm³</span>
           </div>
           <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
             Sem. Anterior
@@ -127,7 +127,7 @@ function BentoDist(props) {
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.porcentaje_variacion}
             </span>
-            <span className="text-xl">hm³</span>
+            <span className="text-xl font-black">hm³</span>
           </div>
           <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
             Sem. Anterior

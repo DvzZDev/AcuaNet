@@ -17,7 +17,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="f font-NecoBold text-center text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
+              className="f text-center font-NecoBold text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
             >
               Conoce a Nuestro Equipo
             </motion.h1>
@@ -29,7 +29,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="mt-6 text-xl leading-relaxed text-textprimary"
+              className="mt-6 text-2xl leading-relaxed text-textprimary"
             >
               En AcuaNet, nos esforzamos por brindarte una experiencia intuitiva y
               agradable.
@@ -42,7 +42,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="mt-4 text-xl leading-relaxed text-textprimary"
+              className="mt-4 text-2xl leading-relaxed text-textprimary"
             >
               Queremos que conozcas a nuestro equipo y descubras cómo trabajamos para
               ofrecerte datos precisos y actualizados sobre los embalses. Haz clic aquí
@@ -101,7 +101,7 @@ function AboutLanding() {
                 viewport={{ once: true, amount: 0.8, delay: 0.2 }}
                 className="absolute bottom-[-70px] left-4 right-[-15px] z-20 rounded-lg bg-[#0a2038] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]"
               >
-                <p className="text-base text-white">
+                <p className="text-xl text-white">
                   ¡Hola! Soy David, creador de AcuaNet. Te invito a conocer más sobre qué
                   me inspiró a crear AcuaNet.
                 </p>

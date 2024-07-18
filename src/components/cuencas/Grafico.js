@@ -46,7 +46,7 @@ const EmbalseGrafico = ({ porcentaje }) => {
     <div className="relative my-3 flex h-[14rem] w-[14rem] items-center justify-center rounded-lg bg-slate-700 sm:my-0 sm:h-full sm:w-full">
       <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-5xl font-black text-transparent sm:text-2xl lg:text-5xl">
         {`${porcentaje.toFixed(0)}`}
-        <span className="text-lg">%</span>
+        <span className="text-xl font-black">%</span>
       </span>
 
       <div className="flex h-[12rem] w-[12rem] items-center justify-center sm:h-[7.8rem] sm:w-[7.8rem] lg:h-[12rem] lg:w-[12rem]">

@@ -75,7 +75,7 @@ function TableEmbalses(props) {
   const delays = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
 
   return (
-    <div className="mx-5">
+    <div className="mx-5 h-screen">
       <div className="relative flex h-16 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4">
         <motion.h1
           initial="initial"
@@ -90,7 +90,7 @@ function TableEmbalses(props) {
             margin: '-50px',
           }}
           whileInView="animate"
-          className={`font-NecoBold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-4xl text-textsecondary transition-all sm:text-4xl ${show ? 'opacity-0' : 'opacity-100'}`}
+          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform font-NecoBold text-4xl text-textsecondary transition-all sm:text-4xl ${show ? 'opacity-0' : 'opacity-100'}`}
         >
           Embalses
         </motion.h1>

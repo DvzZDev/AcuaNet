@@ -51,7 +51,7 @@ function BentoCuencas(props) {
                 whileInView="animate"
                 whileHover="hover"
                 viewport={{ once: true }}
-                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.51rem] ${getColor(cuenca.porcentaje_embalsada)}`}
+                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.52rem] ${getColor(cuenca.porcentaje_embalsada)}`}
                 key={cuenca.cuenca}
               >
                 <div className="flex flex-col content-center items-center justify-center p-2">

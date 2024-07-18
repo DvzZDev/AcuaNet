@@ -11,11 +11,11 @@ function SkeletonBento() {
         {/* Primera Col */}
         <div className="z-10 col-span-4 row-span-1 flex items-center justify-center text-wrap rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm animate-once animate-ease-in-out lg:col-span-4">
           <div className="content-center justify-center rounded-lg text-center animate-once animate-ease-in-out">
-            <h2 className="text-6xl text-[#7387f9]">Reserva</h2>
+            <h2 className="text-6xl font-bold text-[#7387f9]">Reserva</h2>
             <div className="m-0 p-0 text-[8rem]">
               <div className="m-auto h-[210px] w-[210px] animate-pulse rounded-xl bg-blue-800"></div>
             </div>
-            <h2 className="text-6xl text-[#7387f9]">Nacional</h2>
+            <h2 className="text-6xl font-bold text-[#7387f9]">Nacional</h2>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ function SkeletonBento() {
 
         {/* Tercera Col */}
         <div className="col-span-6 rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm">
-          <h1 className="p-2 text-center text-2xl font-normal text-[#7387f9]">
+          <h1 className="p-2 text-center text-3xl font-bold text-[#7387f9]">
             Pluviometros últimas horas (l/m2)
           </h1>
           <div className="flex flex-col content-center justify-center px-2 text-[15px] lg:text-[16px]">
@@ -55,7 +55,7 @@ function SkeletonBento() {
                 </tr>
               </thead>
               <tbody>
-                {Array.from({ length: 10 }).map((_, index) => (
+                {Array.from({ length: 8 }).map((_, index) => (
                   <tr
                     className="animate-pulse transition-all"
                     key={index}
@@ -97,7 +97,7 @@ function SkeletonBento() {
 
         {/* Cuarta Col */}
         <div className="col-span-4 rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm">
-          <h1 className="p-2 text-center text-2xl font-normal text-[#7387f9]">
+          <h1 className="p-2 text-center text-3xl font-bold text-[#7387f9]">
             Mayor Variacion Semanal
           </h1>
           <div className="flex flex-col content-center justify-center px-3">
@@ -106,7 +106,7 @@ function SkeletonBento() {
                 Cuenca
               </caption>
               <tbody className="animate-pulse text-textprimary">
-                {Array.from({ length: 4 }).map((_, index) => (
+                {Array.from({ length: 3 }).map((_, index) => (
                   <tr
                     className="transition-all"
                     key={index}
@@ -129,7 +129,7 @@ function SkeletonBento() {
                 Embalse
               </caption>
               <tbody className="animate-pulse text-textprimary">
-                {Array.from({ length: 8 }).map((_, index) => (
+                {Array.from({ length: 7 }).map((_, index) => (
                   <tr
                     className="transition-all"
                     key={index}

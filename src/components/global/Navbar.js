@@ -11,19 +11,10 @@ export default function Navbar({ data }) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
 
-  const variants = {
-    initial: { y: 40, opacity: 0 },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5, type: 'spring', stiffness: 120 },
-    },
-  }
-
   return (
     <div
       id="header-nav"
-      className={`fixed z-20 w-full p-4 transition-all duration-500 ${isMenuOpen ? 'z-50 h-screen bg-[#040513d6] backdrop-blur-md' : 'z-30 h-[5rem]'}`}
+      className={`fixed z-20 w-full p-4 duration-500 ${isMenuOpen ? 'z-50 h-screen bg-[#040513d6] backdrop-blur-md' : 'z-30 h-[5rem]'}`}
     >
       <div className="container mx-auto flex flex-col items-center justify-between gap-10 uppercase lg:flex-row xl:px-28">
         {/* Logo */}
@@ -72,19 +63,19 @@ export default function Navbar({ data }) {
 
           <div className="flex items-center justify-center lg:hidden">
             <Image
-              className={`mr-1 ${isMenuOpen ? 'hidden' : 'block animate-fade'}`}
+              className={`${isMenuOpen ? 'hidden' : 'block animate-fade'}`}
               src="/menu.svg"
               alt="menu icon"
-              width={30}
+              width={26}
               height={20}
               onClick={toggleMenu}
             />
 
             <Image
-              className={`mr-2 ${isMenuOpen ? 'block animate-fade' : 'hidden'}`}
+              className={`${isMenuOpen ? 'block animate-fade' : 'hidden'}`}
               src="/close.svg"
               alt="close icon"
-              width={20}
+              width={23}
               height={20}
               onClick={toggleMenu}
             />
@@ -136,7 +127,7 @@ export default function Navbar({ data }) {
         <nav
           className={`${isMenuOpen ? 'flex flex-col items-center gap-12 text-2xl text-textprimary' : 'hidden'}`}
         >
-          <div className="z-50 animate-fade-down animate-delay-400">
+          <div className="z-50 animate-fade-down animate-delay-75">
             <SearchMov
               closeMenu={closeMenu}
               data={data}
@@ -146,35 +137,35 @@ export default function Navbar({ data }) {
           <Link
             href="/cuencas"
             onClick={closeMenu}
-            className="animate-fade-down transition-all animate-delay-0 hover:text-green-300"
+            className="animate-fade-down transition-all animate-delay-100 hover:text-green-300"
           >
             Cuencas
           </Link>
           <Link
             href="/embalses"
             onClick={closeMenu}
-            className="animate-fade-down transition-all animate-delay-100 hover:text-green-300"
+            className="animate-fade-down transition-all animate-delay-200 hover:text-green-300"
           >
             Embalses
           </Link>
           <Link
             href="/pluviometros"
             onClick={closeMenu}
-            className="animate-fade-down transition-all animate-delay-200 hover:text-green-300"
+            className="animate-fade-down transition-all animate-delay-300 hover:text-green-300"
           >
             Pluviometros
           </Link>
           <Link
             href="/quienesSomos"
             onClick={closeMenu}
-            className="animate-fade-down transition-all animate-delay-300 hover:text-green-300"
+            className="animate-fade-down transition-all animate-delay-400 hover:text-green-300"
           >
             Quienes Somos
           </Link>
           <Link
             href="/contacto"
             onClick={closeMenu}
-            className="animate-fade-down transition-all animate-delay-300 hover:text-green-300"
+            className="animate-fade-down transition-all animate-delay-500 hover:text-green-300"
           >
             Contacto
           </Link>

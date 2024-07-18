@@ -69,14 +69,14 @@ function Bento(props) {
               key={españa.id}
               className="flex h-full w-full flex-col content-center justify-evenly rounded-lg text-center"
             >
-              <h2 className="text-6xl text-[#7387f9]">Reserva</h2>
+              <h2 className="text-6xl font-bold text-[#7387f9]">Reserva</h2>
               <p
-                className={`inline-block text-[9rem] font-bold mb-4 leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
+                className={`mb-4 inline-block text-[9rem] font-bold leading-none ${españa.porcentaje_embalsado > 50 ? 'text-green-500' : 'text-red-500'}`}
               >
                 {`${españa.porcentaje_embalsado}`}
                 <strong className="text-[3rem]">%</strong>
               </p>
-              <h2 className="text-6xl text-[#7387f9]">Nacional</h2>
+              <h2 className="text-6xl font-bold text-[#7387f9]">Nacional</h2>
             </div>
           ))}
         </motion.div>
@@ -152,7 +152,7 @@ function Bento(props) {
           viewport={{ once: true, margin: '-70px' }}
           className="col-span-6 rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm"
         >
-          <h1 className="p-2 text-center text-2xl font-normal text-[#7387f9]">
+          <h1 className="p-2 text-center text-3xl font-bold text-[#7387f9]">
             Pluviometros últimas horas (l/m2)
           </h1>
           <div className="flex flex-col content-center justify-center px-2 text-[15px] lg:text-[16px]">
@@ -210,7 +210,7 @@ function Bento(props) {
           viewport={{ once: true, margin: '-70px' }}
           className="col-span-4 rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm"
         >
-          <h1 className="p-2 text-center text-2xl font-normal text-[#7387f9]">
+          <h1 className="p-2 text-center text-3xl font-bold text-[#7387f9]">
             Mayor Variacion Semanal
           </h1>
           <div className="flex flex-col content-center justify-center px-3">
@@ -249,7 +249,7 @@ function Bento(props) {
             </table>
             {/* Segunda Tabla */}
             <table className="w-full p-3 text-[16px]">
-              <caption className="text-left text-[16px] font-extrabold text-[#47ff63ab]">
+              <caption className="text-left text-[16px] font-bold text-[#47ff63ab]">
                 Embalse
               </caption>
               <tbody className="text-textprimary">

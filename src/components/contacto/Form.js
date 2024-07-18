@@ -72,19 +72,19 @@ function Form() {
     } catch (error) {
       'Error in Turnstile verification:', error
     } finally {
-      setLoading(false) // Ensure spinner is hidden after the request
+      setLoading(false)
     }
   }
 
   return (
-    <section className="flex h-full justify-center bg-bgcolor pb-32">
+    <section className="flex justify-center bg-bgcolor pb-32">
       <form
         ref={form}
         onSubmit={handleSubmit(onSubmit)}
         className="my-20 flex animate-fade-up justify-center sm:mt-2"
       >
         <div
-          className={`flex min-h-[30rem] w-[20rem] flex-col gap-4 rounded-lg bg-slate-950 p-4 sm:w-[30rem]`}
+          className={`flex min-h-[20rem] w-[20rem] flex-col gap-4 rounded-lg bg-slate-950 p-4 sm:w-[30rem]`}
         >
           <Input
             type="text"
@@ -198,7 +198,10 @@ function Form() {
             aria-invalid={errors.mensaje ? 'true' : 'false'}
             className={`${send ? 'hidden' : 'block'} bg-slate-950 text-2xl`}
           />
-          <div className={`${send ? 'hidden' : 'block'}`}>
+          <div
+            className={`${send ? 'hidden' : 'block'}`}
+            style={{ transform: 'scale(0.75)', transformOrigin: 'top left' }}
+          >
             <div
               className="cf-turnstile"
               data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}

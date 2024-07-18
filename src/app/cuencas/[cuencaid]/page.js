@@ -1,6 +1,5 @@
 import Title from '@/components/cuencas/Title'
 import Divider from '@/components/cuencas/Divider'
-import BentoDist from '@/components/cuencas/BentoDist'
 import TableEmbalsesData from '@/components/cuencas/cuenca/tableEmbalsesData'
 import SkeletonTitleCuencas from '@/components/skeletons/SkeletonTitleCuenca'
 import SkeletonBentoDist from '@/components/skeletons/SkeletonBentoDinst'

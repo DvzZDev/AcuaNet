@@ -1,4 +1,3 @@
-// components/Type.js
 'use client'
 import { ReactTyped } from 'react-typed'
 import AutoCompleteHook from '@/hooks/AutoComplete'
@@ -11,24 +10,17 @@ function Type({ data }) {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="z-10 mt-8 flex max-h-16 w-[17rem] justify-between rounded-xl border-2 border-solid border-slate-400 p-1 text-sm transition-all focus-within:border-slate-300 sm:w-[20rem] sm:text-base md:w-[25rem] md:text-base"
+        className="z-10 mt-8 flex max-h-16 w-[17rem] justify-between rounded-xl border-2 border-solid border-slate-400 p-1 text-sm transition-all focus-within:border-slate-300 sm:w-[20rem] sm:text-base md:w-[25rem] md:text-xl"
       >
         <ReactTyped
-          strings={[
-            'Embalses...',
-            'Orellana',
-            'Cijara',
-            'San Juan',
-            'Alcantara',
-            'etc...',
-          ]}
+          strings={['Orellana', 'Cijara', 'San Juan', 'Alcantara', 'etc...']}
           typeSpeed={40}
           backSpeed={50}
           attr="placeholder"
           loop
         >
           <input
-            className="w-[210px] bg-transparent text-[18px] text-textprimary placeholder-slate-400 placeholder-opacity-40 focus:outline-none sm:w-[250px] md:w-[330px]"
+            className="w-[210px] bg-transparent text-[22px] text-textprimary placeholder-slate-400 placeholder-opacity-40 focus:outline-none sm:w-[250px] md:w-[330px]"
             type="text"
             value={type}
             onChange={handletype}

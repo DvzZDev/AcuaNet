@@ -6,7 +6,7 @@ import { Link } from 'next-view-transitions'
 
 function ContactLanding() {
   return (
-    <section className="flex flex-col justify-center bg-bgcolor pb-32">
+    <section className="flex flex-col justify-center bg-bgcolor p-5 pb-32">
       <motion.h1
         initial="initial"
         variants={{
@@ -15,10 +15,11 @@ function ContactLanding() {
         }}
         whileInView="animate"
         viewport={{ once: true, amount: 0.8 }}
-        className="font-NecoBold text-center text-6xl font-black text-textsecondary"
+        className="text-center font-NecoBold text-[40px] font-black text-textsecondary sm:text-[50px]"
       >
         Contactanos
       </motion.h1>
+
       <div className="flex justify-center bg-bgcolor pt-10">
         <div className="grid w-[50rem] grid-cols-2 grid-rows-2 gap-5">
           <motion.div

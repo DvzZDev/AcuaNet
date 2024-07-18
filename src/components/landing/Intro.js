@@ -45,7 +45,7 @@ async function Intro() {
         </svg>
       </div>
       <div className="flex flex-col xl:w-[60%]">
-        <strong className="mb-4 w-full animate-fade-up text-center font-telmaRegular text-[64px] leading-none text-textsecondary animate-delay-100 sm:text-[5rem]">
+        <strong className="font-NecoBold mb-4 w-full animate-fade-up text-center text-[64px] leading-none text-textsecondary animate-delay-100 sm:text-[5rem]">
           AcuaNet
         </strong>
 

@@ -15,7 +15,7 @@ function ContactLanding() {
         }}
         whileInView="animate"
         viewport={{ once: true, amount: 0.8 }}
-        className="text-center font-telmaBlack text-6xl font-black text-textsecondary"
+        className="font-NecoBold text-center text-6xl font-black text-textsecondary"
       >
         Contactanos
       </motion.h1>

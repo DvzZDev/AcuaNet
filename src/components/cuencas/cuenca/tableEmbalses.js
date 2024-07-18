@@ -90,7 +90,7 @@ function TableEmbalses(props) {
             margin: '-50px',
           }}
           whileInView="animate"
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform font-telmaRegular text-4xl text-textsecondary transition-all sm:text-4xl ${show ? 'opacity-0' : 'opacity-100'}`}
+          className={`font-NecoBold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-4xl text-textsecondary transition-all sm:text-4xl ${show ? 'opacity-0' : 'opacity-100'}`}
         >
           Embalses
         </motion.h1>

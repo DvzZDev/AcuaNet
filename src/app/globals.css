@@ -41,16 +41,8 @@ table {
 }
 
 @font-face {
-  font-family: 'TelmaBlack';
-  src: url('/Fonts/Telma_Complete/Fonts/WEB/fonts/Telma-Black.woff2') format('woff2');
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TelmaRegular';
-  src: url('../../Fonts/Telma_Complete/Fonts/WEB/fonts/Blue_Cashews.otf') format('woff2');
+  font-family: 'Neco-Bold';
+  src: url('../../Fonts/Telma_Complete/Fonts/WEB/fonts/Neco-Bold.woff2') format('woff2');
   font-weight: 300;
   font-display: swap;
   font-style: normal;

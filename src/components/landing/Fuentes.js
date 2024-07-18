@@ -86,7 +86,7 @@ function Fuentes() {
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}
-          className="pt-1 text-center font-telmaRegular text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
+          className="font-NecoBold pt-1 text-center text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
         >
           Fuentes Oficiales
         </motion.h1>
@@ -94,8 +94,12 @@ function Fuentes() {
         <motion.div
           initial="initial"
           variants={{
-            initial: { width: 0, borderColor: "#ffd700" },
-            animate: { width: '100%', borderColor:"#1a1c4d", transition: { duration: 0.8, delay: 0.5 } },
+            initial: { width: 0, borderColor: '#ffd700' },
+            animate: {
+              width: '100%',
+              borderColor: '#1a1c4d',
+              transition: { duration: 0.8, delay: 0.5 },
+            },
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}

@@ -23,10 +23,7 @@ module.exports = {
         2000: '2000ms',
       },
       fontFamily: {
-        telmaBold: ['TelmaBold'],
-        telmaMedium: ['TelmaMedium'],
-        telmaRegular: ['TelmaRegular'],
-        telmaBlack: ['TelmaBlack'],
+        NecoBold: ['Neco-Bold'],
       },
       colors: {
         textprimary: '#e9ead6',

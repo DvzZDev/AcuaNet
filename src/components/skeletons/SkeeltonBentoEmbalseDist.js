@@ -5,7 +5,7 @@ import Divider from '../cuencas/Divider'
 function EmbalseContent({ data }) {
   return (
     <>
-      <div className="m-auto h-14 w-[15rem] animate-pulse rounded-lg bg-slate-700 text-center font-telmaRegular text-[2.5rem] text-textsecondary sm:mt-10 sm:w-[20rem] sm:text-6xl lg:w-[30rem]"></div>
+      <div className="font-NecoBold m-auto h-14 w-[15rem] animate-pulse rounded-lg bg-slate-700 text-center text-[2.5rem] text-textsecondary sm:mt-10 sm:w-[20rem] sm:text-6xl lg:w-[30rem]"></div>
       <Divider />
 
       <section className="mb-5 flex min-h-[40rem] justify-center bg-bgcolor p-4 text-white lg:pt-1">

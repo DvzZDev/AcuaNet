@@ -17,7 +17,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="f text-center font-telmaRegular text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
+              className="f font-NecoBold text-center text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
             >
               Conoce a Nuestro Equipo
             </motion.h1>

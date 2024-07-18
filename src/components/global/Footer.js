@@ -40,7 +40,7 @@ function Footer() {
         <Link
           aria-label="Github de David Esteban"
           className="transition-all hover:scale-110"
-          href="https://github.com/DvzZDev/ACUA-Landing"
+          href="https://github.com/DvzZDev/AcuaNet"
           target="_blank"
         >
           <svg

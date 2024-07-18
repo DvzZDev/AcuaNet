@@ -75,25 +75,8 @@ function TableEmbalses(props) {
   const delays = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
 
   return (
-    <div className="mx-5 h-screen">
+    <div className="mx-5">
       <div className="relative flex h-16 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4">
-        <motion.h1
-          initial="initial"
-          variants={{
-            initial: { opacity: 0 },
-            animate: { opacity: 1 },
-            transition: { duration: 0.5 },
-          }}
-          viewport={{
-            once: true,
-            amount: 0.6,
-            margin: '-50px',
-          }}
-          whileInView="animate"
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform font-NecoBold text-4xl text-textsecondary transition-all sm:text-4xl ${show ? 'opacity-0' : 'opacity-100'}`}
-        >
-          Embalses
-        </motion.h1>
         <div
           className={`${show ? 'w-[10rem] border-white' : 'w-[20px]'} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
         >
@@ -178,8 +161,8 @@ function TableEmbalses(props) {
           </svg>
         </button>
       </div>
-      <table className="border border-[#040513] text-xs sm:text-sm md:text-xl">
-        <thead className="bg-[#040513]">
+      <table className="border border-[#040513]">
+        <thead className="bg-[#040513] text-sm sm:text-xl">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
@@ -211,8 +194,8 @@ function TableEmbalses(props) {
             </tr>
           ))}
         </thead>
-        <tbody className="bg-[#1b0e51]">
-          {table.getRowModel().rows.map((row, index) => (
+        <tbody className="text-md bg-[#1b0e51] sm:text-xl">
+          {table.getRowModel().rows.map((row) => (
             <motion.tr
               initial="initial"
               variants={{
@@ -232,7 +215,7 @@ function TableEmbalses(props) {
               {row.getVisibleCells().map((cell, index) => (
                 <td
                   key={cell.id}
-                  className="p-1 py-2 sm:p-4"
+                  className="px-2 py-5 sm:p-4"
                 >
                   {index === 0 ? (
                     <Link

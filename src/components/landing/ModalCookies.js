@@ -100,13 +100,13 @@ export default function ModalCookies() {
                     Este sitio web utiliza cookies para mejorar tu experiencia de
                     navegación. Al continuar utilizando nuestro sitio, aceptas el uso de
                     cookies. Para más información, consulta nuestra Política de Privacidad
-                    y Términos y Condiciones
+                    y Términos y Condiciones.
                     <Link
                       className="text-textsecondary"
                       href="/legal"
                       aria-label="Política de Privacidad y Términos y Condiciones"
                     >
-                      aqui
+                      <p>Pincha Aqui!</p>
                     </Link>
                   </p>
                 </ModalBody>

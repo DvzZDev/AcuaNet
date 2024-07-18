@@ -1,5 +1,35 @@
 import Intro from '@/components/cuencas/IntroCuencas'
 
+export const metadata = {
+  title: 'Legal - AcuaNet',
+  description:
+    'Conoce las condiciones de uso, propiedad intelectual, protección de datos y más información legal sobre AcuaNet.',
+  openGraph: {
+    title: 'Legal - AcuaNet',
+    description:
+      'Conoce las condiciones de uso, propiedad intelectual, protección de datos y más información legal sobre AcuaNet.',
+    url: 'https://acuanet.es/legal',
+    siteName: 'AcuaNet',
+    images: [
+      {
+        url: 'https://i.imgur.com/Jpt5ENb.png',
+        width: 1800,
+        height: 1600,
+        alt: 'OG Image',
+      },
+    ],
+    locale: 'es_ES',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Legal - AcuaNet',
+    description:
+      'Conoce las condiciones de uso, propiedad intelectual, protección de datos y más información legal sobre AcuaNet.',
+    images: ['https://i.imgur.com/Jpt5ENb.png'],
+  },
+}
+
 function page() {
   return (
     <>

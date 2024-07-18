@@ -16,11 +16,17 @@ function WidgetShareGlob(props) {
   const page = `${props.page}`
   return (
     <div className="fixed bottom-4 right-4">
-      <Dropdown>
+      <Dropdown
+        classNames={{
+          base: 'before:bg-default-200',
+          content: 'p-0 border-small border-divider bg-slate-950',
+        }}
+      >
         <DropdownTrigger>
           <Button
             type="button"
             aria-label="Desplegar menu"
+            variant='bordered'
           >
             <svg
               viewBox="0 0 24 24"

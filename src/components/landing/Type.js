@@ -38,13 +38,15 @@ function Type({ data }) {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="text-slate-400"
+          className="text-slate-400 transition-all hover:text-textsecondary"
           type="button"
         >
-          Buscar
+          <p>Buscar</p>
         </button>
       </form>
-      <h1 className={`pl-1 text-red-500 ${err ? 'flex' : 'hidden'}`}>
+      <h1
+        className={`pl-1 text-red-500 transition-all ${err ? 'flex animate-fade' : 'hidden'}`}
+      >
         Embalse no encontrado
       </h1>
       <div className="relative">

@@ -11,17 +11,16 @@ function BentoDist(props) {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
   const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaidNM)
-  const delays = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
+  const delays = [0.07]
 
   return (
     <div className="mx-4 flex min-h-full w-full flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
       <motion.div
-        whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays * 1 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -41,12 +40,11 @@ function BentoDist(props) {
       </motion.div>
 
       <motion.div
-        whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[1] } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays * 1 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -66,12 +64,11 @@ function BentoDist(props) {
       </motion.div>
 
       <motion.div
-        whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[2] } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays * 2 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -82,12 +79,11 @@ function BentoDist(props) {
       </motion.div>
 
       <motion.div
-        whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[3] } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays * 3 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -95,7 +91,7 @@ function BentoDist(props) {
         className="order-4 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variacion</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variación</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.variacion}
@@ -109,12 +105,11 @@ function BentoDist(props) {
       </motion.div>
 
       <motion.div
-        whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[4] } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays * 4 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -122,12 +117,12 @@ function BentoDist(props) {
         className="order-5 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variacion</h1>
+          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variación</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
               {resCuenca.porcentaje_variacion}
             </span>
-            <span className="text-xl font-black">hm³</span>
+            <span className="text-xl font-black">%</span>
           </div>
           <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
             Sem. Anterior
@@ -136,12 +131,11 @@ function BentoDist(props) {
       </motion.div>
 
       <motion.div
-        whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', duration: 0.5 }}
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[5] } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays * 5 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -161,12 +155,11 @@ function BentoDist(props) {
 
       <motion.div
         whileInView="animate"
-        whileHover="hover"
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
           hover: { scale: 1.1, transition: { delay: 0 } },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[6] } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays * 6 } },
         }}
         initial="initial"
         transition={{ type: 'spring' }}

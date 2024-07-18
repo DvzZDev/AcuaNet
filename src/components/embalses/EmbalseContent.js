@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 function EmbalseContent({ data }) {
   return (
-    <section className="flex min-h-[40rem] justify-center bg-bgcolor p-4 pb-4 text-white lg:pt-1">
+    <section className="flex min-h-[40rem] justify-center bg-bgcolor p-4 pb-4 text-white lg:pt-1 lg:pb-20">
       <div className="mx-4 flex min-h-full w-full flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
         {/* Primera Columna */}
 
@@ -97,7 +97,7 @@ function EmbalseContent({ data }) {
             </h1>
           </article>
         </motion.div>
-        {/* Cuarta Columna (movida a la quinta posición) */}
+        {/* Cuarta Columna */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1, transition: { delay: 0.5 } }}

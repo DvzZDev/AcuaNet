@@ -30,6 +30,7 @@ function BentoCuencas(props) {
             <Link href={`/cuencas/${cuenca.cuenca}`}>
               <motion.div
                 initial="initial"
+                whileTap={{ scale: 0.9, rotate: -10, transition: { duration: 0.2 } }}
                 variants={{
                   hover: {
                     scale: 1.1,

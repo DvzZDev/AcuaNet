@@ -20,9 +20,9 @@ function CardAb() {
           David <span className="text-textsecondary">Esteban</span>
         </h1>
         <p className="mb-3 text-lg text-textprimary">
-          ¡Hola! Soy estudiante de desarrollo de software, creé AcuaNet para ver
-          rápidamente los niveles de mis embalses favoritos y compartir esta información
-          con otras personas.
+          ¡Hola! Soy David, estudiante de desarollo web y pescador a ratos, he decido crear AcuaNet para
+          poder ver rapidamente los niveles de nuestras cuencas / pantanos favoritos en
+          España de la forma mas facíl posible.
         </p>
 
         <div className="relative mt-1 flex items-center justify-center gap-7">

@@ -116,7 +116,7 @@ function Fuentes() {
             className="mx-3 text-center"
           >
             Datos Actualizados Cada
-            <strong className="ml-2 content-center text-[#ffd700]">6 horas</strong>
+            <strong className="ml-2 content-center text-[#ffd700] font-bold">6 horas</strong>
           </motion.h1>
         </motion.div>
       </article>

@@ -57,9 +57,9 @@ function Content() {
               rápida y sin complicaciones.
             </p>
             <p className="text-base leading-relaxed text-textprimary md:text-2xl">
-              Sabemos que gestionar datos de fuentes desactualizadas y sitios web
-              complejos puede resultar complicado. Por eso, trabajamos duro para que la
-              información que te damos sea clara y fácil de entender.
+              Sabemos que buscar datos de páginas antiguas o poco intuitivas es confuso y
+              complicado. Por eso, trabajamos duro para que la información que te damos
+              sea clara y fácil de entender.
             </p>
           </motion.div>
         </article>
@@ -100,7 +100,7 @@ function Content() {
             <p className="text-base leading-relaxed text-textprimary md:text-2xl">
               Como estudiante de desarrollo web, decidí poner en práctica lo que he
               aprendido para desarrollar una plataforma que sea fácil y eficiente. Mi
-              objetivo es que todos puedan acceder rápidamente a la información de los
+              objetivo es que todos podamos acceder rápidamente a la información de los
               embalses sin complicaciones.
             </p>
           </motion.div>

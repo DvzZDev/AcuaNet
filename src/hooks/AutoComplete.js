@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { set } from 'react-hook-form'
 
 const AutoCompleteHook = (data, closeMenu, isMenuOpen) => {
   const router = useRouter()
@@ -43,6 +44,7 @@ const AutoCompleteHook = (data, closeMenu, isMenuOpen) => {
     if (selectedEmbalse) {
       router.push(`/embalses/${type.toLowerCase()}`)
       setFine(true)
+      setErr(false)
       setSuggestions([])
       setType('')
       if (isMenuOpen) closeMenu()

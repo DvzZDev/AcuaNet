@@ -50,7 +50,7 @@ async function Intro() {
         </strong>
 
         <h1 className="h-auto max-w-80 animate-fade-up px-4 text-center text-[33px] text-[#fbffb8] animate-delay-200 sm:max-w-full sm:text-[40px] lg:text-[3rem]">
-          Consulta las mediciones hidrograficas de España en un solo
+          Consulta las mediciones hidrográficas de España en un solo
           <span className="text-[33px] font-bold text-textsecondary sm:text-[40px] lg:text-[3rem]">
             {' '}
             click

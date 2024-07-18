@@ -75,7 +75,7 @@ function Bento(props) {
                 {`${españa.porcentaje_embalsado}`}
                 <strong className="text-[3rem]">%</strong>
               </p>
-              <h2 className="text-6xl text-[#7387f9]">Nacional</h2>
+              <h2 className="text-6xl font-bold text-[#7387f9]">Nacional</h2>
             </div>
           ))}
         </motion.div>
@@ -116,13 +116,14 @@ function Bento(props) {
                 key={cuenca.id_cuenca}
               >
                 <motion.div
+                  whileTap={{ scale: 0.9, rotate: -10, transition: { duration: 0.2 } }}
                   key={index}
                   initial="initial"
                   variants={variants(index)}
                   whileInView="animate"
                   viewport={{ once: true, margin: '200px' }}
                   whileHover={{ scale: 1.1 }}
-                  className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 hover:scale-110 ${getColor(cuenca.porcentaje_embalsada)}`}
+                  className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 ${getColor(cuenca.porcentaje_embalsada)}`}
                 >
                   <div className="flex flex-col content-center items-center justify-center">
                     <p className="text-[18px]">
@@ -178,7 +179,13 @@ function Bento(props) {
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="hover:scale-105 hover:text-[#0b92e4]"
+                    whileHover={{
+                      backgroundColor: '#7184f5',
+                      boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.2)',
+                      transition: { duration: 0.3 },
+                    }}
+                    whileTap={{ scale: 0.9, rotate: -10, transition: { duration: 0.2 } }}
+                    className=""
                     key={pluvi.id_pluviometro}
                   >
                     <td className="p-1">{pluvi.nombre}</td>
@@ -233,8 +240,13 @@ function Bento(props) {
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="hover:scale-105 hover:text-[#0b92e4]"
                     key={variacion.cuenca}
+                    whileHover={{
+                      backgroundColor: '#7184f5',
+                      boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.2)',
+                      transition: { duration: 0.3 },
+                    }}
+                    whileTap={{ scale: 0.9, rotate: -10, transition: { duration: 0.2 } }}
                   >
                     <td>
                       <Link href={`/cuencas/${variacion.cuenca}`}>
@@ -258,8 +270,13 @@ function Bento(props) {
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="hover:scale-105 hover:text-[#0b92e4]"
                     key={variacion.nombre_embalse}
+                    whileHover={{
+                      backgroundColor: '#7184f5',
+                      boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.2)',
+                      transition: { duration: 0.3 },
+                    }}
+                    whileTap={{ scale: 0.9, rotate: -10, transition: { duration: 0.2 } }}
                   >
                     <td>{variacion.nombre_embalse}</td>
                     <td className="text-right">{`${variacion.variacion_ultima_semanapor}`}</td>

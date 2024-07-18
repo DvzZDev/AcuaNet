@@ -25,7 +25,14 @@ function Footer() {
           </span>
         </Link>
         <Link href="/legal">
-          <span className="inline-block transition-all hover:scale-105">Legal</span>
+          <span className="inline-block transition-all hover:scale-105 hover:text-textsecondary">
+            Legal
+          </span>
+        </Link>
+        <Link href="/contacto">
+          <span className="inline-block transition-all hover:scale-105 hover:text-textsecondary">
+            Contacto
+          </span>
         </Link>
       </nav>
 

@@ -23,6 +23,7 @@ export default function Navbar({ data }) {
             href="/"
             className="flex-shrink-0"
             aria-label="Ir a la página principal"
+            onClick={closeMenu}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -101,13 +102,13 @@ export default function Navbar({ data }) {
               href="/pluviometros"
               className="glow transition-all"
             >
-              Pluviometros
+              Pluviómetros
             </Link>
             <Link
               href="/quienesSomos"
               className="glow text-nowrap transition-all"
             >
-              Quienes Somos
+              Quiénes Somos
             </Link>
             <Link
               href="/contacto"
@@ -153,14 +154,14 @@ export default function Navbar({ data }) {
             onClick={closeMenu}
             className="animate-fade-down transition-all animate-delay-300 hover:text-green-300"
           >
-            Pluviometros
+            Pluviómetros
           </Link>
           <Link
             href="/quienesSomos"
             onClick={closeMenu}
             className="animate-fade-down transition-all animate-delay-400 hover:text-green-300"
           >
-            Quienes Somos
+            Quiénes Somos
           </Link>
           <Link
             href="/contacto"

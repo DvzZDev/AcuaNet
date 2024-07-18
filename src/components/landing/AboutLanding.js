@@ -46,7 +46,7 @@ function AboutLanding() {
             >
               Queremos que conozcas a nuestro equipo y descubras cómo trabajamos para
               ofrecerte datos precisos y actualizados sobre los embalses. Haz clic aquí
-              para conocer más sobre nosotros y nuestra misión.
+              para conocer más sobre nosotros.
             </motion.p>
             <motion.div
               initial="initial"

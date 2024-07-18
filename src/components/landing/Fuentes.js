@@ -21,7 +21,7 @@ function CustomDot({ onClick, ...rest }) {
           margin: '0 8px',
         }}
       >
-        <div className={`${active ? activeStyle : inactiveStyle}  `}></div>
+        <div className={`${active ? activeStyle : inactiveStyle} `}></div>
       </button>
     </li>
   )
@@ -116,7 +116,9 @@ function Fuentes() {
             className="mx-3 text-center"
           >
             Datos Actualizados Cada
-            <strong className="ml-2 content-center text-[#ffd700] font-bold">6 horas</strong>
+            <strong className="ml-2 content-center font-bold text-[#ffd700]">
+              6 horas
+            </strong>
           </motion.h1>
         </motion.div>
       </article>
@@ -141,7 +143,7 @@ function Fuentes() {
           {cardData.map((card, index) => (
             <motion.div
               key={card.title}
-              className="flex justify-center mb-4"
+              className="mb-4 flex justify-center"
               variants={childVariants(0.5)}
               viewport={{ once: true }}
             >

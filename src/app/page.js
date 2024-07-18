@@ -6,6 +6,7 @@ import AboutLanding from '@/components/landing/AboutLanding'
 import { Suspense } from 'react'
 import ContactLanding from '@/components/landing/ContactLanding'
 import BentoDataLandin from '@/components/landing/BentoDataLanding'
+import Faq from '@/components/landing/Faq'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
@@ -51,6 +52,7 @@ export default function Home() {
       <Fuentes />
       <AboutLanding />
       <ContactLanding />
+      <Faq />
     </>
   )
 }

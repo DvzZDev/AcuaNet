@@ -6,7 +6,7 @@ import { Link } from 'next-view-transitions'
 
 function ContactLanding() {
   return (
-    <section className="flex flex-col justify-center bg-bgcolor p-5 pb-32">
+    <section className="flex flex-col justify-center bg-bgcolor p-5 pb-20">
       <motion.h1
         initial="initial"
         variants={{

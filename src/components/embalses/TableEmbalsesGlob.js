@@ -88,7 +88,7 @@ function TableData(props) {
   })
 
   return (
-    <div className="mx-5 mt-5 h-screen">
+    <div className="mx-5 my-5 h-screen">
       <div className="flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4 sm:mt-8 md:h-14">
         <motion.div
           viewport={{
@@ -198,8 +198,8 @@ function TableData(props) {
           </svg>
         </motion.button>
       </div>
-      <table className="border border-[#040513] text-xs sm:text-xl">
-        <thead className="bg-[#040513]">
+      <table className="border border-[#040513]">
+        <thead className="bg-[#040513] text-sm sm:text-xl">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
@@ -225,7 +225,7 @@ function TableData(props) {
             </tr>
           ))}
         </thead>
-        <tbody className="bg-[#1b0e51]">
+        <tbody className="bg-[#1b0e51] text-md sm:text-xl">
           {table.getRowModel().rows.map((row) => (
             <tr
               key={row.id}
@@ -237,7 +237,7 @@ function TableData(props) {
                   variants={variants(index)}
                   whileInView="animate"
                   key={cell.id}
-                  className="px-2 py-5 text-lg sm:p-4"
+                  className="px-2 py-5 sm:p-4"
                   viewport={{
                     once: true,
                   }}

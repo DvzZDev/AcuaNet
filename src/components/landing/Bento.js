@@ -34,10 +34,9 @@ function Bento(props) {
   })
 
   const variantss = (index) => ({
-    initial: { opacity: 0, scale: 0.5 },
+    initial: { opacity: 0 },
     animate: {
       opacity: 1,
-      scale: 1,
       transition: { duration: 0.5, type: 'spring', stiffness: 50, delay: index * 0.1 },
     },
   })
@@ -76,7 +75,7 @@ function Bento(props) {
                 {`${españa.porcentaje_embalsado}`}
                 <strong className="text-[3rem]">%</strong>
               </p>
-              <h2 className="text-6xl font-bold text-[#7387f9]">Nacional</h2>
+              <h2 className="text-6xl text-[#7387f9]">Nacional</h2>
             </div>
           ))}
         </motion.div>

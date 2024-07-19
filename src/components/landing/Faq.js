@@ -14,7 +14,7 @@ function Faq() {
         }}
         whileInView="animate"
         viewport={{ once: true, amount: 0.8 }}
-        className="pt-1 text-center font-NecoBold text-[40px] text-[#ffd700] sm:text-[50px]"
+        className="pt-1 text-center font-NecoBold text-[40px] text-[#ffd700] sm:text-[50px] px-3"
       >
         Preguntas Frecuentes
       </motion.h3>

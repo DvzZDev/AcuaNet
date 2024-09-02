@@ -81,8 +81,8 @@ function AboutLanding() {
                 viewport={{ once: true, amount: 0.8 }}
               >
                 <Image
-                  width={500}
-                  height={500}
+                  width={550}
+                  height={375}
                   src="/yo22.webp"
                   alt="Foto del creador de AcuaNet"
                   className="rounded-lg shadow-lg"
@@ -115,3 +115,4 @@ function AboutLanding() {
 }
 
 export default AboutLanding
+

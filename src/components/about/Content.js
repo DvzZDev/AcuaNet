@@ -30,8 +30,9 @@ function Content() {
               as={NextImage}
               src="/orellana.webp"
               alt="Embalse de Orellana en Badajoz, España"
-              width={1200}
-              height={1200}
+              objectFit="cover"
+              width={600}
+              height={400}
               draggable={false}
               isBlurred={true}
               initial="initial"
@@ -76,8 +77,9 @@ function Content() {
               as={NextImage}
               src="/embalse.webp"
               alt="Embalse de Orellana en Badajoz, España"
-              width={1140}
-              height={1140}
+              objectFit="cover"
+              width={600}
+              height={400}
               draggable={false}
               isBlurred={true}
             />
@@ -109,16 +111,18 @@ function Content() {
             variants={variants(3)}
             whileInView="animate"
             viewport={{ once: true }}
+            className="h-full w-full hidden sm:flex items-center overflow-visible rounded-lg"
           >
             <Image
               as={NextImage}
               src="/embalse.webp"
               alt="Embalse de Orellana en Badajoz, España"
-              width={1200}
-              height={1200}
               draggable={false}
               isBlurred={true}
               className="hidden sm:block"
+              objectFit="cover"
+              width={600}
+              height={400}
             />
           </motion.div>
         </article>
@@ -148,3 +152,4 @@ function Content() {
 }
 
 export default Content
+

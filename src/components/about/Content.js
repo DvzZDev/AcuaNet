@@ -111,7 +111,7 @@ function Content() {
             variants={variants(3)}
             whileInView="animate"
             viewport={{ once: true }}
-            className="h-full w-full hidden sm:flex items-center overflow-visible rounded-lg"
+            className="hidden h-full w-full items-center overflow-visible rounded-lg sm:flex"
           >
             <Image
               as={NextImage}

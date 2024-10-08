@@ -7,7 +7,7 @@ export const revalidate = 60
 export const dynamic = "force-dynamic"
 export const fetchCache = "force-no-store"
 
-export function generateMetadata({ params }) {
+export function generateMetadata({ params }: { params: { embalseid: string } }) {
   return {
     title: `${params.embalseid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
     description: `Información sobre el embalse de ${params.embalseid.replace(/%20/g, " ")}`,
@@ -43,7 +43,7 @@ export function generateMetadata({ params }) {
   }
 }
 
-async function Page({ params }) {
+async function Page({ params }: { params: { embalseid: string } }) {
   return (
     <>
       <Suspense fallback={<SkeeltonBentoEmbalseDist />}>

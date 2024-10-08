@@ -12,10 +12,10 @@ import { shareOnWhatsApp, shareOnTwitter } from "@/services/Services"
 import Twitter from "./Twitter"
 
 interface WidgetShareProps {
-  alter: "cuencaid"
-  page: "cuencas"
+  alter: string
+  page: string
   url: {
-    cuencaid: string
+    [key: string]: string
   }
 }
 

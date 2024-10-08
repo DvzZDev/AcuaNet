@@ -15,14 +15,18 @@ AcuaNet es una plataforma para la monitorización hidrográfica en España. Prop
 
 - **Frontend:** React, NextJs, Chartjs, Tailwind
 - **Backend:** NextJs, NodeJs, MySql
-- **APIs:** Node, Express, 
+- **APIs:** Node, Express,
 
 ## Instalación y Uso
 
 1. Clona el repositorio:
+
    ```bash
    git clone https://github.com/tu-usuario/acuanet.git
+
+   ```
 
 2. Instala las dependencias
    ```bash
    npm install
+   ```

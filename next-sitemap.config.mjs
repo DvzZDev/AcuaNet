@@ -9,32 +9,32 @@ const sitemapConfig = {
 
     const cuencasResponse = await fetch(urlCuencas, {
       headers: {
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        Pragma: 'no-cache',
-        Expires: '0',
-        'x-api-key': apikey,
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        Pragma: "no-cache",
+        Expires: "0",
+        "x-api-key": apikey,
       },
     }).then((res) => res.json())
 
     const pathsCuencas = cuencasResponse.map((cuenca) => ({
-      loc: `${sitemapConfig.siteUrl}cuencas/${cuenca.cuenca.replace(/_/g, '-').replace(/ /g, '%20')}`,
-      changefreq: 'daily',
+      loc: `${sitemapConfig.siteUrl}cuencas/${cuenca.cuenca.replace(/_/g, "-").replace(/ /g, "%20")}`,
+      changefreq: "daily",
       priority: 0.7,
       lastmod: new Date().toISOString(),
     }))
 
     const embalsesResponse = await fetch(urlEmbalses, {
       headers: {
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        Pragma: 'no-cache',
-        Expires: '0',
-        'x-api-key': apikey,
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        Pragma: "no-cache",
+        Expires: "0",
+        "x-api-key": apikey,
       },
     }).then((res) => res.json())
 
     const pathsEmbalses = embalsesResponse.map((embalse) => ({
-      loc: `${sitemapConfig.siteUrl}embalses/${embalse.nombre_embalse.replace(/ /g, '%20').toLowerCase()}`,
-      changefreq: 'daily',
+      loc: `${sitemapConfig.siteUrl}embalses/${embalse.nombre_embalse.replace(/ /g, "%20").toLowerCase()}`,
+      changefreq: "daily",
       priority: 0.7,
       lastmod: new Date().toISOString(),
     }))

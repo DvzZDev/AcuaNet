@@ -11,7 +11,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background-color: #000000;
-  font-family: 'Author-Medium', sans-serif;
+  font-family: "Author-Medium", sans-serif;
 }
 
 .animate-gradient {
@@ -36,22 +36,22 @@ h1 {
 }
 
 table {
-  font-family: 'Author-Mediums', system-ui;
+  font-family: "Author-Mediums", system-ui;
   color: #c0bfb7;
 }
 
 @font-face {
-  font-family: 'Neco-Bold';
-  src: url('../../Fonts/Telma_Complete/Fonts/WEB/fonts/Neco-Bold.woff2') format('woff2');
+  font-family: "Neco-Bold";
+  src: url("../../Fonts/Telma_Complete/Fonts/WEB/fonts/Neco-Bold.woff2") format("woff2");
   font-weight: 300;
   font-display: swap;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Author-Medium';
-  src: url('../../Fonts/Telma_Complete/Fonts/WEB/fonts/Author-Regular.woff2')
-    format('woff2');
+  font-family: "Author-Medium";
+  src: url("../../Fonts/Telma_Complete/Fonts/WEB/fonts/Author-Regular.woff2")
+    format("woff2");
   font-weight: 500;
   font-display: swap;
   font-style: normal;

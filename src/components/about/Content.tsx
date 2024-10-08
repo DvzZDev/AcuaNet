@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 const delays = [0.1, 0.2, 0.3, 0.4, 0.5]
 
 function Content() {
-  const variants = (deln) => ({
+  const variants = (deln: number) => ({
     initial: { opacity: 0, y: 50 },
     animate: {
       opacity: 1,
@@ -35,8 +35,6 @@ function Content() {
               height={400}
               draggable={false}
               isBlurred={true}
-              initial="initial"
-              WhileInView="animate"
             />
           </motion.div>
 

@@ -3,7 +3,11 @@ import { ReactTyped } from "react-typed"
 import AutoCompleteHook from "@/hooks/AutoComplete"
 import { motion } from "framer-motion"
 
-function Type({ data }) {
+interface TypeProps {
+  data: string[]
+}
+
+function Type({ data }: TypeProps) {
   const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } =
     AutoCompleteHook(data)
 

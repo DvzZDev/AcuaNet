@@ -1,10 +1,14 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { useRouter } from "next/navigation"
 
-const AutoCompleteHook = (data, closeMenu, isMenuOpen) => {
+const AutoCompleteHook = (
+  data: string[],
+  closeMenu?: () => void,
+  isMenuOpen?: boolean
+) => {
   const router = useRouter()
   const [type, setType] = useState("")
-  const [suggestions, setSuggestions] = useState([])
+  const [suggestions, setSuggestions] = useState<string[]>([])
   const [err, setErr] = useState(false)
   const [fine, setFine] = useState(false)
   const errHandler = () => {
@@ -12,7 +16,7 @@ const AutoCompleteHook = (data, closeMenu, isMenuOpen) => {
     setType("")
   }
 
-  const handletype = (e) => {
+  const handletype = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value
     setType(inputValue)
     if (inputValue) {
@@ -25,17 +29,17 @@ const AutoCompleteHook = (data, closeMenu, isMenuOpen) => {
     }
   }
 
-  const handleSuggestionClick = (nombreEmbalse) => {
+  const handleSuggestionClick = (nombreEmbalse: string) => {
     setType(nombreEmbalse)
     setSuggestions([])
     router.push(`/embalses/${nombreEmbalse.toLowerCase()}`)
     setSuggestions([])
     setFine(true)
     setType("")
-    if (isMenuOpen) closeMenu()
+    if (isMenuOpen && closeMenu) closeMenu()
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const selectedEmbalse = data.find(
       (embalse) => embalse.toLowerCase() === type.toLowerCase()
@@ -46,7 +50,7 @@ const AutoCompleteHook = (data, closeMenu, isMenuOpen) => {
       setErr(false)
       setSuggestions([])
       setType("")
-      if (isMenuOpen) closeMenu()
+      if (isMenuOpen && closeMenu) closeMenu()
     } else {
       errHandler()
       setFine(false)

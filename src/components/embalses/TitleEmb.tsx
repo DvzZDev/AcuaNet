@@ -1,4 +1,4 @@
-async function TitleEmb({ data }) {
+async function TitleEmb({ data }: { data: { nombre_embalse: string } }) {
   return (
     <div className="justify-center">
       <h1 className="mb-2 text-center font-NecoBold text-[2.5rem] text-textsecondary sm:mt-10 sm:text-6xl">

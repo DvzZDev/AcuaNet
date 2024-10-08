@@ -10,7 +10,7 @@ ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels)
 // Asegúrate de que la configuración global no muestre la leyenda
 ChartJS.defaults.plugins.legend.display = false
 
-const EmbalseGrafico = ({ porcentaje }) => {
+const EmbalseGrafico = ({ porcentaje }: { porcentaje: number }) => {
   const data = {
     labels: ["Embalsada", "Restante"],
     datasets: [
@@ -28,14 +28,14 @@ const EmbalseGrafico = ({ porcentaje }) => {
     plugins: {
       datalabels: {
         color: "#e9ead6",
-        anchor: "center",
-        align: "center",
-        offset: -10,
+        anchor: "center" as const,
+        align: "center" as const,
+        offset: -10 as const,
         font: {
-          weight: "bold",
+          weight: "bold" as const,
           size: 20,
         },
-        formatter: function (value) {
+        formatter: function (value: number) {
           return value.toFixed(0)
         },
       },

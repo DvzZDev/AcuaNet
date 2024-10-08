@@ -12,6 +12,23 @@ import {
 import { mkConfig, generateCsv, download } from "export-to-csv"
 import { motion } from "framer-motion"
 import type { Embalses } from "@/types/BentoTypes"
+import { Row } from "@tanstack/react-table" // Importar el tipo Row de TanStack Table
+
+interface EmbalseTableProps {
+  id_embalse: number
+  fecha_modificacion: string
+  nombre_embalse: string
+  nombre_cuenca: string
+  agua_embalsada: number
+  agua_embalsadapor: number
+  variacion_ultima_semana: number
+  variacion_ultima_semanapor: number
+  capacidad_total: number
+  misma_semana_ultimo_año: number
+  misma_semana_ultimo_añopor: number
+  misma_semana_10años: number
+  misma_semana_10añospor: number
+}
 
 export default function TableEmbalses(props: { dataFetched: Embalses[]; link: string }) {
   const resdata = props.link
@@ -68,9 +85,9 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
     decimalSeparator: ".",
     useKeysAsHeaders: true,
   })
-  const exportExcel = (rows: any[]) => {
+  const exportExcel = (rows: Row<EmbalseTableProps>[]): void => {
     const rowData = rows.map((row) => row.original)
-    const csv = generateCsv(csvConfig)(rowData)
+    const csv = generateCsv(csvConfig)(rowData as unknown as { [k: string]: never }[])
     download(csvConfig)(csv)
   }
 
@@ -114,7 +131,9 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
           <input
             value={filtered}
             onChange={(e) => setFiltered(e.target.value)}
-            className={`w-full bg-transparent px-1 outline-none transition-all focus:bg-opacity-100 focus:outline-none`}
+            className={
+              "w-full bg-transparent px-1 outline-none transition-all focus:bg-opacity-100 focus:outline-none"
+            }
             type="text"
             autoFocus={show}
             ref={inputRef}

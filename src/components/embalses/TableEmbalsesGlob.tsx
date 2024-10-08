@@ -1,4 +1,5 @@
 "use client"
+import { Row } from "@tanstack/react-table" // Importar el tipo Row de TanStack Table
 import { useState, useMemo, useRef } from "react"
 import {
   useReactTable,
@@ -65,9 +66,9 @@ export default function TableData({ props: resdata }: { props: EmbalseTableProps
     useKeysAsHeaders: true,
   })
 
-  const exportExcel = (rows: Array<{ original: any }>): void => {
+  const exportExcel = (rows: Row<EmbalseTableProps>[]): void => {
     const rowData = rows.map((row) => row.original)
-    const csv = generateCsv(csvConfig)(rowData)
+    const csv = generateCsv(csvConfig)(rowData as unknown as { [k: string]: never }[])
     download(csvConfig)(csv)
   }
 

@@ -1,10 +1,10 @@
 "use client"
-import React from "react"
 import EmbalseGrafico from "../cuencas/Grafico"
 import { Link } from "next-view-transitions"
 import { motion } from "framer-motion"
+import { Embalses } from "@/types/BentoTypes"
 
-function EmbalseContent({ data }) {
+function EmbalseContent({ data }: { data: Embalses }) {
   return (
     <section className="flex min-h-screen justify-center bg-bgcolor px-4 pb-14 text-white sm:pt-14 lg:pt-7">
       <div className="mx-4 flex min-h-full w-full flex-col gap-4 sm:grid sm:h-[40rem] sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:w-[60rem]">
@@ -18,7 +18,7 @@ function EmbalseContent({ data }) {
             animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
           whileInView="animate"
-          viewport={{ once: true, amount: 0.8, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.8 }}
           className="order-1 flex justify-center rounded-lg sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
         >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
@@ -42,7 +42,7 @@ function EmbalseContent({ data }) {
             animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
           whileInView="animate"
-          viewport={{ once: true, amount: 0.8, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.8 }}
           className="order-2 flex justify-center sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
         >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
@@ -66,7 +66,7 @@ function EmbalseContent({ data }) {
             animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
           whileInView="animate"
-          viewport={{ once: true, amount: 0.8, delay: 0.3 }}
+          viewport={{ once: true, amount: 0.8 }}
           className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg sm:order-6"
         >
           <EmbalseGrafico porcentaje={data.agua_embalsadapor} />
@@ -81,7 +81,7 @@ function EmbalseContent({ data }) {
             animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
           whileInView="animate"
-          viewport={{ once: true, amount: 0.8, delay: 0.4 }}
+          viewport={{ once: true, amount: 0.8 }}
           className="order-4 flex justify-center sm:col-span-2 sm:row-span-3"
         >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
@@ -106,7 +106,7 @@ function EmbalseContent({ data }) {
             animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
           whileInView="animate"
-          viewport={{ once: true, amount: 0.8, delay: 0.5 }}
+          viewport={{ once: true, amount: 0.8 }}
           className="order-5 flex justify-center sm:col-span-2 sm:row-span-3"
         >
           <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
@@ -134,7 +134,7 @@ function EmbalseContent({ data }) {
                   animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
                 whileInView="animate"
-                viewport={{ once: true, amount: 0.8, delay: 0.6 }}
+                viewport={{ once: true, amount: 0.8 }}
                 className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
               >
                 <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
@@ -152,7 +152,7 @@ function EmbalseContent({ data }) {
                   animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
                 whileInView="animate"
-                viewport={{ once: true, amount: 0.8, delay: 0.7 }}
+                viewport={{ once: true, amount: 0.8 }}
                 className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
               >
                 <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
@@ -164,7 +164,7 @@ function EmbalseContent({ data }) {
                     animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                   }}
                   whileInView="animate"
-                  viewport={{ once: true, amount: 0.8, delay: 0.8 }}
+                  viewport={{ once: true, amount: 0.8 }}
                   className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text font-black text-transparent sm:text-4xl md:text-4xl"
                 >
                   <span>{data.misma_semana_ultimo_añopor}</span>
@@ -180,7 +180,7 @@ function EmbalseContent({ data }) {
                   animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
                 whileInView="animate"
-                viewport={{ once: true, amount: 0.8, delay: 0.9 }}
+                viewport={{ once: true, amount: 0.8 }}
                 className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
               >
                 <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
@@ -198,7 +198,7 @@ function EmbalseContent({ data }) {
                   animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
                 whileInView="animate"
-                viewport={{ once: true, amount: 1, delay: 0.2 }}
+                viewport={{ once: true, amount: 1 }}
                 className="col-span-2 row-span-2 flex flex-col items-center justify-around rounded-xl bg-slate-800 text-textprimary"
               >
                 <h1 className="text-center text-[17px] lg:text-3xl">Misma Semana</h1>
@@ -221,7 +221,7 @@ function EmbalseContent({ data }) {
             animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
           whileInView="animate"
-          viewport={{ once: true, amount: 0.8, delay: 1.1 }}
+          viewport={{ once: true, amount: 0.8 }}
           id="embalses-div"
           className="order-7 flex items-center justify-center rounded-lg sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
         >

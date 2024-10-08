@@ -2,8 +2,9 @@
 import EmbalseGrafico from "./Grafico"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Cuenca } from "@/types/BentoTypes"
 
-function BentoDist(props) {
+function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } } }) {
   const cuenca = props.data
   const cuencaid = props.params.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
@@ -20,7 +21,7 @@ function BentoDist(props) {
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays * 1 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 1 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -31,7 +32,7 @@ function BentoDist(props) {
           <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Agua</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
-              {resCuenca.embalsada}
+              {resCuenca?.embalsada}
             </span>
             <span className="text-xl font-black">hm³</span>
           </div>
@@ -44,7 +45,7 @@ function BentoDist(props) {
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays * 1 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 1 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -55,7 +56,7 @@ function BentoDist(props) {
           <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Capacidad</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
-              {resCuenca.capacidad}
+              {resCuenca?.capacidad}
             </span>
             <span className="text-xl font-black">hm³</span>
           </div>
@@ -68,14 +69,14 @@ function BentoDist(props) {
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays * 2 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 2 } },
         }}
         initial="initial"
         viewport={{ once: true }}
         whileInView="animate"
         className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg sm:order-6"
       >
-        <EmbalseGrafico porcentaje={resCuenca.porcentaje_embalsada} />
+        <EmbalseGrafico porcentaje={resCuenca?.porcentaje_embalsada} />
       </motion.div>
 
       <motion.div
@@ -83,7 +84,7 @@ function BentoDist(props) {
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays * 3 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 3 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -94,7 +95,7 @@ function BentoDist(props) {
           <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variación</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
-              {resCuenca.variacion}
+              {resCuenca?.variacion}
             </span>
             <span className="text-xl font-black">hm³</span>
           </div>
@@ -109,7 +110,7 @@ function BentoDist(props) {
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays * 4 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 4 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -120,7 +121,7 @@ function BentoDist(props) {
           <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variación</h1>
           <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
-              {resCuenca.porcentaje_variacion}
+              {resCuenca?.porcentaje_variacion}
             </span>
             <span className="text-xl font-black">%</span>
           </div>
@@ -135,7 +136,7 @@ function BentoDist(props) {
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays * 5 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 5 } },
         }}
         initial="initial"
         viewport={{ once: true }}
@@ -144,7 +145,7 @@ function BentoDist(props) {
       >
         <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-visible rounded-lg bg-slate-700 sm:h-full sm:w-full">
           <Image
-            src={resCuenca.foto}
+            src={resCuenca?.foto ? resCuenca.foto : "2"}
             alt={`Foto sobre la cuenca hidrográfica del ${cuenca}`}
             layout="fill"
             priority
@@ -159,7 +160,7 @@ function BentoDist(props) {
         variants={{
           initial: { opacity: 0, scale: 0 },
           hover: { scale: 1.1, transition: { delay: 0 } },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays * 6 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 6 } },
         }}
         initial="initial"
         transition={{ type: "spring" }}

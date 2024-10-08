@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-function CardFuentes({ image, title }) {
+function CardFuentes({ image, title }: { image: string; title: string }) {
   return (
     <article className="mb-7 flex h-[200px] w-[250px] flex-col items-center">
       <div className="flex h-[100px] w-full items-center justify-center">

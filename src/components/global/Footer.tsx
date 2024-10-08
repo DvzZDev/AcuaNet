@@ -45,7 +45,7 @@ function Footer() {
         >
           <svg
             viewBox="0 0 256 250"
-            idth="26"
+            width="26"
             height="26"
             fill="#6b7280"
             xmlns="http://www.w3.org/3500/svg"
@@ -63,7 +63,7 @@ function Footer() {
         >
           <svg
             xmlns="http://www.w3.org/3500/svg"
-            idth="26"
+            width="26"
             height="26"
             viewBox="0 0 1350 1227"
             fill="#6b7280"
@@ -80,7 +80,7 @@ function Footer() {
         >
           <svg
             xmlns="http://www.w3.org/3500/svg"
-            idth="26"
+            width="26"
             height="26"
             preserveAspectRatio="xMidYMid"
             viewBox="0 0 256 256"

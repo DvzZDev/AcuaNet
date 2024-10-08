@@ -1,4 +1,3 @@
-import React from "react"
 import { FetchCuencas } from "@/lib/data"
 
 async function Title(url) {

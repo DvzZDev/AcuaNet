@@ -5,8 +5,8 @@ import { useState } from "react"
 import Search from "./Search"
 import SearchMov from "./SerchMov"
 
-export default function Navbar({ data }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+export default function Navbar({ data }: { data: string[] }) {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
 
@@ -64,8 +64,6 @@ export default function Navbar({ data }) {
           <div className="flex items-center justify-center lg:hidden">
             <button
               className={`${isMenuOpen ? "hidden" : "animate-fade block"}`}
-              src="/menu.svg"
-              alt="menu icon"
               onClick={toggleMenu}
             >
               <svg
@@ -77,21 +75,21 @@ export default function Navbar({ data }) {
               >
                 <g
                   id="SVGRepo_bgCarrier"
-                  stroke-width="0"
+                  strokeWidth="0"
                 ></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   {" "}
                   <path
                     d="M4 6H20M4 12H14M4 18H9"
                     stroke="#ffd700"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>{" "}
                 </g>
               </svg>
@@ -110,12 +108,12 @@ export default function Navbar({ data }) {
               >
                 <g
                   id="SVGRepo_bgCarrier"
-                  stroke-width="0"
+                  strokeWidth="0"
                 ></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   {" "}

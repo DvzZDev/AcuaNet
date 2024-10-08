@@ -1,5 +1,4 @@
 "use client"
-import React from "react"
 import { Accordion, AccordionItem } from "@nextui-org/accordion"
 import { motion } from "framer-motion"
 
@@ -130,7 +129,7 @@ function Faq() {
               El propósito de AcuaNet es facilitar el acceso a datos actualizados sobre
               los niveles de los embalses en España, proporcionando una plataforma fácil
               de usar y eficiente para pescadores, agricultores y cualquier persona
-              interesada en el estado de los recursos hídricos​
+              interesada en el estado de los recursos hídricos
             </h1>
           </AccordionItem>
         </Accordion>

@@ -3,7 +3,7 @@
 import AutoCompleteHook from "@/hooks/AutoComplete"
 import { motion } from "framer-motion"
 
-function Search({ data }) {
+function Search({ data }: { data: string[] }) {
   const {
     type,
     suggestions,

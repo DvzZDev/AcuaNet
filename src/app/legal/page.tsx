@@ -143,7 +143,7 @@ function page() {
               href="https://github.com/DvzZDev/ACUA-Landing"
               className="text-blue-500 underline"
               target="_blank"
-              aria-label='Repositorio de GitHub "ACUA-Landing"'
+              aria-label='Repositorio de GitHub "ACUA-Landing"' rel="noreferrer"
             >
               ACUA-Landing
             </a>

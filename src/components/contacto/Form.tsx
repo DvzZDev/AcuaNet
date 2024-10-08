@@ -42,7 +42,7 @@ function Form() {
 
     const turnstileElement = document.querySelector(".cf-turnstile")
     const turnstileInput = turnstileElement?.querySelector(
-      'input[name="cf-turnstile-response"]'
+      "input[name=\"cf-turnstile-response\"]"
     ) as HTMLInputElement
     const turnstileResponse: TurnstileResponse | undefined = turnstileInput
       ? { value: turnstileInput.value }
@@ -101,7 +101,7 @@ function Form() {
         className="animate-fade-up my-20 flex justify-center sm:mt-2"
       >
         <div
-          className={`flex min-h-[20rem] w-[20rem] flex-col gap-4 rounded-lg bg-slate-950 p-4 sm:w-[30rem]`}
+          className={"flex min-h-[20rem] w-[20rem] flex-col gap-4 rounded-lg bg-slate-950 p-4 sm:w-[30rem]"}
         >
           <Input
             type="text"

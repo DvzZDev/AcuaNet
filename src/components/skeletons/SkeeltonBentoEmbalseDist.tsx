@@ -1,4 +1,3 @@
-import React from "react"
 import EmbalseGrafico from "../cuencas/Grafico"
 import Divider from "../cuencas/Divider"
 

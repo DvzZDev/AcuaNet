@@ -11,7 +11,7 @@ import Whatsapp from "./Whatsapp"
 import { shareOnWhatsApp, shareOnTwitter } from "@/services/Services"
 import Twitter from "./Twitter"
 
-function WidgetShareGlob(props) {
+function WidgetShareGlob(props: { page: string }) {
   const iconClasses = "w-5 h-5 text-xl text-default-500 pointer-events-none flex-shrink-0"
   const page = `${props.page}`
   return (
@@ -60,14 +60,12 @@ function WidgetShareGlob(props) {
         <DropdownMenu>
           <DropdownSection title={"Compartir"}>
             <DropdownItem
-              key={Whatsapp}
               startContent={<Whatsapp className={iconClasses} />}
               onClick={() => shareOnWhatsApp(`https://acuanet.es/${page}`)}
             >
               WhatsApp
             </DropdownItem>
             <DropdownItem
-              key={Twitter}
               startContent={<Twitter className={iconClasses} />}
               onClick={() => shareOnTwitter(`https://acuanet.es/${page}`)}
             >

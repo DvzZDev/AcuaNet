@@ -4,10 +4,13 @@ import { motion } from "framer-motion"
 import type { Cuenca } from "@/types/BentoTypes"
 
 interface BentoCuencasProps {
+  map(
+    arg0: (cuenca: Cuenca, index: number) => import("react").JSX.Element
+  ): import("react").ReactNode
   data: Cuenca
 }
 
-const BentoCuencas: React.FC<BentoCuencasProps> = ({ data }) => {
+const BentoCuencas = ({ data }: { data: BentoCuencasProps }) => {
   const cuencas = data
 
   function getColor(porcentaje: number) {

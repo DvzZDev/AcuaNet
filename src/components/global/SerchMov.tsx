@@ -3,7 +3,15 @@
 import AutoCompleteHook from "@/hooks/AutoComplete"
 import { motion } from "framer-motion"
 
-function SearchMov({ data, closeMenu, isMenuOpen }) {
+function SearchMov({
+  data,
+  closeMenu,
+  isMenuOpen,
+}: {
+  data: string[]
+  closeMenu: () => void
+  isMenuOpen: boolean
+}) {
   const {
     type,
     suggestions,

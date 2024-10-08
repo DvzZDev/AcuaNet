@@ -14,9 +14,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "baseUrl": ".", // Base URL para resolver los alias
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"] // Alias @ apuntando al directorio src
+      "@/*": ["src/*"]
     },
     "incremental": true,
     "plugins": [

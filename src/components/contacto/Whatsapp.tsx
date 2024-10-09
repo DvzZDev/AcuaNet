@@ -1,4 +1,10 @@
-const Whatsapp = (props) => (
+import { SVGProps } from "react"
+
+interface WhatsappProps extends SVGProps<SVGSVGElement> {
+  className?: string
+}
+
+const Whatsapp = (props: WhatsappProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 48 48"

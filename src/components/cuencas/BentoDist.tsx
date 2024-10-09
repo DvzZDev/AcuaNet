@@ -76,7 +76,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         whileInView="animate"
         className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg sm:order-6"
       >
-        <EmbalseGrafico porcentaje={resCuenca?.porcentaje_embalsada} />
+        <EmbalseGrafico porcentaje={resCuenca?.porcentaje_embalsada ?? 0} />
       </motion.div>
 
       <motion.div

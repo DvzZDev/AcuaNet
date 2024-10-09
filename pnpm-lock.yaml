@@ -102,6 +102,9 @@ importers:
         specifier: ^2.0.12
         version: 2.0.12(react@18.3.1)
     devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^14.2.15
+        version: 14.2.15
       '@types/node':
         specifier: ^22.7.5
         version: 22.7.5
@@ -376,6 +379,9 @@ packages:
 
   '@next/env@14.2.14':
     resolution: {integrity: sha512-/0hWQfiaD5//LvGNgc8PjvyqV50vGK0cADYzaoOOGN8fxzBn3iAiaq3S0tCRnFBldq0LVveLcxCTi41ZoYgAgg==}
+
+  '@next/eslint-plugin-next@14.2.15':
+    resolution: {integrity: sha512-pKU0iqKRBlFB/ocOI1Ip2CkKePZpYpnw5bEItEkuZ/Nr9FQP1+p7VDWr4VfOdff4i9bFmrOaeaU1bFEyAcxiMQ==}
 
   '@next/eslint-plugin-next@14.2.3':
     resolution: {integrity: sha512-L3oDricIIjgj1AVnRdRor21gI7mShlSwU/1ZGHmqM3LzHhXXhdkrfeNY5zif25Bi5Dd7fiJHsbhoZCHfXYvlAw==}
@@ -3585,6 +3591,10 @@ snapshots:
   '@next/env@13.5.7': {}
 
   '@next/env@14.2.14': {}
+
+  '@next/eslint-plugin-next@14.2.15':
+    dependencies:
+      glob: 10.3.10
 
   '@next/eslint-plugin-next@14.2.3':
     dependencies:

@@ -11,15 +11,13 @@ module.exports = {
     node: true,
     browser: true,
   },
-  extends: ["eslint-config-prettier"],
+  extends: ["eslint-config-prettier", "eslint:recommended", "next"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: [
-    "unused-imports", // Asegúrate de que el plugin esté aquí
-  ],
+  plugins: ["unused-imports"],
   rules: {
     "unused-imports/no-unused-imports": "warn", // La regla debe estar definida aquí
     "eol-last": "off",
@@ -45,7 +43,9 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
       ],
-      rules: {},
+      rules: {
+        "@typescript-eslint/no-explicit-any": "off", // Desactiva la regla aquí
+      },
     },
   ],
 }

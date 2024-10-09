@@ -5,7 +5,7 @@ async function Tabledata() {
   const embalses = await FetchEmbalses()
   return (
     <div className="flex justify-center">
-      <Table props={embalses} />
+      <Table props={Array.isArray(embalses) ? embalses : [embalses]} />
     </div>
   )
 }

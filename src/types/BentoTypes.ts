@@ -9,6 +9,7 @@ export interface VariacionEmbalses {
 }
 
 export interface Cuenca {
+  find(arg0: (cuenca: any) => boolean): unknown
   map(
     arg0: (cuenca: Cuenca, index: number) => import("react").JSX.Element
   ): import("react").ReactNode
@@ -42,6 +43,8 @@ export interface BentoProps {
 }
 
 export interface Embalses {
+  filter(arg0: (elemento: Embalses) => boolean): unknown
+  find(arg0: (embalse: any) => boolean): unknown
   id_embalse: number
   fecha_modificacion: string
   nombre_embalse: string

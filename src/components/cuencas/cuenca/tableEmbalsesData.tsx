@@ -17,7 +17,7 @@ async function TableEmbalsesData({ url }: { url: { cuencaid: string } }) {
   return (
     <section className="mb-10 mt-20 md:mt-0">
       <TableEmbalses
-        dataFetched={resEmbalse}
+        dataFetched={resEmbalse as unknown as []}
         link={decodedCuencaid}
       />
     </section>

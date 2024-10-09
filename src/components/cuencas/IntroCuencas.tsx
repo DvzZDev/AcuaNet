@@ -1,6 +1,6 @@
 import Divider from "./Divider"
 
-function intro({ title }) {
+function intro({ title }: { title: string }) {
   return (
     <section>
       <div className="flex justify-center">

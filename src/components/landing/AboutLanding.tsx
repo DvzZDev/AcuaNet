@@ -98,7 +98,7 @@ function AboutLanding() {
                   animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
                 whileInView="animate"
-                viewport={{ once: true, amount: 0.8, delay: 0.2 }}
+                viewport={{ once: true, amount: 0.8 }}
                 className="absolute bottom-[-70px] left-4 right-[-15px] z-20 rounded-lg bg-[#0a2038] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]"
               >
                 <p className="text-xl text-white">

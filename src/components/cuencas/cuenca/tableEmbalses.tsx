@@ -11,7 +11,6 @@ import {
 } from "@tanstack/react-table"
 import { mkConfig, generateCsv, download } from "export-to-csv"
 import { motion } from "framer-motion"
-import type { Embalses } from "@/types/BentoTypes"
 import { Row } from "@tanstack/react-table" // Importar el tipo Row de TanStack Table
 
 interface EmbalseTableProps {
@@ -30,7 +29,7 @@ interface EmbalseTableProps {
   misma_semana_10añospor: number
 }
 
-export default function TableEmbalses(props: { dataFetched: Embalses[]; link: string }) {
+export default function TableEmbalses(props: { dataFetched: []; link: string }) {
   const resdata = props.link
   const columns = useMemo(
     () => [

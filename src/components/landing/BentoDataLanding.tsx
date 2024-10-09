@@ -7,6 +7,10 @@ import {
 } from "../../lib/data"
 import Bento from "./Bento"
 
+import { Cuencas } from "db/queries/select"
+const cuencas = await Cuencas()
+console.log(cuencas)
+
 async function BentoDataLandin() {
   const cuencas = await FetchCuencas()
   const variacionCuencas = await FetchCuencaVariacion()

@@ -1,97 +1,65 @@
 const apikey = process.env.API_KEY
-export async function FetchCuencas() {
+
+async function fetchWithHeaders(url: string): Promise<unknown> {
+  if (!url) {
+    throw new Error("URL is required")
+  }
+
+  const response = await fetch(url, {
+    headers: {
+      "Cache-Control": "no-cache, no-store, must-revalidate",
+      Pragma: "no-cache",
+      Expires: "0",
+      "x-api-key": apikey!,
+    },
+  })
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch data from ${url}`)
+  }
+
+  const data = await response.json()
+  return data
+}
+
+export async function FetchCuencas(): Promise<unknown> {
   const url = process.env.CUENCAS
-  const response = await fetch(url, {
-    headers: {
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-      Pragma: "no-cache",
-      Expires: "0",
-      "x-api-key": apikey,
-    },
-  })
-  const data = await response.json()
-  return data
+  if (!url) throw new Error("CUENCAS URL is not defined")
+  return fetchWithHeaders(url)
 }
 
-export async function FetchCuencaVariacion() {
+export async function FetchCuencaVariacion(): Promise<unknown> {
   const url = process.env.VARIACION_CUENCA
-  const response = await fetch(url, {
-    headers: {
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-      Pragma: "no-cache",
-      Expires: "0",
-      "x-api-key": apikey,
-    },
-  })
-  const data = await response.json()
-  return data
+  if (!url) throw new Error("VARIACION_CUENCA URL is not defined")
+  return fetchWithHeaders(url)
 }
 
-export async function FetchEmbalsesVariacion() {
+export async function FetchEmbalsesVariacion(): Promise<unknown> {
   const url = process.env.VARIACION_EMBALSES
-  const response = await fetch(url, {
-    headers: {
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-      Pragma: "no-cache",
-      Expires: "0",
-      "x-api-key": apikey,
-    },
-  })
-  const data = await response.json()
-  return data
+  if (!url) throw new Error("VARIACION_EMBALSES URL is not defined")
+  return fetchWithHeaders(url)
 }
 
-export async function FetchEsp() {
+export async function FetchEsp(): Promise<unknown> {
   const url = process.env.ESP
-  const response = await fetch(url, {
-    headers: {
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-      Pragma: "no-cache",
-      Expires: "0",
-      "x-api-key": apikey,
-    },
-  })
-  const data = await response.json()
-  return data
+  if (!url) throw new Error("ESP URL is not defined")
+  return fetchWithHeaders(url)
 }
-export async function FetchPluvis() {
+
+export async function FetchPluvis(): Promise<unknown> {
   const url = process.env.PLUVIOMETROS
-  const response = await fetch(url, {
-    headers: {
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-      Pragma: "no-cache",
-      Expires: "0",
-      "x-api-key": apikey,
-    },
-  })
-  const data = await response.json()
-  return data
+  if (!url) throw new Error("PLUVIOMETROS URL is not defined")
+  return fetchWithHeaders(url)
 }
 
-export async function FetchEmbalses() {
+export async function FetchEmbalses(): Promise<unknown> {
   const url = process.env.EMBALSES
-  const response = await fetch(url, {
-    headers: {
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-      Pragma: "no-cache",
-      Expires: "0",
-      "x-api-key": apikey,
-    },
-  })
-  const data = await response.json()
-  return data
+  if (!url) throw new Error("EMBALSES URL is not defined")
+  return fetchWithHeaders(url)
 }
 
-export async function FetchPluvisGlob() {
+export async function FetchPluvisGlob(): Promise<unknown> {
   const url = process.env.PLUVIOMETROSGLOB
-  const response = await fetch(url, {
-    headers: {
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-      Pragma: "no-cache",
-      Expires: "0",
-      "x-api-key": apikey,
-    },
-  })
-  const data = await response.json()
-  return data
+  if (!url) throw new Error("PLUVIOMETROSGLOB URL is not defined")
+  return fetchWithHeaders(url)
 }

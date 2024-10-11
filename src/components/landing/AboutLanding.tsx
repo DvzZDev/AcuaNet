@@ -17,7 +17,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="f text-center font-NecoBold text-[40px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
+              className="text-center font-NecoBold text-[30px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
             >
               Conoce a Nuestro Equipo
             </motion.h1>
@@ -29,7 +29,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="mt-6 text-2xl leading-relaxed text-textprimary"
+              className="mt-6 text-base leading-relaxed text-textprimary md:text-2xl"
             >
               En AcuaNet, nos esforzamos por brindarte una experiencia intuitiva y
               agradable.
@@ -42,7 +42,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="mt-4 text-2xl leading-relaxed text-textprimary"
+              className="mt-4 text-base leading-relaxed text-textprimary md:text-2xl"
             >
               Queremos que conozcas a nuestro equipo y descubras cómo trabajamos para
               ofrecerte datos precisos y actualizados sobre los embalses. Haz clic aquí
@@ -62,7 +62,7 @@ function AboutLanding() {
                 <button
                   type="button"
                   aria-label="Conócenos"
-                  className="animate-infinite hover:animate-wiggle m-auto mt-6 rounded-lg bg-[#091c34] p-3 text-xl font-bold text-[#ffd700] transition-all hover:brightness-90"
+                  className="animate-infinite hover:animate-wiggle m-auto mt-6 rounded-lg bg-[#091c34] p-3 text-lg font-bold text-[#ffd700] transition-all hover:brightness-90 md:text-xl"
                 >
                   Conócenos!
                 </button>
@@ -81,8 +81,8 @@ function AboutLanding() {
                 viewport={{ once: true, amount: 0.8 }}
               >
                 <Image
-                  width={550}
-                  height={375}
+                  width={500}
+                  height={230}
                   src="/yo22.webp"
                   alt="Foto del creador de AcuaNet"
                   className="rounded-lg shadow-lg"
@@ -101,7 +101,7 @@ function AboutLanding() {
                 viewport={{ once: true, amount: 0.8 }}
                 className="absolute bottom-[-70px] left-4 right-[-15px] z-20 rounded-lg bg-[#0a2038] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]"
               >
-                <p className="text-xl text-white">
+                <p className="text-base text-white md:text-xl">
                   ¡Hola! Soy David, creador de AcuaNet. Te invito a conocer más sobre qué
                   me inspiró a crear AcuaNet.
                 </p>

@@ -14,7 +14,7 @@ function ContactLanding() {
         }}
         whileInView="animate"
         viewport={{ once: true, amount: 0.8 }}
-        className="text-center font-NecoBold text-[40px] font-black text-textsecondary sm:text-[50px]"
+        className="text-center font-NecoBold text-[30px] font-black text-textsecondary sm:text-[50px]"
       >
         Contactanos
       </motion.h1>
@@ -45,7 +45,7 @@ function ContactLanding() {
                 {"{' '}{' '}"}
               </svg>
             </div>
-            <span className="py-2 text-center text-lg md:text-2xl">
+            <span className="py-2 text-center text-base md:text-2xl">
               ¿Necesitas ayuda con la página?
             </span>
           </motion.div>
@@ -75,7 +75,7 @@ function ContactLanding() {
                 />
               </svg>
             </div>
-            <span className="py-2 text-center text-lg md:text-2xl">
+            <span className="py-2 text-center text-base md:text-2xl">
               ¿Hay algo que no debería estar ahí?
             </span>
           </motion.div>
@@ -101,7 +101,7 @@ function ContactLanding() {
                 <path d="m15.71 14.931-2.387-7.787-8.032-1.868-1.193 1.273.022.019.007-.007.175.161.001.001 5.049 4.642v2.564l-2.822.503-5.099-4.69-.202-.133L.02 10.898l2.464 7.854 7.908 1.899 21.99 22.073 5.453-5.434L16.35 15.724zM6.412 37.29l5.455 5.432 8.216-8.241-5.435-5.453zM47.98 18.694l-3.422-3.483-.989.972-4.086-4.101-.009-.008c-8.008-8.196-16.667-6.601-16.667-6.601l7.66 7.688-6.283 6.302 5.434 5.453 6.283-6.302 2.569 2.58-.975.958 3.421 3.482.999-.981.065.064 5.064-5.045-.031-.03.967-.948z" />
               </svg>
             </div>
-            <span className="py-2 text-center text-lg md:text-2xl">
+            <span className="py-2 text-center text-base md:text-2xl">
               ¿Tienes alguna sugerencia o comentario?
             </span>
           </motion.div>
@@ -132,7 +132,7 @@ function ContactLanding() {
                 />
               </svg>
             </div>
-            <span className="py-2 text-center text-lg md:text-2xl">
+            <span className="py-2 text-center text-base md:text-2xl">
               Te respondemos en menos de 48h
             </span>
           </motion.div>
@@ -150,7 +150,7 @@ function ContactLanding() {
             viewport={{ once: true, amount: 0.8 }}
             type="button"
             aria-label="Conócenos"
-            className="hover:animate-wiggle m-auto mt-3 rounded-lg bg-[#091c34] p-3 text-xl font-bold text-[#ffd700] hover:brightness-90"
+            className="hover:animate-wiggle rounded-lg m-auto mt-3 bg-[#091c34] p-3 text-lg md:text-xl font-bold text-[#ffd700] hover:brightness-90"
           >
             Formulario
           </motion.button>

@@ -33,7 +33,7 @@ function Bento(props: BentoProps) {
 
   return (
     <section className="flex min-h-full flex-col items-center justify-center bg-gradient-to-t from-bgcolor via-bgcolor to-transparent py-8 lg:h-full lg:py-0">
-      <h1 className="text-center font-NecoBold text-[40px] font-black text-textsecondary sm:text-[50px] md:pb-7">
+      <h1 className="text-center font-NecoBold text-[30px] font-black text-textsecondary sm:text-[50px] md:pb-7">
         Resumen Global
       </h1>
       {/* Div Global */}
@@ -58,14 +58,14 @@ function Bento(props: BentoProps) {
               key={españa.id}
               className="flex h-full w-full flex-col content-center justify-evenly rounded-xl text-center"
             >
-              <h2 className="text-6xl font-bold text-[#7387f9]">Reserva</h2>
+              <h2 className="text-4xl font-bold text-[#7387f9] md:text-6xl">Reserva</h2>
               <p
-                className={`mb-4 inline-block text-[9rem] font-bold leading-none ${colorReserva(españa.porcentaje_embalsado)}`}
+                className={`mb-4 inline-block text-6xl font-bold leading-none md:text-[9rem] ${colorReserva(españa.porcentaje_embalsado)}`}
               >
                 {`${españa.porcentaje_embalsado}`}
-                <strong className="text-[3rem]">%</strong>
+                <strong className="text-2xl md:text-[3rem]">%</strong>
               </p>
-              <h2 className="text-6xl font-bold text-[#7387f9]">Nacional</h2>
+              <h2 className="text-4xl font-bold text-[#7387f9] md:text-6xl">Nacional</h2>
             </div>
           ))}
         </motion.div>
@@ -116,10 +116,10 @@ function Bento(props: BentoProps) {
                   className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 ${getColor(cuenca.porcentaje_embalsada ?? 0)}`}
                 >
                   <div className="flex flex-col content-center items-center justify-center">
-                    <p className="text-[18px]">
+                    <p className="text-base md:text-[18px]">
                       {cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}
                     </p>
-                    <p className="text-[18px]">{`${cuenca.porcentaje_embalsada ?? 0} %`}</p>
+                    <p className="text-base md:text-[18px]">{`${cuenca.porcentaje_embalsada ?? 0} %`}</p>
                   </div>
                 </motion.div>
               </Link>

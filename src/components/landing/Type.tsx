@@ -34,7 +34,7 @@ function Type({ data }: TypeProps) {
           loop
         >
           <input
-            className="w-[210px] bg-transparent text-[22px] text-textprimary placeholder-slate-400 placeholder-opacity-40 focus:outline-none sm:w-[250px] md:w-[330px]"
+            className="w-[210px] bg-transparent text-[18px] text-textprimary placeholder-slate-400 placeholder-opacity-40 focus:outline-none sm:w-[250px] md:w-[330px] md:text-[22px]"
             type="text"
             value={type}
             onChange={handletype}
@@ -59,7 +59,7 @@ function Type({ data }: TypeProps) {
             initial="initial"
             animate="animate"
             variants={variants}
-            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-bgcolor text-xl text-textprimary"
+            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-bgcolor text-base text-textprimary md:text-xl"
           >
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <motion.li

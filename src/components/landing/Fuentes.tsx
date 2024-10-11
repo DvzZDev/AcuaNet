@@ -63,7 +63,7 @@ function Fuentes() {
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}
-          className="pt-1 text-center font-NecoBold text-[40px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
+          className="pt-1 text-center font-NecoBold text-[30px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
         >
           Fuentes Oficiales
         </motion.h1>
@@ -80,7 +80,7 @@ function Fuentes() {
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}
-          className="mt-5 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-6 text-3xl text-textprimary sm:py-10"
+          className="mt-5 flex w-full justify-center border-y border-[hsl(237,50%,20%)] py-6 text-2xl text-textprimary sm:py-10 md:text-3xl"
         >
           <motion.h1
             initial="initial"

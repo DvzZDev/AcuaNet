@@ -3,7 +3,7 @@ import { Link } from "next-view-transitions"
 function Footer() {
   return (
     <footer className="flex h-[12rem] flex-col items-center justify-center bg-[#040513]">
-      <nav className="mx-5 flex flex-wrap justify-center gap-3 text-wrap text-xl text-textfooter">
+      <nav className="mx-5 flex flex-wrap justify-center gap-3 text-wrap text-lg text-textfooter md:text-xl">
         <Link href="/cuencas">
           <span className="inline-block transition-all hover:scale-105 hover:text-textsecondary">
             Cuencas
@@ -92,7 +92,7 @@ function Footer() {
         </Link>
       </div>
 
-      <div className="text-xl text-textfooter">
+      <div className="text-base text-textfooter md:text-xl">
         <span>Hecho con </span>
         <span className="animate-pulse">❤️</span>
         <span> por @DvzZDev</span>

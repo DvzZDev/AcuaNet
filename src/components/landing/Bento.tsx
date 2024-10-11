@@ -3,20 +3,10 @@ import "@fontsource-variable/comfortaa"
 import { Link } from "next-view-transitions"
 import { motion } from "framer-motion"
 import type { BentoProps } from "@/types"
-
-function getColor(porcentaje: number) {
-  if (porcentaje >= 80) {
-    return "bg-blue-200 text-blue-900 font-bold text-[18px]"
-  } else if (porcentaje >= 60) {
-    return "bg-green-200 text-green-900 font-bold text-[18px]"
-  } else if (porcentaje >= 40) {
-    return "bg-yellow-200 text-yellow-900 font-bold text-[18px]"
-  } else if (porcentaje >= 20) {
-    return "bg-orange-200 text-orange-950 font-bold text-[18px]"
-  } else {
-    return "bg-red-200 text-red-900 font-bold text-[18px]"
-  }
-}
+import { getMoonPhase } from "@/lib/GetMoonPhase"
+import { translateMoonPhase } from "@/lib/TranslateMoon"
+import { getColor } from "@/lib/ColorEsp"
+import { colorReserva } from "@/lib/ColorReserva"
 
 function Bento(props: BentoProps) {
   const cuencas = props.cuencas
@@ -70,7 +60,7 @@ function Bento(props: BentoProps) {
             >
               <h2 className="text-6xl font-bold text-[#7387f9]">Reserva</h2>
               <p
-                className={`mb-4 inline-block text-[9rem] font-bold leading-none ${españa.porcentaje_embalsado > 50 ? "text-green-500" : "text-red-500"}`}
+                className={`mb-4 inline-block text-[9rem] font-bold leading-none ${colorReserva(españa.porcentaje_embalsado)}`}
               >
                 {`${españa.porcentaje_embalsado}`}
                 <strong className="text-[3rem]">%</strong>
@@ -150,11 +140,22 @@ function Bento(props: BentoProps) {
           }}
           whileInView="animate"
           viewport={{ once: true, margin: "-70px" }}
-          className="col-span-6 rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm"
+          className="relative col-span-6 overflow-hidden rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm"
         >
-          <h1 className="p-2 text-center text-3xl font-bold text-[#7387f9]">
-            TODO: TABLAS LUNARES
+          <h1 className="absolute left-1/2 z-10 -translate-x-1/2 transform p-2 text-center text-xl font-bold text-yellow-500 md:text-3xl">
+            {translateMoonPhase()}
           </h1>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source
+              src={getMoonPhase()}
+              type="video/mp4"
+            />
+          </video>
         </motion.div>
 
         {/* Cuarta Coluna */}

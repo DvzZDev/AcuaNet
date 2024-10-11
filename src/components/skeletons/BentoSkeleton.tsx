@@ -40,59 +40,9 @@ function SkeletonBento() {
         {/* Tercera Col */}
         <div className="col-span-6 rounded-lg bg-blue-950 bg-opacity-70 backdrop-blur-sm">
           <h1 className="p-2 text-center text-3xl font-bold text-[#7387f9]">
-            Pluviometros últimas horas (l/m2)
+            Fase Lunar
           </h1>
-          <div className="flex flex-col content-center justify-center px-2 text-[15px] lg:text-[16px]">
-            <table className="text-textprimary">
-              <thead className="text-left text-[#47ff63ab]">
-                <tr>
-                  <th className="px-1">Pluviometro</th>
-                  <th className="px-1 text-right">Prov</th>
-                  <th className="w-12 px-1 text-right">1h</th>
-                  <th className="w-12 px-1 text-right">6h</th>
-                  <th className="w-12 px-1 text-right">12h</th>
-                  <th className="w-12 px-1 text-right">24h</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Array.from({ length: 8 }).map((_, index) => (
-                  <tr
-                    className="animate-pulse transition-all"
-                    key={index}
-                  >
-                    <td className="py-2">
-                      <div className="h-4 w-24 rounded-md bg-blue-800"></div>
-                    </td>
-                    <td className="py-2">
-                      <div className="flex justify-end">
-                        <div className="h-4 w-16 rounded-md bg-blue-800"></div>
-                      </div>
-                    </td>
-                    <td className="py-2">
-                      <div className="flex justify-end">
-                        <div className="h-4 w-8 rounded-md bg-blue-800"></div>
-                      </div>
-                    </td>
-                    <td className="py-2">
-                      <div className="flex justify-end">
-                        <div className="h-4 w-8 rounded-md bg-blue-800"></div>
-                      </div>
-                    </td>
-                    <td className="py-2">
-                      <div className="flex justify-end">
-                        <div className="h-4 w-8 rounded-md bg-blue-800"></div>
-                      </div>
-                    </td>
-                    <td className="py-2">
-                      <div className="flex justify-end">
-                        <div className="h-4 w-8 rounded-md bg-blue-800"></div>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <div className="flex h-full w-full flex-col content-center justify-center px-2 text-[15px] lg:text-[16px]"></div>
         </div>
 
         {/* Cuarta Col */}

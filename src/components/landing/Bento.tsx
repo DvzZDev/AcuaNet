@@ -51,12 +51,12 @@ function Bento(props: BentoProps) {
           }}
           whileInView="animate"
           viewport={{ once: true, margin: "-70px" }}
-          className="animate-once animate-ease-in-out col-span-4 row-span-1 flex justify-center text-wrap rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm lg:col-span-4"
+          className="animate-once animate-ease-in-out col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#0a0d30] bg-opacity-90 shadow-2xl shadow-[#333668] backdrop-blur-sm lg:col-span-4"
         >
           {esp.map((españa) => (
             <div
               key={españa.id}
-              className="flex h-full w-full flex-col content-center justify-evenly rounded-lg text-center"
+              className="flex h-full w-full flex-col content-center justify-evenly rounded-xl text-center"
             >
               <h2 className="text-6xl font-bold text-[#7387f9]">Reserva</h2>
               <p
@@ -84,7 +84,7 @@ function Bento(props: BentoProps) {
           whileInView="animate"
           viewport={{ once: true, margin: "-70px" }}
           id="bd2"
-          className="col-span-6 row-span-1 flex min-h-full min-w-full content-center justify-center rounded-lg bg-[#0a0d30] bg-opacity-90 p-2 backdrop-blur-sm"
+          className="col-span-6 row-span-1 flex min-h-full min-w-full content-center justify-center rounded-xl bg-[#0a0d30] bg-opacity-90 p-2 shadow-2xl shadow-[#333668] backdrop-blur-sm"
         >
           <motion.div
             initial="initial"
@@ -140,7 +140,7 @@ function Bento(props: BentoProps) {
           }}
           whileInView="animate"
           viewport={{ once: true, margin: "-70px" }}
-          className="relative col-span-6 overflow-hidden rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm"
+          className="relative col-span-6 overflow-hidden rounded-xl bg-[#0a0d30] bg-opacity-90 shadow-2xl shadow-[#333668] backdrop-blur-sm"
         >
           <h1 className="absolute left-1/2 z-10 -translate-x-1/2 transform p-2 text-center text-xl font-bold text-yellow-500 md:text-4xl">
             {translateMoonPhase()}
@@ -171,7 +171,7 @@ function Bento(props: BentoProps) {
           }}
           whileInView="animate"
           viewport={{ once: true, margin: "-70px" }}
-          className="col-span-4 rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm"
+          className="col-span-4 rounded-xl bg-[#0a0d30] bg-opacity-90 shadow-2xl shadow-[#333668] backdrop-blur-sm"
         >
           <h1 className="p-2 text-center text-3xl font-bold text-[#7387f9]">
             Mayor Variacion Semanal

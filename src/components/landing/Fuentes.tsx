@@ -94,7 +94,7 @@ function Fuentes() {
           >
             Datos Actualizados Cada
             <strong className="ml-2 content-center font-bold text-[#ffd700]">
-              6 horas
+              24 horas
             </strong>
           </motion.h1>
         </motion.div>

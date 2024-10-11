@@ -16,20 +16,6 @@ export const theme = {
     xl: "1280px",
     "2xl": "1536px",
   },
-  safelist: [
-    "bg-blue-200",
-    "text-blue-900",
-    "bg-green-200",
-    "text-green-900",
-    "bg-yellow-200",
-    "text-yellow-900",
-    "bg-orange-200",
-    "text-orange-950",
-    "bg-red-200",
-    "text-red-900",
-    "font-bold",
-    "text-[18px]",
-  ],
   extend: {
     animationDelay: {
       400: "400ms",
@@ -71,3 +57,26 @@ export const experimental = {
 }
 
 export const darkMode = "class"
+
+export const purge = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/components/(modal|button|image|input|spinner|dropdown|accordion).js",
+  ],
+  safelist: [
+    "bg-blue-200",
+    "text-blue-900",
+    "bg-green-200",
+    "text-green-900",
+    "bg-yellow-200",
+    "text-yellow-900",
+    "bg-orange-200",
+    "text-orange-950",
+    "bg-red-200",
+    "text-red-900",
+    "font-bold",
+    "text-[18px]",
+  ],
+}

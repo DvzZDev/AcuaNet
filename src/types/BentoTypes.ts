@@ -1,37 +1,28 @@
 export interface VariacionCuencas {
-  cuenca: string
-  porcentaje_variacion: number
+  cuenca: string | null
+  porcentaje_variacion: number | null
 }
 
 export interface VariacionEmbalses {
-  nombre_embalse: string
-  variacion_ultima_semanapor: number
+  nombre_embalse: string | null
+  variacion_ultima_semanapor: number | null
 }
 
-export interface Cuenca {
-  find(arg0: (cuenca: any) => boolean): unknown
-  map(
-    arg0: (cuenca: Cuenca, index: number) => import("react").JSX.Element
-  ): import("react").ReactNode
-  id_cuenca: number
-  fecha_modificacion: string
+interface Cuenca {
   cuenca: string
-  capacidad: number
-  embalsada: number
-  variacion: number
-  porcentaje_embalsada: number
-  porcentaje_variacion: number
-  foto: string
+  fecha_modificacion: Date | null
+  capacidad: number | null
+  embalsada: number | null
+  variacion: number | null
+  porcentaje_embalsada: number | null
+  porcentaje_variacion: number | null
+  foto: string | null
 }
 
-export interface Esp {
-  id: number
-  embalsado: number
+interface Esp {
+  id: string
   porcentaje_embalsado: number
-  capacidad_tot: number
-  misma_semana_ly: number
-  misma_semana_10y: number
-  variacion_semanal: number
+  fecha: string | null
 }
 
 export interface BentoProps {
@@ -39,7 +30,6 @@ export interface BentoProps {
   variacionCuencas: VariacionCuencas[]
   variacionEmbalses: VariacionEmbalses[]
   esp: Esp[]
-  pluvis: number[]
 }
 
 export interface Embalses {

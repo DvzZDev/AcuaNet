@@ -113,7 +113,7 @@ function Bento(props: BentoProps) {
             {cuencas.map((cuenca, index) => (
               <Link
                 href={`/cuencas/${cuenca.cuenca}`}
-                key={cuenca.id_cuenca}
+                key={cuenca.cuenca}
               >
                 <motion.div
                   whileTap={{ scale: 0.9, rotate: -10, transition: { duration: 0.2 } }}
@@ -123,13 +123,13 @@ function Bento(props: BentoProps) {
                   whileInView="animate"
                   viewport={{ once: true, margin: "200px" }}
                   whileHover={{ scale: 1.1 }}
-                  className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 ${getColor(cuenca.porcentaje_embalsada)}`}
+                  className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 ${getColor(cuenca.porcentaje_embalsada ?? 0)}`}
                 >
                   <div className="flex flex-col content-center items-center justify-center">
                     <p className="text-[18px]">
                       {cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}
                     </p>
-                    <p className="text-[18px]">{`${cuenca.porcentaje_embalsada} %`}</p>
+                    <p className="text-[18px]">{`${cuenca.porcentaje_embalsada ?? 0} %`}</p>
                   </div>
                 </motion.div>
               </Link>
@@ -206,7 +206,9 @@ function Bento(props: BentoProps) {
                   >
                     <td>
                       <Link href={`/cuencas/${variacion.cuenca}`}>
-                        <p>{variacion.cuenca.replace(/_/g, " ")}</p>
+                        <p>
+                          {variacion.cuenca ? variacion.cuenca.replace(/_/g, " ") : ""}
+                        </p>
                       </Link>
                     </td>
                     <td className="w-[50%] text-right lg:w-auto">{`${variacion.porcentaje_variacion}`}</td>

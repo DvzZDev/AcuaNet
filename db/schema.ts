@@ -5,7 +5,6 @@ import {
   doublePrecision,
   timestamp,
   primaryKey,
-  date,
 } from "drizzle-orm/pg-core"
 
 export const Cuencas = pgTable(
@@ -38,10 +37,10 @@ export const Embalses = pgTable(
     variacion_ultima_semana: doublePrecision("variacion_ultima_semana"),
     variacion_ultima_semanapor: doublePrecision("variacion_ultima_semanapor"),
     capacidad_total: integer("capacidad_total"),
-    misma_semana_ultimoAno: doublePrecision("misma_semana_ultimo_año"),
-    misma_semana_ultimoAnopor: doublePrecision("misma_semana_ultimo_añopor"),
-    misma_semana_10Años: doublePrecision("misma_semana_10años"),
-    misma_semana_10Añospor: doublePrecision("misma_semana_10añospor"),
+    misma_semana_ultimo_año: doublePrecision("misma_semana_ultimo_año"),
+    misma_semana_ultimo_añopor: doublePrecision("misma_semana_ultimo_añopor"),
+    misma_semana_10años: doublePrecision("misma_semana_10años"),
+    misma_semana_10añospor: doublePrecision("misma_semana_10añospor"),
   },
   (table) => ({
     pk: primaryKey(table.nombre_embalse),
@@ -52,7 +51,7 @@ export const España = pgTable(
   "datos_españa",
   {
     porcentaje_embalsado: integer("porcentaje_embalsado").notNull(),
-    fecha: date("fecha"),
+    fecha: timestamp("fecha", { withTimezone: false }),
     id: varchar("id", { length: 255 }).notNull(),
   },
   (table) => ({

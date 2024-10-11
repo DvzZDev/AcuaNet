@@ -8,7 +8,7 @@ export interface VariacionEmbalses {
   variacion_ultima_semanapor: number | null
 }
 
-interface Cuenca {
+export interface Cuenca {
   cuenca: string
   fecha_modificacion: Date | null
   capacidad: number | null
@@ -19,10 +19,10 @@ interface Cuenca {
   foto: string | null
 }
 
-interface Esp {
+export interface Esp {
   id: string
   porcentaje_embalsado: number
-  fecha: string | null
+  fecha: Date | null
 }
 
 export interface BentoProps {
@@ -33,19 +33,16 @@ export interface BentoProps {
 }
 
 export interface Embalses {
-  filter(arg0: (elemento: Embalses) => boolean): unknown
-  find(arg0: (embalse: any) => boolean): unknown
-  id_embalse: number
-  fecha_modificacion: string
-  nombre_embalse: string
-  nombre_cuenca: string
-  agua_embalsada: number
-  agua_embalsadapor: number
-  variacion_ultima_semana: number
-  variacion_ultima_semanapor: number
-  capacidad_total: number
-  misma_semana_ultimo_año: number
-  misma_semana_ultimo_añopor: number
-  misma_semana_10años: number
-  misma_semana_10añospor: number
+  fecha_modificacion: Date | null
+  nombre_embalse: string | null
+  nombre_cuenca: string | null
+  agua_embalsada: number | null
+  agua_embalsadapor: number | null
+  variacion_ultima_semana: number | null
+  variacion_ultima_semanapor: number | null
+  capacidad_total: number | null
+  misma_semana_ultimo_año: number | null
+  misma_semana_ultimo_añopor: number | null
+  misma_semana_10años: number | null
+  misma_semana_10añospor: number | null
 }

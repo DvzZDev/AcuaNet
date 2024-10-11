@@ -128,7 +128,8 @@ function Bento(props: BentoProps) {
         </motion.div>
 
         {/* Tercera Col */}
-        <motion.div
+        <motion.a
+          href="/luna"
           initial="initial"
           variants={{
             initial: { opacity: 0, y: 100 },
@@ -156,7 +157,7 @@ function Bento(props: BentoProps) {
               type="video/mp4"
             />
           </video>
-        </motion.div>
+        </motion.a>
 
         {/* Cuarta Coluna */}
         <motion.div

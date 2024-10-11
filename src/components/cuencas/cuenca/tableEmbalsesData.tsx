@@ -8,8 +8,7 @@ async function TableEmbalsesData({ url }: { url: { cuencaid: string } }) {
   const decodedCuencaid = decodeURIComponent(cuencaid)
   const resEmbalse = embalse.filter(
     (emb: Embalses) =>
-      emb.nombre_cuenca ??
-      ""
+      (emb.nombre_cuenca ?? "")
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .replace(/ /g, "_") === decodedCuencaid

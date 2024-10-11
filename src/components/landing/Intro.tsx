@@ -59,7 +59,6 @@ async function Intro() {
       <div className="animate-fade-up animate-delay-300 z-30">
         <Type data={datares} />
       </div>
-      <div className="animate-jump-in animate-delay-500 mt-24 h-[15rem] max-w-[25rem] px-6 text-center opacity-90"></div>
     </section>
   )
 }

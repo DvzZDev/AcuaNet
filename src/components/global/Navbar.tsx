@@ -143,6 +143,12 @@ export default function Navbar({ data }: { data: string[] }) {
               Embalses
             </Link>
             <Link
+              href="/luna"
+              className="glow transition-all"
+            >
+              Fases Lunares
+            </Link>
+            <Link
               href="/quienesSomos"
               className="glow text-nowrap transition-all"
             >
@@ -188,11 +194,11 @@ export default function Navbar({ data }: { data: string[] }) {
             Embalses
           </Link>
           <Link
-            href="/pluviometros"
+            href="/luna"
             onClick={closeMenu}
             className="animate-fade-down animate-delay-300 transition-all hover:text-green-300"
           >
-            Pluviómetros
+            Fases Lunares
           </Link>
           <Link
             href="/quienesSomos"

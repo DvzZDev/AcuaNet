@@ -12,12 +12,12 @@ export const Cuencas = pgTable(
   "datos_cuencas",
   {
     cuenca: varchar("cuenca", { length: 50 }).notNull(),
-    fechaModificacion: timestamp("fecha_modificacion", { withTimezone: false }),
+    fecha_modificacion: timestamp("fecha_modificacion", { withTimezone: false }),
     capacidad: integer("capacidad"),
     embalsada: integer("embalsada"),
     variacion: doublePrecision("variacion"),
-    porcentajeEmbalsada: doublePrecision("porcentaje_embalsada"),
-    porcentajeVariacion: doublePrecision("porcentaje_variacion"),
+    porcentaje_embalsada: doublePrecision("porcentaje_embalsada"),
+    porcentaje_variacion: doublePrecision("porcentaje_variacion"),
     foto: varchar("foto", { length: 255 }),
   },
   (table) => ({
@@ -28,30 +28,30 @@ export const Cuencas = pgTable(
 export const Embalses = pgTable(
   "datos_embalses",
   {
-    fechaModificacion: timestamp("fecha_modificacion", {
+    fecha_modificacion: timestamp("fecha_modificacion", {
       withTimezone: false,
     }).defaultNow(),
-    nombreEmbalse: varchar("nombre_embalse", { length: 255 }).notNull(),
-    nombreCuenca: varchar("nombre_cuenca", { length: 255 }),
-    aguaEmbalsada: integer("agua_embalsada"),
-    aguaEmbalsadapor: doublePrecision("agua_embalsadapor"),
-    variacionUltimaSemana: doublePrecision("variacion_ultima_semana"),
-    variacionUltimaSemanapor: doublePrecision("variacion_ultima_semanapor"),
-    capacidadTotal: integer("capacidad_total"),
-    mismaSemanaUltimoAno: doublePrecision("misma_semana_ultimo_año"),
-    mismaSemanaUltimoAnopor: doublePrecision("misma_semana_ultimo_añopor"),
-    mismaSemana10Años: doublePrecision("misma_semana_10años"),
-    mismaSemana10Añospor: doublePrecision("misma_semana_10añospor"),
+    nombre_embalse: varchar("nombre_embalse", { length: 255 }).notNull(),
+    nombre_cuenca: varchar("nombre_cuenca", { length: 255 }),
+    agua_embalsada: integer("agua_embalsada"),
+    agua_embalsadapor: doublePrecision("agua_embalsadapor"),
+    variacion_ultima_semana: doublePrecision("variacion_ultima_semana"),
+    variacion_ultima_semanapor: doublePrecision("variacion_ultima_semanapor"),
+    capacidad_total: integer("capacidad_total"),
+    misma_semana_ultimoAno: doublePrecision("misma_semana_ultimo_año"),
+    misma_semana_ultimoAnopor: doublePrecision("misma_semana_ultimo_añopor"),
+    misma_semana_10Años: doublePrecision("misma_semana_10años"),
+    misma_semana_10Añospor: doublePrecision("misma_semana_10añospor"),
   },
   (table) => ({
-    pk: primaryKey(table.nombreEmbalse),
+    pk: primaryKey(table.nombre_embalse),
   })
 )
 
-export const Espana = pgTable(
+export const España = pgTable(
   "datos_españa",
   {
-    porcentajeEmbalsado: integer("porcentaje_embalsado").notNull(),
+    porcentaje_embalsado: integer("porcentaje_embalsado").notNull(),
     fecha: date("fecha"),
     id: varchar("id", { length: 255 }).notNull(),
   },

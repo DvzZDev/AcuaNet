@@ -142,7 +142,7 @@ function Bento(props: BentoProps) {
           viewport={{ once: true, margin: "-70px" }}
           className="relative col-span-6 overflow-hidden rounded-lg bg-[#0a0d30] bg-opacity-90 backdrop-blur-sm"
         >
-          <h1 className="absolute left-1/2 z-10 -translate-x-1/2 transform p-2 text-center text-xl font-bold text-yellow-500 md:text-3xl">
+          <h1 className="absolute left-1/2 z-10 -translate-x-1/2 transform p-2 text-center text-xl font-bold text-yellow-500 md:text-4xl">
             {translateMoonPhase()}
           </h1>
           <video

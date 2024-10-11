@@ -12,7 +12,7 @@ import {
 import { mkConfig, generateCsv, download } from "export-to-csv"
 import { motion } from "framer-motion"
 import { Row } from "@tanstack/react-table"
-import { Embalses } from "@/types/Types"
+import { Embalses } from "@/types"
 
 export default function TableEmbalses(props: { dataFetched: Embalses[]; link: string }) {
   const resdata = props.link

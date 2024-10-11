@@ -1,6 +1,6 @@
 import TableEmbalses from "./tableEmbalses"
 import { GetEmbalses } from "db/queries/select"
-import type { Embalses } from "@/types/Types"
+import type { Embalses } from "@/types"
 
 async function TableEmbalsesData({ url }: { url: { cuencaid: string } }) {
   const embalse = await GetEmbalses()

@@ -1,7 +1,7 @@
 "use client"
 import { Link } from "next-view-transitions"
 import { motion } from "framer-motion"
-import type { Cuenca } from "@/types/Types"
+import type { Cuenca } from "@/types"
 
 const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
   const cuencas = data

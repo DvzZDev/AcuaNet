@@ -13,7 +13,7 @@ import {
 import { mkConfig, generateCsv, download } from "export-to-csv"
 import { motion } from "framer-motion"
 import { Link } from "next-view-transitions"
-import type { Embalses } from "@/types/Types"
+import type { Embalses } from "@/types"
 
 export default function TableData({ props: resdata }: { props: Embalses[] }) {
   const columns = useMemo(

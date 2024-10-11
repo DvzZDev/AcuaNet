@@ -2,7 +2,7 @@
 import EmbalseGrafico from "./Grafico"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Cuenca } from "@/types/Types"
+import { Cuenca } from "@/types"
 
 function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } } }) {
   const cuenca = props.data

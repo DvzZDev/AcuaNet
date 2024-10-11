@@ -2,7 +2,7 @@
 import EmbalseGrafico from "../cuencas/Grafico"
 import { Link } from "next-view-transitions"
 import { motion } from "framer-motion"
-import { Embalses } from "@/types/Types"
+import { Embalses } from "@/types"
 
 function EmbalseContent({ data }: { data: Embalses }) {
   return (

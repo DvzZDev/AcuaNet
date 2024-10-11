@@ -41,7 +41,7 @@ function Fuentes() {
     },
     tablet: {
       breakpoint: { max: 1294, min: 464 },
-      items: 2,
+      items: 3,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },

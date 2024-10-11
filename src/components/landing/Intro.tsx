@@ -1,7 +1,6 @@
 import "@fontsource-variable/onest"
 import Type from "./Type"
 import nombreEmbalses from "../../lib/nombresEmbalses.json"
-import Image from "next/image"
 
 async function Intro() {
   const datares = nombreEmbalses
@@ -45,13 +44,13 @@ async function Intro() {
         </svg>
       </div>
       <div className="flex flex-col xl:w-[60%]">
-        <strong className="animate-fade-up animate-delay-100 mb-4 w-full text-center font-NecoBold text-[64px] leading-none text-textsecondary sm:text-[5rem]">
+        <strong className="animate-fade-up animate-delay-100 mb-4 w-full text-center font-NecoBold text-[64px] leading-none text-textsecondary sm:text-[4rem] 2xl:text-[5rem]">
           AcuaNet
         </strong>
 
-        <h1 className="animate-fade-up animate-delay-200 h-auto max-w-80 px-4 text-center text-[33px] text-[#fbffb8] sm:max-w-full sm:text-[40px] lg:text-[3rem]">
-          Consulta las mediciones hidrográficas de España en un solo
-          <span className="text-[33px] font-bold text-textsecondary sm:text-[40px] lg:text-[3rem]">
+        <h1 className="animate-fade-up animate-delay-200 h-auto max-w-80 px-4 text-center text-[33px] text-[#fbffb8] sm:max-w-full sm:text-[35px] 2xl:text-[3rem]">
+          Consulta el estado de tu embalse favorito con un solo <br />
+          <span className="text-[33px] font-bold text-textsecondary sm:text-[35px] 2xl:text-[3rem]">
             {" "}
             click
           </span>
@@ -60,18 +59,7 @@ async function Intro() {
       <div className="animate-fade-up animate-delay-300 z-30">
         <Type data={datares} />
       </div>
-      <div className="animate-jump-in animate-delay-500 mt-24 h-[15rem] w-[12rem] opacity-90">
-        <Image
-          src="/guss.webp"
-          alt="image from a separator"
-          width={500}
-          height={500}
-          layout="responsive"
-          objectFit="cover"
-          draggable={false}
-          className="animate-duration-2000 animate-infinite animate-pulse"
-        />
-      </div>
+      <div className="animate-jump-in animate-delay-500 mt-24 h-[15rem] max-w-[25rem] px-6 text-center opacity-90"></div>
     </section>
   )
 }

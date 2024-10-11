@@ -2,27 +2,14 @@
 import { Link } from "next-view-transitions"
 import { motion } from "framer-motion"
 import type { Cuenca } from "@/types"
+import { ColorCuencas } from "@/lib/ColorCuencas"
 
 const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
   const cuencas = data
 
-  function getColor(porcentaje: number) {
-    if (porcentaje >= 80) {
-      return "bg-blue-200 text-blue-900 font-bold text-[18px]"
-    } else if (porcentaje >= 60) {
-      return "bg-green-200 text-green-900 font-bold text-[18px]"
-    } else if (porcentaje >= 40) {
-      return "bg-yellow-200 text-yellow-900 font-bold text-[18px]"
-    } else if (porcentaje >= 20) {
-      return "bg-orange-200 text-orange-950 font-bold text-[18px]"
-    } else {
-      return "bg-red-200 text-red-900 font-bold text-[18px]"
-    }
-  }
-
   return (
     <section className="flex h-full justify-center bg-bgcolor">
-      <div className="m-10 mt-2 grid min-h-[40rem] w-[65rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
+      <div className="m-10 mt-2 grid min-h-[33rem] w-[55rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
         {cuencas.map((cuenca, index: number) => (
           <>
             <Link href={`/cuencas/${cuenca.cuenca}`}>
@@ -49,7 +36,7 @@ const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
                 whileInView="animate"
                 whileHover="hover"
                 viewport={{ once: true }}
-                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.52rem] ${getColor(cuenca.porcentaje_embalsada ?? 0)}`}
+                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.52rem] ${ColorCuencas(cuenca.porcentaje_embalsada ?? 0)}`}
                 key={cuenca.cuenca}
               >
                 <div className="flex flex-col content-center items-center justify-center p-2">

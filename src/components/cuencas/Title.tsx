@@ -1,6 +1,6 @@
-import { FetchCuencas } from "@/lib/data"
+import { GetCuencas } from "db/queries/select"
 async function Title(url: { url: { cuencaid: string } }) {
-  const cuenca = await FetchCuencas()
+  const cuenca = await GetCuencas()
   const cuencaid = url.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
   const decodedCuencaidNM = decodedCuencaid

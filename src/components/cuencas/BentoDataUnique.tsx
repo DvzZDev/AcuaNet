@@ -1,8 +1,8 @@
-import { FetchCuencas } from "@/lib/data"
+import { GetCuencas } from "db/queries/select"
 import BentoDist from "./BentoDist"
-import { Cuenca } from "@/types/BentoTypes"
+import { Cuenca } from "@/types/Types"
 async function BentoDataUnique(params: { url: { cuencaid: string } }) {
-  const cuenca = await FetchCuencas()
+  const cuenca = await GetCuencas()
   return (
     <BentoDist
       params={params}

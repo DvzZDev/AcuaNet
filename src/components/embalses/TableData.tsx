@@ -1,11 +1,11 @@
-import { FetchEmbalses } from "@/lib/data"
+import { GetEmbalses } from "db/queries/select"
 import Table from "@/components/embalses/TableEmbalsesGlob"
 
 async function Tabledata() {
-  const embalses = await FetchEmbalses()
+  const embalses = await GetEmbalses()
   return (
     <div className="flex justify-center">
-      <Table props={Array.isArray(embalses) ? embalses : [embalses]} />
+      <Table props={embalses} />
     </div>
   )
 }

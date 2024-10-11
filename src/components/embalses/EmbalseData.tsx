@@ -1,9 +1,8 @@
-import { FetchEmbalses } from "@/lib/data"
 import TitleEmb from "./TitleEmb"
+import { GetEmbalses } from "db/queries/select"
 import Divider from "../cuencas/Divider"
 import EmbalseContent from "./EmbalseContent"
 import NotFound from "@/app/not-found"
-import { Embalses } from "@/types/BentoTypes"
 
 export interface Embalse {
   id_embalse: number
@@ -32,7 +31,7 @@ interface EmbalseDataProps {
 }
 
 async function EmbalseData({ url }: EmbalseDataProps) {
-  const embalses = await FetchEmbalses()
+  const embalses = await GetEmbalses()
   const decodedEmbalseid = decodeURIComponent(url.embalseid)
   const resEmbalse = embalses.find(
     (embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase()
@@ -44,9 +43,9 @@ async function EmbalseData({ url }: EmbalseDataProps) {
 
   return (
     <>
-      <TitleEmb data={resEmbalse as { nombre_embalse: string }} />
+      <TitleEmb data={resEmbalse} />
       <Divider />
-      <EmbalseContent data={resEmbalse as Embalses} />
+      <EmbalseContent data={resEmbalse} />
     </>
   )
 }

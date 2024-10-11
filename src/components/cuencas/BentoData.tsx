@@ -1,15 +1,13 @@
-import { Cuenca } from "@/types/BentoTypes"
 import BentoCuencas from "./BentoCuencas"
-import { FetchCuencas } from "@/lib/data"
+import { GetCuencas } from "db/queries/select"
 
 export const revalidate = 60
 export const dynamic = "force-dynamic"
 export const fetchCache = "force-no-store"
 
 async function BentoData() {
-  const cuencas = await FetchCuencas()
-
-  return <BentoCuencas data={cuencas as unknown as Cuenca} />
+  const cuencas = await GetCuencas()
+  return <BentoCuencas data={cuencas} />
 }
 
 export default BentoData

@@ -11,25 +11,10 @@ import {
 } from "@tanstack/react-table"
 import { mkConfig, generateCsv, download } from "export-to-csv"
 import { motion } from "framer-motion"
-import { Row } from "@tanstack/react-table" // Importar el tipo Row de TanStack Table
+import { Row } from "@tanstack/react-table"
+import { Embalses } from "@/types/Types"
 
-interface EmbalseTableProps {
-  id_embalse: number
-  fecha_modificacion: string
-  nombre_embalse: string
-  nombre_cuenca: string
-  agua_embalsada: number
-  agua_embalsadapor: number
-  variacion_ultima_semana: number
-  variacion_ultima_semanapor: number
-  capacidad_total: number
-  misma_semana_ultimo_año: number
-  misma_semana_ultimo_añopor: number
-  misma_semana_10años: number
-  misma_semana_10añospor: number
-}
-
-export default function TableEmbalses(props: { dataFetched: []; link: string }) {
+export default function TableEmbalses(props: { dataFetched: Embalses[]; link: string }) {
   const resdata = props.link
   const columns = useMemo(
     () => [
@@ -84,7 +69,7 @@ export default function TableEmbalses(props: { dataFetched: []; link: string }) 
     decimalSeparator: ".",
     useKeysAsHeaders: true,
   })
-  const exportExcel = (rows: Row<EmbalseTableProps>[]): void => {
+  const exportExcel = (rows: Row<Embalses>[]): void => {
     const rowData = rows.map((row) => row.original)
     const csv = generateCsv(csvConfig)(rowData as unknown as { [k: string]: never }[])
     download(csvConfig)(csv)

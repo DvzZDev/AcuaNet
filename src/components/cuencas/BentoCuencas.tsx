@@ -1,9 +1,9 @@
 "use client"
 import { Link } from "next-view-transitions"
 import { motion } from "framer-motion"
-import type { Cuenca } from "@/types/BentoTypes"
+import type { Cuenca } from "@/types/Types"
 
-const BentoCuencas = ({ data }: { data: Cuenca }) => {
+const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
   const cuencas = data
 
   function getColor(porcentaje: number) {
@@ -49,7 +49,7 @@ const BentoCuencas = ({ data }: { data: Cuenca }) => {
                 whileInView="animate"
                 whileHover="hover"
                 viewport={{ once: true }}
-                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.52rem] ${getColor(cuenca.porcentaje_embalsada)}`}
+                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.52rem] ${getColor(cuenca.porcentaje_embalsada ?? 0)}`}
                 key={cuenca.cuenca}
               >
                 <div className="flex flex-col content-center items-center justify-center p-2">

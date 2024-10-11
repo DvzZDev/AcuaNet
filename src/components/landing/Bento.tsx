@@ -2,7 +2,7 @@
 import "@fontsource-variable/comfortaa"
 import { Link } from "next-view-transitions"
 import { motion } from "framer-motion"
-import type { BentoProps } from "@/types/BentoTypes"
+import type { BentoProps } from "@/types/Types"
 
 function getColor(porcentaje: number) {
   if (porcentaje >= 80) {

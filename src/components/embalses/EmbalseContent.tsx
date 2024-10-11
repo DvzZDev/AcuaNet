@@ -2,7 +2,7 @@
 import EmbalseGrafico from "../cuencas/Grafico"
 import { Link } from "next-view-transitions"
 import { motion } from "framer-motion"
-import { Embalses } from "@/types/BentoTypes"
+import { Embalses } from "@/types/Types"
 
 function EmbalseContent({ data }: { data: Embalses }) {
   return (
@@ -69,7 +69,7 @@ function EmbalseContent({ data }: { data: Embalses }) {
           viewport={{ once: true, amount: 0.8 }}
           className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg sm:order-6"
         >
-          <EmbalseGrafico porcentaje={data.agua_embalsadapor} />
+          <EmbalseGrafico porcentaje={data.agua_embalsadapor ?? 0} />
         </motion.div>
         {/* Tercera Columna (movida a la cuarta posición) */}
 

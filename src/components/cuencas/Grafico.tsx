@@ -33,7 +33,7 @@ const EmbalseGrafico = ({ porcentaje }: { porcentaje: number }) => {
         offset: -10 as const,
         font: {
           weight: "bold" as const,
-          size: 20,
+          size: 17,
         },
         formatter: function (value: number) {
           return value.toFixed(0)
@@ -43,13 +43,13 @@ const EmbalseGrafico = ({ porcentaje }: { porcentaje: number }) => {
   }
 
   return (
-    <div className="relative my-3 flex h-[14rem] w-[14rem] items-center justify-center rounded-lg bg-slate-700 sm:my-0 sm:h-full sm:w-full">
-      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-5xl font-black text-transparent sm:text-2xl lg:text-5xl">
+    <div className="relative flex h-fit w-[14rem] items-center justify-center rounded-lg bg-slate-700 p-3 sm:my-0 sm:h-full sm:w-full">
+      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-4xl font-black text-transparent sm:text-2xl md:text-5xl lg:text-5xl">
         {`${porcentaje.toFixed(0)}`}
         <span className="text-xl font-black">%</span>
       </span>
 
-      <div className="flex h-[12rem] w-[12rem] items-center justify-center sm:h-[7.8rem] sm:w-[7.8rem] lg:h-[12rem] lg:w-[12rem]">
+      <div className="flex h-[8rem] w-[8rem] items-center justify-center sm:h-[7.8rem] sm:w-[7.8rem] lg:h-[12rem] lg:w-[12rem]">
         <Doughnut
           data={data}
           options={options}

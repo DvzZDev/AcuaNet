@@ -18,7 +18,7 @@ function CardAb() {
         <h1 className="mb-2 text-2xl font-black text-textprimary">
           David <span className="text-textsecondary">Esteban</span>
         </h1>
-        <p className="mb-3 text-lg text-textprimary">
+        <p className="mb-3 text-base text-textprimary md:text-lg">
           ¡Hola! Soy David, estudiante de desarollo web y pescador a ratos, he decido
           crear AcuaNet para poder ver rapidamente los niveles de nuestras cuencas /
           pantanos favoritos en España de la forma mas facíl posible.

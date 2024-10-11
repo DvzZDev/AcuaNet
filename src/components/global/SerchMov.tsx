@@ -42,7 +42,7 @@ function SearchMov({
           placeholder={err ? "No Encontrado" : "Buscador"}
           value={type}
           onChange={handletype}
-          className={`text-textprim h-8 w-[16rem] rounded-sm border-b bg-transparent bg-opacity-70 pl-7 pr-10 outline-none placeholder:opacity-60 focus:bg-slate-900 focus:bg-opacity-30 focus:outline-none ${err ? "border-red-500 placeholder:text-red-500" : ""} ${fine ? "border-green-500 placeholder:text-green-500" : ""}`}
+          className={`h-8 w-[16rem] rounded-sm border-b bg-transparent bg-opacity-70 pl-7 pr-10 outline-none placeholder:opacity-60 focus:bg-slate-900 focus:bg-opacity-30 focus:outline-none ${err ? "border-red-500 placeholder:text-red-500" : ""} ${fine ? "border-green-500 placeholder:text-green-500" : ""}`}
         />
         <button
           type="button"

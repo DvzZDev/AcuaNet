@@ -164,9 +164,9 @@ export default function Navbar({ data }: { data: string[] }) {
 
         {/* Menú móvil */}
         <nav
-          className={`${isMenuOpen ? "flex flex-col items-center gap-12 text-2xl text-textprimary" : "hidden"}`}
+          className={`${isMenuOpen ? "flex flex-col items-center gap-8 text-xl text-textprimary" : "hidden"}`}
         >
-          <div className="animate-fade-down animate-delay-75 z-50">
+          <div className="animate-fade-down animate-delay-75 z-50 mb-7">
             <SearchMov
               closeMenu={closeMenu}
               data={data}

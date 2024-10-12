@@ -146,7 +146,7 @@ export default function Navbar({ data }: { data: string[] }) {
               href="/luna"
               className="glow transition-all"
             >
-              Fases Lunares
+              Calendario Lunar
             </Link>
             <Link
               href="/quienesSomos"
@@ -198,7 +198,7 @@ export default function Navbar({ data }: { data: string[] }) {
             onClick={closeMenu}
             className="animate-fade-down animate-delay-300 transition-all hover:text-green-300"
           >
-            Fases Lunares
+            Calendario Lunar
           </Link>
           <Link
             href="/quienesSomos"

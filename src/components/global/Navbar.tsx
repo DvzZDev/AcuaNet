@@ -143,6 +143,12 @@ export default function Navbar({ data }: { data: string[] }) {
               Embalses
             </Link>
             <Link
+              href="/tiempo"
+              className="glow transition-all"
+            >
+              Tiempo
+            </Link>
+            <Link
               href="/luna"
               className="glow transition-all"
             >
@@ -153,12 +159,6 @@ export default function Navbar({ data }: { data: string[] }) {
               className="glow text-nowrap transition-all"
             >
               Quiénes Somos
-            </Link>
-            <Link
-              href="/contacto"
-              className="glow transition-all"
-            >
-              Contacto
             </Link>
           </nav>
 
@@ -194,6 +194,12 @@ export default function Navbar({ data }: { data: string[] }) {
             Embalses
           </Link>
           <Link
+            href="/tiempo"
+            className="glow transition-all"
+          >
+            Tiempo
+          </Link>
+          <Link
             href="/luna"
             onClick={closeMenu}
             className="animate-fade-down animate-delay-300 transition-all hover:text-green-300"
@@ -206,13 +212,6 @@ export default function Navbar({ data }: { data: string[] }) {
             className="animate-fade-down animate-delay-400 transition-all hover:text-green-300"
           >
             Quiénes Somos
-          </Link>
-          <Link
-            href="/contacto"
-            onClick={closeMenu}
-            className="animate-fade-down animate-delay-500 transition-all hover:text-green-300"
-          >
-            Contacto
           </Link>
         </nav>
       </div>

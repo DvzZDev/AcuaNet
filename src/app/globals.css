@@ -19,6 +19,33 @@ body {
   animation: animatedgradient 6s ease infinite alternate;
 }
 
+.scroll-tab {
+  --sb-track-color: #070922;
+  --sb-thumb-color: #fcd43e;
+  --sb-size: 10px;
+}
+
+.scroll-tab::-webkit-scrollbar {
+  width: var(--sb-size);
+  height: var(--sb-size); /* Para la scrollbar horizontal */
+}
+
+.scroll-tab::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+.scroll-tab::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .scroll-tab {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
 @keyframes animatedgradient {
   0% {
     background-position: 0% 50%;

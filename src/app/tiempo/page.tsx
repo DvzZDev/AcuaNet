@@ -1,5 +1,5 @@
 import Divider from "@/components/cuencas/Divider"
-import OpenWeather from "@/components/weather/openWeather"
+import WeatherInput from "@/components/weather/weatherInput"
 
 export default function page() {
   return (
@@ -10,7 +10,7 @@ export default function page() {
         </h1>
         <Divider />
         <div className="h-screen bg-[#070922] pb-10">
-          <OpenWeather />
+          <WeatherInput />
         </div>
       </div>
     </>

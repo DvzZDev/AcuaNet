@@ -32,8 +32,8 @@ function Bento(props: BentoProps) {
   })
 
   return (
-    <section className="flex min-h-full flex-col items-center justify-center bg-gradient-to-t bg-blue-100 py-8 lg:h-full lg:py-0">
-      <h1 className="text-center font-NecoBold text-[30px] font-black text-black sm:text-[50px] md:pb-7">
+    <section className="flex min-h-full flex-col items-center justify-center bg-[#f1fbf7] bg-gradient-to-t py-8 lg:h-full pb-16">
+      <h1 className="mb-6 text-center text-[30px] font-black text-[#1b7b6e] sm:text-[50px]">
         Resumen Global
       </h1>
       {/* Div Global */}
@@ -51,21 +51,23 @@ function Bento(props: BentoProps) {
           }}
           whileInView="animate"
           viewport={{ once: true, margin: "-70px" }}
-          className="animate-once animate-ease-in-out col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#0a0d30] bg-opacity-90 shadow-2xl shadow-[#333668] backdrop-blur-sm lg:col-span-4"
+          className="animate-once animate-ease-in-out col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#1b7b6e] backdrop-blur-sm lg:col-span-4"
         >
           {esp.map((españa) => (
             <div
               key={españa.id}
               className="flex h-full w-full flex-col content-center justify-evenly rounded-xl text-center"
             >
-              <h2 className="text-4xl font-bold text-[#7387f9] md:text-6xl">Reserva</h2>
+              <h2 className="text-4xl font-bold text-emerald-500 md:text-5xl">Reserva</h2>
               <p
-                className={`mb-4 inline-block text-6xl font-bold leading-none md:text-[9rem] ${colorReserva(españa.porcentaje_embalsado)}`}
+                className={`inline-block text-6xl font-bold leading-none md:text-[8rem] ${colorReserva(españa.porcentaje_embalsado)}`}
               >
                 {`${españa.porcentaje_embalsado}`}
                 <strong className="text-2xl md:text-[3rem]">%</strong>
               </p>
-              <h2 className="text-4xl font-bold text-[#7387f9] md:text-6xl">Nacional</h2>
+              <h2 className="text-4xl font-bold text-emerald-500 md:text-5xl">
+                Nacional
+              </h2>
             </div>
           ))}
         </motion.div>
@@ -84,7 +86,7 @@ function Bento(props: BentoProps) {
           whileInView="animate"
           viewport={{ once: true, margin: "-70px" }}
           id="bd2"
-          className="col-span-6 row-span-1 flex min-h-full min-w-full content-center justify-center rounded-xl bg-[#0a0d30] bg-opacity-90 p-2 shadow-2xl shadow-[#333668] backdrop-blur-sm"
+          className="col-span-6 row-span-1 flex min-h-full min-w-full content-center justify-center rounded-xl bg-[#114d45] bg-opacity-90 p-2 shadow-2xl shadow-[#1b7b6e] backdrop-blur-sm"
         >
           <motion.div
             initial="initial"
@@ -116,10 +118,10 @@ function Bento(props: BentoProps) {
                   className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 ${getColor(cuenca.porcentaje_embalsada ?? 0)}`}
                 >
                   <div className="flex flex-col content-center items-center justify-center">
-                    <p className="text-base md:text-[18px]">
+                    <p className="text-base md:text-[15px]">
                       {cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}
                     </p>
-                    <p className="text-base md:text-[18px]">{`${cuenca.porcentaje_embalsada ?? 0} %`}</p>
+                    <p className="text-base md:text-[15px]">{`${cuenca.porcentaje_embalsada ?? 0} %`}</p>
                   </div>
                 </motion.div>
               </Link>
@@ -141,7 +143,7 @@ function Bento(props: BentoProps) {
           }}
           whileInView="animate"
           viewport={{ once: true, margin: "-70px" }}
-          className="relative col-span-6 overflow-hidden rounded-xl bg-[#0a0d30] bg-opacity-90 shadow-2xl shadow-[#333668] backdrop-blur-sm"
+          className="relative col-span-6 overflow-hidden rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#1b7b6e] backdrop-blur-sm"
         >
           <h1 className="absolute left-1/2 z-10 -translate-x-1/2 transform p-2 text-center text-xl font-bold text-yellow-500 md:text-4xl">
             {translateMoonPhase()}
@@ -172,15 +174,15 @@ function Bento(props: BentoProps) {
           }}
           whileInView="animate"
           viewport={{ once: true, margin: "-70px" }}
-          className="col-span-4 rounded-xl bg-[#0a0d30] bg-opacity-90 shadow-2xl shadow-[#333668] backdrop-blur-sm"
+          className="col-span-4 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#1b7b6e] backdrop-blur-sm"
         >
-          <h1 className="p-2 text-center text-3xl font-bold text-[#7387f9]">
+          <h1 className="p-2 text-center text-3xl font-bold text-emerald-500">
             Mayor Variacion Semanal
           </h1>
           <div className="flex flex-col content-center justify-center px-3">
             {/* Primera Tabla */}
             <table className="mb-1 w-full text-[16px]">
-              <thead className="text-[16px] font-extrabold text-[#47ff63ab]">
+              <thead className="text-[16px] font-extrabold text-emerald-400">
                 <motion.tr
                   initial="initial"
                   variants={variants(0)}
@@ -191,7 +193,7 @@ function Bento(props: BentoProps) {
                   <th className="text-right">%</th>
                 </motion.tr>
               </thead>
-              <tbody className="text-textprimary">
+              <tbody className="text-white">
                 {variacionCuencas.map((variacion, index) => (
                   <motion.tr
                     variants={variantss(index)}
@@ -220,10 +222,10 @@ function Bento(props: BentoProps) {
             </table>
             {/* Segunda Tabla */}
             <table className="w-full p-3 text-[16px]">
-              <caption className="text-left text-[16px] font-bold text-[#47ff63ab]">
+              <caption className="text-left text-[16px] font-bold text-emerald-400">
                 Embalse
               </caption>
-              <tbody className="text-textprimary">
+              <tbody className="text-white">
                 {variacionEmbalses.map((variacion, index) => (
                   <motion.tr
                     variants={variantss(index)}

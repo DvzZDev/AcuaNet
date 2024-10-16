@@ -83,11 +83,10 @@ table {
 }
 .glow:hover {
   text-shadow:
-    0 0 7px rgb(76, 0, 255),
-    /* Azul intenso */ 0 0 10px rgb(115, 0, 255),
-    /* Azul intenso */ 0 0 21px rgb(72, 0, 255),
-    /* Azul intenso */ 0 0 32px #8a2be2,
-    /* Azul morado (Blue Violet) */ 0 0 42px #8a2be2; /* Azul morado (Blue Violet) */
+    0 0 3px rgba(0, 153, 255, 0.8),
+    /* Azul celeste */ 0 0 6px rgba(0, 102, 255, 0.7),
+    /* Azul más oscuro */ 0 0 12px rgba(0, 102, 255, 0.6),
+    /* Azul violeta */ 0 0 30px rgba(102, 0, 255, 1); /* Azul violeta */
 }
 
 #header-nav {

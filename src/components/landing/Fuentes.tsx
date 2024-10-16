@@ -52,7 +52,7 @@ function Fuentes() {
   return (
     <section
       id="fuentes"
-      className="h-auto bg-blue-100 text-black"
+      className="h-auto bg-green-950 text-white"
     >
       <article className="flex flex-col items-center justify-center">
         <motion.h1

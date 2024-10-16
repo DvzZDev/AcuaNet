@@ -32,14 +32,6 @@ export const theme = {
       textsecondary: "#ffd700",
       bgcolor: "#070922",
     },
-    backdropBlur: {
-      xs: "2px",
-      sm: "4px",
-      md: "8px",
-      lg: "12px",
-      xl: "16px",
-      "2xl": "20px",
-    },
   },
 }
 

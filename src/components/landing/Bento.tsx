@@ -32,8 +32,8 @@ function Bento(props: BentoProps) {
   })
 
   return (
-    <section className="flex min-h-full flex-col items-center justify-center bg-gradient-to-t from-bgcolor via-bgcolor to-transparent py-8 lg:h-full lg:py-0">
-      <h1 className="text-center font-NecoBold text-[30px] font-black text-textsecondary sm:text-[50px] md:pb-7">
+    <section className="flex min-h-full flex-col items-center justify-center bg-gradient-to-t bg-blue-100 py-8 lg:h-full lg:py-0">
+      <h1 className="text-center font-NecoBold text-[30px] font-black text-black sm:text-[50px] md:pb-7">
         Resumen Global
       </h1>
       {/* Div Global */}

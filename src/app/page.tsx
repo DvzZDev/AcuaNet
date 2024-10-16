@@ -1,4 +1,3 @@
-import Intro from "@/components/landing/Intro"
 import Fuentes from "@/components/landing/Fuentes"
 import SkeletonBento from "@/components/skeletons/BentoSkeleton"
 import AboutLanding from "@/components/landing/AboutLanding"
@@ -6,6 +5,7 @@ import { Suspense } from "react"
 import ContactLanding from "@/components/landing/ContactLanding"
 import BentoDataLandin from "@/components/landing/BentoDataLanding"
 import Faq from "@/components/landing/Faq"
+import Hero from "@/components/landing/Hero"
 
 export const revalidate = 60
 export const dynamic = "force-dynamic"
@@ -44,7 +44,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <Intro />
+      <Hero />
       <Suspense fallback={<SkeletonBento />}>
         <BentoDataLandin />
       </Suspense>

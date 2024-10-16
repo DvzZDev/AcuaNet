@@ -52,7 +52,7 @@ function Fuentes() {
   return (
     <section
       id="fuentes"
-      className="h-auto bg-bgcolor"
+      className="h-auto bg-blue-100 text-black"
     >
       <article className="flex flex-col items-center justify-center">
         <motion.h1
@@ -63,7 +63,7 @@ function Fuentes() {
           }}
           whileInView="animate"
           viewport={{ once: true, amount: 0.8 }}
-          className="pt-1 text-center font-NecoBold text-[30px] text-[#ffd700] sm:pt-20 sm:text-[50px]"
+          className="pt-1 text-center font-NecoBold text-[30px] text-black sm:pt-20 sm:text-[50px]"
         >
           Fuentes Oficiales
         </motion.h1>
@@ -90,10 +90,10 @@ function Fuentes() {
             }}
             whileInView="animate"
             viewport={{ once: true, amount: 0.8 }}
-            className="mx-3 text-center"
+            className="mx-3 text-center text-black"
           >
             Datos Actualizados Cada
-            <strong className="ml-2 content-center font-bold text-[#ffd700]">
+            <strong className="ml-2 content-center font-bold text-gray-600">
               24 horas
             </strong>
           </motion.h1>

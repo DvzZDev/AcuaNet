@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 function AboutLanding() {
   return (
-    <section className="max-h-auto bg-bgcolor pb-20 pt-10 lg:pt-20">
+    <section className="max-h-auto bg-blue-100 pb-20 pt-10 lg:pt-20">
       <div className="flex flex-col items-center justify-center">
         <section className="mx-8 grid h-full max-w-[70rem] grid-cols-1 gap-10 md:grid-cols-2">
           <div className="col-span-1 mt-10 flex flex-col">
@@ -17,7 +17,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="text-center font-NecoBold text-[30px] leading-none text-[#ffd700] sm:text-[50px] md:text-left"
+              className="text-center font-NecoBold text-[30px] leading-none text-black sm:text-[50px] md:text-left"
             >
               Conoce a Nuestro Equipo
             </motion.h1>
@@ -29,7 +29,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="mt-6 text-base leading-relaxed text-textprimary md:text-2xl"
+              className="mt-6 text-base leading-relaxed text-black md:text-2xl"
             >
               En AcuaNet, nos esforzamos por brindarte una experiencia intuitiva y
               agradable.
@@ -42,7 +42,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="mt-4 text-base leading-relaxed text-textprimary md:text-2xl"
+              className="mt-4 text-base leading-relaxed text-black md:text-2xl"
             >
               Queremos que conozcas a nuestro equipo y descubras cómo trabajamos para
               ofrecerte datos precisos y actualizados sobre los embalses. Haz clic aquí

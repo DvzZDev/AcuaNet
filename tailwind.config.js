@@ -24,10 +24,10 @@ export const theme = {
       2000: "2000ms",
     },
     fontFamily: {
-      NecoBold: ["Neco-Bold"],
+      Inter: ["Inter"],
     },
     colors: {
-      textprimary: "#e9ead6",
+      textprimary: "#ffff",
       textfooter: "#717887",
       textsecondary: "#ffd700",
       bgcolor: "#070922",

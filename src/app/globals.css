@@ -66,22 +66,6 @@ table {
 }
 
 @font-face {
-  font-family: "Neco-Bold";
-  src: url("../../Fonts/Telma_Complete/Fonts/WEB/fonts/Neco-Bold.woff2") format("woff2");
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Author-Medium";
-  src: url("../../Fonts/Telma_Complete/Fonts/WEB/fonts/Author-Regular.woff2")
-    format("woff2");
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
   font-family: "Inter";
   src: url("../../Fonts/Inter.ttf") format("woff2");
   font-weight: 500;

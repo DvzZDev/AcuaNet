@@ -5,10 +5,10 @@ import { motion } from "framer-motion"
 
 function AboutLanding() {
   return (
-    <section className="max-h-auto bg-[#f1fbf7] py-8">
+    <section className="max-h-auto bg-[#f1fbf7] pb-24 md:py-10 py-8">
       <div className="flex flex-col items-center justify-center">
-        <section className="mx-8 grid h-full max-w-[70rem] grid-cols-1 gap-10 md:grid-cols-2">
-          <div className="col-span-1 mt-10 flex flex-col">
+        <section className="mx-6 grid h-fit max-w-[70rem] grid-cols-1 gap-10 md:grid-cols-2">
+          <div className="col-span-1 flex flex-col">
             <motion.h1
               initial="initial"
               variants={{
@@ -17,7 +17,7 @@ function AboutLanding() {
               }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.8 }}
-              className="text-center font-NecoBold text-[30px] font-black leading-none text-[#1b7b6e] sm:text-[50px] md:text-left"
+              className="font-NecoBold text-center text-[2.3rem] font-bold leading-none text-[#1b7b6e] sm:text-[50px] md:text-left"
             >
               Conoce a Nuestro Equipo
             </motion.h1>
@@ -101,7 +101,7 @@ function AboutLanding() {
                 viewport={{ once: true, amount: 0.8 }}
                 className="absolute bottom-[-70px] left-4 right-[-15px] z-20 rounded-lg bg-[#275e568a] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]"
               >
-                <p className="text-base text-[#e9fffc] md:text-xl">
+                <p className="text-base text-green-50 md:text-xl">
                   ¡Hola! Soy David, creador de AcuaNet. Te invito a conocer más sobre qué
                   me inspiró a crear AcuaNet.
                 </p>

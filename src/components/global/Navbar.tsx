@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`fixed z-50 w-full bg-slate-500/30 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "z-50 h-screen bg-gray-700 backdrop-blur-md" : "z-30 h-[4rem]"}`}
+      className={`fixed z-50 w-full bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"}`}
     >
       <div className="container mx-auto mt-4 flex flex-col items-center justify-between gap-10 px-4 uppercase lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         {/* Logo */}
@@ -18,16 +18,16 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex-shrink-0"
-            aria-label="Ir a la página principal"
+            aria-label="Ir a la página principal "
             onClick={closeMenu}
           >
             <svg
-              fill="#09f"
+              fill="#93ffb7"
               xmlns="http://www.w3.org/2000/svg"
               xmlSpace="preserve"
               width={34}
               height={34}
-              stroke="#09f"
+              stroke="#93ffb7"
               viewBox="58.63 -0.5 254.14 372.41"
             >
               {" "}
@@ -60,7 +60,7 @@ export default function Navbar() {
                   {" "}
                   <path
                     d="M4 6H20M4 12H14M4 18H9"
-                    stroke="#ffd700"
+                    stroke="lightgreen"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -93,7 +93,7 @@ export default function Navbar() {
                   {" "}
                   <path
                     d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"
-                    fill="#ffd700"
+                    fill="lightgreen"
                   ></path>{" "}
                 </g>
               </svg>
@@ -103,7 +103,7 @@ export default function Navbar() {
 
         <div className="mx-4 flex w-full items-center justify-between leading-none lg:w-auto lg:flex-grow">
           {/* Navegación */}
-          <nav className="hidden gap-4 text-center text-xl leading-none text-white lg:flex lg:items-center">
+          <nav className="hidden gap-4 text-center text-xl leading-none text-green-100 lg:flex lg:items-center">
             <Link
               href="/cuencas"
               className="glow transition-all"
@@ -139,7 +139,7 @@ export default function Navbar() {
 
         {/* Menú móvil */}
         <nav
-          className={`${isMenuOpen ? "flex animate-appearance-in flex-col items-center gap-8 text-xl text-textprimary delay-200" : "hidden"}`}
+          className={`${isMenuOpen ? "flex animate-appearance-in flex-col items-center gap-8 text-xl text-green-100 delay-200" : "hidden"}`}
         >
           <Link
             href="/cuencas"

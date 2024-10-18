@@ -1,4 +1,3 @@
-
 function Divider() {
   return (
     <svg
@@ -7,9 +6,27 @@ function Divider() {
       preserveAspectRatio="none"
       viewBox="0 -1 1200 59"
     >
+      <defs>
+        <linearGradient
+          id="gradient"
+          x1="0"
+          y1="0"
+          x2="0"
+          y2="1"
+        >
+          <stop
+            offset="0%"
+            stopColor="#a6c5b1"
+          />
+          <stop
+            offset="100%"
+            stopColor="#f0fdf4"
+          />
+        </linearGradient>
+      </defs>
       <g className="layer">
         <path
-          fill="#070922"
+          fill="url(#gradient)"
           d="M0-1l1200 50.9V58H0V-1z"
           className="shape-fill"
         ></path>

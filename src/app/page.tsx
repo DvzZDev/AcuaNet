@@ -2,7 +2,6 @@ import Fuentes from "@/components/landing/Fuentes"
 import SkeletonBento from "@/components/skeletons/BentoSkeleton"
 import AboutLanding from "@/components/landing/AboutLanding"
 import { Suspense } from "react"
-import ContactLanding from "@/components/landing/ContactLanding"
 import BentoDataLandin from "@/components/landing/BentoDataLanding"
 import Faq from "@/components/landing/Faq"
 import Hero from "@/components/landing/Hero"
@@ -50,7 +49,6 @@ export default function Home() {
       </Suspense>
       <Fuentes />
       <AboutLanding />
-      <ContactLanding />
       <Faq />
     </>
   )

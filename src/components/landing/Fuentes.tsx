@@ -7,7 +7,7 @@ function Fuentes() {
   return (
     <section
       id="fuentes"
-      className="flex h-auto flex-col items-center justify-center gap-6 bg-[#275e56] py-12 text-white"
+      className="flex h-auto flex-col items-center justify-center bg-[#275e56] py-8 md:py-12 text-white"
     >
       <motion.h4
         initial="initial"
@@ -17,7 +17,7 @@ function Fuentes() {
         }}
         whileInView="animate"
         viewport={{ once: true, amount: 0.8 }}
-        className="text-center text-[30px] leading-none text-white sm:text-[50px]"
+        className="text-center text-[2.3rem] font-bold leading-none text-green-100 sm:text-[50px]"
       >
         Fuentes Oficiales
       </motion.h4>
@@ -29,11 +29,11 @@ function Fuentes() {
         }}
         whileInView="animate"
         viewport={{ once: true, amount: 0.8 }}
-        className="text-center text-[20px] text-white sm:text-[25px]"
+        className="text-center text-[20px] text-green-200 mt-3"
       >
         Datos actualizdos cada 24 horas.
       </motion.h4>
-      <div className="flex flex-col sm:flex-row gap-4 sm:gap-16">
+      <div className="mt-8 flex flex-col gap-7 sm:flex-row sm:gap-16">
         <Image
           src="/aemet.webp"
           alt="Aemet España"

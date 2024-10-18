@@ -14,7 +14,7 @@ async function Title(url: { url: { cuencaid: string } }) {
   if (!resCuenca) {
     return (
       <div className="justify-center">
-        <h1 className="mb-2 text-center font-NecoBold text-[2.5rem] text-textsecondary sm:mt-10 sm:text-6xl">
+        <h1 className="font-NecoBold mb-2 text-center text-[2.5rem] text-textsecondary sm:mt-10 sm:text-6xl">
           Cuenca no encontrada
         </h1>
       </div>
@@ -23,7 +23,7 @@ async function Title(url: { url: { cuencaid: string } }) {
 
   return (
     <div className="justify-center">
-      <h1 className="mb-2 text-center font-NecoBold text-[2.5rem] text-textsecondary sm:mt-10 sm:text-6xl">
+      <h1 className="mb-2 text-center text-[2.5rem] font-bold text-green-100 sm:mt-10 sm:text-6xl">
         {resCuenca.cuenca.replace(/_/g, " ")}
       </h1>
     </div>

@@ -15,7 +15,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
   const delays = [0.07]
 
   return (
-    <div className="mx-4 flex min-h-full w-full flex-col gap-4 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
+    <div className="mx-4 mt-7 flex min-h-full w-[12rem] flex-col gap-4 sm:mt-0 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
       <motion.div
         transition={{ type: "spring", duration: 0.5 }}
         key="agua"
@@ -26,17 +26,17 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         initial="initial"
         viewport={{ once: true }}
         whileInView="animate"
-        className="order-1 flex justify-center rounded-lg sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
+        className="order-1 flex justify-center rounded-lg bg-[#275e56] sm:col-span-2 sm:row-span-3 sm:rounded-lg"
       >
-        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-auto sm:w-auto sm:bg-transparent">
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Agua</h1>
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
+        <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Agua</h1>
+          <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
+            <span className="text-4xl font-black lg:text-5xl">
               {resCuenca?.embalsada}
             </span>
             <span className="text-xl font-black">hm³</span>
           </div>
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Embalsada</h1>
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Embalsada</h1>
         </article>
       </motion.div>
 
@@ -50,17 +50,17 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         initial="initial"
         viewport={{ once: true }}
         whileInView="animate"
-        className="order-2 flex justify-center sm:col-span-2 sm:row-span-3 sm:rounded-lg sm:bg-slate-700"
+        className="order-1 flex justify-center rounded-lg bg-[#275e56] sm:col-span-2 sm:row-span-3 sm:rounded-lg"
       >
-        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full sm:w-auto sm:bg-transparent">
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Capacidad</h1>
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
+        <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Capacidad</h1>
+          <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
+            <span className="text-4xl font-black lg:text-5xl">
               {resCuenca?.capacidad}
             </span>
             <span className="text-xl font-black">hm³</span>
           </div>
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Total</h1>
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Total</h1>
         </article>
       </motion.div>
 
@@ -84,24 +84,22 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 3 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 1 } },
         }}
         initial="initial"
         viewport={{ once: true }}
         whileInView="animate"
-        className="order-4 flex justify-center sm:col-span-2 sm:row-span-3"
+        className="order-1 flex justify-center rounded-lg bg-[#275e56] sm:col-span-2 sm:row-span-3 sm:rounded-lg"
       >
-        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variación</h1>
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
+        <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Variación</h1>
+          <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
+            <span className="text-4xl font-black lg:text-5xl">
               {resCuenca?.variacion}
             </span>
             <span className="text-xl font-black">hm³</span>
           </div>
-          <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
-            Sem. Anterior
-          </h1>
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Sem. Ant.</h1>
         </article>
       </motion.div>
 
@@ -110,24 +108,22 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         key="agua"
         variants={{
           initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 4 } },
+          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 1 } },
         }}
         initial="initial"
         viewport={{ once: true }}
         whileInView="animate"
-        className="order-5 flex justify-center sm:col-span-2 sm:row-span-3"
+        className="order-1 flex justify-center rounded-lg bg-[#275e56] sm:col-span-2 sm:row-span-3 sm:rounded-lg"
       >
-        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Variación</h1>
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            <span className="text-6xl font-black sm:text-4xl lg:text-6xl">
+        <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Variación</h1>
+          <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
+            <span className="text-4xl font-black lg:text-5xl">
               {resCuenca?.porcentaje_variacion}
             </span>
             <span className="text-xl font-black">%</span>
           </div>
-          <h1 className="text-center text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">
-            Sem. Anterior
-          </h1>
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Sem. Ant.</h1>
         </article>
       </motion.div>
 
@@ -143,7 +139,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         whileInView="animate"
         className="relative order-6 col-span-4 row-span-4 flex justify-center"
       >
-        <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-visible rounded-lg bg-slate-700 sm:h-full sm:w-full">
+        <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-visible rounded-lg bg-[#275e56] sm:h-full sm:w-full">
           <Image
             src={resCuenca?.foto ? resCuenca.foto : "2"}
             alt={`Foto sobre la cuenca hidrográfica del ${cuenca}`}
@@ -167,16 +163,17 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         viewport={{ once: true }}
         className="order-7 flex justify-center sm:col-span-2 sm:row-span-3"
       >
-        <article className="flex h-[14rem] w-[14rem] flex-col items-center justify-around rounded-lg bg-slate-700 px-4 sm:h-full">
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Embalses</h1>
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+        <article className="flex w-[12rem] flex-col items-center justify-around gap-4 rounded-lg bg-[#275e56] px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Embalses</h1>
+          <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
             <div className="animate-wiggle animate-infinite">
               <svg
                 height="100px"
                 width="100px"
                 viewBox="0 0 512 512"
-                fill="#ffffff"
-                stroke="#ffffff"
+                fill="#31d6bc"
+                stroke="#31d6bc"
+                className="animate-infinite animate-pulse"
               >
                 <g
                   id="SVGRepo_bgCarrier"
@@ -188,7 +185,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
                   strokeLinejoin="round"
                 />
                 <g id="SVGRepo_iconCarrier">
-                  <style type="text/css">{" .st0{fill:#ffd700;} "}</style>
+                  <style type="text/css">{" .st0{fill:#2ab09b;} "}</style>
                   <g>
                     <path
                       className="st0"
@@ -199,7 +196,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
               </svg>
             </div>
           </div>
-          <h1 className="text-4xl text-[#e9ead6] sm:text-2xl lg:text-4xl">Cuenca</h1>
+          <h1 className="text-2xl text-green-100 lg:text-3xl">Cuenca</h1>
         </article>
       </motion.div>
     </div>

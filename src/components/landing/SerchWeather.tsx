@@ -55,7 +55,7 @@ export default function SerchWeather() {
     <div>
       <form
         onSubmit={onSearch}
-        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-gray-300 bg-gray-500/20 p-1 text-sm backdrop-blur-md transition-all focus-within:border-slate-300 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
+        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100 bg-green-100/20 p-1 text-sm backdrop-blur-md transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ export default function SerchWeather() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="absolute left-1 top-1/2 -translate-y-1/2 transform stroke-slate-300"
+          className="absolute left-1 top-1/2 -translate-y-1/2 transform stroke-green-100"
         >
           <path
             stroke="none"
@@ -83,7 +83,7 @@ export default function SerchWeather() {
           loop
         >
           <input
-            className="ml-8 w-full bg-transparent text-[16px] text-textprimary placeholder-slate-200 placeholder-opacity-40 focus:outline-none sm:text-[18px]"
+            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-200 placeholder-opacity-40 focus:outline-none sm:text-[18px]"
             type="text"
             value={type}
             onChange={handleChange}

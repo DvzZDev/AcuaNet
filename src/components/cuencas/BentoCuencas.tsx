@@ -8,7 +8,7 @@ const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
   const cuencas = data
 
   return (
-    <section className="flex h-full justify-center bg-bgcolor">
+    <section className="flex h-full justify-center bg-green-50">
       <div className="m-10 mt-2 grid min-h-[33rem] w-[55rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
         {cuencas.map((cuenca, index: number) => (
           <>
@@ -36,13 +36,13 @@ const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
                 whileInView="animate"
                 whileHover="hover"
                 viewport={{ once: true }}
-                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.52rem] ${ColorCuencas(cuenca.porcentaje_embalsada ?? 0)}`}
+                className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 ${ColorCuencas(cuenca.porcentaje_embalsada ?? 0)}`}
                 key={cuenca.cuenca}
               >
                 <div className="flex flex-col content-center items-center justify-center p-2">
                   <p>{cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}</p>
-                  <p>{`${cuenca.porcentaje_embalsada} %`} </p>
-                  <p>
+                  <p className="text-base">{`${cuenca.porcentaje_embalsada} %`} </p>
+                  <p className="text-sm">
                     {`${cuenca.porcentaje_embalsada} hm³`} de {`${cuenca.capacidad} hm³`}{" "}
                   </p>
                 </div>

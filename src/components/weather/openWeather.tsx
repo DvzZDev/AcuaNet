@@ -1,14 +1,14 @@
 import { WeatherTypes, Day, Hour } from "@/types"
 import { getWeatherCode } from "./weatherCode"
 import { WindDirectionIcon } from "./wind"
-// import data from "./wdata.json"
+import data from "./wdata.json"
 
 export default async function OpenWeather({ lat, lon }: { lat: string; lon: string }) {
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lon}?unitGroup=metric&include=days%2Chours&key=P2GXJVW7YDLZD3S85BNAURBFJ&contentType=json&iconSet=icons2`
+  // const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lon}?unitGroup=metric&include=days%2Chours&key=P2GXJVW7YDLZD3S85BNAURBFJ&contentType=json&iconSet=icons2`
 
-  const response = await fetch(url)
-  const weatherData: WeatherTypes = await response.json()
-  // const weatherData = data as WeatherTypes
+  // const response = await fetch(url)
+  // const weatherData: WeatherTypes = await response.json()
+  const weatherData = data as WeatherTypes
 
   const dateFormater = (date: string) => {
     const inputDate = new Date(date).toDateString()

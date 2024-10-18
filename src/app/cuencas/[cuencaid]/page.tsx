@@ -53,7 +53,7 @@ async function Page({ params }: { params: { cuencaid: string } }) {
         <Title url={params} />
       </Suspense>
       <Divider />
-      <section className="flex min-h-full flex-col items-center justify-center bg-bgcolor">
+      <section className="flex min-h-full flex-col items-center justify-center bg-green-50">
         <div className="flex min-h-[42rem] justify-center">
           <Suspense fallback={<SkeletonBentoDist />}>
             <BentoDataUnique url={params} />

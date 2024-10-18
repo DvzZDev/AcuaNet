@@ -16,6 +16,7 @@
     "@antfu/eslint-config": "3.7.3",
     "@fontsource-variable/comfortaa": "5.1.0",
     "@fontsource-variable/onest": "5.1.0",
+    "@midudev/tailwind-animations": "^0.1.0",
     "@nextui-org/accordion": "2.0.40",
     "@nextui-org/button": "2.0.38",
     "@nextui-org/dropdown": "2.1.31",

@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`fixed z-50 w-full bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"}`}
+      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"}`}
     >
       <div className="container mx-auto mt-4 flex flex-col items-center justify-between gap-10 px-4 uppercase lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         {/* Logo */}

@@ -5,8 +5,8 @@ import SerchWeather from "./SerchWeather"
 export default async function Hero() {
   const datares = nombreEmbalses
   return (
-    <div className="bg-green-100/10 -z-10">
-      <section className="flex h-svh flex-col items-center z-10">
+    <div className="animate-blurred-fade-in -z-10 bg-green-100/10">
+      <section className="z-10 flex h-svh flex-col items-center">
         <div className="animate-fade-up mb-6 mt-4 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
           <svg
             fill="#93ffb7"

@@ -12,6 +12,32 @@ body {
   background-attachment: fixed;
 }
 
+body {
+  --sb-track-color: #232e33;
+  --sb-thumb-color: #93ffb7;
+  --sb-size: 14px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
 .animate-gradient {
   background-size: 300%;
   animation: animatedgradient 6s ease infinite alternate;
@@ -83,10 +109,10 @@ table {
 }
 .glow:hover {
   text-shadow:
-    0 0 3px rgba(0, 153, 255, 0.8),
-    /* Azul celeste */ 0 0 6px rgba(0, 102, 255, 0.7),
-    /* Azul más oscuro */ 0 0 12px rgba(0, 102, 255, 0.6),
-    /* Azul violeta */ 0 0 30px rgba(102, 0, 255, 1); /* Azul violeta */
+    0 0 3px rgba(0, 255, 153, 0.8),
+    /* Verde claro */ 0 0 6px rgba(0, 255, 102, 0.7),
+    /* Verde más oscuro */ 0 0 12px rgba(0, 255, 102, 0.6),
+    /* Verde más oscuro */ 0 0 30px rgba(0, 255, 0, 1); /* Verde */
 }
 
 #header-nav {

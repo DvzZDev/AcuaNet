@@ -24,7 +24,7 @@ export default function SerchEmb({ data }: TypeProps) {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100 bg-green-100/20 p-1 text-sm backdrop-blur-md transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
+        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100 bg-green-100 bg-opacity-20 p-1 text-sm backdrop-blur-md transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ export default function SerchEmb({ data }: TypeProps) {
             initial="initial"
             animate="animate"
             variants={variants}
-            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-slate-600/40 text-base text-gray-200 backdrop-blur-md md:text-xl"
+            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-slate-600 bg-opacity-75 text-base text-gray-200 backdrop-blur-md md:text-xl"
           >
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <motion.li

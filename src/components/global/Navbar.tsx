@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"}`}
+      className={`fixed z-50 w-full animate-fade-in-down bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"}`}
     >
       <div className="container mx-auto mt-4 flex flex-col items-center justify-between gap-10 px-4 uppercase lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         {/* Logo */}
@@ -116,12 +116,7 @@ export default function Navbar() {
             >
               Embalses
             </Link>
-            <Link
-              href="/tiempo"
-              className="glow transition-all"
-            >
-              Tiempo
-            </Link>
+
             <Link
               href="/luna"
               className="glow transition-all"
@@ -144,34 +139,29 @@ export default function Navbar() {
           <Link
             href="/cuencas"
             onClick={closeMenu}
-            className="animate-fade-down animate-delay-100 transition-all hover:text-green-300"
+            className="animate-fade-down transition-all animate-delay-100 hover:text-green-300"
           >
             Cuencas
           </Link>
           <Link
             href="/embalses"
             onClick={closeMenu}
-            className="animate-fade-down animate-delay-200 transition-all hover:text-green-300"
+            className="animate-fade-down transition-all animate-delay-200 hover:text-green-300"
           >
             Embalses
           </Link>
-          <Link
-            href="/tiempo"
-            className="glow transition-all"
-          >
-            Tiempo
-          </Link>
+
           <Link
             href="/luna"
             onClick={closeMenu}
-            className="animate-fade-down animate-delay-300 transition-all hover:text-green-300"
+            className="animate-fade-down transition-all animate-delay-300 hover:text-green-300"
           >
             Calendario Lunar
           </Link>
           <Link
             href="/quienesSomos"
             onClick={closeMenu}
-            className="animate-fade-down animate-delay-400 transition-all hover:text-green-300"
+            className="animate-fade-down transition-all animate-delay-400 hover:text-green-300"
           >
             Quiénes Somos
           </Link>

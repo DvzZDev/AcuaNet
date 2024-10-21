@@ -40,7 +40,9 @@ const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
                 key={cuenca.cuenca}
               >
                 <div className="flex flex-col content-center items-center justify-center p-2">
-                  <p>{cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}</p>
+                  <p className="text-base">
+                    {cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}
+                  </p>
                   <p className="text-base">{`${cuenca.porcentaje_embalsada} %`} </p>
                   <p className="text-sm">
                     {`${cuenca.porcentaje_embalsada} hm³`} de {`${cuenca.capacidad} hm³`}{" "}

@@ -9,7 +9,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover; /* Cobertura completa en pantallas grandes */
   background-position: center center;
-  background-attachment: fixed;
   width: 100svw;
   height: 110svh;
 }

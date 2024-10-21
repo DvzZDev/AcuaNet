@@ -24,7 +24,7 @@ export default function SerchEmb({ data }: TypeProps) {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border border-solid border-green-100 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
+        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -32,6 +32,7 @@ export default function SerchEmb({ data }: TypeProps) {
           height="24"
           viewBox="0 0 24 24"
           fill="none"
+          strokeWidth="2"
           className="stroke absolute left-1 top-1/2 -translate-y-1/2 transform stroke-green-100"
         >
           <path
@@ -49,7 +50,7 @@ export default function SerchEmb({ data }: TypeProps) {
           loop
         >
           <input
-            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-200 placeholder-opacity-80 focus:outline-none sm:text-[18px]"
+            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-none sm:text-[18px]"
             type="text"
             value={type}
             onChange={handletype}
@@ -93,7 +94,7 @@ export default function SerchEmb({ data }: TypeProps) {
             initial="initial"
             animate="animate"
             variants={variants}
-            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-slate-600 bg-opacity-75 text-base text-gray-200 backdrop-blur-md md:text-xl"
+            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-green-100/10 text-base text-green-100 backdrop-blur-md md:text-xl"
           >
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <motion.li
@@ -108,7 +109,7 @@ export default function SerchEmb({ data }: TypeProps) {
                 }}
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
-                className="z-30 cursor-pointer px-2 py-1 text-base hover:bg-slate-950 hover:bg-opacity-25"
+                className="z-30 cursor-pointer rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
               >
                 {suggestion}
               </motion.li>

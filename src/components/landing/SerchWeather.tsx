@@ -55,7 +55,7 @@ export default function SerchWeather() {
     <div>
       <form
         onSubmit={onSearch}
-        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
+        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@ export default function SerchWeather() {
           loop
         >
           <input
-            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-200 placeholder-opacity-40 focus:outline-none sm:text-[18px]"
+            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-none sm:text-[18px]"
             type="text"
             value={type}
             onChange={handleChange}
@@ -157,15 +157,15 @@ export default function SerchWeather() {
             initial="initial"
             animate="animate"
             variants={variants}
-            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-slate-600/40 text-base text-white backdrop-blur-md md:text-xl"
+            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-green-100/10 text-base text-white backdrop-blur-md md:text-xl"
           >
             {data.length > 0 && visible && (
-              <div className="absolute flex w-full flex-col gap-1 rounded-lg bg-slate-600/40 text-base text-gray-200 backdrop-blur-md md:text-xl">
+              <div className="absolute flex w-full flex-col gap-1 rounded-lg bg-green-100/10 text-base text-green-100 backdrop-blur-md md:text-xl">
                 {data.map((item, index) => (
                   <Link
                     href={`/tiempo/${encodeURIComponent(item.name.replace(/ /g, "_"))}?lat=${item.lat}&lon=${item.lon}&place=${item.name}`}
                     key={index}
-                    className="z-30 cursor-pointer px-2 py-1 text-base hover:bg-slate-950 hover:bg-opacity-25"
+                    className="z-30 cursor-pointer rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
                   >
                     {item.display_name}
                   </Link>

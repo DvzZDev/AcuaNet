@@ -6,7 +6,7 @@ import { Embalses } from "@/types"
 
 function EmbalseContent({ data }: { data: Embalses }) {
   return (
-    <section className="flex min-fit justify-center bg-bgcolor px-4 pb-14 text-white sm:pt-14 lg:pt-7">
+    <section className="flex min-fit justify-center bg-green-50 px-4 pb-14 text-white sm:pt-14 lg:pt-7">
       <div className="mx-4 flex min-h-full w-full flex-col gap-4 sm:grid sm:h-[30rem] sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:w-[60rem] xl:h-fit">
         {/* Primera Columna */}
 

@@ -7,14 +7,11 @@ body {
   font-family: "Inter", sans-serif;
   background-image: url(/ore.webp);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; /* Cobertura completa en pantallas grandes */
   background-position: center center;
-}
-
-@media (min-width: 768px) {
-  body {
-    background-attachment: fixed;
-  }
+  background-attachment: fixed;
+  width: 100svw;
+  height: 110svh;
 }
 
 body {

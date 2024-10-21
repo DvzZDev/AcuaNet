@@ -77,7 +77,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
 
   return (
     <div className="mx-5">
-      <div className="relative flex h-16 w-full items-center justify-between gap-2 rounded-t-xl bg-[#040513] px-4">
+      <div className="relative flex h-16 w-full items-center justify-between gap-2 rounded-t-xl bg-[#275e56] px-4">
         <div
           className={`${show ? "w-[10rem] border-white" : "w-[20px]"} flex h-6 border-b border-transparent bg-transparent outline-none transition-all`}
         >
@@ -88,7 +88,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
             onClick={handleButtonClick}
           >
             <svg
-              fill="#c0bfb7"
+              fill="#14C2DC"
               enableBackground="new 0 0 32 32"
               height="20"
               width={20}
@@ -154,7 +154,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
                 <path
                   id="Vector"
                   d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
-                  stroke="#c0bfb7"
+                  stroke="#14C2DC"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -164,8 +164,8 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
           </svg>
         </button>
       </div>
-      <table className="border border-[#040513]">
-        <thead className="bg-[#040513] text-sm sm:text-xl">
+      <table className="border border-[#275e56]">
+        <thead className="bg-[#275e56] text-sm sm:text-xl text-green-50">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
@@ -199,7 +199,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
             </tr>
           ))}
         </thead>
-        <tbody className="text-md bg-[#1b0e51] sm:text-xl">
+        <tbody className="text-md text-gray-50 bg-[#275e56] sm:text-xl">
           {table.getRowModel().rows.map((row) => (
             <motion.tr
               initial="initial"
@@ -215,7 +215,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
               }}
               whileInView="animate"
               key={row.id}
-              className="odd:bg-[#1b0e51] even:bg-[#1f1745]"
+              className="odd:bg-[#224d53] even:bg-[#275e56]"
             >
               {row.getVisibleCells().map((cell, index) => (
                 <td
@@ -251,7 +251,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
           margin: "-50px",
         }}
         whileInView="animate"
-        className="flex justify-between rounded-b-xl bg-[#040513] p-2"
+        className="flex justify-between rounded-b-xl bg-[#224d53] p-2"
       >
         <div>
           <p className="mt-1 w-6 rounded-sm text-center">
@@ -292,7 +292,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
                 {" "}
                 <path
                   d="M6 12H18M6 12L11 7M6 12L11 17"
-                  stroke="#ffffff"
+                  stroke="#14C2DC"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -325,7 +325,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
                 {" "}
                 <path
                   d="M6 12H18M18 12L13 7M18 12L13 17"
-                  stroke="#ffffff"
+                  stroke="#14C2DC"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"

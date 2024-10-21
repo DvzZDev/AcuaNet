@@ -12,12 +12,6 @@ body {
   background-attachment: fixed;
 }
 
-@media screen and (max-width: 767px) {
-  body {
-    background-attachment: scroll;
-  }
-}
-
 body {
   --sb-track-color: #232e33;
   --sb-thumb-color: #93ffb7;

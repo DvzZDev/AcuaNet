@@ -26,10 +26,6 @@ const LunarCalendar = () => {
       "Last Quarter": "Últ Cuarto",
       "Waning Crescent": "Meng Creciente",
     },
-    buttons: {
-      previous: "Ant Mes",
-      next: "Sig Mes",
-    },
   }
 
   const fishActivityIcons = {
@@ -103,11 +99,11 @@ const LunarCalendar = () => {
 
     // Agregar cabecera de días
     const weekHeader = (
-      <div className="mb-4 grid grid-cols-7 rounded-2xl bg-[#ffd700] text-center font-NecoBold text-xl font-black text-black">
-        {weekDays.map((day) => (
+      <div className="font-NecoBold grid grid-cols-7 rounded-2xl text-center text-xl font-black text-[#1b7b6e]">
+        {weekDays.map((day, index) => (
           <div
             key={day}
-            className="p-2"
+            className={`pb-2 ${index !== 6 ? "border-r border-[#1b7b6e]" : ""}`}
           >
             {day}
           </div>
@@ -118,23 +114,23 @@ const LunarCalendar = () => {
 
     // Rellenar el calendario
     let dayCount = 1
+    const isLastWeek = (i: number, daysInMonth: number, firstDayOfMonth: number) => {
+      const totalWeeks = Math.ceil((daysInMonth + firstDayOfMonth) / 7)
+      return i === totalWeeks - 1
+    }
+
     for (let i = 0; i < 6; i++) {
       const week = []
       for (let j = 0; j < 7; j++) {
         if (i === 0 && j < firstDayOfMonth) {
           week.push(
             <div
+              className="border-r border-[#1b7b6e]"
               key={`empty-${i}-${j}`}
-              className="p-2"
             ></div>
           ) // Espacios vacíos para días previos
         } else if (dayCount > daysInMonth) {
-          week.push(
-            <div
-              key={j}
-              className="p-2"
-            ></div>
-          ) // Espacios vacíos si el mes termina
+          week.push(<div key={j}></div>)
         } else {
           const lunarDay = lunarDays.find(
             (day) => day.date.getDate() === dayCount && day.date.getMonth() === startMonth
@@ -142,13 +138,12 @@ const LunarCalendar = () => {
           week.push(
             <div
               key={j}
-              className="m-1 rounded-lg border-2 border-yellow-500 bg-[#070922] p-2 text-center"
+              className={`w-full border-[#1b7b6e] bg-green-50 px-2 py-1 text-center text-green-900 ${(j + 1) % 7 !== 0 ? "border-r" : ""} ${j >= 7 ? "border-t" : ""} ${!isLastWeek(i, daysInMonth, firstDayOfMonth) ? "border-b" : ""}`}
             >
-              <strong>{dayCount}</strong>
-              <div>
-                {lunarDay?.phase} {lunarDay?.phaseEmoji}
-              </div>
-              <div>Actividad: {lunarDay?.activityIcon}</div>
+              <p className="text-left font-black">{dayCount}</p>
+              <p className="text-3xl">{lunarDay?.phaseEmoji}</p>
+              <p className="text-left text-sm">{lunarDay?.phase}</p>
+              <p className="text-left text-sm">{lunarDay?.activityIcon}</p>
             </div>
           )
           dayCount++
@@ -170,64 +165,105 @@ const LunarCalendar = () => {
   const lunarDataForDisplay = getLunarDataForMonth() // Genera datos una vez
 
   return (
-    <div className="m-auto max-w-[75rem] rounded-lg p-4 px-6 shadow-md">
-      <h2 className="mb-4 text-center font-NecoBold text-2xl font-bold uppercase text-yellow-400 md:text-4xl">
-        {new Date(startYear, startMonth)
-          .toLocaleString("es-ES", {
-            month: "long",
-            year: "numeric",
-          })
-          .replace(/^\w/, (c) => c.toUpperCase())}{" "}
-      </h2>
-      <div className="mb-4 flex items-center justify-between">
-        <button
-          onClick={handlePreviousMonth}
-          className="rounded bg-[#8d65c5] px-4 py-2 text-white transition hover:bg-blue-600"
-        >
-          {translations.buttons.previous}
-        </button>
-        <button
-          onClick={handleNextMonth}
-          className="rounded bg-[#8d65c5] px-4 py-2 text-white transition hover:bg-blue-600"
-        >
-          {translations.buttons.next}
-        </button>
-      </div>
-      <div
-        key="calendar-desktop-view"
-        className="mt-4 hidden md:block"
-      >
-        {generateCalendar()}
-      </div>{" "}
-      {/* Para PC */}
-      <ul className="mt-4 block space-y-4 md:hidden">
-        {/* Para móviles */}
-        {lunarDataForDisplay.map((lunarDay, index) => (
-          <li
-            key={index}
-            className="rounded-lg border-2 border-yellow-500 p-4 shadow-md"
+    <section className="mx-6 flex items-center justify-center">
+      <div className="max-w-[60rem] overflow-hidden rounded-lg shadow-md md:bg-green-100">
+        <div className="flex items-center justify-between p-5">
+          <button
+            onClick={handlePreviousMonth}
+            className="rounded-full bg-[#1b7b6e] p-1 text-white transition hover:bg-emerald-800"
           >
-            <div className="flex items-center justify-between">
-              <strong className="text-lg">
-                {lunarDay.date.toLocaleDateString("es-ES", {
-                  weekday: "long",
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </strong>
-              <span className="ml-2 text-2xl">{lunarDay.phaseEmoji}</span>
-            </div>
-            <div className="mt-2">
-              <span className="font-semibold">Fase:</span> {lunarDay.phase}
-            </div>
-            <div className="mt-1">
-              <span className="font-semibold">Actividad:</span> {lunarDay.activityIcon}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="rotate-180"
+            >
+              <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path d="M5 12h.5m3 0h1.5m3 0h6" />
+              <path d="M15 16l4 -4" />
+              <path d="M15 8l4 4" />
+            </svg>
+          </button>
+          <h2 className="font-NecoBold text-center text-2xl font-bold uppercase text-[#1b7b6e] md:text-4xl">
+            {new Date(startYear, startMonth)
+              .toLocaleString("es-ES", {
+                month: "long",
+                year: "numeric",
+              })
+              .replace(/^\w/, (c) => c.toUpperCase())}{" "}
+          </h2>
+          <button
+            onClick={handleNextMonth}
+            className="rounded-full bg-[#1b7b6e] p-1 text-white transition hover:bg-emerald-800"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path d="M5 12h.5m3 0h1.5m3 0h6" />
+              <path d="M15 16l4 -4" />
+              <path d="M15 8l4 4" />
+            </svg>
+          </button>
+        </div>
+        <div
+          key="calendar-desktop-view"
+          className="hidden bg-green-100 md:block"
+        >
+          {generateCalendar()}
+        </div>{" "}
+        {/* Para PC */}
+        <ul className="block space-y-4 md:hidden">
+          {/* Para móviles */}
+          {lunarDataForDisplay.map((lunarDay, index) => (
+            <li
+              key={index}
+              className="rounded-lg border-1 border-[#1b7b6e77] bg-green-100 p-4 text-green-900 shadow-md"
+            >
+              <div className="flex items-center justify-between">
+                <strong className="text-lg">
+                  {lunarDay.date.toLocaleDateString("es-ES", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </strong>
+                <span className="ml-2 text-2xl">{lunarDay.phaseEmoji}</span>
+              </div>
+              <div className="mt-2">
+                <span className="font-semibold">Fase:</span> {lunarDay.phase}
+              </div>
+              <div className="mt-1">
+                <span className="font-semibold">Actividad:</span> {lunarDay.activityIcon}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   )
 }
 

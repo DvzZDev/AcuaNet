@@ -9,8 +9,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover; /* Cobertura completa en pantallas grandes */
   background-position: center center;
-  width: 100svw;
-  height: 110svh;
+  width: 100vw;
+  height: 110vh;
+  overflow-x: hidden; /* Evitar barra de desplazamiento horizontal */
 }
 
 @media (min-width: 768px) {

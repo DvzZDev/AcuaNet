@@ -24,8 +24,7 @@ export default function SerchEmb({ data }: TypeProps) {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border border-solid border-green-100 p-1 text-sm backdrop-blur-md transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
-        style={{ backgroundColor: "rgba(95, 143, 138, 0.31)" }}
+        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border border-solid border-green-100 bg-[#3f7b7648] p-1 text-sm backdrop-blur-2xl transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

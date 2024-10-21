@@ -53,7 +53,7 @@ export default function SerchEmb({ data }: TypeProps) {
           loop
         >
           <input
-            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-200 placeholder-opacity-40 focus:outline-none sm:text-[18px]"
+            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-200 placeholder-opacity-80 focus:outline-none sm:text-[18px]"
             type="text"
             value={type}
             onChange={handletype}

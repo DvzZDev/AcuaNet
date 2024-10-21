@@ -5,8 +5,8 @@ import SerchWeather from "./SerchWeather"
 export default async function Hero() {
   const datares = nombreEmbalses
   return (
-    <div className="animate-blurred-fade-in -z-10 bg-green-100/10">
-      <section className="z-10 flex h-svh flex-col items-center">
+    <div className="-z-10 animate-blurred-fade-in h-screen bg-green-100/10">
+      <section className="z-10 flex flex-col items-center">
         <div className="animate-fade-up mb-6 mt-4 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
           <svg
             fill="#93ffb7"
@@ -22,14 +22,14 @@ export default async function Hero() {
           </svg>
         </div>
         <div className="flex flex-col xl:w-[60%]">
-          <strong className="animate-fade-up animate-delay-100 mb-4 w-full text-center font-Inter text-[64px] font-bold leading-none text-[textsecondary] text-green-100 sm:text-[4rem] 2xl:text-[5rem]">
+          <strong className="animate-fade-up mb-4 w-full text-center font-Inter text-[64px] font-bold leading-none text-[textsecondary] text-green-100 animate-delay-100 sm:text-[4rem] 2xl:text-[5rem]">
             AcuaNet
           </strong>
-          <h1 className="animate-fade-up animate-delay-200 h-auto max-w-80 px-4 text-center text-[1.5rem] text-green-100 sm:max-w-full sm:text-[35px] 2xl:text-[2rem]">
+          <h1 className="animate-fade-up h-auto max-w-80 px-4 text-center text-[1.5rem] text-green-100 animate-delay-200 sm:max-w-full sm:text-[35px] 2xl:text-[2rem]">
             La herramienta definitiva para pescadores <br />
           </h1>
         </div>
-        <div className="animate-fade-up animate-delay-300 z-30 mt-5 flex flex-col gap-3 sm:gap-10 md:flex-row">
+        <div className="animate-fade-up z-30 mt-5 flex flex-col gap-3 animate-delay-300 sm:gap-10 md:flex-row">
           <SerchEmb data={datares} />
           <SerchWeather />
         </div>

@@ -38,7 +38,7 @@ export const metadata = {
 
 function page() {
   return (
-    <section className="mt-5">
+    <section>
       <Intro title={"Embalses"} />
       <section className="bg-green-50">
         <Suspense fallback={<SkeletonTableEmbalse />}>

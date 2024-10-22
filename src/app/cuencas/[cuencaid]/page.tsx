@@ -62,7 +62,7 @@ async function Page({ params }: { params: { cuencaid: string } }) {
 
         <Suspense
           fallback={
-            <div className="animate-duration-500 mb-14 animate-spin">
+            <div className="animate-spin mb-14 animate-duration-500">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"

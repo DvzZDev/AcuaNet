@@ -1,11 +1,12 @@
 import nombreEmbalses from "../../lib/nombresEmbalses.json"
+import FavSection from "./FavSection"
 import SerchEmb from "./SerchEmb"
 import SerchWeather from "./SerchWeather"
 
 export default async function Hero() {
   const datares = nombreEmbalses
   return (
-    <div className="-z-10 animate-blurred-fade-in h-screen bg-green-100/10">
+    <div className="-z-10 h-screen animate-blurred-fade-in overflow-auto bg-green-100/10">
       <section className="z-10 flex flex-col items-center">
         <div className="animate-fade-up mb-6 mt-4 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
           <svg
@@ -26,12 +27,15 @@ export default async function Hero() {
             AcuaNet
           </strong>
           <h1 className="animate-fade-up h-auto max-w-80 px-4 text-center text-[1.5rem] text-green-100 animate-delay-200 sm:max-w-full sm:text-[35px] 2xl:text-[2rem]">
-            La herramienta definitiva para pescadores <br />
+            Herramienta definitíva para tus jornadas de pesca. <br />
           </h1>
         </div>
         <div className="animate-fade-up z-30 mt-5 flex flex-col gap-3 animate-delay-300 sm:gap-10 md:flex-row">
           <SerchEmb data={datares} />
           <SerchWeather />
+        </div>
+        <div>
+          <FavSection />
         </div>
       </section>
     </div>

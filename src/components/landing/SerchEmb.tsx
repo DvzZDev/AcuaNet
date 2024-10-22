@@ -94,7 +94,7 @@ export default function SerchEmb({ data }: TypeProps) {
             initial="initial"
             animate="animate"
             variants={variants}
-            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-green-100/10 text-base text-green-100 backdrop-blur-md md:text-xl"
+            className="absolute mt-5 flex bg-[#23583a] w-full flex-col gap-1 rounded-lg bg-opacity-100 text-base text-green-100 md:text-xl"
           >
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <motion.li

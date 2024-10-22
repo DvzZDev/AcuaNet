@@ -52,8 +52,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .scroll-tab {
-  --sb-track-color: #070922;
-  --sb-thumb-color: #fcd43e;
+  --sb-track-color: #f0fdf4;
+  --sb-thumb-color: #275e56;
   --sb-size: 10px;
 }
 

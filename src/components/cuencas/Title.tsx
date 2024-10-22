@@ -23,7 +23,7 @@ async function Title(url: { url: { cuencaid: string } }) {
 
   return (
     <div className="justify-center">
-      <h1 className="mb-2 text-center text-[2.5rem] font-bold text-green-100 sm:mt-10 sm:text-6xl">
+      <h1 className="mt-4 text-center text-[2.5rem] font-bold text-green-100 sm:mb-2 sm:mt-10 sm:text-6xl xl:mb-0">
         {resCuenca.cuenca.replace(/_/g, " ")}
       </h1>
     </div>

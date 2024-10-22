@@ -167,7 +167,7 @@ const LunarCalendar = () => {
   return (
     <section className="mx-6 flex items-center justify-center">
       <div className="max-w-[60rem] overflow-hidden rounded-lg shadow-md md:bg-green-100">
-        <div className="flex items-center justify-between p-5">
+        <div className="flex items-center justify-between py-3 md:p-5">
           <button
             onClick={handlePreviousMonth}
             className="rounded-full bg-[#1b7b6e] p-1 text-white transition hover:bg-emerald-800"
@@ -244,12 +244,14 @@ const LunarCalendar = () => {
             >
               <div className="flex items-center justify-between">
                 <strong className="text-lg">
-                  {lunarDay.date.toLocaleDateString("es-ES", {
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  {lunarDay.date
+                    .toLocaleDateString("es-ES", {
+                      weekday: "long",
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })
+                    .replace(/^\w|\s\w/g, (c) => c.toUpperCase())}
                 </strong>
                 <span className="ml-2 text-2xl">{lunarDay.phaseEmoji}</span>
               </div>

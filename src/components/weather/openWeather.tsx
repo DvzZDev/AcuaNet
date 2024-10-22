@@ -29,13 +29,13 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
   }
 
   return (
-    <div className="flex flex-col items-center justify-center rounded-lg bg-[#070922] p-4 px-6 py-[5rem] text-xl">
-      <div className="scroll-tab max-w-[20rem] overflow-x-auto sm:max-w-[40rem] md:max-w-[45rem] lg:max-w-[50rem] xl:max-w-[55rem]">
+    <div className="flex flex-col items-center justify-center rounded-lg bg-green-50 p-4 px-6 py-6 text-xl">
+      <div className="scroll-tab max-w-[20rem] overflow-x-auto sm:max-w-[40rem] md:max-w-[45rem] lg:max-w-[60rem] xl:max-w-[75rem]">
         <table className="min-w-full table-auto text-left">
-          <thead>
+          <thead className="bg-[#275e56]">
             <tr>
               {/* Columna de horas */}
-              <th className="sticky left-0 z-10 border-r border-gray-700 bg-[#070922]">
+              <th className="sticky left-0 z-10 border-r border-gray-700 bg-[#275e56]">
                 <div className="flex flex-col items-center justify-center"></div>
               </th>
               {/* Columnas para los días */}
@@ -46,16 +46,16 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                 >
                   <div className="flex w-[4rem] flex-col items-center justify-center md:w-[7rem]">
                     <span>{getWeatherCode(day.icon)}</span>
-                    <span className="text-center text-sm font-semibold uppercase text-white sm:text-medium">
+                    <span className="text-center text-sm font-semibold uppercase text-green-50 sm:text-medium">
                       {dateFormater(day.datetime)}
                     </span>
-                    <span className="w-[6rem] py-1 sm:py-0 text-center text-xs font-light uppercase sm:text-base">
+                    <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-green-50 sm:py-0 sm:text-base">
                       {new Date(day.datetime).toLocaleDateString("es-ES", {
                         day: "numeric",
                         month: "short",
                       })}
                     </span>
-                    <span className="flex items-center justify-center gap-1 text-sm text-white font-medium">
+                    <span className="flex items-center justify-center gap-1 text-sm font-medium text-green-50">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -79,7 +79,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                       </span>
                     </span>
 
-                    <span className="flex items-center justify-center gap-1 text-sm text-white font-medium">
+                    <span className="flex items-center justify-center gap-1 text-sm font-medium text-green-50">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -107,7 +107,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-[#275e5660] font-normal text-[#275e56]">
             {/* Recorrer las horas */}
             {["08:00:00", "12:00:00", "16:00:00", "20:00:00", "23:00:00"].map(
               (time, hourIndex) => (
@@ -116,7 +116,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                   className="border-gray-700"
                 >
                   {/* Columna de las horas */}
-                  <td className="sticky left-0 z-10 border-gray-700 bg-[#070922] p-2">
+                  <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2 text-green-100">
                     <div className="flex flex-col items-center justify-center">
                       <span className="text-sm font-light uppercase">
                         {time.slice(0, 5)}
@@ -156,7 +156,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
 
             {/* Fila de presión */}
             <tr className="border-gray-700">
-              <td className="sticky left-0 z-10 border-gray-700 bg-[#070922] p-2">
+              <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
                 <div className="flex flex-col items-center justify-center">
                   <span className="text-sm font-light uppercase">
                     {/* Precipitaciones */}
@@ -166,7 +166,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#d3f4df"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -200,15 +200,15 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
             </tr>
 
             <tr className="border-gray-700">
-              <td className="sticky left-0 z-10 border-gray-700 bg-[#070922] p-2">
+              <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
                 <div className="flex flex-col items-center justify-center">
                   <span className="text-sm font-light uppercase">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="23"
                       height="23"
-                      fill="currentColor"
-                      stroke="currentColor"
+                      fill="#d3f4df"
+                      stroke="#d3f4df"
                       viewBox="0 0 24 24"
                       strokeWidth={0.1}
                     >
@@ -236,7 +236,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
             </tr>
 
             <tr className="border-gray-700">
-              <td className="sticky left-0 z-10 border-gray-700 bg-[#070922] p-2">
+              <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
                 <div className="flex flex-col items-center justify-center">
                   <span className="text-sm font-light uppercase">
                     <svg
@@ -245,7 +245,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#d3f4df"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"

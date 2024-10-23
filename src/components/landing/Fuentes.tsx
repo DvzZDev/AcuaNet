@@ -33,7 +33,7 @@ function Fuentes() {
       >
         Datos actualizdos cada 24 horas.
       </motion.h4>
-      <div className="mt-8 flex flex-col gap-7 sm:flex-row sm:gap-16">
+      <div className="mt-8 flex flex-col gap-7 md:flex-row md:gap-16">
         <Image
           src="/aemet.webp"
           alt="Aemet España"

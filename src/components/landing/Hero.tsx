@@ -8,7 +8,7 @@ export default async function Hero() {
   return (
     <div className="-z-10 h-screen animate-blurred-fade-in bg-green-100/10">
       <section className="z-10 flex flex-col items-center">
-        <div className="animate-fade-up mb-6 mt-4 flex w-[3rem] max-w-xs justify-center sm:mt-24 sm:w-[5rem]">
+        <div className="animate-fade-up mb-6 mt-4 flex w-[3rem] max-w-xs justify-center sm:w-[5rem] xl:mt-16 2xl:mt-24">
           <svg
             fill="#93ffb7"
             xmlns="http://www.w3.org/2000/svg"

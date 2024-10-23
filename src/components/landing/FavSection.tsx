@@ -92,7 +92,7 @@ export default async function FavSection() {
   const data: Embalses[] = await GetEmbalseByName(favorites)
 
   return (
-    <section className="mt-[5rem] w-full max-w-6xl px-4 pb-8">
+    <section className="sm:mt-[5rem] mt-[2rem] h-[13rem] sm:h-full w-full max-w-6xl overflow-auto px-4 pb-8">
       <h2 className="mb-4 text-2xl text-green-100">Embalses Favoritos</h2>
       {data.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

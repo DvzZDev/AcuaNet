@@ -43,7 +43,7 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
   const variacion = embalse.variacion_ultima_semanapor || 0
 
   return (
-    <div className="md:max-h-auto max-h-64 w-full overflow-auto rounded-lg border border-green-600/30 bg-gradient-to-br from-green-700/60 to-green-900/60 text-green-50 shadow-lg backdrop-blur-lg transition-all hover:scale-110">
+    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-600/30 bg-gradient-to-br from-green-700/60 to-green-900/60 text-green-50 shadow-lg backdrop-blur-lg transition-all hover:scale-110">
       <Link href={encodeURI(`embalses/${embalse.nombre_embalse ?? ""}`)}>
         <div className="p-3">
           <div className="mb-2 flex items-center justify-between">
@@ -92,8 +92,8 @@ export default async function FavSection() {
   const data: Embalses[] = await GetEmbalseByName(favorites)
 
   return (
-    <section className="mt-[2rem] h-[16.5rem] w-full max-w-6xl overflow-auto px-4 pb-8 sm:h-full xl:mt-[3rem] 2xl:mt-[rem]">
-      <h2 className="mb-4 text-2xl text-green-100">Embalses Favoritos</h2>
+    <section className="mt-[2rem] h-[16.5rem] w-full max-w-6xl overflow-auto px-4 pb-8 sm:h-full xl:mt-[3rem] 2xl:mt-[6rem]">
+      <h2 className="mb-4 text-xl md:text-2xl text-green-100">Embalses Favoritos</h2>
       {data.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {data.map((favorite: Embalses, index: number) => (

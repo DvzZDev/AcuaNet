@@ -3,6 +3,8 @@ import FavSection from "./FavSection"
 import SerchEmb from "./SerchEmb"
 import SerchWeather from "./SerchWeather"
 import Patrocinio from "./Patrocinio"
+import { Suspense } from "react"
+import SkeletonFavorites from "../skeletons/SkeletonFavorites"
 
 export default async function Hero() {
   const datares = nombreEmbalses
@@ -36,7 +38,9 @@ export default async function Hero() {
           <SerchWeather />
         </div>
         <div>
-          <FavSection />
+          <Suspense fallback={<SkeletonFavorites />}>
+            <FavSection />
+          </Suspense>
         </div>
         <Patrocinio />
       </section>

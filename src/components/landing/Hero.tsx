@@ -2,13 +2,14 @@ import nombreEmbalses from "../../lib/nombresEmbalses.json"
 import FavSection from "./FavSection"
 import SerchEmb from "./SerchEmb"
 import SerchWeather from "./SerchWeather"
+import Image from "next/image"
 
 export default async function Hero() {
   const datares = nombreEmbalses
   return (
     <div className="-z-10 h-screen animate-blurred-fade-in bg-green-100/10">
-      <section className="z-10 flex flex-col items-center">
-        <div className="animate-fade-up mb-1 md:mb-6 mt-4 flex w-[3rem] max-w-xs justify-center sm:w-[5rem] xl:mt-16 2xl:mt-24">
+      <section className="relative z-10 flex flex-col items-center">
+        <div className="animate-fade-up mb-1 mt-4 flex w-[3rem] max-w-xs justify-center sm:w-[5rem] md:mb-6 xl:mt-16 2xl:mt-24">
           <svg
             fill="#93ffb7"
             xmlns="http://www.w3.org/2000/svg"
@@ -37,6 +38,24 @@ export default async function Hero() {
         <div>
           <FavSection />
         </div>
+        <a href="https://agrbaits.es">
+          <div className="absolute right-1 top-7 flex w-[6rem] animate-duration-2000 rotate-12 animate-jiggle flex-col items-center justify-center gap-1 transition-transform animate-iteration-count-infinite hover:scale-105 md:right-12 md:w-[10rem]">
+            <Image
+              src={"/AGRLogo.webp"}
+              unoptimized={true}
+              width={50}
+              height={50}
+              alt="AGR Logo"
+              className="rounded-full md:h-full md:w-[100px] 2xl:w-[150px]"
+            />
+            <p className="text-center text-[10px] font-light text-green-100 md:text-[20px]">
+              Patrocinado por{" "}
+              <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text font-black text-transparent">
+                AGR Baits
+              </span>
+            </p>
+          </div>
+        </a>
       </section>
     </div>
   )

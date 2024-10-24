@@ -30,7 +30,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
 
   return (
     <div className="flex flex-col items-center justify-center rounded-lg bg-green-50 p-4 px-6 py-6 text-xl">
-      <div className="scroll-tab max-w-[20rem] overflow-x-auto sm:max-w-[40rem] md:max-w-[45rem] lg:max-w-[60rem] xl:max-w-[75rem]">
+      <div className="scroll-tab max-w-[20rem] overflow-x-auto rounded-xl sm:max-w-[40rem] md:max-w-[45rem] lg:max-w-[60rem] xl:max-w-[75rem]">
         <table className="min-w-full table-auto text-left">
           <thead className="bg-[#275e56]">
             <tr>
@@ -44,7 +44,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                   key={index}
                   className="border-x border-gray-700"
                 >
-                  <div className="flex w-[4rem] flex-col items-center justify-center md:w-[7rem]">
+                  <div className="flex w-[4rem] flex-col items-center justify-center my-2 md:w-[7rem]">
                     <span>{getWeatherCode(day.icon)}</span>
                     <span className="text-center text-sm font-semibold uppercase text-green-50 sm:text-medium">
                       {dateFormater(day.datetime)}

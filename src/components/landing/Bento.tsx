@@ -1,7 +1,6 @@
 "use client"
 import "@fontsource-variable/comfortaa"
 import { Link } from "next-view-transitions"
-import { motion } from "framer-motion"
 import type { BentoProps } from "@/types"
 import { getMoonPhase } from "@/lib/GetMoonPhase"
 import { translateMoonPhase } from "@/lib/TranslateMoon"
@@ -14,23 +13,6 @@ function Bento(props: BentoProps) {
   const variacionEmbalses = props.variacionEmbalses
   const esp = props.esp
 
-  const variants = (i: number) => ({
-    initial: { opacity: 0, y: 100 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, type: "spring", stiffness: 100, delay: i * 0.1 },
-    },
-  })
-
-  const variantss = (i: number) => ({
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: { duration: 0.5, type: "spring", stiffness: 50, delay: i * 0.1 },
-    },
-  })
-
   return (
     <section className="flex min-h-full flex-col items-center justify-center bg-[#f1fbf7] bg-gradient-to-t py-5 md:py-10 lg:h-full">
       <h1 className="text-center text-[2.3rem] font-bold leading-none text-[#1b7b6e] sm:mb-6 sm:text-[50px]">
@@ -39,20 +21,7 @@ function Bento(props: BentoProps) {
       {/* Div Global */}
       <div className="mx-6 my-4 flex flex-col justify-center gap-7 md:my-8 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
-        <motion.div
-          initial="initial"
-          variants={{
-            initial: { opacity: 0, y: 100 },
-            animate: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1, type: "spring", stiffness: 100 },
-            },
-          }}
-          whileInView="animate"
-          viewport={{ once: true, margin: "-70px" }}
-          className="animate-once animate-ease-in-out col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm lg:col-span-4"
-        >
+        <div className="animate-once col-span-4 row-span-1 flex animate-slide-in-left justify-center text-wrap rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm animate-range-[entry_15%_contain_30%] view-animate-[--subjectReveal] animate-ease-in-out lg:col-span-4">
           {esp.map((españa) => (
             <div
               key={españa.id}
@@ -68,52 +37,21 @@ function Bento(props: BentoProps) {
               <h2 className="text-3xl text-green-300 md:text-5xl">Nacional</h2>
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/*   Segunda col */}
-        <motion.div
-          initial="initial"
-          variants={{
-            initial: { opacity: 0, y: 100 },
-            animate: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1, type: "spring", stiffness: 100 },
-            },
-          }}
-          whileInView="animate"
-          viewport={{ once: true, margin: "-70px" }}
+        <div
           id="bd2"
-          className="col-span-6 row-span-1 flex min-h-full min-w-full content-center justify-center rounded-xl bg-[#114d45] bg-opacity-90 p-2 shadow-2xl shadow-[#114d45] backdrop-blur-sm"
+          className="col-span-6 row-span-1 flex min-h-full min-w-full animate-slide-in-right content-center justify-center rounded-xl bg-[#114d45] bg-opacity-90 p-2 shadow-2xl shadow-[#114d45] backdrop-blur-sm animate-range-[entry_15%_contain_30%] view-animate-[--subjectReveal]"
         >
-          <motion.div
-            initial="initial"
-            variants={{
-              initial: { opacity: 0, y: 100 },
-              animate: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 1, type: "spring", stiffness: 100 },
-              },
-            }}
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4"
-          >
+          <div className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4">
             {cuencas.map((cuenca, index) => (
               <Link
                 href={`/cuencas/${cuenca.cuenca}`}
-                key={cuenca.cuenca}
+                key={index}
               >
-                <motion.div
-                  whileTap={{ scale: 0.9, rotate: -10, transition: { duration: 0.2 } }}
-                  key={index}
-                  initial="initial"
-                  variants={variants(index)}
-                  whileInView="animate"
-                  viewport={{ once: true, margin: "200px" }}
-                  whileHover={{ scale: 1.1 }}
-                  className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 ${getColor(cuenca.porcentaje_embalsada ?? 0)}`}
+                <div
+                  className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 transition-transform hover:scale-95 ${getColor(cuenca.porcentaje_embalsada ?? 0)}`}
                 >
                   <div className="flex flex-col content-center items-center justify-center">
                     <p className="text-sm md:text-[15px]">
@@ -121,29 +59,18 @@ function Bento(props: BentoProps) {
                     </p>
                     <p className="text-sm md:text-[15px]">{`${cuenca.porcentaje_embalsada ?? 0} %`}</p>
                   </div>
-                </motion.div>
+                </div>
               </Link>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Tercera Col */}
-        <motion.a
+        <a
           href="/luna"
-          initial="initial"
-          variants={{
-            initial: { opacity: 0, y: 100 },
-            animate: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1, type: "spring", stiffness: 100 },
-            },
-          }}
-          whileInView="animate"
-          viewport={{ once: true, margin: "-70px" }}
-          className="relative col-span-6 overflow-hidden rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm"
+          className="relative col-span-6 animate-slide-in-left overflow-hidden rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm animate-range-[entry_15%_contain_30%] view-animate-[--subjectReveal]"
         >
-          <h1 className="absolute left-1/2 z-10 -translate-x-1/2 transform pt-3 text-center text-3xl text-yellow-500 md:pt-5 md:text-5xl">
+          <h1 className="absolute left-1/2 z-10 w-full -translate-x-1/2 transform pt-3 text-center text-3xl text-yellow-500 md:pt-5 md:text-5xl">
             {translateMoonPhase()}
           </h1>
           <video
@@ -157,23 +84,10 @@ function Bento(props: BentoProps) {
               type="video/mp4"
             />
           </video>
-        </motion.a>
+        </a>
 
         {/* Cuarta Coluna */}
-        <motion.div
-          initial="initial"
-          variants={{
-            initial: { opacity: 0, y: 100 },
-            animate: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1, type: "spring", stiffness: 100 },
-            },
-          }}
-          whileInView="animate"
-          viewport={{ once: true, margin: "-70px" }}
-          className="col-span-4 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm"
-        >
+        <div className="col-span-4 animate-slide-in-right rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm animate-range-[entry_15%_contain_30%] view-animate-[--subjectReveal]">
           <h1 className="p-2 text-center text-3xl text-green-300">
             Mayor Variacion Semanal
           </h1>
@@ -181,30 +95,16 @@ function Bento(props: BentoProps) {
             {/* Primera Tabla */}
             <table className="mb-1 w-full text-[16px]">
               <thead className="text-[16px] font-extrabold text-green-300">
-                <motion.tr
-                  initial="initial"
-                  variants={variants(0)}
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                >
+                <tr>
                   <th className="text-left">Cuenca</th>
                   <th className="text-right">%</th>
-                </motion.tr>
+                </tr>
               </thead>
               <tbody className="text-green-50">
-                {variacionCuencas.map((variacion, index) => (
-                  <motion.tr
-                    variants={variantss(index)}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
+                {variacionCuencas.map((variacion) => (
+                  <tr
+                    className="hover:bg-green-500/20"
                     key={variacion.cuenca}
-                    whileHover={{
-                      backgroundColor: "#7184f5",
-                      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-                      transition: { duration: 0.3 },
-                    }}
-                    whileTap={{ scale: 0.9, rotate: -10, transition: { duration: 0.2 } }}
                   >
                     <td>
                       <Link href={`/cuencas/${variacion.cuenca}`}>
@@ -214,7 +114,7 @@ function Bento(props: BentoProps) {
                       </Link>
                     </td>
                     <td className="w-[50%] text-right lg:w-auto">{`${variacion.porcentaje_variacion}`}</td>
-                  </motion.tr>
+                  </tr>
                 ))}
               </tbody>
             </table>
@@ -225,27 +125,22 @@ function Bento(props: BentoProps) {
               </caption>
               <tbody className="text-green-50">
                 {variacionEmbalses.map((variacion, index) => (
-                  <motion.tr
-                    variants={variantss(index)}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
-                    key={variacion.nombre_embalse}
-                    whileHover={{
-                      backgroundColor: "#7184f5",
-                      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-                      transition: { duration: 0.3 },
-                    }}
-                    whileTap={{ scale: 0.9, rotate: -10, transition: { duration: 0.2 } }}
+                  <tr
+                    className="hover:bg-green-500/20"
+                    key={index}
                   >
-                    <td>{variacion.nombre_embalse}</td>
+                    <td>
+                      {variacion.nombre_embalse?.replace(/\b\w/g, (char) =>
+                        char.toUpperCase()
+                      )}
+                    </td>
                     <td className="text-right">{`${variacion.variacion_ultima_semanapor}`}</td>
-                  </motion.tr>
+                  </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -10,7 +10,6 @@ import {
   SortingState,
 } from "@tanstack/react-table"
 import { mkConfig, generateCsv, download } from "export-to-csv"
-import { motion } from "framer-motion"
 import { Row } from "@tanstack/react-table"
 import { Embalses } from "@/types"
 
@@ -165,23 +164,11 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
         </button>
       </div>
       <table className="border border-[#275e56]">
-        <thead className="bg-[#275e56] text-sm sm:text-xl text-green-50">
+        <thead className="bg-[#275e56] text-sm text-green-50 sm:text-xl">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
-                <motion.th
-                  initial="initial"
-                  variants={{
-                    initial: { opacity: 0 },
-                    animate: { opacity: 1 },
-                  }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{
-                    once: true,
-                    amount: 0.6,
-                    margin: "-50px",
-                  }}
-                  whileInView="animate"
+                <th
                   onClick={header.column.getToggleSortingHandler()}
                   className={`table-auto cursor-pointer p-1 pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? "w-[14rem] transition-transform duration-150 active:scale-90 sm:w-[17rem]" : index === 1 ? "w-[15rem] transition-transform duration-150 active:scale-90" : "w-auto text-center transition-transform duration-150 active:scale-90"}`}
                   key={header.id}
@@ -194,26 +181,14 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
                       ? "↑"
                       : "↓"
                     : ""}
-                </motion.th>
+                </th>
               ))}
             </tr>
           ))}
         </thead>
-        <tbody className="text-md text-gray-50 bg-[#275e56] sm:text-xl">
+        <tbody className="text-md bg-[#275e56] text-gray-50 sm:text-xl">
           {table.getRowModel().rows.map((row) => (
-            <motion.tr
-              initial="initial"
-              variants={{
-                initial: { opacity: 0 },
-                animate: { opacity: 1 },
-              }}
-              transition={{ duration: 0.5 }}
-              viewport={{
-                once: true,
-                amount: 0.6,
-                margin: "-50px",
-              }}
-              whileInView="animate"
+            <tr
               key={row.id}
               className="odd:bg-[#224d53] even:bg-[#275e56]"
             >
@@ -233,26 +208,12 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
                   )}
                 </td>
               ))}
-            </motion.tr>
+            </tr>
           ))}
         </tbody>
       </table>
 
-      <motion.div
-        initial="initial"
-        variants={{
-          initial: { opacity: 0 },
-          animate: { opacity: 1 },
-        }}
-        transition={{ duration: 0.5 }}
-        viewport={{
-          once: true,
-          amount: 0.6,
-          margin: "-50px",
-        }}
-        whileInView="animate"
-        className="flex justify-between rounded-b-xl bg-[#224d53] p-2"
-      >
+      <div className="flex justify-between rounded-b-xl bg-[#224d53] p-2">
         <div>
           <p className="mt-1 w-6 rounded-sm text-center">
             {table.getState().pagination.pageIndex + 1}
@@ -342,7 +303,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
             {table.getPageCount() - 1}
           </button>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }

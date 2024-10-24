@@ -1,6 +1,5 @@
 "use client"
 import EmbalseGrafico from "./Grafico"
-import { motion } from "framer-motion"
 import Image from "next/image"
 import { Cuenca } from "@/types"
 
@@ -12,22 +11,10 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
   const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaidNM)
-  const delays = [0.07]
 
   return (
     <div className="mx-4 mt-7 flex min-h-full w-[12rem] flex-col gap-4 sm:mt-0 sm:grid sm:w-[40rem] sm:grid-cols-8 sm:grid-rows-8 lg:h-[40rem] lg:w-[60rem]">
-      <motion.div
-        transition={{ type: "spring", duration: 0.5 }}
-        key="agua"
-        variants={{
-          initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 1 } },
-        }}
-        initial="initial"
-        viewport={{ once: true }}
-        whileInView="animate"
-        className="order-1 flex justify-center rounded-lg bg-[#275e56] sm:col-span-2 sm:row-span-3 sm:rounded-lg"
-      >
+      <div className="order-1 flex justify-center rounded-lg bg-[#275e56] sm:col-span-2 sm:row-span-3 sm:rounded-lg">
         <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
           <h1 className="text-2xl text-green-100 lg:text-3xl">Agua</h1>
           <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
@@ -38,18 +25,10 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
           </div>
           <h1 className="text-2xl text-green-100 lg:text-3xl">Embalsada</h1>
         </article>
-      </motion.div>
+      </div>
 
-      <motion.div
-        transition={{ type: "spring", duration: 0.5 }}
+      <div
         key="agua"
-        variants={{
-          initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 1 } },
-        }}
-        initial="initial"
-        viewport={{ once: true }}
-        whileInView="animate"
         className="order-1 flex justify-center rounded-lg bg-[#275e56] sm:col-span-2 sm:row-span-3 sm:rounded-lg"
       >
         <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
@@ -62,33 +41,17 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
           </div>
           <h1 className="text-2xl text-green-100 lg:text-3xl">Total</h1>
         </article>
-      </motion.div>
+      </div>
 
-      <motion.div
-        transition={{ type: "spring", duration: 0.5 }}
+      <div
         key="agua"
-        variants={{
-          initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 2 } },
-        }}
-        initial="initial"
-        viewport={{ once: true }}
-        whileInView="animate"
         className="order-3 col-span-2 row-span-3 flex justify-center rounded-lg sm:order-6"
       >
         <EmbalseGrafico porcentaje={resCuenca?.porcentaje_embalsada ?? 0} />
-      </motion.div>
+      </div>
 
-      <motion.div
-        transition={{ type: "spring", duration: 0.5 }}
+      <div
         key="agua"
-        variants={{
-          initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 1 } },
-        }}
-        initial="initial"
-        viewport={{ once: true }}
-        whileInView="animate"
         className="order-1 flex justify-center rounded-lg bg-[#275e56] sm:col-span-2 sm:row-span-3 sm:rounded-lg"
       >
         <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
@@ -101,18 +64,10 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
           </div>
           <h1 className="text-2xl text-green-100 lg:text-3xl">Sem. Ant.</h1>
         </article>
-      </motion.div>
+      </div>
 
-      <motion.div
-        transition={{ type: "spring", duration: 0.5 }}
+      <div
         key="agua"
-        variants={{
-          initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 1 } },
-        }}
-        initial="initial"
-        viewport={{ once: true }}
-        whileInView="animate"
         className="order-1 flex justify-center rounded-lg bg-[#275e56] sm:col-span-2 sm:row-span-3 sm:rounded-lg"
       >
         <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
@@ -125,18 +80,10 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
           </div>
           <h1 className="text-2xl text-green-100 lg:text-3xl">Sem. Ant.</h1>
         </article>
-      </motion.div>
+      </div>
 
-      <motion.div
-        transition={{ type: "spring", duration: 0.5 }}
+      <div
         key="agua"
-        variants={{
-          initial: { opacity: 0, scale: 0 },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 5 } },
-        }}
-        initial="initial"
-        viewport={{ once: true }}
-        whileInView="animate"
         className="relative order-6 col-span-4 row-span-4 flex justify-center"
       >
         <div className="relative col-span-4 row-span-4 flex h-[14rem] w-[14rem] justify-center overflow-visible rounded-lg bg-[#275e56] sm:h-full sm:w-full">
@@ -148,19 +95,10 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
             className="rounded-lg"
           />
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        whileInView="animate"
+      <div
         key="agua"
-        variants={{
-          initial: { opacity: 0, scale: 0 },
-          hover: { scale: 1.1, transition: { delay: 0 } },
-          animate: { opacity: 1, scale: 1, transition: { delay: delays[0] * 6 } },
-        }}
-        initial="initial"
-        transition={{ type: "spring" }}
-        viewport={{ once: true }}
         className="order-7 flex justify-center sm:col-span-2 sm:row-span-3"
       >
         <article className="flex w-[12rem] flex-col items-center justify-around gap-4 rounded-lg bg-[#275e56] px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
@@ -198,7 +136,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
           </div>
           <h1 className="text-2xl text-green-100 lg:text-3xl">Cuenca</h1>
         </article>
-      </motion.div>
+      </div>
     </div>
   )
 }

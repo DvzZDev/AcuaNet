@@ -1,63 +1,26 @@
 "use client"
 import { Image } from "@nextui-org/image"
 import { Link } from "next-view-transitions"
-import { motion } from "framer-motion"
 
 function AboutLanding() {
   return (
-    <section className="max-h-auto bg-[#f1fbf7] pb-24 md:py-10 py-8">
+    <section className="max-h-auto bg-[#f1fbf7] py-8 pb-24 md:py-10">
       <div className="flex flex-col items-center justify-center">
         <section className="mx-6 grid h-fit max-w-[70rem] grid-cols-1 gap-10 md:grid-cols-2">
           <div className="col-span-1 flex flex-col">
-            <motion.h1
-              initial="initial"
-              variants={{
-                initial: { opacity: 0, y: 50 },
-                animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-              }}
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.8 }}
-              className="font-NecoBold text-center text-[2.3rem] font-bold leading-none text-[#1b7b6e] sm:text-[50px] md:text-left"
-            >
+            <h1 className="font-NecoBold text-center text-[2.3rem] font-bold leading-none text-[#1b7b6e] sm:text-[50px] md:text-left">
               Conoce a Nuestro Equipo
-            </motion.h1>
-            <motion.p
-              initial="initial"
-              variants={{
-                initial: { opacity: 0, y: 50 },
-                animate: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } },
-              }}
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.8 }}
-              className="mt-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl"
-            >
+            </h1>
+            <p className="mt-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
               En AcuaNet, nos esforzamos por brindarte una experiencia intuitiva y
               agradable.
-            </motion.p>
-            <motion.p
-              initial="initial"
-              variants={{
-                initial: { opacity: 0, y: 50 },
-                animate: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.4 } },
-              }}
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.8 }}
-              className="mt-4 text-base leading-relaxed text-[#0a2e29] md:text-2xl"
-            >
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
               Queremos que conozcas a nuestro equipo y descubras cómo trabajamos para
               ofrecerte datos precisos y actualizados sobre los embalses. Haz clic aquí
               para conocer más sobre nosotros.
-            </motion.p>
-            <motion.div
-              initial="initial"
-              variants={{
-                initial: { opacity: 0, y: 50 },
-                animate: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.6 } },
-              }}
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.8 }}
-              className="flex w-full justify-center"
-            >
+            </p>
+            <div className="flex w-full justify-center">
               <Link href="/quienesSomos">
                 <button
                   type="button"
@@ -67,19 +30,11 @@ function AboutLanding() {
                   Conócenos!
                 </button>
               </Link>
-            </motion.div>
+            </div>
           </div>
           <div className="flex items-center justify-center">
             <div className="relative">
-              <motion.div
-                initial="initial"
-                variants={{
-                  initial: { opacity: 0, y: 50 },
-                  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-                }}
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.8 }}
-              >
+              <div>
                 <Image
                   src="/yo22.webp"
                   alt="Foto del creador de AcuaNet"
@@ -90,22 +45,13 @@ function AboutLanding() {
                   width="100%"
                   height="auto"
                 />
-              </motion.div>
-              <motion.div
-                initial="initial"
-                variants={{
-                  initial: { opacity: 0, y: 50 },
-                  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-                }}
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.8 }}
-                className="absolute bottom-[-70px] left-4 right-[-15px] z-20 rounded-lg bg-[#275e568a] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]"
-              >
+              </div>
+              <div className="absolute bottom-[-70px] left-4 right-[-15px] z-20 rounded-lg bg-[#275e568a] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]">
                 <p className="text-base text-green-50 md:text-xl">
                   ¡Hola! Soy David, creador de AcuaNet. Te invito a conocer más sobre qué
                   me inspiró a crear AcuaNet.
                 </p>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>

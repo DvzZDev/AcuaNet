@@ -11,7 +11,6 @@ import {
   SortingState,
 } from "@tanstack/react-table"
 import { mkConfig, generateCsv, download } from "export-to-csv"
-import { motion } from "framer-motion"
 import { Link } from "next-view-transitions"
 import type { Embalses } from "@/types"
 
@@ -80,44 +79,14 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
     inputRef.current?.focus()
   }
 
-  //Animations
-  const variants = (index: number) => ({
-    initial: { opacity: 0, y: 20 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, type: "spring", stiffness: 150, delay: index * 0.1 },
-    },
-  })
-
   return (
-    <div className="mx-5 my-5 h-screen">
+    <div className="mx-5 my-5 h-screen animate-fade-in">
       <div className="flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#275e56] px-4 md:h-14">
-        <motion.div
-          viewport={{
-            once: true,
-          }}
-          initial={{ width: "0rem", opacity: 0 }}
-          animate={{
-            width: show ? "12rem" : "0rem",
-            opacity: show ? 1 : 0,
-          }}
-          whileInView="animate"
-          variants={variants(0)}
-          className="flex h-6 border-b border-transparent border-white bg-transparent outline-none"
-        >
-          <motion.button
-            whileTap={{
-              scale: 0.9,
-              backgroundColor: "#1f1745",
-              borderColor: "#1f1745",
-            }}
+        <div className="flex h-6 border-b border-transparent border-white bg-transparent outline-none">
+          <button
             type="button"
             aria-label="Buscar"
             onClick={handleButtonClick}
-            viewport={{
-              once: true,
-            }}
           >
             <svg
               fill="#14C2DC"
@@ -142,29 +111,20 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
                 ></path>
               </g>
             </svg>
-          </motion.button>
-          <motion.input
+          </button>
+          <input
             value={filtered}
             onChange={(e) => setFiltered(e.target.value)}
             className="w-full bg-transparent px-1 outline-none"
             type="text"
             autoFocus={show}
             ref={inputRef}
-            viewport={{
-              once: true,
-            }}
           />
-        </motion.div>
-        <motion.button
-          initial="initial"
-          whileInView="animate"
-          variants={variants(0)}
+        </div>
+        <button
           aria-label="Exportar a Excel"
           type="button"
           className="duration-150 active:scale-90"
-          viewport={{
-            once: true,
-          }}
           onClick={() => exportExcel(table.getFilteredRowModel().rows)}
         >
           <svg
@@ -199,20 +159,14 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
               </g>{" "}
             </g>{" "}
           </svg>
-        </motion.button>
+        </button>
       </div>
       <table className="border border-[#275e56]">
         <thead className="bg-[#275e56] text-sm text-green-50 sm:text-xl">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header, index) => (
-                <motion.th
-                  viewport={{
-                    once: true,
-                  }}
-                  initial="initial"
-                  variants={variants(index)}
-                  whileInView="animate"
+                <th
                   onClick={header.column.getToggleSortingHandler()}
                   className={`table-auto cursor-pointer pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? "w-[14rem] px-2 duration-150 active:scale-90 sm:w-[17rem]" : index === 1 ? "w-[15rem] duration-150 active:scale-90" : "w-auto text-center duration-150 active:scale-90"}`}
                   key={header.id}
@@ -223,7 +177,7 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
                       ? "↑"
                       : "↓"
                     : ""}
-                </motion.th>
+                </th>
               ))}
             </tr>
           ))}
@@ -235,15 +189,9 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
               className="odd:bg-[#224d53] even:bg-[#275e56]"
             >
               {row.getVisibleCells().map((cell, index) => (
-                <motion.td
-                  initial="initial"
-                  variants={variants(index)}
-                  whileInView="animate"
+                <td
                   key={cell.id}
                   className="px-2 py-5 sm:p-4"
-                  viewport={{
-                    once: true,
-                  }}
                 >
                   {index === 0 ? (
                     <Link
@@ -260,43 +208,23 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
                   ) : (
                     flexRender(cell.column.columnDef.cell, cell.getContext())
                   )}
-                </motion.td>
+                </td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
       <div className="mb-5 flex justify-between rounded-b-xl bg-[#224d53] p-2 sm:mb-10">
-        <motion.div
-          initial="initial"
-          variants={variants(0)}
-          whileInView="animate"
-          key={0}
-          viewport={{
-            once: true,
-          }}
-        >
-          <motion.p
-            initial="initial"
-            variants={variants(1)}
-            whileInView="animate"
+        <div key={0}>
+          <p
             key={1}
-            viewport={{
-              once: true,
-            }}
             className="mt-1 w-6 rounded-sm text-center text-sm md:text-lg"
           >
             {table.getState().pagination.pageIndex + 1}
-          </motion.p>
-        </motion.div>
-        <motion.div
-          initial="initial"
-          variants={variants(2)}
-          whileInView="animate"
+          </p>
+        </div>
+        <div
           key={2}
-          viewport={{
-            once: true,
-          }}
           className="flex gap-4 text-sm md:text-lg"
         >
           <button
@@ -381,7 +309,7 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
           >
             {table.getPageCount() - 1}
           </button>
-        </motion.div>
+        </div>
       </div>
     </div>
   )

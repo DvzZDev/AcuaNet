@@ -1,32 +1,13 @@
 "use client"
 import { Accordion, AccordionItem } from "@nextui-org/accordion"
-import { motion } from "framer-motion"
 
 function Faq() {
   return (
-    <section className="px-6 flex flex-col items-center justify-center bg-[#275e56] py-8 md:py-10">
-      <motion.h3
-        initial="initial"
-        variants={{
-          initial: { opacity: 0, y: 50 },
-          animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-        }}
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.8 }}
-        className="pt-1 text-center mb-3 text-[2.3rem] font-black leading-none text-green-100 sm:text-[50px]"
-      >
+    <section className="flex flex-col items-center justify-center bg-[#275e56] px-6 py-8 md:py-10">
+      <h3 className="mb-3 pt-1 text-center text-[2.3rem] font-black leading-none text-green-100 sm:text-[50px]">
         Preguntas Frecuentes
-      </motion.h3>
-      <motion.div
-        initial="initial"
-        variants={{
-          initial: { opacity: 0, y: 50 },
-          animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-        }}
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.8 }}
-        className="w-full max-w-[70rem]"
-      >
+      </h3>
+      <div className="w-full max-w-[70rem]">
         <Accordion>
           <AccordionItem
             key="1"
@@ -133,7 +114,7 @@ function Faq() {
             </h1>
           </AccordionItem>
         </Accordion>
-      </motion.div>
+      </div>
     </section>
   )
 }

@@ -1,6 +1,5 @@
 "use client"
 import { ReactTyped } from "react-typed"
-import { motion } from "framer-motion"
 import { useState } from "react"
 import { Link } from "next-view-transitions"
 
@@ -42,20 +41,11 @@ export default function SerchWeather() {
     }
   }
 
-  const variants = {
-    initial: { y: 40, opacity: 0 },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5, type: "spring", stiffness: 120 },
-    },
-  }
-
   return (
     <div>
       <form
         onSubmit={onSearch}
-        className="relative z-10 mt-3 md:mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
+        className="relative z-10 mt-3 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:w-[20rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +135,7 @@ export default function SerchWeather() {
 
       {empty && (
         <h1
-          className={`animate-appearance-in pl-1 text-base text-red-500 transition-all ${empty ? "animate-fade flex" : "hidden"}`}
+          className={`animate-fade-in pl-1 text-base text-red-500 transition-all ${empty ? "animate-fade flex" : "hidden"}`}
         >
           introduzca un lugar
         </h1>
@@ -153,12 +143,7 @@ export default function SerchWeather() {
 
       <div className="relative z-50">
         {data.length > 0 && type && (
-          <motion.ul
-            initial="initial"
-            animate="animate"
-            variants={variants}
-            className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-[#23583a] text-base text-white backdrop-blur-md md:text-xl"
-          >
+          <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-[#23583a] text-base text-white backdrop-blur-md animate-duration-300 md:text-xl">
             {data.length > 0 && visible && (
               <div className="absolute flex w-full flex-col gap-1 rounded-lg bg-[#23583a] text-base text-green-100 backdrop-blur-md md:text-xl">
                 {data.map((item, index) => (
@@ -172,7 +157,7 @@ export default function SerchWeather() {
                 ))}
               </div>
             )}
-          </motion.ul>
+          </ul>
         )}
       </div>
     </div>

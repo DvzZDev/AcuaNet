@@ -45,9 +45,9 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                   className="border-x border-gray-700"
                 >
                   <div className="my-2 flex w-[4rem] flex-col items-center justify-center md:w-[7rem]">
-                    <span>{getWeatherCode(day.icon)}</span>
+                    <span className="text-2xl">{getWeatherCode(day.icon)}</span>
                     <span className="text-center text-sm font-semibold uppercase text-green-50 sm:text-medium">
-                      {dateFormater(day.datetime)}co
+                      {dateFormater(day.datetime)}
                     </span>
                     <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-green-50 sm:py-0 sm:text-base">
                       {new Date(day.datetime).toLocaleDateString("es-ES", {
@@ -118,9 +118,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                   {/* Columna de las horas */}
                   <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2 text-green-100">
                     <div className="flex flex-col items-center justify-center">
-                      <span className="text-sm font-light uppercase">
-                        {time.slice(0, 5)}
-                      </span>
+                      <span className="text-sm uppercase">{time.slice(0, 5)}</span>
                     </div>
                   </td>
 
@@ -138,13 +136,15 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                         <div className="flex flex-col items-center justify-center">
                           {hourData ? (
                             <>
-                              <span>{getWeatherCode(hourData.icon)}</span>
-                              <span className="text-base font-light uppercase">
+                              <span className="text-2xl">
+                                {getWeatherCode(hourData.icon)}
+                              </span>
+                              <span className="text-base uppercase">
                                 {hourData.temp.toFixed()}º
                               </span>
                             </>
                           ) : (
-                            <span className="text-base font-light uppercase">N/A</span>
+                            <span className="text-base uppercase">N/A</span>
                           )}
                         </div>
                       </td>
@@ -158,7 +158,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
             <tr className="border-gray-700">
               <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
                 <div className="flex flex-col items-center justify-center">
-                  <span className="text-sm font-light uppercase">
+                  <span className="text-sm uppercase">
                     {/* Precipitaciones */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -191,9 +191,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                 >
                   <div className="flex flex-col items-center justify-center">
                     {/* Se muestra la presión de cada día en la fila correspondiente */}
-                    <span className="text-center text-base font-light">
-                      {day.precip} mm
-                    </span>
+                    <span className="text-center text-base">{day.precip} mm</span>
                   </div>
                 </td>
               ))}
@@ -202,7 +200,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
             <tr className="border-gray-700">
               <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
                 <div className="flex flex-col items-center justify-center">
-                  <span className="text-sm font-light uppercase">
+                  <span className="text-sm uppercase">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="23"
@@ -227,7 +225,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                 >
                   <div className="flex flex-col items-center justify-center">
                     {/* Se muestra la presión de cada día en la fila correspondiente */}
-                    <span className="text-center text-base font-light">
+                    <span className="text-center text-base">
                       {day.pressure.toFixed()} hPa
                     </span>
                   </div>
@@ -238,7 +236,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
             <tr className="border-gray-700">
               <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
                 <div className="flex flex-col items-center justify-center">
-                  <span className="text-sm font-light uppercase">
+                  <span className="text-sm uppercase">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -271,7 +269,7 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                 >
                   <div className="flex flex-col items-center justify-center">
                     {/* Se muestra la presión de cada día en la fila correspondiente */}
-                    <span className="flex items-center justify-center gap-1 text-center text-base font-light sm:gap-2">
+                    <span className="flex items-center justify-center gap-1 text-center text-base sm:gap-2">
                       {WindDirectionIcon(day.winddir)}
                       {day.windspeed} km/h
                     </span>

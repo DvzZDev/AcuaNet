@@ -11,12 +11,6 @@ importers:
       '@antfu/eslint-config':
         specifier: 3.7.3
         version: 3.7.3(@typescript-eslint/utils@8.10.0(eslint@8.57.1)(typescript@5.5.4))(@vue/compiler-sfc@3.5.12)(eslint-plugin-react-hooks@4.6.2(eslint@8.57.1))(eslint@8.57.1)(typescript@5.5.4)
-      '@fontsource-variable/comfortaa':
-        specifier: 5.1.0
-        version: 5.1.0
-      '@fontsource-variable/onest':
-        specifier: 5.1.0
-        version: 5.1.0
       '@midudev/tailwind-animations':
         specifier: ^0.1.0
         version: 0.1.0(tailwindcss@3.4.13)
@@ -68,15 +62,9 @@ importers:
       drizzle-orm:
         specifier: 0.34.1
         version: 0.34.1(@types/react@18.3.11)(postgres@3.4.4)(react@18.3.1)
-      emailjs-com:
-        specifier: 3.2.0
-        version: 3.2.0
       export-to-csv:
         specifier: 1.4.0
         version: 1.4.0
-      framer-motion:
-        specifier: 11.11.1
-        version: 11.11.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
@@ -113,9 +101,6 @@ importers:
       react-intersection-observer:
         specifier: ^9.13.1
         version: 9.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-multi-carousel:
-        specifier: 2.8.5
-        version: 2.8.5
       react-typed:
         specifier: 2.0.12
         version: 2.0.12(react@18.3.1)
@@ -611,12 +596,6 @@ packages:
   '@eslint/plugin-kit@0.2.1':
     resolution: {integrity: sha512-HFZ4Mp26nbWk9d/BpvP0YNL6W4UoZF0VFcTw/aPPA8RpOxeFQgK+ClABGgAUXs9Y/RGX/l1vOmrqz1MQt9MNuw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@fontsource-variable/comfortaa@5.1.0':
-    resolution: {integrity: sha512-pbI/UlyuXOcmxk5V5TXvCCQkMOmLaDZxIpSIGZk12ZKGqKQkw5uId2bzoD1aaX3/EbZM4sor+lEp47uttQ2Gcw==}
-
-  '@fontsource-variable/onest@5.1.0':
-    resolution: {integrity: sha512-8jspwmuPWtC2p4gxmjUIQ2JugqCcClFwlD1DEJt+gARgZMm3PI62rYivoKVUDB3Q6hdQxeL5wdzjxCOnzTU5BA==}
 
   '@formatjs/ecma402-abstract@2.2.0':
     resolution: {integrity: sha512-IpM+ev1E4QLtstniOE29W1rqH9eTdx5hQdNL8pzrflMj/gogfaoONZqL83LUeQScHAvyMbpqP5C9MzNf+fFwhQ==}
@@ -1881,11 +1860,6 @@ packages:
 
   electron-to-chromium@1.5.41:
     resolution: {integrity: sha512-dfdv/2xNjX0P8Vzme4cfzHqnPm5xsZXwsolTYr0eyW18IUmNyG08vL+fttvinTfhKfIKdRoqkDIC9e9iWQCNYQ==}
-
-  emailjs-com@3.2.0:
-    resolution: {integrity: sha512-Prbz3E1usiAwGjMNYRv6EsJ5c373cX7/AGnZQwOfrpNJrygQJ15+E9OOq4pU8yC977Z5xMetRfc3WmDX6RcjAA==}
-    engines: {node: '>=12.0.0'}
-    deprecated: The SDK name changed to @emailjs/browser
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -3263,10 +3237,6 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  react-multi-carousel@2.8.5:
-    resolution: {integrity: sha512-C5DAvJkfzR2JK9YixZ3oyF9x6R4LW6nzTpIXrl9Oujxi4uqP9SzVVCjl+JLM3tSdqdjAx/oWZK3dTVBSR73Q+w==}
-    engines: {node: '>=8'}
-
   react-remove-scroll-bar@2.3.6:
     resolution: {integrity: sha512-DtSYaao4mBmX+HDo5YWYdBWQwYIQQshUV/dVxFxK+KM26Wjwp1gZ6rv6OC3oujI6Bfu6Xyg3TwK533AQutsn/g==}
     engines: {node: '>=10'}
@@ -4139,10 +4109,6 @@ snapshots:
   '@eslint/plugin-kit@0.2.1':
     dependencies:
       levn: 0.4.1
-
-  '@fontsource-variable/comfortaa@5.1.0': {}
-
-  '@fontsource-variable/onest@5.1.0': {}
 
   '@formatjs/ecma402-abstract@2.2.0':
     dependencies:
@@ -5657,8 +5623,6 @@ snapshots:
   eastasianwidth@0.2.0: {}
 
   electron-to-chromium@1.5.41: {}
-
-  emailjs-com@3.2.0: {}
 
   emoji-regex@8.0.0: {}
 
@@ -7368,8 +7332,6 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   react-is@16.13.1: {}
-
-  react-multi-carousel@2.8.5: {}
 
   react-remove-scroll-bar@2.3.6(@types/react@18.3.11)(react@18.3.1):
     dependencies:

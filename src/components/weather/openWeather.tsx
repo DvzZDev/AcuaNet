@@ -44,10 +44,10 @@ export default async function OpenWeather({ lat, lon }: { lat: string; lon: stri
                   key={index}
                   className="border-x border-gray-700"
                 >
-                  <div className="flex w-[4rem] flex-col items-center justify-center my-2 md:w-[7rem]">
+                  <div className="my-2 flex w-[4rem] flex-col items-center justify-center md:w-[7rem]">
                     <span>{getWeatherCode(day.icon)}</span>
                     <span className="text-center text-sm font-semibold uppercase text-green-50 sm:text-medium">
-                      {dateFormater(day.datetime)}
+                      {dateFormater(day.datetime)}co
                     </span>
                     <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-green-50 sm:py-0 sm:text-base">
                       {new Date(day.datetime).toLocaleDateString("es-ES", {

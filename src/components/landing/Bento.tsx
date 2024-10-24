@@ -1,5 +1,4 @@
 "use client"
-import "@fontsource-variable/comfortaa"
 import { Link } from "next-view-transitions"
 import type { BentoProps } from "@/types"
 import { getMoonPhase } from "@/lib/GetMoonPhase"

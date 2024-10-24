@@ -1,5 +1,3 @@
-import "@fontsource-variable/comfortaa"
-
 function SkeletonBento() {
   return (
     <section className="flex min-h-full flex-col items-center justify-center bg-[#f1fbf7] bg-gradient-to-t py-5 md:py-10 lg:h-full">
@@ -9,7 +7,7 @@ function SkeletonBento() {
       {/* Div Global */}
       <div className="mx-6 my-4 flex flex-col justify-center gap-7 md:my-8 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
-        <div className="animate-once animate-ease-in-out col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm lg:col-span-4">
+        <div className="animate-once col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm animate-ease-in-out lg:col-span-4">
           <div className="flex h-full w-full flex-col content-center justify-evenly gap-3 rounded-xl text-center">
             <h2 className="text-3xl text-green-300 md:text-5xl">Reserva</h2>
             <div className="m-auto h-[210px] w-[210px] animate-pulse rounded-xl bg-green-100"></div>

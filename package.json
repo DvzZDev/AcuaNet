@@ -14,8 +14,6 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "3.7.3",
-    "@fontsource-variable/comfortaa": "5.1.0",
-    "@fontsource-variable/onest": "5.1.0",
     "@midudev/tailwind-animations": "^0.1.0",
     "@nextui-org/accordion": "2.0.40",
     "@nextui-org/button": "2.0.38",
@@ -33,9 +31,7 @@
     "chartjs-plugin-datalabels": "2.2.0",
     "dotenv": "16.4.5",
     "drizzle-orm": "0.34.1",
-    "emailjs-com": "3.2.0",
     "export-to-csv": "1.4.0",
-    "framer-motion": "11.11.1",
     "js-cookie": "^3.0.5",
     "lunarphase-js": "^2.0.3",
     "next": "14.2.3",
@@ -47,7 +43,7 @@
     "react-chartjs-2": "5.2.0",
     "react-dom": "18.3.1",
     "react-hook-form": "7.53.0",
-    "react-multi-carousel": "2.8.5",
+    "react-intersection-observer": "^9.13.1",
     "react-typed": "2.0.12"
   },
   "devDependencies": {

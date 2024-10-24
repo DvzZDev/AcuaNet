@@ -119,6 +119,7 @@ const LunarCalendar = () => {
       return i === totalWeeks - 1
     }
 
+    // Dentro de la función generateCalendar
     for (let i = 0; i < 6; i++) {
       const week = []
       for (let j = 0; j < 7; j++) {
@@ -135,10 +136,11 @@ const LunarCalendar = () => {
           const lunarDay = lunarDays.find(
             (day) => day.date.getDate() === dayCount && day.date.getMonth() === startMonth
           )
+          const isToday = lunarDay?.date.toDateString() === currentDate.toDateString()
           week.push(
             <div
               key={j}
-              className={`w-full border-[#1b7b6e] bg-green-50 px-2 py-1 text-center text-green-900 ${(j + 1) % 7 !== 0 ? "border-r" : ""} ${j >= 7 ? "border-t" : ""} ${!isLastWeek(i, daysInMonth, firstDayOfMonth) ? "border-b" : ""}`}
+              className={`w-full border-[#1b7b6e] bg-green-50 px-2 py-1 text-center text-green-900 ${isToday ? "bg-[#197569] text-white" : "bg-green-50 text-green-900"} ${(j + 1) % 7 !== 0 ? "border-r" : ""} ${j >= 7 ? "border-t" : ""} ${!isLastWeek(i, daysInMonth, firstDayOfMonth) ? "border-b" : ""}`}
             >
               <p className="text-left font-black">{dayCount}</p>
               <p className="text-3xl">{lunarDay?.phaseEmoji}</p>
@@ -237,32 +239,38 @@ const LunarCalendar = () => {
         {/* Para PC */}
         <ul className="block space-y-4 md:hidden">
           {/* Para móviles */}
-          {lunarDataForDisplay.map((lunarDay, index) => (
-            <li
-              key={index}
-              className="rounded-lg border-1 border-[#1b7b6e77] bg-green-100 p-4 text-green-900 shadow-md"
-            >
-              <div className="flex items-center justify-between">
-                <strong className="text-lg">
-                  {lunarDay.date
-                    .toLocaleDateString("es-ES", {
-                      weekday: "long",
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })
-                    .replace(/^\w|\s\w/g, (c) => c.toUpperCase())}
-                </strong>
-                <span className="ml-2 text-2xl">{lunarDay.phaseEmoji}</span>
-              </div>
-              <div className="mt-2">
-                <span className="font-semibold">Fase:</span> {lunarDay.phase}
-              </div>
-              <div className="mt-1">
-                <span className="font-semibold">Actividad:</span> {lunarDay.activityIcon}
-              </div>
-            </li>
-          ))}
+          {lunarDataForDisplay.map((lunarDay, index) => {
+            const isToday = lunarDay.date.toDateString() === currentDate.toDateString() // Verifica si es el día actual
+            return (
+              <li
+                key={index}
+                className={`rounded-lg border-1 border-[#1b7b6e77] p-4 shadow-md ${
+                  isToday ? "bg-[#197569] text-white" : "bg-green-100 text-green-900"
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <strong className="text-lg">
+                    {lunarDay.date
+                      .toLocaleDateString("es-ES", {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })
+                      .replace(/^\w|\s\w/g, (c) => c.toUpperCase())}
+                  </strong>
+                  <span className="ml-2 text-2xl">{lunarDay.phaseEmoji}</span>
+                </div>
+                <div className="mt-2">
+                  <span className="font-semibold">Fase:</span> {lunarDay.phase}
+                </div>
+                <div className="mt-1">
+                  <span className="font-semibold">Actividad:</span>{" "}
+                  {lunarDay.activityIcon}
+                </div>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </section>

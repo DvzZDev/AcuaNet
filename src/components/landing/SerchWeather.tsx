@@ -55,7 +55,7 @@ export default function SerchWeather() {
     <div>
       <form
         onSubmit={onSearch}
-        className="relative z-10 mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
+        className="relative z-10 mt-3 md:mt-8 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:w-[20rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

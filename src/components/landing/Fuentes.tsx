@@ -7,7 +7,7 @@ function Fuentes() {
   return (
     <section
       id="fuentes"
-      className="flex h-auto flex-col items-center justify-center bg-[#275e56] py-8 md:py-12 text-white"
+      className="flex h-auto flex-col items-center justify-center bg-[#275e56] py-8 text-white md:py-12"
     >
       <motion.h4
         initial="initial"
@@ -29,7 +29,7 @@ function Fuentes() {
         }}
         whileInView="animate"
         viewport={{ once: true, amount: 0.8 }}
-        className="text-center text-[20px] text-green-200 mt-3"
+        className="mt-3 text-center text-[20px] text-green-200"
       >
         Datos actualizdos cada 24 horas.
       </motion.h4>

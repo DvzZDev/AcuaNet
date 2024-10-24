@@ -17,7 +17,7 @@ function Content() {
   })
 
   return (
-    <section className="bg-bgcolor p-6 pb-20">
+    <section className="bg-green-50 p-6 pb-20">
       <div className="flex flex-col items-center justify-center gap-8 sm:gap-10 md:gap-12">
         <article className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-2 md:gap-12">
           <motion.div
@@ -28,9 +28,8 @@ function Content() {
           >
             <Image
               as={NextImage}
-              src="/orellana.webp"
+              src="/atazar.webp"
               alt="Embalse de Orellana en Badajoz, España"
-              objectFit="cover"
               width={600}
               height={400}
               draggable={false}
@@ -45,17 +44,17 @@ function Content() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <h2 className="mb-6 text-3xl font-bold text-textsecondary md:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-[#1b7b6e] md:text-4xl">
               ¿Quiénes Somos?
             </h2>
-            <p className="mb-6 text-base leading-relaxed text-textprimary md:text-2xl">
+            <p className="mb-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
               En AcuaNet, nos enfocamos en hacer tu experiencia sencilla y agradable.
               Utilizamos métodos avanzados para brindarte datos actualizados sobre los
               niveles de los embalses, garantizando información precisa al instante.
               Nuestra interfaz amigable te permite encontrar lo que necesitas de manera
               rápida y sin complicaciones.
             </p>
-            <p className="text-base leading-relaxed text-textprimary md:text-2xl">
+            <p className="text-base leading-relaxed text-[#0a2e29] md:text-2xl">
               Sabemos que buscar datos de páginas antiguas o poco intuitivas es confuso y
               complicado. Por eso, trabajamos duro para que la información que te damos
               sea clara y fácil de entender.
@@ -89,15 +88,15 @@ function Content() {
             className="text-white"
             viewport={{ once: true }}
           >
-            <h2 className="mb-6 text-3xl font-bold text-textsecondary md:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-[#1b7b6e] md:text-4xl">
               Nuestro Propósito
             </h2>
-            <p className="mb-6 text-base leading-relaxed text-textprimary md:text-2xl">
+            <p className="mb-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
               Recuerdo lo frustrante que era antes de salir a pescar, cuando tenía que
               buscar el nivel del embalse en sitios web complicados y difíciles de usar.
               Esa frustración me inspiró a crear AcuaNet.
             </p>
-            <p className="text-base leading-relaxed text-textprimary md:text-2xl">
+            <p className="text-base leading-relaxed text-[#0a2e29] md:text-2xl">
               Como estudiante de desarrollo web, decidí poner en práctica lo que he
               aprendido para desarrollar una plataforma que sea fácil y eficiente. Mi
               objetivo es que todos podamos acceder rápidamente a la información de los
@@ -132,7 +131,7 @@ function Content() {
           variants={variants(0)}
           whileInView="animate"
           viewport={{ once: true }}
-          className="mb-10 text-center text-3xl font-bold text-textsecondary md:text-4xl"
+          className="mb-10 text-center text-3xl font-bold text-[#1b7b6e] md:text-4xl"
         >
           Conoce a Nuestro Equipo
         </motion.h1>

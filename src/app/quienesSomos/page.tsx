@@ -39,7 +39,7 @@ export const metadata = {
 function Page() {
   return (
     <>
-      <section className="mt-5">
+      <section>
         <Intro title="Sobre Nosotros" />
         <Content />
       </section>

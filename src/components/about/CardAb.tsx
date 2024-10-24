@@ -14,18 +14,18 @@ function CardAb() {
           className="rounded-t-md"
         />
       </div>
-      <div className="rounded-b-md bg-slate-700 p-3 px-5">
-        <h1 className="mb-2 text-2xl font-black text-textprimary">
-          David <span className="text-textsecondary">Esteban</span>
+      <div className="rounded-b-md bg-green-100 p-3 px-5">
+        <h1 className="mb-2 text-2xl font-black text-[#0a2e29]">
+          David <span className="text-[#1b7b6e]">Esteban</span>
         </h1>
-        <p className="mb-3 text-base text-textprimary md:text-lg">
+        <p className="mb-3 text-base text-[#0a2e29] md:text-lg">
           ¡Hola! Soy David, estudiante de desarollo web y pescador a ratos, he decido
           crear AcuaNet para poder ver rapidamente los niveles de nuestras cuencas /
           pantanos favoritos en España de la forma mas facíl posible.
         </p>
 
         <div className="relative mt-1 flex items-center justify-center gap-7">
-          <div className="absolute left-0 top-0 h-0.5 w-full bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+          <div className="absolute left-0 top-0 h-0.5 w-full bg-gradient-to-r from-transparent via-green-300 to-transparent"></div>
 
           <div className="relative z-10 flex items-center gap-7 pt-3">
             <Link
@@ -38,7 +38,7 @@ function CardAb() {
                 xmlns="http://www.w3.org/2000/svg"
                 width={20}
                 height={20}
-                fill="#c3cdda"
+                fill="#0a2e29"
                 className="iconoredes"
                 preserveAspectRatio="xMidYMid"
                 viewBox="0 0 256 250"
@@ -56,7 +56,7 @@ function CardAb() {
                 xmlns="http://www.w3.org/2000/svg"
                 width={20}
                 height={20}
-                fill="#c3cdda"
+                fill="#0a2e29"
                 className="iconoredes"
                 viewBox="0 0 1200 1227"
               >
@@ -73,7 +73,7 @@ function CardAb() {
                 xmlns="http://www.w3.org/2000/svg"
                 width={20}
                 height={20}
-                fill="#c3cdda"
+                fill="#0a2e29"
                 className="iconoredes"
                 preserveAspectRatio="xMidYMid"
                 viewBox="0 0 256 256"

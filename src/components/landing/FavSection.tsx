@@ -127,7 +127,7 @@ export default async function FavSection() {
                 Embalses Favoritos
               </h2>
               <p className="text-sm text-green-200">
-                Aún no tienes favoritos. Añade embalses haciendo clic en la estrella en la
+                Aún no tienes favorit@@ços. Añade embalses haciendo clic en la estrella en la
                 página de cada embalse.
               </p>
             </div>

@@ -11,12 +11,12 @@ export default function Patrocinio() {
         <Image
           src={"/AGRLogo.webp"}
           unoptimized={true}
-          width={50}
-          height={50}
+          width={65}
+          height={65}
           alt="AGR Logo"
           className="rounded-full md:h-full md:w-[100px] 2xl:w-[150px]"
         />
-        <p className="text-center text-[10px] font-light text-green-100 md:text-[20px]">
+        <p className="text-center text-[13px] font-light text-green-100 md:text-[20px]">
           Patrocinado por <br />
           <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text font-black text-transparent">
             AGR Baits

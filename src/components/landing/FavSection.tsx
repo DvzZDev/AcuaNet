@@ -123,7 +123,7 @@ export default async function FavSection() {
               />
             </svg>{" "}
             <div>
-              <h2 className="mb-1 text-lg font-semibold text-green-100">
+              <h2 className="mb-1 text-base md:text-lg font-semibold text-green-100">
                 Embalses Favoritos
               </h2>
               <p className="text-sm text-green-200">

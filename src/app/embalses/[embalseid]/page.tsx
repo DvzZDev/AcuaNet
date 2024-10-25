@@ -20,12 +20,12 @@ export function generateMetadata({ params }: { params: { embalseid: string } }) 
       siteName: "AcuaNet",
       images: [
         {
-          url: "https://i.imgur.com/dqgqmnX.png",
+          url: "https://i.imgur.com/LQvr7AX.png",
           width: 800,
           height: 600,
         },
         {
-          url: "https://i.imgur.com/dqgqmnX.png",
+          url: "https://i.imgur.com/LQvr7AX.png",
           width: 1800,
           height: 1600,
           alt: "Og image from AcuaNet",
@@ -39,7 +39,7 @@ export function generateMetadata({ params }: { params: { embalseid: string } }) 
       title: `${params.embalseid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
       description: `Información sobre el embalse de ${params.embalseid.replace(/%20/g, " ")}`,
       creator: "@_DvzZ_",
-      images: ["https://i.imgur.com/dqgqmnX.png"],
+      images: ["https://i.imgur.com/LQvr7AX.png"],
     },
   }
 }

@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "AcuaNet",
     images: [
       {
-        url: "https://i.imgur.com/dqgqmnX.png",
+        url: "https://i.imgur.com/LQvr7AX.png",
         width: 1800,
         height: 1600,
         alt: "OG Image",
@@ -36,7 +36,7 @@ export const metadata = {
     title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
     description:
       "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España. ",
-    images: ["https://i.imgur.com/dqgqmnX.png"],
+    images: ["https://i.imgur.com/LQvr7AX.png"],
   },
 }
 

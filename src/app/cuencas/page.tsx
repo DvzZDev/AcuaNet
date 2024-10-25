@@ -20,7 +20,7 @@ export const metadata = {
     siteName: "AcuaNet",
     images: [
       {
-        url: "https://i.imgur.com/dqgqmnX.png",
+        url: "https://i.imgur.com/LQvr7AX.png",
         width: 1800,
         height: 1600,
         alt: "My custom alt",
@@ -35,7 +35,7 @@ export const metadata = {
     description:
       "Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas",
     creator: "@_DvzZ_",
-    images: ["https://i.imgur.com/dqgqmnX.png"],
+    images: ["https://i.imgur.com/LQvr7AX.png"],
   },
 }
 

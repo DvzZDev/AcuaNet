@@ -7,7 +7,7 @@ export default function Patrocinio() {
       target="_blank"
       href="https://agrbaits.es"
     >
-      <div className="absolute right-1 top-7 flex w-[6rem] rotate-12 animate-jiggle flex-col items-center justify-center gap-1 transition-transform animate-duration-2000 animate-iteration-count-infinite hover:scale-105 md:right-12 md:w-[10rem]">
+      <div className="absolute right-1 top-7 flex w-[7rem] rotate-12 animate-jiggle flex-col items-center justify-center gap-1 transition-transform animate-duration-2000 animate-iteration-count-infinite hover:scale-105 md:right-12 md:w-[10rem]">
         <Image
           src={"/AGRLogo.webp"}
           unoptimized={true}

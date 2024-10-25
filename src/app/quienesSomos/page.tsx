@@ -17,7 +17,7 @@ export const metadata = {
     siteName: "AcuaNet",
     images: [
       {
-        url: "https://i.imgur.com/Jpt5ENb.png",
+        url: "https://i.imgur.com/dqgqmnX.png",
         width: 1800,
         height: 1600,
         alt: "Og image from AcuaNet",
@@ -32,7 +32,7 @@ export const metadata = {
     description:
       "Conoce más sobre el equipo de AcuaNet y cómo trabajamos para brindarte información actualizada sobre los embalses de agua en España",
     creator: "@_DvzZ_",
-    images: ["https://i.imgur.com/Jpt5ENb.png"],
+    images: ["https://i.imgur.com/dqgqmnX.png"],
   },
 }
 

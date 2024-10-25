@@ -12,7 +12,7 @@ export const metadata = {
     siteName: "AcuaNet",
     images: [
       {
-        url: "https://i.imgur.com/Jpt5ENb.png",
+        url: "https://i.imgur.com/dqgqmnX.png",
         width: 1800,
         height: 1600,
         alt: "OG Image",
@@ -26,7 +26,7 @@ export const metadata = {
     title: "Legal - AcuaNet",
     description:
       "Conoce las condiciones de uso, propiedad intelectual, protección de datos y más información legal sobre AcuaNet.",
-    images: ["https://i.imgur.com/Jpt5ENb.png"],
+    images: ["https://i.imgur.com/dqgqmnX.png"],
   },
 }
 
@@ -143,7 +143,8 @@ function page() {
               href="https://github.com/DvzZDev/ACUA-Landing"
               className="text-blue-500 underline"
               target="_blank"
-              aria-label='Repositorio de GitHub "ACUA-Landing"' rel="noreferrer"
+              aria-label='Repositorio de GitHub "ACUA-Landing"'
+              rel="noreferrer"
             >
               ACUA-Landing
             </a>

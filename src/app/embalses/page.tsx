@@ -19,7 +19,7 @@ export const metadata = {
     siteName: "AcuaNet",
     images: [
       {
-        url: "https://i.imgur.com/Jpt5ENb.png",
+        url: "https://i.imgur.com/dqgqmnX.png",
         width: 1800,
         height: 1600,
         alt: "Og image from AcuaNet",
@@ -32,7 +32,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Embalses de España - AcuaNet",
     creator: "@_DvzZ_",
-    images: ["https://i.imgur.com/Jpt5ENb.png"],
+    images: ["https://i.imgur.com/dqgqmnX.png"],
   },
 }
 

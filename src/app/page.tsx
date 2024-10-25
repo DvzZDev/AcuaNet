@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "AcuaNet",
     images: [
       {
-        url: "https://i.imgur.com/Jpt5ENb.png",
+        url: "https://i.imgur.com/dqgqmnX.png",
         width: 1800,
         height: 1600,
         alt: "OG Image",
@@ -36,7 +36,7 @@ export const metadata = {
     title: "AcuaNet - Monitorización Hidrográfica de España",
     description:
       "Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. ",
-    images: ["https://i.imgur.com/Jpt5ENb.png"],
+    images: ["https://i.imgur.com/dqgqmnX.png"],
   },
 }
 

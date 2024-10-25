@@ -11,11 +11,11 @@ export const dynamic = "force-dynamic"
 export const fetchCache = "force-no-store"
 
 export const metadata = {
-  title: "AcuaNet - Monitorización Hidrográfica de España",
+  title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
   description:
     "Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. ",
   openGraph: {
-    title: "AcuaNet - Monitorización Hidrográfica de España",
+    title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
     description:
       "Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. ",
     url: "https://acuanet.es",
@@ -33,7 +33,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AcuaNet - Monitorización Hidrográfica de España",
+    title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
     description:
       "Consulta mediciones actualizadas de cuencas, embalses y pluviometros en toda España. ",
     images: ["https://i.imgur.com/dqgqmnX.png"],

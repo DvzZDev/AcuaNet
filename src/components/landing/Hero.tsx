@@ -1,7 +1,6 @@
 import nombreEmbalses from "../../lib/nombresEmbalses.json"
 import FavSection from "./FavSection"
 import SerchEmb from "./SerchEmb"
-import SerchWeather from "./SerchWeather"
 import Patrocinio from "./Patrocinio"
 import { Suspense } from "react"
 import SkeletonFavorites from "../skeletons/SkeletonFavorites"
@@ -26,7 +25,7 @@ export default async function Hero() {
           </svg>
         </div>
         <div className="flex flex-col xl:w-[60%]">
-          <strong className="animate-fade-up mb-4 w-full text-center text-[64px] font-black leading-none text-[textsecondary] text-green-100 animate-delay-100 sm:text-[4rem] 2xl:text-[5rem]">
+          <strong className="animate-fade-up mb-4 w-full text-center text-[60px] font-black leading-none text-[textsecondary] text-green-100 animate-delay-100 sm:text-[4rem] 2xl:text-[5rem]">
             AcuaNet
           </strong>
           <h1 className="animate-fade-up h-auto max-w-80 px-4 text-center text-[1.5rem] text-green-100 animate-delay-200 sm:max-w-full sm:text-[35px] 2xl:text-[2rem]">
@@ -35,7 +34,6 @@ export default async function Hero() {
         </div>
         <div className="animate-fade-up z-30 mt-5 flex flex-col gap-3 animate-delay-300 sm:gap-10 md:flex-row">
           <SerchEmb data={datares} />
-          <SerchWeather />
         </div>
         <div>
           <Suspense fallback={<SkeletonFavorites />}>

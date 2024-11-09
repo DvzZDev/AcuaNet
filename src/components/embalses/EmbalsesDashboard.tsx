@@ -7,12 +7,7 @@ import HistorialCambios from "./Dashboard/HistorialCambios"
 import OpenWeather from "../weather/openWeather"
 import { usePathname } from "next/navigation"
 
-export default function EmbalsesDashboard({
-  data,
-}: {
-  data: Embalses
-  params: { embalseid: string }
-}) {
+export default function EmbalsesDashboard({ data }: { data: Embalses }) {
   const {
     agua_embalsada,
     agua_embalsadapor,

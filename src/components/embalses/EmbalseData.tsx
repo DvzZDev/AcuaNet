@@ -41,7 +41,6 @@ async function EmbalseData({ url }: EmbalseDataProps) {
   if (!resEmbalse) {
     return <NotFound />
   }
-  console.log(resEmbalse)
   return (
     <>
       <TitleEmb data={resEmbalse} />

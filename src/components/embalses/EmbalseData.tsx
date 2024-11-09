@@ -46,7 +46,6 @@ async function EmbalseData({ url }: EmbalseDataProps) {
       <TitleEmb data={resEmbalse} />
       <Divider />
       <EmbalsesDashboard data={resEmbalse} />
-      {/* <EmbalseContent data={resEmbalse} /> */}
     </>
   )
 }

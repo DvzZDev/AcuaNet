@@ -1,8 +1,9 @@
 import TitleEmb from "./TitleEmb"
 import { GetEmbalses } from "db/queries/select"
 import Divider from "../cuencas/Divider"
-import EmbalseContent from "./EmbalseContent"
+// import EmbalseContent from "./EmbalseContent"
 import NotFound from "@/app/not-found"
+import EmbalsesDashboard from "./EmbalsesDashboard"
 
 export interface Embalse {
   id_embalse: number
@@ -40,12 +41,13 @@ async function EmbalseData({ url }: EmbalseDataProps) {
   if (!resEmbalse) {
     return <NotFound />
   }
-
+  console.log(resEmbalse)
   return (
     <>
       <TitleEmb data={resEmbalse} />
       <Divider />
-      <EmbalseContent data={resEmbalse} />
+      <EmbalsesDashboard data={resEmbalse} />
+      {/* <EmbalseContent data={resEmbalse} /> */}
     </>
   )
 }

@@ -7,7 +7,7 @@ function Fuentes() {
       id="fuentes"
       className="flex h-auto flex-col items-center justify-center bg-[#275e56] py-8 text-white md:py-12"
     >
-      <h4 className="text-center text-[2.3rem] font-bold leading-none text-green-100 sm:text-[50px]">
+      <h4 className="text-center text-[2.3rem] font-black leading-none text-green-100 sm:text-[50px]">
         Fuentes Oficiales
       </h4>
       <h4 className="mt-3 text-center text-[20px] text-green-200">

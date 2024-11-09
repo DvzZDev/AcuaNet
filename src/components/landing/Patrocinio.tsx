@@ -18,7 +18,7 @@ export default function Patrocinio() {
         />
         <p className="text-center text-[13px] font-light text-green-100 md:text-[20px]">
           Patrocinado por <br />
-          <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text font-black text-transparent">
+          <span className="animationGlow bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text font-black text-transparent md:text-2xl">
             AGR Baits
           </span>
         </p>

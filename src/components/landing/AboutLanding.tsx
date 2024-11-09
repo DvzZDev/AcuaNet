@@ -8,7 +8,7 @@ function AboutLanding() {
       <div className="flex flex-col items-center justify-center">
         <section className="mx-6 grid h-fit max-w-[70rem] grid-cols-1 gap-10 md:grid-cols-2">
           <div className="col-span-1 flex flex-col">
-            <h1 className="font-NecoBold text-center text-[2.3rem] font-bold leading-none text-[#1b7b6e] sm:text-[50px] md:text-left">
+            <h1 className="text-center text-[2.3rem] font-black leading-none text-[#1b7b6e] sm:text-[50px] md:text-left">
               Conoce a Nuestro Equipo
             </h1>
             <p className="mt-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">

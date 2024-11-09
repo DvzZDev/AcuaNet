@@ -21,7 +21,7 @@ body {
 }
 
 body {
-  --sb-track-color: #232e33;
+  --sb-track-color: #f0fdf4;
   --sb-thumb-color: #93ffb7;
   --sb-size: 14px;
 }
@@ -53,7 +53,7 @@ body::-webkit-scrollbar-thumb {
 
 .scroll-tab {
   --sb-track-color: #f0fdf4;
-  --sb-thumb-color: #275e56;
+  --sb-thumb-color: #27475e;
   --sb-size: 10px;
 }
 
@@ -99,14 +99,34 @@ table {
   color: #c0bfb7;
 }
 
+.animationGlow {
+  text-shadow: 0 0 1px;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
 @font-face {
   font-family: "Inter";
-  src: url("../../Fonts/Inter.ttf") format("woff2");
+  src: url("/Fonts/Inter-Medium.ttf") format("woff2");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("/Fonts/Inter-SemiBold.ttf") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/Fonts/Inter-Bold.ttf") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
 .iconoredes:hover {
   fill: #157d3d;
 }
@@ -146,4 +166,67 @@ table {
 
 #pp {
   max-width: 75ch;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; /* Quita el estilo por defecto del navegador */
+}
+
+/* Estilos para la pista (track) del range */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 15px; /* Ajusta el grosor de la pista */
+  background: linear-gradient(
+    to right,
+    #4caf50 0%,
+    #4caf50 var(--range-progress),
+    #ccc var(--range-progress),
+    #ccc 100%
+  );
+  border-radius: 100px;
+}
+
+/* Oculta el thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.animationGlow {
+  text-shadow: 0 0 1px;
+  transition: text-shadow 0.3s ease-in-out;
+  animation: animateGlow 1s linear infinite;
+}
+
+@keyframes animateGlow {
+  0% {
+    text-shadow:
+      0 0 2px rgba(255, 0, 0, 0.3),
+      0 0 4px rgba(255, 0, 0, 0.2),
+      0 0 8px rgba(255, 0, 0, 0.1),
+      0 0 16px rgba(255, 0, 0, 0.05);
+  }
+  50% {
+    text-shadow:
+      0 0 4px rgba(255, 0, 0, 0.3),
+      0 0 8px rgba(255, 0, 0, 0.2),
+      0 0 16px rgba(255, 0, 0, 0.1),
+      0 0 32px rgba(255, 0, 0, 0.05);
+  }
+  100% {
+    text-shadow:
+      0 0 2px rgba(255, 0, 0, 0.3),
+      0 0 4px rgba(255, 0, 0, 0.2),
+      0 0 8px rgba(255, 0, 0, 0.1),
+      0 0 16px rgba(255, 0, 0, 0.05);
+  }
 }

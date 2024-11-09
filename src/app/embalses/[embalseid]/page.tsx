@@ -1,8 +1,8 @@
 import { Suspense } from "react"
 import EmbalseData from "@/components/embalses/EmbalseData"
 import SkeeltonBentoEmbalseDist from "@/components/skeletons/SkeeltonBentoEmbalseDist"
-import WidgetShare from "@/components/contacto/WidgetShare"
-import FavButton from "@/components/embalses/FavButton"
+// import WidgetShare from "@/components/contacto/WidgetShare"
+// import FavButton from "@/components/embalses/FavButton"
 
 export const revalidate = 60
 export const dynamic = "force-dynamic"
@@ -50,12 +50,12 @@ async function Page({ params }: { params: { embalseid: string } }) {
       <Suspense fallback={<SkeeltonBentoEmbalseDist />}>
         <EmbalseData url={params} />
       </Suspense>
-      <FavButton url={params} />
+      {/* <FavButton url={params} />
       <WidgetShare
         url={params}
         alter={"embalseid"}
         page={"embalses"}
-      />
+      /> */}
     </>
   )
 }

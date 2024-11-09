@@ -1,3 +1,5 @@
+"use client"
+
 import { useRef, useState } from "react"
 import { Day, Hour, WeatherTypes } from "@/types"
 import { getWeatherCode } from "./weatherCode"

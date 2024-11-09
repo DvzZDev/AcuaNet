@@ -14,7 +14,7 @@ export default function SerchEmb({ data }: TypeProps) {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 mt-3 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:w-[20rem] md:text-xl"
+        className="relative z-10 mt-3 flex h-[2.5rem] max-h-16 w-[15rem] items-center rounded-full border border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:h-[3rem] md:w-[25rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export default function SerchEmb({ data }: TypeProps) {
           loop
         >
           <input
-            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-none sm:text-[18px]"
+            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-none sm:text-[18px] md:w-[21rem]"
             type="text"
             value={type}
             onChange={handletype}
@@ -48,7 +48,7 @@ export default function SerchEmb({ data }: TypeProps) {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="text-slate-400 transition-all hover:text-textsecondary"
+          className="absolute right-2 text-slate-400 transition-all hover:text-textsecondary"
           type="button"
         >
           <svg
@@ -57,7 +57,7 @@ export default function SerchEmb({ data }: TypeProps) {
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#09f"
+            stroke="#dbfbe6"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -80,7 +80,7 @@ export default function SerchEmb({ data }: TypeProps) {
       </h1>
       <div className="relative z-50">
         {suggestions.length > 0 && (
-          <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-[#23583a] bg-opacity-100 text-base text-green-100 animate-duration-300 md:text-xl">
+          <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-[#275e56] bg-opacity-100 text-base text-green-100 animate-duration-300 md:text-xl">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <li
                 key={index}

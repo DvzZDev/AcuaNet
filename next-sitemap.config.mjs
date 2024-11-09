@@ -1,4 +1,4 @@
-import { GetCuencas, GetEmbalses } from "./db/queries/select.js"
+import { GetCuencas, GetEmbalses } from "./db/queries/select.ts"
 
 const sitemapConfig = {
   siteUrl: "https://www.acuanet.es/",

@@ -1,7 +1,7 @@
 "use client"
 import Divider from "@/components/cuencas/Divider"
 import ButtonUp from "@/components/lunar/up"
-import LunarCalendar from "@/components/lunarcal"
+import LunarCalendarMov from "@/components/lunar/LunarCalMov"
 
 export default function page() {
   return (
@@ -12,7 +12,7 @@ export default function page() {
         </h1>
         <Divider />
         <div className="bg-green-50 pb-10">
-          <LunarCalendar />
+          <LunarCalendarMov />
         </div>
         <ButtonUp />
       </div>

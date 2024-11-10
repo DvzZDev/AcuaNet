@@ -106,7 +106,7 @@ table {
 
 @font-face {
   font-family: "Inter";
-  src: url("/Fonts/Inter-Medium.ttf") format("ttf");
+  src: url("/Fonts/Inter-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -114,7 +114,7 @@ table {
 
 @font-face {
   font-family: "Inter";
-  src: url("/Fonts/Inter-SemiBold.ttf") format("ttf");
+  src: url("/Fonts/Inter-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -122,11 +122,12 @@ table {
 
 @font-face {
   font-family: "Inter";
-  src: url("/Fonts/Inter-Bold.ttf") format("ttf");
+  src: url("/Fonts/Inter-Bold.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
+
 .iconoredes:hover {
   fill: #157d3d;
 }

@@ -1,6 +1,19 @@
 const nextConfig = {
   images: {
-    domains: ["i.imgur.com", "media.giphy.com", "imgur.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.imgur.com",
+      },
+      {
+        protocol: "https",
+        hostname: "media.giphy.com",
+      },
+      {
+        protocol: "https",
+        hostname: "imgur.com",
+      },
+    ],
   },
 }
 

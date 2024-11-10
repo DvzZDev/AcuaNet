@@ -106,7 +106,7 @@ export default async function FavSection() {
           </div>
         </>
       ) : (
-        <div className="mx-auto mt-[4rem] max-w-sm rounded-lg border border-green-100/40 bg-green-100/20 p-4 md:mt-0">
+        <div className="mx-auto mt-[4rem] max-w-sm rounded-lg border border-green-100/40 bg-green-100/20 p-2 md:mt-0">
           <div className="flex items-center space-x-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ export default async function FavSection() {
               />
             </svg>{" "}
             <div>
-              <h2 className="mb-1 text-base md:text-lg font-semibold text-green-100">
+              <h2 className="mb-1 text-base font-semibold text-green-100 md:text-lg">
                 Embalses Favoritos
               </h2>
               <p className="text-sm text-green-200">

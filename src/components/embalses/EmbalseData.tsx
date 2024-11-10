@@ -4,8 +4,7 @@ import Divider from "../cuencas/Divider"
 // import EmbalseContent from "./EmbalseContent"
 import NotFound from "@/app/not-found"
 import EmbalsesDashboard from "./EmbalsesDashboard"
-
-
+import FavButton from "./FavButton"
 
 export const revalidate = 60
 export const dynamic = "force-dynamic"
@@ -33,6 +32,7 @@ async function EmbalseData({ url }: EmbalseDataProps) {
       <TitleEmb data={resEmbalse} />
       <Divider />
       <EmbalsesDashboard data={resEmbalse} />
+      <FavButton url={url} />
     </>
   )
 }

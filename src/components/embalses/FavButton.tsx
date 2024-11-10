@@ -10,7 +10,6 @@ interface EmbalseDataProps {
 
 export default function FavButton({ url }: EmbalseDataProps) {
   const embalseId = decodeURIComponent(url.embalseid.toString())
-  console.log (embalseId)
   const [isFavorite, setIsFavorite] = useState(false)
 
   useEffect(() => {

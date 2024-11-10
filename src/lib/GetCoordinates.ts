@@ -11,7 +11,6 @@ export default async function GetCoordinates(loc: string) {
       lat: data[0].lat,
       lon: data[0].lon,
     }
-    console.log(result)
     return result
   } catch (error) {
     console.error("Error recuperando las coordenadas", error)

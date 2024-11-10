@@ -5,21 +5,7 @@ import Divider from "../cuencas/Divider"
 import NotFound from "@/app/not-found"
 import EmbalsesDashboard from "./EmbalsesDashboard"
 
-export interface Embalse {
-  id_embalse: number
-  fecha_modificacion: string
-  nombre_embalse: string
-  nombre_cuenca: string
-  agua_embalsada: number
-  agua_embalsadapor: number
-  variacion_ultima_semana: number
-  variacion_ultima_semanapor: number
-  capacidad_total: number
-  misma_semana_ultimo_año: number
-  misma_semana_ultimo_añopor: number
-  misma_semana_10años: number
-  misma_semana_10añospor: number
-}
+
 
 export const revalidate = 60
 export const dynamic = "force-dynamic"

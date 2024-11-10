@@ -1,7 +1,6 @@
 import Intro from "@/components/cuencas/IntroCuencas"
 import { Suspense } from "react"
 import SkeletonCuencas from "@/components/skeletons/SkeletonCuencas"
-import WidgetShareGlob from "@/components/contacto/WidgetShareGlob"
 import BentoData from "@/components/cuencas/BentoData"
 
 export const revalidate = 60
@@ -46,7 +45,6 @@ function Page() {
       <Suspense fallback={<SkeletonCuencas />}>
         <BentoData />
       </Suspense>
-      <WidgetShareGlob page={"cuencas"} />
     </section>
   )
 }

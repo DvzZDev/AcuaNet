@@ -144,8 +144,8 @@ const LunarCalendar = () => {
             >
               <p className="text-left font-black">{dayCount}</p>
               <p className="text-3xl">{lunarDay?.phaseEmoji}</p>
-              <p className="text-left text-sm">{lunarDay?.phase}</p>
-              <p className="text-left text-sm">{lunarDay?.activityIcon}</p>
+              <p className="text-left text-xs">{lunarDay?.phase}</p>
+              <p className="text-left text-xs">{lunarDay?.activityIcon}</p>
             </div>
           )
           dayCount++
@@ -237,19 +237,19 @@ const LunarCalendar = () => {
           {generateCalendar()}
         </div>{" "}
         {/* Para PC */}
-        <ul className="block space-y-4 md:hidden">
+        <div className="grid grid-cols-2 gap-2 md:hidden">
           {/* Para móviles */}
           {lunarDataForDisplay.map((lunarDay, index) => {
             const isToday = lunarDay.date.toDateString() === currentDate.toDateString() // Verifica si es el día actual
             return (
-              <li
+              <div
                 key={index}
-                className={`rounded-lg border-1 border-[#1b7b6e77] p-4 shadow-md ${
-                  isToday ? "bg-[#93edb2bd] text-black" : "bg-green-100 text-[#052e16]"
+                className={`col-span-1 gap-2 rounded-lg border-1 border-[#1b7b6e77] p-4 shadow-md ${
+                  isToday ? "bg-[#93edb2bd] text-black" : "bg-transparent text-[#052e16]"
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <strong className="text-lg">
+                  <strong className="text-nowrap text-xs">
                     {lunarDay.date
                       .toLocaleDateString("es-ES", {
                         weekday: "short",
@@ -259,20 +259,22 @@ const LunarCalendar = () => {
                       })
                       .replace(/^\w|\s\w/g, (c) => c.toUpperCase())}
                   </strong>
-                  <span className="ml-2 text-2xl">{lunarDay.phaseEmoji}</span>
+                  <span className="ml-2 text-xl">{lunarDay.phaseEmoji}</span>
                 </div>
-                <div className="mt-2">
-                  <span className="font-semibold">Fase:</span>{" "}
-                  <span className="font-semibold text-[#3d7764]">{lunarDay.phase}</span>
+                <div>
+                  <span className="text-xs font-semibold">Fase:</span>{" "}
+                  <span className="text-xs font-semibold text-[#3d7764]">
+                    {lunarDay.phase}
+                  </span>
                 </div>
-                <div className="mt-1">
-                  <span className="font-semibold">Actividad:</span>{" "}
-                  <span className="text-[#3d7764]">{lunarDay.activityIcon}</span>
+                <div>
+                  <span className="text-xs font-semibold">Actividad:</span>{" "}
+                  <span className="text-xs text-[#3d7764]">{lunarDay.activityIcon}</span>
                 </div>
-              </li>
+              </div>
             )
           })}
-        </ul>
+        </div>
       </div>
     </section>
   )

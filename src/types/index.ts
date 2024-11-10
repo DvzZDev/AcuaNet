@@ -45,6 +45,7 @@ export interface Embalses {
   misma_semana_ultimo_añopor: number | null
   misma_semana_10años: number | null
   misma_semana_10añospor: number | null
+  cota: number | null
 }
 
 export interface WeatherTypes {

@@ -1,13 +1,10 @@
 import { Suspense } from "react"
 import EmbalseData from "@/components/embalses/EmbalseData"
-import SkeeltonBentoEmbalseDist from "@/components/skeletons/SkeeltonBentoEmbalseDist"
-// import WidgetShare from "@/components/contacto/WidgetShare"
-// import FavButton from "@/components/embalses/FavButton"
+import SkeleonDashboard from "@/components/skeletons/SkeleonDashboard"
 
 export const revalidate = 60
 export const dynamic = "force-dynamic"
 export const fetchCache = "force-no-store"
-
 export function generateMetadata({ params }: { params: { embalseid: string } }) {
   return {
     title: `${params.embalseid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
@@ -47,15 +44,9 @@ export function generateMetadata({ params }: { params: { embalseid: string } }) 
 async function Page({ params }: { params: { embalseid: string } }) {
   return (
     <>
-      <Suspense fallback={<SkeeltonBentoEmbalseDist />}>
+      <Suspense fallback={<SkeleonDashboard />}>
         <EmbalseData url={params} />
       </Suspense>
-      {/* <FavButton url={params} />
-      <WidgetShare
-        url={params}
-        alter={"embalseid"}
-        page={"embalses"}
-      /> */}
     </>
   )
 }

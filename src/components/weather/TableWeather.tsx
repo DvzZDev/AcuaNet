@@ -41,13 +41,13 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
   }
 
   const renderHourCell = (hourData: Hour | undefined) => {
-    if (!hourData) return <span className="text-base uppercase">N/A</span>
+    if (!hourData) return <span className="text-sm uppercase">N/A</span>
 
     return (
       <>
         <span className="text-2xl">{getWeatherCode(hourData.icon)}</span>
-        <span className="text-base uppercase">{hourData.temp.toFixed()}º</span>
-        <span className="text-base">
+        <span className="text-sm uppercase">{hourData.temp.toFixed()}º</span>
+        <span className="text-sm">
           {hourData.windspeed.toFixed(0)} <span className="text-xs">km/h</span>
         </span>
       </>
@@ -59,20 +59,20 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
       <div className="mb-3 flex justify-between">
         <button
           onClick={() => setShowHours(!showHours)}
-          className="rounded-xl bg-[#27475e] p-2 text-base text-white hover:bg-[#4e90be] active:scale-95"
+          className="rounded-xl bg-[#27475e] p-2 text-sm text-white hover:bg-[#4e90be] active:scale-95"
         >
           {showHours ? "Mostrar Intervalos" : "Mostrar por horas"}
         </button>
         <div className="flex gap-2">
           <button
             onClick={scrollLeft}
-            className="rounded-full bg-[#27475e] p-2 text-base leading-none text-white hover:bg-[#4e90be] active:scale-95"
+            className="rounded-full bg-[#27475e] p-2 text-sm leading-none text-white hover:bg-[#4e90be] active:scale-95"
           >
             &larr;
           </button>
           <button
             onClick={scrollRight}
-            className="rounded-full bg-[#27475e] p-2 text-base leading-none text-white hover:bg-[#4e90be] active:scale-95"
+            className="rounded-full bg-[#27475e] p-2 text-sm leading-none text-white hover:bg-[#4e90be] active:scale-95"
           >
             &rarr;
           </button>
@@ -99,7 +99,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                     <span className="text-center text-sm font-semibold uppercase text-blue-50 sm:text-medium">
                       {dateFormater(day.datetime)}
                     </span>
-                    <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-blue-50 sm:py-0 sm:text-base">
+                    <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-blue-50 sm:py-0 sm:text-sm">
                       {new Date(day.datetime).toLocaleDateString("es-ES", {
                         day: "numeric",
                         month: "short",
@@ -219,7 +219,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                 >
                   <div className="flex flex-col items-center justify-center">
                     {/* Se muestra la presión de cada día en la fila correspondiente */}
-                    <span className="text-center text-base">
+                    <span className="text-center text-sm md:text-sm">
                       {day.precip.toFixed()} mm
                     </span>
                   </div>
@@ -255,7 +255,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                 >
                   <div className="flex flex-col items-center justify-center">
                     {/* Se muestra la presión de cada día en la fila correspondiente */}
-                    <span className="text-center text-base">
+                    <span className="text-center text-sm md:text-sm">
                       {day.pressure.toFixed()} hPa
                     </span>
                   </div>
@@ -298,10 +298,11 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                   className="border-x border-gray-700 p-2"
                 >
                   <div className="flex flex-col items-center justify-center">
-                    {/* Se muestra la presión de cada día en la fila correspondiente */}
-                    <span className="flex items-center justify-center gap-1 text-center text-base sm:gap-2">
+                    <span className="flex items-center justify-center gap-1 text-center text-sm sm:gap-2 md:text-sm">
                       {WindDirectionIcon(day.winddir)}
-                      {day.windspeed} km/h
+                    </span>
+                    <span className="flex items-center justify-center gap-1 text-center text-sm sm:gap-2 md:text-sm">
+                      {day.windspeed.toFixed()} km/h
                     </span>
                   </div>
                 </td>

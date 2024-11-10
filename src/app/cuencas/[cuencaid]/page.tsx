@@ -4,7 +4,6 @@ import TableEmbalsesData from "@/components/cuencas/cuenca/tableEmbalsesData"
 import SkeletonTitleCuencas from "@/components/skeletons/SkeletonTitleCuenca"
 import SkeletonBentoDist from "@/components/skeletons/SkeletonBentoDinst"
 import { Suspense } from "react"
-import WidgetShare from "@/components/contacto/WidgetShare"
 import BentoDataUnique from "@/components/cuencas/BentoDataUnique"
 
 export const revalidate = 60
@@ -100,11 +99,6 @@ async function Page({ params }: { params: { cuencaid: string } }) {
           <TableEmbalsesData url={params} />
         </Suspense>
       </section>
-      <WidgetShare
-        url={params}
-        alter={"cuencaid"}
-        page={"cuencas"}
-      />
     </>
   )
 }

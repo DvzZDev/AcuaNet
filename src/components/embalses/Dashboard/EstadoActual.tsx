@@ -2,10 +2,12 @@ export default function EstadoActual({
   agua_embalsada,
   agua_embalsadapor,
   capacidad_total,
+  cota,
 }: {
   agua_embalsada: number
   agua_embalsadapor: number
   capacidad_total: number
+  cota: number
 }) {
   return (
     <>
@@ -114,7 +116,13 @@ export default function EstadoActual({
                 Nivel (Cota)
               </p>
               <p className="text-3xl font-black text-green-950">
-                {agua_embalsada} <span className="text-lg">msnm</span>
+                {cota > 0 ? (
+                  <>
+                    {cota.toFixed()} <span className="text-lg">msnm</span>
+                  </>
+                ) : (
+                  "N/D"
+                )}
               </p>
             </div>
           </div>

@@ -38,6 +38,7 @@ export default function EmbalsesDashboard({ data }: { data: Embalses }) {
           agua_embalsada={agua_embalsada || 0}
           agua_embalsadapor={agua_embalsadapor || 0}
           capacidad_total={capacidad_total || 0}
+          cota={data.cota || 0}
         />
         <HistorialCambios
           variacion_ultima_semana={variacion_ultima_semana || 0}

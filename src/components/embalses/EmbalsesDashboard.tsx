@@ -1,6 +1,6 @@
 "use client"
 import { Embalses } from "@/types"
-import LunarCalendar from "../lunarcal"
+import LunarCalendar from "../lunar/lunarcal"
 import IntroCuencas from "./Dashboard/IntroCuencas"
 import EstadoActual from "./Dashboard/EstadoActual"
 import HistorialCambios from "./Dashboard/HistorialCambios"

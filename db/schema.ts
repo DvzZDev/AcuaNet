@@ -41,6 +41,7 @@ export const Embalses = pgTable(
     misma_semana_ultimo_añopor: doublePrecision("misma_semana_ultimo_añopor"),
     misma_semana_10años: doublePrecision("misma_semana_10años"),
     misma_semana_10añospor: doublePrecision("misma_semana_10añospor"),
+    cota: doublePrecision("cota"),
   },
   (table) => ({
     pk: primaryKey(table.nombre_embalse),

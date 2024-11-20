@@ -198,3 +198,25 @@ table {
       0 0 16px rgba(255, 0, 0, 0.05);
   }
 }
+
+.map-container {
+  height: 400px; /* Ajusta la altura según tus necesidades */
+  width: 100%;
+}
+
+.leaflet-touch .leaflet-bar a {
+  background-color: #93edb3;
+}
+
+.leaflet-touch .leaflet-bar a:hover {
+  background-color: #64e993; 
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.leaflet-bar {
+  display: flex;
+  gap: 0.5rem;
+}

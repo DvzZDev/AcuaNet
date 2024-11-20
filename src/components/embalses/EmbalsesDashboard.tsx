@@ -4,7 +4,11 @@ import LunarCalendar from "../lunar/lunarcal"
 import IntroCuencas from "./Dashboard/IntroCuencas"
 import EstadoActual from "./Dashboard/EstadoActual"
 import HistorialCambios from "./Dashboard/HistorialCambios"
-import OpenWeather from "../weather/openWeather"
+import MapEmbData from "./Dashboard/MapEmbData"
+
+
+
+// import OpenWeather from "../weather/openWeather"
 import { usePathname } from "next/navigation"
 
 export default function EmbalsesDashboard({ data }: { data: Embalses }) {
@@ -48,9 +52,10 @@ export default function EmbalsesDashboard({ data }: { data: Embalses }) {
           misma_semana_10años={misma_semana_10años || 0}
           misma_semana_10añospor={misma_semana_10añospor || 0}
         />
+        <MapEmbData pathname={pathname} />
 
         <h3 className="text-2xl font-black text-green-950">Predicción Meteorológica</h3>
-        <OpenWeather pathname={pathname} />
+        {/* <OpenWeather pathname={pathname} /> */}
 
         <h3 className="text-2xl font-black text-green-950">Calendario Lunar</h3>
         <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">

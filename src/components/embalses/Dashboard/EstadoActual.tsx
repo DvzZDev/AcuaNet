@@ -1,3 +1,5 @@
+"use client"
+
 export default function EstadoActual({
   agua_embalsada,
   agua_embalsadapor,

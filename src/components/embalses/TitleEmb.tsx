@@ -1,4 +1,4 @@
-async function TitleEmb({ data }: { data: { nombre_embalse: string } }) {
+function TitleEmb({ data }: { data: { nombre_embalse: string } }) {
   const capitalizedNombreEmbalse = data.nombre_embalse.replace(/\b\w/g, (char) => char.toUpperCase())
   return (
     <div className="flex justify-center">

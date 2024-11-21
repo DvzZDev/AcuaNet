@@ -1,3 +1,5 @@
+"use client"
+
 export default function IntroCuencas({ nombre_cuenca, fecha_modificacion }: { nombre_cuenca: string; fecha_modificacion: Date }) {
   return (
     <div className="flex justify-between">

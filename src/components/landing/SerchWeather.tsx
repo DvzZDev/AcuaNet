@@ -132,15 +132,11 @@ export default function SerchWeather() {
           )}
         </button>
       </form>
-
       {empty && (
-        <h1
-          className={`animate-fade-in pl-1 text-base text-red-500 transition-all ${empty ? "animate-fade flex" : "hidden"}`}
-        >
+        <h1 className={`animate-fade-in pl-1 text-base text-red-500 transition-all ${empty ? "animate-fade flex" : "hidden"}`}>
           introduzca un lugar
         </h1>
       )}
-
       <div className="relative z-50">
         {data.length > 0 && type && (
           <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-[#23583a] text-base text-white backdrop-blur-md animate-duration-300 md:text-xl">

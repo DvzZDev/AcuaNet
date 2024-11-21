@@ -58,7 +58,7 @@ async function Page({ params }: { params: { embalseid: string } }) {
     <>
       <TitleEmb data={resEmbalse} />
       <Divider />
-      <FavButton url={{ embalseid: decodedEmbalseid }} />  
+      <FavButton url={{ embalseid: decodedEmbalseid }} />
       <EmbalsesDashboard data={resEmbalse} />
     </>
   )

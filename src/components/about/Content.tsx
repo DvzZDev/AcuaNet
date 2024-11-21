@@ -21,18 +21,15 @@ function Content() {
           </div>
 
           <div className="text-white">
-            <h2 className="mb-6 text-3xl font-bold text-[#1b7b6e] md:text-4xl">
-              ¿Quiénes Somos?
-            </h2>
+            <h2 className="mb-6 text-3xl font-bold text-[#1b7b6e] md:text-4xl">¿Quiénes Somos?</h2>
             <p className="mb-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              En AcuaNet, queremos que disfrutes al máximo tu pasión por la pesca. Te
-              ofrecemos datos actualizados de los embalses y del tiempo, para que siempre
-              estés bien informado. Nuestra plataforma está diseñada para que encuentres
-              lo que necesitas de manera rápida y sencilla.
+              En AcuaNet, queremos que disfrutes al máximo tu pasión por la pesca. Te ofrecemos datos actualizados de los embalses
+              y del tiempo, para que siempre estés bien informado. Nuestra plataforma está diseñada para que encuentres lo que
+              necesitas de manera rápida y sencilla.
             </p>
             <p className="text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              Nos encargamos de hacerte la vida más fácil, evitando páginas confusas y
-              complicadas. Aquí, la información es clara y está al alcance de tu mano.
+              Nos encargamos de hacerte la vida más fácil, evitando páginas confusas y complicadas. Aquí, la información es clara
+              y está al alcance de tu mano.
             </p>
           </div>
         </article>
@@ -51,19 +48,15 @@ function Content() {
             />
           </div>
           <div className="text-white">
-            <h2 className="mb-6 text-3xl font-bold text-[#1b7b6e] md:text-4xl">
-              Nuestro Propósito
-            </h2>
+            <h2 className="mb-6 text-3xl font-bold text-[#1b7b6e] md:text-4xl">Nuestro Propósito</h2>
             <p className="mb-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              Recuerdo lo frustrante que era prepararme para pescar, buscando el nivel del
-              embalse y el clima en páginas llenas de anuncios y con información poco
-              clara. Esa frustración se acabó con AcuaNet.
+              Recuerdo lo frustrante que era prepararme para pescar, buscando el nivel del embalse y el clima en páginas llenas de
+              anuncios y con información poco clara. Esa frustración se acabó con AcuaNet.
             </p>
 
             <p className="text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              Quiero que todos tengan acceso a esta información de la manera más sencilla
-              posible. Un agradecimiento especial a AGR Baits por patrocinar esta página y
-              respaldar nuestra misión.
+              Quiero que todos tengan acceso a esta información de la manera más sencilla posible. Un agradecimiento especial a
+              AGR Baits por patrocinar esta página y respaldar nuestra misión.
             </p>
           </div>
           <div className="hidden h-full w-full items-center overflow-visible rounded-lg sm:flex">
@@ -83,9 +76,7 @@ function Content() {
       </div>
 
       <article className="mt-14 flex flex-col items-center">
-        <h1 className="mb-10 text-center text-3xl font-bold text-[#1b7b6e] md:text-4xl">
-          Conoce a Nuestro Equipo
-        </h1>
+        <h1 className="mb-10 text-center text-3xl font-bold text-[#1b7b6e] md:text-4xl">Conoce a Nuestro Equipo</h1>
         <div>
           <CardAb />
         </div>

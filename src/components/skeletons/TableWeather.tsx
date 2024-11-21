@@ -29,7 +29,7 @@ const TableWeatherSK = () => {
                   key={index}
                   className="border-x border-gray-700"
                 >
-                  <div className="my-2 flex m-auto w-[4rem] flex-col items-center justify-center gap-2 md:w-[5rem]">
+                  <div className="m-auto my-2 flex w-[4rem] flex-col items-center justify-center gap-2 md:w-[5rem]">
                     <div className="h-8 w-8 animate-pulse rounded-full bg-blue-200/20"></div>
                     <div className="h-4 w-16 animate-pulse rounded bg-blue-200/20"></div>
                     <div className="h-4 w-12 animate-pulse rounded bg-blue-200/20"></div>

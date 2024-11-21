@@ -47,9 +47,7 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
       <Link href={encodeURI(`embalses/${embalse.nombre_embalse ?? ""}`)}>
         <div className="p-3">
           <div className="mb-2 flex items-center justify-between">
-            <h2 className="text-base font-semibold uppercase">
-              {embalse.nombre_embalse}
-            </h2>
+            <h2 className="text-base font-semibold uppercase">{embalse.nombre_embalse}</h2>
             {/* Icono */}
           </div>
           <div className="mb-1 flex items-center">
@@ -59,22 +57,12 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
                 style={{ width: `${embalse.agua_embalsadapor}%` }}
               ></div>
             </div>
-            <span className="min-w-[36px] text-right text-sm font-bold">
-              {embalse.agua_embalsadapor?.toFixed()}%
-            </span>
+            <span className="min-w-[36px] text-right text-sm font-bold">{embalse.agua_embalsadapor?.toFixed()}%</span>
           </div>
           <div className="flex items-center justify-between text-xs">
             <span className="text-green-200">Variación semanal</span>
-            <span
-              className={`flex items-center font-bold ${
-                variacion >= 0 ? "text-green-300" : "text-red-300"
-              }`}
-            >
-              {variacion >= 0 ? (
-                <TrendingUp className="mr-1 h-3 w-3" />
-              ) : (
-                <TrendingDown className="mr-1 h-3 w-3" />
-              )}
+            <span className={`flex items-center font-bold ${variacion >= 0 ? "text-green-300" : "text-red-300"}`}>
+              {variacion >= 0 ? <TrendingUp className="mr-1 h-3 w-3" /> : <TrendingDown className="mr-1 h-3 w-3" />}
               {variacion > 0 ? "+" : ""}
               {variacion}%
             </span>
@@ -123,12 +111,9 @@ export default async function FavSection() {
               />
             </svg>{" "}
             <div>
-              <h2 className="mb-1 text-base font-semibold text-green-100 md:text-lg">
-                Embalses Favoritos
-              </h2>
+              <h2 className="mb-1 text-base font-semibold text-green-100 md:text-lg">Embalses Favoritos</h2>
               <p className="text-sm text-green-200">
-                Aún no tienes favoritos. Añade embalses haciendo clic en la estrella en la
-                página de cada embalse.
+                Aún no tienes favoritos. Añade embalses haciendo clic en la estrella en la página de cada embalse.
               </p>
             </div>
           </div>

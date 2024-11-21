@@ -19,8 +19,8 @@ function Faq() {
             }}
           >
             <h1 className="text-green-50 md:text-lg">
-              AcuaNet ofrece servicios de monitorización hidrográfica, proporcionando
-              datos actualizados sobre embalses, cuencas y pluviometros en España.
+              AcuaNet ofrece servicios de monitorización hidrográfica, proporcionando datos actualizados sobre embalses, cuencas y
+              pluviometros en España.
             </h1>
           </AccordionItem>
           <AccordionItem
@@ -33,9 +33,8 @@ function Faq() {
             }}
           >
             <h1 className="text-green-50 md:text-lg">
-              Todos los datos mostrados en la pagina web, tanto Cuencas, Embalses y
-              Pluviometros reciben nuevos datos cada 6h del SHAI (Sistema Automático de
-              Información Hidrológica)
+              Todos los datos mostrados en la pagina web, tanto Cuencas, Embalses y Pluviometros reciben nuevos datos cada 6h del
+              SHAI (Sistema Automático de Información Hidrológica)
             </h1>
           </AccordionItem>
           <AccordionItem
@@ -48,8 +47,7 @@ function Faq() {
             }}
           >
             <h1 className="text-green-50 md:text-lg">
-              Todos los datos de Acuanet provienen de fuentes oficiales, las puedes ver en
-              el partado de fuentes.
+              Todos los datos de Acuanet provienen de fuentes oficiales, las puedes ver en el partado de fuentes.
             </h1>
           </AccordionItem>
           <AccordionItem
@@ -62,8 +60,8 @@ function Faq() {
             }}
           >
             <h1 className="text-green-50 md:text-lg">
-              Puedes ponerte en contacto con nosotros a través del formulario en la
-              seccion de contacto. Tardaremos 48 horas en responderte como máximo.
+              Puedes ponerte en contacto con nosotros a través del formulario en la seccion de contacto. Tardaremos 48 horas en
+              responderte como máximo.
             </h1>
           </AccordionItem>
           <AccordionItem
@@ -76,9 +74,8 @@ function Faq() {
             }}
           >
             <h1 className="text-green-50 md:text-lg">
-              Actualmente solo podemos ofrecer los datos de la última semana y como estaba
-              la cuenca o embalse hace un año. Seguimos trabajando poder traer un servicio
-              mas completo en el futuro.
+              Actualmente solo podemos ofrecer los datos de la última semana y como estaba la cuenca o embalse hace un año.
+              Seguimos trabajando poder traer un servicio mas completo en el futuro.
             </h1>
           </AccordionItem>
           <AccordionItem
@@ -91,10 +88,9 @@ function Faq() {
             }}
           >
             <h1 className="text-green-50 md:text-lg">
-              AcuaNet implementa medidas técnicas y organizativas para garantizar la
-              seguridad de los datos personales, incluyendo el uso de cifrado SSL y
-              servidores seguros. Además, se utilizan cookies de seguridad proporcionadas
-              por Cloudflare para proteger el sitio we
+              AcuaNet implementa medidas técnicas y organizativas para garantizar la seguridad de los datos personales, incluyendo
+              el uso de cifrado SSL y servidores seguros. Además, se utilizan cookies de seguridad proporcionadas por Cloudflare
+              para proteger el sitio we
             </h1>
           </AccordionItem>
           <AccordionItem
@@ -107,10 +103,9 @@ function Faq() {
             }}
           >
             <h1 className="text-green-50 md:text-lg">
-              El propósito de AcuaNet es facilitar el acceso a datos actualizados sobre
-              los niveles de los embalses en España, proporcionando una plataforma fácil
-              de usar y eficiente para pescadores, agricultores y cualquier persona
-              interesada en el estado de los recursos hídricos
+              El propósito de AcuaNet es facilitar el acceso a datos actualizados sobre los niveles de los embalses en España,
+              proporcionando una plataforma fácil de usar y eficiente para pescadores, agricultores y cualquier persona interesada
+              en el estado de los recursos hídricos
             </h1>
           </AccordionItem>
         </Accordion>

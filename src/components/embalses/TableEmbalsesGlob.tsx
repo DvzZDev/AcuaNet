@@ -172,11 +172,7 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
                   key={header.id}
                 >
                   {flexRender(header.column.columnDef.header, header.getContext())}
-                  {header.column.getIsSorted()
-                    ? header.column.getIsSorted() === "asc"
-                      ? "↑"
-                      : "↓"
-                    : ""}
+                  {header.column.getIsSorted() ? (header.column.getIsSorted() === "asc" ? "↑" : "↓") : ""}
                 </th>
               ))}
             </tr>
@@ -194,17 +190,9 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
                   className="px-2 py-5 sm:p-4"
                 >
                   {index === 0 ? (
-                    <Link
-                      href={`/embalses/${encodeURIComponent(cell.getValue() as string)}`}
-                    >
-                      {cell.getValue() as string}
-                    </Link>
+                    <Link href={`/embalses/${encodeURIComponent(cell.getValue() as string)}`}>{cell.getValue() as string}</Link>
                   ) : index === 1 ? (
-                    <Link
-                      href={`/cuencas/${encodeURIComponent(cell.getValue() as string)}`}
-                    >
-                      {cell.getValue() as string}
-                    </Link>
+                    <Link href={`/cuencas/${encodeURIComponent(cell.getValue() as string)}`}>{cell.getValue() as string}</Link>
                   ) : (
                     flexRender(cell.column.columnDef.cell, cell.getContext())
                   )}

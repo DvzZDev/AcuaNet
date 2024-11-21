@@ -48,15 +48,11 @@ export default function HistorialCambios({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">
-                Cambios Semanales
-              </p>
+              <p className="text-lg font-semibold leading-none text-[#3d7764]">Cambios Semanales</p>
               <p className="text-3xl font-black text-green-950">
                 {variacion_ultima_semana} <span className="text-lg">hm³</span>
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">
-                {variacion_ultima_semanapor}% de la capacidad total
-              </p>
+              <p className="text-sm font-semibold text-[#3d7764]">{variacion_ultima_semanapor}% de la capacidad total</p>
             </div>
           </div>
           {/* Hace un año */}
@@ -82,15 +78,11 @@ export default function HistorialCambios({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">
-                Hace un año
-              </p>
+              <p className="text-lg font-semibold leading-none text-[#3d7764]">Hace un año</p>
               <p className="text-3xl font-black text-green-950">
                 {misma_semana_ultimo_año} <span className="text-lg">hm³</span>
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">
-                {misma_semana_ultimo_añopor}% de la capacidad total
-              </p>
+              <p className="text-sm font-semibold text-[#3d7764]">{misma_semana_ultimo_añopor}% de la capacidad total</p>
             </div>
           </div>
           {/* Hace 10 años */}
@@ -117,15 +109,11 @@ export default function HistorialCambios({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">
-                Hace 10 años
-              </p>
+              <p className="text-lg font-semibold leading-none text-[#3d7764]">Hace 10 años</p>
               <p className="text-3xl font-black text-green-950">
                 {misma_semana_10años} <span className="text-lg">hm³</span>
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">
-                {misma_semana_10añospor}% de la capacidad total
-              </p>
+              <p className="text-sm font-semibold text-[#3d7764]">{misma_semana_10añospor}% de la capacidad total</p>
             </div>
           </div>
         </div>

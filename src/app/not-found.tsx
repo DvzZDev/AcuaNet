@@ -15,9 +15,7 @@ export default function NotFound() {
         />
       </div>
       <Link href="/">
-        <p className="text-lg text-blue-500 hover:underline">
-          Volver a la página principal
-        </p>
+        <p className="text-lg text-blue-500 hover:underline">Volver a la página principal</p>
       </Link>
     </div>
   )

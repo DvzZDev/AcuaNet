@@ -6,8 +6,6 @@ import EstadoActual from "./Dashboard/EstadoActual"
 import HistorialCambios from "./Dashboard/HistorialCambios"
 import MapEmbData from "./Dashboard/MapEmbData"
 
-
-
 // import OpenWeather from "../weather/openWeather"
 import { usePathname } from "next/navigation"
 
@@ -33,9 +31,7 @@ export default function EmbalsesDashboard({ data }: { data: Embalses }) {
       <section className="flex w-[70rem] flex-col gap-7">
         <IntroCuencas
           nombre_cuenca={nombre_cuenca || "No disponible"}
-          fecha_modificacion={
-            fecha_modificacion ? new Date(fecha_modificacion) : new Date()
-          }
+          fecha_modificacion={fecha_modificacion ? new Date(fecha_modificacion) : new Date()}
         />
 
         <EstadoActual

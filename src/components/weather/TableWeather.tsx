@@ -124,9 +124,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                         ></path>
                         <path d="m18 14-6-6-6 6h12"></path>
                       </svg>
-                      <span className="w-[20px] text-center">
-                        {day.tempmax.toFixed()}º
-                      </span>
+                      <span className="w-[20px] text-center">{day.tempmax.toFixed()}º</span>
                     </span>
 
                     <span className="flex items-center justify-center gap-1 text-sm font-medium text-blue-50">
@@ -148,9 +146,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                         ></path>
                         <path d="m18 14-6-6-6 6h12"></path>
                       </svg>
-                      <span className="w-[20px] text-center">
-                        {day.tempmin.toFixed()}º
-                      </span>
+                      <span className="w-[20px] text-center">{day.tempmin.toFixed()}º</span>
                     </span>
                   </div>
                 </th>
@@ -219,9 +215,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                 >
                   <div className="flex flex-col items-center justify-center">
                     {/* Se muestra la presión de cada día en la fila correspondiente */}
-                    <span className="text-center text-sm md:text-sm">
-                      {day.precip.toFixed()} mm
-                    </span>
+                    <span className="text-center text-sm md:text-sm">{day.precip.toFixed()} mm</span>
                   </div>
                 </td>
               ))}
@@ -255,9 +249,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                 >
                   <div className="flex flex-col items-center justify-center">
                     {/* Se muestra la presión de cada día en la fila correspondiente */}
-                    <span className="text-center text-sm md:text-sm">
-                      {day.pressure.toFixed()} hPa
-                    </span>
+                    <span className="text-center text-sm md:text-sm">{day.pressure.toFixed()} hPa</span>
                   </div>
                 </td>
               ))}

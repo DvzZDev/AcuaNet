@@ -12,12 +12,10 @@ export const fetchCache = "force-no-store"
 
 export const metadata = {
   title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
-  description:
-    "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España.",
+  description: "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España.",
   openGraph: {
     title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
-    description:
-      "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España.",
+    description: "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España.",
     url: "https://acuanet.es",
     siteName: "AcuaNet",
     images: [
@@ -34,8 +32,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
-    description:
-      "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España. ",
+    description: "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España. ",
     images: ["https://i.imgur.com/LQvr7AX.png"],
   },
 }

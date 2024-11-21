@@ -133,9 +133,7 @@ const LunarCalMov = () => {
         } else if (dayCount > daysInMonth) {
           week.push(<div key={j}></div>)
         } else {
-          const lunarDay = lunarDays.find(
-            (day) => day.date.getDate() === dayCount && day.date.getMonth() === startMonth
-          )
+          const lunarDay = lunarDays.find((day) => day.date.getDate() === dayCount && day.date.getMonth() === startMonth)
           const isToday = lunarDay?.date.toDateString() === currentDate.toDateString()
           week.push(
             <div
@@ -263,9 +261,7 @@ const LunarCalMov = () => {
                 </div>
                 <div>
                   <span className="text-xs font-semibold">Fase:</span>{" "}
-                  <span className="text-xs font-semibold text-[#3d7764]">
-                    {lunarDay.phase}
-                  </span>
+                  <span className="text-xs font-semibold text-[#3d7764]">{lunarDay.phase}</span>
                 </div>
                 <div>
                   <span className="text-xs font-semibold">Actividad:</span>{" "}

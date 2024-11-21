@@ -13,9 +13,7 @@ function EmbalseContent({ data }: { data: Embalses }) {
           <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto md:w-[14rem]">
             <h1 className="text-2xl text-green-100 lg:text-3xl">Agua</h1>
             <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
-              <span className="text-4xl font-black lg:text-5xl">
-                {data.agua_embalsada}
-              </span>
+              <span className="text-4xl font-black lg:text-5xl">{data.agua_embalsada}</span>
               <span className="text-xl font-black">hm³</span>
             </div>
             <h1 className="text-2xl text-green-100 lg:text-3xl">Embalsada</h1>
@@ -27,9 +25,7 @@ function EmbalseContent({ data }: { data: Embalses }) {
           <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto md:w-[14rem]">
             <h1 className="text-2xl text-green-100 lg:text-3xl">Capacidad</h1>
             <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
-              <span className="text-4xl font-black lg:text-5xl">
-                {data.capacidad_total}
-              </span>
+              <span className="text-4xl font-black lg:text-5xl">{data.capacidad_total}</span>
               <span className="text-xl font-black">hm³</span>
             </div>
             <h1 className="text-2xl text-green-100 lg:text-3xl">Total</h1>
@@ -49,9 +45,7 @@ function EmbalseContent({ data }: { data: Embalses }) {
           <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto md:w-[14rem]">
             <h1 className="text-2xl text-green-100 lg:text-3xl">Variación</h1>
             <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
-              <span className="text-4xl font-black lg:text-5xl">
-                {data.variacion_ultima_semana}
-              </span>
+              <span className="text-4xl font-black lg:text-5xl">{data.variacion_ultima_semana}</span>
               <span className="text-xl font-black">hm³</span>
             </div>
             <h1 className="text-2xl text-green-100 lg:text-3xl">Sem. Ant.</h1>
@@ -66,9 +60,7 @@ function EmbalseContent({ data }: { data: Embalses }) {
           <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto md:w-[14rem]">
             <h1 className="text-2xl text-green-100 lg:text-3xl">Variación</h1>
             <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
-              <span className="text-4xl font-black lg:text-5xl">
-                {data.variacion_ultima_semanapor}
-              </span>
+              <span className="text-4xl font-black lg:text-5xl">{data.variacion_ultima_semanapor}</span>
               <span className="text-xl font-black">%</span>
             </div>
             <h1 className="text-2xl text-green-100 lg:text-3xl">Sem. Ant.</h1>

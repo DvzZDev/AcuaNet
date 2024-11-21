@@ -48,9 +48,7 @@ const WeatherTableSkeleton = () => {
                 {/* Time column */}
                 <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] px-1 py-2 text-green-100 sm:p-2">
                   <div className="flex flex-col items-center justify-center">
-                    <span className="text-xs font-light uppercase sm:text-sm">
-                      {time}
-                    </span>
+                    <span className="text-xs font-light uppercase sm:text-sm">{time}</span>
                   </div>
                 </td>
 

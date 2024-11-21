@@ -7,15 +7,11 @@ async function BentoDataLandin() {
   const esp = await GetEsp()
   const variacionEmbalsesDes = embalses
     .filter((embalse) => embalse.variacion_ultima_semanapor != null)
-    .sort(
-      (a, b) => (a.variacion_ultima_semanapor ?? 0) - (b.variacion_ultima_semanapor ?? 0)
-    )
+    .sort((a, b) => (a.variacion_ultima_semanapor ?? 0) - (b.variacion_ultima_semanapor ?? 0))
     .slice(0, 3)
   const variacionEmbalsesAsc = embalses
     .filter((embalse) => embalse.variacion_ultima_semanapor != null)
-    .sort(
-      (a, b) => (b.variacion_ultima_semanapor ?? 0) - (a.variacion_ultima_semanapor ?? 0)
-    )
+    .sort((a, b) => (b.variacion_ultima_semanapor ?? 0) - (a.variacion_ultima_semanapor ?? 0))
     .slice(0, 2)
   const variacionCuencasDes = cuencas
     .filter((cuenca) => cuenca.porcentaje_variacion != null)

@@ -38,11 +38,7 @@ module.exports = {
       parserOptions: {
         project: "./tsconfig.json",
       },
-      extends: [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
-        "plugin:react/jsx-runtime",
-      ],
+      extends: ["plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:react/jsx-runtime"],
       rules: {
         "@typescript-eslint/no-explicit-any": "off", // Desactiva la regla aquí
       },

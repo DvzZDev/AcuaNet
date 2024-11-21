@@ -3,9 +3,7 @@ async function Title(url: { url: { cuencaid: string } }) {
   const cuenca = await GetCuencas()
   const cuencaid = url.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
-  const decodedCuencaidNM = decodedCuencaid
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const decodedCuencaidNM = decodedCuencaid.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 
   // Encontrar la cuenca dentro del array
   const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaidNM)

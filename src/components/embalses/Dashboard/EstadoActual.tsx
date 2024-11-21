@@ -40,9 +40,7 @@ export default function EstadoActual({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">
-                Agua Embalsada
-              </p>
+              <p className="text-lg font-semibold leading-none text-[#3d7764]">Agua Embalsada</p>
               <p className="text-3xl font-black text-green-950">
                 {agua_embalsada} <span className="text-lg">hm³</span>
               </p>
@@ -53,8 +51,7 @@ export default function EstadoActual({
                 ></div>
               </div>
               <p className="text-sm font-semibold text-green-950">
-                {agua_embalsadapor}{" "}
-                <span className="text-[#3d7764]">% de la capacidad total</span>
+                {agua_embalsadapor} <span className="text-[#3d7764]">% de la capacidad total</span>
               </p>
             </div>
           </div>
@@ -85,9 +82,7 @@ export default function EstadoActual({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">
-                Capacidad Total
-              </p>
+              <p className="text-lg font-semibold leading-none text-[#3d7764]">Capacidad Total</p>
               <p className="text-3xl font-black text-green-950">
                 {capacidad_total} <span className="text-lg">hm³</span>
               </p>
@@ -112,9 +107,7 @@ export default function EstadoActual({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">
-                Nivel (Cota)
-              </p>
+              <p className="text-lg font-semibold leading-none text-[#3d7764]">Nivel (Cota)</p>
               <p className="text-3xl font-black text-green-950">
                 {cota > 0 ? (
                   <>

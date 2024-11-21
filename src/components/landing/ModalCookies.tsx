@@ -1,14 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import { Link } from "next-view-transitions"
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure,
-} from "@nextui-org/modal"
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/modal"
 import { Button } from "@nextui-org/button"
 import posthog from "posthog-js"
 
@@ -62,9 +55,7 @@ export default function ModalCookies() {
           <ModalContent>
             {(onClose) => (
               <>
-                <ModalHeader className="flex flex-col gap-1 text-base">
-                  Uso de Cookies
-                </ModalHeader>
+                <ModalHeader className="flex flex-col gap-1 text-base">Uso de Cookies</ModalHeader>
                 <ModalBody>
                   <div className="mb-4 flex justify-center">
                     <svg
@@ -98,19 +89,15 @@ export default function ModalCookies() {
                     </svg>
                   </div>
                   <p className="text-base md:text-lg">
-                    Este sitio web utiliza cookies para mejorar tu experiencia de
-                    navegación. Al continuar utilizando nuestro sitio, aceptas el uso de
-                    cookies. Para más información, consulta nuestra Política de Privacidad
-                    y Términos y Condiciones.
+                    Este sitio web utiliza cookies para mejorar tu experiencia de navegación. Al continuar utilizando nuestro
+                    sitio, aceptas el uso de cookies. Para más información, consulta nuestra Política de Privacidad y Términos y
+                    Condiciones.
                     <Link
                       className="text-textsecondary"
                       href="/legal"
                       aria-label="Política de Privacidad y Términos y Condiciones"
                     >
-                      <span className="text-base text-green-600 md:text-lg">
-                        {" "}
-                        Pincha Aquí
-                      </span>
+                      <span className="text-base text-green-600 md:text-lg"> Pincha Aquí</span>
                     </Link>
                   </p>
                 </ModalBody>

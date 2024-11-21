@@ -19,9 +19,7 @@ interface EmbalseDataProps {
 async function EmbalseData({ url }: EmbalseDataProps) {
   const embalses = await GetEmbalses()
   const decodedEmbalseid = decodeURIComponent(url.embalseid)
-  const resEmbalse = embalses.find(
-    (embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase()
-  )
+  const resEmbalse = embalses.find((embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase())
 
   if (!resEmbalse) {
     return <NotFound />

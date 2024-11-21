@@ -7,8 +7,7 @@ interface TypeProps {
 }
 
 export default function SerchEmb({ data }: TypeProps) {
-  const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } =
-    AutoCompleteHook(data)
+  const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
 
   return (
     <div>
@@ -73,9 +72,7 @@ export default function SerchEmb({ data }: TypeProps) {
         </button>
       </form>
 
-      <h1
-        className={`animate-fade-in-up pl-1 text-red-500 transition-all ${err ? "animate-fade flex" : "hidden"}`}
-      >
+      <h1 className={`animate-fade-in-up pl-1 text-red-500 transition-all ${err ? "animate-fade flex" : "hidden"}`}>
         Embalse no encontrado
       </h1>
       <div className="relative z-50">

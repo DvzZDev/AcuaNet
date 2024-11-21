@@ -15,9 +15,7 @@ function Bento(props: BentoProps) {
 
   return (
     <section className="flex min-h-full flex-col items-center justify-center bg-[#f1fbf7] bg-gradient-to-t py-5 md:py-10 lg:h-full">
-      <h1 className="text-center text-[2.3rem] font-black leading-none text-[#1b7b6e] sm:mb-6 sm:text-[50px]">
-        Resumen Global
-      </h1>
+      <h1 className="text-center text-[2.3rem] font-black leading-none text-[#1b7b6e] sm:mb-6 sm:text-[50px]">Resumen Global</h1>
       {/* Div Global */}
       <div className="mx-6 my-4 flex flex-col justify-center gap-7 md:my-8 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
@@ -70,9 +68,7 @@ function Bento(props: BentoProps) {
                       className={`flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-90 p-1 transition-transform hover:scale-95 ${getColor(cuenca.porcentaje_embalsada ?? 0)}`}
                     >
                       <div className="flex flex-col content-center items-center justify-center">
-                        <p className="text-sm md:text-[15px]">
-                          {cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}
-                        </p>
+                        <p className="text-sm md:text-[15px]">{cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}</p>
                         <p className="text-sm md:text-[15px]">{`${cuenca.porcentaje_embalsada ?? 0} %`}</p>
                       </div>
                     </div>
@@ -122,9 +118,7 @@ function Bento(props: BentoProps) {
               ref={ref}
               className={`col-span-4 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all ${inView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}
             >
-              <h1 className="p-2 text-center text-3xl text-green-300">
-                Mayor Variacion Semanal
-              </h1>
+              <h1 className="p-2 text-center text-3xl text-green-300">Mayor Variacion Semanal</h1>
               <div className="flex flex-col content-center justify-center px-3">
                 {/* Primera Tabla */}
                 <table className="mb-1 w-full text-[16px]">
@@ -142,11 +136,7 @@ function Bento(props: BentoProps) {
                       >
                         <td>
                           <Link href={`/cuencas/${variacion.cuenca}`}>
-                            <p>
-                              {variacion.cuenca
-                                ? variacion.cuenca.replace(/_/g, " ")
-                                : ""}
-                            </p>
+                            <p>{variacion.cuenca ? variacion.cuenca.replace(/_/g, " ") : ""}</p>
                           </Link>
                         </td>
                         <td className="w-[50%] text-right lg:w-auto">{`${variacion.porcentaje_variacion}`}</td>
@@ -156,20 +146,14 @@ function Bento(props: BentoProps) {
                 </table>
                 {/* Segunda Tabla */}
                 <table className="w-full p-3 text-[16px]">
-                  <caption className="text-left text-[16px] font-bold text-green-300">
-                    Embalse
-                  </caption>
+                  <caption className="text-left text-[16px] font-bold text-green-300">Embalse</caption>
                   <tbody className="text-green-50">
                     {variacionEmbalses.map((variacion, index) => (
                       <tr
                         className="hover:bg-green-500/20"
                         key={index}
                       >
-                        <td>
-                          {variacion.nombre_embalse?.replace(/\b\w/g, (char) =>
-                            char.toUpperCase()
-                          )}
-                        </td>
+                        <td>{variacion.nombre_embalse?.replace(/\b\w/g, (char) => char.toUpperCase())}</td>
                         <td className="text-right">{`${variacion.variacion_ultima_semanapor}`}</td>
                       </tr>
                     ))}

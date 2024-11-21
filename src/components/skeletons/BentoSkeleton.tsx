@@ -1,9 +1,7 @@
 function SkeletonBento() {
   return (
     <section className="flex min-h-full flex-col items-center justify-center bg-[#f1fbf7] bg-gradient-to-t py-5 md:py-10 lg:h-full">
-      <h1 className="text-center text-[2.3rem] font-bold leading-none text-[#1b7b6e] sm:mb-6 sm:text-[50px]">
-        Resumen Global
-      </h1>
+      <h1 className="text-center text-[2.3rem] font-bold leading-none text-[#1b7b6e] sm:mb-6 sm:text-[50px]">Resumen Global</h1>
       {/* Div Global */}
       <div className="mx-6 my-4 flex flex-col justify-center gap-7 md:my-8 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
@@ -41,14 +39,10 @@ function SkeletonBento() {
 
         {/* Cuarta Col */}
         <div className="col-span-4 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm">
-          <h1 className="p-2 text-center text-3xl text-green-300">
-            Mayor Variacion Semanal
-          </h1>
+          <h1 className="p-2 text-center text-3xl text-green-300">Mayor Variacion Semanal</h1>
           <div className="flex flex-col content-center justify-center px-3">
             <table className="mb-1 w-full text-[16px]">
-              <caption className="text-left font-extrabold text-green-300">
-                Cuenca
-              </caption>
+              <caption className="text-left font-extrabold text-green-300">Cuenca</caption>
               <tbody className="animate-pulse text-green-50">
                 {Array.from({ length: 3 }).map((_, index) => (
                   <tr
@@ -69,9 +63,7 @@ function SkeletonBento() {
             </table>
 
             <table className="w-full p-3 text-[16px]">
-              <caption className="text-left text-[16px] font-extrabold text-green-300">
-                Embalse
-              </caption>
+              <caption className="text-left text-[16px] font-extrabold text-green-300">Embalse</caption>
               <tbody className="animate-pulse text-green-50">
                 {Array.from({ length: 7 }).map((_, index) => (
                   <tr

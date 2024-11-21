@@ -5,34 +5,22 @@ function Footer() {
     <footer className="flex h-[10rem] flex-col items-center justify-center bg-[#112b27] px-6">
       <nav className="md:text-md flex flex-wrap justify-center gap-3 text-wrap text-sm text-green-100">
         <Link href="/cuencas">
-          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">
-            Cuencas
-          </span>
+          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">Cuencas</span>
         </Link>
         <Link href="/embalses">
-          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">
-            Embalses
-          </span>
+          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">Embalses</span>
         </Link>
         <Link href="/pluviometros">
-          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">
-            Pluviometros
-          </span>
+          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">Pluviometros</span>
         </Link>
         <Link href="/quienesSomos">
-          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">
-            Quienes Somos
-          </span>
+          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">Quienes Somos</span>
         </Link>
         <Link href="/legal">
-          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">
-            Legal
-          </span>
+          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">Legal</span>
         </Link>
         <Link href="/contacto">
-          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">
-            Contacto
-          </span>
+          <span className="inline-block transition-all hover:scale-105 hover:text-green-700">Contacto</span>
         </Link>
       </nav>
 

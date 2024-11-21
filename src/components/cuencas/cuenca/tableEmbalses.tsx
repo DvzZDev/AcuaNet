@@ -114,9 +114,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
           <input
             value={filtered}
             onChange={(e) => setFiltered(e.target.value)}
-            className={
-              "w-full bg-transparent px-1 outline-none transition-all focus:bg-opacity-100 focus:outline-none"
-            }
+            className={"w-full bg-transparent px-1 outline-none transition-all focus:bg-opacity-100 focus:outline-none"}
             type="text"
             autoFocus={show}
             ref={inputRef}
@@ -176,11 +174,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
                   {typeof header.column.columnDef.header === "function"
                     ? header.column.columnDef.header(header.getContext())
                     : header.column.columnDef.header}
-                  {header.column.getIsSorted()
-                    ? header.column.getIsSorted() === "asc"
-                      ? "↑"
-                      : "↓"
-                    : ""}
+                  {header.column.getIsSorted() ? (header.column.getIsSorted() === "asc" ? "↑" : "↓") : ""}
                 </th>
               ))}
             </tr>
@@ -198,11 +192,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
                   className="px-2 py-5 sm:p-4"
                 >
                   {index === 0 ? (
-                    <Link
-                      href={`/embalses/${encodeURIComponent(cell.getValue() as string)}`}
-                    >
-                      {cell.getValue() as string}
-                    </Link>
+                    <Link href={`/embalses/${encodeURIComponent(cell.getValue() as string)}`}>{cell.getValue() as string}</Link>
                   ) : (
                     (cell.getValue() as string)
                   )}
@@ -215,9 +205,7 @@ export default function TableEmbalses(props: { dataFetched: Embalses[]; link: st
 
       <div className="flex justify-between rounded-b-xl bg-[#224d53] p-2">
         <div>
-          <p className="mt-1 w-6 rounded-sm text-center">
-            {table.getState().pagination.pageIndex + 1}
-          </p>
+          <p className="mt-1 w-6 rounded-sm text-center">{table.getState().pagination.pageIndex + 1}</p>
         </div>
         <div className="flex gap-4">
           <button

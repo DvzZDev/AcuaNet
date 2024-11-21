@@ -1,17 +1,9 @@
-export default function IntroCuencas({
-  nombre_cuenca,
-  fecha_modificacion,
-}: {
-  nombre_cuenca: string
-  fecha_modificacion: Date
-}) {
+export default function IntroCuencas({ nombre_cuenca, fecha_modificacion }: { nombre_cuenca: string; fecha_modificacion: Date }) {
   return (
     <div className="flex justify-between">
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1">
-          <p className="text-2xl font-black text-green-950">
-            Cuenca del {nombre_cuenca}{" "}
-          </p>
+          <p className="text-2xl font-black text-green-950">Cuenca del {nombre_cuenca} </p>
         </div>
         <div className="flex gap-1">
           <svg
@@ -37,10 +29,7 @@ export default function IntroCuencas({
             <path d="M11 15h1" />
             <path d="M12 15v3" />
           </svg>
-          <p>
-            Última Actualización -{" "}
-            {fecha_modificacion ? fecha_modificacion.toLocaleDateString() : "N/A"}
-          </p>
+          <p>Última Actualización - {fecha_modificacion ? fecha_modificacion.toLocaleDateString() : "N/A"}</p>
         </div>
       </div>
     </div>

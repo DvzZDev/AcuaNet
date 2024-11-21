@@ -1,11 +1,4 @@
-import {
-  pgTable,
-  varchar,
-  integer,
-  doublePrecision,
-  timestamp,
-  primaryKey,
-} from "drizzle-orm/pg-core"
+import { pgTable, varchar, integer, doublePrecision, timestamp, primaryKey } from "drizzle-orm/pg-core"
 
 export const Cuencas = pgTable(
   "datos_cuencas",

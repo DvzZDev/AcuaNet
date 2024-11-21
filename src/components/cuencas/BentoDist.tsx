@@ -7,9 +7,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
   const cuenca = props.data
   const cuencaid = props.params.url.cuencaid
   const decodedCuencaid = decodeURIComponent(cuencaid)
-  const decodedCuencaidNM = decodedCuencaid
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const decodedCuencaidNM = decodedCuencaid.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
   const resCuenca = cuenca.find((cuenca) => cuenca.cuenca === decodedCuencaidNM)
 
   return (
@@ -18,9 +16,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
           <h1 className="text-2xl text-green-100 lg:text-3xl">Agua</h1>
           <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
-            <span className="text-4xl font-black lg:text-5xl">
-              {resCuenca?.embalsada}
-            </span>
+            <span className="text-4xl font-black lg:text-5xl">{resCuenca?.embalsada}</span>
             <span className="text-xl font-black">hm³</span>
           </div>
           <h1 className="text-2xl text-green-100 lg:text-3xl">Embalsada</h1>
@@ -34,9 +30,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
           <h1 className="text-2xl text-green-100 lg:text-3xl">Capacidad</h1>
           <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
-            <span className="text-4xl font-black lg:text-5xl">
-              {resCuenca?.capacidad}
-            </span>
+            <span className="text-4xl font-black lg:text-5xl">{resCuenca?.capacidad}</span>
             <span className="text-xl font-black">hm³</span>
           </div>
           <h1 className="text-2xl text-green-100 lg:text-3xl">Total</h1>
@@ -57,9 +51,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
           <h1 className="text-2xl text-green-100 lg:text-3xl">Variación</h1>
           <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
-            <span className="text-4xl font-black lg:text-5xl">
-              {resCuenca?.variacion}
-            </span>
+            <span className="text-4xl font-black lg:text-5xl">{resCuenca?.variacion}</span>
             <span className="text-xl font-black">hm³</span>
           </div>
           <h1 className="text-2xl text-green-100 lg:text-3xl">Sem. Ant.</h1>
@@ -73,9 +65,7 @@ function BentoDist(props: { data: Cuenca[]; params: { url: { cuencaid: string } 
         <article className="flex flex-col items-center justify-around gap-4 rounded-lg px-4 py-3 sm:h-auto sm:w-auto sm:gap-0 md:h-[14rem] md:w-[14rem]">
           <h1 className="text-2xl text-green-100 lg:text-3xl">Variación</h1>
           <div className="bg-gradient-to-r from-green-500 to-yellow-200 bg-clip-text text-transparent">
-            <span className="text-4xl font-black lg:text-5xl">
-              {resCuenca?.porcentaje_variacion}
-            </span>
+            <span className="text-4xl font-black lg:text-5xl">{resCuenca?.porcentaje_variacion}</span>
             <span className="text-xl font-black">%</span>
           </div>
           <h1 className="text-2xl text-green-100 lg:text-3xl">Sem. Ant.</h1>

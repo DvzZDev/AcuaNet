@@ -12,13 +12,11 @@ function AboutLanding() {
               Conoce a Nuestro Equipo
             </h1>
             <p className="mt-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              En AcuaNet, nos esforzamos por brindarte una experiencia intuitiva y
-              agradable.
+              En AcuaNet, nos esforzamos por brindarte una experiencia intuitiva y agradable.
             </p>
             <p className="mt-4 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              Queremos que conozcas a nuestro equipo y descubras cómo trabajamos para
-              ofrecerte datos precisos y actualizados sobre los embalses. Haz clic aquí
-              para conocer más sobre nosotros.
+              Queremos que conozcas a nuestro equipo y descubras cómo trabajamos para ofrecerte datos precisos y actualizados
+              sobre los embalses. Haz clic aquí para conocer más sobre nosotros.
             </p>
             <div className="flex w-full justify-center">
               <Link href="/quienesSomos">
@@ -48,8 +46,7 @@ function AboutLanding() {
               </div>
               <div className="absolute bottom-[-70px] left-4 right-[-15px] z-20 rounded-lg bg-[#275e568a] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]">
                 <p className="text-base text-green-50 md:text-xl">
-                  ¡Hola! Soy David, creador de AcuaNet. Te invito a conocer más sobre qué
-                  me inspiró a crear AcuaNet.
+                  ¡Hola! Soy David, creador de AcuaNet. Te invito a conocer más sobre qué me inspiró a crear AcuaNet.
                 </p>
               </div>
             </div>

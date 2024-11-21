@@ -1,11 +1,7 @@
 import React, { useState } from "react"
 import { useRouter } from "next/navigation"
 
-const AutoCompleteHook = (
-  data: string[],
-  closeMenu?: () => void,
-  isMenuOpen?: boolean
-) => {
+const AutoCompleteHook = (data: string[], closeMenu?: () => void, isMenuOpen?: boolean) => {
   const router = useRouter()
   const [type, setType] = useState("")
   const [suggestions, setSuggestions] = useState<string[]>([])
@@ -20,9 +16,7 @@ const AutoCompleteHook = (
     const inputValue = e.target.value
     setType(inputValue)
     if (inputValue) {
-      const filteredSuggestions = data.filter((embalse) =>
-        embalse.toLowerCase().startsWith(inputValue.toLowerCase())
-      )
+      const filteredSuggestions = data.filter((embalse) => embalse.toLowerCase().startsWith(inputValue.toLowerCase()))
       setSuggestions(filteredSuggestions)
     } else {
       setSuggestions([])
@@ -41,9 +35,7 @@ const AutoCompleteHook = (
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const selectedEmbalse = data.find(
-      (embalse) => embalse.toLowerCase() === type.toLowerCase()
-    )
+    const selectedEmbalse = data.find((embalse) => embalse.toLowerCase() === type.toLowerCase())
     if (selectedEmbalse) {
       router.push(`/embalses/${type.toLowerCase()}`)
       setFine(true)

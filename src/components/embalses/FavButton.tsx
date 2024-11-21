@@ -2,13 +2,7 @@
 import { useEffect, useState } from "react"
 import Cookies from "js-cookie"
 
-interface EmbalseDataProps {
-  url: {
-    embalseid: string | URL
-  }
-}
-
-export default function FavButton({ url }: EmbalseDataProps) {
+export default function FavButton({ url }: { url: { embalseid: string } }) {
   const embalseId = decodeURIComponent(url.embalseid.toString())
   const [isFavorite, setIsFavorite] = useState(false)
 
@@ -19,9 +13,7 @@ export default function FavButton({ url }: EmbalseDataProps) {
 
   const toggleFavorite = () => {
     const favorites = JSON.parse(Cookies.get("favorites") || "[]")
-    const updatedFavorites = isFavorite
-      ? favorites.filter((id: string) => id !== embalseId)
-      : [...favorites, embalseId]
+    const updatedFavorites = isFavorite ? favorites.filter((id: string) => id !== embalseId) : [...favorites, embalseId]
 
     // Establecer la cookie para que expire en 10 años
     Cookies.set("favorites", JSON.stringify(updatedFavorites), { expires: 3650 }) // 3650 días ~ 10 años

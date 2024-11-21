@@ -1,10 +1,14 @@
-import { Suspense } from "react"
-import EmbalseData from "@/components/embalses/EmbalseData"
-import SkeleonDashboard from "@/components/skeletons/SkeleonDashboard"
+import TitleEmb from "@/components/embalses/TitleEmb"
+import { GetEmbalses } from "db/queries/select"
+import Divider from "@/components/cuencas/Divider"
+import NotFound from "@/app/not-found"
+import EmbalsesDashboard from "@/components/embalses/EmbalsesDashboard"
+import FavButton from "@/components/embalses/FavButton"
 
 export const revalidate = 60
 export const dynamic = "force-dynamic"
 export const fetchCache = "force-no-store"
+
 export function generateMetadata({ params }: { params: { embalseid: string } }) {
   return {
     title: `${params.embalseid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
@@ -42,11 +46,20 @@ export function generateMetadata({ params }: { params: { embalseid: string } }) 
 }
 
 async function Page({ params }: { params: { embalseid: string } }) {
+  const embalses = await GetEmbalses()
+  const decodedEmbalseid = decodeURIComponent(params.embalseid)
+  const resEmbalse = embalses.find((embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase())
+
+  if (!resEmbalse) {
+    return <NotFound />
+  }
+
   return (
     <>
-      <Suspense fallback={<SkeleonDashboard />}>
-        <EmbalseData url={params} />
-      </Suspense>
+      <TitleEmb data={resEmbalse} />
+      <Divider />
+      <FavButton url={{ embalseid: decodedEmbalseid }} />  
+      <EmbalsesDashboard data={resEmbalse} />
     </>
   )
 }

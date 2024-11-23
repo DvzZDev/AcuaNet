@@ -205,11 +205,13 @@ table {
 }
 
 .leaflet-touch .leaflet-bar a {
-  background-color: #93edb3;
+  background-color: #93edb2a3;
+  backdrop-filter: blur(10px);
 }
 
 .leaflet-touch .leaflet-bar a:hover {
-  background-color: #64e993;
+  background-color: #93edb2a3;
+  backdrop-filter: blur(10px);
 }
 
 .leaflet-control-attribution {

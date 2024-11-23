@@ -18,7 +18,7 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex-shrink-0"
-            aria-label="Ir a la página principal "
+            aria-label="Ir a la página principal glow "
             onClick={closeMenu}
           >
             <svg

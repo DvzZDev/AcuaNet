@@ -28,18 +28,37 @@ const tailwindConfig = {
         textsecondary: "#ffd700",
         bgcolor: "#070922",
       },
+      backdropFilter: {
+        none: "none",
+        blur: "blur(8px)",
+        "blur-md": "blur(12px)",
+        "blur-lg": "blur(16px)",
+      },
+      backdropBlur: {
+        xs: "2px",
+        sm: "4px",
+        md: "8px",
+        lg: "12px",
+        xl: "16px",
+      },
     },
   },
   plugins: [
     "prettier-plugin-tailwindcss",
-    animations, // Asegúrate de usarlo como una función
+    animations,
     nextui({
       defaultTheme: "dark",
       defaultExtendTheme: "dark",
     }),
   ],
+  variants: {
+    extend: {
+      backdropFilter: ["responsive"],
+      backdropBlur: ["responsive"],
+    },
+  },
   experimental: {
-    optimizeUniversalDefaults: false, // Cambiado a false
+    optimizeUniversalDefaults: false,
   },
   darkMode: "class",
   safelist: [
@@ -55,6 +74,9 @@ const tailwindConfig = {
     "text-red-900",
     "font-bold",
     "text-[18px]",
+    "backdrop-blur",
+    "backdrop-blur-md",
+    "backdrop-blur-lg",
   ],
 }
 

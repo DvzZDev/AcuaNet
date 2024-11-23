@@ -138,10 +138,10 @@ table {
 }
 .glow:hover {
   text-shadow:
-    0 0 3px rgba(0, 255, 153, 0.8),
-    /* Verde claro */ 0 0 6px rgba(0, 255, 102, 0.7),
-    /* Verde más oscuro */ 0 0 12px rgba(0, 255, 102, 0.6),
-    /* Verde más oscuro */ 0 0 30px rgba(0, 255, 0, 1); /* Verde */
+    0 0 3px rgba(147, 255, 183, 0.8),
+    0 0 6px rgba(147, 255, 183, 0.7),
+    0 0 12px rgba(147, 255, 183, 0.6),
+    0 0 30px rgba(147, 255, 183, 1);
 }
 
 #header-nav {

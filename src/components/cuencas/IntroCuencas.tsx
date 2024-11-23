@@ -1,4 +1,4 @@
-import Divider from "./Divider"
+import Divider from "../landing/Divider"
 
 function intro({ title }: { title: string }) {
   return (

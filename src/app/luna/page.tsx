@@ -1,5 +1,5 @@
 "use client"
-import Divider from "@/components/cuencas/Divider"
+import Divider from "@/components/landing/Divider"
 import ButtonUp from "@/components/lunar/up"
 import LunarCalendarMov from "@/components/lunar/LunarCalMov"
 

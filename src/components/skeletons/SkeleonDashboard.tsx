@@ -1,4 +1,4 @@
-import Divider from "../cuencas/Divider"
+import Divider from "../landing/Divider"
 import TableWeatherSK from "./TableWeather"
 
 export default function SkeleonDashboard() {

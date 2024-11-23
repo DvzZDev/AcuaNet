@@ -3,10 +3,6 @@ import { Suspense } from "react"
 import SkeletonCuencas from "@/components/skeletons/SkeletonCuencas"
 import BentoData from "@/components/cuencas/BentoData"
 
-export const revalidate = 60
-export const dynamic = "force-dynamic"
-export const fetchCache = "force-no-store"
-
 export const metadata = {
   title: "Cuencas Hidrográficas - AcuaNet",
   description:

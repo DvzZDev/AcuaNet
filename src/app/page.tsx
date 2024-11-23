@@ -6,10 +6,6 @@ import BentoDataLandin from "@/components/landing/BentoDataLanding"
 import Faq from "@/components/landing/Faq"
 import Hero from "@/components/landing/Hero"
 
-export const revalidate = 60
-export const dynamic = "force-dynamic"
-export const fetchCache = "force-no-store"
-
 export const metadata = {
   title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
   description: "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España.",

@@ -74,7 +74,7 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
 }
 
 export default async function FavSection() {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const favoritesCookie = cookieStore.get("favorites")
   const favorites = favoritesCookie ? JSON.parse(favoritesCookie.value) : []
   const data: Embalses[] = await GetEmbalseByName(favorites)

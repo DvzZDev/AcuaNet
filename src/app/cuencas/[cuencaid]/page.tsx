@@ -1,8 +1,5 @@
-export const revalidate = 60
-export const dynamic = "force-dynamic"
-export const fetchCache = "force-no-store"
-
-export function generateMetadata({ params }: { params: { cuencaid: string } }) {
+export async function generateMetadata(props: { params: Promise<{ cuencaid: string }> }) {
+  const params = await props.params
   return {
     title: `${params.cuencaid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.cuencaid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
     description: `Conulta las mediciones hidrográficas de la cuenca del ${params.cuencaid}`,
@@ -37,7 +34,8 @@ export function generateMetadata({ params }: { params: { cuencaid: string } }) {
   }
 }
 
-async function Page({ params }: { params: { cuencaid: string } }) {
+async function Page(props: { params: Promise<{ cuencaid: string }> }) {
+  const params = await props.params
   return <p>{params.cuencaid} </p>
 }
 

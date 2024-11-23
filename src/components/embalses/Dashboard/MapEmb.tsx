@@ -12,15 +12,14 @@ export default function MapEmb({ coords }: { coords: Coords }) {
   return (
     <>
       <h3 className="text-2xl font-black text-green-950">Mapa</h3>
-      <section className="relative h-fit w-full overflow-hidden rounded-lg aspect-auto border border-green-900/30 bg-green-100">
-        <p className="absolute bottom-2 right-2 z-10 text-xs md:text-base font-semibold text-green-100">{coords.name}</p>
+      <section className="relative aspect-auto h-fit w-full overflow-hidden rounded-lg border border-green-900/30 bg-green-100">
+        <p className="absolute bottom-2 right-2 z-10 text-xs font-semibold text-green-100 md:text-base">{coords.name}</p>
         <MapContainer
           className="map-container"
           center={[coords.lat, coords.lon]}
           zoom={13}
           scrollWheelZoom={false}
           style={{ height: "400px", zIndex: 0 }}
-          
         >
           {/* Cambia a una capa satelital */}
           <TileLayer

@@ -19,11 +19,8 @@ const DynamicMap = dynamicInport(() => import("@/components/embalses/Dashboard/M
   ssr: false,
 })
 
-export const revalidate = 60
-export const dynamic = "force-dynamic"
-export const fetchCache = "force-no-store"
-
-export function generateMetadata({ params }: { params: { embalseid: string } }) {
+export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
+  const params = await props.params
   return {
     title: `${params.embalseid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
     description: `Información sobre el embalse de ${params.embalseid.replace(/%20/g, " ")}`,
@@ -59,7 +56,8 @@ export function generateMetadata({ params }: { params: { embalseid: string } }) 
   }
 }
 
-async function Page({ params }: { params: { embalseid: string } }) {
+async function Page(props: { params: Promise<{ embalseid: string }> }) {
+  const params = await props.params
   const decodedEmbalseid = decodeURIComponent(params.embalseid)
   const coords = GetCoordinates(decodedEmbalseid)
   const embalses = GetEmbalses()

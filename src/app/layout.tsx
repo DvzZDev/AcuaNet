@@ -7,6 +7,7 @@ import Navbar from "@/components/global/Navbar"
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
+      <head></head>
       <body>
         <Providers>
           <header className="h-[3.6rem]">

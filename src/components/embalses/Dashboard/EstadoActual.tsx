@@ -53,7 +53,7 @@ export default function EstadoActual({
                 ></div>
               </div>
               <p className="text-sm font-semibold text-green-950">
-                {agua_embalsadapor} <span className="text-[#3d7764]">% de la capacidad total</span>
+                {agua_embalsadapor} <span className="text-[#3d7764]">% capacidad total</span>
               </p>
             </div>
           </div>

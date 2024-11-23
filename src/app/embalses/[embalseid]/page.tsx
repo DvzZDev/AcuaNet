@@ -9,8 +9,8 @@ import LunarCalendar from "@/components/lunar/lunarcal"
 import GetCoordinates from "@/lib/GetCoordinates"
 
 import MapEmbData from "@/components/embalses/Dashboard/MapEmbData"
-// import GetWeather from "@/lib/GetWeather"
-// import TableWeather from "@/components/weather/TableWeather"
+import GetWeather from "@/lib/GetWeather"
+import TableWeather from "@/components/weather/TableWeather"
 
 export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
@@ -57,7 +57,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
 
   const [coordsData, embalsesData] = await Promise.all([coords, embalses])
 
-  // const weatherData = coordsData ? await GetWeather(coordsData.lat, coordsData.lon) : null
+  const weatherData = coordsData ? await GetWeather(coordsData.lat, coordsData.lon) : null
 
   const resEmbalse = embalsesData.find((embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase())
 
@@ -105,7 +105,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
             misma_semana_10añospor={misma_semana_10añospor || 0}
           />
           {coordsData && <MapEmbData coords={coordsData} />}
-          {/* {weatherData && <TableWeather data={weatherData} />} */}
+          {weatherData && <TableWeather data={weatherData} />}
 
           <h3 className="text-2xl font-black text-green-950">Calendario Lunar</h3>
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">

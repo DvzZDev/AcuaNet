@@ -31,7 +31,19 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion }: { no
             <path d="M11 15h1" />
             <path d="M12 15v3" />
           </svg>
-          <p>Última Actualización - {fecha_modificacion ? fecha_modificacion.toLocaleDateString() : "N/A"}</p>
+          <p>
+            Últ. Actualización -{" "}
+            {fecha_modificacion
+              ? new Date(fecha_modificacion).toLocaleString("es-ES", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                  hour: "numeric",
+                  minute: "numeric",
+                  hourCycle: "h23",
+                })
+              : "N/A"}
+          </p>
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@ export default function HistorialCambios({
               <p className="text-3xl font-black text-green-950">
                 {variacion_ultima_semana} <span className="text-lg">hm³</span>
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">{variacion_ultima_semanapor}% de la capacidad total</p>
+              <p className="text-sm font-semibold text-[#3d7764]">{variacion_ultima_semanapor}% capacidad total</p>
             </div>
           </div>
           {/* Hace un año */}
@@ -82,7 +82,7 @@ export default function HistorialCambios({
               <p className="text-3xl font-black text-green-950">
                 {misma_semana_ultimo_año} <span className="text-lg">hm³</span>
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">{misma_semana_ultimo_añopor}% de la capacidad total</p>
+              <p className="text-sm font-semibold text-[#3d7764]">{misma_semana_ultimo_añopor}% capacidad total</p>
             </div>
           </div>
           {/* Hace 10 años */}
@@ -113,7 +113,7 @@ export default function HistorialCambios({
               <p className="text-3xl font-black text-green-950">
                 {misma_semana_10años} <span className="text-lg">hm³</span>
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">{misma_semana_10añospor}% de la capacidad total</p>
+              <p className="text-sm font-semibold text-[#3d7764]">{misma_semana_10añospor}% capacidad total</p>
             </div>
           </div>
         </div>

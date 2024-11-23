@@ -196,7 +196,7 @@ const LunarCalendar = () => {
               <path d="M15 8l4 4" />
             </svg>
           </button>
-          <h2 className="font-NecoBold px-5 text-center text-2xl font-bold uppercase text-green-950 md:text-4xl">
+          <h2 className="font-NecoBold mb-7 px-5 text-center text-2xl font-bold uppercase text-green-950 md:text-4xl">
             {new Date(startYear, startMonth)
               .toLocaleString("es-ES", {
                 month: "long",

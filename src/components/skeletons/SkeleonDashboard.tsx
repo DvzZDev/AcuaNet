@@ -91,6 +91,7 @@ export default function SkeleonDashboard() {
               </div>
             </div>
           </section>
+
           <TableWeatherSK />
         </section>
       </main>

@@ -9,15 +9,9 @@ import HistorialCambios from "@/components/embalses/Dashboard/HistorialCambios"
 import LunarCalendar from "@/components/lunar/lunarcal"
 import GetCoordinates from "@/lib/GetCoordinates"
 
-import dynamicInport from "next/dynamic"
-import { Suspense } from "react"
+import MapEmbData from "@/components/embalses/Dashboard/MapEmbData"
 import GetWeather from "@/lib/GetWeather"
 import TableWeather from "@/components/weather/TableWeather"
-
-const DynamicMap = dynamicInport(() => import("@/components/embalses/Dashboard/MapEmb"), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-})
 
 export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
@@ -94,46 +88,30 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
       <FavButton url={{ embalseid: decodedEmbalseid }} />
       <main className="flex h-full justify-center bg-green-50 px-6 pb-14 pt-4 text-black">
         <section className="flex w-[70rem] flex-col gap-7">
-          <Suspense fallback={<p>Loading...</p>}>
-            <IntroCuencas
-              nombre_cuenca={nombre_cuenca || "No disponible"}
-              fecha_modificacion={fecha_modificacion ? new Date(fecha_modificacion) : new Date()}
-            />
-          </Suspense>
-          <Suspense fallback={<p>Loading...</p>}>
-            <EstadoActual
-              agua_embalsada={agua_embalsada || 0}
-              agua_embalsadapor={agua_embalsadapor || 0}
-              capacidad_total={capacidad_total || 0}
-              cota={cota || 0}
-            />
-          </Suspense>
-          <Suspense fallback={<p>Loading...</p>}>
-            <HistorialCambios
-              variacion_ultima_semana={variacion_ultima_semana || 0}
-              variacion_ultima_semanapor={variacion_ultima_semanapor || 0}
-              misma_semana_ultimo_año={misma_semana_ultimo_año || 0}
-              misma_semana_ultimo_añopor={misma_semana_ultimo_añopor || 0}
-              misma_semana_10años={misma_semana_10años || 0}
-              misma_semana_10añospor={misma_semana_10añospor || 0}
-            />
-          </Suspense>
-          {coordsData && (
-            <Suspense fallback={<p>Loading...</p>}>
-              <DynamicMap coords={coordsData} />
-            </Suspense>
-          )}
-          {weatherData && (
-            <Suspense fallback={<p>Loading...</p>}>
-              <TableWeather data={weatherData} />
-            </Suspense>
-          )}
+          <IntroCuencas
+            nombre_cuenca={nombre_cuenca || "No disponible"}
+            fecha_modificacion={fecha_modificacion ? new Date(fecha_modificacion) : new Date()}
+          />
+          <EstadoActual
+            agua_embalsada={agua_embalsada || 0}
+            agua_embalsadapor={agua_embalsadapor || 0}
+            capacidad_total={capacidad_total || 0}
+            cota={cota || 0}
+          />
+          <HistorialCambios
+            variacion_ultima_semana={variacion_ultima_semana || 0}
+            variacion_ultima_semanapor={variacion_ultima_semanapor || 0}
+            misma_semana_ultimo_año={misma_semana_ultimo_año || 0}
+            misma_semana_ultimo_añopor={misma_semana_ultimo_añopor || 0}
+            misma_semana_10años={misma_semana_10años || 0}
+            misma_semana_10añospor={misma_semana_10añospor || 0}
+          />
+          {coordsData && <MapEmbData coords={coordsData} />}
+          {weatherData && <TableWeather data={weatherData} />}
 
           <h3 className="text-2xl font-black text-green-950">Calendario Lunar</h3>
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
-            <Suspense fallback={<p>Loading...</p>}>
-              <LunarCalendar />
-            </Suspense>
+            <LunarCalendar />
           </section>
         </section>
       </main>

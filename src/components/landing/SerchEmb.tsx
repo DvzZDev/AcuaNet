@@ -1,6 +1,7 @@
 "use client"
 import { ReactTyped } from "react-typed"
 import AutoCompleteHook from "@/hooks/AutoComplete"
+import { Link } from "next-view-transitions"
 
 interface TypeProps {
   data: string[]
@@ -79,13 +80,18 @@ export default function SerchEmb({ data }: TypeProps) {
         {suggestions.length > 0 && (
           <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-[#275e56] bg-opacity-100 text-base text-green-100 animate-duration-300 md:text-xl">
             {suggestions.slice(0, 5).map((suggestion, index) => (
-              <li
+              <Link
+                href={`/embalses/${suggestion.toLowerCase()}`}
                 key={index}
-                onClick={() => handleSuggestionClick(suggestion)}
-                className="z-30 cursor-pointer rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
               >
-                {suggestion}
-              </li>
+                <li
+                  key={index}
+                  onClick={() => handleSuggestionClick(suggestion)}
+                  className="z-30 cursor-pointer rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
+                >
+                  {suggestion}
+                </li>
+              </Link>
             ))}
           </ul>
         )}

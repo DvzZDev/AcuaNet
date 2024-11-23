@@ -26,7 +26,6 @@ const AutoCompleteHook = (data: string[], closeMenu?: () => void, isMenuOpen?: b
   const handleSuggestionClick = (nombreEmbalse: string) => {
     setType(nombreEmbalse)
     setSuggestions([])
-    router.push(`/embalses/${nombreEmbalse.toLowerCase()}`)
     setSuggestions([])
     setFine(true)
     setType("")

@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .ts,.tsx",
@@ -33,30 +33,30 @@
     "js-cookie": "^3.0.5",
     "leaflet": "^1.9.4",
     "lunarphase-js": "^2.0.3",
-    "next": "14.2.3",
+    "next": "15.0.3",
     "next-sitemap": "4.2.3",
     "next-view-transitions": "0.2.0",
     "postgres": "3.4.4",
     "posthog-js": "1.166.2",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-hook-form": "7.53.0",
     "react-intersection-observer": "^9.13.1",
     "react-leaflet": "^4.2.1",
     "react-typed": "2.0.12"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "14.2.15",
+    "@next/eslint-plugin-next": "15.0.3",
     "@types/js-cookie": "^3.0.6",
     "@types/leaflet": "^1.9.14",
     "@types/node": "22.7.5",
-    "@types/react": "18.3.11",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-table": "7.7.20",
     "@typescript-eslint/eslint-plugin": "8.8.1",
     "@typescript-eslint/parser": "8.8.1",
     "drizzle-kit": "0.25.0",
     "eslint": "8.57.1",
-    "eslint-config-next": "14.2.3",
+    "eslint-config-next": "15.0.3",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-react": "7.37.1",
@@ -74,5 +74,10 @@
     "not dead",
     "not op_mini all"
   ],
-  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
+  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "npm:types-react@19.0.0-rc.1"
+    }
+  }
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { JSX, useState } from "react"
 import { Moon } from "lunarphase-js"
 
 type LunarDay = {

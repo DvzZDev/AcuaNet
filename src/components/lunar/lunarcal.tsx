@@ -140,7 +140,11 @@ const LunarCalendar = () => {
           week.push(
             <div
               key={j}
-              className={`w-full border-[#1b7b6e] bg-green-50 px-2 py-1 text-center font-semibold text-black ${isToday ? "bg-[#93edb2c0] text-black" : "bg-green-50 text-black"} ${(j + 1) % 7 !== 0 ? "border-r" : ""} ${j >= 7 ? "border-t" : ""} ${!isLastWeek(i, daysInMonth, firstDayOfMonth) ? "border-b" : ""}`}
+              className={`w-full border-[#1b7b6e] bg-green-50 px-2 py-1 text-center font-semibold text-black ${
+                isToday ? "bg-[#1dd38d80] text-black" : "bg-green-50 text-black"
+              } ${(j + 1) % 7 !== 0 ? "border-r" : ""} ${j >= 7 ? "border-t" : ""} ${
+                !isLastWeek(i, daysInMonth, firstDayOfMonth) ? "border-b" : ""
+              }`}
             >
               <p className="text-left font-black">{dayCount}</p>
               <p className="text-3xl">{lunarDay?.phaseEmoji}</p>
@@ -245,7 +249,7 @@ const LunarCalendar = () => {
               <div
                 key={index}
                 className={`col-span-1 gap-2 rounded-lg border-1 border-[#1b7b6e77] p-4 shadow-md ${
-                  isToday ? "bg-[#93edb2bd] text-black" : "bg-transparent text-[#052e16]"
+                  isToday ? "bg-[#1dd38d80] text-black" : "bg-transparent text-[#052e16]"
                 }`}
               >
                 <div className="flex items-center justify-between">

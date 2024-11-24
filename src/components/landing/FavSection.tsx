@@ -43,7 +43,7 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
   const variacion = embalse.variacion_ultima_semanapor || 0
 
   return (
-    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-600/30 bg-gradient-to-br from-green-700/60 to-green-900/60 shadow-lg backdrop-blur-lg transition-all hover:scale-95">
+    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-600/30 bg-gradient-to-br from-green-700/60 to-green-900/60 shadow-lg transition-all hover:scale-95">
       <Link href={encodeURI(`embalses/${embalse.nombre_embalse ?? ""}`)}>
         <div className="p-3">
           <div className="mb-2 flex items-center justify-between">
@@ -96,7 +96,7 @@ export default async function FavSection() {
           </div>
         </>
       ) : (
-        <div className="mx-auto mt-[4rem] max-w-sm rounded-lg border border-green-100/45 p-2 backdrop-blur-xl md:mt-0">
+        <div className="mx-auto mt-[4rem] max-w-sm rounded-lg border border-green-100/45 p-2 md:mt-0">
           <div className="flex items-center space-x-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"

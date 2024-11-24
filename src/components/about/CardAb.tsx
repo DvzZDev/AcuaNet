@@ -19,8 +19,8 @@ function CardAb() {
           David <span className="text-[#1b7b6e]">Esteban</span>
         </h1>
         <p className="mb-3 text-base text-[#0a2e29] md:text-lg">
-          ¡Hola! Soy David, programador full-stack y creador de AcuaNet. Me encanta la pesca, así que decidí crear esta página
-          para ayudar a otros pescadores a tener la mejor información relevante para este deporte.
+          ¡Hola! Soy David, tengo 20 años y como programador, mi objetivo es llegar a la mayor cantidad de personas posible para
+          que disfruten de mi aplicación.
         </p>
         <div className="relative mt-1 flex items-center justify-center gap-7">
           <div className="absolute left-0 top-0 h-0.5 w-full bg-gradient-to-r from-transparent via-green-300 to-transparent"></div>

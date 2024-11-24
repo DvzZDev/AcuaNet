@@ -12,7 +12,7 @@ function Content() {
             <Image
               as={NextImage}
               src="/atazar.webp"
-              alt="Embalse de Orellana en Badajoz, España"
+              alt="Embalse del Atazar en Madrid, España"
               width={600}
               height={400}
               draggable={false}
@@ -21,15 +21,17 @@ function Content() {
           </div>
 
           <div className="text-white">
-            <h2 className="mb-6 text-3xl font-bold text-[#1b7b6e] md:text-4xl">¿Quiénes Somos?</h2>
-            <p className="mb-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              En AcuaNet, queremos que disfrutes al máximo tu pasión por la pesca. Te ofrecemos datos actualizados de los embalses
-              y del tiempo, para que siempre estés bien informado. Nuestra plataforma está diseñada para que encuentres lo que
-              necesitas de manera rápida y sencilla.
+            <h2 className="mb-3 text-3xl font-bold text-[#1b7b6e] md:text-4xl">¿Que es AcuaNet?</h2>
+            <p className="mb-3 text-base leading-relaxed text-[#0a2e29] md:text-xl">
+              AcuaNet es una página web que esta enfocada en ofrecerte la ultima información hidrográfica y meteorológica de tus
+              embalses favoritos en España.
             </p>
-            <p className="text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              Nos encargamos de hacerte la vida más fácil, evitando páginas confusas y complicadas. Aquí, la información es clara
-              y está al alcance de tu mano.
+            <p className="mb-3 text-base leading-relaxed text-[#0a2e29] md:text-xl">
+              Nos encargamos de recopilar información y entregártela de la manera más sencilla y clara posible, para que puedas
+              disfrutar de tus actividades acuáticas favoritas.
+            </p>
+            <p className="text-base leading-relaxed text-[#0a2e29] md:text-xl">
+              Quiero agradecer a AGR Baits tu marca de pesca de confianza por colaborar en este proyecto y patrocinar la página.
             </p>
           </div>
         </article>
@@ -48,15 +50,15 @@ function Content() {
             />
           </div>
           <div className="text-white">
-            <h2 className="mb-6 text-3xl font-bold text-[#1b7b6e] md:text-4xl">Nuestro Propósito</h2>
-            <p className="mb-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              Recuerdo lo frustrante que era prepararme para pescar, buscando el nivel del embalse y el clima en páginas llenas de
-              anuncios y con información poco clara. Esa frustración se acabó con AcuaNet.
+            <h2 className="mb-3 text-3xl font-bold text-[#1b7b6e] md:text-4xl">¿Donde queremos llegar?</h2>
+            <p className="mb-3 text-base leading-relaxed text-[#0a2e29] md:text-xl">
+              Mi proposito como programador de AcuaNet es darte la mejor experiencia posible al momento de planificar tus jornadas
+              de pesca, sin anuncios molestos y con una interfaz amigable.
             </p>
 
-            <p className="text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              Quiero que todos tengan acceso a esta información de la manera más sencilla posible. Un agradecimiento especial a
-              AGR Baits por patrocinar esta página y respaldar nuestra misión.
+            <p className="text-base leading-relaxed text-[#0a2e29] md:text-xl">
+              Si ves en esta página algo que no te gusta o crees que se puede mejorar, no dudes en contactarme a través de mis
+              redes sociales en la parte inferior de la página.
             </p>
           </div>
           <div className="hidden h-full w-full items-center overflow-visible rounded-lg sm:flex">

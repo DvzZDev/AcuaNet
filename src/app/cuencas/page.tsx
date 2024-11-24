@@ -4,13 +4,13 @@ import SkeletonCuencas from "@/components/skeletons/SkeletonCuencas"
 import BentoData from "@/components/cuencas/BentoData"
 
 export const metadata = {
-  title: "Cuencas Hidrográficas - AcuaNet",
+  title: "Cuencas Hidrográficas de España - Gestión y Datos en AcuaNet",
   description:
-    "Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas",
+    "Explora las cuencas hidrográficas de España, consulta mediciones actualizadas y aprende sobre la gestión de los recursos hídricos en cada cuenca.",
   openGraph: {
-    title: "Cuencas Hidrográficas - AcuaNet",
+    title: "Cuencas Hidrográficas de España - Gestión y Datos en AcuaNet",
     description:
-      "Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas",
+      "Accede a información detallada sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos para un futuro sostenible.",
     url: "https://acuanet.es/cuencas",
     siteName: "AcuaNet",
     images: [
@@ -18,7 +18,7 @@ export const metadata = {
         url: "https://i.imgur.com/LQvr7AX.png",
         width: 1800,
         height: 1600,
-        alt: "My custom alt",
+        alt: "Información sobre cuencas hidrográficas en AcuaNet",
       },
     ],
     locale: "es_ES",
@@ -26,9 +26,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cuencas Hidrográficas - AcuaNet",
+    title: "Cuencas Hidrográficas de España - Gestión y Datos en AcuaNet",
     description:
-      "Conoce más sobre las cuencas hidrográficas de España y cómo se gestionan los recursos hídricos en cada una de ellas",
+      "Consulta las cuencas hidrográficas de España y obtén información sobre la gestión de los recursos hídricos en cada una.",
     creator: "@_DvzZ_",
     images: ["https://i.imgur.com/LQvr7AX.png"],
   },

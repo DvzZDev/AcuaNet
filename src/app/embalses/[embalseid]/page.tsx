@@ -14,13 +14,17 @@ import TableWeather from "@/components/weather/TableWeather"
 
 export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
+  const embalseName = params.embalseid.replace(/%20/g, " ")
+  const embalseFormatted = `${embalseName.charAt(0).toUpperCase()}${embalseName.slice(1).toLowerCase()}`
+
   return {
-    title: `${params.embalseid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
-    description: `Información sobre el embalse de ${params.embalseid.replace(/%20/g, " ")}`,
+    title: `${embalseFormatted} - Niveles de agua y pronósticos en AcuaNet`,
+    description: `Consulta información detallada sobre el embalse de ${embalseName}, incluyendo niveles de agua, pronóstico meteorológico y datos útiles para tus salidas de pesca en tiempo real.`,
+    keywords: "embalse, niveles de agua, pesca, pronóstico, clima, cuenca, pesca en España, estadísticas de embalses",
 
     openGraph: {
-      title: `${params.embalseid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
-      description: `Información sobre el embalse de ${params.embalseid.replace(/%20/g, " ")}`,
+      title: `${embalseFormatted} - Niveles de agua y pronósticos en AcuaNet`,
+      description: `Consulta los niveles de agua, condiciones meteorológicas y más sobre el embalse de ${embalseName}, con datos actualizados para planificar tu jornada de pesca.`,
       url: `https://acuanet.es/embalses/${params.embalseid}`,
       siteName: "AcuaNet",
       images: [
@@ -28,21 +32,23 @@ export async function generateMetadata(props: { params: Promise<{ embalseid: str
           url: "https://i.imgur.com/LQvr7AX.png",
           width: 800,
           height: 600,
+          alt: `Imagen del embalse de ${embalseName} - AcuaNet`,
         },
         {
           url: "https://i.imgur.com/LQvr7AX.png",
           width: 1800,
           height: 1600,
-          alt: "Og image from AcuaNet",
+          alt: `Visión detallada del embalse de ${embalseName} para pescadores - AcuaNet`,
         },
       ],
       locale: "es_ES",
       type: "website",
     },
+
     twitter: {
       card: "summary_large_image",
-      title: `${params.embalseid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.embalseid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
-      description: `Información sobre el embalse de ${params.embalseid.replace(/%20/g, " ")}`,
+      title: `${embalseFormatted} - Niveles de agua y pronósticos en AcuaNet`,
+      description: `Accede a información completa sobre el embalse de ${embalseName}, con datos en tiempo real sobre niveles de agua y pronósticos para pescadores.`,
       creator: "@_DvzZ_",
       images: ["https://i.imgur.com/LQvr7AX.png"],
     },

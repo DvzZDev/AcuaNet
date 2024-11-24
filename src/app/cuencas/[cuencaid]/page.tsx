@@ -5,34 +5,42 @@ import TitleEmb from "@/components/embalses/TitleEmb"
 
 export async function generateMetadata(props: { params: Promise<{ cuencaid: string }> }) {
   const params = await props.params
+  const cuencaName = params.cuencaid.replace(/%20/g, " ")
+  const cuencaFormatted = `${cuencaName.charAt(0).toUpperCase()}${cuencaName.slice(1).toLowerCase()}`
+
   return {
-    title: `${params.cuencaid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.cuencaid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
-    description: `Conulta las mediciones hidrográficas de la cuenca del ${params.cuencaid}`,
+    title: `${cuencaFormatted} - Mediciones hidrográficas y pronósticos en AcuaNet`,
+    description: `Consulta las mediciones hidrográficas actualizadas de la cuenca del ${cuencaName}, con datos sobre niveles de agua, calidad del agua y más para planificar tus actividades en la naturaleza.`,
+    keywords:
+      "cuenca, mediciones hidrográficas, niveles de agua, calidad del agua, pronóstico, agua, pesca, medio ambiente, España",
+
     openGraph: {
-      title: `${params.cuencaid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.cuencaid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
-      description: `Conulta las mediciones hidrográficas de la cuenca del ${params.cuencaid}`,
-      url: "https://acuanet.es/cuencas",
+      title: `${cuencaFormatted} - Mediciones hidrográficas y pronósticos en AcuaNet`,
+      description: `Accede a las mediciones hidrográficas más recientes de la cuenca del ${cuencaName} y consulta los niveles de agua, calidad del agua y pronósticos climáticos para tus actividades al aire libre.`,
+      url: `https://acuanet.es/cuencas/${params.cuencaid}`,
       siteName: "AcuaNet",
       images: [
         {
           url: "https://i.imgur.com/LQvr7AX.png",
           width: 800,
           height: 600,
+          alt: `Imagen de la cuenca de ${cuencaName} - AcuaNet`,
         },
         {
           url: "https://i.imgur.com/LQvr7AX.png",
           width: 1800,
           height: 1600,
-          alt: "Og image from AcuaNet",
+          alt: `Mediciones hidrográficas de la cuenca del ${cuencaName} - AcuaNet`,
         },
       ],
       locale: "es_ES",
       type: "website",
     },
+
     twitter: {
       card: "summary_large_image",
-      title: `${params.cuencaid.replace(/%20/g, " ").charAt(0).toUpperCase()}${params.cuencaid.replace(/%20/g, " ").slice(1).toLowerCase()} - AcuaNet`,
-      description: `Conulta las mediciones hidrográficas de la cuenca del ${params.cuencaid}`,
+      title: `${cuencaFormatted} - Mediciones hidrográficas y pronósticos en AcuaNet`,
+      description: `Consulta las mediciones hidrográficas y pronósticos de la cuenca del ${cuencaName} para optimizar tus actividades en la naturaleza.`,
       creator: "@_DvzZ_",
       images: ["https://i.imgur.com/LQvr7AX.png"],
     },

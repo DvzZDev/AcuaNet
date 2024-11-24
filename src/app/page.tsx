@@ -7,11 +7,13 @@ import Faq from "@/components/landing/Faq"
 import Hero from "@/components/landing/Hero"
 
 export const metadata = {
-  title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
-  description: "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España.",
+  title: "AcuaNet - Descubre los niveles de agua y pronósticos para tus salidas de pesca",
+  description:
+    "Consulta en tiempo real los niveles de agua, pronósticos meteorológicos y datos clave de cuencas y embalses en toda España para optimizar tus jornadas de pesca.",
   openGraph: {
-    title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
-    description: "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España.",
+    title: "AcuaNet - Descubre los niveles de agua y pronósticos para tus salidas de pesca",
+    description:
+      "Accede a información precisa y actualizada sobre cuencas y embalses, condiciones meteorológicas y más, para planificar tus mejores salidas de pesca.",
     url: "https://acuanet.es",
     siteName: "AcuaNet",
     images: [
@@ -19,7 +21,7 @@ export const metadata = {
         url: "https://i.imgur.com/LQvr7AX.png",
         width: 1800,
         height: 1600,
-        alt: "OG Image",
+        alt: "AcuaNet - La herramienta definitiva para pescadores",
       },
     ],
     locale: "es_ES",
@@ -27,8 +29,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AcuaNet - La herramienta definitiva para tus jornadas de pesca.",
-    description: "Consulta las mediciones actualizadas de cuencas y embalses, y verifica el tiempo en toda España. ",
+    title: "AcuaNet - Descubre los niveles de agua y pronósticos para tus salidas de pesca",
+    description:
+      "Consulta las mediciones más recientes de cuencas y embalses y obtén el pronóstico del tiempo para optimizar tus jornadas de pesca en toda España.",
     images: ["https://i.imgur.com/LQvr7AX.png"],
   },
 }

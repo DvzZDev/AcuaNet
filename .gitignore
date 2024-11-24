@@ -11,6 +11,8 @@
 
 /vscode
 
+settings.json 
+
 # next.js
 /.next/
 /out/

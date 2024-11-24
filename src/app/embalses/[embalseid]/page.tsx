@@ -11,6 +11,7 @@ import GetCoordinates from "@/lib/GetCoordinates"
 import MapEmbData from "@/components/embalses/Dashboard/MapEmbData"
 import GetWeather from "@/lib/GetWeather"
 import TableWeather from "@/components/weather/TableWeather"
+import ButtonUp from "@/components/lunar/up"
 
 export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
@@ -118,6 +119,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
             <LunarCalendar />
           </section>
         </section>
+        <ButtonUp />
       </main>
     </>
   )

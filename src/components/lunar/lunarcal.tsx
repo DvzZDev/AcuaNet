@@ -175,6 +175,7 @@ const LunarCalendar = () => {
       <div className="w-full overflow-hidden rounded-lg shadow-md md:bg-green-100">
         <div className="flex items-center justify-between pb-3">
           <button
+            aria-label="Mes anterior"
             onClick={handlePreviousMonth}
             className="rounded-full bg-[#93edb3] p-1 text-white transition hover:bg-emerald-200"
           >
@@ -209,6 +210,7 @@ const LunarCalendar = () => {
               .replace(/^\w/, (c) => c.toUpperCase())}{" "}
           </h2>
           <button
+            aria-label="Mes siguiente"
             onClick={handleNextMonth}
             className="rounded-full bg-[#93edb3] p-1 text-white transition hover:bg-emerald-200"
           >

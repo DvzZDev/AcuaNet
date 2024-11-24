@@ -176,6 +176,7 @@ const LunarCalendar = () => {
         <div className="flex items-center justify-between pb-3">
           <button
             onClick={handlePreviousMonth}
+            aria-label="Mes anterior"
             className="rounded-full bg-[#93edb3] p-1 text-white transition hover:bg-emerald-200"
           >
             <svg
@@ -210,6 +211,7 @@ const LunarCalendar = () => {
           </h2>
           <button
             onClick={handleNextMonth}
+            aria-label="Mes siguiente"
             className="rounded-full bg-[#93edb3] p-1 text-white transition hover:bg-emerald-200"
           >
             <svg

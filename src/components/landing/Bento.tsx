@@ -15,7 +15,7 @@ function Bento(props: BentoProps) {
 
   return (
     <section className="flex min-h-full flex-col items-center justify-center bg-[#f1fbf7] bg-gradient-to-t py-5 md:py-10 lg:h-full">
-      <h1 className="text-center text-[2.3rem] font-black leading-none text-[#1b7b6e] sm:mb-6 sm:text-[50px]">Resumen Global</h1>
+      <h2 className="text-center text-[2.3rem] font-black leading-none text-[#1b7b6e] sm:mb-6 sm:text-[50px]">Resumen Global</h2>
       {/* Div Global */}
       <div className="mx-6 my-4 flex flex-col justify-center gap-7 md:my-8 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
@@ -90,9 +90,9 @@ function Bento(props: BentoProps) {
               href="/luna"
               className={`relative col-span-6 overflow-hidden rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all ${inView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}
             >
-              <h1 className="absolute left-1/2 z-10 w-full -translate-x-1/2 transform pt-3 text-center text-3xl text-yellow-500 md:pt-5 md:text-5xl">
+              <h2 className="absolute left-1/2 z-10 w-full -translate-x-1/2 transform pt-3 text-center text-3xl text-yellow-500 md:pt-5 md:text-5xl">
                 {translateMoonPhase()}
-              </h1>
+              </h2>
               <video
                 autoPlay
                 muted
@@ -118,7 +118,7 @@ function Bento(props: BentoProps) {
               ref={ref}
               className={`col-span-4 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all ${inView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}
             >
-              <h1 className="p-2 text-center text-3xl text-green-300">Mayor Variacion Semanal</h1>
+              <h2 className="p-2 text-center text-3xl text-green-300">Mayor Variacion Semanal</h2>
               <div className="flex flex-col content-center justify-center px-3">
                 {/* Primera Tabla */}
                 <table className="mb-1 w-full text-[16px]">

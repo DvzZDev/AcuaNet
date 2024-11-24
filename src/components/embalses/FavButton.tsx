@@ -22,7 +22,7 @@ export default function FavButton({ url }: { url: { embalseid: string } }) {
 
   return (
     <button
-      className={`fixed right-2 top-[5rem] z-50 flex h-10 w-10 items-center justify-center rounded-full bg-[#384948] bg-opacity-80 shadow-md transition-colors ${isFavorite ? "text-yellow-400" : "text-green-200"}`}
+      className={`fixed right-4 top-[5rem] z-50 flex h-10 w-10 items-center justify-center rounded-full bg-[#384948] bg-opacity-80 shadow-md transition-colors ${isFavorite ? "text-yellow-400" : "text-green-200"}`}
       onClick={toggleFavorite}
       aria-label={isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
     >

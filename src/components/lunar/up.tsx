@@ -9,6 +9,7 @@ export default function ButtonUp() {
   }
   return (
     <button
+      aria-label="Ir arriba"
       onClick={handleScrollToTop}
       className="fixed bottom-4 right-4 flex h-[2rem] w-[2rem] items-center justify-center rounded-sm bg-[#627f73] outline-none transition-all active:scale-105 md:hidden"
     >

@@ -61,6 +61,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
       <div>
         <div className="mb-3 flex justify-between">
           <button
+            aria-label="Mostrar por horas"
             onClick={() => setShowHours(!showHours)}
             className="rounded-xl bg-[#27475e] p-2 text-sm text-white hover:bg-[#4e90be] active:scale-95"
           >
@@ -68,12 +69,14 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
           </button>
           <div className="flex gap-2">
             <button
+              aria-label="Desplazar a la izquierda"
               onClick={scrollLeft}
               className="rounded-full bg-[#27475e] p-2 text-sm leading-none text-white hover:bg-[#4e90be] active:scale-95"
             >
               &larr;
             </button>
             <button
+              aria-label="Desplazar a la derecha"
               onClick={scrollRight}
               className="rounded-full bg-[#27475e] p-2 text-sm leading-none text-white hover:bg-[#4e90be] active:scale-95"
             >

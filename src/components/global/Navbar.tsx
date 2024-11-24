@@ -129,7 +129,7 @@ export default function Navbar() {
 
         {/* Menú móvil */}
         <nav
-          className={`${isMenuOpen ? "flex animate-appearance-in flex-col items-center gap-4 text-2xl text-green-100 delay-200" : "hidden"}`}
+          className={`${isMenuOpen ? "gap-4 flex animate-appearance-in flex-col items-center text-2xl text-green-100 delay-200" : "hidden"}`}
         >
           <Link
             href="/cuencas"

@@ -1,3 +1,5 @@
+"use client"
+
 export default function ButtonUp() {
   const handleScrollToTop = () => {
     window.scrollTo({

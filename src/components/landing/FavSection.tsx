@@ -43,27 +43,27 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
   const variacion = embalse.variacion_ultima_semanapor || 0
 
   return (
-    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-[rgba(34,197,94,0.3)] bg-[rgba(34,197,94,0.2)] shadow-lg backdrop-blur-xl transition-all hover:scale-95">
+    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-600/30 bg-gradient-to-br from-green-700/60 to-green-900/60 shadow-lg backdrop-blur-lg transition-all hover:scale-95">
       <Link href={encodeURI(`embalses/${embalse.nombre_embalse ?? ""}`)}>
         <div className="p-3">
           <div className="mb-2 flex items-center justify-between">
-            <h2 className="text-base font-semibold uppercase">{embalse.nombre_embalse}</h2>
+            <h2 className="text-base font-semibold uppercase text-green-100">{embalse.nombre_embalse}</h2>
             {/* Icono */}
           </div>
           <div className="mb-1 flex items-center">
-            <div className="mr-2 h-2 w-full rounded-full bg-[rgba(0,0,0,0.5)]">
+            <div className="mr-2 h-2 w-full rounded-full bg-green-950/50">
               <div
-                className="h-2 rounded-full bg-[rgba(34,197,94,0.1)]"
+                className="h-2 rounded-full bg-green-400"
                 style={{ width: `${embalse.agua_embalsadapor}%` }}
               ></div>
             </div>
-            <span className="min-w-[36px] text-right text-sm font-bold">{embalse.agua_embalsadapor?.toFixed()}%</span>
+            <span className="min-w-[36px] text-right text-sm font-bold text-green-50">
+              {embalse.agua_embalsadapor?.toFixed()}%
+            </span>
           </div>
           <div className="flex items-center justify-between text-xs">
-            <span className="text-[rgba(34,197,94,0.8)]">Variación semanal</span>
-            <span
-              className={`flex items-center font-bold ${variacion >= 0 ? "text-[rgba(34,197,94,0.8)]" : "text-[rgba(239,68,68,0.8)]"}`}
-            >
+            <span className="text-green-200">Variación semanal</span>
+            <span className={`flex items-center font-bold ${variacion >= 0 ? "text-green-300" : "text-red-300"}`}>
               {variacion >= 0 ? <TrendingUp className="mr-1 h-3 w-3" /> : <TrendingDown className="mr-1 h-3 w-3" />}
               {variacion > 0 ? "+" : ""}
               {variacion}%
@@ -85,7 +85,7 @@ export default async function FavSection() {
     <section className="mt-[2rem] h-[16.5rem] w-[15rem] overflow-auto pb-8 sm:h-full md:w-[35rem] xl:mt-[3rem] 2xl:mt-[6rem]">
       {data.length > 0 ? (
         <>
-          <h2 className="mb-4 text-xl text-[rgba(34,197,94,0.8)] md:text-2xl">Embalses Favoritos</h2>
+          <h2 className="mb-4 text-xl text-green-100 md:text-2xl">Embalses Favoritos</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {data.map((favorite: Embalses, index: number) => (
               <EmbalseCard
@@ -96,7 +96,7 @@ export default async function FavSection() {
           </div>
         </>
       ) : (
-        <div className="mx-auto mt-[4rem] max-w-sm rounded-lg border border-[rgba(34,197,94,0.45)] p-2 backdrop-blur-xl md:mt-0">
+        <div className="mx-auto mt-[4rem] max-w-sm rounded-lg border border-green-100/45 p-2 backdrop-blur-xl md:mt-0">
           <div className="flex items-center space-x-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -111,10 +111,10 @@ export default async function FavSection() {
                 strokeLinejoin="round"
                 d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
               />
-            </svg>{" "}
+            </svg>
             <div>
-              <h2 className="mb-1 text-base font-semibold text-[rgba(34,197,94,0.8)] md:text-lg">Embalses Favoritos</h2>
-              <p className="text-sm text-[rgba(34,197,94,0.8)]">
+              <h2 className="mb-1 text-base font-semibold text-green-100 md:text-lg">Embalses Favoritos</h2>
+              <p className="text-sm text-green-200">
                 Aún no tienes favoritos. Añade embalses haciendo clic en la estrella en la página de cada embalse.
               </p>
             </div>

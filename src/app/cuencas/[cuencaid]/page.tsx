@@ -63,7 +63,7 @@ async function Page(props: { params: Promise<{ cuencaid: string }> }) {
             variacion_por={porcentaje_variacion ?? 0}
           />
           <img
-            src={foto || ""}
+            src={foto || undefined}
             alt="Imagen de la cuenca hidrográfica"
             className="h-auto w-full rounded-lg shadow-lg"
           />

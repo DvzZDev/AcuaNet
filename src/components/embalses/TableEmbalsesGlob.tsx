@@ -1,5 +1,5 @@
 "use client"
-import { Row } from "@tanstack/react-table" // Importar el tipo Row de TanStack Table
+import { Row } from "@tanstack/react-table"
 import { useState, useMemo, useRef } from "react"
 import {
   useReactTable,
@@ -17,29 +17,15 @@ import type { Embalses } from "@/types"
 export default function TableData({ props: resdata }: { props: Embalses[] }) {
   const columns = useMemo(
     () => [
-      {
-        header: "Embalse",
-        accessorKey: "nombre_embalse",
-      },
-      {
-        header: "Cuenca",
-        accessorKey: "nombre_cuenca",
-      },
-      {
-        header: "Agua Embalsada (%)",
-        accessorKey: "agua_embalsadapor",
-      },
-      {
-        header: "Agua Embalsada (hm³)",
-        accessorKey: "agua_embalsada",
-      },
-      {
-        header: "Capacidad Total (hm³)",
-        accessorKey: "capacidad_total",
-      },
+      { header: "Embalse", accessorKey: "nombre_embalse" },
+      { header: "Cuenca", accessorKey: "nombre_cuenca" },
+      { header: "Agua Embalsada (%)", accessorKey: "agua_embalsadapor" },
+      { header: "Agua Embalsada (hm³)", accessorKey: "agua_embalsada" },
+      { header: "Capacidad Total (hm³)", accessorKey: "capacidad_total" },
     ],
     []
   )
+
   const [data] = useState(resdata)
   const [sorting, setSorting] = useState<SortingState>([])
   const [filtered, setFiltered] = useState("")
@@ -81,18 +67,19 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
 
   return (
     <div className="mx-5 my-5 h-screen animate-fade-in">
-      <div className="flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-[#275e56] px-4 md:h-14">
-        <div className="flex h-6 border-b border-transparent border-white bg-transparent outline-none">
+      <div className="flex h-12 w-full items-center justify-between gap-2 rounded-t-xl bg-green-100 px-4 md:h-14">
+        <div className="flex h-6 flex-row-reverse border-b border-green-950 border-transparent bg-transparent outline-none">
           <button
             type="button"
             aria-label="Buscar"
             onClick={handleButtonClick}
+            className=""
           >
             <svg
-              fill="#14C2DC"
+              fill="#647f74"
               enableBackground="new 0 0 32 32"
-              height="20"
-              width={20}
+              height="17"
+              width={17}
               viewBox="4 4 24 24"
             >
               <g
@@ -115,7 +102,7 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
           <input
             value={filtered}
             onChange={(e) => setFiltered(e.target.value)}
-            className="w-full bg-transparent px-1 outline-none"
+            className="w-[11rem] bg-transparent px-1 text-green-950 outline-none"
             type="text"
             autoFocus={show}
             ref={inputRef}
@@ -134,75 +121,76 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
             width={20}
             height={20}
           >
-            {" "}
             <g
               id="SVGRepo_bgCarrier"
               strokeWidth="0"
-            ></g>{" "}
+            ></g>
             <g
               id="SVGRepo_tracerCarrier"
               strokeLinecap="round"
               strokeLinejoin="round"
-            ></g>{" "}
+            ></g>
             <g id="SVGRepo_iconCarrier">
-              {" "}
               <g id="Interface / Download">
-                {" "}
                 <path
                   id="Vector"
                   d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
-                  stroke="#14C2DC"
+                  stroke="#647f74"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                ></path>{" "}
-              </g>{" "}
-            </g>{" "}
+                ></path>
+              </g>
+            </g>
           </svg>
         </button>
       </div>
-      <table className="border border-[#275e56]">
-        <thead className="bg-[#275e56] text-sm text-green-50 sm:text-xl">
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header, index) => (
-                <th
-                  onClick={header.column.getToggleSortingHandler()}
-                  className={`table-auto cursor-pointer pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? "w-[14rem] px-2 duration-150 active:scale-90 sm:w-[17rem]" : index === 1 ? "w-[15rem] duration-150 active:scale-90" : "w-auto text-center duration-150 active:scale-90"}`}
-                  key={header.id}
-                >
-                  {flexRender(header.column.columnDef.header, header.getContext())}
-                  {header.column.getIsSorted() ? (header.column.getIsSorted() === "asc" ? "↑" : "↓") : ""}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody className="bg-[#275e56] text-xs text-gray-50 sm:text-xl">
-          {table.getRowModel().rows.map((row) => (
-            <tr
-              key={row.id}
-              className="odd:bg-[#224d53] even:bg-[#275e56]"
-            >
-              {row.getVisibleCells().map((cell, index) => (
-                <td
-                  key={cell.id}
-                  className="px-2 py-5 sm:p-4"
-                >
-                  {index === 0 ? (
-                    <Link href={`/embalses/${encodeURIComponent(cell.getValue() as string)}`}>{cell.getValue() as string}</Link>
-                  ) : index === 1 ? (
-                    <Link href={`/cuencas/${encodeURIComponent(cell.getValue() as string)}`}>{cell.getValue() as string}</Link>
-                  ) : (
-                    flexRender(cell.column.columnDef.cell, cell.getContext())
-                  )}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="mb-5 flex justify-between rounded-b-xl bg-[#224d53] p-2 sm:mb-10">
+
+      <div className="overflow-x-auto">
+        <table className="min-w-full">
+          <thead className="bg-green-100 text-sm font-black text-green-950 sm:text-xl">
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header, index) => (
+                  <th
+                    onClick={header.column.getToggleSortingHandler()}
+                    className={`table-auto cursor-pointer pt-0 text-left sm:p-4 sm:pt-0 ${index === 0 ? "w-[14rem] px-2 duration-150 active:scale-90 sm:w-[17rem]" : index === 1 ? "w-[15rem] duration-150 active:scale-90" : "w-auto text-center duration-150 active:scale-90"}`}
+                    key={header.id}
+                  >
+                    {flexRender(header.column.columnDef.header, header.getContext())}
+                    {header.column.getIsSorted() ? (header.column.getIsSorted() === "asc" ? "↑" : "↓") : ""}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody className="bg-green-100 text-xs font-semibold text-green-950 sm:text-xl">
+            {table.getRowModel().rows.map((row) => (
+              <tr
+                key={row.id}
+                className="odd:bg-green-200 even:bg-green-100"
+              >
+                {row.getVisibleCells().map((cell, index) => (
+                  <td
+                    key={cell.id}
+                    className="px-2 py-5 sm:p-4"
+                  >
+                    {index === 0 ? (
+                      <Link href={`/embalses/${encodeURIComponent(cell.getValue() as string)}`}>{cell.getValue() as string}</Link>
+                    ) : index === 1 ? (
+                      <Link href={`/cuencas/${encodeURIComponent(cell.getValue() as string)}`}>{cell.getValue() as string}</Link>
+                    ) : (
+                      flexRender(cell.column.columnDef.cell, cell.getContext())
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="mb-5 flex justify-between rounded-b-xl bg-green-200 p-2 text-green-950 sm:mb-10">
         <div key={0}>
           <p
             key={1}
@@ -231,9 +219,9 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
           >
             <svg
               viewBox="0 0 24 24"
+              width="20"
+              height="20"
               fill="none"
-              width="30"
-              height="30"
             >
               <g
                 id="SVGRepo_bgCarrier"
@@ -245,14 +233,14 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
                 strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
-                {" "}
                 <path
-                  d="M6 12H18M6 12L11 7M6 12L11 17"
-                  stroke="#14C2DC"
-                  strokeWidth="2"
+                  fill="none"
+                  stroke="#647f74"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                ></path>{" "}
+                  strokeWidth="2"
+                  d="M15 18l-6-6 6-6"
+                ></path>
               </g>
             </svg>
           </button>
@@ -264,9 +252,9 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
           >
             <svg
               viewBox="0 0 24 24"
+              width="20"
+              height="20"
               fill="none"
-              width={30}
-              height={30}
             >
               <g
                 id="SVGRepo_bgCarrier"
@@ -278,14 +266,14 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
                 strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
-                {" "}
                 <path
-                  d="M6 12H18M18 12L13 7M18 12L13 17"
-                  stroke="#14C2DC"
-                  strokeWidth="2"
+                  fill="none"
+                  stroke="#647f74"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                ></path>{" "}
+                  strokeWidth="2"
+                  d="M9 18l6-6-6-6"
+                ></path>
               </g>
             </svg>
           </button>
@@ -295,7 +283,7 @@ export default function TableData({ props: resdata }: { props: Embalses[] }) {
             onClick={() => table.lastPage()}
             className="w-7 rounded-sm duration-150 active:scale-90"
           >
-            {table.getPageCount() - 1}
+            15
           </button>
         </div>
       </div>

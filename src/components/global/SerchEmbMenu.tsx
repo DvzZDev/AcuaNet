@@ -6,14 +6,14 @@ import nombreEmbalses from "@/lib/nombresEmbalses.json"
 
 const data = nombreEmbalses
 
-export default function SerchEmb() {
+export default function SerchEmbMenu() {
   const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
 
   return (
     <div>
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 mt-3 flex h-[2.5rem] max-h-16 w-[15rem] items-center rounded-full border border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:h-[3rem] md:w-[25rem] md:text-xl"
+        className="relative z-10 flex h-[2.5rem] max-h-16 w-[15rem] items-center rounded-full border border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:h-[3rem] md:w-[25rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

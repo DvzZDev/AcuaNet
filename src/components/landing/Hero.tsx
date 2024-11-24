@@ -1,4 +1,3 @@
-import nombreEmbalses from "../../lib/nombresEmbalses.json"
 import FavSection from "./FavSection"
 import SerchEmb from "./SerchEmb"
 import Patrocinio from "./Patrocinio"
@@ -6,7 +5,6 @@ import { Suspense } from "react"
 import SkeletonFavorites from "../skeletons/SkeletonFavorites"
 
 export default async function Hero() {
-  const datares = nombreEmbalses
   return (
     <div className="-z-10 h-screen animate-blurred-fade-in bg-green-100/10">
       <section className="relative z-10 flex flex-col items-center">
@@ -33,7 +31,7 @@ export default async function Hero() {
           </h1>
         </div>
         <div className="animate-fade-up z-30 mt-5 flex flex-col gap-3 animate-delay-300 sm:gap-10 md:flex-row">
-          <SerchEmb data={datares} />
+          <SerchEmb />
         </div>
         <div>
           <Suspense fallback={<SkeletonFavorites />}>

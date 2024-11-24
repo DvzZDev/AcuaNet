@@ -2,6 +2,7 @@
 
 import { Link } from "next-view-transitions"
 import { useState } from "react"
+import SerchEmbMenu from "./SerchEmbMenu"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -110,12 +111,6 @@ export default function Navbar() {
             >
               Cuencas
             </Link>
-            <Link
-              href="/embalses"
-              className="glow transition-all"
-            >
-              Embalses
-            </Link>
 
             <Link
               href="/luna"
@@ -134,7 +129,7 @@ export default function Navbar() {
 
         {/* Menú móvil */}
         <nav
-          className={`${isMenuOpen ? "flex animate-appearance-in flex-col items-center gap-8 text-xl text-green-100 delay-200" : "hidden"}`}
+          className={`${isMenuOpen ? "flex animate-appearance-in flex-col items-center gap-4 text-2xl text-green-100 delay-200" : "hidden"}`}
         >
           <Link
             href="/cuencas"
@@ -142,13 +137,6 @@ export default function Navbar() {
             className="animate-fade-down transition-all animate-delay-100 hover:text-green-300"
           >
             Cuencas
-          </Link>
-          <Link
-            href="/embalses"
-            onClick={closeMenu}
-            className="animate-fade-down transition-all animate-delay-200 hover:text-green-300"
-          >
-            Embalses
           </Link>
 
           <Link
@@ -165,6 +153,7 @@ export default function Navbar() {
           >
             Quiénes Somos
           </Link>
+          <SerchEmbMenu />
         </nav>
       </div>
     </div>

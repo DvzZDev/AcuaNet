@@ -22,25 +22,6 @@ const tailwindConfig = {
       animationDelay: { 400: "400ms" },
       animationDuration: { 2000: "2000ms" },
       fontFamily: { Inter: ["Inter"] },
-      colors: {
-        textprimary: "#ffff",
-        textfooter: "#717887",
-        textsecondary: "#ffd700",
-        bgcolor: "#070922",
-      },
-      backdropFilter: {
-        none: "none",
-        blur: "blur(8px)",
-        "blur-md": "blur(12px)",
-        "blur-lg": "blur(16px)",
-      },
-      backdropBlur: {
-        xs: "2px",
-        sm: "4px",
-        md: "8px",
-        lg: "12px",
-        xl: "16px",
-      },
     },
   },
   plugins: [

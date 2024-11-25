@@ -5,9 +5,15 @@ import { NextUIProvider } from "@nextui-org/system"
 import { ViewTransitions } from "next-view-transitions"
 import dotenv from "dotenv"
 
+const PostHogPageView = dynamic(() => import("@/app/PostHogPageView"), {
+  ssr: false,
+})
+const ModalCookies = dynamic(() => import("@/components/landing/ModalCookies"))
+
 dotenv.config()
 
 import { cookieConsentGiven } from "@/components/landing/ModalCookies"
+import dynamic from "next/dynamic"
 
 if (typeof window !== "undefined") {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || "", {
@@ -23,7 +29,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <PostHogProvider client={posthog}>
       <NextUIProvider>
-        <ViewTransitions>{children}</ViewTransitions>
+        <ViewTransitions>
+          <PostHogPageView />
+          <ModalCookies />
+          {children}
+        </ViewTransitions>
       </NextUIProvider>
     </PostHogProvider>
   )

@@ -13,7 +13,7 @@ export default function SerchEmb() {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 mt-3 flex h-[2.5rem] max-h-16 w-[15rem] items-center rounded-full border border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:h-[3rem] md:w-[25rem] md:text-xl"
+        className="relative z-10 mt-3 flex h-[2.5rem] max-h-16 w-[15rem] items-center rounded-full border border-solid border-green-100/40 bg-emerald-200/15 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:h-[3rem] md:w-[25rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ export default function SerchEmb() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="absolute right-2 text-slate-400 transition-all hover:text-textsecondary"
+          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all"
           type="button"
         >
           <svg
@@ -77,7 +77,7 @@ export default function SerchEmb() {
       </h1>
       <div className="relative z-50">
         {suggestions.length > 0 && (
-          <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-[#275e56] bg-opacity-100 text-base text-green-100 animate-duration-300 md:text-xl">
+          <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-emerald-800 text-base text-green-100 animate-duration-300 md:text-xl">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <Link
                 href={`/embalses/${suggestion.toLowerCase()}`}

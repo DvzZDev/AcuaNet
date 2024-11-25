@@ -7,11 +7,11 @@ body {
   font-family: "Inter", sans-serif;
   background-image: url(/ore.webp);
   background-repeat: no-repeat;
-  background-size: cover; /* Cobertura completa en pantallas grandes */
+  background-size: cover;
   background-position: center center;
   width: 100vw;
   height: 110vh;
-  overflow-x: hidden; /* Evitar barra de desplazamiento horizontal */
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {

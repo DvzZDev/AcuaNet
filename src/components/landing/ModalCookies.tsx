@@ -48,7 +48,7 @@ export default function ModalCookies() {
         <Modal
           isOpen={isOpen}
           onOpenChange={onOpenChange}
-          className="mx-4 w-full bg-green-200/20 backdrop-blur-xl"
+          className="mx-4 w-full bg-green-200/20 backdrop-blur-lg"
           isDismissable={false}
           isKeyboardDismissDisabled={false}
         >
@@ -88,7 +88,7 @@ export default function ModalCookies() {
                       <path d="M246.475 314.259c29.775 0 54-24.224 54-54 0-12.961-4.593-24.868-12.233-34.185-9.911-12.087-24.952-19.815-41.767-19.815-29.775 0-54 24.224-54 54 0 13.232 4.792 25.361 12.721 34.762 9.914 11.753 24.736 19.238 41.279 19.238zm0-88c18.748 0 34 15.252 34 34 0 18.747-15.252 34-34 34-18.748 0-34-15.253-34-34 0-18.748 15.252-34 34-34z" />
                     </svg>
                   </div>
-                  <p className="text-base md:text-lg">
+                  <p className="text-base">
                     Este sitio web utiliza cookies para mejorar tu experiencia de navegación. Al continuar utilizando nuestro
                     sitio, aceptas el uso de cookies. Para más información, consulta nuestra Política de Privacidad y Términos y
                     Condiciones.
@@ -97,7 +97,7 @@ export default function ModalCookies() {
                       href="/legal"
                       aria-label="Política de Privacidad y Términos y Condiciones"
                     >
-                      <span className="text-base text-green-600 md:text-lg"> Pincha Aquí</span>
+                      <span className="text-base text-green-600"> Pincha Aquí</span>
                     </Link>
                   </p>
                 </ModalBody>
@@ -109,7 +109,7 @@ export default function ModalCookies() {
                     variant="light"
                     onPress={onClose}
                     onClick={handleDeclineCookies}
-                    className="text-sm md:text-xl"
+                    className="text-sm md:text-lg"
                   >
                     Recharzar
                   </Button>
@@ -120,7 +120,7 @@ export default function ModalCookies() {
                     variant="flat"
                     onPress={onClose}
                     onClick={handleAcceptCookies}
-                    className="bg-green-500/70 text-sm text-green-950 md:text-xl"
+                    className="bg-green-500/70 text-sm text-green-950 md:text-lg"
                   >
                     Aceptar
                   </Button>

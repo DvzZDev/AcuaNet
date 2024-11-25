@@ -7,7 +7,7 @@ const SkeletonElement = ({ className }: { className: string }) => (
 
 const EmbalseCardSkeleton = () => {
   return (
-    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-600/30 bg-gradient-to-br from-green-700/60 to-green-900/60 text-green-50 shadow-lg backdrop-blur-lg transition-all hover:scale-110">
+    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-50/30 bg-emerald-400/15 text-green-50 shadow-lg backdrop-blur-lg transition-all hover:scale-110">
       <div className="p-3">
         <div className="mb-2 flex items-center justify-between">
           <SkeletonElement className="h-6 w-3/4 rounded" />

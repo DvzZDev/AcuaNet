@@ -1,5 +1,4 @@
 // tailwind.config.mjs
-import { nextui } from "@nextui-org/theme"
 import animations from "@midudev/tailwind-animations"
 
 /** @type {import('tailwindcss').Config} */
@@ -10,38 +9,34 @@ const tailwindConfig = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/components/(modal|button|image|input|spinner|dropdown|accordion).js",
   ],
-  theme: {
-    screens: {
-      sm: "600px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
-    },
-    extend: {
-      animationDelay: { 400: "400ms" },
-      animationDuration: { 2000: "2000ms" },
-      fontFamily: { Inter: ["Inter"] },
-    },
-  },
-  plugins: [
-    "prettier-plugin-tailwindcss",
-    animations,
-    nextui({
-      defaultTheme: "dark",
-      defaultExtendTheme: "dark",
-    }),
-  ],
+  plugins: ["prettier-plugin-tailwindcss", animations],
   variants: {
     extend: {
       backdropFilter: ["responsive"],
       backdropBlur: ["responsive"],
     },
   },
+  theme: {
+    extend: {
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
   experimental: {
     optimizeUniversalDefaults: false,
   },
-  darkMode: "class",
   safelist: [
     "bg-blue-200",
     "text-blue-900",

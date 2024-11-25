@@ -43,7 +43,7 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
   const variacion = embalse.variacion_ultima_semanapor || 0
 
   return (
-    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-600/30 bg-gradient-to-br from-green-700/60 to-green-900/60 shadow-lg transition-all hover:scale-95">
+    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-600/30 bg-green-800/60 shadow-lg transition-all hover:scale-95">
       <Link href={encodeURI(`embalses/${embalse.nombre_embalse ?? ""}`)}>
         <div className="p-3">
           <div className="mb-2 flex items-center justify-between">

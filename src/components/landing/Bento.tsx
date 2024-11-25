@@ -98,6 +98,7 @@ function Bento(props: BentoProps) {
                 muted
                 loop
                 playsInline
+                preload="auto"
               >
                 <source
                   src={getMoonPhase()}

@@ -14,18 +14,21 @@ function Fuentes() {
           alt="Aemet España"
           className="h-[120px] w-[200px] object-contain"
           draggable="false"
+          loading="lazy"
         />
         <img
           src="/miteco.webp"
           alt="Miteco España"
           className="h-[120px] w-[200px] object-contain"
           draggable="false"
+          loading="lazy"
         />
         <img
           src="/sahi.webp"
           alt="Sahi España"
           className="h-[120px] w-[200px] object-contain"
           draggable="false"
+          loading="lazy"
         />
       </div>
     </section>

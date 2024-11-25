@@ -74,6 +74,7 @@ async function Page(props: { params: Promise<{ cuencaid: string }> }) {
             src={foto || undefined}
             alt="Imagen de la cuenca hidrográfica"
             className="h-auto w-full rounded-lg shadow-lg"
+            loading="lazy"
           />
         </section>
       </main>

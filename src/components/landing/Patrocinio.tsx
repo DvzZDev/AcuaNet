@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 export default function Patrocinio() {
   return (
     <a
@@ -8,11 +6,11 @@ export default function Patrocinio() {
       href="https://agrbaits.es"
     >
       <div className="absolute right-1 top-7 flex w-[7rem] rotate-12 animate-jiggle flex-col items-center justify-center gap-1 transition-transform animate-duration-2000 animate-iteration-count-infinite hover:scale-105 md:right-12 md:w-[10rem]">
-        <Image
+        <img
           src={"/AGRLogo.webp"}
-          unoptimized={true}
           width={65}
           height={65}
+          loading="eager"
           alt="AGR Logo"
           className="rounded-full md:h-full md:w-[100px] 2xl:w-[150px]"
         />

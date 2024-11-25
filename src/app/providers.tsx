@@ -20,7 +20,7 @@ if (typeof window !== "undefined") {
     api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
     person_profiles: "identified_only",
   })
-  posthog.init("<ph_project_api_key>", {
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || "", {
     api_host: "https://us.i.posthog.com",
     persistence: cookieConsentGiven() === "yes" ? "localStorage+cookie" : "memory",
   })

@@ -23,10 +23,10 @@ export default async function Hero() {
           </svg>
         </div>
         <div className="flex flex-col xl:w-[60%]">
-          <strong className="animate-fade-up mb-4 w-full text-center text-[60px] font-black leading-none text-[textsecondary] text-green-100 animate-delay-100 sm:text-[4rem] 2xl:text-[5rem]">
+          <strong className="animate-fade-up mb-4 w-full text-center text-[60px] font-black leading-none text-green-100 animate-delay-100 sm:text-[4rem] 2xl:text-[5rem]">
             AcuaNet
           </strong>
-          <h1 className="animate-fade-up h-auto max-w-80 px-4 text-center text-[1.5rem] text-green-100 animate-delay-200 sm:max-w-full sm:text-[35px] 2xl:text-[2rem]">
+          <h1 className="animate-fade-up max-w-80 px-4 text-center text-[1.5rem] text-green-100 animate-delay-200 sm:max-w-full sm:text-[35px] 2xl:text-[2rem]">
             Herramienta definitíva para tus jornadas de pesca. <br />
           </h1>
         </div>

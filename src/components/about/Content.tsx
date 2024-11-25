@@ -1,7 +1,5 @@
 "use client"
 import CardAb from "@/components/about/CardAb"
-import { Image } from "@nextui-org/image"
-import NextImage from "next/image"
 
 function Content() {
   return (
@@ -9,14 +7,12 @@ function Content() {
       <div className="flex flex-col items-center justify-center gap-8 sm:gap-10 md:gap-12">
         <article className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-2 md:gap-12">
           <div>
-            <Image
-              as={NextImage}
+            <img
               src="/atazar.webp"
               alt="Embalse del Atazar en Madrid, España"
               width={600}
               height={400}
               draggable={false}
-              isBlurred={true}
             />
           </div>
 
@@ -38,15 +34,12 @@ function Content() {
 
         <article className="grid w-full max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-2 md:gap-12">
           <div className="my-1 flex h-full w-full items-center overflow-visible rounded-lg sm:hidden">
-            <Image
-              as={NextImage}
+            <img
               src="/embalse.webp"
               alt="Embalse de Orellana en Badajoz, España"
-              objectFit="cover"
               width={600}
               height={400}
               draggable={false}
-              isBlurred={true}
             />
           </div>
           <div className="text-white">
@@ -62,14 +55,11 @@ function Content() {
             </p>
           </div>
           <div className="hidden h-full w-full items-center overflow-visible rounded-lg sm:flex">
-            <Image
-              as={NextImage}
+            <img
               src="/embalse.webp"
               alt="Embalse de Orellana en Badajoz, España"
               draggable={false}
-              isBlurred={true}
               className="hidden sm:block"
-              objectFit="cover"
               width={600}
               height={400}
             />

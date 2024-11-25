@@ -1,5 +1,4 @@
 "use client"
-import { Image } from "@nextui-org/image"
 import { Link } from "next-view-transitions"
 
 function AboutLanding() {
@@ -33,11 +32,10 @@ function AboutLanding() {
           <div className="flex items-center justify-center">
             <div className="relative">
               <div>
-                <Image
+                <img
                   src="/yo22.webp"
                   alt="Foto del creador de AcuaNet"
                   className="rounded-lg shadow-lg"
-                  isBlurred={true}
                   draggable={false}
                   loading="lazy"
                   width="100%"

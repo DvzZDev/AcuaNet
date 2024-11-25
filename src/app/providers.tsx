@@ -1,7 +1,6 @@
 "use client"
 import posthog from "posthog-js"
 import { PostHogProvider } from "posthog-js/react"
-import { NextUIProvider } from "@nextui-org/system"
 import { ViewTransitions } from "next-view-transitions"
 import dotenv from "dotenv"
 
@@ -25,12 +24,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
   }, [])
   return (
     <PostHogProvider client={posthog}>
-      <NextUIProvider>
-        <ViewTransitions>
-          <ModalCookies />
-          {children}
-        </ViewTransitions>
-      </NextUIProvider>
+      <ViewTransitions>
+        <ModalCookies />
+        {children}
+      </ViewTransitions>
     </PostHogProvider>
   )
 }

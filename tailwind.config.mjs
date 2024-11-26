@@ -9,7 +9,7 @@ const tailwindConfig = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/components/(modal|button|image|input|spinner|dropdown|accordion).js",
   ],
-  plugins: ["prettier-plugin-tailwindcss", animations],
+  plugins: ["prettier-plugin-tailwindcss", require("tailwindcss-animate"), animations],
   variants: {
     extend: {
       backdropFilter: ["responsive"],
@@ -27,10 +27,15 @@ const tailwindConfig = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        wiggle: "wiggle ease-in-out infinite",
       },
     },
   },

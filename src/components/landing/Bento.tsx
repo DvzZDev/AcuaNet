@@ -14,7 +14,7 @@ function Bento(props: BentoProps) {
   const esp = props.esp
 
   return (
-    <section className="flex flex-col items-center justify-center bg-[#f1fbf7] bg-gradient-to-t py-5 md:py-10 lg:h-full">
+    <section className="flex flex-col items-center justify-center bg-[#f1fbf7] bg-gradient-to-t py-5 md:py-10">
       <h2 className="text-center text-[2.3rem] font-black leading-none text-[#1b7b6e] sm:mb-6 sm:text-[50px]">Resumen Global</h2>
       {/* Div Global */}
       <div className="mx-6 my-4 flex flex-col justify-center gap-7 md:my-8 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">

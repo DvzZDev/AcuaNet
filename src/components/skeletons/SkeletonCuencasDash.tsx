@@ -3,7 +3,7 @@ import Divider from "../landing/Divider"
 export default function SkeletonCuencasDash() {
   return (
     <section className="h-screen">
-      <div className="font-NecoBold m-auto mt-4 h-14 w-[15rem] animate-pulse rounded-lg bg-green-200 text-center text-[2.5rem] text-textsecondary sm:mt-10 sm:w-[20rem] sm:text-6xl lg:w-[30rem]"></div>
+      <div className="font-NecoBold text-textsecondary m-auto mt-4 h-14 w-[15rem] animate-pulse rounded-lg bg-green-200 text-center text-[2.5rem] sm:mt-10 sm:w-[20rem] sm:text-6xl lg:w-[30rem]"></div>
       <Divider />
       <main className="flex h-full justify-center bg-green-50 px-6 pb-14 pt-4 text-black">
         <section className="flex w-[70rem] flex-col gap-7">

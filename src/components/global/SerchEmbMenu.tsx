@@ -47,7 +47,7 @@ export default function SerchEmbMenu() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="absolute right-2 text-slate-400 transition-all hover:text-textsecondary"
+          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all"
           type="button"
         >
           <svg

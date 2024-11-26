@@ -172,7 +172,7 @@ const LunarCalendar = () => {
 
   return (
     <section className="flex items-center justify-center">
-      <div className="max-w-[70rem] h-full overflow-hidden rounded-lg shadow-md p-6 md:bg-green-100">
+      <div className="h-full max-w-[70rem] overflow-hidden rounded-lg p-6 shadow-md md:bg-green-100">
         <div className="flex items-center justify-between pb-3">
           <button
             onClick={handlePreviousMonth}
@@ -250,7 +250,7 @@ const LunarCalendar = () => {
             return (
               <div
                 key={index}
-                className={`col-span-1 gap-2 rounded-lg border-1 border-[#1b7b6e77] p-4 shadow-md ${
+                className={`border-1 col-span-1 gap-2 rounded-lg border-[#1b7b6e77] p-4 shadow-md ${
                   isToday ? "bg-[#1dd38d80] text-black" : "bg-transparent text-[#052e16]"
                 }`}
               >

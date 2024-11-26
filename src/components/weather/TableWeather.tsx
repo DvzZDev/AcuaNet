@@ -102,7 +102,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                   >
                     <div className="my-2 flex w-[4rem] flex-col items-center justify-center md:w-[5rem]">
                       <span className="text-2xl">{getWeatherCode(day.icon)}</span>
-                      <span className="text-center text-sm font-semibold uppercase text-blue-50 sm:text-medium">
+                      <span className="sm:text-medium text-center text-sm font-semibold uppercase text-blue-50">
                         {dateFormater(day.datetime)}
                       </span>
                       <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-blue-50 sm:py-0 sm:text-sm">

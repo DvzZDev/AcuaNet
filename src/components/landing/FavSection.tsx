@@ -85,7 +85,7 @@ export default async function FavSection() {
     <section className="mt-[2rem] h-[16.5rem] w-[15rem] overflow-auto pb-8 sm:h-full md:w-[35rem] xl:mt-[3rem] 2xl:mt-[6rem]">
       {data.length > 0 ? (
         <>
-          <h2 className="mb-4 text-xl text-green-100  md:text-2xl">Embalses Favoritos</h2>
+          <h2 className="mb-4 text-xl text-green-100 md:text-2xl">Embalses Favoritos</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {data.map((favorite: Embalses, index: number) => (
               <EmbalseCard
@@ -96,7 +96,7 @@ export default async function FavSection() {
           </div>
         </>
       ) : (
-        <div className="mx-auto mt-[4rem] max-w-sm rounded-lg border bg-emerald-400/15 border-green-50/30 p-2 md:mt-0">
+        <div className="mx-auto mt-[4rem] max-w-sm rounded-lg border border-green-50/30 bg-emerald-400/15 p-2 md:mt-0">
           <div className="flex items-center space-x-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"

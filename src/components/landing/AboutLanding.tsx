@@ -22,7 +22,7 @@ function AboutLanding() {
                 <button
                   type="button"
                   aria-label="Conócenos"
-                  className="animate-infinite hover:animate-wiggle m-auto mt-6 rounded-lg bg-[#275e565c] p-3 text-lg font-bold text-[#1f4d46] transition-all hover:brightness-90 md:text-xl"
+                  className="animate-infinite m-auto mt-6 rounded-lg bg-[#275e565c] p-3 text-lg font-bold text-[#1f4d46] transition-all hover:animate-wiggle hover:brightness-90 md:text-xl"
                 >
                   Conócenos!
                 </button>

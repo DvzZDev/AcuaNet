@@ -250,7 +250,7 @@ const LunarCalendar = () => {
             return (
               <div
                 key={index}
-                className={`col-span-1 gap-2 rounded-lg border-1 border-[#1b7b6e77] p-4 shadow-md ${
+                className={`border-1 col-span-1 gap-2 rounded-lg border-[#1b7b6e77] p-4 shadow-md ${
                   isToday ? "bg-[#1dd38d80] text-black" : "bg-transparent text-[#052e16]"
                 }`}
               >

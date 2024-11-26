@@ -6,12 +6,11 @@ function Content() {
     <section className="bg-green-50 p-6 pb-20">
       <div className="flex flex-col items-center justify-center gap-8 sm:gap-10 md:gap-12">
         <article className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-2 md:gap-12">
-          <div>
+          <div className="h-full w-full">
             <img
               src="/atazar.webp"
               alt="Embalse del Atazar en Madrid, España"
-              width={600}
-              height={400}
+              className="h-full w-full rounded-lg object-cover shadow-lg"
               draggable={false}
             />
           </div>
@@ -40,6 +39,7 @@ function Content() {
               width={600}
               height={400}
               draggable={false}
+              className="rounded-lg object-cover shadow-lg"
             />
           </div>
           <div className="text-white">
@@ -59,7 +59,7 @@ function Content() {
               src="/embalse.webp"
               alt="Embalse de Orellana en Badajoz, España"
               draggable={false}
-              className="hidden sm:block"
+              className="hidden rounded-lg object-cover shadow-lg sm:block"
               width={600}
               height={400}
             />
@@ -68,7 +68,7 @@ function Content() {
       </div>
 
       <article className="mt-14 flex flex-col items-center">
-        <h1 className="mb-10 text-center text-3xl font-bold text-[#1b7b6e] md:text-4xl">Conoce a Nuestro Equipo</h1>
+        <h1 className="mb-10 text-left text-3xl font-bold text-[#1b7b6e] md:text-4xl">Equipo AcuaNet</h1>
         <div>
           <CardAb />
         </div>

@@ -1,15 +1,12 @@
 import Link from "next/link"
-import Image from "next/image"
 
 function CardAb() {
   return (
     <div className="h-auto max-w-[25rem] flex-col">
       <div className="relative h-[15rem] w-full">
-        <Image
+        <img
           src="/yo.webp"
           alt="Equipo de AcuaNet"
-          layout="fill"
-          objectFit="cover"
           draggable={false}
           className="rounded-t-md"
         />

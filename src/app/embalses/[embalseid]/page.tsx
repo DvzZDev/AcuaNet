@@ -91,7 +91,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
     <>
       <TitleEmb data={resEmbalse} />
       <FavButton url={{ embalseid: decodedEmbalseid }} />
-      <main className="flex h-full justify-center bg-green-50 px-6 pb-14 pt-4 text-black">
+      <main className="flex justify-center bg-green-50 px-6 pb-14 pt-4 text-black">
         <section className="flex w-[70rem] flex-col gap-7">
           <IntroCuencas
             nombre_cuenca={nombre_cuenca || "No disponible"}

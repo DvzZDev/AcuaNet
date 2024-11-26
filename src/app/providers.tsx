@@ -4,7 +4,7 @@ import { PostHogProvider } from "posthog-js/react"
 import { ViewTransitions } from "next-view-transitions"
 import dotenv from "dotenv"
 
-const ModalCookies = dynamic(() => import("@/components/landing/ModalCookies"))
+const ModalCookies = dynamic(() => import("@/components/landing/ModalCookies"), { ssr: false })
 
 dotenv.config()
 

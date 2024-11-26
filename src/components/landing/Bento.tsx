@@ -26,7 +26,7 @@ function Bento(props: BentoProps) {
           {({ inView, ref }) => (
             <div
               ref={ref}
-              className={`animate-once col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all lg:col-span-4 ${inView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}
+              className={`col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all lg:col-span-4 ${inView ? "slide-in-from-left-52 animate-in opacity-100 duration-500" : "opacity-0"}`}
             >
               {esp.map((españa) => (
                 <div
@@ -56,7 +56,7 @@ function Bento(props: BentoProps) {
             <div
               ref={ref}
               id="bd2"
-              className={`col-span-6 row-span-1 flex min-h-full min-w-full content-center justify-center rounded-xl bg-[#114d45] bg-opacity-90 p-2 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all ${inView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}
+              className={`col-span-6 row-span-1 flex min-h-full min-w-full content-center justify-center rounded-xl bg-[#114d45] bg-opacity-90 p-2 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all ${inView ? "slide-in-from-right-52 animate-in opacity-100 duration-500" : "opacity-0"}`}
             >
               <div className="grid h-full w-full grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4">
                 {cuencas.map((cuenca, index) => (
@@ -88,7 +88,7 @@ function Bento(props: BentoProps) {
             <a
               ref={ref}
               href="/luna"
-              className={`relative col-span-6 overflow-hidden rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all ${inView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}
+              className={`relative col-span-6 overflow-hidden rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all ${inView ? "slide-in-from-left-52 animate-in opacity-100 duration-500" : "opacity-0"}`}
             >
               <h2 className="absolute left-1/2 z-10 w-full -translate-x-1/2 transform pt-3 text-center text-3xl text-yellow-500 md:pt-5 md:text-5xl">
                 {translateMoonPhase()}
@@ -117,7 +117,7 @@ function Bento(props: BentoProps) {
           {({ inView, ref }) => (
             <div
               ref={ref}
-              className={`col-span-4 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all ${inView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}
+              className={`col-span-4 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm transition-all ${inView ? "slide-in-from-right-52 animate-in opacity-100 duration-500" : "opacity-0"}`}
             >
               <h2 className="p-2 text-center text-3xl text-green-300">Mayor Variacion Semanal</h2>
               <div className="flex flex-col content-center justify-center px-3">

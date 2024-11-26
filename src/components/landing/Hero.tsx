@@ -8,7 +8,7 @@ export default async function Hero() {
   return (
     <div className="-z-10 h-screen animate-blurred-fade-in bg-green-100/10">
       <section className="relative z-10 flex flex-col items-center">
-        <div className="animate-fade-up mb-1 mt-4 flex w-[3rem] max-w-xs justify-center sm:w-[5rem] md:mb-6 xl:mt-16 2xl:mt-24">
+        <div className="mb-1 mt-4 flex w-[3rem] max-w-xs animate-blurred-fade-in justify-center duration-700 sm:w-[5rem] md:mb-6 xl:mt-16 2xl:mt-24">
           <svg
             fill="#93ffb7"
             xmlns="http://www.w3.org/2000/svg"
@@ -23,17 +23,17 @@ export default async function Hero() {
           </svg>
         </div>
         <div className="flex flex-col xl:w-[60%]">
-          <strong className="animate-fade-up mb-4 w-full text-center text-[60px] font-black leading-none text-green-100 animate-delay-100 sm:text-[4rem] 2xl:text-[5rem]">
+          <strong className="mb-4 w-full animate-blurred-fade-in text-center text-[60px] font-black leading-none text-green-100 duration-700 animate-delay-100 sm:text-[4rem] 2xl:text-[5rem]">
             AcuaNet
           </strong>
-          <h1 className="animate-fade-up max-w-80 px-4 text-center text-[1.5rem] text-green-100 animate-delay-200 sm:max-w-full sm:text-[35px] 2xl:text-[2rem]">
+          <h1 className="max-w-80 animate-blurred-fade-in px-4 text-center text-[1.5rem] text-green-100 duration-700 animate-delay-200 sm:max-w-full sm:text-[35px] 2xl:text-[2rem]">
             Herramienta definitíva para tus jornadas de pesca. <br />
           </h1>
         </div>
-        <div className="animate-fade-up z-30 mt-5 flex flex-col gap-3 animate-delay-300 sm:gap-10 md:flex-row">
+        <div className="z-30 mt-5 flex animate-blurred-fade-in flex-col gap-3 duration-700 animate-delay-300 sm:gap-10 md:flex-row">
           <SerchEmb />
         </div>
-        <div>
+        <div className="animate-blurred-fade-in duration-700 animate-delay-400">
           <Suspense fallback={<SkeletonFavorites />}>
             <FavSection />
           </Suspense>

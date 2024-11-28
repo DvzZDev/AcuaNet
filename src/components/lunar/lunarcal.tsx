@@ -242,7 +242,6 @@ const LunarCalendar = () => {
         >
           {generateCalendar()}
         </div>{" "}
-        {/* Para PC */}
         <div className="grid grid-cols-2 gap-2 md:hidden">
           {/* Para móviles */}
           {lunarDataForDisplay.map((lunarDay, index) => {
@@ -250,7 +249,7 @@ const LunarCalendar = () => {
             return (
               <div
                 key={index}
-                className={`border-1 col-span-1 gap-2 rounded-lg border-[#1b7b6e77] p-4 shadow-md ${
+                className={`col-span-1 gap-2 rounded-lg border border-[#052e16] bg-[#f0fdf4] p-4 shadow-md ${
                   isToday ? "bg-[#1dd38d80] text-black" : "bg-transparent text-[#052e16]"
                 }`}
               >

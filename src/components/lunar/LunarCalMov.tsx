@@ -12,7 +12,7 @@ type LunarDay = {
   activityIcon: string // Nueva propiedad para iconos de actividad de los peces
 }
 
-const LunarCalendar = () => {
+const LunarCalendarMov = () => {
   const currentDate = new Date() // Captura la fecha actual una vez
   const [startMonth, setStartMonth] = useState(currentDate.getMonth())
   const [startYear, setStartYear] = useState(currentDate.getFullYear())
@@ -171,12 +171,12 @@ const LunarCalendar = () => {
   const lunarDataForDisplay = getLunarDataForMonth() // Genera datos una vez
 
   return (
-    <section className="flex items-center justify-center">
-      <div className="h-full max-w-[70rem] overflow-hidden rounded-lg p-6 shadow-md md:bg-green-100">
+    <section className="flex items-center justify-center px-6 pt-5 md:pt-0">
+      <div className="w-[60rem] max-w-[60rem] overflow-hidden rounded-lg shadow-md md:bg-green-100">
         <div className="flex items-center justify-between pb-3">
           <button
-            onClick={handlePreviousMonth}
             aria-label="Mes anterior"
+            onClick={handlePreviousMonth}
             className="rounded-full bg-[#93edb3] p-1 text-white transition hover:bg-emerald-200"
           >
             <svg
@@ -210,8 +210,8 @@ const LunarCalendar = () => {
               .replace(/^\w/, (c) => c.toUpperCase())}{" "}
           </h2>
           <button
-            onClick={handleNextMonth}
             aria-label="Mes siguiente"
+            onClick={handleNextMonth}
             className="rounded-full bg-[#93edb3] p-1 text-white transition hover:bg-emerald-200"
           >
             <svg
@@ -242,7 +242,6 @@ const LunarCalendar = () => {
         >
           {generateCalendar()}
         </div>{" "}
-        {/* Para PC */}
         <div className="grid grid-cols-2 gap-2 md:hidden">
           {/* Para móviles */}
           {lunarDataForDisplay.map((lunarDay, index) => {
@@ -250,7 +249,7 @@ const LunarCalendar = () => {
             return (
               <div
                 key={index}
-                className={`border-1 col-span-1 gap-2 rounded-lg border-[#1b7b6e77] p-4 shadow-md ${
+                className={`col-span-1 gap-2 rounded-lg border border-[#052e16] bg-[#f0fdf4] p-4 shadow-md ${
                   isToday ? "bg-[#1dd38d80] text-black" : "bg-transparent text-[#052e16]"
                 }`}
               >
@@ -284,4 +283,4 @@ const LunarCalendar = () => {
   )
 }
 
-export default LunarCalendar
+export default LunarCalendarMov

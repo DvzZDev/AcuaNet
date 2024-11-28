@@ -18,63 +18,76 @@ function Faq() {
               ¿Qué servicios ofrece AcuaNet?
             </AccordionTrigger>
             <AccordionContent className="text-left text-base text-green-50">
-              AcuaNet ofrece servicios de monitorización hidrográfica, proporcionando datos actualizados sobre embalses, cuencas y
-              pluviometros en España.
+              AcuaNet te ofrece información actualizada sobre los niveles de los embalses, informacion metoeorologica y la tabla
+              lunar de cada embalse de España.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="itemy-5">
+          <AccordionItem value="item-2">
+            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
+              ¿Como puedo añadir un embalse a mis favoritos?
+            </AccordionTrigger>
+            <AccordionContent className="text-left text-base text-green-50">
+              Es muy fácil solo tienes que buscar el embalse que te interesa y hacer click en el icono de la estrella arriba a la
+              derecha y se añadirá a tus favoritos.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="itemy-3">
             <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
               ¿Con qué frecuencia se actualizan los datos hidrográficos?
             </AccordionTrigger>
             <AccordionContent className="text-left text-base text-green-50">
-              Todos los datos mostrados en la pagina web, tanto Cuencas, Embalses y Pluviometros reciben nuevos datos cada 6h del
-              SHAI (Sistema Automático de Información Hidrológica)
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
-              ¿De dónde provienen los datos sobre los embalses y pluviometros?
-            </AccordionTrigger>
-            <AccordionContent className="text-left text-base text-green-50">
-              Todos los datos de Acuanet provienen de fuentes oficiales, las puedes ver en el partado de fuentes.
+              Todos los datos mostrados en la página web, incluyendo cuencas, embalses y datos meteorológicos, se actualizan cada
+              24h automáticamente.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
-              ¿Cómo puedo contactar con AcuaNet para sugerencias o comentarios?
+              ¿De donde provienen los datos hidrográficos y meteorológiceos?
             </AccordionTrigger>
             <AccordionContent className="text-left text-base text-green-50">
-              Puedes ponerte en contacto con nosotros a través del formulario en la seccion de contacto. Tardaremos 48 horas en
-              responderte como máximo.
+              Todos los datos hidrográficos provienen del
+              <a
+                className="font-bold text-green-400"
+                href="https://www.miteco.gob.es/es/agua/temas/evaluacion-de-los-recursos-hidricos/saih.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                Sistema Automático de Información Hidrológica (SAIH){" "}
+              </a>{" "}
+              y los datos meteorológicos provienen de{" "}
+              <a
+                className="font-bold text-green-400"
+                href="https://www.visualcrossing.com/about"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                VisualCrossing
+              </a>
+              .
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
             <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
-              ¿Es posible acceder a datos históricos de los embalses y pluviometros?
+              ¿Hay algo que no te funciona o se ve mal?
             </AccordionTrigger>
             <AccordionContent className="text-left text-base text-green-50">
-              Actualmente solo podemos ofrecer los datos de la última semana y como estaba la cuenca o embalse hace un año.
-              Seguimos trabajando poder traer un servicio mas completo en el futuro.
+              Puedes ponerte en contacto conmigo a traves de mi instagram{" "}
+              <a
+                className="font-bold text-green-500"
+                href="https://www.instagram.com/dvzz.dev/"
+              >
+                @dvzz.dev
+              </a>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-6">
             <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
-              ¿Qué medidas de seguridad se toman para proteger mis datos personales?
+              ¿Es posible acceder a datos históricos de los embalses y cuencas?
             </AccordionTrigger>
             <AccordionContent className="text-left text-base text-green-50">
-              AcuaNet implementa medidas técnicas y organizativas para garantizar la seguridad de los datos personales, incluyendo
-              el uso de cifrado SSL y servidores seguros. Además, se utilizan cookies de seguridad proporcionadas por Cloudflare
-              para proteger el sitio web.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-7">
-            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
-              ¿Cuál es el propósito de AcuaNet?
-            </AccordionTrigger>
-            <AccordionContent className="text-left text-base text-green-50">
-              El propósito de AcuaNet es facilitar el acceso a datos actualizados sobre los niveles de los embalses en España,
-              proporcionando una plataforma fácil de usar y eficiente para pescadores, agricultores y cualquier persona interesada
-              en el estado de los recursos hídricos.
+              Actualmente solo podemos ofrecer los datos de la última semana y como estaba la cuenca o embalse hace un año.
+              Seguimos trabajando poder traer un servicio mas completo en el futuro.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -8,7 +8,6 @@ const data = nombreEmbalses
 
 export default function SerchEmb() {
   const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
-
   return (
     <div>
       <form
@@ -47,8 +46,8 @@ export default function SerchEmb() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all"
-          type="button"
+          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-none active:scale-75"
+          type="submit"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +71,7 @@ export default function SerchEmb() {
         </button>
       </form>
 
-      <h1 className={`animate-fade-in-up pl-1 text-red-500 transition-all ${err ? "animate-fade flex" : "hidden"}`}>
+      <h1 className={`animate-fade-in-up pl-1 text-red-500 transition-all ${err ? "animate-fade block" : "hidden"}`}>
         Embalse no encontrado
       </h1>
       <div className="relative z-50">

@@ -20,7 +20,7 @@ const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
                 <p className="text-base">{cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}</p>
                 <p className="text-base">{`${cuenca.porcentaje_embalsada} %`} </p>
                 <p className="text-sm">
-                  {`${cuenca.porcentaje_embalsada} hm³`} de {`${cuenca.capacidad} hm³`}{" "}
+                  {`${cuenca.embalsada} hm³`} de {`${cuenca.capacidad} hm³`}{" "}
                 </p>
               </div>
             </div>

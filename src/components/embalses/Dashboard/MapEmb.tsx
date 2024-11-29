@@ -1,13 +1,30 @@
 "use client"
 
 import "leaflet/dist/leaflet.css"
-import { MapContainer, TileLayer } from "react-leaflet"
+import { MapContainer, TileLayer, useMap } from "react-leaflet"
+import L from "leaflet"
+import { GestureHandling } from "leaflet-gesture-handling"
+import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css"
+import { useEffect } from "react"
 
 interface Coords {
   name: string
   lat: number
   lon: number
 }
+
+export const MapController = () => {
+  const map = useMap()
+
+  useEffect(() => {
+    L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling)
+    // @ts-expect-error typescript does not see additional handler here
+    map.gestureHandling.enable()
+  }, [map])
+
+  return null
+}
+
 export default function MapEmb({ coords }: { coords: Coords }) {
   return (
     <>
@@ -23,7 +40,7 @@ export default function MapEmb({ coords }: { coords: Coords }) {
           scrollWheelZoom={false}
           style={{ height: "400px", zIndex: 0 }}
         >
-          {/* Cambia a una capa satelital */}
+          <MapController />
           <TileLayer
             attribution='Map tiles by <a href="https://www.esri.com/">Esri</a>, &copy; OpenStreetMap contributors'
             url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"

@@ -1,17 +1,27 @@
-export default function dateFormater(date: string) {
-  const inputDate = new Date(date).toDateString()
-  const today = new Date().toDateString()
-  const tomorrow = new Date()
-  tomorrow.setDate(tomorrow.getDate() + 1)
-  const tomorrowDate = tomorrow.toDateString()
+import { useMemo } from "react"
 
-  if (inputDate === today) {
-    return "Hoy"
-  } else if (inputDate === tomorrowDate) {
-    return "Mañ"
-  } else {
-    return new Date(date).toLocaleDateString("es-ES", {
-      weekday: "short",
-    })
-  }
+export default function DateDisplay({ datetime }: { datetime: string }) {
+  console.log(datetime)
+  const formattedDate = useMemo(() => {
+    const inputDate = new Date(datetime)
+    const today = new Date()
+    const tomorrow = new Date(today)
+    tomorrow.setDate(today.getDate() + 1)
+
+    const normalizedInputDate = new Date(inputDate.getFullYear(), inputDate.getMonth(), inputDate.getDate())
+    const normalizedToday = new Date(today.getFullYear(), today.getMonth(), today.getDate())
+    const normalizedTomorrow = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate())
+
+    if (normalizedInputDate.getTime() === normalizedToday.getTime()) {
+      return "Hoy"
+    } else if (normalizedInputDate.getTime() === normalizedTomorrow.getTime()) {
+      return "Mañ"
+    } else {
+      return inputDate.toLocaleDateString("es-ES", {
+        weekday: "short",
+      })
+    }
+  }, [datetime])
+
+  return formattedDate
 }

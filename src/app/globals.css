@@ -129,6 +129,12 @@ table {
 }
 
 .iconoredes:hover {
+  ::selection {
+    color: #fff; /* Color blanco para el texto */
+    background-color: #008000; /* Verde navideño */
+    text-shadow: 1px 1px 2px #d8000c; /* Sutil efecto para dar brillo */
+  }
+
   fill: #95cfb0;
 }
 
@@ -221,4 +227,10 @@ table {
 .leaflet-bar {
   display: flex;
   gap: 0.5rem;
+}
+
+/* navidad */
+::selection {
+  color: #fff;
+  background-color: #fc2600;
 }

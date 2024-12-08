@@ -7,11 +7,10 @@ import EstadoActual from "@/components/embalses/Dashboard/EstadoActual"
 import HistorialCambios from "@/components/embalses/Dashboard/HistorialCambios"
 import LunarCalendar from "@/components/lunar/lunarcal"
 import GetCoordinates from "@/lib/GetCoordinates"
-
-import MapEmbData from "@/components/embalses/Dashboard/MapEmbData"
 import GetWeather from "@/lib/GetWeather"
 import TableWeather from "@/components/weather/TableWeather"
 import ButtonUp from "@/components/lunar/up"
+import MapEmbData from "@/components/embalses/Dashboard/MapDynamic"
 
 export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
@@ -113,7 +112,6 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
           />
           {coordsData && <MapEmbData coords={coordsData} />}
           {weatherData && <TableWeather data={weatherData} />}
-
           <h3 className="text-2xl font-black text-green-950">Calendario Lunar</h3>
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
             <LunarCalendar />

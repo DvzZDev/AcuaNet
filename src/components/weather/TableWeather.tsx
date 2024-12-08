@@ -47,7 +47,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
       <>
         <span className="text-2xl">{getWeatherCode(hourData.icon)}</span>
         <span className="text-sm uppercase">{hourData.temp.toFixed()}º</span>
-        <span className="text-sm">
+        <span className="text-xs">
           {hourData.windspeed.toFixed(0)} <span className="text-xs">km/h</span>
         </span>
       </>

@@ -29,7 +29,7 @@
     "dotenv": "16.4.5",
     "drizzle-orm": "0.34.1",
     "js-cookie": "^3.0.5",
-    "leaflet": "^1.9.4",
+    "leaflet": "1.4.x",
     "leaflet-gesture-handling": "^1.2.2",
     "lucide-react": "^0.461.0",
     "lunarphase-js": "^2.0.3",

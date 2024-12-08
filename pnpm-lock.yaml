@@ -39,8 +39,8 @@ importers:
         specifier: ^3.0.5
         version: 3.0.5
       leaflet:
-        specifier: ^1.9.4
-        version: 1.9.4
+        specifier: 1.4.x
+        version: 1.4.0
       leaflet-gesture-handling:
         specifier: ^1.2.2
         version: 1.2.2
@@ -76,7 +76,7 @@ importers:
         version: 9.13.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-leaflet:
         specifier: 5.0.0-rc.1
-        version: 5.0.0-rc.1(leaflet@1.9.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 5.0.0-rc.1(leaflet@1.4.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-snowfall:
         specifier: ^2.2.0
         version: 2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -2420,8 +2420,8 @@ packages:
   leaflet-gesture-handling@1.2.2:
     resolution: {integrity: sha512-Blf5V4PoNphWkzL7Y1qge+Spkd4OCQ2atjwUNhMhLIcjKzPcBH++x/lwOinaR9jSqLWqJ6oKYO8d0XdTffy4hQ==}
 
-  leaflet@1.9.4:
-    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
+  leaflet@1.4.0:
+    resolution: {integrity: sha512-x9j9tGY1+PDLN9pcWTx9/y6C5nezoTMB8BLK5jTakx+H7bPlnbCHfi9Hjg+Qt36sgDz/cb9lrSpNQXmk45Tvhw==}
 
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -4187,9 +4187,9 @@ snapshots:
     optionalDependencies:
       '@types/react': types-react@19.0.0-rc.1
 
-  '@react-leaflet/core@3.0.0-rc.1(leaflet@1.9.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@react-leaflet/core@3.0.0-rc.1(leaflet@1.4.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      leaflet: 1.9.4
+      leaflet: 1.4.0
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -5790,7 +5790,7 @@ snapshots:
 
   leaflet-gesture-handling@1.2.2: {}
 
-  leaflet@1.9.4: {}
+  leaflet@1.4.0: {}
 
   levn@0.4.1:
     dependencies:
@@ -6456,10 +6456,10 @@ snapshots:
 
   react-is@16.13.1: {}
 
-  react-leaflet@5.0.0-rc.1(leaflet@1.9.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-leaflet@5.0.0-rc.1(leaflet@1.4.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      '@react-leaflet/core': 3.0.0-rc.1(leaflet@1.9.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      leaflet: 1.9.4
+      '@react-leaflet/core': 3.0.0-rc.1(leaflet@1.4.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      leaflet: 1.4.0
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 

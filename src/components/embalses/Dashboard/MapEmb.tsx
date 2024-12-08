@@ -1,52 +1,66 @@
-"use client"
-
-import "leaflet/dist/leaflet.css"
-import { MapContainer, TileLayer, useMap } from "react-leaflet"
-import L from "leaflet"
-import { GestureHandling } from "leaflet-gesture-handling"
-import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css"
 import { useEffect } from "react"
+import L from "leaflet"
 
-interface Coords {
-  name: string
-  lat: number
-  lon: number
-}
-
-export const MapController = () => {
-  const map = useMap()
-
+export default function MapEmb({ coords }: { coords: { lat: number; lon: number } }) {
   useEffect(() => {
-    L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling)
-    // @ts-expect-error typescript does not see additional handler here
-    map.gestureHandling.enable()
-  }, [map])
+    let mapInstance: L.Map | null = null
 
-  return null
-}
+    if (typeof window !== "undefined") {
+      const initializeMap = () => {
+        if (!window.windyInit) {
+          console.error("windyInit is not available")
+          return
+        }
 
-export default function MapEmb({ coords }: { coords: Coords }) {
+        const options = {
+          key: process.env.NEXT_PUBLIC_WINDY,
+          lat: coords.lat,
+          lon: coords.lon,
+          zoom: 11,
+          scrollZoom: false,
+          scrollWheelZoom: false,
+        }
+
+        // @ts-expect-error: windyInit is not typed
+        windyInit(options, () => {
+          if (mapInstance) {
+            mapInstance.remove() // Elimina la instancia previa si existe
+          }
+          // Crea una nueva instancia del mapa
+          mapInstance = L.map("windy", { preferCanvas: true, zoomControl: false, scrollWheelZoom: false })
+          mapInstance.setView([options.lat, options.lon], options.zoom)
+        })
+      }
+
+      const windyScript = document.querySelector("script[src='https://api.windy.com/assets/map-forecast/libBoot.js']")
+      if (windyScript) {
+        // @ts-expect-error: windyInit is not typed
+        windyScript.onload = initializeMap
+      } else {
+        const script = document.createElement("script")
+        script.src = "https://api.windy.com/assets/map-forecast/libBoot.js"
+        script.async = true
+        script.onload = initializeMap
+        script.onerror = () => {
+          console.error("Failed to load Windy script")
+        }
+        document.body.appendChild(script)
+      }
+
+      return () => {
+        if (mapInstance) {
+          mapInstance.remove()
+        }
+      }
+    }
+  }, [coords.lat, coords.lon])
+
   return (
     <>
-      <h3 className="text-2xl font-black text-green-950">Mapa</h3>
-      <section className="relative aspect-auto h-fit w-full overflow-hidden rounded-lg border-green-900/30 bg-green-100">
-        <p className="absolute bottom-0 right-0 z-10 rounded-lg bg-[#93edb3]/70 p-1 text-right text-[10px] font-semibold text-green-950 backdrop-blur-sm md:text-base">
-          {coords.name}
-        </p>
-        <MapContainer
-          className="map-container"
-          center={[coords.lat, coords.lon]}
-          zoom={13}
-          scrollWheelZoom={false}
-          style={{ height: "400px", zIndex: 0 }}
-        >
-          <MapController />
-          <TileLayer
-            attribution='Map tiles by <a href="https://www.esri.com/">Esri</a>, &copy; OpenStreetMap contributors'
-            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-          />
-        </MapContainer>
-      </section>
+      <div
+        id="windy"
+        style={{ width: "100%", height: "400px", zIndex: 0, borderRadius: "0.375rem" }}
+      ></div>
     </>
   )
 }

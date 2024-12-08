@@ -234,17 +234,3 @@ table {
   color: #fff;
   background-color: #fc2600;
 }
-
-#windy #bottom *,
-#windy #logo-wrapper *,
-#windy #plugins *,
-#windy #plugins,
-#windy #mobile-ovr-select,
-#windy #embed-zoom,
-#windy #windy-app-promo * {
-  z-index: 1000;
-}
-#windy #bottom #progress-bar {
-  background-color: transparent;
-  text-align: left;
-}

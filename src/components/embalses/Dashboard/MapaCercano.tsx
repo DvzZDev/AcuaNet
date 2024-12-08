@@ -22,7 +22,7 @@ export const MapController = () => {
   return null
 }
 
-export default function MapClose({ coords }: { coords: Coords }) {
+export default function MapaCercano({ coords }: { coords: Coords }) {
   return (
     <>
       <section className="relative aspect-auto h-fit w-full overflow-hidden rounded-lg border-green-900/30 bg-green-100">

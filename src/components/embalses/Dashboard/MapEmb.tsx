@@ -56,7 +56,7 @@ export default function MapEmb({ coords }: { coords: { lat: number; lon: number 
       />
       <div
         id="windy"
-        style={{ width: "100%", height: "400px", zIndex: 0, borderRadius: "0.375rem" }}
+        style={{ width: "100%", height: "400px", zIndex: 0, borderRadius: "0.5rem" }}
       ></div>
     </>
   )

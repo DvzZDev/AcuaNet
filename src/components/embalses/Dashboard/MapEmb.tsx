@@ -1,6 +1,12 @@
 import { useEffect } from "react"
 import L from "leaflet"
 
+declare global {
+  interface Window {
+    windyInit: any
+  }
+}
+
 export default function MapEmb({ coords }: { coords: { lat: number; lon: number } }) {
   useEffect(() => {
     let mapInstance: L.Map | null = null

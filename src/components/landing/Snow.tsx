@@ -7,7 +7,7 @@ export default function Snow() {
 
   useEffect(() => {
     const handleResize = () => {
-      setSnowflakeCount(window.innerWidth <= 768 ? 40 : 150)
+      setSnowflakeCount(window.innerWidth <= 768 ? 20 : 80)
     }
 
     window.addEventListener("resize", handleResize)

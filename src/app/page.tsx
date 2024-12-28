@@ -7,13 +7,13 @@ import Faq from "@/components/landing/Faq"
 import Hero from "@/components/landing/Hero"
 
 export const metadata = {
-  title: "AcuaNet - Nivel de los embalses y pronóstico de pesca",
+  title: "AcuaNet - Información en tiempo real para pescadores",
   description:
-    "Consulta en tiempo real los niveles de agua, pronósticos meteorológicos y datos clave de cuencas y embalses en toda España para optimizar tus jornadas de pesca.",
+    "Accede a datos actualizados sobre niveles de embalses, pronósticos meteorológicos y condiciones de pesca en toda España para planificar tu próxima jornada de pesca.",
   openGraph: {
-    title: "AcuaNet - Nivel de los embalses y pronóstico de pesca",
+    title: "AcuaNet - Optimiza tu pesca con datos en tiempo real",
     description:
-      "Accede a información precisa y actualizada sobre cuencas y embalses, condiciones meteorológicas y más, para planificar tus mejores salidas de pesca.",
+      "Consulta los niveles de agua en embalses, pronósticos de clima y tablas lunares para mejorar tus salidas de pesca en toda España.",
     url: "https://acuanet.es",
     siteName: "AcuaNet",
     images: [
@@ -29,9 +29,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AcuaNet - Nivel de los embalses y pronóstico de pesca",
+    title: "AcuaNet - Tu compañero de pesca con datos actualizados",
     description:
-      "Consulta las mediciones más recientes de cuencas y embalses y obtén el pronóstico del tiempo para optimizar tus jornadas de pesca en toda España.",
+      "Descubre los niveles de embalses, pronósticos de clima y más para aprovechar al máximo tus jornadas de pesca en toda España.",
     images: ["https://i.imgur.com/LQvr7AX.png"],
   },
 }

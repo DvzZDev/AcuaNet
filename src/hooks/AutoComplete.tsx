@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useRouter } from "next/navigation"
 
-const AutoCompleteHook = (data: string[], closeMenu?: () => void, isMenuOpen?: boolean) => {
+const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: () => void, isMenuOpen?: boolean) => {
   const router = useRouter()
   const [type, setType] = useState("")
   const [suggestions, setSuggestions] = useState<string[]>([])
@@ -16,7 +16,9 @@ const AutoCompleteHook = (data: string[], closeMenu?: () => void, isMenuOpen?: b
     const inputValue = e.target.value
     setType(inputValue)
     if (inputValue) {
-      const filteredSuggestions = data.filter((embalse) => embalse.toLowerCase().includes(inputValue.toLowerCase()))
+      const filteredSuggestions = data
+        .filter((embalse) => embalse.nombre.toLowerCase().includes(inputValue.toLowerCase()))
+        .map((embalse) => embalse.nombre)
       setSuggestions(filteredSuggestions)
     } else {
       setSuggestions([])
@@ -34,9 +36,9 @@ const AutoCompleteHook = (data: string[], closeMenu?: () => void, isMenuOpen?: b
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const selectedEmbalse = data.find((embalse) => embalse.toLowerCase() === type.toLowerCase())
+    const selectedEmbalse = data.find((embalse) => embalse.nombre.toLowerCase() === type.toLowerCase())
     if (selectedEmbalse) {
-      router.push(`/embalses/${type.toLowerCase()}`)
+      router.push(`/embalses/${selectedEmbalse.nombre.toLowerCase()}`)
       setFine(true)
       setErr(false)
       setSuggestions([])

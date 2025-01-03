@@ -5,6 +5,7 @@ import Navbar from "@/components/global/Navbar"
 import PostHogPageView from "./PostHogPageView"
 import { Suspense } from "react"
 import Snow from "@/components/landing/Snow"
+import { Analytics } from "@vercel/analytics/next"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <PostHogPageView />
           </Suspense>
           {children}
+          <Analytics />
           <Footer />
         </Providers>
       </body>

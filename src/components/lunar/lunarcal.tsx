@@ -2,6 +2,7 @@
 
 import { JSX, useState } from "react"
 import { Moon } from "lunarphase-js"
+import { MoonVisibility } from "@/lib/MoonVisibility"
 
 type LunarDay = {
   date: Date
@@ -110,7 +111,7 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
 
               <p className="text-left text-xs">{lunarDay?.phase}</p>
               <p className="text-left text-xs">{lunarDay?.activityIcon}</p>
-              <p className="text-left text-xs">{lunarDay?.agePercent.toFixed(2)} %</p>
+              <p className="text-left text-xs"> {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %</p>
             </div>
           )
           dayCount++
@@ -153,7 +154,7 @@ const MobileView = ({ lunarDays }: { lunarDays: LunarDay[] }) => {
             </div>
             <p>{lunarDay.phase}</p>
             <p className="">{lunarDay.activityIcon}</p>
-            <p className="">{lunarDay.agePercent.toFixed(2)} %</p>
+            <p className="">{lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %</p>
           </div>
         )
       })}

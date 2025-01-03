@@ -16,7 +16,7 @@ const AutoCompleteHook = (data: string[], closeMenu?: () => void, isMenuOpen?: b
     const inputValue = e.target.value
     setType(inputValue)
     if (inputValue) {
-      const filteredSuggestions = data.filter((embalse) => embalse.toLowerCase().startsWith(inputValue.toLowerCase()))
+      const filteredSuggestions = data.filter((embalse) => embalse.toLowerCase().includes(inputValue.toLowerCase()))
       setSuggestions(filteredSuggestions)
     } else {
       setSuggestions([])

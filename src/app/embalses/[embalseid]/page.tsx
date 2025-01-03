@@ -58,14 +58,17 @@ export async function generateMetadata(props: { params: Promise<{ embalseid: str
 async function Page(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
   const decodedEmbalseid = decodeURIComponent(params.embalseid)
-  const coords = GetCoordinates(decodedEmbalseid)
   const embalses = GetEmbalses()
+  const embalsesData = await embalses
+  const resEmbalse = embalsesData.find((embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase())
+  const coords = GetCoordinates(decodedEmbalseid, resEmbalse?.pais || "", {
+    lat: resEmbalse?.lat ?? 0,
+    lon: resEmbalse?.lon ?? 0,
+  })
 
-  const [coordsData, embalsesData] = await Promise.all([coords, embalses])
+  const coordsData = await coords
 
   const weatherData = coordsData ? await GetWeather(coordsData.lat, coordsData.lon) : null
-
-  const resEmbalse = embalsesData.find((embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase())
 
   if (!resEmbalse) {
     return <NotFound />

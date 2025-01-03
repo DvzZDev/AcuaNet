@@ -45,7 +45,14 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
   return (
     <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-50/30 bg-emerald-400/15 shadow-lg transition-all hover:scale-95">
       <Link href={encodeURI(`embalses/${embalse.nombre_embalse ?? ""}`)}>
-        <div className="p-3">
+        <div className="relative p-3">
+          <div className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center overflow-hidden rounded-full">
+            <img
+              src={embalse.pais === "España" ? "/es.webp" : "/pt.webp"}
+              alt={embalse.pais + " flag"}
+              className="h-[2rem] w-[3rem] object-cover "
+            />
+          </div>
           <div className="mb-2 flex items-center justify-between">
             <h2 className="text-base font-semibold uppercase text-green-100">{embalse.nombre_embalse}</h2>
             {/* Icono */}

@@ -44,6 +44,7 @@ export interface Embalses {
   misma_semana_ultimo_año: number | null
   misma_semana_ultimo_añopor: number | null
   misma_semana_10años: number | null
+  pais: string | null
   misma_semana_10añospor: number | null
   cota: number | null
 }

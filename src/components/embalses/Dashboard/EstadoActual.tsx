@@ -5,11 +5,17 @@ export default function EstadoActual({
   agua_embalsadapor,
   capacidad_total,
   cota,
+  pais,
+  variacion_ultima_semana,
+  variacion_ultima_semanapor
 }: {
   agua_embalsada: number
   agua_embalsadapor: number
   capacidad_total: number
   cota: number
+  pais: string
+  variacion_ultima_semana: number
+  variacion_ultima_semanapor: number
 }) {
   return (
     <>
@@ -91,36 +97,74 @@ export default function EstadoActual({
             </div>
           </div>
 
-          <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35"
-                height="35"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-mountain"
-              >
-                <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
-              </svg>
+          {pais === "España" ? (
+            <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
+              <div className="rounded-sm bg-green-400/50 p-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-mountain"
+                >
+                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                </svg>
+              </div>
+              <div className="flex w-full flex-col gap-2">
+                <p className="text-lg font-semibold leading-none text-[#3d7764]">Nivel (Cota)</p>
+                <p className="text-3xl font-black text-green-950">
+                  {cota > 0 ? (
+                    <>
+                      {cota.toFixed()} <span className="text-lg">msnm</span>
+                    </>
+                  ) : (
+                    "N/D"
+                  )}
+                </p>
+              </div>
             </div>
-            <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">Nivel (Cota)</p>
-              <p className="text-3xl font-black text-green-950">
-                {cota > 0 ? (
-                  <>
-                    {cota.toFixed()} <span className="text-lg">msnm</span>
-                  </>
-                ) : (
-                  "N/D"
-                )}
-              </p>
+          ) : (
+            <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
+              <div className="rounded-sm bg-green-400/50 p-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+                  <path d="M16 3v4" />
+                  <path d="M8 3v4" />
+                  <path d="M4 11h16" />
+                  <path d="M8 14v4" />
+                  <path d="M12 14v4" />
+                  <path d="M16 14v4" />
+                </svg>
+              </div>
+              <div className="flex w-full flex-col gap-2">
+                <p className="text-lg font-semibold leading-none text-[#3d7764]">Cambios Semanales</p>
+                <p className="text-3xl font-black text-green-950">
+                  {variacion_ultima_semana} <span className="text-lg">hm³</span>
+                </p>
+                <p className="text-sm font-semibold text-[#3d7764]">{variacion_ultima_semanapor}% capacidad total</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
     </>

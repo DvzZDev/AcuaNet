@@ -87,6 +87,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
     misma_semana_ultimo_año,
     misma_semana_ultimo_añopor,
     cota,
+    pais,
   } = resEmbalse
 
   return (
@@ -104,15 +105,23 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
             agua_embalsadapor={agua_embalsadapor || 0}
             capacidad_total={capacidad_total || 0}
             cota={cota || 0}
-          />
-          <HistorialCambios
+            pais={pais || "N/D"}
             variacion_ultima_semana={variacion_ultima_semana || 0}
             variacion_ultima_semanapor={variacion_ultima_semanapor || 0}
-            misma_semana_ultimo_año={misma_semana_ultimo_año || 0}
-            misma_semana_ultimo_añopor={misma_semana_ultimo_añopor || 0}
-            misma_semana_10años={misma_semana_10años || 0}
-            misma_semana_10añospor={misma_semana_10añospor || 0}
           />
+          {pais === "España" ? (
+            <HistorialCambios
+              variacion_ultima_semana={variacion_ultima_semana || 0}
+              variacion_ultima_semanapor={variacion_ultima_semanapor || 0}
+              misma_semana_ultimo_año={misma_semana_ultimo_año || 0}
+              misma_semana_ultimo_añopor={misma_semana_ultimo_añopor || 0}
+              misma_semana_10años={misma_semana_10años || 0}
+              misma_semana_10añospor={misma_semana_10añospor || 0}
+            />
+          ) : (
+            ""
+          )}
+
           {coordsData && <MapEmbData coords={coordsData} />}
           {weatherData && <TableWeather data={weatherData} />}
           <h3 className="text-2xl font-black text-green-950">Calendario Lunar</h3>

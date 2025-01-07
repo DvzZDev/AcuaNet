@@ -58,14 +58,17 @@ export async function generateMetadata(props: { params: Promise<{ embalseid: str
 async function Page(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
   const decodedEmbalseid = decodeURIComponent(params.embalseid)
-  const coords = GetCoordinates(decodedEmbalseid)
   const embalses = GetEmbalses()
+  const embalsesData = await embalses
+  const resEmbalse = embalsesData.find((embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase())
+  const coords = GetCoordinates(decodedEmbalseid, resEmbalse?.pais || "", {
+    lat: resEmbalse?.lat ?? 0,
+    lon: resEmbalse?.lon ?? 0,
+  })
 
-  const [coordsData, embalsesData] = await Promise.all([coords, embalses])
+  const coordsData = await coords
 
   const weatherData = coordsData ? await GetWeather(coordsData.lat, coordsData.lon) : null
-
-  const resEmbalse = embalsesData.find((embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase())
 
   if (!resEmbalse) {
     return <NotFound />
@@ -84,6 +87,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
     misma_semana_ultimo_año,
     misma_semana_ultimo_añopor,
     cota,
+    pais,
   } = resEmbalse
 
   return (
@@ -101,15 +105,23 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
             agua_embalsadapor={agua_embalsadapor || 0}
             capacidad_total={capacidad_total || 0}
             cota={cota || 0}
-          />
-          <HistorialCambios
+            pais={pais || "N/D"}
             variacion_ultima_semana={variacion_ultima_semana || 0}
             variacion_ultima_semanapor={variacion_ultima_semanapor || 0}
-            misma_semana_ultimo_año={misma_semana_ultimo_año || 0}
-            misma_semana_ultimo_añopor={misma_semana_ultimo_añopor || 0}
-            misma_semana_10años={misma_semana_10años || 0}
-            misma_semana_10añospor={misma_semana_10añospor || 0}
           />
+          {pais === "España" ? (
+            <HistorialCambios
+              variacion_ultima_semana={variacion_ultima_semana || 0}
+              variacion_ultima_semanapor={variacion_ultima_semanapor || 0}
+              misma_semana_ultimo_año={misma_semana_ultimo_año || 0}
+              misma_semana_ultimo_añopor={misma_semana_ultimo_añopor || 0}
+              misma_semana_10años={misma_semana_10años || 0}
+              misma_semana_10añospor={misma_semana_10añospor || 0}
+            />
+          ) : (
+            ""
+          )}
+
           {coordsData && <MapEmbData coords={coordsData} />}
           {weatherData && <TableWeather data={weatherData} />}
           <h3 className="text-2xl font-black text-green-950">Calendario Lunar</h3>

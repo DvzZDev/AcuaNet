@@ -2,6 +2,7 @@
 
 import { JSX, useState } from "react"
 import { Moon } from "lunarphase-js"
+import { MoonVisibility } from "@/lib/MoonVisibility"
 
 type LunarDay = {
   date: Date
@@ -103,10 +104,18 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
               key={dayCount}
               className={`border-[#1b7b6e] p-2 text-center ${isToday ? "bg-[#1dd38d80]" : "bg-green-50"} border-b border-r`}
             >
-              <p className="text-left font-black">{dayCount}</p>
-              <p className="text-3xl">{lunarDay?.phaseEmoji}</p>
+              <div className="flex items-center justify-between">
+                <strong>
+                  {lunarDay &&
+                    lunarDay.date
+                      .toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short" })
+                      .replace(/^\w/, (c) => c.toUpperCase())}
+                </strong>
+                <span className="text-xl">{lunarDay?.phaseEmoji}</span>
+              </div>
               <p className="text-left text-xs">{lunarDay?.phase}</p>
               <p className="text-left text-xs">{lunarDay?.activityIcon}</p>
+              <p className="text-left text-xs">{lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %</p>
             </div>
           )
           dayCount++
@@ -137,14 +146,19 @@ const MobileView = ({ lunarDays }: { lunarDays: LunarDay[] }) => {
         return (
           <div
             key={index}
-            className={`rounded-lg border p-4 text-xs shadow-md ${isToday ? "bg-[#1dd38d80]" : "bg-[#f0fdf4]"} border-[#052e16]`}
+            className={`rounded-lg border p-2 text-xs shadow-md ${isToday ? "bg-[#1dd38d80]" : "bg-[#f0fdf4]"} border-[#052e16]`}
           >
             <div className="flex justify-between">
-              <strong>{lunarDay.date.toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short" })}</strong>
+              <strong className="uppercase">
+                {lunarDay.date.toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short" })}
+              </strong>
               <span className="text-xl">{lunarDay.phaseEmoji}</span>
             </div>
-            <p>Fase: {lunarDay.phase}</p>
-            <p>Actividad: {lunarDay.activityIcon}</p>
+            <div className="flex flex-col gap-1">
+              <p>Fase: {lunarDay.phase}</p>
+              <p>Actividad: {lunarDay.activityIcon}</p>
+              <p>Iluminación: {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %</p>
+            </div>
           </div>
         )
       })}

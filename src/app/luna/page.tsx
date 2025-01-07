@@ -39,7 +39,7 @@ export default function page() {
           Calendário Lunar
         </h1>
         <Divider />
-        <div className="bg-green-50 pb-10">
+        <div className="bg-green-50 pb-14">
           <LunarCalendarMov />
         </div>
         <ButtonUp />

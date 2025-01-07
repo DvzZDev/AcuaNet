@@ -13,7 +13,7 @@ export const Cuencas = pgTable(
     foto: varchar("foto", { length: 255 }),
   },
   (table) => ({
-    pk: primaryKey(table.cuenca),
+    pk: primaryKey({ columns: [table.cuenca] }),
   })
 )
 
@@ -34,10 +34,13 @@ export const Embalses = pgTable(
     misma_semana_ultimo_añopor: doublePrecision("misma_semana_ultimo_añopor"),
     misma_semana_10años: doublePrecision("misma_semana_10años"),
     misma_semana_10añospor: doublePrecision("misma_semana_10añospor"),
+    lat: doublePrecision("lat"),
+    lon: doublePrecision("lon"),
     cota: doublePrecision("cota"),
+    pais: varchar("pais"),
   },
   (table) => ({
-    pk: primaryKey(table.nombre_embalse),
+    pk: primaryKey({ columns: [table.nombre_embalse] }),
   })
 )
 
@@ -49,6 +52,6 @@ export const España = pgTable(
     id: varchar("id", { length: 255 }).notNull(),
   },
   (table) => ({
-    pk: primaryKey(table.id),
+    pk: primaryKey({ columns: [table.id] }),
   })
 )

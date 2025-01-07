@@ -6,6 +6,11 @@ import nombreEmbalses from "@/lib/nombresEmbalses.json"
 
 const data = nombreEmbalses
 
+export function FlagSelector(embalse: string) {
+  const result = nombreEmbalses.find((e) => e.nombre === embalse)
+  return result ? result.pais : "error"
+}
+
 export default function SerchEmb() {
   const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
   return (
@@ -85,9 +90,14 @@ export default function SerchEmb() {
                 <li
                   key={index}
                   onClick={() => handleSuggestionClick(suggestion)}
-                  className="z-30 cursor-pointer rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
+                  className="z-30 flex cursor-pointer items-center justify-between rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
                 >
-                  {suggestion}
+                  <span>{suggestion}</span>
+                  <img
+                    alt="Flag"
+                    src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
+                    className="w-[1.5rem] h-[1.5rem] overflow-hidden rounded-sm"
+                  />
                 </li>
               </Link>
             ))}

@@ -6,6 +6,7 @@ import PostHogPageView from "./PostHogPageView"
 import { Suspense } from "react"
 import Snow from "@/components/landing/Snow"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -45,9 +46,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </header>
           <Suspense fallback={null}>
             <PostHogPageView />
+            <Analytics />
+            <SpeedInsights />
           </Suspense>
           {children}
-          <Analytics />
           <Footer />
         </Providers>
       </body>

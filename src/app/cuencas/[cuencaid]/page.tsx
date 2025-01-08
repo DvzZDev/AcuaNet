@@ -53,7 +53,6 @@ async function Page(props: { params: Promise<{ cuencaid: string }> }) {
   const cuenca = data.find((cuenca) => cuenca.cuenca === params.cuencaid)
 
   const { fecha_modificacion, capacidad, embalsada, variacion, porcentaje_embalsada, porcentaje_variacion, foto } = cuenca || {}
-  console.log(params)
   return (
     <>
       <TitleEmb data={{ cuenca_id: params.cuencaid }} />
@@ -62,6 +61,7 @@ async function Page(props: { params: Promise<{ cuencaid: string }> }) {
           <IntroCuencas
             nombre_cuenca={params.cuencaid || "No disponible"}
             fecha_modificacion={fecha_modificacion ? new Date(fecha_modificacion) : new Date()}
+            cuenca={true}
           />
           <EstadoActualCuencas
             agua_embalsada={embalsada ?? 0}

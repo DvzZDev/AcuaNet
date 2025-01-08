@@ -6,11 +6,13 @@ import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"
 import EstadoActual from "@/components/embalses/Dashboard/EstadoActual"
 import HistorialCambios from "@/components/embalses/Dashboard/HistorialCambios"
 import LunarCalendar from "@/components/lunar/lunarcal"
+
 import GetCoordinates from "@/lib/GetCoordinates"
 import GetWeather from "@/lib/GetWeather"
 import TableWeather from "@/components/weather/TableWeather"
 import ButtonUp from "@/components/lunar/up"
 import MapEmbData from "@/components/embalses/Dashboard/MapDynamic"
+// import weatherData from "@/lib/weatherdata.json"
 
 export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
@@ -69,6 +71,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
   const coordsData = await coords
 
   const weatherData = coordsData ? await GetWeather(coordsData.lat, coordsData.lon) : null
+  const dataWeather = JSON.stringify(weatherData)
 
   if (!resEmbalse) {
     return <NotFound />
@@ -90,6 +93,8 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
     pais,
   } = resEmbalse
 
+  const AiEmbalse = JSON.stringify(resEmbalse, null, 2)
+
   return (
     <>
       <TitleEmb data={resEmbalse} />
@@ -99,6 +104,9 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
           <IntroCuencas
             nombre_cuenca={nombre_cuenca || "No disponible"}
             fecha_modificacion={fecha_modificacion ? new Date(fecha_modificacion) : new Date()}
+            weather={dataWeather}
+            embalse={AiEmbalse}
+            cuenca={false}
           />
           <EstadoActual
             agua_embalsada={agua_embalsada || 0}

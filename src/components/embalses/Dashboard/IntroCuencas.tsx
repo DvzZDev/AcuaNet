@@ -78,8 +78,8 @@ export default function IntroCuencas({
           </p>
         </div>
       </div>
-      {!cuenca ? (
-        <div className="relative mt-3 flex h-[7rem] w-[35rem] max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 p-2 md:mt-0">
+      {!cuenca || Resume.error ? (
+        <div className="relative mt-3 flex h-[7rem] max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 p-2 md:mt-0">
           {Resume.loading ? (
             <>
               <div className="my-1 h-3 w-full animate-pulse rounded-lg bg-green-500 animate-iteration-count-infinite"> </div>
@@ -102,7 +102,7 @@ export default function IntroCuencas({
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="absolute -right-4 -top-4 animate-pulsing animate-iteration-count-infinite"
+            className="absolute -top-4 right-0 animate-pulsing animate-iteration-count-infinite md:-right-4 md:-top-4"
           >
             <path
               stroke="none"

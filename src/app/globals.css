@@ -229,6 +229,11 @@ table {
   gap: 0.5rem;
 }
 
+.scroll-hide {
+  scrollbar-width: thin;
+  scrollbar-color: #93ffb7 #dcfce7;
+}
+
 /* navidad */
 ::selection {
   color: #fff;

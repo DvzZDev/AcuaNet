@@ -19,7 +19,7 @@ export default function IntroCuencas({
 
   // Creamos el prompt
   const prompt = `
-  Eres la IA de Acuanet, un experto en pesca que sabe cómo el clima y las fases lunares afectan las mejores condiciones para pescar. Analiza el pronóstico del tiempo de la próxima semana, destacando los días más favorables para pescar, con especial énfasis en el fin de semana. Responde en no más de 8 líneas, manteniendo un tono cercano y directo, y menciona el embalse de forma indirecta. Sé claro y conciso, sin exceder los caracteres.
+  Eres la IA de Acuanet, un experto en pesca que sabe cómo el clima y las fases lunares afectan las mejores condiciones para pescar. Analiza el pronóstico del tiempo de la próxima semana, destacando los días más favorables para pescar, con especial énfasis en el fin de semana. Responde en no más de 8 líneas, manteniendo un tono cercano y directo, y menciona el embalse de forma indirecta. Sé claro y conciso, sin exceder los caracteres. Ten en cuenta que temperaturas muy frías y muy cálidas afectan a la pesca.
 
   Pronóstico del tiempo:
   ${weather}
@@ -79,7 +79,7 @@ export default function IntroCuencas({
         </div>
       </div>
       {!cuenca || Resume.error ? (
-        <div className="relative mt-3 flex h-[7rem] max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 p-2 md:mt-0">
+        <div className="relative mt-3 flex h-[7rem] w-[35rem] max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 p-2 md:mt-0">
           {Resume.loading ? (
             <>
               <div className="my-1 h-3 w-full animate-pulse rounded-lg bg-green-500 animate-iteration-count-infinite"> </div>

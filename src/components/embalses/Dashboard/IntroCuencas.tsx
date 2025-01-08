@@ -11,8 +11,8 @@ export default function IntroCuencas({
 }: {
   nombre_cuenca: string
   fecha_modificacion: Date
-  weather: any
-  embalse: any
+  weather?: any
+  embalse?: any
   cuenca: boolean
 }) {
   const moonPhases = getMoonPhasesForWeekAsRow()

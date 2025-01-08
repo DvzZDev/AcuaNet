@@ -1,8 +1,6 @@
 import { useMemo } from "react"
 
 export default function DateDisplay({ datetime }: { datetime: string }) {
-  console.log(datetime)
-
   const formattedDate = useMemo(() => {
     const inputDate = new Date(datetime)
     const today = new Date()

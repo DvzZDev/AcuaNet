@@ -20,13 +20,14 @@
     "postbuild": "next-sitemap --config next-sitemap.config.mjs"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.21.0",
+    "@ai-sdk/google": "^1.0.13",
     "@midudev/tailwind-animations": "^0.1.0",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
+    "ai": "^4.0.30",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dotenv": "16.4.5",
@@ -48,6 +49,7 @@
     "react-leaflet": "5.0.0-rc.1",
     "react-snowfall": "^2.2.0",
     "react-typed": "2.0.12",
+    "redis": "^4.7.0",
     "swr": "^2.3.0",
     "tailwind-merge": "^2.5.5"
   },

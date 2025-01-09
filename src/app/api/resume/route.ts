@@ -34,8 +34,9 @@ export async function POST(request: NextRequest) {
         const result = await streamText({
           model: google("gemini-1.5-flash"),
           prompt: requestBody.prompt,
-          temperature: 0.3,
-          maxTokens: 100,
+          temperature: 0.4,
+          maxTokens: 150,
+          
         }).toDataStreamResponse()
 
         const resultClone = result.clone()

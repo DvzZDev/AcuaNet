@@ -6,16 +6,19 @@ import type { IntroEmbalsesProps } from "@/types"
 export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weather, embalse, cuenca }: IntroEmbalsesProps) {
   const moonPhases = getMoonPhasesForWeekAsRow()
   const prompt = `
-    Necesito un resumen del pronóstico del tiempo para los próximos días, haciendo hincapié en el fin de semana más cercano ya que es cuando los pescadores salen de pesca, destacando las condiciones más relevantes para la pesca, con especial atención al fin de semana. Limítate a un máximo de 100 tokens de salida.
+  Genera un pronóstico detallado de pesca para el fin de semana utilizando los siguientes datos. El pronóstico debe ser claro conciso y no exceder los 1000 caracteres. No incluyas un título: 
 
-    Pronóstico del tiempo:
-    ${JSON.stringify(weather)}
+  - Pronóstico del tiempo, importante usar datos relevantes para la pesca.
+  ${JSON.stringify(weather, null, 2)}
   
-    Nivel de los embalses:
-    ${JSON.stringify(embalse)}
+  - Nivel de los embalses:
+  ${JSON.stringify(embalse, null, 2)}
   
-    Fases de la luna:
-    ${moonPhases}
+  - Fases de la luna:
+  ${moonPhases}
+  
+  - Información adicional de la cuenca:
+  ${JSON.stringify(cuenca, null, 2)}
   `
 
   const { error, completion } = GetResume({ prompt })

@@ -111,7 +111,27 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
 
               <p className="text-left text-xs">{lunarDay?.phase}</p>
               <p className="text-left text-xs">{lunarDay?.activityIcon}</p>
-              <p className="text-left text-xs"> {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %</p>
+              <p className="flex items-center text-left text-xs">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#052e16"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                </svg>{" "}
+                {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %
+              </p>
             </div>
           )
           dayCount++

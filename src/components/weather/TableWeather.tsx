@@ -65,14 +65,37 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
     tableContainerRef.current?.scrollBy({ left: 200, behavior: "smooth" })
   }
 
+  // Render cells
   const renderHourCell = (hourData: Hour | undefined) => {
     if (!hourData) return <span className="text-sm uppercase">N/A</span>
 
     return (
       <>
         <span className="text-2xl">{getWeatherCode(hourData.icon)}</span>
-        <span className="text-sm uppercase">{hourData.temp.toFixed()}º</span>
-        <span className="text-xs">
+        <span className="text-base font-black uppercase">{hourData.temp.toFixed()}º</span>
+        <span className="flex items-center text-xs">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path
+              stroke="none"
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path d="M6 3v18" />
+            <path d="M6 11l12 -1v-4l-12 -1" />
+            <path d="M10 5.5v5" />
+            <path d="M14 6v4" />
+            <path d="M4 21h4" />
+          </svg>
           {hourData.windspeed.toFixed(0)} <span className="text-xs">km/h</span>
         </span>
       </>
@@ -88,7 +111,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
           <button
             aria-label="Mostrar por horas"
             onClick={() => setShowHours(!showHours)}
-            className="rounded-xl bg-[#27475e] p-2 text-sm text-white hover:bg-[#4e90be] active:scale-95"
+            className="rounded-xl bg-[#275e56] p-2 text-sm text-green-50 hover:bg-emerald-700 active:scale-95"
           >
             {showHours ? "Mostrar Intervalos" : "Mostrar por horas"}
           </button>
@@ -96,14 +119,14 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
             <button
               aria-label="Desplazar a la izquierda"
               onClick={scrollLeft}
-              className="rounded-full bg-[#27475e] p-2 text-sm leading-none text-white hover:bg-[#4e90be] active:scale-95"
+              className="rounded-full bg-[#275e56] p-2 text-sm leading-none text-green-50 hover:bg-emerald-700 active:scale-95"
             >
               &larr;
             </button>
             <button
               aria-label="Desplazar a la derecha"
               onClick={scrollRight}
-              className="rounded-full bg-[#27475e] p-2 text-sm leading-none text-white hover:bg-[#4e90be] active:scale-95"
+              className="rounded-full bg-[#275e56] p-2 text-sm leading-none text-green-50 hover:bg-emerald-700 active:scale-95"
             >
               &rarr;
             </button>
@@ -115,9 +138,9 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
           className="scroll-tab max-w-[22rem] overflow-x-auto rounded-xl sm:max-w-[38rem] md:max-w-[45rem] lg:max-w-[60rem] xl:max-w-[75rem]"
         >
           <table className="w-full table-auto text-left">
-            <thead className="bg-[#27475e]">
+            <thead className="bg-[#275e56]">
               <tr>
-                <th className="sticky left-0 z-10 border-r border-gray-700 bg-[#27475e]">
+                <th className="sticky left-0 z-10 border-r border-gray-700 bg-[#275e56]">
                   <div className="flex flex-col items-center justify-center" />
                 </th>
                 {sortedDays.map((day, index) => (
@@ -127,16 +150,16 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                   >
                     <div className="my-2 flex w-[4rem] flex-col items-center justify-center md:w-[5rem]">
                       <span className="text-2xl">{getWeatherCode(day.icon)}</span>
-                      <span className="sm:text-medium text-center text-sm font-semibold uppercase text-blue-50">
+                      <span className="sm:text-medium text-center text-sm font-semibold uppercase text-green-50">
                         {dateFormater({ datetime: day.datetime })}
                       </span>
-                      <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-blue-50 sm:py-0 sm:text-sm">
+                      <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-green-50 sm:py-0 sm:text-sm">
                         {new Date(day.datetime).toLocaleDateString("es-ES", {
                           day: "numeric",
                           month: "short",
                         })}
                       </span>
-                      <span className="flex items-center justify-center gap-1 text-sm font-medium text-blue-50">
+                      <span className="flex items-center justify-center gap-1 text-sm font-medium text-green-50">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -155,10 +178,10 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                           ></path>
                           <path d="m18 14-6-6-6 6h12"></path>
                         </svg>
-                        <span className="w-[20px] text-center">{day.tempmax.toFixed()}º</span>
+                        <span className="w-[20px] text-center text-base font-black">{day.tempmax.toFixed()}º</span>
                       </span>
 
-                      <span className="flex items-center justify-center gap-1 text-sm font-medium text-blue-50">
+                      <span className="flex items-center justify-center gap-1 text-sm font-medium text-green-50">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -177,20 +200,20 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                           ></path>
                           <path d="m18 14-6-6-6 6h12"></path>
                         </svg>
-                        <span className="w-[20px] text-center">{day.tempmin.toFixed()}º</span>
+                        <span className="w-[20px] text-center text-base font-black">{day.tempmin.toFixed()}º</span>
                       </span>
                     </div>
                   </th>
                 ))}
               </tr>
             </thead>
-            <tbody className="bg-blue-100 font-semibold text-[#27455e]">
+            <tbody className="bg-green-100 font-semibold text-emerald-950">
               {hours.map((time, hourIndex) => (
                 <tr
                   key={hourIndex}
                   className="border-gray-700"
                 >
-                  <td className="sticky left-0 z-10 border-gray-700 bg-[#27475e] p-2 text-blue-100">
+                  <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2 text-green-100">
                     <div className="flex flex-col items-center justify-center">
                       <span className="text-sm uppercase">{time.slice(0, 5)}</span>
                     </div>
@@ -210,7 +233,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
               {/* Filas similares para presión y viento */}
               {/* Fila de presión */}
               <tr className="border-gray-700">
-                <td className="sticky left-0 z-10 border-b border-gray-700 bg-[#27475e] p-2">
+                <td className="sticky left-0 z-10 border-b border-gray-700 bg-[#275e56] p-2">
                   <div className="flex flex-col items-center justify-center">
                     <span className="text-sm uppercase">
                       {/* Precipitaciones */}
@@ -220,7 +243,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                         height="25"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#d0e0f5"
+                        stroke="#d3f4df"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -250,15 +273,15 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                 ))}
               </tr>
               <tr className="border-gray-700">
-                <td className="sticky left-0 z-10 border-gray-700 bg-[#27475e] p-2">
+                <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
                   <div className="flex flex-col items-center justify-center">
                     <span className="text-sm uppercase">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="23"
                         height="23"
-                        fill="#d0e0f5"
-                        stroke="#d0e0f5"
+                        fill="#d3f4df"
+                        stroke="#d3f4df"
                         viewBox="0 0 24 24"
                         strokeWidth={0.1}
                       >
@@ -282,7 +305,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                 ))}
               </tr>
               <tr className="border-gray-700">
-                <td className="sticky left-0 z-10 border-gray-700 bg-[#27475e] p-2">
+                <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
                   <div className="flex flex-col items-center justify-center">
                     <span className="text-sm uppercase">
                       <svg
@@ -291,7 +314,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#d0e0f5"
+                        stroke="#d3f4df"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"

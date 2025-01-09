@@ -13,7 +13,7 @@ await CacheClient.connect()
 
 async function savedCache({ token, data }: { token: string; data: string }) {
   try {
-    await CacheClient.set(token, data, { EX: 86400 })
+    await CacheClient.set(token, data, { EX: 3600 })
     console.log("Cache save")
   } catch (error) {
     console.error(error)
@@ -36,7 +36,6 @@ export async function POST(request: NextRequest) {
           prompt: requestBody.prompt,
           temperature: 0.4,
           maxTokens: 150,
-          
         }).toDataStreamResponse()
 
         const resultClone = result.clone()

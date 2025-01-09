@@ -16,7 +16,7 @@ function TitleEmb({
     <>
       <div className="flex justify-center">
         <h1 className="mt-4 text-center text-[2.5rem] font-bold text-green-100 sm:mb-2 sm:mt-10 sm:text-6xl xl:mb-0">
-          {capitalizedNombreEmbalse}
+          {capitalizedNombreEmbalse.replace(/_/g, " ").replace(/-/g, " ").replace(/%20/g, " ")}
         </h1>
       </div>
       <Divider />

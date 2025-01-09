@@ -7,7 +7,7 @@ const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
   const cuencas = data
   return (
     <section className="flex h-full justify-center bg-green-50">
-      <div className="m-10 mt-2 grid min-h-[36rem] w-[55rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
+      <div className="m-10 mt-2 grid min-h-[38rem] w-[55rem] grid-cols-1 grid-rows-none gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
         {cuencas.map((cuenca) => (
           <Link
             key={cuenca.cuenca}

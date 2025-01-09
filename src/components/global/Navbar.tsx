@@ -1,13 +1,11 @@
 "use client"
 
 import { Link } from "next-view-transitions"
-import { useState } from "react"
 import SerchEmbMenu from "./SerchEmbMenu"
+import UseMenuStore from "@/store/useMenuStore"
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-  const closeMenu = () => setIsMenuOpen(false)
+  const { isMenuOpen, toggleMenu, closeMenu } = UseMenuStore()
 
   return (
     <div
@@ -129,12 +127,12 @@ export default function Navbar() {
 
         {/* Menú móvil */}
         <nav
-          className={`${isMenuOpen ? "animate-appearance-in flex flex-col items-center gap-4 text-2xl text-green-100 delay-200" : "hidden"}`}
+          className={`${isMenuOpen ? "animate-appearance-in flex flex-col gap-6 text-2xl text-green-100 delay-200" : "hidden"}`}
         >
           <Link
             href="/cuencas"
             onClick={closeMenu}
-            className="animate-fade-down transition-all animate-delay-100 hover:text-green-300"
+            className="animate-fade-in transition-all animate-delay-100 hover:text-green-300"
           >
             Cuencas
           </Link>
@@ -142,18 +140,20 @@ export default function Navbar() {
           <Link
             href="/luna"
             onClick={closeMenu}
-            className="animate-fade-down transition-all animate-delay-300 hover:text-green-300"
+            className="animate-fade-in transition-all animate-delay-300 hover:text-green-300"
           >
             Calendario Lunar
           </Link>
           <Link
             href="/quienesSomos"
             onClick={closeMenu}
-            className="animate-fade-down transition-all animate-delay-400 hover:text-green-300"
+            className="animate-fade-in transition-all animate-delay-400 hover:text-green-300"
           >
             Quiénes Somos
           </Link>
-          <SerchEmbMenu />
+          <div className="animate-fade-in transition-all animate-delay-400">
+            <SerchEmbMenu />
+          </div>
         </nav>
       </div>
     </div>

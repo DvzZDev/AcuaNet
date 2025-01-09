@@ -51,7 +51,8 @@
     "react-typed": "2.0.12",
     "redis": "^4.7.0",
     "swr": "^2.3.0",
-    "tailwind-merge": "^2.5.5"
+    "tailwind-merge": "^2.5.5",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.9.2",

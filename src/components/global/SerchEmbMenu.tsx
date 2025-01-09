@@ -1,18 +1,24 @@
 "use client"
+
 import { ReactTyped } from "react-typed"
 import AutoCompleteHook from "@/hooks/AutoComplete"
 import { Link } from "next-view-transitions"
 import nombreEmbalses from "@/lib/nombresEmbalses.json"
+import useMenuStore from "@/store/useMenuStore"
 
 const data = nombreEmbalses
 
 export default function SerchEmbMenu() {
   const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
+  const { closeMenu } = useMenuStore()
 
   return (
     <div>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={(e) => {
+          handleSubmit(e)
+          closeMenu()
+        }}
         className="relative z-10 flex h-[2.5rem] max-h-16 w-[15rem] items-center rounded-full border border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:h-[3rem] md:w-[25rem] md:text-xl"
       >
         <svg
@@ -47,8 +53,8 @@ export default function SerchEmbMenu() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all"
-          type="button"
+          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-none active:scale-75"
+          type="submit"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +78,7 @@ export default function SerchEmbMenu() {
         </button>
       </form>
 
-      <h1 className={`animate-fade-in-up pl-1 text-red-500 transition-all ${err ? "animate-fade flex" : "hidden"}`}>
+      <h1 className={`animate-fade-in-up pl-1 text-xs text-red-500 transition-all ${err ? "animate-fade flex" : "hidden"}`}>
         Embalse no encontrado
       </h1>
       <div className="relative z-50">
@@ -85,7 +91,10 @@ export default function SerchEmbMenu() {
               >
                 <li
                   key={index}
-                  onClick={() => handleSuggestionClick(suggestion)}
+                  onClick={() => {
+                    handleSuggestionClick(suggestion)
+                    closeMenu()
+                  }}
                   className="z-30 cursor-pointer rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
                 >
                   {suggestion}

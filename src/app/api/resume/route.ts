@@ -1,45 +1,64 @@
-import { GoogleGenerativeAI } from "@google/generative-ai"
-import { NextRequest, NextResponse } from "next/server"
+import { NextRequest } from "next/server"
+import { createGoogleGenerativeAI } from "@ai-sdk/google"
+import { streamText } from "ai"
+import CacheClient from "@/cache"
+import hashText from "@/lib/HashText"
 
-// Definir tipos para la solicitud
-interface RequestBody {
-  prompt: string
-}
+const google = createGoogleGenerativeAI({
+  apiKey: process.env.GEMINI_APIKEY,
+  baseURL: "https://generativelanguage.googleapis.com/v1beta",
+})
 
-const cache: Map<string, any> = new Map() // Caché en memoria (para producción, usar Redis u otro)
+await CacheClient.connect()
 
-export async function POST(request: NextRequest) {
-  const apiKey = process.env.GEMINI_APIKEY
-  const body: RequestBody = await request.json()
-  const prompt = body.prompt
-  // Verificar si el prompt ya está en caché
-  if (cache.has(prompt)) {
-    console.log("From cache")
-    return NextResponse.json({ text: cache.get(prompt) }, { status: 200 })
-  }
-
-  if (!apiKey) {
-    return NextResponse.json({ error: "GEMINI_APIKEY is not defined" }, { status: 401 })
-  }
-
-  const genAI = new GoogleGenerativeAI(apiKey)
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
-
+async function savedCache({ token, data }: { token: string; data: string }) {
   try {
-    console.log("Not from cache")
-    const modelRes = await model.generateContent({
-      contents: [{ role: "user", parts: [{ text: prompt }] }],
-      generationConfig: { maxOutputTokens: 150, temperature: 0.1 },
-    })
-
-    const responseText = modelRes.response.text()
-
-    // Almacenar la respuesta en caché
-    cache.set(prompt, responseText)
-
-    return NextResponse.json({ text: responseText }, { status: 200 })
+    await CacheClient.set(token, data, { EX: 86400 })
+    console.log("Cache save")
   } catch (error) {
     console.error(error)
-    return NextResponse.json({ error: "Error generating content" }, { status: 500 })
+  }
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    if (request.body) {
+      const requestBody = await request.json()
+      const hashedPrompt = hashText(requestBody.prompt).toString()
+      const cacheQuery = await CacheClient.get(hashedPrompt)
+
+      if (cacheQuery !== null && cacheQuery !== undefined) {
+        console.log("Cache hit")
+        return new Response(cacheQuery, { status: 200 })
+      } else {
+        const result = await streamText({
+          model: google("gemini-1.5-flash"),
+          prompt: requestBody.prompt,
+          temperature: 0.3,
+          maxTokens: 100,
+        }).toDataStreamResponse()
+
+        const resultClone = result.clone()
+
+        const response = new Response(result.body, {
+          headers: { "Content-Type": "application/json" },
+        })
+
+        resultClone
+          .text()
+          .then(async (awaitedResult) => {
+            await savedCache({ token: hashedPrompt, data: awaitedResult })
+          })
+          .catch((error) => {
+            console.error("Error saving to cache:", error)
+          })
+
+        console.log("Cache miss")
+        return response
+      }
+    }
+  } catch (error) {
+    console.error(error)
+    return new Response("An error occurred", { status: 500 })
   }
 }

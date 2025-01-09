@@ -1,50 +1,31 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useCompletion } from "ai/react"
+import { useEffect, useState } from "react"
 
-interface ResumeResponse {
-  loading: boolean
-  error: string | null
-  data: any
-}
+export default function GetResume({ prompt }: { prompt: string }) {
+  const [errorMessage, setErrorMessage] = useState<string>("")
+  const { completion, complete, error } = useCompletion({
+    api: "/api/resume",
+  })
 
-export default function useGetResume(prompt: string | null): ResumeResponse {
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const [data, setData] = useState<any>(null)
+  console.log(completion)
 
   useEffect(() => {
-    const fetchResume = async () => {
-      console.log("Fetching resume with prompt:", prompt)
-      if (prompt === undefined) {
-        setLoading(false)
-        return setData("")
-      }
-      try {
-        const response = await fetch("/api/resume", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ prompt }),
-        })
-
-        if (!response.ok) {
-          throw new Error("Error fetching data")
+    if (prompt) {
+      complete(prompt).catch((err) => {
+        if (err instanceof Error) {
+          setErrorMessage(err.message)
+        } else {
+          setErrorMessage("An unknown error occurred")
         }
-
-        const result = await response.json()
-        setData(result)
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "An error occurred")
-      } finally {
-        setLoading(false)
-        console.log("Fetch complete, loading set to false")
-      }
+      })
     }
+  }, [complete, prompt])
 
-    fetchResume()
-  }, [prompt])
-
-  return { loading, error, data }
+  return {
+    error: !!error || errorMessage !== "",
+    errorMessage: error?.message || errorMessage,
+    completion,
+  }
 }

@@ -8,6 +8,14 @@ export interface VariacionEmbalses {
   variacion_ultima_semanapor: number | null
 }
 
+export interface IntroEmbalsesProps {
+  nombre_cuenca: string
+  fecha_modificacion: Date
+  weather?: WeatherTypes
+  embalse?: Embalses
+  cuenca: boolean
+}
+
 export interface Cuenca {
   cuenca: string
   fecha_modificacion: Date | null

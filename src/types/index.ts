@@ -11,7 +11,7 @@ export interface VariacionEmbalses {
 export interface IntroEmbalsesProps {
   nombre_cuenca: string
   fecha_modificacion: Date
-  weather?: WeatherTypes
+  weather?: WeatherTypes | null
   embalse?: Embalses
   cuenca: boolean
 }

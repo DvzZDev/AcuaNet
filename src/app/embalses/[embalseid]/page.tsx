@@ -71,7 +71,6 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
   const coordsData = await coords
 
   const weatherData = coordsData ? await GetWeather(coordsData.lat, coordsData.lon) : null
-  const dataWeather = JSON.stringify(weatherData)
 
   if (!resEmbalse) {
     return <NotFound />
@@ -93,8 +92,6 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
     pais,
   } = resEmbalse
 
-  const AiEmbalse = JSON.stringify(resEmbalse, null, 2)
-
   return (
     <>
       <TitleEmb data={resEmbalse} />
@@ -104,8 +101,8 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
           <IntroCuencas
             nombre_cuenca={nombre_cuenca || "No disponible"}
             fecha_modificacion={fecha_modificacion ? new Date(fecha_modificacion) : new Date()}
-            weather={dataWeather}
-            embalse={AiEmbalse}
+            weather={weatherData}
+            embalse={resEmbalse}
             cuenca={false}
           />
           <EstadoActual

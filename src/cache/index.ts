@@ -15,4 +15,4 @@ const CacheClient = createClient({
   },
 })
 
-export default CacheClient 
+export default CacheClient

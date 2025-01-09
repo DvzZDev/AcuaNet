@@ -9,10 +9,10 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
     Necesito un resumen del pronóstico del tiempo para los próximos días, haciendo hincapié en el fin de semana más cercano ya que es cuando los pescadores salen de pesca, destacando las condiciones más relevantes para la pesca, con especial atención al fin de semana. Limítate a un máximo de 100 tokens de salida.
 
     Pronóstico del tiempo:
-    ${JSON.stringify(weather, null, 2)}
+    ${JSON.stringify(weather)}
   
     Nivel de los embalses:
-    ${JSON.stringify(embalse, null, 2)}
+    ${JSON.stringify(embalse)}
   
     Fases de la luna:
     ${moonPhases}

@@ -1,6 +1,6 @@
 export default async function GetCoordinates(loc: string, pais: string, coords: { lat: number; lon: number }) {
   if (pais !== "España") {
-    return coords 
+    return coords
   }
 
   try {

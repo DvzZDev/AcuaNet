@@ -11,7 +11,7 @@ export default async function Hero() {
       className="-z-10 h-screen animate-blurred-fade-in bg-green-100/10"
     >
       <section className="relative z-10 flex flex-col items-center">
-        <div className="mb-1 mt-4 flex w-[6rem] max-w-xs animate-blurred-fade-in justify-center duration-700 sm:w-[8rem] md:mb-6 xl:mt-16 2xl:mt-22">
+        <div className="2xl:mt-22 mb-1 mt-4 flex w-[6rem] max-w-xs animate-blurred-fade-in justify-center duration-700 sm:w-[8rem] md:mb-6 xl:mt-16">
           {/* <svg
             fill="#93ffb7"
             xmlns="http://www.w3.org/2000/svg"

@@ -96,7 +96,7 @@ export default function SerchEmb() {
                   <img
                     alt="Flag"
                     src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
-                    className="w-[1.5rem] h-[1.5rem] overflow-hidden rounded-sm"
+                    className="h-[1.5rem] w-[1.5rem] overflow-hidden rounded-sm"
                   />
                 </li>
               </Link>

@@ -7,7 +7,7 @@ export default function EstadoActual({
   cota,
   pais,
   variacion_ultima_semana,
-  variacion_ultima_semanapor
+  variacion_ultima_semanapor,
 }: {
   agua_embalsada: number
   agua_embalsadapor: number

@@ -8,14 +8,15 @@ function AboutLanding() {
         <section className="mx-6 grid h-fit max-w-[70rem] grid-cols-1 gap-10 md:grid-cols-2">
           <div className="col-span-1 flex flex-col">
             <h2 className="text-center text-[2.3rem] font-black leading-none text-[#1b7b6e] sm:text-[50px] md:text-left">
-              Conoce a Nuestro Equipo
+              Detras de AcuaNet
             </h2>
             <p className="mt-6 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              En AcuaNet, nos esforzamos por brindarte una experiencia intuitiva y agradable.
+              ¡Hola! Soy David, el creador de AcuaNet, una página que nació de la necesidad de tener información actualizada sobre
+              nuestros embalses favoritos de pesca y poder planificar una jornada de pesca lo mas fácil posible.
             </p>
             <p className="mt-4 text-base leading-relaxed text-[#0a2e29] md:text-2xl">
-              Dale al botón y conoce más sobre mí y lo que me incitó a crear AcuaNet, página web donde planificar tus salidas de
-              pesca se convierte en una tarea sencilla.
+              Dale al botón y conoce un poco más sobre mi y sobre AcuaNet y si tienes alguna duda, no dudes en contactar conmigo
+              por mis redes sociales.
             </p>
             <div className="flex w-full justify-center">
               <Link href="/quienesSomos">
@@ -43,9 +44,7 @@ function AboutLanding() {
                 />
               </div>
               <div className="absolute bottom-[-70px] left-4 right-[-15px] z-20 rounded-lg bg-[#275e568a] bg-opacity-80 p-4 shadow-md sm:bottom-[-60px] md:bottom-[-50px]">
-                <p className="text-base text-green-50 md:text-xl">
-                  ¡Hola! Soy David, tengo 20 años y soy el creador de AcuaNet. ¡Espero que la uses tanto como yo!
-                </p>
+                <p className="text-base text-green-50 md:text-xl">Aun no sabes lo que es AcuaNet, ¿a qué esperas?</p>
               </div>
             </div>
           </div>

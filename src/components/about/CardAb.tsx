@@ -16,12 +16,10 @@ function CardAb() {
           David <span className="text-[#1b7b6e]">Esteban</span>
         </h1>
         <p className="mb-3 text-base text-[#0a2e29] md:text-lg">
-          ¡Hola! Soy David, tengo 20 años y como programador, mi objetivo es llegar a la mayor cantidad de personas posible para
-          que disfruten de mi aplicación.
+          ¡Hola! Soy David, mi objetivo es ayudarte a planificar tus jornadas de pesca de la manera más sencilla y clara posible.
         </p>
         <div className="relative mt-1 flex items-center justify-center gap-7">
-          <div className="absolute left-0 top-0 h-0.5 w-full bg-gradient-to-r from-transparent via-green-300 to-transparent"></div>
-
+          <div className="absolute left-0 top-0 h-0.5 w-full bg-gradient-to-r from-transparent via-green-800 to-transparent"></div>
           <div className="relative z-10 flex items-center gap-7 pt-3">
             <Link
               className="transition-all hover:scale-110"

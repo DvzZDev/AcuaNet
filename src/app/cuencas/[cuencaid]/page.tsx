@@ -1,6 +1,6 @@
 import EstadoActualCuencas from "@/components/cuencas/cuenca/EstadoActualCuencas"
 import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"
-import { GetCuencas } from "db/queries/select"
+import { GetCuencas } from "@/db/queries/select"
 import TitleEmb from "@/components/embalses/TitleEmb"
 
 export async function generateMetadata(props: { params: Promise<{ cuencaid: string }> }) {

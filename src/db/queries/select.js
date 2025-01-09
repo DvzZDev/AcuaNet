@@ -1,4 +1,4 @@
-import { db } from "db"
+import { db } from "@/db"
 import { Cuencas, España, Embalses } from "db/schema"
 import { inArray } from "drizzle-orm"
 

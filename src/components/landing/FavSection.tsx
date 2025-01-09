@@ -1,5 +1,5 @@
 import { cookies } from "next/headers"
-import { GetEmbalseByName } from "db/queries/select"
+import { GetEmbalseByName } from "@/db/queries/select"
 import { Embalses } from "@/types"
 import Link from "next/link"
 
@@ -50,7 +50,7 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
             <img
               src={embalse.pais === "España" ? "/es.webp" : "/pt.webp"}
               alt={embalse.pais + " flag"}
-              className="h-[2rem] w-[3rem] object-cover "
+              className="h-[2rem] w-[3rem] object-cover"
             />
           </div>
           <div className="mb-2 flex items-center justify-between">

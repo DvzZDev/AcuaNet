@@ -1,5 +1,5 @@
 import TitleEmb from "@/components/embalses/TitleEmb"
-import { GetEmbalses } from "db/queries/select"
+import { GetEmbalses } from "@/db/queries/select"
 import NotFound from "@/app/not-found"
 import FavButton from "@/components/embalses/FavButton"
 import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"

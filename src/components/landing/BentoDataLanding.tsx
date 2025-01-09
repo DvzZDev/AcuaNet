@@ -1,4 +1,4 @@
-import { GetCuencas, GetEsp, GetEmbalses } from "db/queries/select"
+import { GetCuencas, GetEsp, GetEmbalses } from "@/db/queries/select"
 import Bento from "./Bento"
 
 async function BentoDataLandin() {

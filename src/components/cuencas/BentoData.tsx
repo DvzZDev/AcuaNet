@@ -1,5 +1,5 @@
 import BentoCuencas from "./BentoCuencas"
-import { GetCuencas } from "db/queries/select"
+import { GetCuencas } from "@/db/queries/select"
 
 async function BentoData() {
   const cuencas = await GetCuencas()

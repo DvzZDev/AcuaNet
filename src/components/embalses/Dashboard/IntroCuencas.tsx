@@ -1,37 +1,24 @@
 "use client"
 import { getMoonPhasesForWeekAsRow } from "@/lib/GetMoonPhaseWeek"
-import useGetResume from "@/lib/GetResume"
+import GetResume from "@/lib/GetResume"
+import type { IntroEmbalsesProps } from "@/types"
 
-export default function IntroCuencas({
-  nombre_cuenca,
-  fecha_modificacion,
-  weather,
-  embalse,
-  cuenca,
-}: {
-  nombre_cuenca: string
-  fecha_modificacion: Date
-  weather?: any
-  embalse?: any
-  cuenca: boolean
-}) {
+export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weather, embalse, cuenca }: IntroEmbalsesProps) {
   const moonPhases = getMoonPhasesForWeekAsRow()
-
-  // Creamos el prompt
   const prompt = `
-  Eres la IA de Acuanet, un experto en pesca que sabe cómo el clima y las fases lunares afectan las mejores condiciones para pescar. Analiza el pronóstico del tiempo de la próxima semana, destacando los días más favorables para pescar, con especial énfasis en el fin de semana. Responde en no más de 8 líneas, manteniendo un tono cercano y directo, y menciona el embalse de forma indirecta. Sé claro y conciso, sin exceder los caracteres. Ten en cuenta que temperaturas muy frías y muy cálidas afectan a la pesca.
+    Necesito un resumen del pronóstico del tiempo para los próximos días, haciendo hincapié en el fin de semana más cercano ya que es cuando los pescadores salen de pesca, destacando las condiciones más relevantes para la pesca, con especial atención al fin de semana. Limítate a un máximo de 100 tokens de salida.
 
-  Pronóstico del tiempo:
-  ${weather}
+    Pronóstico del tiempo:
+    ${JSON.stringify(weather, null, 2)}
+  
+    Nivel de los embalses:
+    ${JSON.stringify(embalse, null, 2)}
+  
+    Fases de la luna:
+    ${moonPhases}
+  `
 
-  Nivel de los embalses (en hm3 o porcentaje, según corresponda) intenta añadir algun dato en la respuesta:
-  ${embalse}
-
-  Fases de la luna y su influencia en la actividad de pesca, ten en cuenta la actividad de los peces cuando menciones luna:
-  ${moonPhases}
-`
-
-  const Resume = useGetResume(prompt)
+  const { error, completion } = GetResume({ prompt })
 
   return (
     <div className="relative flex flex-col justify-between md:h-16 md:flex-row">
@@ -78,39 +65,111 @@ export default function IntroCuencas({
           </p>
         </div>
       </div>
-      {!cuenca || Resume.error ? (
-        <div className="relative mt-3 flex h-[9rem] w-full max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 p-2 md:mt-0 md:h-[7rem]">
-          {Resume.loading ? (
-            <>
-              <div className="my-1 h-3 w-full animate-pulse rounded-lg bg-green-500 animate-iteration-count-infinite"> </div>
-              <div className="my-1 h-3 w-full animate-pulse rounded-lg bg-green-500 animate-iteration-count-infinite"> </div>
-              <div className="my-1 h-3 w-full animate-pulse rounded-lg bg-green-500 animate-iteration-count-infinite"> </div>
-              <div className="my-1 h-3 w-full animate-pulse rounded-lg bg-green-500 animate-iteration-count-infinite"> </div>
-            </>
-          ) : Resume.error ? (
-            <p className="text-lg font-bold text-red-950">Error al cargar</p>
+
+      {!cuenca ? (
+        <div className="relative mb-2 mt-2 flex h-[9rem] w-full max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 md:mt-0 md:h-[7rem]">
+          {error ? (
+            <article className="scroll-hide text-md my-2 flex h-full items-center justify-center overflow-auto px-3 text-center leading-tight">
+              <span>Ha sucedido un error al generar el texto.</span>
+            </article>
+          ) : completion ? (
+            <article className="scroll-hide my-2 h-full overflow-auto px-3 text-sm leading-5">
+              <span className={`${completion ? "animate-fade-in-down" : ""}`}>{completion}</span>
+            </article>
           ) : (
-            <article className="scroll-hide h-full overflow-auto">{Resume.data.text}</article>
+            <article className="scroll-hide text-md my-2 flex h-full items-center justify-center overflow-auto px-3 text-center leading-tight">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 200 200"
+                className="animate-spin h-16 w-16"
+              >
+                <circle
+                  fill="#93ffb7"
+                  stroke="#93ffb7"
+                  strokeWidth="15"
+                  r="15"
+                  cx="40"
+                  cy="65"
+                >
+                  <animate
+                    attributeName="cy"
+                    calcMode="spline"
+                    dur="2s"
+                    values="65;135;65;"
+                    keySplines=".5 0 .5 1;.5 0 .5 1"
+                    repeatCount="indefinite"
+                    begin="-.4s"
+                  />
+                </circle>
+                <circle
+                  fill="#93ffb7"
+                  stroke="#93ffb7"
+                  strokeWidth="15"
+                  r="15"
+                  cx="100"
+                  cy="65"
+                >
+                  <animate
+                    attributeName="cy"
+                    calcMode="spline"
+                    dur="2s"
+                    values="65;135;65;"
+                    keySplines=".5 0 .5 1;.5 0 .5 1"
+                    repeatCount="indefinite"
+                    begin="-.2s"
+                  />
+                </circle>
+                <circle
+                  fill="#93ffb7"
+                  stroke="#93ffb7"
+                  strokeWidth="15"
+                  r="15"
+                  cx="160"
+                  cy="65"
+                >
+                  <animate
+                    attributeName="cy"
+                    calcMode="spline"
+                    dur="2s"
+                    values="65;135;65;"
+                    keySplines=".5 0 .5 1;.5 0 .5 1"
+                    repeatCount="indefinite"
+                    begin="0s"
+                  />
+                </circle>
+              </svg>
+            </article>
           )}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#052e16"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="absolute -top-4 right-0 animate-pulsing animate-iteration-count-infinite md:-right-4 md:-top-4"
-          >
-            <path
-              stroke="none"
-              d="M0 0h24v24H0z"
+
+          <div className="absolute -bottom-[16px] right-0 flex animate-blurred-fade-in justify-center rounded-full text-xs text-green-950">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
               fill="none"
-            />
-            <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" />
-          </svg>
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path d="M6 4m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z" />
+              <path d="M12 2v2" />
+              <path d="M9 12v9" />
+              <path d="M15 12v9" />
+              <path d="M5 16l4 -2" />
+              <path d="M15 14l4 2" />
+              <path d="M9 18h6" />
+              <path d="M10 8v.01" />
+              <path d="M14 8v.01" />
+            </svg>
+            <span>AcuaNet IA (puede contener errores)</span>
+          </div>
         </div>
       ) : (
         ""

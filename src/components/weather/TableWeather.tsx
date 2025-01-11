@@ -138,7 +138,7 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
           className="scroll-tab max-w-[22rem] overflow-x-auto rounded-xl sm:max-w-[38rem] md:max-w-[45rem] lg:max-w-[60rem] xl:max-w-[75rem]"
         >
           <table className="w-full table-auto text-left">
-            <thead className="bg-[#275e56]">
+            <thead className="sticky top-0 z-10 bg-[#275e56]">
               <tr>
                 <th className="sticky left-0 z-10 border-r border-gray-700 bg-[#275e56]">
                   <div className="flex flex-col items-center justify-center" />
@@ -148,8 +148,8 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                     key={index}
                     className="border-x border-gray-700"
                   >
-                    <div className="my-2 flex w-[4rem] flex-col items-center justify-center md:w-[5rem]">
-                      <span className="text-2xl">{getWeatherCode(day.icon)}</span>
+                    <div className="my-2 flex w-[4rem] flex-col items-center justify-center md:w-[6rem]">
+                      <div className="text-2xl">{getWeatherCode(day.icon)}</div>
                       <span className="sm:text-medium text-center text-sm font-semibold uppercase text-green-50">
                         {dateFormater({ datetime: day.datetime })}
                       </span>

@@ -70,12 +70,12 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
     calendarRows.push(
       <div
         key="week-header"
-        className="font-NecoBold grid grid-cols-7 text-center text-xl font-black text-[#416750]"
+        className="font-NecoBold mb-1 grid grid-cols-7 text-center text-xl font-black uppercase text-green-950"
       >
         {weekDays.map((day) => (
           <div
             key={day}
-            className="border-r border-[#1b7b6e] pb-2 last:border-none"
+            className="mx-1 rounded-full bg-[#97ceaab1] p-2 pb-2"
           >
             {day}
           </div>
@@ -91,7 +91,7 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
           week.push(
             <div
               key={`empty-${i}-${j}`}
-              className="border-r border-[#1b7b6e]"
+              className=""
             ></div>
           )
         } else if (dayCount > daysInMonth) {
@@ -102,35 +102,36 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
           week.push(
             <div
               key={dayCount}
-              className={`border-[#1b7b6e] p-2 text-center ${isToday ? "bg-[#1dd38d80]" : "bg-green-50"} border-b border-r`}
+              className={`relative m-1 rounded-md p-2 text-center ${isToday ? "bg-lime-100" : "bg-blue-200"} `}
             >
               <div className="flex justify-between">
-                <p className="text-left font-black">{dayCount}</p>
-                <p className="text-2xl">{lunarDay?.phaseEmoji}</p>
+                <p className="text-left font-black text-red-500">{dayCount}</p>
+                <p className="text-3xl">{lunarDay?.phaseEmoji}</p>
               </div>
 
-              <p className="text-left text-xs">{lunarDay?.phase}</p>
-              <p className="text-left text-xs">{lunarDay?.activityIcon}</p>
-              <p className="flex items-center text-left text-xs">
+              {isToday && (
+                <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-500 p-1 py-2 text-xs font-black text-white">
+                  Hoy
+                </div>
+              )}
+
+              <p className="text-left text-base font-bold">{lunarDay?.phase}</p>
+              <p className="-ml-1 text-left text-base">{lunarDay?.activityIcon}</p>
+              <p className="flex items-center text-left text-sm">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#052e16"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  viewBox="2 9 44 30"
+                  className="mr-1 h-4 w-4"
                 >
+                  {" "}
                   <path
-                    stroke="none"
-                    d="M0 0h24v24H0z"
                     fill="none"
-                  />
-                  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                    d="M0 0h48v48H0z"
+                  ></path>{" "}
+                  <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"></path>{" "}
                 </svg>{" "}
-                {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %
+                {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />}{" "}
+                <span className="text-[11px] font-black">%</span>
               </p>
             </div>
           )
@@ -162,19 +163,39 @@ const MobileView = ({ lunarDays }: { lunarDays: LunarDay[] }) => {
         return (
           <div
             key={index}
-            className={`rounded-lg border p-2 text-xs shadow-md ${isToday ? "bg-[#1dd38d80]" : "bg-[#f0fdf4]"} border-[#052e16]`}
+            className={`relative rounded-lg border p-2 text-xs shadow-md ${isToday ? "bg-lime-100" : "bg-blue-200"}`}
           >
+            {isToday && (
+              <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-500 p-1 py-2 text-xs font-black text-white">
+                Hoy
+              </div>
+            )}
             <div className="flex items-center justify-between">
-              <strong>
+              <p className="text-base font-black text-red-500">
                 {lunarDay.date
-                  .toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short" })
+                  .toLocaleDateString("es-ES", { weekday: "short", day: "numeric" })
                   .replace(/^\w/, (c) => c.toUpperCase())}
-              </strong>
-              <span className="text-xl">{lunarDay.phaseEmoji}</span>
+              </p>
+              <span className="text-2xl">{lunarDay.phaseEmoji}</span>
             </div>
-            <p>{lunarDay.phase}</p>
-            <p className="">{lunarDay.activityIcon}</p>
-            <p className="">{lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %</p>
+            <p className="text-xs">{lunarDay.phase}</p>
+            <p className="text-sm">{lunarDay.activityIcon}</p>
+            <p className="flex items-center text-left text-xs">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="2 9 44 30"
+                className="mr-1 h-4 w-4"
+              >
+                {" "}
+                <path
+                  fill="none"
+                  d="M0 0h48v48H0z"
+                ></path>{" "}
+                <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"></path>{" "}
+              </svg>{" "}
+              {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />}{" "}
+              <span className="text-[11px] font-black">%</span>
+            </p>
           </div>
         )
       })}
@@ -208,15 +229,15 @@ const LunarCalendar = () => {
   return (
     <section className="flex items-center justify-center">
       <div className="w-full overflow-hidden rounded-lg bg-green-100 shadow-md">
-        <div className="flex justify-between p-3">
+        <div className="flex justify-between pb-6">
           <button
             onClick={() => handleMonthChange("prev")}
             aria-label="Mes anterior"
-            className="bg-emerald-200 p-1"
+            className="rounded-2xl bg-emerald-400 p-1"
           >
             ◀
           </button>
-          <h2 className="text-2xl font-bold text-[#052e16]">
+          <h2 className="text-3xl font-bold uppercase italic text-[#052e16]">
             {new Date(startYear, startMonth)
               .toLocaleString("es-ES", { month: "long", year: "numeric" })
               .replace(/^\w/, (c) => c.toUpperCase())}
@@ -224,7 +245,7 @@ const LunarCalendar = () => {
           <button
             onClick={() => handleMonthChange("next")}
             aria-label="Mes siguiente"
-            className="bg-emerald-200 p-1"
+            className="rounded-2xl bg-emerald-400 p-1"
           >
             ▶
           </button>

@@ -4,7 +4,6 @@ import { Providers } from "./providers"
 import Navbar from "@/components/global/Navbar"
 import PostHogPageView from "./PostHogPageView"
 import { Suspense } from "react"
-import Snow from "@/components/landing/Snow"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
@@ -43,7 +42,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>
-          <Snow />
           <header className="h-[3.6rem]">
             <Navbar />
           </header>
@@ -57,10 +55,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             href="https://buymeacoffee.com/dvzz"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-4 right-4 z-20 flex items-center justify-center gap-1 rounded-full bg-green-300 p-2 text-xs backdrop-blur-md transition-all hover:scale-105 md:text-base"
+            className="fixed bottom-4 right-4 z-20 flex items-center justify-center gap-1 rounded-full bg-teal-700 text-white px-2 text-xs backdrop-blur-md transition-all hover:scale-105 md:text-base"
           >
             <span className="text-base md:text-xl">🎣</span>
-            <p className="font-black">Regalame un Señuelo</p>
+            <p className="font-black">¡Dona a AcuaNet!</p>
           </a>
           <Footer />
         </Providers>

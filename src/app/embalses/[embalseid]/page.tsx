@@ -10,7 +10,7 @@ import GetCoordinates from "@/lib/GetCoordinates"
 import GetWeather from "@/lib/GetWeather"
 import ButtonUp from "@/components/lunar/up"
 import MapEmbData from "@/components/embalses/Dashboard/MapDynamic"
-import RefactorWeather from "@/components/weather/RefactorWeather"
+import TableWeather from "@/components/weather/TableWeather"
 
 export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
@@ -126,7 +126,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
           )}
 
           {coordsData && <MapEmbData coords={coordsData} />}
-          {weatherData && <RefactorWeather data={weatherData} />}
+          {weatherData && <TableWeather data={weatherData} />}
           <h3 className="text-2xl font-black text-green-950">Calendario Lunar</h3>
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
             <LunarCalendar />

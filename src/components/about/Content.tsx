@@ -16,7 +16,7 @@ function Content() {
           </div>
 
           <div className="text-white">
-            <h2 className="mb-3 text-3xl font-bold text-[#1b7b6e] md:text-5xl md:mb-5">¿Que es AcuaNet?</h2>
+            <h2 className="mb-3 text-3xl font-bold text-[#1b7b6e] md:mb-5 md:text-5xl">¿Que es AcuaNet?</h2>
             <p className="mb-3 text-base leading-relaxed text-[#0a2e29] md:text-lg">
               AcuaNet es una plataforma web para pescadores, recopilamos datos públicos de embalses y cuencas hidrográficas de
               España y Portugal, filtramos la información y la presentamos de manera sencilla y clara para que puedas planificar
@@ -44,7 +44,7 @@ function Content() {
             />
           </div>
           <div className="text-white">
-            <h2 className="mb-3 text-3xl font-bold text-[#1b7b6e] md:text-5xl md:mb-5">¿Quién soy Yo?</h2>
+            <h2 className="mb-3 text-3xl font-bold text-[#1b7b6e] md:mb-5 md:text-5xl">¿Quién soy Yo?</h2>
             <p className="mb-3 text-base leading-relaxed text-[#0a2e29] md:text-lg">
               Soy David, un programador web y pescador en mis ratos libres. He desarrollado AcuaNet con la intención de ayudar a
               todos los pescadores de la península. Esta plataforma ha llevado más de 200 horas de trabajo duro y dedicación.
@@ -61,14 +61,14 @@ function Content() {
               src="/yo3.webp"
               alt="Embalse de Orellana en Badajoz, España"
               draggable={false}
-              className="hidden rounded-lg object-cover shadow-lg sm:block w-full h-full aspect-auto"
+              className="hidden aspect-auto h-full w-full rounded-lg object-cover shadow-lg sm:block"
             />
           </div>
         </article>
       </div>
 
       <article className="mt-14 flex flex-col items-center">
-        <h1 className="mb-10 text-left text-3xl font-bold text-[#1b7b6e] md:text-5xl md:mb-5">Equipo AcuaNet</h1>
+        <h1 className="mb-10 text-left text-3xl font-bold text-[#1b7b6e] md:mb-5 md:text-5xl">Equipo AcuaNet</h1>
         <div>
           <CardAb />
         </div>

@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             href="https://buymeacoffee.com/dvzz"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-4 right-4 z-20 flex items-center justify-center gap-1 rounded-full bg-teal-700 text-white px-2 text-xs backdrop-blur-md transition-all hover:scale-105 md:text-base"
+            className="fixed bottom-4 right-4 z-20 flex items-center justify-center gap-1 rounded-full bg-teal-700 px-2 text-xs text-white backdrop-blur-md transition-all hover:scale-105 md:text-base"
           >
             <span className="text-base md:text-xl">🎣</span>
             <p className="font-black">¡Dona a AcuaNet!</p>

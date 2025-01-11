@@ -1,357 +1,227 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { Day, Hour, WeatherTypes } from "@/types"
+import { WeatherTypes } from "@/types"
 import { getWeatherCode } from "./weatherCode"
 import WindDirectionIcon from "./wind"
 import dateFormater from "@/lib/DayFormater"
 
-export default function TableWeather({ data: weatherData }: { data: WeatherTypes }) {
-  const [showHours, setShowHours] = useState(false)
-  const tableContainerRef = useRef<HTMLDivElement>(null)
-
-  const today = new Date()
-
-  // Ordena los días de forma dinámica
-  const sortedDays = [...weatherData.days].sort((a, b) => {
-    const aDate = new Date(a.datetime)
-    const bDate = new Date(b.datetime)
-
-    // Normaliza las fechas (para ignorar horas, minutos y segundos)
-    const todayNormalized = new Date(today)
-    todayNormalized.setHours(0, 0, 0, 0)
-
-    const aNormalized = new Date(aDate)
-    aNormalized.setHours(0, 0, 0, 0)
-
-    const bNormalized = new Date(bDate)
-    bNormalized.setHours(0, 0, 0, 0)
-
-    // Los días futuros y el día actual tienen prioridad sobre los días pasados
-    if (aNormalized < todayNormalized && bNormalized >= todayNormalized) return 1
-    if (aNormalized >= todayNormalized && bNormalized < todayNormalized) return -1
-
-    // Ordena por fecha (ascendente)
-    return aNormalized.getTime() - bNormalized.getTime()
-  })
-
-  const hours = showHours
-    ? [
-        "06:00:00",
-        "07:00:00",
-        "08:00:00",
-        "09:00:00",
-        "10:00:00",
-        "11:00:00",
-        "12:00:00",
-        "13:00:00",
-        "14:00:00",
-        "15:00:00",
-        "16:00:00",
-        "17:00:00",
-        "18:00:00",
-        "19:00:00",
-        "20:00:00",
-        "21:00:00",
-        "22:00:00",
-      ]
-    : ["06:00:00", "09:00:00", "12:00:00", "15:00:00", "18:00:00", "21:00:00"]
-
-  const scrollLeft = () => {
-    tableContainerRef.current?.scrollBy({ left: -200, behavior: "smooth" })
-  }
-
-  const scrollRight = () => {
-    tableContainerRef.current?.scrollBy({ left: 200, behavior: "smooth" })
-  }
-
-  // Render cells
-  const renderHourCell = (hourData: Hour | undefined) => {
-    if (!hourData) return <span className="text-sm uppercase">N/A</span>
-
-    return (
-      <>
-        <span className="text-2xl">{getWeatherCode(hourData.icon)}</span>
-        <span className="text-base font-black uppercase">{hourData.temp.toFixed()}º</span>
-        <span className="flex items-center text-xs">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path
-              stroke="none"
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path d="M6 3v18" />
-            <path d="M6 11l12 -1v-4l-12 -1" />
-            <path d="M10 5.5v5" />
-            <path d="M14 6v4" />
-            <path d="M4 21h4" />
-          </svg>
-          {hourData.windspeed.toFixed(0)} <span className="text-xs">km/h</span>
-        </span>
-      </>
-    )
-  }
-
+export default function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
+  const data = weatherData.days
+  const hours = ["06:00:00", "08:00:00", "10:00:00", "12:00:00", "14:00:00", "16:00:00", "18:00:00", "20:00:00", "22:00:00"]
   return (
-    <>
-      <h3 className="text-2xl font-black text-green-950">Predicción Meteorológica</h3>
-
-      <div>
-        <div className="mb-3 flex justify-between">
-          <button
-            aria-label="Mostrar por horas"
-            onClick={() => setShowHours(!showHours)}
-            className="rounded-xl bg-[#275e56] p-2 text-sm text-green-50 hover:bg-emerald-700 active:scale-95"
+    <section className="">
+      <h3 className="mb-6 text-2xl font-black text-green-950 md:mb-6">Predicción Meteorológica</h3>
+      <div className="scroll-tab flex w-[21rem] gap-3 overflow-x-scroll text-white sm:w-[37rem] md:w-[50rem] lg:w-full">
+        {data.map((day, index) => (
+          <div
+            key={index}
+            className="mb-1 flex h-full w-[15rem] flex-shrink-0 flex-col items-center rounded-md bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-teal-900 via-teal-950 to-teal-900 p-3 md:w-[17rem]"
           >
-            {showHours ? "Mostrar Intervalos" : "Mostrar por horas"}
-          </button>
-          <div className="flex gap-2">
-            <button
-              aria-label="Desplazar a la izquierda"
-              onClick={scrollLeft}
-              className="rounded-full bg-[#275e56] p-2 text-sm leading-none text-green-50 hover:bg-emerald-700 active:scale-95"
-            >
-              &larr;
-            </button>
-            <button
-              aria-label="Desplazar a la derecha"
-              onClick={scrollRight}
-              className="rounded-full bg-[#275e56] p-2 text-sm leading-none text-green-50 hover:bg-emerald-700 active:scale-95"
-            >
-              &rarr;
-            </button>
-          </div>
-        </div>
-
-        <div
-          ref={tableContainerRef}
-          className="scroll-tab max-w-[22rem] overflow-x-auto rounded-xl sm:max-w-[38rem] md:max-w-[45rem] lg:max-w-[60rem] xl:max-w-[75rem]"
-        >
-          <table className="w-full table-auto text-left">
-            <thead className="sticky top-0 z-10 bg-[#275e56]">
-              <tr>
-                <th className="sticky left-0 z-10 border-r border-gray-700 bg-[#275e56]">
-                  <div className="flex flex-col items-center justify-center" />
-                </th>
-                {sortedDays.map((day, index) => (
-                  <th
-                    key={index}
-                    className="border-x border-gray-700"
-                  >
-                    <div className="my-2 flex w-[4rem] flex-col items-center justify-center md:w-[6rem]">
-                      <div className="text-2xl">{getWeatherCode(day.icon)}</div>
-                      <span className="sm:text-medium text-center text-sm font-semibold uppercase text-green-50">
-                        {dateFormater({ datetime: day.datetime })}
-                      </span>
-                      <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-green-50 sm:py-0 sm:text-sm">
-                        {new Date(day.datetime).toLocaleDateString("es-ES", {
-                          day: "numeric",
-                          month: "short",
-                        })}
-                      </span>
-                      <span className="flex items-center justify-center gap-1 text-sm font-medium text-green-50">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          width={10}
-                          height={10}
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          className="icon icon-tabler icons-tabler-outline icon-tabler-caret-up"
-                          viewBox="5.5 7.5 13 7"
-                        >
-                          <path
-                            stroke="none"
-                            d="M0 0h24v24H0z"
-                          ></path>
-                          <path d="m18 14-6-6-6 6h12"></path>
-                        </svg>
-                        <span className="w-[20px] text-center text-base font-black">{day.tempmax.toFixed()}º</span>
-                      </span>
-
-                      <span className="flex items-center justify-center gap-1 text-sm font-medium text-green-50">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          width={10}
-                          height={10}
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          className="rotate-180"
-                          viewBox="5.5 7.5 13 7"
-                        >
-                          <path
-                            stroke="none"
-                            d="M0 0h24v24H0z"
-                          ></path>
-                          <path d="m18 14-6-6-6 6h12"></path>
-                        </svg>
-                        <span className="w-[20px] text-center text-base font-black">{day.tempmin.toFixed()}º</span>
-                      </span>
-                    </div>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="bg-green-100 font-semibold text-emerald-950">
-              {hours.map((time, hourIndex) => (
-                <tr
-                  key={hourIndex}
-                  className="border-gray-700"
+            <p className="font-black">{dateFormater({ datetime: day.datetime.toString() }).toUpperCase()}</p>
+            <p className="text-sm text-emerald-200">
+              {new Date(day.datetime).toLocaleDateString("es-ES", { day: "2-digit", month: "short" }).toUpperCase()}
+            </p>
+            <div className="flex w-full items-center justify-between text-sm md:text-base">
+              <div className="flex items-center justify-center gap-1">
+                <svg
+                  fill="red"
+                  className="h-3 w-3 md:h-4 md:w-4"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2 text-green-100">
-                    <div className="flex flex-col items-center justify-center">
-                      <span className="text-sm uppercase">{time.slice(0, 5)}</span>
-                    </div>
-                  </td>
-                  {sortedDays.map((day, dayIndex) => (
-                    <td
-                      key={dayIndex}
-                      className="border-x border-gray-700 p-2"
-                    >
-                      <div className="flex flex-col items-center justify-center">
-                        {renderHourCell(day.hours.find((hour) => hour.datetime === time))}
-                      </div>
-                    </td>
-                  ))}
-                </tr>
+                  <path d="M21,21H3L12,3Z" />
+                </svg>
+                <p>{day.tempmax} </p>
+              </div>
+              <div className="flex items-center justify-center gap-1">
+                <svg
+                  fill="#09f"
+                  className="h-3 w-3 rotate-180 md:h-4 md:w-4"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M21,21H3L12,3Z" />
+                </svg>
+                <p>{day.tempmin}</p>
+              </div>
+            </div>
+            {day.hours
+              .filter((h) => hours.includes(h.datetime))
+              .map((h, index) => (
+                <div
+                  key={index}
+                  className="flex w-full items-center justify-between gap-3 text-sm text-emerald-50 md:text-base"
+                >
+                  <p className="text-emerald-50"> {h.datetime.slice(0, -3)} </p>
+                  <p> {getWeatherCode(h.icon)} </p>
+                  <p> {h.temp.toFixed(0)}º </p>
+                  <div className="flex items-center gap-1">
+                    <p>
+                      {" "}
+                      {h.windspeed.toFixed(0)} <span className="text-[11px]">km/h</span>{" "}
+                    </p>
+                    <WindDirectionIcon degree={h.winddir} />
+                  </div>
+                </div>
               ))}
-              {/* Filas similares para presión y viento */}
-              {/* Fila de presión */}
-              <tr className="border-gray-700">
-                <td className="sticky left-0 z-10 border-b border-gray-700 bg-[#275e56] p-2">
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="text-sm uppercase">
-                      {/* Precipitaciones */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#d3f4df"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path
-                          stroke="none"
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                        <path d="M4 12a8 8 0 0 1 16 0z" />
-                        <path d="M12 12v6a2 2 0 0 0 4 0" />
-                      </svg>
-                    </span>
-                  </div>
-                </td>
-                {/* Precipitaciones */}
-                {weatherData.days.map((day: Day, dayIndex: number) => (
-                  <td
-                    key={dayIndex}
-                    className="border-x border-gray-700 p-2"
+
+            <div className="flex w-full items-center justify-between text-sm md:text-base">
+              <div className="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 64 64"
+                  className="h-8 w-8"
+                >
+                  <defs>
+                    <linearGradient
+                      id="uniqueGradientA"
+                      x1="27.56"
+                      x2="38.27"
+                      y1="17.64"
+                      y2="36.19"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop
+                        offset="0"
+                        stopColor="#d4d7dd"
+                      />
+                      <stop
+                        offset="0.45"
+                        stopColor="#d4d7dd"
+                      />
+                      <stop
+                        offset="1"
+                        stopColor="#bec1c6"
+                      />
+                    </linearGradient>
+                    <linearGradient
+                      id="uniqueGradientB"
+                      x1="19.96"
+                      x2="31.37"
+                      y1="29.03"
+                      y2="48.8"
+                      xlinkHref="#uniqueGradientA"
+                    />
+                  </defs>
+                  <path
+                    fill="none"
+                    stroke="url(#uniqueGradientA)"
+                    strokeDasharray="35 22"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="3"
+                    d="M43.64 20a5 5 0 113.61 8.46h-35.5"
                   >
-                    <div className="flex flex-col items-center justify-center">
-                      {/* Se muestra la presión de cada día en la fila correspondiente */}
-                      <span className="text-center text-sm md:text-sm">{day.precip.toFixed()} mm</span>
-                    </div>
-                  </td>
-                ))}
-              </tr>
-              <tr className="border-gray-700">
-                <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="text-sm uppercase">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="23"
-                        height="23"
-                        fill="#d3f4df"
-                        stroke="#d3f4df"
-                        viewBox="0 0 24 24"
-                        strokeWidth={0.1}
-                      >
-                        <path d="M14 19v-1.29a7.89 7.89 0 0 0 3.65-2.06A8.05 8.05 0 0 0 19.93 11a8.24 8.24 0 0 0 .07-1 8.26 8.26 0 0 0-.07-1 8 8 0 0 0-1.28-3.44 4.94 4.94 0 0 0-.35-.45 7.55 7.55 0 0 0-.64-.74h-.06A7.73 7.73 0 0 0 12.05 2H12a8 8 0 0 0-1.54.13 8 8 0 0 0-4.1 2.19 9.32 9.32 0 0 0-.65.76 8.11 8.11 0 0 0-1.56 3.36c0 .18 0 .37-.07.56A8.06 8.06 0 0 0 4 10v.07a7.89 7.89 0 0 0 3.54 6.6A7.85 7.85 0 0 0 10 17.73V19H2v3h20v-3Zm-3.17-3.12a6 6 0 0 1-4.71-4.71 1 1 0 0 1 0-.17H7V9h-.9a6 6 0 0 1 .36-1.3 5.79 5.79 0 0 1 .66-1.16l.64.63 1.41-1.41-.64-.64.14-.12A6 6 0 0 1 11 4.09V5h2v-.91a6.19 6.19 0 0 1 2.47 1l-.64.64 1.41 1.41.64-.64a6.19 6.19 0 0 1 1 2.47H17v2h.91a6 6 0 0 1-3.61 4.54 5.9 5.9 0 0 1-3.47.37Z" />
-                        <path d="M10.5 13a1.39 1.39 0 0 0 .5 1.05 1.45 1.45 0 0 0 2.1 0 1.39 1.39 0 0 0 .4-1.05c-.17-1.9-1.5-7.5-1.5-7.5s-1.33 5.6-1.5 7.5Z" />
-                      </svg>
-                    </span>
-                  </div>
-                </td>
-                {/* Presion */}
-                {weatherData.days.map((day: Day, dayIndex: number) => (
-                  <td
-                    key={dayIndex}
-                    className="border-x border-gray-700 p-2"
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      dur="2s"
+                      repeatCount="indefinite"
+                      values="-57; 57"
+                    />
+                  </path>
+                  <path
+                    fill="none"
+                    stroke="url(#uniqueGradientB)"
+                    strokeDasharray="24 15"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="3"
+                    d="M29.14 44a5 5 0 103.61-8.46h-21"
                   >
-                    <div className="flex flex-col items-center justify-center">
-                      {/* Se muestra la presión de cada día en la fila correspondiente */}
-                      <span className="text-center text-sm md:text-sm">{day.pressure.toFixed()} hPa</span>
-                    </div>
-                  </td>
-                ))}
-              </tr>
-              <tr className="border-gray-700">
-                <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="text-sm uppercase">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#d3f4df"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path
-                          stroke="none"
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                        <path d="M5 8h8.5a2.5 2.5 0 1 0 -2.34 -3.24" />
-                        <path d="M3 12h15.5a2.5 2.5 0 1 1 -2.34 3.24" />
-                        <path d="M4 16h5.5a2.5 2.5 0 1 1 -2.34 3.24" />
-                      </svg>
-                    </span>
-                  </div>
-                </td>
-                {/* Viento */}
-                {weatherData.days.map((day: Day, dayIndex: number) => (
-                  <td
-                    key={dayIndex}
-                    className="border-x border-gray-700 p-2"
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      begin="-1.5s"
+                      dur="2s"
+                      repeatCount="indefinite"
+                      values="-39; 39"
+                    />
+                  </path>
+                </svg>
+                <span>Viento Máx</span>
+              </div>
+              <p>
+                {day.windspeed} <span className="text-[10px]">km/h</span>{" "}
+              </p>
+            </div>
+            <div className="flex w-full items-center justify-between text-sm md:text-base">
+              <div className="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 64 64"
+                  className="h-8 w-8"
+                >
+                  <defs>
+                    <linearGradient
+                      id="uniqueGradientA"
+                      x1={23}
+                      x2={41}
+                      y1={16.41}
+                      y2={47.59}
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop
+                        offset={0}
+                        stopColor="#6b7280"
+                      />
+                      <stop
+                        offset={0.45}
+                        stopColor="#6b7280"
+                      />
+                      <stop
+                        offset={1}
+                        stopColor="#374151"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <circle
+                    cx={32}
+                    cy={32}
+                    r={18}
+                    fill="url(#uniqueGradientA)"
+                    stroke="#e5e7eb"
+                    strokeMiterlimit={10}
+                    strokeWidth={2}
+                  />
+                  <path
+                    fill="none"
+                    stroke="#9ca3af"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M32 25v-6m13.5 13h-6M25 32h-6m22.5-8.5-3 3m-13 0-3-3m16 14 3 3m-19 0 3-3"
+                  />
+                  <circle
+                    cx={32}
+                    cy={32}
+                    r={3}
+                    fill="#ef4444"
+                  />
+                  <path
+                    fill="none"
+                    stroke="#ef4444"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={2}
+                    d="M32 35.5v-15"
                   >
-                    <div className="flex flex-col items-center justify-center">
-                      <span className="flex items-center justify-center gap-1 text-center text-sm sm:gap-2 md:text-sm">
-                        {WindDirectionIcon(day.winddir)}
-                      </span>
-                      <span className="flex items-center justify-center gap-1 text-center text-sm sm:gap-2 md:text-sm">
-                        {day.windspeed.toFixed()} km/h
-                      </span>
-                    </div>
-                  </td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                    <animateTransform
+                      attributeName="transform"
+                      dur="9s"
+                      repeatCount="indefinite"
+                      type="rotate"
+                      values="30 32 32; 55 32 32; 45 32 32; 55 32 32; 30 32 32"
+                    />
+                  </path>
+                </svg>
+                <span>Presión</span>
+              </div>
+              <p>
+                {day.pressure} <span className="text-[10px]">hPa</span>{" "}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-    </>
+    </section>
   )
 }

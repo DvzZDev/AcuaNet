@@ -14,10 +14,10 @@ export default function DateDisplay({ datetime }: { datetime: string }) {
     if (inputDate.getTime() === today.getTime()) {
       return "Hoy"
     } else if (inputDate.getTime() === tomorrow.getTime()) {
-      return "Mañ"
+      return "Mañana"
     } else {
       return inputDate.toLocaleDateString("es-ES", {
-        weekday: "short",
+        weekday: "long",
       })
     }
   }, [datetime])

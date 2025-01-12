@@ -70,12 +70,12 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
     calendarRows.push(
       <div
         key="week-header"
-        className="font-NecoBold grid grid-cols-7 text-center text-xl font-black text-[#416750]"
+        className="font-NecoBold mb-1 grid grid-cols-7 text-center text-xl font-black uppercase text-green-950"
       >
         {weekDays.map((day) => (
           <div
             key={day}
-            className="border-r border-[#1b7b6e] pb-2 last:border-none"
+            className="mx-1 rounded-full bg-[#97ceaab1] p-2 pb-2"
           >
             {day}
           </div>
@@ -91,7 +91,7 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
           week.push(
             <div
               key={`empty-${i}-${j}`}
-              className="border-r border-[#1b7b6e]"
+              className=""
             ></div>
           )
         } else if (dayCount > daysInMonth) {
@@ -102,20 +102,37 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
           week.push(
             <div
               key={dayCount}
-              className={`border-[#1b7b6e] p-2 text-center ${isToday ? "bg-[#1dd38d80]" : "bg-green-50"} border-b border-r`}
+              className={`relative m-1 rounded-md p-2 text-center ${isToday ? "bg-lime-100" : "bg-blue-200"} `}
             >
-              <div className="flex items-center justify-between">
-                <strong>
-                  {lunarDay &&
-                    lunarDay.date
-                      .toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short" })
-                      .replace(/^\w/, (c) => c.toUpperCase())}
-                </strong>
-                <span className="text-xl">{lunarDay?.phaseEmoji}</span>
+              <div className="flex justify-between">
+                <p className="text-left font-black text-red-700">{dayCount}</p>
+                <p className="text-3xl">{lunarDay?.phaseEmoji}</p>
               </div>
-              <p className="text-left text-xs">{lunarDay?.phase}</p>
-              <p className="text-left text-xs">{lunarDay?.activityIcon}</p>
-              <p className="text-left text-xs">{lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %</p>
+
+              {isToday && (
+                <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
+                  Hoy
+                </div>
+              )}
+
+              <p className="text-left text-base font-bold">{lunarDay?.phase}</p>
+              <p className="-ml-1 text-left text-base">{lunarDay?.activityIcon}</p>
+              <p className="flex items-center text-left text-sm">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="2 9 44 30"
+                  className="mr-1 h-4 w-4"
+                >
+                  {" "}
+                  <path
+                    fill="none"
+                    d="M0 0h48v48H0z"
+                  ></path>{" "}
+                  <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"></path>{" "}
+                </svg>{" "}
+                {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />}{" "}
+                <span className="text-[11px] font-black">%</span>
+              </p>
             </div>
           )
           dayCount++
@@ -146,19 +163,39 @@ const MobileView = ({ lunarDays }: { lunarDays: LunarDay[] }) => {
         return (
           <div
             key={index}
-            className={`rounded-lg border p-2 text-xs shadow-md ${isToday ? "bg-[#1dd38d80]" : "bg-[#f0fdf4]"} border-[#052e16]`}
+            className={`relative rounded-lg border p-2 text-xs shadow-md ${isToday ? "bg-lime-100" : "bg-blue-200"}`}
           >
-            <div className="flex justify-between">
-              <strong className="uppercase">
-                {lunarDay.date.toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short" })}
-              </strong>
-              <span className="text-xl">{lunarDay.phaseEmoji}</span>
+            {isToday && (
+              <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
+                Hoy
+              </div>
+            )}
+            <div className="flex items-center justify-between">
+              <p className="text-base font-black text-red-700">
+                {lunarDay.date
+                  .toLocaleDateString("es-ES", { weekday: "short", day: "numeric" })
+                  .replace(/^\w/, (c) => c.toUpperCase())}
+              </p>
+              <span className="text-2xl">{lunarDay.phaseEmoji}</span>
             </div>
-            <div className="flex flex-col gap-1">
-              <p>Fase: {lunarDay.phase}</p>
-              <p>Actividad: {lunarDay.activityIcon}</p>
-              <p>Iluminación: {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />} %</p>
-            </div>
+            <p className="text-xs">{lunarDay.phase}</p>
+            <p className="text-sm">{lunarDay.activityIcon}</p>
+            <p className="flex items-center text-left text-xs">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="2 9 44 30"
+                className="mr-1 h-4 w-4"
+              >
+                {" "}
+                <path
+                  fill="none"
+                  d="M0 0h48v48H0z"
+                ></path>{" "}
+                <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"></path>{" "}
+              </svg>{" "}
+              {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />}{" "}
+              <span className="text-[11px] font-black">%</span>
+            </p>
           </div>
         )
       })}
@@ -167,7 +204,7 @@ const MobileView = ({ lunarDays }: { lunarDays: LunarDay[] }) => {
 }
 
 // Componente Principal
-const LunarCalendar = () => {
+const LunarCalendarMov = () => {
   const currentDate = new Date()
   const [startMonth, setStartMonth] = useState(currentDate.getMonth())
   const [startYear, setStartYear] = useState(currentDate.getFullYear())
@@ -190,17 +227,17 @@ const LunarCalendar = () => {
   }
 
   return (
-    <section className="flex items-center justify-center px-6">
-      <div className="w-[70rem] max-w-[70rem] overflow-hidden rounded-lg bg-green-100 shadow-md">
-        <div className="flex justify-between p-3">
+    <section className="mx-auto flex max-w-[70rem] items-center pt-4 justify-center px-6">
+      <div className="w-full overflow-hidden rounded-lg shadow-md">
+        <div className="flex justify-between pb-6">
           <button
             onClick={() => handleMonthChange("prev")}
             aria-label="Mes anterior"
-            className="bg-emerald-200 p-1"
+            className="rounded-2xl bg-emerald-400 p-1"
           >
             ◀
           </button>
-          <h2 className="text-2xl font-bold text-[#052e16]">
+          <h2 className="text-3xl font-bold uppercase italic text-[#052e16]">
             {new Date(startYear, startMonth)
               .toLocaleString("es-ES", { month: "long", year: "numeric" })
               .replace(/^\w/, (c) => c.toUpperCase())}
@@ -208,7 +245,7 @@ const LunarCalendar = () => {
           <button
             onClick={() => handleMonthChange("next")}
             aria-label="Mes siguiente"
-            className="bg-emerald-200 p-1"
+            className="rounded-2xl bg-emerald-400 p-1"
           >
             ▶
           </button>
@@ -224,4 +261,4 @@ const LunarCalendar = () => {
   )
 }
 
-export default LunarCalendar
+export default LunarCalendarMov

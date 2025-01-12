@@ -58,7 +58,7 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
             {/* Icono */}
           </div>
           <div className="mb-1 flex items-center">
-            <div className="mr-2 h-2 w-full rounded-full bg-green-950/50">
+            <div className="mr-2 h-2 w-full rounded-full bg-green-950">
               <div
                 className="h-2 rounded-full bg-green-400"
                 style={{ width: `${embalse.agua_embalsadapor}%` }}

@@ -8,7 +8,7 @@ export default async function Hero() {
   return (
     <div
       id="search"
-      className="-z-10 h-screen animate-blurred-fade-in bg-green-100/10"
+      className="-z-10 h-svh animate-blurred-fade-in bg-green-100/10"
     >
       <section className="relative z-10 flex h-full flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-4 px-2 md:gap-8 xl:w-[60rem]">
@@ -28,7 +28,7 @@ export default async function Hero() {
             Planificar tus salidas de <span className="glow2 text-[#93ffb7]">pesca</span> nunca había sido tan{" "}
             <span className="glow2 text-[#93ffb7]">fácil</span>
           </h1>
-          <h2 className="max-w-[17rem] text-center text-sm text-[#93ffb7] sm:text-lg md:max-w-[50rem] md:text-2xl">
+          <h2 className="max-w-[17rem] animate-blurred-fade-in text-center text-sm text-[#93ffb7] animate-delay-200 sm:text-lg md:max-w-[50rem] md:text-2xl">
             Estado actualizado de embalses, clima, mapas y tablas lunares en AcuaNet. <br />
           </h2>
           <div className="z-30 mt-4 flex animate-blurred-fade-in duration-700 animate-delay-300">

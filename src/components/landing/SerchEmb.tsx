@@ -81,7 +81,7 @@ export default function SerchEmb() {
       </h1>
       <div className="relative z-50">
         {suggestions.length > 0 && (
-          <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-emerald-800 text-base text-green-100 animate-duration-300 md:text-xl">
+          <ul className="absolute mt-2 flex w-full animate-blurred-fade-in uppercase flex-col gap-1 rounded-lg bg-emerald-800 text-base text-green-100 animate-duration-300 md:text-xl">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <Link
                 href={`/embalses/${suggestion.toLowerCase()}`}

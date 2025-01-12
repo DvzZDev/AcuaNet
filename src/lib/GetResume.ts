@@ -9,8 +9,6 @@ export default function GetResume({ prompt }: { prompt: string }) {
     api: "/api/resume",
   })
 
-  console.log(completion)
-
   useEffect(() => {
     if (prompt) {
       complete(prompt).catch((err) => {

@@ -12,6 +12,5 @@ export default async function GetWeather(lat: number, lon: number) {
   })
 
   const weatherData: WeatherTypes = await response.json()
-  console.log(weatherData)
   return weatherData
 }

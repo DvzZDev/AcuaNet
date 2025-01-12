@@ -14,7 +14,6 @@ await CacheClient.connect()
 async function savedCache({ token, data }: { token: string; data: string }) {
   try {
     await CacheClient.set(token, data, { EX: 3600 })
-    console.log("Cache save")
   } catch (error) {
     console.error(error)
   }
@@ -28,7 +27,6 @@ export async function POST(request: NextRequest) {
       const cacheQuery = await CacheClient.get(hashedPrompt)
 
       if (cacheQuery !== null && cacheQuery !== undefined) {
-        console.log("Cache hit")
         return new Response(cacheQuery, { status: 200 })
       } else {
         const result = await streamText({
@@ -53,7 +51,6 @@ export async function POST(request: NextRequest) {
             console.error("Error saving to cache:", error)
           })
 
-        console.log("Cache miss")
         return response
       }
     }

@@ -23,7 +23,7 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
           >
             <p className="font-black">{dateFormater({ datetime: day.datetime.toString() }).toUpperCase()}</p>
             <p className="text-sm text-emerald-200">
-              {new Date(day?.datetime).toLocaleDateString("es-ES", { day: "2-digit", month: "short" }).toUpperCase()}
+              {new Date(day.datetime).toLocaleDateString("es-ES", { day: "2-digit", month: "short" }).toUpperCase()}
             </p>
             <div className="flex w-full items-center justify-between text-sm md:text-base">
               <div className="flex items-center justify-center gap-1">
@@ -35,7 +35,7 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                 >
                   <path d="M21,21H3L12,3Z" />
                 </svg>
-                <p>{day?.tempmax} </p>
+                <p>{day.tempmax} </p>
               </div>
               <div className="flex items-center justify-center gap-1">
                 <svg
@@ -46,7 +46,7 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                 >
                   <path d="M21,21H3L12,3Z" />
                 </svg>
-                <p>{day?.tempmin}</p>
+                <p>{day.tempmin}</p>
               </div>
             </div>
             {day.hours
@@ -58,11 +58,11 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                 >
                   <p className="text-emerald-50"> {h.datetime.slice(0, -3)} </p>
                   <p> {getWeatherCode(h.icon)} </p>
-                  <p> {h.temp?.toFixed(0)}º </p>
+                  <p> {h.temp.toFixed(0)}º </p>
                   <div className="flex items-center gap-1">
                     <p>
                       {" "}
-                      {h.windspeed?.toFixed(0)} <span className="text-[11px]">km/h</span>{" "}
+                      {h.windspeed.toFixed(0)} <span className="text-[11px]">km/h</span>{" "}
                     </p>
                     <WindDirectionIcon degree={h.winddir} />
                   </div>
@@ -145,7 +145,7 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                 <span>Viento Máx</span>
               </div>
               <p>
-                {day?.windspeed.toFixed(0)} <span className="text-[10px]">km/h</span>{" "}
+                {day.windspeed.toFixed(0)} <span className="text-[10px]">km/h</span>{" "}
               </p>
             </div>
             <div className="flex w-full items-center justify-between text-sm md:text-base">

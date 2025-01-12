@@ -7,9 +7,10 @@ import Faq from "@/components/landing/Faq"
 import Hero from "@/components/landing/Hero"
 
 export const metadata = {
-  title: "AcuaNet - Información en tiempo real para pescadores",
+  title: "AcuaNet - Planifica tu jornada de pesca",
   description:
     "Accede a datos actualizados sobre niveles de embalses, pronósticos meteorológicos y condiciones de pesca en toda España para planificar tu próxima jornada de pesca.",
+  keywords: "pesca, pesca de blackbass, herramientas de pesca, pesca de lucio, pesca en embalses, embalses de España, acuanet, pesca depredadores, presca de lucio",
   openGraph: {
     title: "AcuaNet - Optimiza tu pesca con datos en tiempo real",
     description:

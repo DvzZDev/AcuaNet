@@ -18,12 +18,11 @@ export async function generateMetadata(props: { params: Promise<{ embalseid: str
   const embalseFormatted = `${embalseName.charAt(0).toUpperCase()}${embalseName.slice(1).toLowerCase()}`
 
   return {
-    title: `${embalseFormatted} - Niveles de agua y pronósticos en AcuaNet`,
+    title: `Embalse de ${embalseFormatted} - Planifica tu jornada de pesca`,
     description: `Consulta información detallada sobre el embalse de ${embalseName}, incluyendo niveles de agua, pronóstico meteorológico y datos útiles para tus salidas de pesca en tiempo real.`,
-    keywords: "embalse, niveles de agua, pesca, pronóstico, clima, cuenca, pesca en España, estadísticas de embalses",
-
+    keywords: `${embalseName}, embalse de ${embalseName} , pesca de black bass, pesca de lucio, black bass, lucio, pesca deportiva, ${embalseName} pesca, pesca en ${embalseName}, pesca blackbass ${embalseName}, pesca lucio ${embalseName}, acuanet`,
     openGraph: {
-      title: `${embalseFormatted} - Niveles de agua y pronósticos en AcuaNet`,
+      title: `Embalse de ${embalseFormatted} - Planifica tu jornada de pesca con AcuaNet`,
       description: `Consulta los niveles de agua, condiciones meteorológicas y más sobre el embalse de ${embalseName}, con datos actualizados para planificar tu jornada de pesca.`,
       url: `https://acuanet.es/embalses/${params.embalseid}`,
       siteName: "AcuaNet",
@@ -32,13 +31,13 @@ export async function generateMetadata(props: { params: Promise<{ embalseid: str
           url: "https://i.imgur.com/LQvr7AX.png",
           width: 800,
           height: 600,
-          alt: `Imagen del embalse de ${embalseName} - AcuaNet`,
+          alt: "OpenGrah AcuaNet",
         },
         {
           url: "https://i.imgur.com/LQvr7AX.png",
           width: 1800,
           height: 1600,
-          alt: `Visión detallada del embalse de ${embalseName} para pescadores - AcuaNet`,
+          alt: "OpenGrah AcuaNet",
         },
       ],
       locale: "es_ES",
@@ -47,7 +46,7 @@ export async function generateMetadata(props: { params: Promise<{ embalseid: str
 
     twitter: {
       card: "summary_large_image",
-      title: `${embalseFormatted} - Niveles de agua y pronósticos en AcuaNet`,
+      title: `${embalseFormatted} - Planifica tu jornada de pesca con AcuaNet`,
       description: `Accede a información completa sobre el embalse de ${embalseName}, con datos en tiempo real sobre niveles de agua y pronósticos para pescadores.`,
       creator: "@_DvzZ_",
       images: ["https://i.imgur.com/LQvr7AX.png"],

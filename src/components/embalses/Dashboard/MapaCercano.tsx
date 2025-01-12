@@ -32,11 +32,10 @@ export default function MapaCercano({ coords }: { coords: Coords }) {
           </p>
         )}
         <MapContainer
-          className="map-container"
+          className="map-container z-0"
           center={[coords.lat, coords.lon]}
           zoom={13}
           scrollWheelZoom={false}
-          style={{ height: "400px", zIndex: 0 }}
         >
           <MapController />
           <TileLayer

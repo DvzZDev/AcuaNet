@@ -145,9 +145,13 @@ table {
 .glow:hover {
   text-shadow:
     0 0 3px rgba(147, 255, 183, 0.8),
-    0 0 6px rgba(147, 255, 183, 0.7),
-    0 0 12px rgba(147, 255, 183, 0.6),
-    0 0 30px rgba(147, 255, 183, 1);
+    0 0 6px rgba(147, 255, 183, 0.7);
+}
+
+.glow2 {
+  text-shadow:
+    0 0 3px rgba(147, 255, 183, 0.8),
+    0 0 6px rgba(147, 255, 183, 0.7);
 }
 
 #header-nav {

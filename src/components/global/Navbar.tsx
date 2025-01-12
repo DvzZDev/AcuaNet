@@ -3,6 +3,7 @@
 import { Link } from "next-view-transitions"
 import SerchEmbMenu from "./SerchEmbMenu"
 import UseMenuStore from "@/store/useMenuStore"
+import Hamburger from "hamburger-react"
 
 export default function Navbar() {
   const { isMenuOpen, toggleMenu, closeMenu } = UseMenuStore()
@@ -11,9 +12,9 @@ export default function Navbar() {
     <div
       className={`fixed z-50 w-full animate-fade-in-down bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"}`}
     >
-      <div className="container mx-auto mt-4 flex flex-col items-center justify-between gap-10 px-4 uppercase lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
+      <div className="container mx-auto mt-2 flex flex-col items-center justify-between gap-10 px-4 uppercase lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         {/* Logo */}
-        <div className="flex w-full justify-between lg:w-auto">
+        <div className="flex w-full items-center justify-between lg:w-auto">
           <Link
             href="/"
             className="flex-shrink-0"
@@ -24,8 +25,8 @@ export default function Navbar() {
               fill="#93ffb7"
               xmlns="http://www.w3.org/2000/svg"
               xmlSpace="preserve"
-              width={34}
-              height={34}
+              width={40}
+              height={40}
               stroke="#93ffb7"
               viewBox="58.63 -0.5 254.14 372.41"
             >
@@ -35,11 +36,7 @@ export default function Navbar() {
           </Link>
 
           <div className="flex items-center justify-center lg:hidden">
-            <button
-              className={`${isMenuOpen ? "hidden" : "animate-fade block"}`}
-              onClick={toggleMenu}
-            >
-              <svg
+            {/* <svg
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="3 5 18 14"
@@ -65,38 +62,13 @@ export default function Navbar() {
                     strokeLinejoin="round"
                   ></path>{" "}
                 </g>
-              </svg>
-            </button>
-
-            <button
-              className={`${isMenuOpen ? "animate-fade block" : "hidden"}`}
-              onClick={toggleMenu}
-            >
-              <svg
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="3.04 3.04 18 18"
-                width={23}
-                height={20}
-              >
-                <g
-                  id="SVGRepo_bgCarrier"
-                  strokeWidth="0"
-                ></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <path
-                    d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"
-                    fill="lightgreen"
-                  ></path>{" "}
-                </g>
-              </svg>
-            </button>
+              </svg> */}
+            <Hamburger
+              size={35}
+              color="#93ffb7"
+              toggled={isMenuOpen}
+              toggle={toggleMenu}
+            />
           </div>
         </div>
 
@@ -127,7 +99,7 @@ export default function Navbar() {
 
         {/* Menú móvil */}
         <nav
-          className={`${isMenuOpen ? "animate-appearance-in flex flex-col gap-6 text-2xl text-green-100 delay-200" : "hidden"}`}
+          className={`${isMenuOpen ? "animate-appearance-in flex flex-col gap-5 text-2xl text-green-100 delay-200" : "hidden"}`}
         >
           <Link
             href="/cuencas"

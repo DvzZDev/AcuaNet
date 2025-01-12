@@ -1,16 +1,20 @@
 "use client"
 
+import { memo, useMemo } from "react"
 import { WeatherTypes } from "@/types"
 import { getWeatherCode } from "./weatherCode"
 import WindDirectionIcon from "./wind"
 import dateFormater from "@/lib/DayFormater"
 
-export default function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
+function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
   const data = weatherData.days
-  const hours = ["06:00:00", "08:00:00", "10:00:00", "12:00:00", "14:00:00", "16:00:00", "18:00:00", "20:00:00", "22:00:00"]
+  const hours = useMemo(
+    () => ["06:00:00", "08:00:00", "10:00:00", "12:00:00", "14:00:00", "16:00:00", "18:00:00", "20:00:00", "22:00:00"],
+    []
+  )
   return (
     <section className="">
-      <h3 className="mb-6 text-2xl font-black text-green-950 md:mb-6">Predicción Meteorológica</h3>
+      <h2 className="mb-6 text-2xl font-black text-green-950 md:mb-6">Predicción Meteorológica</h2>
       <div className="scroll-tab flex w-[21rem] gap-3 overflow-x-scroll text-white sm:w-[37rem] md:w-[50rem] lg:w-full">
         {data.map((day, index) => (
           <div
@@ -225,3 +229,5 @@ export default function RefactorWeather({ data: weatherData }: { data: WeatherTy
     </section>
   )
 }
+
+export default memo(RefactorWeather)

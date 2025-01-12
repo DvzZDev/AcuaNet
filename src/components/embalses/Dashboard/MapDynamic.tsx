@@ -16,7 +16,7 @@ export default function MapEmbData({ coords }: { coords: { lat: number; lon: num
 
   return (
     <>
-      <h3 className="text-2xl font-black text-green-950">Mapas</h3>
+      <h2 className="text-2xl font-black text-green-950">Mapas</h2>
       <section className="grid gap-4 md:grid-cols-2">
         <div className="col-span-1">
           <MapaCercano
@@ -28,6 +28,7 @@ export default function MapEmbData({ coords }: { coords: { lat: number; lon: num
           <iframe
             width="100%"
             height="400"
+            title="Windy Map"
             className="rounded-lg"
             loading="lazy"
             src={`https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=${coords.lat}&lon=${coords.lon}&detailLat=${coords.lat}&detailLon=${coords.lon}&marker=true&message=true`}

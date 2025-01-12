@@ -19,7 +19,7 @@ export default function EstadoActual({
 }) {
   return (
     <>
-      <h3 className="text-2xl font-black text-green-950">Estado Actual</h3>
+      <h2 className="text-2xl font-black text-green-950">Estado Actual</h2>
       <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
         {/* Agua Embalsada */}
         <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">

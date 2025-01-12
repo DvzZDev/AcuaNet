@@ -127,7 +127,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
 
           {coordsData && <MapEmbData coords={coordsData} />}
           {weatherData && <TableWeather data={weatherData} />}
-          <h3 className="text-2xl font-black text-green-950">Calendario Lunar</h3>
+          <h2 className="text-2xl font-black text-green-950">Calendario Lunar</h2>
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
             <LunarCalendar />
           </section>

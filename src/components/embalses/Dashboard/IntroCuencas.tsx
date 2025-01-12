@@ -27,7 +27,7 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
     <div className="relative flex flex-col justify-between md:h-16 md:flex-row">
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1">
-          <p className="text-2xl font-black text-green-950">Cuenca del {nombre_cuenca} </p>
+          <h1 className="text-2xl font-black text-green-950">Cuenca del {nombre_cuenca} </h1>
         </div>
         <div className="flex gap-1">
           <svg

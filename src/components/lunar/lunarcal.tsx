@@ -105,12 +105,12 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
               className={`relative m-1 rounded-md p-2 text-center ${isToday ? "bg-lime-100" : "bg-blue-200"} `}
             >
               <div className="flex justify-between">
-                <p className="text-left font-black text-red-500">{dayCount}</p>
+                <p className="text-left font-black text-red-700">{dayCount}</p>
                 <p className="text-3xl">{lunarDay?.phaseEmoji}</p>
               </div>
 
               {isToday && (
-                <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-500 p-1 py-2 text-xs font-black text-white">
+                <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
                   Hoy
                 </div>
               )}
@@ -166,12 +166,12 @@ const MobileView = ({ lunarDays }: { lunarDays: LunarDay[] }) => {
             className={`relative rounded-lg border p-2 text-xs shadow-md ${isToday ? "bg-lime-100" : "bg-blue-200"}`}
           >
             {isToday && (
-              <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-500 p-1 py-2 text-xs font-black text-white">
+              <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
                 Hoy
               </div>
             )}
             <div className="flex items-center justify-between">
-              <p className="text-base font-black text-red-500">
+              <p className="text-base font-black text-red-700">
                 {lunarDay.date
                   .toLocaleDateString("es-ES", { weekday: "short", day: "numeric" })
                   .replace(/^\w/, (c) => c.toUpperCase())}

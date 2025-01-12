@@ -1,124 +1,81 @@
-const TableWeatherSK = () => {
-  // Array for default hours display
-  const defaultHours = ["06:00", "09:00", "12:00", "15:00", "18:00", "21:00"]
-  // Number of days to show in skeleton
-  const numberOfDays = 7
-
+export default function TableWeather() {
   return (
-    <div>
-      {/* Button controls skeleton */}
-      <div className="mb-3 flex justify-between">
-        <div className="h-10 w-36 animate-pulse rounded-xl bg-green-200"></div>
-        <div className="flex gap-2">
-          <div className="h-10 w-10 animate-pulse rounded-full bg-green-200"></div>
-          <div className="h-10 w-10 animate-pulse rounded-full bg-green-200"></div>
-        </div>
+    <section className="h-full">
+      <h2 className="mb-6 text-2xl font-black text-green-950 md:mb-6">Predicción Meteorológica</h2>
+      <div className="mb-1 flex h-[20rem] w-[15rem] flex-shrink-0 flex-col items-center justify-center rounded-md bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-teal-900 via-teal-950 to-teal-900 p-3 md:w-[17rem]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          className="w-3h-32 h-32"
+        >
+          <radialGradient
+            id="a"
+            cx={0.66}
+            cy={0.313}
+            fx={0.66}
+            fy={0.313}
+            gradientTransform="scale(1.5)"
+          >
+            <stop
+              offset={0}
+              stopColor="#DCFCE7"
+            />
+            <stop
+              offset={0.3}
+              stopColor="#DCFCE7"
+              stopOpacity={0.9}
+            />
+            <stop
+              offset={0.6}
+              stopColor="#DCFCE7"
+              stopOpacity={0.6}
+            />
+            <stop
+              offset={0.8}
+              stopColor="#DCFCE7"
+              stopOpacity={0.3}
+            />
+            <stop
+              offset={1}
+              stopColor="#DCFCE7"
+              stopOpacity={0}
+            />
+          </radialGradient>
+          <circle
+            cx={100}
+            cy={100}
+            r={70}
+            fill="none"
+            stroke="url(#a)"
+            strokeDasharray="200 1000"
+            strokeLinecap="round"
+            strokeWidth={12}
+            style={{ transformOrigin: "center" }}
+          >
+            <animateTransform
+              attributeName="transform"
+              calcMode="spline"
+              dur={2}
+              keySplines="0 0 1 1"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              type="rotate"
+              values="360;0"
+            />
+          </circle>
+          <circle
+            cx={100}
+            cy={100}
+            r={70}
+            fill="none"
+            stroke="#DCFCE7"
+            strokeLinecap="round"
+            strokeWidth={12}
+            opacity={0.2}
+            style={{}}
+          />
+        </svg>
       </div>
-
-      {/* Table skeleton */}
-      <div className="max-w-[22rem] overflow-x-auto rounded-xl sm:max-w-[38rem] md:max-w-[45rem] lg:max-w-[60rem] xl:max-w-[75rem]">
-        <table className="w-full table-auto text-left">
-          {/* Table header */}
-          <thead className="bg-[#275e56]">
-            <tr>
-              <th className="sticky left-0 z-10 flex justify-center border-r border-gray-700 bg-[#275e56]">
-                <div className="h-[130px] w-16 animate-pulse bg-green-200/20"></div>
-              </th>
-              {[...Array(numberOfDays)].map((_, index) => (
-                <th
-                  key={index}
-                  className="border-x border-gray-700"
-                >
-                  <div className="m-auto my-2 flex w-[4rem] flex-col items-center justify-center gap-2 md:w-[5rem]">
-                    <div className="h-8 w-8 animate-pulse rounded-full bg-green-200/20"></div>
-                    <div className="h-4 w-16 animate-pulse rounded bg-green-200/20"></div>
-                    <div className="h-4 w-12 animate-pulse rounded bg-green-200/20"></div>
-                    <div className="h-4 w-8 animate-pulse rounded bg-green-200/20"></div>
-                    <div className="h-4 w-8 animate-pulse rounded bg-green-200/20"></div>
-                  </div>
-                </th>
-              ))}
-            </tr>
-          </thead>
-
-          {/* Table body */}
-          <tbody className="bg-green-100">
-            {/* Hour rows */}
-            {defaultHours.map((hour, hourIndex) => (
-              <tr
-                key={hourIndex}
-                className="border-gray-700"
-              >
-                <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
-                  <div className="h-4 w-12 animate-pulse rounded bg-green-200/20"></div>
-                </td>
-                {[...Array(numberOfDays)].map((_, dayIndex) => (
-                  <td
-                    key={dayIndex}
-                    className="border-x border-gray-700 p-2"
-                  >
-                    <div className="flex flex-col items-center justify-center gap-1">
-                      <div className="h-6 w-6 animate-pulse rounded bg-green-200"></div>
-                      <div className="h-4 w-8 animate-pulse rounded bg-green-200"></div>
-                      <div className="h-4 w-12 animate-pulse rounded bg-green-200"></div>
-                    </div>
-                  </td>
-                ))}
-              </tr>
-            ))}
-
-            {/* Precipitation row */}
-            <tr className="border-gray-700">
-              <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
-                <div className="h-6 w-6 animate-pulse rounded bg-green-200/20"></div>
-              </td>
-              {[...Array(numberOfDays)].map((_, index) => (
-                <td
-                  key={index}
-                  className="border-x border-gray-700 p-2"
-                >
-                  <div className="h-4 w-16 animate-pulse rounded bg-green-200"></div>
-                </td>
-              ))}
-            </tr>
-
-            {/* Pressure row */}
-            <tr className="border-gray-700">
-              <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
-                <div className="h-6 w-6 animate-pulse rounded bg-green-200/20"></div>
-              </td>
-              {[...Array(numberOfDays)].map((_, index) => (
-                <td
-                  key={index}
-                  className="border-x border-gray-700 p-2"
-                >
-                  <div className="h-4 w-16 animate-pulse rounded bg-green-200"></div>
-                </td>
-              ))}
-            </tr>
-
-            {/* Wind row */}
-            <tr className="border-gray-700">
-              <td className="sticky left-0 z-10 border-gray-700 bg-[#275e56] p-2">
-                <div className="h-6 w-6 animate-pulse rounded bg-green-200/20"></div>
-              </td>
-              {[...Array(numberOfDays)].map((_, index) => (
-                <td
-                  key={index}
-                  className="border-x border-gray-700 p-2"
-                >
-                  <div className="flex items-center justify-center gap-2">
-                    <div className="h-4 w-4 animate-pulse rounded bg-green-200"></div>
-                    <div className="h-4 w-16 animate-pulse rounded bg-green-200"></div>
-                  </div>
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    </section>
   )
 }
-
-export default TableWeatherSK

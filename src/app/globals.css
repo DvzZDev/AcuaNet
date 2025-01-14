@@ -238,8 +238,27 @@ table {
   scrollbar-color: #93ffb7 #dcfce7;
 }
 
-/* navidad */
 ::selection {
   color: #000;
   background-color: #93ffb7;
+}
+
+.section1bg {
+  background-image: url(/sanfru.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom 20% center;
+}
+
+.section2bg {
+  background-image: url(/sanfru2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom 20% center;
+}
+
+@media screen and (max-width: 1023px) {
+  .section1bg {
+    background-position: center right 38%;
+  }
 }

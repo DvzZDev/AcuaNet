@@ -1,10 +1,12 @@
-import Fuentes from "@/components/landing/Fuentes"
-import SkeletonBento from "@/components/skeletons/BentoSkeleton"
-import AboutLanding from "@/components/landing/AboutLanding"
-import { Suspense } from "react"
-import BentoDataLandin from "@/components/landing/BentoDataLanding"
+// import Fuentes from "@/components/landing/Fuentes"
+// import SkeletonBento from "@/components/skeletons/BentoSkeleton"
+// import AboutLanding from "@/components/landing/AboutLanding"
+// import { Suspense } from "react"
+// import BentoDataLandin from "@/components/landing/BentoDataLanding"
 import Faq from "@/components/landing/Faq"
 import Hero from "@/components/landing/Hero"
+import Info1 from "@/components/landing/Info1"
+import Info2 from "@/components/landing/Info2"
 
 export const metadata = {
   title: "AcuaNet - Planifica tu jornada de pesca",
@@ -42,11 +44,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Suspense fallback={<SkeletonBento />}>
+      {/* <Suspense fallback={<SkeletonBento />}>
         <BentoDataLandin />
-      </Suspense>
-      <Fuentes />
-      <AboutLanding />
+      </Suspense> */}
+      {/* <AboutLanding /> */}
+      <Info1 />
+      <Info2 />
+      {/* <Fuentes /> */}
       <Faq />
     </>
   )

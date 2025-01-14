@@ -10,11 +10,12 @@ export const metadata = {
   title: "AcuaNet - Planifica tu jornada de pesca",
   description:
     "Accede a datos actualizados sobre niveles de embalses, pronósticos meteorológicos y condiciones de pesca en toda España para planificar tu próxima jornada de pesca.",
-  keywords: "pesca, pesca de blackbass, herramientas de pesca, pesca de lucio, pesca en embalses, embalses de España, acuanet, pesca depredadores, presca de lucio",
+  keywords:
+    "pesca, pesca de blackbass, herramientas de pesca, pesca de lucio, pesca en embalses, embalses de España, acuanet, pesca depredadores, presca de lucio",
   openGraph: {
-    title: "AcuaNet - Optimiza tu pesca con datos en tiempo real",
+    title: "AcuaNet - Planifica tu jornada de pesca",
     description:
-      "Consulta los niveles de agua en embalses, pronósticos de clima y tablas lunares para mejorar tus salidas de pesca en toda España.",
+      "Accede a datos actualizados sobre niveles de embalses, pronósticos meteorológicos y condiciones de pesca en toda España para planificar tu próxima jornada de pesca.",
     url: "https://acuanet.es",
     siteName: "AcuaNet",
     images: [
@@ -30,7 +31,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AcuaNet - Tu compañero de pesca con datos actualizados",
+    title: "AcuaNet - Planifica tu jornada de pesca",
     description:
       "Descubre los niveles de embalses, pronósticos de clima y más para aprovechar al máximo tus jornadas de pesca en toda España.",
     images: ["https://i.imgur.com/LQvr7AX.png"],

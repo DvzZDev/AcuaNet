@@ -23,8 +23,8 @@ function Footer() {
 
       <div className="m-6 flex gap-5">
         <Link
-          aria-label="Instagram de David Esteban"
           className="transition-all hover:scale-110"
+          aria-label="Instagram de David Esteban"
           href="https://www.instagram.com/dvzz.dev/"
           target="_blank"
         >
@@ -41,8 +41,8 @@ function Footer() {
           </svg>
         </Link>
         <Link
-          aria-label="Github de David Esteban"
           className="transition-all hover:scale-110"
+          aria-label="Github de David Esteban"
           href="https://github.com/DvzZDev/AcuaNet"
           target="_blank"
         >
@@ -73,10 +73,28 @@ function Footer() {
         </Link>
       </div>
 
-      <div className="md:text-md text-xs text-green-100">
-        <span>Hecho con </span>
-        <span className="animate-pulse">❤️</span>
-        <span> por @DvzZDev</span>
+      <div className="md:text-md text-center text-xs text-green-100">
+        <p>
+          &copy; 2025 AcuaNet.{" "}
+          <Link
+            aria-label="Github de David Esteban"
+            href="https://github.com/DvzZDev/AcuaNet"
+            target="_blank"
+          >
+            {" "}
+            Proyecto de codigo abierto.
+          </Link>
+        </p>
+        <p>
+          Este proyecto está bajo la licencia{" "}
+          <Link
+            aria-label="Github de David Esteban"
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+            target="_blank"
+          >
+            Creative Commons BY-NC-ND 4.0
+          </Link>
+        </p>
       </div>
     </footer>
   )

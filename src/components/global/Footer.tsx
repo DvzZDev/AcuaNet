@@ -82,17 +82,6 @@ function Footer() {
             target="_blank"
           >
             {" "}
-            Proyecto de codigo abierto.
-          </Link>
-        </p>
-        <p>
-          Este proyecto está bajo la licencia{" "}
-          <Link
-            aria-label="Github de David Esteban"
-            href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
-            target="_blank"
-          >
-            Creative Commons BY-NC-ND 4.0
           </Link>
         </p>
       </div>

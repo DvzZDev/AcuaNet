@@ -298,3 +298,8 @@ table {
     background-position: center left;
   }
 }
+@media screen and (max-width: 1023px) {
+  .section4bg {
+    background-position: center right 70%;
+  }
+}

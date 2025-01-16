@@ -3,60 +3,72 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 function Faq() {
   return (
-    <section className="flex flex-col items-center justify-center bg-[#275e56] px-6 py-8 md:py-10">
-      <h2 className="mb-3 pt-1 text-center text-[2.3rem] font-black leading-none text-green-100 sm:text-[50px]">
+    <section className="flex flex-col items-center justify-center bg-green-50 px-6 py-8 md:py-20">
+      <h2 className="mb-5 pt-1 text-center text-[2.3rem] font-black leading-none text-[#275e56] sm:text-[50px] md:mb-10">
         Preguntas Frecuentes
       </h2>
       <div className="w-full max-w-[60rem]">
         <Accordion
           type="single"
           collapsible
-          className="w-full"
+          className="w-full !border-green-950"
         >
-          <AccordionItem value="item-1">
-            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
-              ¿Qué servicios ofrece AcuaNet?
+          <AccordionItem
+            className="!border-green-950"
+            value="item-1"
+          >
+            <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
+              He encontrado algo que no está bien o no se ve bien.
             </AccordionTrigger>
-            <AccordionContent className="animate-fade-in text-left text-base text-green-50">
-              AcuaNet te ofrece información actualizada sobre los niveles de los embalses, información meteorológica y la tabla
-              lunar de cada embalse de España.
+            <AccordionContent className="animate-fade-in text-left text-base text-emerald-900">
+              Mándanos un mensaje por Instagram a @dvzz.dev o @acuanet.es y lo arreglaremos.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
-              ¿Cómo puedo añadir un embalse a mis favoritos?
+          <AccordionItem
+            className="!border-green-950"
+            value="item-2"
+          >
+            <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
+              ¿Has tenido una idea para poder mejorar la página?
             </AccordionTrigger>
-            <AccordionContent className="animate-fade-in text-left text-base text-green-50">
-              Es muy fácil solo tienes que buscar el embalse que te interesa y hacer click en el icono de la estrella arriba a la
-              derecha y se añadirá a tus favoritos.
+            <AccordionContent className="animate-fade-in text-left text-base text-emerald-900">
+              Mándanos un mensaje por Instagram a @dvzz.dev o @acuanet.es y miraremos si es posible implementarla.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
+          <AccordionItem
+            className="!border-green-950"
+            value="item-3"
+          >
+            <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
               ¿Con qué frecuencia se actualizan los datos hidrográficos?
             </AccordionTrigger>
-            <AccordionContent className="animate-fade-in text-left text-base text-green-50">
-              Todos los datos mostrados en la página web, incluyendo cuencas, embalses y datos meteorológicos, se actualizan cada
-              24h automáticamente.
+            <AccordionContent className="animate-fade-in text-left text-base text-emerald-900">
+              Todos los datos mostrados en AcuaNet se actualizan cada día a las 2am.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-4">
-            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
+          <AccordionItem
+            className="!border-green-950"
+            value="item-4"
+          >
+            <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
               ¿Ves algún embalse que le faltan datos?
             </AccordionTrigger>
-            <AccordionContent className="animate-fade-in text-left text-base text-green-50">
-              Puede ser que algún embalse no tenga los datos disponibles, estamos trabajando para traer la mayor cantidad de datos
-              posibles. También puede ser que el embalse no tenga datos disponibles.
+            <AccordionContent className="animate-fade-in text-left text-base text-emerald-900">
+              Hay embalses pequeños que no disponen de datos hídricos, si es un embalse grande y no tiene datos, contacta con
+              nosotros.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-5">
-            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
+          <AccordionItem
+            className="!border-green-950"
+            value="item-5"
+          >
+            <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
               ¿De dónde provienen los datos hidrográficos y meteorológicos?
             </AccordionTrigger>
-            <AccordionContent className="animate-fade-in text-left text-base text-green-50">
+            <AccordionContent className="animate-fade-in text-left text-base text-emerald-900">
               Todos los datos hidrográficos provienen del
               <a
-                className="font-bold text-green-400"
+                className="font-bold"
                 href="https://www.miteco.gob.es/es/agua/temas/evaluacion-de-los-recursos-hidricos/saih.html"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -66,37 +78,48 @@ function Faq() {
               </a>{" "}
               y los datos meteorológicos provienen de{" "}
               <a
-                className="font-bold text-green-400"
+                className="font-bold"
                 href="https://www.visualcrossing.com/about"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                VisualCrossing
+                ECMWF{" "}
               </a>
               .
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-6">
-            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
+          <AccordionItem
+            className="!border-green-950"
+            value="item-6"
+          >
+            <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
               ¿Hay algo que no te funciona o se ve mal?
             </AccordionTrigger>
-            <AccordionContent className="animate-fade-in text-left text-base text-green-50">
-              Puedes ponerte en contacto conmigo a través de mi instagram{" "}
+            <AccordionContent className="animate-fade-in text-left text-base text-emerald-900">
+              Puedes ponerte en contacto conmigo a través de mi Instagram{" "}
               <a
-                className="animate-fade-up0 font-bold text-green-50"
+                className="animate-fade-up0 font-bold text-emerald-900"
                 href="https://www.instagram.com/dvzz.dev/"
               >
                 @dvzz.dev
               </a>
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-7">
-            <AccordionTrigger className="py-5 text-left text-base text-green-200 md:text-xl">
-              ¿Es posible acceder a datos históricos de los embalses y cuencas?
+          <AccordionItem
+            className="!border-green-950"
+            value="item-7"
+          >
+            <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
+              ¿Eres una marca de pesca, tienda o club y quieres anunciarte en la web?
             </AccordionTrigger>
-            <AccordionContent className="animate-fade-in text-left text-base text-green-50">
-              Actualmente solo podemos ofrecer los datos de la última semana y como estaba la cuenca o embalse hace un año.
-              Seguimos trabajando poder traer un servicio más completo en el futuro.
+            <AccordionContent className="animate-fade-in text-left text-base text-emerald-900">
+              Ponte en contacto con nosotros a través de Instagram y veremos cuál es la mejor forma de que te anuncies en AcuaNet{" "}
+              <a
+                className="animate-fade-up0 font-bold text-emerald-900"
+                href="https://www.instagram.com/dvzz.dev/"
+              >
+                @dvzz.dev
+              </a>
             </AccordionContent>
           </AccordionItem>
         </Accordion>

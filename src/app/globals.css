@@ -5,13 +5,19 @@
 body {
   background-color: #000000;
   font-family: "Inter", sans-serif;
-  background-image: url(/ore.webp);
+  background-image: url(/sanfruHero.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   width: 100vw;
   height: 110vh;
   overflow-x: hidden;
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+    background-position: top right 37%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -250,6 +256,13 @@ table {
   background-position: bottom 20% center;
 }
 
+.section4bg {
+  background-image: url(/pep2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .section2bg {
   background-image: url(/sanfru2.webp);
   background-repeat: no-repeat;
@@ -257,8 +270,31 @@ table {
   background-position: bottom 20% center;
 }
 
+.section3bg {
+  background-image: url(/jaime.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.section5bg {
+  background-image: url(/s.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 @media screen and (max-width: 1023px) {
   .section1bg {
     background-position: center right 38%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .section2bg {
+    background-position: center right 35%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .section3bg {
+    background-position: center left;
   }
 }

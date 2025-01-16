@@ -19,7 +19,7 @@ export default function Info1() {
           ref={titleRef}
           className={`${titleInView && "animate-fade-in-right opacity-100"} w-fit rounded-2xl bg-black/25 p-3 text-left text-4xl font-black text-emerald-200 opacity-0 backdrop-blur-2xl md:text-5xl lg:text-6xl`}
         >
-          Toda la información a un <span className="glow2 text-[#93ffb7]">click.</span>
+          Toda la información a un <span className="glow2 text-[#93ffb7]">clic.</span>
         </h2>
         <div className="flex w-full flex-col items-center justify-center gap-6 md:grid md:w-fit md:grid-cols-2 md:gap-x-14">
           <div

@@ -131,6 +131,20 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
           )}
 
           {coordsData ? <MapEmbData coords={coordsData} /> : null}
+          <div className="flex flex-wrap items-center justify-center gap-3 rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg">
+            <a
+              href="https://www.agrbaits.es/"
+              target="blank"
+              className="transition-all hover:scale-105"
+            >
+              <img
+                src="/Sponspors/AGRBaits.webp"
+                alt="AGR Baits"
+                className="h-28 md:h-36"
+                draggable="false"
+              />
+            </a>
+          </div>
 
           {weatherData && <TableWeather data={weatherData} />}
           <h2 className="text-2xl font-black text-green-950">Calendario Lunar</h2>

@@ -46,10 +46,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Info4 />
       <Info1 />
       <Info2 />
       <Info3 />
-      <Info4 />
       <Faq />
     </>
   )

@@ -96,12 +96,18 @@ function Faq() {
               ¿Hay algo que no te funciona o se ve mal?
             </AccordionTrigger>
             <AccordionContent className="animate-fade-in text-left text-base text-emerald-900">
-              Puedes ponerte en contacto conmigo a través de mi Instagram{" "}
+              Ponte en contacto conmigo a través de Instagram.{" "}
               <a
                 className="animate-fade-up0 font-bold text-emerald-900"
                 href="https://www.instagram.com/dvzz.dev/"
               >
                 @dvzz.dev
+              </a>{" "}
+              <a
+                className="animate-fade-up0 font-bold text-emerald-900"
+                href="https://www.instagram.com/dvzz.dev/"
+              >
+                @acuanet.es
               </a>
             </AccordionContent>
           </AccordionItem>
@@ -110,15 +116,21 @@ function Faq() {
             value="item-7"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
-              ¿Eres una marca de pesca, tienda o club y quieres anunciarte en la web?
+              ¿Eres una marca de pesca o tienda y quieres anunciarte y patrocinar AcuaNet?
             </AccordionTrigger>
             <AccordionContent className="animate-fade-in text-left text-base text-emerald-900">
-              Ponte en contacto con nosotros a través de Instagram y veremos cuál es la mejor forma de que te anuncies en AcuaNet{" "}
+              Ponte en contacto conmigo a través de Instagram.{" "}
               <a
                 className="animate-fade-up0 font-bold text-emerald-900"
                 href="https://www.instagram.com/dvzz.dev/"
               >
                 @dvzz.dev
+              </a>{" "}
+              <a
+                className="animate-fade-up0 font-bold text-emerald-900"
+                href="https://www.instagram.com/dvzz.dev/"
+              >
+                @acuanet.es
               </a>
             </AccordionContent>
           </AccordionItem>

@@ -1,8 +1,4 @@
-export default async function GetCoordinates(loc: string, pais: string, coords: { lat: number; lon: number }) {
-  if (pais !== "España") {
-    return coords
-  }
-
+export default async function GetCoordinates(loc: string) {
   try {
     const url = `https://nominatim.openstreetmap.org/search.php?q=embalse de ${loc}&format=jsonv2&countrycodes=ES`
     const response = await fetch(url)

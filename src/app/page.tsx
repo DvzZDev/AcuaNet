@@ -7,6 +7,8 @@ import Faq from "@/components/landing/Faq"
 import Hero from "@/components/landing/Hero"
 import Info1 from "@/components/landing/Info1"
 import Info2 from "@/components/landing/Info2"
+import Info3 from "@/components/landing/info3"
+import Info4 from "@/components/landing/info4"
 
 export const metadata = {
   title: "AcuaNet - Planifica tu jornada de pesca",
@@ -44,13 +46,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <Suspense fallback={<SkeletonBento />}>
-        <BentoDataLandin />
-      </Suspense> */}
-      {/* <AboutLanding /> */}
       <Info1 />
       <Info2 />
-      {/* <Fuentes /> */}
+      <Info3 />
+      <Info4 />
       <Faq />
     </>
   )

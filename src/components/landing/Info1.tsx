@@ -1,6 +1,7 @@
 "use client"
 
 import { useInView } from "react-intersection-observer"
+import ImageRef from "./ImageRef"
 
 export default function Info1() {
   const [ref1, inView1] = useInView({ threshold: 0.5, triggerOnce: true })
@@ -12,8 +13,8 @@ export default function Info1() {
   const [titleRef, titleInView] = useInView({ threshold: 0.5, triggerOnce: true })
 
   return (
-    <section className="section1bg flex h-fit items-center justify-center px-6 py-10 md:h-screen">
-      <div className="flex w-fit flex-col gap-12 md:gap-16 xl:-ml-[15rem] 2xl:-ml-[40rem]">
+    <section className="section4bg relative flex h-fit items-center justify-center px-6 py-10 md:h-screen">
+      <div className="flex w-fit flex-col items-center gap-7 md:gap-16 xl:-mr-[25rem] 2xl:-mr-[40rem]">
         <h2
           ref={titleRef}
           className={`${titleInView && "animate-fade-in-right opacity-100"} w-fit rounded-2xl bg-black/25 p-3 text-left text-4xl font-black text-emerald-200 opacity-0 backdrop-blur-2xl md:text-5xl lg:text-6xl`}
@@ -139,6 +140,10 @@ export default function Info1() {
             />
           </div>
         </div>
+        <ImageRef
+          id="@dvzz.dev"
+          link="https://www.instagram.com/dvzz.dev/"
+        />
       </div>
     </section>
   )

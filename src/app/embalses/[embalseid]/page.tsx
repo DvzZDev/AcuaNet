@@ -60,18 +60,23 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
   const embalses = GetEmbalses()
   const embalsesData = await embalses
   const resEmbalse = embalsesData.find((embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase())
-  const coords = GetCoordinates(decodedEmbalseid, resEmbalse?.pais || "", {
-    lat: resEmbalse?.lat ?? 0,
-    lon: resEmbalse?.lon ?? 0,
-  })
-
-  const coordsData = await coords
-
-  const weatherData = coordsData ? await GetWeather(coordsData.lat, coordsData.lon) : undefined
-
 
   if (!resEmbalse) {
     return <NotFound />
+  }
+
+  let coordsData
+  let weatherData
+
+  if (resEmbalse?.lat === null || resEmbalse?.lon === null) {
+    const coords = GetCoordinates(decodedEmbalseid).catch((error) => {
+      console.error("Error recuperando las coordenadas", error)
+    })
+    coordsData = await coords
+    weatherData = coordsData ? await GetWeather(coordsData.lat, coordsData.lon) : undefined
+  } else {
+    weatherData = await GetWeather(resEmbalse.lat, resEmbalse.lon)
+    coordsData = { lat: resEmbalse.lat, lon: resEmbalse.lon, name: resEmbalse.nombre_embalse }
   }
 
   const {
@@ -125,8 +130,8 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
             ""
           )}
 
-          {coordsData && <MapEmbData coords={coordsData} />}
-          
+          {coordsData ? <MapEmbData coords={coordsData} /> : null}
+
           {weatherData && <TableWeather data={weatherData} />}
           <h2 className="text-2xl font-black text-green-950">Calendario Lunar</h2>
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">

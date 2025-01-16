@@ -22,7 +22,7 @@ export default function Info3() {
         >
           La construcción de AcuaNet ha sido un proyecto personal que ha llevado mucho tiempo y esfuerzo. Por eso te
           agradeceríamos que compartieras esta web con todos los pescadores a los que conozcas. Así juntos podremos hacer de esta
-          web una herramienta en el día a día de todos los pescadores.
+          web una herramienta del día a día de todos los pescadores.
           <br />
           <br />
           También puedes ayudarnos a mejorar la web, si encuentras algún error o tienes alguna idea para mejorar la web,

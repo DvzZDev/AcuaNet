@@ -43,7 +43,7 @@ function Content() {
               className="rounded-lg object-cover shadow-lg"
             />
           </div>
-          <div className="text-white">
+          <div className="h-fit text-white">
             <h2 className="mb-3 text-3xl font-bold text-[#1b7b6e] md:mb-5 md:text-5xl">¿Quién soy Yo?</h2>
             <p className="mb-3 text-base leading-relaxed text-[#0a2e29] md:text-lg">
               Soy David, un programador web y pescador en mis ratos libres. He desarrollado AcuaNet con la intención de ayudar a
@@ -52,9 +52,17 @@ function Content() {
 
             <p className="text-base leading-relaxed text-[#0a2e29] md:text-lg">
               Si queréis contribuir a que AcuaNet siga creciendo y mejorando, podéis hacer una pequeña donación desde el botón
-              abajo a la derecha. No importa la cantidad, todo suma a la hora de mantener la web y añadir nuevas funcionalidades.
-              Queremos seguir implementando nuevas herramientas y mejoras para que tu experiencia en AcuaNet sea la mejor posible.
+              abajo. No importa la cantidad, todo suma a la hora de mantener la web y añadir nuevas funcionalidades. Queremos
+              seguir implementando nuevas herramientas y mejoras para que tu experiencia en AcuaNet sea la mejor posible.
             </p>
+
+            <a
+              className="mt-2 block w-fit rounded-xl bg-emerald-900 p-3 text-base font-black text-white md:mt-5 md:text-lg"
+              href="https://buymeacoffee.com/dvzz"
+              target="blank"
+            >
+              Apoya a AcuaNet
+            </a>
           </div>
           <div className="hidden h-full w-full items-center overflow-visible rounded-lg sm:flex">
             <img

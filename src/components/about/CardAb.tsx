@@ -2,8 +2,8 @@ import Link from "next/link"
 
 function CardAb() {
   return (
-    <div className="h-auto max-w-[25rem] flex-col">
-      <div className="relative h-[15rem] w-full">
+    <div className="h-auto md:mt-5 max-w-[25rem] flex-col">
+      <div className="relative h-fit w-full">
         <img
           src="/yo.webp"
           alt="Equipo de AcuaNet"
@@ -16,7 +16,7 @@ function CardAb() {
           David <span className="text-[#1b7b6e]">Esteban</span>
         </h1>
         <p className="mb-3 text-base text-[#0a2e29] md:text-lg">
-          ¡Hola! Soy David, mi objetivo es ayudarte a planificar tus jornadas de pesca de la manera más sencilla y clara posible.
+          Hola soy David, tengo 20 años, soy programador web y pescador a ratos. Gracias por usar AcuaNet!
         </p>
         <div className="relative mt-1 flex items-center justify-center gap-7">
           <div className="absolute left-0 top-0 h-0.5 w-full bg-gradient-to-r from-transparent via-green-800 to-transparent"></div>

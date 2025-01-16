@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SpeedInsights />
           </Suspense>
           {children}
-          <a
+          {/* <a
             href="https://buymeacoffee.com/dvzz"
             target="_blank"
             rel="noopener noreferrer"
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
             <span className="text-base md:text-xl">🎣</span>
             <p className="font-black">¡Dona a AcuaNet!</p>
-          </a>
+          </a> */}
           <Footer />
         </Providers>
       </body>

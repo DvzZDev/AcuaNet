@@ -45,7 +45,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre el proyecto
 
 ![AcuaNet Hero](https://i.imgur.com/bjEFoZe.png)
 

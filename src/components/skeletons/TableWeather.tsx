@@ -9,7 +9,7 @@ export default function TableWeather() {
           className="w-3h-32 h-32"
         >
           <radialGradient
-            id="a"
+            id="gradient1"
             cx={0.66}
             cy={0.313}
             fx={0.66}
@@ -46,7 +46,8 @@ export default function TableWeather() {
             cy={100}
             r={70}
             fill="none"
-            stroke="url(#a)"
+            stroke="url(#gradient1)"
+            id={`circle-${Math.random().toString(36).substr(2, 9)}`}
             strokeDasharray="200 1000"
             strokeLinecap="round"
             strokeWidth={12}

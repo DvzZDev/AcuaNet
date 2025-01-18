@@ -7,11 +7,22 @@ import WindDirectionIcon from "./wind"
 import dateFormater from "@/lib/DayFormater"
 
 function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
-  const data = weatherData.days
+  const data = useMemo(() => {
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
+    return weatherData.days.filter((day) => {
+      const dayDate = new Date(day.datetime)
+      dayDate.setHours(0, 0, 0, 0)
+      return dayDate >= today
+    })
+  }, [weatherData.days])
+
   const hours = useMemo(
     () => ["06:00:00", "08:00:00", "10:00:00", "12:00:00", "14:00:00", "16:00:00", "18:00:00", "20:00:00", "22:00:00"],
     []
   )
+
   return (
     <section className="">
       <h2 className="mb-6 text-2xl font-black text-green-950 md:mb-6">Predicción Meteorológica</h2>

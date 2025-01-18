@@ -1906,7 +1906,7 @@ export function getWeatherCode(icon: string): string | JSX.Element {
       >
         <defs>
           <linearGradient
-            id="a"
+            id="wido"
             x1="26.75"
             x2="37.25"
             y1="22.91"
@@ -1931,7 +1931,7 @@ export function getWeatherCode(icon: string): string | JSX.Element {
           cx="32"
           cy="32"
           r="10.5"
-          fill="url(#a)"
+          fill="url(#wido)"
           stroke="#f8af18"
           strokeMiterlimit="10"
           strokeWidth=".5"

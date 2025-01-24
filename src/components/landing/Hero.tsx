@@ -29,7 +29,7 @@ export default async function Hero() {
             <span className="glow2 text-[#93ffb7]">fácil</span>
           </h1>
           <h2 className="max-w-[17rem] animate-blurred-fade-in text-center text-sm text-[#93ffb7] animate-delay-200 sm:text-lg md:max-w-[50rem] md:text-2xl">
-            Estado actualizado de embalses, clima, mapas y tablas lunares en AcuaNet. <br />
+            Estado actualizado de embalses, meteorología, mapas y tablas lunares en AcuaNet. <br />
           </h2>
           <div className="z-30 mt-4 flex animate-blurred-fade-in duration-700 animate-delay-300">
             <SerchEmb />

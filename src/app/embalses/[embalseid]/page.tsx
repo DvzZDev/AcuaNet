@@ -11,6 +11,8 @@ import GetWeather from "@/lib/GetWeather"
 import ButtonUp from "@/components/lunar/up"
 import MapEmbData from "@/components/embalses/Dashboard/MapDynamic"
 import TableWeather from "@/components/weather/TableWeather"
+import Publi from "@/components/embalses/Dashboard/Publi"
+import type { Embalses } from "@/types"
 
 export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
   const params = await props.params
@@ -62,7 +64,9 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
   const decodedEmbalseid = decodeURIComponent(params.embalseid)
   const embalses = GetEmbalses()
   const embalsesData = await embalses
-  const resEmbalse = embalsesData.find((embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase())
+  const resEmbalse: Embalses | undefined = embalsesData.find(
+    (embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase()
+  )
 
   if (!resEmbalse) {
     return <NotFound />
@@ -100,7 +104,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
 
   return (
     <>
-      <TitleEmb data={resEmbalse} />
+      <TitleEmb data={{ ...resEmbalse, nombre_embalse: resEmbalse.nombre_embalse || "No disponible" }} />
       <FavButton url={{ embalseid: decodedEmbalseid }} />
       <main className="flex justify-center bg-green-50 px-6 pb-14 pt-4 text-black">
         <section className="flex w-[70rem] flex-col gap-7">
@@ -154,6 +158,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
             <LunarCalendar />
           </section>
+          <Publi />
         </section>
         <ButtonUp />
       </main>

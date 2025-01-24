@@ -55,6 +55,8 @@ export interface Embalses {
   pais: string | null
   misma_semana_10añospor: number | null
   cota: number | null
+  lat: number | null
+  lon: number | null
 }
 
 export interface WeatherTypes {

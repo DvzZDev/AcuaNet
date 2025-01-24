@@ -5,11 +5,14 @@ export const metadata = {
   title: "Sobre Nosotros - AcuaNet",
   description:
     "Conoce más sobre el equipo de AcuaNet y cómo trabajamos para brindarte información actualizada sobre los embalses de agua en España",
+  alternates: {
+    canonical: "/quienesSomos",
+  },
   openGraph: {
     title: "Sobre Nosotros - AcuaNet",
     description:
       "Conoce más sobre el equipo de AcuaNet y cómo trabajamos para brindarte información actualizada sobre los embalses de agua en España",
-    url: "https://acuanet.es/cuencas",
+    url: "https://www.acuanet.es/quienesSomos",
     siteName: "AcuaNet",
     images: [
       {

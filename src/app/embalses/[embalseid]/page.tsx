@@ -21,6 +21,9 @@ export async function generateMetadata(props: { params: Promise<{ embalseid: str
     title: `Embalse de ${embalseFormatted} - Planifica tu jornada de pesca`,
     description: `Consulta información detallada sobre el embalse de ${embalseName}, incluyendo niveles de agua, pronóstico meteorológico y datos útiles para tus salidas de pesca en tiempo real.`,
     keywords: `${embalseName}, embalse de ${embalseName} , pesca de black bass, pesca de lucio, black bass, lucio, pesca deportiva, ${embalseName} pesca, pesca en ${embalseName}, pesca blackbass ${embalseName}, pesca lucio ${embalseName}, acuanet`,
+    alternates: {
+      canonical: `/embalses/${params.embalseid}`,
+    },
     openGraph: {
       title: `Embalse de ${embalseFormatted} - Planifica tu jornada de pesca con AcuaNet`,
       description: `Consulta los niveles de agua, condiciones meteorológicas y más sobre el embalse de ${embalseName}, con datos actualizados para planificar tu jornada de pesca.`,

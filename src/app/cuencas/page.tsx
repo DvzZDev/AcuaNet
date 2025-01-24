@@ -7,6 +7,9 @@ export const metadata = {
   title: "Cuencas Hidrográficas de España - Gestión y Datos en AcuaNet",
   description:
     "Explora las cuencas hidrográficas de España, consulta mediciones actualizadas y aprende sobre la gestión de los recursos hídricos en cada cuenca.",
+  alternates: {
+    canonical: "/cuencas",
+  },
   openGraph: {
     title: "Cuencas Hidrográficas de España - Gestión y Datos en AcuaNet",
     description:

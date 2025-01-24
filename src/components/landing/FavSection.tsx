@@ -105,7 +105,7 @@ export default async function FavSection() {
           </div>
         </>
       ) : (
-        <div className="m-auto mt-[4rem] xl:h-[8rem] 2xl:h-[14rem] flex justify-center items-center max-w-sm rounded-lg md:mt-0">
+        <div className="m-auto mt-[4rem] flex max-w-sm items-center justify-center rounded-lg md:mt-0 xl:h-[8rem] 2xl:h-[14rem]">
           <div className="max-w-sm rounded-lg border border-green-50/30 bg-emerald-400/15 p-2 md:mt-0">
             <div className="flex items-center space-x-4">
               <svg

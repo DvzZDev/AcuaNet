@@ -1,5 +1,7 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a id="readme-top"></a>
+
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -7,8 +9,6 @@
 *** Don't forget to give the project a star!
 *** Thanks again! Now go create something AMAZING! :D
 -->
-
-
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -18,8 +18,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -42,9 +40,8 @@
   </p>
 </div>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## Sobre el proyecto
 
 ![AcuaNet Hero](https://i.imgur.com/bjEFoZe.png)
@@ -53,26 +50,24 @@
 
 Recopilamos datos utilizando técnicas avanzadas de scraping y filtrado, y los organizamos para que te resulte fácil consultarlos. En nuestra web encontrarás:
 
-- **Niveles de cuencas y embalses:** Para que sepas siempre cómo están las aguas.  
-- **Mapas interactivos:** Perfectos para planificar tus salidas de pesca.  
-- **El tiempo en tu embalse:** Información meteorológica específica y detallada.  
+- **Niveles de cuencas y embalses:** Para que sepas siempre cómo están las aguas.
+- **Mapas interactivos:** Perfectos para planificar tus salidas de pesca.
+- **El tiempo en tu embalse:** Información meteorológica específica y detallada.
 - **Tablas lunares:** Para pescar en el mejor momento.
 
-Todo esto, reunido en un único sitio, hecho por y para amantes de la pesca.  
+Todo esto, reunido en un único sitio, hecho por y para amantes de la pesca.
 
-### Creado con 
+### Creado con
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![TypeScript-img]][TypeScript-url]
-* [![Tailwind][Tailwind-img]][Tailwind-url]
-* [![Tailwind][SupaBase-img]][SupaBase-url]
-
-
-
+- [![Next][Next.js]][Next-url]
+- [![React][React.js]][React-url]
+- [![TypeScript-img]][TypeScript-url]
+- [![Tailwind][Tailwind-img]][Tailwind-url]
+- [![Tailwind][SupaBase-img]][SupaBase-url]
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge

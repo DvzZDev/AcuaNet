@@ -227,7 +227,7 @@ const LunarCalendarMov = () => {
   }
 
   return (
-    <section className="mx-auto flex max-w-[70rem] items-center pt-4 justify-center px-6">
+    <section className="mx-auto flex max-w-[70rem] items-center justify-center px-6 pt-4">
       <div className="w-full overflow-hidden rounded-lg shadow-md">
         <div className="flex justify-between pb-6">
           <button

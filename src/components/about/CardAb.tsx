@@ -2,7 +2,7 @@ import Link from "next/link"
 
 function CardAb() {
   return (
-    <div className="h-auto md:mt-5 max-w-[25rem] flex-col">
+    <div className="h-auto max-w-[25rem] flex-col md:mt-5">
       <div className="relative h-fit w-full">
         <img
           src="/yo.webp"

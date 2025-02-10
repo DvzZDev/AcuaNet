@@ -19,7 +19,7 @@ function CardAb() {
           Hola soy David, tengo 20 años, soy programador web y pescador a ratos. Gracias por usar AcuaNet!
         </p>
         <div className="relative mt-1 flex items-center justify-center gap-7">
-          <div className="absolute left-0 top-0 h-0.5 w-full bg-gradient-to-r from-transparent via-green-800 to-transparent"></div>
+          <div className="absolute left-0 top-0 h-0.5 w-full bg-linear-to-r from-transparent via-green-800 to-transparent"></div>
           <div className="relative z-10 flex items-center gap-7 pt-3">
             <Link
               className="transition-all hover:scale-110"

@@ -2,7 +2,7 @@ export default function TableWeather() {
   return (
     <section className="h-full">
       <h2 className="mb-6 text-2xl font-black text-green-950 md:mb-6">Predicción Meteorológica</h2>
-      <div className="mb-1 flex h-[20rem] w-[15rem] flex-shrink-0 flex-col items-center justify-center rounded-md bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-teal-900 via-teal-950 to-teal-900 p-3 md:w-[17rem]">
+      <div className="mb-1 flex h-[20rem] w-[15rem] shrink-0 flex-col items-center justify-center rounded-md bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-teal-900 via-teal-950 to-teal-900 p-3 md:w-[17rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"

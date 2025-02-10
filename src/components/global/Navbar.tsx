@@ -17,7 +17,7 @@ export default function Navbar() {
         <div className="flex w-full items-center justify-between lg:w-auto">
           <Link
             href="/"
-            className="flex-shrink-0"
+            className="shrink-0"
             aria-label="Ir a la página principal glow "
             onClick={closeMenu}
           >
@@ -72,7 +72,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="mx-4 flex w-full items-center justify-between leading-none lg:w-auto lg:flex-grow">
+        <div className="mx-4 flex w-full items-center justify-between leading-none lg:w-auto lg:grow">
           {/* Navegación */}
           <nav className="hidden gap-4 text-center text-xl leading-none text-green-100 lg:flex lg:items-center">
             <Link

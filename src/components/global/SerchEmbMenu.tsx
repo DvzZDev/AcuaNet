@@ -45,7 +45,7 @@ export default function SerchEmbMenu() {
           loop
         >
           <input
-            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-none sm:text-[18px] md:w-[21rem]"
+            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-hidden sm:text-[18px] md:w-[21rem]"
             type="text"
             value={type}
             onChange={handletype}
@@ -53,7 +53,7 @@ export default function SerchEmbMenu() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-none active:scale-75"
+          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-hidden active:scale-75"
           type="submit"
         >
           <svg

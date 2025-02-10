@@ -30,7 +30,7 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
         {data.map((day, index) => (
           <div
             key={index}
-            className="mb-1 flex h-full w-[15rem] flex-shrink-0 flex-col items-center rounded-md bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-teal-900 via-teal-950 to-teal-900 p-3 md:w-[17rem]"
+            className="mb-1 flex h-full w-[15rem] shrink-0 flex-col items-center rounded-md bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-teal-900 via-teal-950 to-teal-900 p-3 md:w-[17rem]"
           >
             <p className="font-black">{dateFormater({ datetime: day.datetime.toString() }).toUpperCase()}</p>
             <p className="text-sm text-emerald-200">

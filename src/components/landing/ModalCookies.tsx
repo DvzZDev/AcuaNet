@@ -45,7 +45,7 @@ export default function ModalCookies() {
     <>
       {consentGiven === "undecided" && (
         <AlertDialog open>
-          <AlertDialogContent className="sm:max-w-m w-11/12 animate-fade-in bg-green-50 backdrop-blur-sm">
+          <AlertDialogContent className="sm:max-w-m w-11/12 animate-fade-in bg-green-50 backdrop-blur-xs">
             <AlertDialogHeader>
               <AlertDialogTitle className="text-2xl font-black text-[#1b7b6e]">Uso de Cookies</AlertDialogTitle>
               <AlertDialogDescription>

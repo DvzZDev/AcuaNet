@@ -73,7 +73,7 @@ export default function SerchWeather() {
           loop
         >
           <input
-            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-none sm:text-[18px]"
+            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-hidden sm:text-[18px]"
             type="text"
             value={type}
             onChange={handleChange}

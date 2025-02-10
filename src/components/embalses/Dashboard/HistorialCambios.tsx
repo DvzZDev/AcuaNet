@@ -21,7 +21,7 @@ export default function HistorialCambios({
         {/* Hace una semana */}
         <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -57,7 +57,7 @@ export default function HistorialCambios({
           </div>
           {/* Hace un año */}
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -87,7 +87,7 @@ export default function HistorialCambios({
           </div>
           {/* Hace 10 años */}
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"

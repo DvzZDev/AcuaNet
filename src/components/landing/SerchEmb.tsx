@@ -43,7 +43,7 @@ export default function SerchEmb() {
           loop
         >
           <input
-            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-none sm:text-[18px] md:w-[21rem]"
+            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-hidden sm:text-[18px] md:w-[21rem]"
             type="text"
             value={type}
             onChange={handletype}
@@ -51,7 +51,7 @@ export default function SerchEmb() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-none active:scale-75"
+          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-hidden active:scale-75"
           type="submit"
         >
           <svg
@@ -96,7 +96,7 @@ export default function SerchEmb() {
                   <img
                     alt="Flag"
                     src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
-                    className="h-[1.5rem] w-[1.5rem] overflow-hidden rounded-sm"
+                    className="h-[1.5rem] w-[1.5rem] overflow-hidden rounded-xs"
                   />
                 </li>
               </Link>

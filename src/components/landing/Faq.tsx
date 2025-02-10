@@ -11,10 +11,10 @@ function Faq() {
         <Accordion
           type="single"
           collapsible
-          className="w-full !border-green-950"
+          className="w-full border-green-950!"
         >
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-1"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -25,7 +25,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-2"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -36,7 +36,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-3"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -47,7 +47,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-4"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -59,7 +59,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-5"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -89,7 +89,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-6"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -112,7 +112,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-7"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">

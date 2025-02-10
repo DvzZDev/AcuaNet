@@ -11,9 +11,9 @@ async function bento() {
             style={{ cursor: "pointer" }}
           >
             <div className="flex h-full w-full animate-pulse flex-col content-center items-center justify-center rounded-md bg-green-200">
-              <div className="mb-2 h-6 w-32 animate-pulse rounded bg-green-50"></div>
-              <div className="mb-2 h-6 w-20 animate-pulse rounded bg-green-50"></div>
-              <div className="h-6 w-24 animate-pulse rounded bg-green-50"></div>
+              <div className="mb-2 h-6 w-32 animate-pulse rounded-sm bg-green-50"></div>
+              <div className="mb-2 h-6 w-20 animate-pulse rounded-sm bg-green-50"></div>
+              <div className="h-6 w-24 animate-pulse rounded-sm bg-green-50"></div>
             </div>
           </div>
         ))}

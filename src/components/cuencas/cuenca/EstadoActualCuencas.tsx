@@ -22,7 +22,7 @@ export default function EstadoActualCuencas({
         <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">
           {/* Agua Embalsada */}
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -69,7 +69,7 @@ export default function EstadoActualCuencas({
 
           {/* Capacidad Total */}
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -104,7 +104,7 @@ export default function EstadoActualCuencas({
 
           {/* Cambios Semanales */}
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"

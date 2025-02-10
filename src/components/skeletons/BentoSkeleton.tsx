@@ -1,11 +1,11 @@
 function SkeletonBento() {
   return (
-    <section className="flex min-h-full flex-col items-center justify-center bg-[#f1fbf7] bg-gradient-to-t py-5 md:py-10 lg:h-full">
+    <section className="flex min-h-full flex-col items-center justify-center bg-[#f1fbf7] bg-linear-to-t py-5 md:py-10 lg:h-full">
       <h1 className="text-center text-[2.3rem] font-bold leading-none text-[#1b7b6e] sm:mb-6 sm:text-[50px]">Resumen Global</h1>
       {/* Div Global */}
       <div className="mx-6 my-4 flex flex-col justify-center gap-7 md:my-8 lg:m-0 lg:grid lg:h-[46rem] lg:w-[60rem] lg:grid-cols-10 lg:grid-rows-2 lg:gap-3">
         {/* Primera Col */}
-        <div className="animate-once col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm animate-ease-in-out lg:col-span-4">
+        <div className="animate-once col-span-4 row-span-1 flex justify-center text-wrap rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-xs animate-ease-in-out lg:col-span-4">
           <div className="flex h-full w-full flex-col content-center justify-evenly gap-3 rounded-xl text-center">
             <h2 className="text-3xl text-green-300 md:text-5xl">Reserva</h2>
             <div className="m-auto h-[210px] w-[210px] animate-pulse rounded-xl bg-green-100"></div>
@@ -16,7 +16,7 @@ function SkeletonBento() {
         {/* Segunda Col */}
         <div
           id="bd2"
-          className="col-span-6 row-span-1 flex min-h-full min-w-full content-center justify-center rounded-xl bg-[#114d45] bg-opacity-90 p-2 shadow-2xl shadow-[#114d45] backdrop-blur-sm"
+          className="col-span-6 row-span-1 flex min-h-full min-w-full content-center justify-center rounded-xl bg-[#114d45] bg-opacity-90 p-2 shadow-2xl shadow-[#114d45] backdrop-blur-xs"
         >
           <div className="grid h-full w-full animate-pulse grid-cols-2 grid-rows-8 gap-2 text-center lg:grid-cols-4 lg:grid-rows-4">
             {Array.from({ length: 16 }).map((_, index) => (
@@ -32,13 +32,13 @@ function SkeletonBento() {
         </div>
 
         {/* Tercera Col */}
-        <div className="col-span-6 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm">
+        <div className="col-span-6 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-xs">
           <h1 className="p-2 text-center text-4xl text-green-200">Fase Lunar</h1>
           <div className="flex h-full w-full flex-col content-center justify-center px-2 text-[15px] lg:text-[16px]"></div>
         </div>
 
         {/* Cuarta Col */}
-        <div className="col-span-4 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-sm">
+        <div className="col-span-4 rounded-xl bg-[#114d45] bg-opacity-90 shadow-2xl shadow-[#114d45] backdrop-blur-xs">
           <h1 className="p-2 text-center text-3xl text-green-300">Mayor Variacion Semanal</h1>
           <div className="flex flex-col content-center justify-center px-3">
             <table className="mb-1 w-full text-[16px]">

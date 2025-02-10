@@ -10,7 +10,7 @@ export default function Publi() {
             rel="noreferrer"
             target="_blank"
           >
-            <div className="absolute z-10 h-full w-full rounded-xl bg-gradient-to-b from-transparent to-black"></div>
+            <div className="absolute z-10 h-full w-full rounded-xl bg-linear-to-b from-transparent to-black"></div>
             <img
               src="/Lucio.webp"
               alt="Imagen de un lucio"

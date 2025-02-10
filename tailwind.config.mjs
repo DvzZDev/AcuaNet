@@ -1,4 +1,3 @@
-// tailwind.config.mjs
 import animations from "@midudev/tailwind-animations"
 
 /** @type {import('tailwindcss').Config} */
@@ -9,7 +8,7 @@ const tailwindConfig = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/components/(modal|button|image|input|spinner|dropdown|accordion).js",
   ],
-  plugins: ["prettier-plugin-tailwindcss", require("tailwindcss-animate"), animations],
+  plugins: [require("tailwindcss-animate"), animations],
   variants: {
     extend: {
       backdropFilter: ["responsive"],

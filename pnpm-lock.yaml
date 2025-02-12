@@ -26,12 +26,6 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.1.0
         version: 1.1.2(react@19.0.0)(types-react@19.0.0-rc.1)
-      '@types/react-lottie':
-        specifier: ^1.2.10
-        version: 1.2.10
-      '@types/recharts':
-        specifier: ^1.8.29
-        version: 1.8.29
       '@vercel/analytics':
         specifier: ^1.4.1
         version: 1.5.0(next@15.0.0(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
@@ -144,9 +138,15 @@ importers:
       '@types/react':
         specifier: npm:types-react@19.0.0-rc.1
         version: types-react@19.0.0-rc.1
+      '@types/react-lottie':
+        specifier: ^1.2.10
+        version: 1.2.10
       '@types/react-table':
         specifier: 7.7.20
         version: 7.7.20
+      '@types/recharts':
+        specifier: ^1.8.29
+        version: 1.8.29
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.8.1
         version: 8.24.0(@typescript-eslint/parser@8.24.0(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)

@@ -1,27 +1,27 @@
 "use client"
 import { getMoonPhasesForWeekAsRow } from "@/lib/GetMoonPhaseWeek"
-// import GetResume from "@/lib/GetResume"
+import GetResume from "@/lib/GetResume"
 import type { IntroEmbalsesProps } from "@/types"
 
 export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weather, embalse, cuenca }: IntroEmbalsesProps) {
   const moonPhases = getMoonPhasesForWeekAsRow()
-  // const prompt = `
-  // Genera un pronóstico detallado de pesca para el fin de semana utilizando los siguientes datos. El pronóstico debe ser claro conciso y no exceder los 1000 caracteres. No incluyas un título:
+  const prompt = `
+  Genera un pronóstico detallado de pesca para el fin de semana utilizando los siguientes datos. El pronóstico debe ser claro conciso y no exceder los 1000 caracteres. No incluyas un título:
 
-  // - Pronóstico del tiempo, importante usar datos relevantes para la pesca.
-  // ${JSON.stringify(weather, null, 2)}
+  - Pronóstico del tiempo, importante usar datos relevantes para la pesca.
+  ${JSON.stringify(weather, null, 2)}
 
-  // - Nivel de los embalses:
-  // ${JSON.stringify(embalse, null, 2)}
+  - Nivel de los embalses:
+  ${JSON.stringify(embalse, null, 2)}
 
-  // - Fases de la luna:
-  // ${moonPhases}
+  - Fases de la luna:
+  ${moonPhases}
 
-  // - Información adicional de la cuenca:
-  // ${JSON.stringify(cuenca, null, 2)}
-  // `
+  - Información adicional de la cuenca:
+  ${JSON.stringify(cuenca, null, 2)}
+  `
 
-  // const { error, completion } = GetResume({ prompt })
+  const { error, completion } = GetResume({ prompt })
 
   return (
     <div className="relative flex flex-col justify-between md:h-16 md:flex-row">
@@ -69,8 +69,8 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
         </div>
       </div>
 
-      {/* {!cuenca ? (
-        <div className="relative mb-2 mt-2 flex h-[9rem] w-full max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 md:mt-0 md:h-[7rem]">
+      {!cuenca ? (
+        <div className="relative mt-2 mb-2 flex h-[9rem] w-full max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 md:mt-0 md:h-[7rem]">
           {error ? (
             <article className="scroll-hide text-md my-2 flex h-full items-center justify-center overflow-auto px-3 text-center leading-tight">
               <span>Ha sucedido un error al generar el texto.</span>
@@ -84,7 +84,7 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 200 200"
-                className="animate-spin h-16 w-16"
+                className="h-16 w-16 animate-spin"
               >
                 <circle
                   fill="#93ffb7"
@@ -144,7 +144,7 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
             </article>
           )}
 
-          <div className="absolute -bottom-[16px] right-0 flex animate-blurred-fade-in justify-center rounded-full text-xs text-green-950">
+          <div className="animate-blurred-fade-in absolute right-0 -bottom-[16px] flex justify-center rounded-full text-xs text-green-950">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15"
@@ -176,7 +176,7 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
         </div>
       ) : (
         ""
-      )} */}
+      )}
     </div>
   )
 }

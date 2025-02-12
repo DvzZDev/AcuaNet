@@ -20,8 +20,12 @@ import FilterHistoricalData from "@/lib/FilterHistoricalData"
 import Chart from "@/components/embalses/Dashboard/Chart"
 // import Names from "@/lib/nombresEmbalses.json"
 
-async function Page({ params }: { params: { embalseid: string } }) {
-  const { embalseid } = await params
+interface PageProps {
+  params: { embalseid: string }
+}
+
+async function Page({ params }: PageProps) {
+  const { embalseid } = params
   const decodedEmbalseid = embalseid.replace(/-/g, " ")
   const embalses = (await GetHistoricalData(decodedEmbalseid)) as Embalses[]
   const pActual = embalses[0].porcentaje

@@ -1,143 +1,97 @@
+import type { Embalses } from "@/types"
 import TitleEmb from "@/components/embalses/TitleEmb"
-import { GetEmbalses } from "@/db/queries/select"
+import { GetHistoricalData, GetLiveData } from "@/db/queries/select"
 import NotFound from "@/app/not-found"
 import FavButton from "@/components/embalses/FavButton"
 import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"
 import EstadoActual from "@/components/embalses/Dashboard/EstadoActual"
 import HistorialCambios from "@/components/embalses/Dashboard/HistorialCambios"
 import LunarCalendar from "@/components/lunar/lunarcal"
-import GetCoordinates from "@/lib/GetCoordinates"
-import GetWeather from "@/lib/GetWeather"
+import { LastWeekVariation, GetCountry, getSameWeekLastYearCapacity, getSameWeekLast10YearsAverage } from "@/lib/DataEmbalses"
+import LiveData from "@/components/embalses/Dashboard/LiveData"
+
+// import GetCoordinates from "@/lib/GetCoordinates"
+// import GetWeather from "@/lib/GetWeather"
 import ButtonUp from "@/components/lunar/up"
-import MapEmbData from "@/components/embalses/Dashboard/MapDynamic"
-import TableWeather from "@/components/weather/TableWeather"
+// import MapEmbData from "@/components/embalses/Dashboard/MapDynamic"
+// import TableWeather from "@/components/weather/TableWeather"
 import Publi from "@/components/embalses/Dashboard/Publi"
-import type { Embalses } from "@/types"
+import FilterHistoricalData from "@/lib/FilterHistoricalData"
+import Chart from "@/components/embalses/Dashboard/Chart"
+// import Names from "@/lib/nombresEmbalses.json"
 
-export async function generateMetadata(props: { params: Promise<{ embalseid: string }> }) {
-  const params = await props.params
-  const embalseName = params.embalseid.replace(/%20/g, " ")
-  const embalseFormatted = `${embalseName.charAt(0).toUpperCase()}${embalseName.slice(1).toLowerCase()}`
-
-  return {
-    title: `Embalse de ${embalseFormatted} - Planifica tu jornada de pesca`,
-    description: `Consulta información detallada sobre el embalse de ${embalseName}, incluyendo niveles de agua, pronóstico meteorológico y datos útiles para tus salidas de pesca en tiempo real.`,
-    keywords: `${embalseName}, embalse de ${embalseName} , pesca de black bass, pesca de lucio, black bass, lucio, pesca deportiva, ${embalseName} pesca, pesca en ${embalseName}, pesca blackbass ${embalseName}, pesca lucio ${embalseName}, acuanet`,
-    alternates: {
-      canonical: `/embalses/${params.embalseid}`,
-    },
-    openGraph: {
-      title: `Embalse de ${embalseFormatted} - Planifica tu jornada de pesca con AcuaNet`,
-      description: `Consulta los niveles de agua, condiciones meteorológicas y más sobre el embalse de ${embalseName}, con datos actualizados para planificar tu jornada de pesca.`,
-      url: `https://acuanet.es/embalses/${params.embalseid}`,
-      siteName: "AcuaNet",
-      images: [
-        {
-          url: "https://i.imgur.com/LQvr7AX.png",
-          width: 800,
-          height: 600,
-          alt: "OpenGrah AcuaNet",
-        },
-        {
-          url: "https://i.imgur.com/LQvr7AX.png",
-          width: 1800,
-          height: 1600,
-          alt: "OpenGrah AcuaNet",
-        },
-      ],
-      locale: "es_ES",
-      type: "website",
-    },
-
-    twitter: {
-      card: "summary_large_image",
-      title: `${embalseFormatted} - Planifica tu jornada de pesca con AcuaNet`,
-      description: `Accede a información completa sobre el embalse de ${embalseName}, con datos en tiempo real sobre niveles de agua y pronósticos para pescadores.`,
-      creator: "@_DvzZ_",
-      images: ["https://i.imgur.com/LQvr7AX.png"],
-    },
+async function Page({ params }: { params: { embalseid: string } }) {
+  const { embalseid } = await params
+  const decodedEmbalseid = embalseid.replace(/-/g, " ")
+  const embalses = (await GetHistoricalData(decodedEmbalseid)) as Embalses[]
+  const pActual = embalses[0].porcentaje
+  const LastWeek = LastWeekVariation(embalses.slice(0, 2))
+  const lData = await GetLiveData(decodedEmbalseid)
+  FilterHistoricalData({ data: embalses })
+  const pais = GetCountry(decodedEmbalseid)
+  const { vol: misma_semana_ultimo_año_vol, por: misma_semana_ultimo_año_por } = getSameWeekLastYearCapacity(embalses) || {
+    vol: 0,
+    por: 0,
   }
-}
+  const media_10_anos = getSameWeekLast10YearsAverage(embalses) || 0
+  const actualVolume = embalses[0]?.volumen_actual || 0
 
-async function Page(props: { params: Promise<{ embalseid: string }> }) {
-  const params = await props.params
-  const decodedEmbalseid = decodeURIComponent(params.embalseid)
-  const embalses = GetEmbalses()
-  const embalsesData = await embalses
-  const resEmbalse: Embalses | undefined = embalsesData.find(
-    (embalse) => embalse.nombre_embalse.toLowerCase() === decodedEmbalseid.toLowerCase()
-  )
+  const diffMedia10 = actualVolume - media_10_anos
+  const pctMedia10 = media_10_anos ? Number(((diffMedia10 / media_10_anos) * 100).toFixed(2)) : 0
+
+  const resEmbalse = embalses
 
   if (!resEmbalse) {
     return <NotFound />
   }
 
-  let coordsData
-  let weatherData
-
-  if (resEmbalse?.lat === null || resEmbalse?.lon === null) {
-    const coords = GetCoordinates(decodedEmbalseid).catch((error) => {
-      console.error("Error recuperando las coordenadas", error)
-    })
-    coordsData = await coords
-    weatherData = coordsData ? await GetWeather(coordsData.lat, coordsData.lon) : undefined
-  } else {
-    weatherData = await GetWeather(resEmbalse.lat, resEmbalse.lon)
-    coordsData = { lat: resEmbalse.lat, lon: resEmbalse.lon, name: resEmbalse.nombre_embalse }
-  }
-
-  const {
-    agua_embalsada,
-    agua_embalsadapor,
-    variacion_ultima_semana,
-    capacidad_total,
-    variacion_ultima_semanapor,
-    fecha_modificacion,
-    nombre_cuenca,
-    misma_semana_10años,
-    misma_semana_10añospor,
-    misma_semana_ultimo_año,
-    misma_semana_ultimo_añopor,
-    cota,
-    pais,
-  } = resEmbalse
+  const { embalse, cuenca, fecha, capacidad_total, volumen_actual } = resEmbalse[0]
 
   return (
     <>
-      <TitleEmb data={{ ...resEmbalse, nombre_embalse: resEmbalse.nombre_embalse || "No disponible" }} />
+      <TitleEmb data={embalse} />
       <FavButton url={{ embalseid: decodedEmbalseid }} />
-      <main className="flex justify-center bg-green-50 px-6 pb-14 pt-4 text-black">
-        <section className="flex w-[70rem] flex-col gap-7">
+      <main className="flex justify-center bg-green-50 px-4 pt-4 pb-14 text-black">
+        <section className="flex w-full max-w-[70rem] flex-col gap-7">
           <IntroCuencas
-            nombre_cuenca={nombre_cuenca || "No disponible"}
-            fecha_modificacion={fecha_modificacion ? new Date(fecha_modificacion) : new Date()}
-            weather={weatherData}
-            embalse={resEmbalse}
+            nombre_cuenca={cuenca || "No disponible"}
+            fecha_modificacion={fecha ? new Date(fecha) : new Date()}
+            // weather={weatherData}
+            // embalse={resEmbalse}
             cuenca={false}
           />
+
+          <LiveData data={lData} />
+
           <EstadoActual
-            agua_embalsada={agua_embalsada || 0}
-            agua_embalsadapor={agua_embalsadapor || 0}
+            agua_embalsada={volumen_actual || 0}
+            agua_embalsadapor={pActual || 0}
             capacidad_total={capacidad_total || 0}
-            cota={cota || 0}
-            pais={pais || "N/D"}
-            variacion_ultima_semana={variacion_ultima_semana || 0}
-            variacion_ultima_semanapor={variacion_ultima_semanapor || 0}
+            cota={0}
+            pais={"N/D"}
+            variacion_ultima_semana={LastWeek.lastWeek || 0}
+            variacion_ultima_semanapor={LastWeek.pctDifference || 0}
           />
+
           {pais === "España" ? (
             <HistorialCambios
-              variacion_ultima_semana={variacion_ultima_semana || 0}
-              variacion_ultima_semanapor={variacion_ultima_semanapor || 0}
-              misma_semana_ultimo_año={misma_semana_ultimo_año || 0}
-              misma_semana_ultimo_añopor={misma_semana_ultimo_añopor || 0}
-              misma_semana_10años={misma_semana_10años || 0}
-              misma_semana_10añospor={misma_semana_10añospor || 0}
+              variacion_ultima_semana={LastWeek.lastWeek || 0}
+              variacion_ultima_semanapor={LastWeek.pctDifference || 0}
+              misma_semana_ultimo_año={misma_semana_ultimo_año_vol || 0}
+              misma_semana_ultimo_añopor={misma_semana_ultimo_año_por || 0}
+              misma_semana_10años={media_10_anos || 0}
+              misma_semana_10añospor={pctMedia10 || 0}
             />
           ) : (
             ""
           )}
 
-          {coordsData ? <MapEmbData coords={coordsData} /> : null}
+          <h2 className="text-2xl font-black text-green-950">Datos Históricos</h2>
+          <section className="h-fit items-center justify-center rounded-xl border border-green-700/50 bg-black lg:p-4 lg:pb-0">
+            <Chart data={embalses} />
+          </section>
+
+          {/* {coordsData ? <MapEmbData coords={coordsData} /> : null} */}
           <div className="flex flex-wrap items-center justify-center gap-3 rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg">
             <a
               href="https://www.agrbaits.es/"
@@ -152,8 +106,7 @@ async function Page(props: { params: Promise<{ embalseid: string }> }) {
               />
             </a>
           </div>
-
-          {weatherData && <TableWeather data={weatherData} />}
+          {/* {weatherData && <TableWeather data={weatherData} />} */}
           <h2 className="text-2xl font-black text-green-950">Calendario Lunar</h2>
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
             <LunarCalendar />

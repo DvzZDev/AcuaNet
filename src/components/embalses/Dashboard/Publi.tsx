@@ -16,7 +16,7 @@ export default function Publi() {
               alt="Imagen de un lucio"
               className="h-full w-full rounded-xl object-cover transition-all group-hover:scale-105"
             />
-            <div className="absolute bottom-3 left-3 z-20 text-xl font-black text-green-200 md:text-2xl">
+            <div className="absolute bottom-3 left-3 z-20 text-xl font-semibold text-green-200 md:text-2xl">
               <h3>Pesca en Extremadura.</h3>
               <p className="text-xs text-green-50">topfishing.net</p>
             </div>

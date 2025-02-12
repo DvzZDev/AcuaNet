@@ -55,3 +55,34 @@ export const España = pgTable(
     pk: primaryKey({ columns: [table.id] }),
   })
 )
+
+export const AllData = pgTable(
+  "embalses2025",
+  {
+    id: varchar("id").notNull(),
+    embalse: varchar("embalse").notNull(),
+    cuenca: varchar("cuenca").notNull(),
+    fecha: timestamp("fecha", { withTimezone: false }).notNull(),
+    capacidad_total: doublePrecision("capacidad_total").notNull(),
+    volumen_actual: doublePrecision("volumen_actual").notNull(),
+    porcentaje: doublePrecision("porcentaje").notNull(),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.id] }),
+  })
+)
+
+export const LiveData = pgTable(
+  "live_data",
+  {
+    id: varchar("id").notNull(),
+    embalse: varchar("embalse").notNull(),
+    volumen: doublePrecision("volumen"),
+    porcentaje: doublePrecision("porcentaje"),
+    timestamp: timestamp("timestamp", { withTimezone: false }),
+    cota: doublePrecision("cota"),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.id] }),
+  })
+)

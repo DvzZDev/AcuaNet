@@ -1,33 +1,33 @@
 "use client"
 import { getMoonPhasesForWeekAsRow } from "@/lib/GetMoonPhaseWeek"
-import GetResume from "@/lib/GetResume"
+// import GetResume from "@/lib/GetResume"
 import type { IntroEmbalsesProps } from "@/types"
 
 export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weather, embalse, cuenca }: IntroEmbalsesProps) {
   const moonPhases = getMoonPhasesForWeekAsRow()
-  const prompt = `
-  Genera un pronóstico detallado de pesca para el fin de semana utilizando los siguientes datos. El pronóstico debe ser claro conciso y no exceder los 1000 caracteres. No incluyas un título: 
+  // const prompt = `
+  // Genera un pronóstico detallado de pesca para el fin de semana utilizando los siguientes datos. El pronóstico debe ser claro conciso y no exceder los 1000 caracteres. No incluyas un título:
 
-  - Pronóstico del tiempo, importante usar datos relevantes para la pesca.
-  ${JSON.stringify(weather, null, 2)}
-  
-  - Nivel de los embalses:
-  ${JSON.stringify(embalse, null, 2)}
-  
-  - Fases de la luna:
-  ${moonPhases}
-  
-  - Información adicional de la cuenca:
-  ${JSON.stringify(cuenca, null, 2)}
-  `
+  // - Pronóstico del tiempo, importante usar datos relevantes para la pesca.
+  // ${JSON.stringify(weather, null, 2)}
 
-  const { error, completion } = GetResume({ prompt })
+  // - Nivel de los embalses:
+  // ${JSON.stringify(embalse, null, 2)}
+
+  // - Fases de la luna:
+  // ${moonPhases}
+
+  // - Información adicional de la cuenca:
+  // ${JSON.stringify(cuenca, null, 2)}
+  // `
+
+  // const { error, completion } = GetResume({ prompt })
 
   return (
     <div className="relative flex flex-col justify-between md:h-16 md:flex-row">
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-black text-green-950">Cuenca del {nombre_cuenca} </h1>
+          <h1 className="text-2xl font-bold text-green-950">Cuenca del {nombre_cuenca} </h1>
         </div>
         <div className="flex gap-1">
           <svg
@@ -69,7 +69,7 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
         </div>
       </div>
 
-      {!cuenca ? (
+      {/* {!cuenca ? (
         <div className="relative mb-2 mt-2 flex h-[9rem] w-full max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 md:mt-0 md:h-[7rem]">
           {error ? (
             <article className="scroll-hide text-md my-2 flex h-full items-center justify-center overflow-auto px-3 text-center leading-tight">
@@ -176,7 +176,7 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   )
 }

@@ -1,0 +1,4286 @@
+[
+  {
+    "id": "Cijara_2025-02-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2025-02-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 774,
+    "porcentaje": 51.43
+  },
+  {
+    "id": "Cijara_2025-02-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2025-02-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 761,
+    "porcentaje": 50.56
+  },
+  {
+    "id": "Cijara_2025-01-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2025-01-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 708,
+    "porcentaje": 47.04
+  },
+  {
+    "id": "Cijara_2025-01-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2025-01-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 672,
+    "porcentaje": 44.65
+  },
+  {
+    "id": "Cijara_2025-01-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2025-01-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 671,
+    "porcentaje": 44.58
+  },
+  {
+    "id": "Cijara_2025-01-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2025-01-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 669,
+    "porcentaje": 44.45
+  },
+  {
+    "id": "Cijara_2024-12-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-12-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 667,
+    "porcentaje": 44.32
+  },
+  {
+    "id": "Cijara_2024-12-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-12-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 667,
+    "porcentaje": 44.32
+  },
+  {
+    "id": "Cijara_2024-12-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-12-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 666,
+    "porcentaje": 44.25
+  },
+  {
+    "id": "Cijara_2024-12-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-12-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 665,
+    "porcentaje": 44.19
+  },
+  {
+    "id": "Cijara_2024-12-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-12-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 664,
+    "porcentaje": 44.12
+  },
+  {
+    "id": "Cijara_2024-11-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-11-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 663,
+    "porcentaje": 44.05
+  },
+  {
+    "id": "Cijara_2024-11-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-11-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 661,
+    "porcentaje": 43.92
+  },
+  {
+    "id": "Cijara_2024-11-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-11-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 660,
+    "porcentaje": 43.85
+  },
+  {
+    "id": "Cijara_2024-11-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-11-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 656,
+    "porcentaje": 43.59
+  },
+  {
+    "id": "Cijara_2024-10-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-10-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 637,
+    "porcentaje": 42.33
+  },
+  {
+    "id": "Cijara_2024-10-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-10-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 636,
+    "porcentaje": 42.26
+  },
+  {
+    "id": "Cijara_2024-10-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-10-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 622,
+    "porcentaje": 41.33
+  },
+  {
+    "id": "Cijara_2024-10-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-10-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 618,
+    "porcentaje": 41.06
+  },
+  {
+    "id": "Cijara_2024-10-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-10-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 619,
+    "porcentaje": 41.13
+  },
+  {
+    "id": "Cijara_2024-09-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-09-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 621,
+    "porcentaje": 41.26
+  },
+  {
+    "id": "Cijara_2024-09-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-09-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 630,
+    "porcentaje": 41.86
+  },
+  {
+    "id": "Cijara_2024-09-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-09-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 646,
+    "porcentaje": 42.92
+  },
+  {
+    "id": "Cijara_2024-09-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-09-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 669,
+    "porcentaje": 44.45
+  },
+  {
+    "id": "Cijara_2024-08-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-08-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 696,
+    "porcentaje": 46.25
+  },
+  {
+    "id": "Cijara_2024-08-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-08-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 722,
+    "porcentaje": 47.97
+  },
+  {
+    "id": "Cijara_2024-08-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-08-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 761,
+    "porcentaje": 50.56
+  },
+  {
+    "id": "Cijara_2024-08-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-08-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 799,
+    "porcentaje": 53.09
+  },
+  {
+    "id": "Cijara_2024-07-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-07-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 876,
+    "porcentaje": 58.21
+  },
+  {
+    "id": "Cijara_2024-07-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-07-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 876,
+    "porcentaje": 58.21
+  },
+  {
+    "id": "Cijara_2024-07-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-07-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 903,
+    "porcentaje": 60
+  },
+  {
+    "id": "Cijara_2024-07-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-07-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 929,
+    "porcentaje": 61.73
+  },
+  {
+    "id": "Cijara_2024-07-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-07-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 951,
+    "porcentaje": 63.19
+  },
+  {
+    "id": "Cijara_2024-06-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-06-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 978,
+    "porcentaje": 64.98
+  },
+  {
+    "id": "Cijara_2024-06-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-06-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1001,
+    "porcentaje": 66.51
+  },
+  {
+    "id": "Cijara_2024-06-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-06-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1013,
+    "porcentaje": 67.31
+  },
+  {
+    "id": "Cijara_2024-06-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-06-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1015,
+    "porcentaje": 67.44
+  },
+  {
+    "id": "Cijara_2024-05-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-05-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1016,
+    "porcentaje": 67.51
+  },
+  {
+    "id": "Cijara_2024-05-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-05-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1017,
+    "porcentaje": 67.57
+  },
+  {
+    "id": "Cijara_2024-05-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-05-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1017,
+    "porcentaje": 67.57
+  },
+  {
+    "id": "Cijara_2024-05-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-05-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1017,
+    "porcentaje": 67.57
+  },
+  {
+    "id": "Cijara_2024-04-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-04-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1015,
+    "porcentaje": 67.44
+  },
+  {
+    "id": "Cijara_2024-04-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-04-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1013,
+    "porcentaje": 67.31
+  },
+  {
+    "id": "Cijara_2024-04-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-04-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1008,
+    "porcentaje": 66.98
+  },
+  {
+    "id": "Cijara_2024-04-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-04-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 995,
+    "porcentaje": 66.11
+  },
+  {
+    "id": "Cijara_2024-04-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-04-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 907,
+    "porcentaje": 60.27
+  },
+  {
+    "id": "Cijara_2024-03-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-03-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 685,
+    "porcentaje": 45.51
+  },
+  {
+    "id": "Cijara_2024-03-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-03-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 676,
+    "porcentaje": 44.92
+  },
+  {
+    "id": "Cijara_2024-03-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-03-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 637,
+    "porcentaje": 42.33
+  },
+  {
+    "id": "Cijara_2024-03-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-03-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 570,
+    "porcentaje": 37.87
+  },
+  {
+    "id": "Cijara_2024-02-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-02-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 556,
+    "porcentaje": 36.94
+  },
+  {
+    "id": "Cijara_2024-02-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-02-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 546,
+    "porcentaje": 36.28
+  },
+  {
+    "id": "Cijara_2024-02-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-02-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 517,
+    "porcentaje": 34.35
+  },
+  {
+    "id": "Cijara_2024-02-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-02-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 480,
+    "porcentaje": 31.89
+  },
+  {
+    "id": "Cijara_2024-01-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-01-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 473,
+    "porcentaje": 31.43
+  },
+  {
+    "id": "Cijara_2024-01-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-01-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 452,
+    "porcentaje": 30.03
+  },
+  {
+    "id": "Cijara_2024-01-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-01-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 318,
+    "porcentaje": 21.13
+  },
+  {
+    "id": "Cijara_2024-01-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-01-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 315,
+    "porcentaje": 20.93
+  },
+  {
+    "id": "Cijara_2024-01-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2024-01-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 310,
+    "porcentaje": 20.6
+  },
+  {
+    "id": "Cijara_2023-12-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-12-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 309,
+    "porcentaje": 20.53
+  },
+  {
+    "id": "Cijara_2023-12-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-12-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 307,
+    "porcentaje": 20.4
+  },
+  {
+    "id": "Cijara_2023-12-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-12-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 303,
+    "porcentaje": 20.13
+  },
+  {
+    "id": "Cijara_2023-12-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-12-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 297,
+    "porcentaje": 19.73
+  },
+  {
+    "id": "Cijara_2023-11-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-11-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 281,
+    "porcentaje": 18.67
+  },
+  {
+    "id": "Cijara_2023-11-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-11-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 280,
+    "porcentaje": 18.6
+  },
+  {
+    "id": "Cijara_2023-11-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-11-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 279,
+    "porcentaje": 18.54
+  },
+  {
+    "id": "Cijara_2023-11-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-11-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 274,
+    "porcentaje": 18.21
+  },
+  {
+    "id": "Cijara_2023-10-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-10-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 256,
+    "porcentaje": 17.01
+  },
+  {
+    "id": "Cijara_2023-10-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-10-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 247,
+    "porcentaje": 16.41
+  },
+  {
+    "id": "Cijara_2023-10-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-10-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 239,
+    "porcentaje": 15.88
+  },
+  {
+    "id": "Cijara_2023-10-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-10-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 239,
+    "porcentaje": 15.88
+  },
+  {
+    "id": "Cijara_2023-10-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-10-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 240,
+    "porcentaje": 15.95
+  },
+  {
+    "id": "Cijara_2023-09-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-09-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 240,
+    "porcentaje": 15.95
+  },
+  {
+    "id": "Cijara_2023-09-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-09-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 240,
+    "porcentaje": 15.95
+  },
+  {
+    "id": "Cijara_2023-09-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-09-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 240,
+    "porcentaje": 15.95
+  },
+  {
+    "id": "Cijara_2023-09-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-09-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 240,
+    "porcentaje": 15.95
+  },
+  {
+    "id": "Cijara_2023-08-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-08-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 241,
+    "porcentaje": 16.01
+  },
+  {
+    "id": "Cijara_2023-08-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-08-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 243,
+    "porcentaje": 16.15
+  },
+  {
+    "id": "Cijara_2023-08-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-08-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 244,
+    "porcentaje": 16.21
+  },
+  {
+    "id": "Cijara_2023-08-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-08-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 245,
+    "porcentaje": 16.28
+  },
+  {
+    "id": "Cijara_2023-08-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-08-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 265,
+    "porcentaje": 17.61
+  },
+  {
+    "id": "Cijara_2023-07-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-07-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 293,
+    "porcentaje": 19.47
+  },
+  {
+    "id": "Cijara_2023-07-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-07-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 320,
+    "porcentaje": 21.26
+  },
+  {
+    "id": "Cijara_2023-07-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-07-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 346,
+    "porcentaje": 22.99
+  },
+  {
+    "id": "Cijara_2023-07-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-07-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 371,
+    "porcentaje": 24.65
+  },
+  {
+    "id": "Cijara_2023-06-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-06-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 397,
+    "porcentaje": 26.38
+  },
+  {
+    "id": "Cijara_2023-06-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-06-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 407,
+    "porcentaje": 27.04
+  },
+  {
+    "id": "Cijara_2023-06-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-06-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 417,
+    "porcentaje": 27.71
+  },
+  {
+    "id": "Cijara_2023-06-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-06-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 430,
+    "porcentaje": 28.57
+  },
+  {
+    "id": "Cijara_2023-05-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-05-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 445,
+    "porcentaje": 29.57
+  },
+  {
+    "id": "Cijara_2023-05-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-05-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 458,
+    "porcentaje": 30.43
+  },
+  {
+    "id": "Cijara_2023-05-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-05-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 476,
+    "porcentaje": 31.63
+  },
+  {
+    "id": "Cijara_2023-05-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-05-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 492,
+    "porcentaje": 32.69
+  },
+  {
+    "id": "Cijara_2023-05-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-05-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 502,
+    "porcentaje": 33.36
+  },
+  {
+    "id": "Cijara_2023-04-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-04-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 514,
+    "porcentaje": 34.15
+  },
+  {
+    "id": "Cijara_2023-04-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-04-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 515,
+    "porcentaje": 34.22
+  },
+  {
+    "id": "Cijara_2023-04-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-04-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 516,
+    "porcentaje": 34.29
+  },
+  {
+    "id": "Cijara_2023-04-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-04-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 516,
+    "porcentaje": 34.29
+  },
+  {
+    "id": "Cijara_2023-03-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-03-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 516,
+    "porcentaje": 34.29
+  },
+  {
+    "id": "Cijara_2023-03-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-03-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 515,
+    "porcentaje": 34.22
+  },
+  {
+    "id": "Cijara_2023-03-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-03-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 514,
+    "porcentaje": 34.15
+  },
+  {
+    "id": "Cijara_2023-03-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-03-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 512,
+    "porcentaje": 34.02
+  },
+  {
+    "id": "Cijara_2023-02-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-02-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 511,
+    "porcentaje": 33.95
+  },
+  {
+    "id": "Cijara_2023-02-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-02-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 510,
+    "porcentaje": 33.89
+  },
+  {
+    "id": "Cijara_2023-02-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-02-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 508,
+    "porcentaje": 33.75
+  },
+  {
+    "id": "Cijara_2023-02-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-02-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 505,
+    "porcentaje": 33.55
+  },
+  {
+    "id": "Cijara_2023-01-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-01-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 501,
+    "porcentaje": 33.29
+  },
+  {
+    "id": "Cijara_2023-01-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-01-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 496,
+    "porcentaje": 32.96
+  },
+  {
+    "id": "Cijara_2023-01-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-01-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 487,
+    "porcentaje": 32.36
+  },
+  {
+    "id": "Cijara_2023-01-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-01-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 468,
+    "porcentaje": 31.1
+  },
+  {
+    "id": "Cijara_2023-01-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2023-01-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 458,
+    "porcentaje": 30.43
+  },
+  {
+    "id": "Cijara_2022-12-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-12-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 449,
+    "porcentaje": 29.83
+  },
+  {
+    "id": "Cijara_2022-12-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-12-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 423,
+    "porcentaje": 28.11
+  },
+  {
+    "id": "Cijara_2022-12-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-12-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 255,
+    "porcentaje": 16.94
+  },
+  {
+    "id": "Cijara_2022-12-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-12-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 244,
+    "porcentaje": 16.21
+  },
+  {
+    "id": "Cijara_2022-11-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-11-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 243,
+    "porcentaje": 16.15
+  },
+  {
+    "id": "Cijara_2022-11-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-11-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 242,
+    "porcentaje": 16.08
+  },
+  {
+    "id": "Cijara_2022-11-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-11-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 241,
+    "porcentaje": 16.01
+  },
+  {
+    "id": "Cijara_2022-11-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-11-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 241,
+    "porcentaje": 16.01
+  },
+  {
+    "id": "Cijara_2022-11-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-11-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 242,
+    "porcentaje": 16.08
+  },
+  {
+    "id": "Cijara_2022-10-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-10-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 242,
+    "porcentaje": 16.08
+  },
+  {
+    "id": "Cijara_2022-10-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-10-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 242,
+    "porcentaje": 16.08
+  },
+  {
+    "id": "Cijara_2022-10-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-10-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 243,
+    "porcentaje": 16.15
+  },
+  {
+    "id": "Cijara_2022-10-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-10-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 243,
+    "porcentaje": 16.15
+  },
+  {
+    "id": "Cijara_2022-09-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-09-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 244,
+    "porcentaje": 16.21
+  },
+  {
+    "id": "Cijara_2022-09-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-09-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 244,
+    "porcentaje": 16.21
+  },
+  {
+    "id": "Cijara_2022-09-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-09-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 244,
+    "porcentaje": 16.21
+  },
+  {
+    "id": "Cijara_2022-09-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-09-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 245,
+    "porcentaje": 16.28
+  },
+  {
+    "id": "Cijara_2022-08-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-08-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 246,
+    "porcentaje": 16.35
+  },
+  {
+    "id": "Cijara_2022-08-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-08-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 247,
+    "porcentaje": 16.41
+  },
+  {
+    "id": "Cijara_2022-08-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-08-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 248,
+    "porcentaje": 16.48
+  },
+  {
+    "id": "Cijara_2022-08-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-08-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 254,
+    "porcentaje": 16.88
+  },
+  {
+    "id": "Cijara_2022-08-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-08-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 265,
+    "porcentaje": 17.61
+  },
+  {
+    "id": "Cijara_2022-07-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-07-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 278,
+    "porcentaje": 18.47
+  },
+  {
+    "id": "Cijara_2022-07-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-07-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 292,
+    "porcentaje": 19.4
+  },
+  {
+    "id": "Cijara_2022-07-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-07-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 304,
+    "porcentaje": 20.2
+  },
+  {
+    "id": "Cijara_2022-07-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-07-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 310,
+    "porcentaje": 20.6
+  },
+  {
+    "id": "Cijara_2022-06-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-06-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 316,
+    "porcentaje": 21
+  },
+  {
+    "id": "Cijara_2022-06-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-06-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 323,
+    "porcentaje": 21.46
+  },
+  {
+    "id": "Cijara_2022-06-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-06-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 329,
+    "porcentaje": 21.86
+  },
+  {
+    "id": "Cijara_2022-06-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-06-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 335,
+    "porcentaje": 22.26
+  },
+  {
+    "id": "Cijara_2022-05-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-05-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 341,
+    "porcentaje": 22.66
+  },
+  {
+    "id": "Cijara_2022-05-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-05-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 346,
+    "porcentaje": 22.99
+  },
+  {
+    "id": "Cijara_2022-05-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-05-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 346,
+    "porcentaje": 22.99
+  },
+  {
+    "id": "Cijara_2022-05-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-05-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 345,
+    "porcentaje": 22.92
+  },
+  {
+    "id": "Cijara_2022-05-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-05-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 341,
+    "porcentaje": 22.66
+  },
+  {
+    "id": "Cijara_2022-04-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-04-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 330,
+    "porcentaje": 21.93
+  },
+  {
+    "id": "Cijara_2022-04-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-04-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 311,
+    "porcentaje": 20.66
+  },
+  {
+    "id": "Cijara_2022-04-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-04-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 307,
+    "porcentaje": 20.4
+  },
+  {
+    "id": "Cijara_2022-04-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-04-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 303,
+    "porcentaje": 20.13
+  },
+  {
+    "id": "Cijara_2022-03-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-03-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 296,
+    "porcentaje": 19.67
+  },
+  {
+    "id": "Cijara_2022-03-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-03-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 280,
+    "porcentaje": 18.6
+  },
+  {
+    "id": "Cijara_2022-03-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-03-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 273,
+    "porcentaje": 18.14
+  },
+  {
+    "id": "Cijara_2022-03-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-03-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 271,
+    "porcentaje": 18.01
+  },
+  {
+    "id": "Cijara_2022-03-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-03-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 270,
+    "porcentaje": 17.94
+  },
+  {
+    "id": "Cijara_2022-02-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-02-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 269,
+    "porcentaje": 17.87
+  },
+  {
+    "id": "Cijara_2022-02-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-02-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 269,
+    "porcentaje": 17.87
+  },
+  {
+    "id": "Cijara_2022-02-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-02-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 268,
+    "porcentaje": 17.81
+  },
+  {
+    "id": "Cijara_2022-02-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-02-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 267,
+    "porcentaje": 17.74
+  },
+  {
+    "id": "Cijara_2022-01-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-01-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 266,
+    "porcentaje": 17.67
+  },
+  {
+    "id": "Cijara_2022-01-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-01-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 265,
+    "porcentaje": 17.61
+  },
+  {
+    "id": "Cijara_2022-01-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-01-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 263,
+    "porcentaje": 17.48
+  },
+  {
+    "id": "Cijara_2022-01-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2022-01-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 260,
+    "porcentaje": 17.28
+  },
+  {
+    "id": "Cijara_2021-12-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-12-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 251,
+    "porcentaje": 16.68
+  },
+  {
+    "id": "Cijara_2021-12-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-12-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 243,
+    "porcentaje": 16.15
+  },
+  {
+    "id": "Cijara_2021-12-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-12-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 243,
+    "porcentaje": 16.15
+  },
+  {
+    "id": "Cijara_2021-12-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-12-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 242,
+    "porcentaje": 16.08
+  },
+  {
+    "id": "Cijara_2021-11-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-11-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 241,
+    "porcentaje": 16.01
+  },
+  {
+    "id": "Cijara_2021-11-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-11-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 241,
+    "porcentaje": 16.01
+  },
+  {
+    "id": "Cijara_2021-11-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-11-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 240,
+    "porcentaje": 15.95
+  },
+  {
+    "id": "Cijara_2021-11-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-11-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 238,
+    "porcentaje": 15.81
+  },
+  {
+    "id": "Cijara_2021-11-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-11-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 231,
+    "porcentaje": 15.35
+  },
+  {
+    "id": "Cijara_2021-10-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-10-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 208,
+    "porcentaje": 13.82
+  },
+  {
+    "id": "Cijara_2021-10-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-10-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 208,
+    "porcentaje": 13.82
+  },
+  {
+    "id": "Cijara_2021-10-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-10-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 208,
+    "porcentaje": 13.82
+  },
+  {
+    "id": "Cijara_2021-10-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-10-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 209,
+    "porcentaje": 13.89
+  },
+  {
+    "id": "Cijara_2021-09-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-09-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 209,
+    "porcentaje": 13.89
+  },
+  {
+    "id": "Cijara_2021-09-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-09-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 209,
+    "porcentaje": 13.89
+  },
+  {
+    "id": "Cijara_2021-09-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-09-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 209,
+    "porcentaje": 13.89
+  },
+  {
+    "id": "Cijara_2021-09-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-09-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 210,
+    "porcentaje": 13.95
+  },
+  {
+    "id": "Cijara_2021-08-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-08-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 212,
+    "porcentaje": 14.09
+  },
+  {
+    "id": "Cijara_2021-08-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-08-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 213,
+    "porcentaje": 14.15
+  },
+  {
+    "id": "Cijara_2021-08-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-08-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 215,
+    "porcentaje": 14.29
+  },
+  {
+    "id": "Cijara_2021-08-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-08-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 261,
+    "porcentaje": 17.34
+  },
+  {
+    "id": "Cijara_2021-08-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-08-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 270,
+    "porcentaje": 17.94
+  },
+  {
+    "id": "Cijara_2021-07-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-07-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 304,
+    "porcentaje": 20.2
+  },
+  {
+    "id": "Cijara_2021-07-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-07-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 337,
+    "porcentaje": 22.39
+  },
+  {
+    "id": "Cijara_2021-07-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-07-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 371,
+    "porcentaje": 24.65
+  },
+  {
+    "id": "Cijara_2021-07-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-07-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 405,
+    "porcentaje": 26.91
+  },
+  {
+    "id": "Cijara_2021-06-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-06-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 441,
+    "porcentaje": 29.3
+  },
+  {
+    "id": "Cijara_2021-06-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-06-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 477,
+    "porcentaje": 31.69
+  },
+  {
+    "id": "Cijara_2021-06-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-06-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 478,
+    "porcentaje": 31.76
+  },
+  {
+    "id": "Cijara_2021-06-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-06-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 484,
+    "porcentaje": 32.16
+  },
+  {
+    "id": "Cijara_2021-06-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-06-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 490,
+    "porcentaje": 32.56
+  },
+  {
+    "id": "Cijara_2021-05-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-05-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 496,
+    "porcentaje": 32.96
+  },
+  {
+    "id": "Cijara_2021-05-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-05-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 507,
+    "porcentaje": 33.69
+  },
+  {
+    "id": "Cijara_2021-05-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-05-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 516,
+    "porcentaje": 34.29
+  },
+  {
+    "id": "Cijara_2021-05-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-05-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 516,
+    "porcentaje": 34.29
+  },
+  {
+    "id": "Cijara_2021-04-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-04-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 515,
+    "porcentaje": 34.22
+  },
+  {
+    "id": "Cijara_2021-04-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-04-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 513,
+    "porcentaje": 34.09
+  },
+  {
+    "id": "Cijara_2021-04-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-04-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 511,
+    "porcentaje": 33.95
+  },
+  {
+    "id": "Cijara_2021-04-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-04-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 510,
+    "porcentaje": 33.89
+  },
+  {
+    "id": "Cijara_2021-03-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-03-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 509,
+    "porcentaje": 33.82
+  },
+  {
+    "id": "Cijara_2021-03-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-03-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 507,
+    "porcentaje": 33.69
+  },
+  {
+    "id": "Cijara_2021-03-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-03-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 506,
+    "porcentaje": 33.62
+  },
+  {
+    "id": "Cijara_2021-03-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-03-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 502,
+    "porcentaje": 33.36
+  },
+  {
+    "id": "Cijara_2021-03-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-03-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 498,
+    "porcentaje": 33.09
+  },
+  {
+    "id": "Cijara_2021-02-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-02-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 492,
+    "porcentaje": 32.69
+  },
+  {
+    "id": "Cijara_2021-02-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-02-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 482,
+    "porcentaje": 32.03
+  },
+  {
+    "id": "Cijara_2021-02-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-02-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 437,
+    "porcentaje": 29.04
+  },
+  {
+    "id": "Cijara_2021-02-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-02-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 427,
+    "porcentaje": 28.37
+  },
+  {
+    "id": "Cijara_2021-01-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-01-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 408,
+    "porcentaje": 27.11
+  },
+  {
+    "id": "Cijara_2021-01-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-01-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 379,
+    "porcentaje": 25.18
+  },
+  {
+    "id": "Cijara_2021-01-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-01-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 373,
+    "porcentaje": 24.78
+  },
+  {
+    "id": "Cijara_2021-01-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2021-01-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 367,
+    "porcentaje": 24.39
+  },
+  {
+    "id": "Cijara_2020-12-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-12-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 366,
+    "porcentaje": 24.32
+  },
+  {
+    "id": "Cijara_2020-12-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-12-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 364,
+    "porcentaje": 24.19
+  },
+  {
+    "id": "Cijara_2020-12-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-12-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 361,
+    "porcentaje": 23.99
+  },
+  {
+    "id": "Cijara_2020-12-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-12-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 360,
+    "porcentaje": 23.92
+  },
+  {
+    "id": "Cijara_2020-12-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-12-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 359,
+    "porcentaje": 23.85
+  },
+  {
+    "id": "Cijara_2020-11-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-11-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 358,
+    "porcentaje": 23.79
+  },
+  {
+    "id": "Cijara_2020-11-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-11-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 358,
+    "porcentaje": 23.79
+  },
+  {
+    "id": "Cijara_2020-11-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-11-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 357,
+    "porcentaje": 23.72
+  },
+  {
+    "id": "Cijara_2020-11-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-11-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 355,
+    "porcentaje": 23.59
+  },
+  {
+    "id": "Cijara_2020-10-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-10-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 355,
+    "porcentaje": 23.59
+  },
+  {
+    "id": "Cijara_2020-10-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-10-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 354,
+    "porcentaje": 23.52
+  },
+  {
+    "id": "Cijara_2020-10-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-10-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 355,
+    "porcentaje": 23.59
+  },
+  {
+    "id": "Cijara_2020-10-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-10-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 356,
+    "porcentaje": 23.65
+  },
+  {
+    "id": "Cijara_2020-09-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-09-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 357,
+    "porcentaje": 23.72
+  },
+  {
+    "id": "Cijara_2020-09-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-09-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 358,
+    "porcentaje": 23.79
+  },
+  {
+    "id": "Cijara_2020-09-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-09-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 358,
+    "porcentaje": 23.79
+  },
+  {
+    "id": "Cijara_2020-09-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-09-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 359,
+    "porcentaje": 23.85
+  },
+  {
+    "id": "Cijara_2020-09-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-09-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 365,
+    "porcentaje": 24.25
+  },
+  {
+    "id": "Cijara_2020-08-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-08-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 379,
+    "porcentaje": 25.18
+  },
+  {
+    "id": "Cijara_2020-08-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-08-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 400,
+    "porcentaje": 26.58
+  },
+  {
+    "id": "Cijara_2020-08-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-08-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 417,
+    "porcentaje": 27.71
+  },
+  {
+    "id": "Cijara_2020-08-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-08-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 438,
+    "porcentaje": 29.1
+  },
+  {
+    "id": "Cijara_2020-07-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-07-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 467,
+    "porcentaje": 31.03
+  },
+  {
+    "id": "Cijara_2020-07-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-07-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 495,
+    "porcentaje": 32.89
+  },
+  {
+    "id": "Cijara_2020-07-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-07-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 528,
+    "porcentaje": 35.08
+  },
+  {
+    "id": "Cijara_2020-07-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-07-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 568,
+    "porcentaje": 37.74
+  },
+  {
+    "id": "Cijara_2020-06-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-06-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 619,
+    "porcentaje": 41.13
+  },
+  {
+    "id": "Cijara_2020-06-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-06-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 636,
+    "porcentaje": 42.26
+  },
+  {
+    "id": "Cijara_2020-06-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-06-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 637,
+    "porcentaje": 42.33
+  },
+  {
+    "id": "Cijara_2020-06-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-06-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 639,
+    "porcentaje": 42.46
+  },
+  {
+    "id": "Cijara_2020-06-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-06-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 640,
+    "porcentaje": 42.52
+  },
+  {
+    "id": "Cijara_2020-05-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-05-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 641,
+    "porcentaje": 42.59
+  },
+  {
+    "id": "Cijara_2020-05-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-05-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 640,
+    "porcentaje": 42.52
+  },
+  {
+    "id": "Cijara_2020-05-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-05-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 636,
+    "porcentaje": 42.26
+  },
+  {
+    "id": "Cijara_2020-05-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-05-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 635,
+    "porcentaje": 42.19
+  },
+  {
+    "id": "Cijara_2020-04-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-04-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 632,
+    "porcentaje": 41.99
+  },
+  {
+    "id": "Cijara_2020-04-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-04-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 624,
+    "porcentaje": 41.46
+  },
+  {
+    "id": "Cijara_2020-04-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-04-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 606,
+    "porcentaje": 40.27
+  },
+  {
+    "id": "Cijara_2020-04-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-04-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 594,
+    "porcentaje": 39.47
+  },
+  {
+    "id": "Cijara_2020-03-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-03-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 587,
+    "porcentaje": 39
+  },
+  {
+    "id": "Cijara_2020-03-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-03-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 586,
+    "porcentaje": 38.94
+  },
+  {
+    "id": "Cijara_2020-03-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-03-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 584,
+    "porcentaje": 38.8
+  },
+  {
+    "id": "Cijara_2020-03-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-03-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 584,
+    "porcentaje": 38.8
+  },
+  {
+    "id": "Cijara_2020-03-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-03-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 581,
+    "porcentaje": 38.6
+  },
+  {
+    "id": "Cijara_2020-02-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-02-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 580,
+    "porcentaje": 38.54
+  },
+  {
+    "id": "Cijara_2020-02-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-02-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 578,
+    "porcentaje": 38.41
+  },
+  {
+    "id": "Cijara_2020-02-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-02-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 577,
+    "porcentaje": 38.34
+  },
+  {
+    "id": "Cijara_2020-02-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-02-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 574,
+    "porcentaje": 38.14
+  },
+  {
+    "id": "Cijara_2020-01-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-01-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 570,
+    "porcentaje": 37.87
+  },
+  {
+    "id": "Cijara_2020-01-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-01-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 567,
+    "porcentaje": 37.67
+  },
+  {
+    "id": "Cijara_2020-01-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-01-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 564,
+    "porcentaje": 37.48
+  },
+  {
+    "id": "Cijara_2020-01-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2020-01-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 562,
+    "porcentaje": 37.34
+  },
+  {
+    "id": "Cijara_2019-12-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-12-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 558,
+    "porcentaje": 37.08
+  },
+  {
+    "id": "Cijara_2019-12-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-12-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 543,
+    "porcentaje": 36.08
+  },
+  {
+    "id": "Cijara_2019-12-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-12-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 489,
+    "porcentaje": 32.49
+  },
+  {
+    "id": "Cijara_2019-12-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-12-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 488,
+    "porcentaje": 32.43
+  },
+  {
+    "id": "Cijara_2019-12-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-12-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 487,
+    "porcentaje": 32.36
+  },
+  {
+    "id": "Cijara_2019-11-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-11-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 486,
+    "porcentaje": 32.29
+  },
+  {
+    "id": "Cijara_2019-11-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-11-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 484,
+    "porcentaje": 32.16
+  },
+  {
+    "id": "Cijara_2019-11-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-11-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 484,
+    "porcentaje": 32.16
+  },
+  {
+    "id": "Cijara_2019-11-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-11-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 485,
+    "porcentaje": 32.23
+  },
+  {
+    "id": "Cijara_2019-10-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-10-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 485,
+    "porcentaje": 32.23
+  },
+  {
+    "id": "Cijara_2019-10-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-10-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 485,
+    "porcentaje": 32.23
+  },
+  {
+    "id": "Cijara_2019-10-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-10-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 486,
+    "porcentaje": 32.29
+  },
+  {
+    "id": "Cijara_2019-10-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-10-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 487,
+    "porcentaje": 32.36
+  },
+  {
+    "id": "Cijara_2019-10-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-10-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 488,
+    "porcentaje": 32.43
+  },
+  {
+    "id": "Cijara_2019-09-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-09-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 489,
+    "porcentaje": 32.49
+  },
+  {
+    "id": "Cijara_2019-09-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-09-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 490,
+    "porcentaje": 32.56
+  },
+  {
+    "id": "Cijara_2019-09-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-09-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 495,
+    "porcentaje": 32.89
+  },
+  {
+    "id": "Cijara_2019-09-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-09-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 495,
+    "porcentaje": 32.89
+  },
+  {
+    "id": "Cijara_2019-08-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-08-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 508,
+    "porcentaje": 33.75
+  },
+  {
+    "id": "Cijara_2019-08-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-08-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 526,
+    "porcentaje": 34.95
+  },
+  {
+    "id": "Cijara_2019-08-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-08-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 552,
+    "porcentaje": 36.68
+  },
+  {
+    "id": "Cijara_2019-08-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-08-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 581,
+    "porcentaje": 38.6
+  },
+  {
+    "id": "Cijara_2019-07-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-07-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 612,
+    "porcentaje": 40.66
+  },
+  {
+    "id": "Cijara_2019-07-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-07-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 645,
+    "porcentaje": 42.86
+  },
+  {
+    "id": "Cijara_2019-07-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-07-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 677,
+    "porcentaje": 44.98
+  },
+  {
+    "id": "Cijara_2019-07-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-07-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 705,
+    "porcentaje": 46.84
+  },
+  {
+    "id": "Cijara_2019-07-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-07-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 747,
+    "porcentaje": 49.63
+  },
+  {
+    "id": "Cijara_2019-06-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-06-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 793,
+    "porcentaje": 52.69
+  },
+  {
+    "id": "Cijara_2019-06-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-06-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 814,
+    "porcentaje": 54.09
+  },
+  {
+    "id": "Cijara_2019-06-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-06-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 835,
+    "porcentaje": 55.48
+  },
+  {
+    "id": "Cijara_2019-06-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-06-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 856,
+    "porcentaje": 56.88
+  },
+  {
+    "id": "Cijara_2019-05-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-05-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 881,
+    "porcentaje": 58.54
+  },
+  {
+    "id": "Cijara_2019-05-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-05-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 882,
+    "porcentaje": 58.6
+  },
+  {
+    "id": "Cijara_2019-05-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-05-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 884,
+    "porcentaje": 58.74
+  },
+  {
+    "id": "Cijara_2019-05-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-05-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 884,
+    "porcentaje": 58.74
+  },
+  {
+    "id": "Cijara_2019-04-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-04-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 883,
+    "porcentaje": 58.67
+  },
+  {
+    "id": "Cijara_2019-04-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-04-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 875,
+    "porcentaje": 58.14
+  },
+  {
+    "id": "Cijara_2019-04-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-04-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 873,
+    "porcentaje": 58.01
+  },
+  {
+    "id": "Cijara_2019-04-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-04-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 873,
+    "porcentaje": 58.01
+  },
+  {
+    "id": "Cijara_2019-04-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-04-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 900,
+    "porcentaje": 59.8
+  },
+  {
+    "id": "Cijara_2019-03-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-03-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 930,
+    "porcentaje": 61.79
+  },
+  {
+    "id": "Cijara_2019-03-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-03-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 930,
+    "porcentaje": 61.79
+  },
+  {
+    "id": "Cijara_2019-03-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-03-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 930,
+    "porcentaje": 61.79
+  },
+  {
+    "id": "Cijara_2019-03-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-03-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 927,
+    "porcentaje": 61.59
+  },
+  {
+    "id": "Cijara_2019-02-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-02-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 927,
+    "porcentaje": 61.59
+  },
+  {
+    "id": "Cijara_2019-02-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-02-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 925,
+    "porcentaje": 61.46
+  },
+  {
+    "id": "Cijara_2019-02-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-02-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 923,
+    "porcentaje": 61.33
+  },
+  {
+    "id": "Cijara_2019-02-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-02-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 919,
+    "porcentaje": 61.06
+  },
+  {
+    "id": "Cijara_2019-01-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-01-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 911,
+    "porcentaje": 60.53
+  },
+  {
+    "id": "Cijara_2019-01-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-01-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 910,
+    "porcentaje": 60.47
+  },
+  {
+    "id": "Cijara_2019-01-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-01-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 909,
+    "porcentaje": 60.4
+  },
+  {
+    "id": "Cijara_2019-01-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-01-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 908,
+    "porcentaje": 60.33
+  },
+  {
+    "id": "Cijara_2019-01-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2019-01-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 907,
+    "porcentaje": 60.27
+  },
+  {
+    "id": "Cijara_2018-12-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-12-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 905,
+    "porcentaje": 60.13
+  },
+  {
+    "id": "Cijara_2018-12-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-12-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 902,
+    "porcentaje": 59.93
+  },
+  {
+    "id": "Cijara_2018-12-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-12-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 900,
+    "porcentaje": 59.8
+  },
+  {
+    "id": "Cijara_2018-12-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-12-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 897,
+    "porcentaje": 59.6
+  },
+  {
+    "id": "Cijara_2018-11-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-11-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 891,
+    "porcentaje": 59.2
+  },
+  {
+    "id": "Cijara_2018-11-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-11-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 886,
+    "porcentaje": 58.87
+  },
+  {
+    "id": "Cijara_2018-11-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-11-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 882,
+    "porcentaje": 58.6
+  },
+  {
+    "id": "Cijara_2018-11-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-11-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 879,
+    "porcentaje": 58.41
+  },
+  {
+    "id": "Cijara_2018-10-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-10-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 876,
+    "porcentaje": 58.21
+  },
+  {
+    "id": "Cijara_2018-10-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-10-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 877,
+    "porcentaje": 58.27
+  },
+  {
+    "id": "Cijara_2018-10-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-10-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 875,
+    "porcentaje": 58.14
+  },
+  {
+    "id": "Cijara_2018-10-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-10-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 876,
+    "porcentaje": 58.21
+  },
+  {
+    "id": "Cijara_2018-10-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-10-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 878,
+    "porcentaje": 58.34
+  },
+  {
+    "id": "Cijara_2018-09-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-09-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 887,
+    "porcentaje": 58.94
+  },
+  {
+    "id": "Cijara_2018-09-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-09-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 887,
+    "porcentaje": 58.94
+  },
+  {
+    "id": "Cijara_2018-09-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-09-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 904,
+    "porcentaje": 60.07
+  },
+  {
+    "id": "Cijara_2018-09-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-09-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 924,
+    "porcentaje": 61.4
+  },
+  {
+    "id": "Cijara_2018-08-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-08-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 946,
+    "porcentaje": 62.86
+  },
+  {
+    "id": "Cijara_2018-08-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-08-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 970,
+    "porcentaje": 64.45
+  },
+  {
+    "id": "Cijara_2018-08-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-08-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 991,
+    "porcentaje": 65.85
+  },
+  {
+    "id": "Cijara_2018-08-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-08-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1007,
+    "porcentaje": 66.91
+  },
+  {
+    "id": "Cijara_2018-07-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-07-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1019,
+    "porcentaje": 67.71
+  },
+  {
+    "id": "Cijara_2018-07-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-07-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1030,
+    "porcentaje": 68.44
+  },
+  {
+    "id": "Cijara_2018-07-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-07-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1039,
+    "porcentaje": 69.04
+  },
+  {
+    "id": "Cijara_2018-07-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-07-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1049,
+    "porcentaje": 69.7
+  },
+  {
+    "id": "Cijara_2018-07-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-07-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1058,
+    "porcentaje": 70.3
+  },
+  {
+    "id": "Cijara_2018-06-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-06-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1067,
+    "porcentaje": 70.9
+  },
+  {
+    "id": "Cijara_2018-06-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-06-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1076,
+    "porcentaje": 71.5
+  },
+  {
+    "id": "Cijara_2018-06-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-06-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1081,
+    "porcentaje": 71.83
+  },
+  {
+    "id": "Cijara_2018-06-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-06-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1085,
+    "porcentaje": 72.09
+  },
+  {
+    "id": "Cijara_2018-05-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-05-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1083,
+    "porcentaje": 71.96
+  },
+  {
+    "id": "Cijara_2018-05-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-05-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1089,
+    "porcentaje": 72.36
+  },
+  {
+    "id": "Cijara_2018-05-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-05-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1087,
+    "porcentaje": 72.23
+  },
+  {
+    "id": "Cijara_2018-05-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-05-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1084,
+    "porcentaje": 72.03
+  },
+  {
+    "id": "Cijara_2018-05-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-05-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1080,
+    "porcentaje": 71.76
+  },
+  {
+    "id": "Cijara_2018-04-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-04-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1069,
+    "porcentaje": 71.03
+  },
+  {
+    "id": "Cijara_2018-04-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-04-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 1044,
+    "porcentaje": 69.37
+  },
+  {
+    "id": "Cijara_2018-04-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-04-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 965,
+    "porcentaje": 64.12
+  },
+  {
+    "id": "Cijara_2018-04-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-04-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 955,
+    "porcentaje": 63.46
+  },
+  {
+    "id": "Cijara_2018-03-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-03-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 937,
+    "porcentaje": 62.26
+  },
+  {
+    "id": "Cijara_2018-03-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-03-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 876,
+    "porcentaje": 58.21
+  },
+  {
+    "id": "Cijara_2018-03-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-03-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 720,
+    "porcentaje": 47.84
+  },
+  {
+    "id": "Cijara_2018-03-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-03-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 588,
+    "porcentaje": 39.07
+  },
+  {
+    "id": "Cijara_2018-02-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-02-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 539,
+    "porcentaje": 35.81
+  },
+  {
+    "id": "Cijara_2018-02-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-02-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 539,
+    "porcentaje": 35.81
+  },
+  {
+    "id": "Cijara_2018-02-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-02-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 538,
+    "porcentaje": 35.75
+  },
+  {
+    "id": "Cijara_2018-02-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-02-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 538,
+    "porcentaje": 35.75
+  },
+  {
+    "id": "Cijara_2018-01-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-01-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 538,
+    "porcentaje": 35.75
+  },
+  {
+    "id": "Cijara_2018-01-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-01-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 537,
+    "porcentaje": 35.68
+  },
+  {
+    "id": "Cijara_2018-01-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-01-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 531,
+    "porcentaje": 35.28
+  },
+  {
+    "id": "Cijara_2018-01-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-01-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 531,
+    "porcentaje": 35.28
+  },
+  {
+    "id": "Cijara_2018-01-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2018-01-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 529,
+    "porcentaje": 35.15
+  },
+  {
+    "id": "Cijara_2017-12-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-12-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 529,
+    "porcentaje": 35.15
+  },
+  {
+    "id": "Cijara_2017-12-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-12-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 528,
+    "porcentaje": 35.08
+  },
+  {
+    "id": "Cijara_2017-12-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-12-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 527,
+    "porcentaje": 35.02
+  },
+  {
+    "id": "Cijara_2017-12-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-12-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 526,
+    "porcentaje": 34.95
+  },
+  {
+    "id": "Cijara_2017-11-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-11-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 526,
+    "porcentaje": 34.95
+  },
+  {
+    "id": "Cijara_2017-11-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-11-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 527,
+    "porcentaje": 35.02
+  },
+  {
+    "id": "Cijara_2017-11-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-11-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 528,
+    "porcentaje": 35.08
+  },
+  {
+    "id": "Cijara_2017-11-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-11-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 529,
+    "porcentaje": 35.15
+  },
+  {
+    "id": "Cijara_2017-10-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-10-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 529,
+    "porcentaje": 35.15
+  },
+  {
+    "id": "Cijara_2017-10-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-10-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 530,
+    "porcentaje": 35.22
+  },
+  {
+    "id": "Cijara_2017-10-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-10-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 530,
+    "porcentaje": 35.22
+  },
+  {
+    "id": "Cijara_2017-10-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-10-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 531,
+    "porcentaje": 35.28
+  },
+  {
+    "id": "Cijara_2017-10-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-10-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 532,
+    "porcentaje": 35.35
+  },
+  {
+    "id": "Cijara_2017-09-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-09-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 533,
+    "porcentaje": 35.42
+  },
+  {
+    "id": "Cijara_2017-09-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-09-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 534,
+    "porcentaje": 35.48
+  },
+  {
+    "id": "Cijara_2017-09-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-09-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 540,
+    "porcentaje": 35.88
+  },
+  {
+    "id": "Cijara_2017-09-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-09-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 555,
+    "porcentaje": 36.88
+  },
+  {
+    "id": "Cijara_2017-08-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-08-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 569,
+    "porcentaje": 37.81
+  },
+  {
+    "id": "Cijara_2017-08-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-08-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 585,
+    "porcentaje": 38.87
+  },
+  {
+    "id": "Cijara_2017-08-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-08-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 599,
+    "porcentaje": 39.8
+  },
+  {
+    "id": "Cijara_2017-08-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-08-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 611,
+    "porcentaje": 40.6
+  },
+  {
+    "id": "Cijara_2017-08-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-08-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 623,
+    "porcentaje": 41.4
+  },
+  {
+    "id": "Cijara_2017-07-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-07-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 636,
+    "porcentaje": 42.26
+  },
+  {
+    "id": "Cijara_2017-07-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-07-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 648,
+    "porcentaje": 43.06
+  },
+  {
+    "id": "Cijara_2017-07-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-07-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 661,
+    "porcentaje": 43.92
+  },
+  {
+    "id": "Cijara_2017-07-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-07-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 672,
+    "porcentaje": 44.65
+  },
+  {
+    "id": "Cijara_2017-06-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-06-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 686,
+    "porcentaje": 45.58
+  },
+  {
+    "id": "Cijara_2017-06-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-06-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 708,
+    "porcentaje": 47.04
+  },
+  {
+    "id": "Cijara_2017-06-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-06-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 735,
+    "porcentaje": 48.84
+  },
+  {
+    "id": "Cijara_2017-06-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-06-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 758,
+    "porcentaje": 50.37
+  },
+  {
+    "id": "Cijara_2017-05-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-05-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 760,
+    "porcentaje": 50.5
+  },
+  {
+    "id": "Cijara_2017-05-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-05-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 761,
+    "porcentaje": 50.56
+  },
+  {
+    "id": "Cijara_2017-05-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-05-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 762,
+    "porcentaje": 50.63
+  },
+  {
+    "id": "Cijara_2017-05-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-05-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 761,
+    "porcentaje": 50.56
+  },
+  {
+    "id": "Cijara_2017-05-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-05-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 760,
+    "porcentaje": 50.5
+  },
+  {
+    "id": "Cijara_2017-04-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-04-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 759,
+    "porcentaje": 50.43
+  },
+  {
+    "id": "Cijara_2017-04-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-04-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 760,
+    "porcentaje": 50.5
+  },
+  {
+    "id": "Cijara_2017-04-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-04-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 759,
+    "porcentaje": 50.43
+  },
+  {
+    "id": "Cijara_2017-04-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-04-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 758,
+    "porcentaje": 50.37
+  },
+  {
+    "id": "Cijara_2017-03-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-03-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 756,
+    "porcentaje": 50.23
+  },
+  {
+    "id": "Cijara_2017-03-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-03-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 753,
+    "porcentaje": 50.03
+  },
+  {
+    "id": "Cijara_2017-03-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-03-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 752,
+    "porcentaje": 49.97
+  },
+  {
+    "id": "Cijara_2017-03-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-03-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 748,
+    "porcentaje": 49.7
+  },
+  {
+    "id": "Cijara_2017-02-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-02-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 746,
+    "porcentaje": 49.57
+  },
+  {
+    "id": "Cijara_2017-02-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-02-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 742,
+    "porcentaje": 49.3
+  },
+  {
+    "id": "Cijara_2017-02-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-02-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 735,
+    "porcentaje": 48.84
+  },
+  {
+    "id": "Cijara_2017-02-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-02-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 728,
+    "porcentaje": 48.37
+  },
+  {
+    "id": "Cijara_2017-01-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-01-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 720,
+    "porcentaje": 47.84
+  },
+  {
+    "id": "Cijara_2017-01-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-01-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 717,
+    "porcentaje": 47.64
+  },
+  {
+    "id": "Cijara_2017-01-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-01-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 753,
+    "porcentaje": 50.03
+  },
+  {
+    "id": "Cijara_2017-01-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-01-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 763,
+    "porcentaje": 50.7
+  },
+  {
+    "id": "Cijara_2017-01-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2017-01-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 761,
+    "porcentaje": 50.56
+  },
+  {
+    "id": "Cijara_2016-12-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-12-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 759,
+    "porcentaje": 50.43
+  },
+  {
+    "id": "Cijara_2016-12-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-12-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 755,
+    "porcentaje": 50.17
+  },
+  {
+    "id": "Cijara_2016-12-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-12-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 750,
+    "porcentaje": 49.83
+  },
+  {
+    "id": "Cijara_2016-12-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-12-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 745,
+    "porcentaje": 49.5
+  },
+  {
+    "id": "Cijara_2016-11-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-11-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 736,
+    "porcentaje": 48.9
+  },
+  {
+    "id": "Cijara_2016-11-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-11-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 725,
+    "porcentaje": 48.17
+  },
+  {
+    "id": "Cijara_2016-11-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-11-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 724,
+    "porcentaje": 48.11
+  },
+  {
+    "id": "Cijara_2016-11-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-11-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 724,
+    "porcentaje": 48.11
+  },
+  {
+    "id": "Cijara_2016-11-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-11-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 722,
+    "porcentaje": 47.97
+  },
+  {
+    "id": "Cijara_2016-10-25T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-10-25 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 722,
+    "porcentaje": 47.97
+  },
+  {
+    "id": "Cijara_2016-10-18T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-10-18 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 722,
+    "porcentaje": 47.97
+  },
+  {
+    "id": "Cijara_2016-10-11T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-10-11 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 722,
+    "porcentaje": 47.97
+  },
+  {
+    "id": "Cijara_2016-10-04T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-10-04 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 725,
+    "porcentaje": 48.17
+  },
+  {
+    "id": "Cijara_2016-09-27T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-09-27 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 729,
+    "porcentaje": 48.44
+  },
+  {
+    "id": "Cijara_2016-09-20T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-09-20 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 734,
+    "porcentaje": 48.77
+  },
+  {
+    "id": "Cijara_2016-09-13T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-09-13 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 737,
+    "porcentaje": 48.97
+  },
+  {
+    "id": "Cijara_2016-09-06T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-09-06 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 739,
+    "porcentaje": 49.1
+  },
+  {
+    "id": "Cijara_2016-08-30T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-08-30 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 756,
+    "porcentaje": 50.23
+  },
+  {
+    "id": "Cijara_2016-08-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-08-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 795,
+    "porcentaje": 52.82
+  },
+  {
+    "id": "Cijara_2016-08-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-08-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 795,
+    "porcentaje": 52.82
+  },
+  {
+    "id": "Cijara_2016-08-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-08-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 830,
+    "porcentaje": 55.15
+  },
+  {
+    "id": "Cijara_2016-08-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-08-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 867,
+    "porcentaje": 57.61
+  },
+  {
+    "id": "Cijara_2016-07-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-07-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 907,
+    "porcentaje": 60.27
+  },
+  {
+    "id": "Cijara_2016-07-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-07-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 912,
+    "porcentaje": 60.6
+  },
+  {
+    "id": "Cijara_2016-07-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-07-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 917,
+    "porcentaje": 60.93
+  },
+  {
+    "id": "Cijara_2016-07-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-07-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 923,
+    "porcentaje": 61.33
+  },
+  {
+    "id": "Cijara_2016-06-28T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-06-28 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 927,
+    "porcentaje": 61.59
+  },
+  {
+    "id": "Cijara_2016-06-21T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-06-21 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 928,
+    "porcentaje": 61.66
+  },
+  {
+    "id": "Cijara_2016-06-14T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-06-14 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 930,
+    "porcentaje": 61.79
+  },
+  {
+    "id": "Cijara_2016-06-07T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-06-07 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 938,
+    "porcentaje": 62.33
+  },
+  {
+    "id": "Cijara_2016-05-31T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-05-31 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 937,
+    "porcentaje": 62.26
+  },
+  {
+    "id": "Cijara_2016-05-24T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-05-24 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 934,
+    "porcentaje": 62.06
+  },
+  {
+    "id": "Cijara_2016-05-17T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-05-17 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 923,
+    "porcentaje": 61.33
+  },
+  {
+    "id": "Cijara_2016-05-10T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-05-10 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 874,
+    "porcentaje": 58.07
+  },
+  {
+    "id": "Cijara_2016-05-03T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-05-03 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 870,
+    "porcentaje": 57.81
+  },
+  {
+    "id": "Cijara_2016-04-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-04-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 864,
+    "porcentaje": 57.41
+  },
+  {
+    "id": "Cijara_2016-04-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-04-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 835,
+    "porcentaje": 55.48
+  },
+  {
+    "id": "Cijara_2016-04-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-04-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 814,
+    "porcentaje": 54.09
+  },
+  {
+    "id": "Cijara_2016-04-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-04-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 805,
+    "porcentaje": 53.49
+  },
+  {
+    "id": "Cijara_2016-03-29T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-03-29 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 810,
+    "porcentaje": 53.82
+  },
+  {
+    "id": "Cijara_2016-03-22T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-03-22 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 810,
+    "porcentaje": 53.82
+  },
+  {
+    "id": "Cijara_2016-03-15T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-03-15 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 814,
+    "porcentaje": 54.09
+  },
+  {
+    "id": "Cijara_2016-03-08T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-03-08 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 813,
+    "porcentaje": 54.02
+  },
+  {
+    "id": "Cijara_2016-03-01T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-03-01 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 810,
+    "porcentaje": 53.82
+  },
+  {
+    "id": "Cijara_2016-02-23T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-02-23 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 804,
+    "porcentaje": 53.42
+  },
+  {
+    "id": "Cijara_2016-02-16T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-02-16 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 799,
+    "porcentaje": 53.09
+  },
+  {
+    "id": "Cijara_2016-02-09T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-02-09 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 787,
+    "porcentaje": 52.29
+  },
+  {
+    "id": "Cijara_2016-02-02T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-02-02 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 786,
+    "porcentaje": 52.23
+  },
+  {
+    "id": "Cijara_2016-01-26T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-01-26 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 785,
+    "porcentaje": 52.16
+  },
+  {
+    "id": "Cijara_2016-01-19T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-01-19 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 783,
+    "porcentaje": 52.03
+  },
+  {
+    "id": "Cijara_2016-01-12T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-01-12 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 775,
+    "porcentaje": 51.5
+  },
+  {
+    "id": "Cijara_2016-01-05T00:00:00.000Z",
+    "embalse": "Cijara",
+    "cuenca": "Guadiana",
+    "fecha": "2016-01-05 00:00:00+00",
+    "capacidad_total": 1505,
+    "volumen_actual": 764,
+    "porcentaje": 50.76
+  }
+]

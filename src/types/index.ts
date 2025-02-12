@@ -41,22 +41,15 @@ export interface BentoProps {
 }
 
 export interface Embalses {
-  fecha_modificacion: Date | null
-  nombre_embalse: string | null
-  nombre_cuenca: string | null
-  agua_embalsada: number | null
-  agua_embalsadapor: number | null
-  variacion_ultima_semana: number | null
-  variacion_ultima_semanapor: number | null
-  capacidad_total: number | null
-  misma_semana_ultimo_año: number | null
-  misma_semana_ultimo_añopor: number | null
-  misma_semana_10años: number | null
-  pais: string | null
-  misma_semana_10añospor: number | null
-  cota: number | null
-  lat: number | null
-  lon: number | null
+  id: string
+  embalse: string
+  cuenca: string
+  fecha: Date
+  capacidad_total: number
+  volumen_actual: number
+  porcentaje: number
+  lat?: number | null
+  lon?: number | null
 }
 
 export interface WeatherTypes {
@@ -202,4 +195,13 @@ export interface Leto {
   name: string
   quality: number
   contribution: number
+}
+
+export interface LiveData {
+  id: string
+  embalse: string
+  volumen: number | null
+  porcentaje: number | null
+  timestamp: Date | null
+  cota: number | null
 }

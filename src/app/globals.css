@@ -1,4 +1,5 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
 /* @config '../../tailwind.config.mjs'; */
 
 /*
@@ -116,11 +117,6 @@ body::-webkit-scrollbar-thumb {
 
 h1 {
   font-weight: 200;
-}
-
-table {
-  font-family: "Author-Mediums", system-ui;
-  color: #c0bfb7;
 }
 
 .animationGlow {

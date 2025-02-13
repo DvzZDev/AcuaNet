@@ -1,7 +1,16 @@
 import { cookies } from "next/headers"
 import { GetEmbalseByName } from "@/db/queries/select"
-import { Embalses } from "@/types"
+import { LastWeekVariationF } from "@/lib/DataEmbalses"
 import Link from "next/link"
+
+interface FavSection {
+  name: string
+  lastWeek: number
+  pctDifference: number
+  cuenca: string
+  pais: string
+  porcentaje: number
+}
 
 const TrendingUp = ({ className }: { className?: string }) => (
   <svg
@@ -39,14 +48,14 @@ const TrendingDown = ({ className }: { className?: string }) => (
   </svg>
 )
 
-const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
-  const variacion = embalse.variacion_ultima_semanapor || 0
+const EmbalseCard = ({ embalse }: { embalse: FavSection }) => {
+  const variacion = embalse.pctDifference || 0
 
   return (
-    <div className="md:max-h-auto max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-50/30 bg-emerald-400/15 shadow-lg transition-all hover:scale-95">
-      <Link href={encodeURI(`embalses/${embalse.nombre_embalse ?? ""}`)}>
+    <div className="max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-50/30 bg-emerald-400/15 shadow-lg transition-all hover:scale-95 md:max-h-auto">
+      <Link href={`embalses/${embalse.name.toLowerCase().replace(/ /g, "-") ?? ""}`}>
         <div className="relative p-3">
-          <div className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center overflow-hidden rounded-full">
+          <div className="absolute top-1 right-1 flex h-6 w-6 items-center justify-center overflow-hidden rounded-full">
             <img
               src={embalse.pais === "España" ? "/es.webp" : "/pt.webp"}
               alt={embalse.pais + " flag"}
@@ -54,19 +63,17 @@ const EmbalseCard = ({ embalse }: { embalse: Embalses }) => {
             />
           </div>
           <div className="mb-2 flex items-center justify-between">
-            <h2 className="text-base font-semibold uppercase text-green-100">{embalse.nombre_embalse}</h2>
+            <h2 className="truncate text-base font-semibold text-green-100 uppercase">{embalse.name}</h2>
             {/* Icono */}
           </div>
           <div className="mb-1 flex items-center">
             <div className="mr-2 h-2 w-full rounded-full bg-green-950">
               <div
                 className="h-2 rounded-full bg-green-400"
-                style={{ width: `${embalse.agua_embalsadapor}%` }}
+                style={{ width: `${embalse.porcentaje}%` }}
               ></div>
             </div>
-            <span className="min-w-[36px] text-right text-sm font-bold text-green-100">
-              {embalse.agua_embalsadapor?.toFixed()}%
-            </span>
+            <span className="min-w-[36px] text-right text-sm font-bold text-green-100">{embalse.porcentaje?.toFixed()}%</span>
           </div>
           <div className="flex items-center justify-between text-xs">
             <span className="text-green-100">Variación semanal</span>
@@ -86,20 +93,19 @@ export default async function FavSection() {
   const cookieStore = await cookies()
   const favoritesCookie = cookieStore.get("favorites")
   const favorites = favoritesCookie ? JSON.parse(favoritesCookie.value) : []
-  const data: Embalses[] = await GetEmbalseByName(favorites)
+  const data = await GetEmbalseByName(favorites)
+  const lv = LastWeekVariationF(data)
 
   return (
-    <section
-      className={`mt-4 h-[16.5rem] w-[15rem] ${data.length > 0 ? "overflow-y-auto" : "overflow-hidden"} pb-8 sm:h-full sm:w-[32rem]`}
-    >
+    <section className={`mt-4 h-[16.5rem] w-[15rem] ${data.length > 0 ? "overflow-y-auto" : "overflow-hidden"} sm:w-[32rem]`}>
       {data.length > 0 ? (
         <>
           <h2 className="mb-4 text-xl text-green-100 md:text-2xl">Embalses Favoritos</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {data.map((favorite: Embalses, index: number) => (
+            {lv.map((emb) => (
               <EmbalseCard
-                key={index}
-                embalse={favorite}
+                key={emb.name}
+                embalse={emb}
               />
             ))}
           </div>

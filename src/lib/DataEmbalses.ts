@@ -7,6 +7,52 @@ export function LastWeekVariation(embalses: Embalses[]) {
   return { lastWeek, pctDifference }
 }
 
+export function LastWeekVariationF(embalses: Embalses[]) {
+  // Group reservoirs by name
+  const groupedByName = embalses.reduce(
+    (acc, embalse) => {
+      if (!acc[embalse.embalse]) {
+        acc[embalse.embalse] = []
+      }
+      acc[embalse.embalse].push(embalse)
+      return acc
+    },
+    {} as Record<string, Embalses[]>
+  )
+
+  // Calculate variations for each reservoir
+  const variations = Object.entries(groupedByName).map(([name, data]) => {
+    // Sort by date to ensure newest first
+    const sortedData = data.sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime())
+    console.log(sortedData)
+
+    if (sortedData.length < 2) {
+      return {
+        name,
+        lastWeek: 0,
+        pctDifference: 0,
+        cuenca: sortedData[0].cuenca,
+        pais: GetCountry(name),
+        porcentaje: sortedData[0].porcentaje,
+      }
+    }
+
+    const lastWeek = sortedData[0].volumen_actual - sortedData[1].volumen_actual
+    const pctDifference = Number((sortedData[0].porcentaje - sortedData[1].porcentaje || 0).toFixed(2))
+
+    return {
+      name,
+      lastWeek,
+      pctDifference,
+      cuenca: sortedData[0].cuenca,
+      pais: GetCountry(name),
+      porcentaje: sortedData[0].porcentaje,
+    }
+  })
+
+  return variations
+}
+
 export function GetCountry(embalse: string) {
   const pais = Names.find((n) => n.nombre.toLowerCase() === embalse.toLowerCase())
   return pais?.pais || "N/D"

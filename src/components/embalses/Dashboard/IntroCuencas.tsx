@@ -84,60 +84,122 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 200 200"
-                className="h-16 w-16 animate-spin"
+                width="30"
+                height="30"
               >
                 <circle
-                  fill="#93ffb7"
-                  stroke="#93ffb7"
-                  strokeWidth="15"
-                  r="15"
-                  cx="40"
-                  cy="65"
+                  cx={40}
+                  cy={65}
+                  r={15}
+                  fill="#6FEEAC"
+                  stroke="#6FEEAC"
+                  strokeWidth={15}
                 >
                   <animate
                     attributeName="cy"
+                    begin={-0.4}
                     calcMode="spline"
-                    dur="2s"
-                    values="65;135;65;"
+                    dur={2}
                     keySplines=".5 0 .5 1;.5 0 .5 1"
                     repeatCount="indefinite"
-                    begin="-.4s"
+                    values="65;135;65;"
                   />
                 </circle>
                 <circle
-                  fill="#93ffb7"
-                  stroke="#93ffb7"
-                  strokeWidth="15"
-                  r="15"
-                  cx="100"
-                  cy="65"
+                  cx={100}
+                  cy={65}
+                  r={15}
+                  fill="#6FEEAC"
+                  stroke="#6FEEAC"
+                  strokeWidth={15}
                 >
                   <animate
                     attributeName="cy"
+                    begin={-0.2}
                     calcMode="spline"
-                    dur="2s"
-                    values="65;135;65;"
+                    dur={2}
                     keySplines=".5 0 .5 1;.5 0 .5 1"
                     repeatCount="indefinite"
-                    begin="-.2s"
+                    values="65;135;65;"
                   />
                 </circle>
                 <circle
-                  fill="#93ffb7"
-                  stroke="#93ffb7"
-                  strokeWidth="15"
-                  r="15"
-                  cx="160"
-                  cy="65"
+                  cx={160}
+                  cy={65}
+                  r={15}
+                  fill="#6FEEAC"
+                  stroke="#6FEEAC"
+                  strokeWidth={15}
                 >
                   <animate
                     attributeName="cy"
+                    begin={0}
                     calcMode="spline"
-                    dur="2s"
-                    values="65;135;65;"
+                    dur={2}
                     keySplines=".5 0 .5 1;.5 0 .5 1"
                     repeatCount="indefinite"
-                    begin="0s"
+                    values="65;135;65;"
+                  />
+                </circle>
+              </svg>{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 200 200"
+                width="15"
+                height="15"
+              >
+                <circle
+                  cx={40}
+                  cy={65}
+                  r={15}
+                  fill="#6FEEAC"
+                  stroke="#6FEEAC"
+                  strokeWidth={15}
+                >
+                  <animate
+                    attributeName="cy"
+                    begin={-0.4}
+                    calcMode="spline"
+                    dur={2}
+                    keySplines=".5 0 .5 1;.5 0 .5 1"
+                    repeatCount="indefinite"
+                    values="65;135;65;"
+                  />
+                </circle>
+                <circle
+                  cx={100}
+                  cy={65}
+                  r={15}
+                  fill="#6FEEAC"
+                  stroke="#6FEEAC"
+                  strokeWidth={15}
+                >
+                  <animate
+                    attributeName="cy"
+                    begin={-0.2}
+                    calcMode="spline"
+                    dur={2}
+                    keySplines=".5 0 .5 1;.5 0 .5 1"
+                    repeatCount="indefinite"
+                    values="65;135;65;"
+                  />
+                </circle>
+                <circle
+                  cx={160}
+                  cy={65}
+                  r={15}
+                  fill="#6FEEAC"
+                  stroke="#6FEEAC"
+                  strokeWidth={15}
+                >
+                  <animate
+                    attributeName="cy"
+                    begin={0}
+                    calcMode="spline"
+                    dur={2}
+                    keySplines=".5 0 .5 1;.5 0 .5 1"
+                    repeatCount="indefinite"
+                    values="65;135;65;"
                   />
                 </circle>
               </svg>
@@ -145,67 +207,6 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
           )}
 
           <div className="animate-blurred-fade-in absolute right-0 -bottom-[16px] flex justify-center rounded-full text-xs text-green-950">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 200 200"
-              width="15"
-              height="15"
-            >
-              <circle
-                cx={40}
-                cy={65}
-                r={15}
-                fill="#6FEEAC"
-                stroke="#6FEEAC"
-                strokeWidth={15}
-              >
-                <animate
-                  attributeName="cy"
-                  begin={-0.4}
-                  calcMode="spline"
-                  dur={2}
-                  keySplines=".5 0 .5 1;.5 0 .5 1"
-                  repeatCount="indefinite"
-                  values="65;135;65;"
-                />
-              </circle>
-              <circle
-                cx={100}
-                cy={65}
-                r={15}
-                fill="#6FEEAC"
-                stroke="#6FEEAC"
-                strokeWidth={15}
-              >
-                <animate
-                  attributeName="cy"
-                  begin={-0.2}
-                  calcMode="spline"
-                  dur={2}
-                  keySplines=".5 0 .5 1;.5 0 .5 1"
-                  repeatCount="indefinite"
-                  values="65;135;65;"
-                />
-              </circle>
-              <circle
-                cx={160}
-                cy={65}
-                r={15}
-                fill="#6FEEAC"
-                stroke="#6FEEAC"
-                strokeWidth={15}
-              >
-                <animate
-                  attributeName="cy"
-                  begin={0}
-                  calcMode="spline"
-                  dur={2}
-                  keySplines=".5 0 .5 1;.5 0 .5 1"
-                  repeatCount="indefinite"
-                  values="65;135;65;"
-                />
-              </circle>
-            </svg>
             <span>AcuaNet IA (puede contener errores)</span>
           </div>
         </div>

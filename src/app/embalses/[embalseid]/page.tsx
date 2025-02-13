@@ -20,13 +20,14 @@ import FilterHistoricalData from "@/lib/FilterHistoricalData"
 import Chart from "@/components/embalses/Dashboard/Chart"
 // import Names from "@/lib/nombresEmbalses.json"
 
-async function Page({ params }: { params: { embalseid: string } }) {
+async function Page({ params }: { params: Promise<{ embalseid: string }> }) {
   const { embalseid } = await params
   const decodedEmbalseid = embalseid.replace(/-/g, " ")
   const embalses = (await GetHistoricalData(decodedEmbalseid)) as Embalses[]
   const pActual = embalses[0].porcentaje
   const LastWeek = LastWeekVariation(embalses.slice(0, 2))
   const lData = await GetLiveData(decodedEmbalseid)
+  console.log(lData)
   FilterHistoricalData({ data: embalses })
   const pais = GetCountry(decodedEmbalseid)
   const { vol: misma_semana_ultimo_año_vol, por: misma_semana_ultimo_año_por } = getSameWeekLastYearCapacity(embalses) || {
@@ -67,8 +68,8 @@ async function Page({ params }: { params: { embalseid: string } }) {
             agua_embalsada={volumen_actual || 0}
             agua_embalsadapor={pActual || 0}
             capacidad_total={capacidad_total || 0}
-            cota={0}
-            pais={"N/D"}
+            cota={lData[0].cota || 0}
+            pais={pais}
             variacion_ultima_semana={LastWeek.lastWeek || 0}
             variacion_ultima_semanapor={LastWeek.pctDifference || 0}
           />

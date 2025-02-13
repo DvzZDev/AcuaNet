@@ -126,7 +126,7 @@ export default function EstadoActual({
                 <p className="text-3xl font-black text-green-950">
                   {cota > 0 ? (
                     <>
-                      {cota.toFixed()} <span className="text-lg">msnm</span>
+                      {cota} <span className="text-lg">msnm</span>
                     </>
                   ) : (
                     "N/D"

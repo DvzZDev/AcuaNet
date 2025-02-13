@@ -8,7 +8,7 @@ export default async function Hero() {
   return (
     <div
       id="search"
-      className="animate-blurred-fade-in -z-10 h-svh bg-black/40"
+      className="animate-blurred-fade-in -z-10 h-fit lg:h-svh py-10 bg-black/40"
     >
       <section className="relative z-10 flex h-full flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-4 px-2 lg:gap-6 2xl:gap-8 xl:w-[60rem]">

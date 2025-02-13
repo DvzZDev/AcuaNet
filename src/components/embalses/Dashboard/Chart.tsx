@@ -126,7 +126,7 @@ const Chart = ({ data }: { data: Embalses[] }) => {
           mode: "index" as const,
           intersect: false,
           callbacks: {
-            label: (context: any) => `${context.dataset.label}: ${context.raw}%`,
+            label: (context) => `${context.dataset.label}: ${context.raw}%`,
           },
           titleFont: { size: 14 },
           bodyFont: { size: 12 },

@@ -1,4 +1,6 @@
-export default function FilterHistoricalData({ data }) {
+import type { Embalses } from "@/types"
+
+export default function FilterHistoricalData({ data }: { data: Embalses[] }) {
   console.log(data)
   const filteredData = data.map((item) => {
     return {

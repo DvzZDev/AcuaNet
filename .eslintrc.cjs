@@ -11,24 +11,24 @@ module.exports = {
     node: true,
     browser: true,
   },
-  extends: ["eslint-config-prettier", "eslint:recommended", "next"],
+  extends: ["eslint:recommended", "next", "eslint-config-prettier"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["unused-imports"],
+  plugins: ["unused-imports", "@typescript-eslint"],
   rules: {
-    "unused-imports/no-unused-imports": "warn", // La regla debe estar definida aquí
+    "unused-imports/no-unused-imports": "warn",
     "eol-last": "off",
     "jsx-quotes": ["warn", "prefer-double"],
     quotes: ["warn", "double"],
     semi: ["warn", "never"],
-    // Más reglas...
+    "@typescript-eslint/no-explicit-any": "off",
   },
   settings: {
     react: {
-      version: "detect", // Esto detectará automáticamente la versión de React instalada
+      version: "detect",
     },
   },
   overrides: [
@@ -37,10 +37,16 @@ module.exports = {
       parser: "@typescript-eslint/parser",
       parserOptions: {
         project: "./tsconfig.json",
+        tsconfigRootDir: __dirname,
+        sourceType: "module",
       },
-      extends: ["plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:react/jsx-runtime"],
+      extends: [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "next/core-web-vitals",
+      ],
       rules: {
-        "@typescript-eslint/no-explicit-any": "off", // Desactiva la regla aquí
         "@next/next/no-img-element": "off",
       },
     },

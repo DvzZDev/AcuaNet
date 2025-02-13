@@ -27,7 +27,6 @@ async function Page({ params }: { params: Promise<{ embalseid: string }> }) {
   const pActual = embalses[0].porcentaje
   const LastWeek = LastWeekVariation(embalses.slice(0, 2))
   const lData = await GetLiveData(decodedEmbalseid)
-  console.log(lData)
   FilterHistoricalData({ data: embalses })
   const pais = GetCountry(decodedEmbalseid)
   const { vol: misma_semana_ultimo_año_vol, por: misma_semana_ultimo_año_por } = getSameWeekLastYearCapacity(embalses) || {

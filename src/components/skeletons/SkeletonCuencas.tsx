@@ -5,7 +5,7 @@ async function bento() {
         {Array.from({ length: 16 }).map((_, index) => (
           <div
             className={
-              "flex h-full flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 text-[1.4rem] transition-all hover:scale-110"
+              "bg-opacity-70 flex h-full flex-col content-center items-center justify-center rounded-md p-1 text-[1.4rem] whitespace-normal transition-all hover:scale-110"
             }
             key={index}
             style={{ cursor: "pointer" }}

@@ -28,7 +28,7 @@ export default function SerchEmbMenu() {
           viewBox="0 0 24 24"
           fill="none"
           strokeWidth="2"
-          className="stroke absolute left-1 top-1/2 -translate-y-1/2 transform stroke-green-100"
+          className="stroke absolute top-1/2 left-1 -translate-y-1/2 transform stroke-green-100"
         >
           <path
             stroke="none"
@@ -45,7 +45,7 @@ export default function SerchEmbMenu() {
           loop
         >
           <input
-            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-hidden sm:text-[18px] md:w-[21rem]"
+            className="placeholder-opacity-60 ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 focus:outline-hidden sm:text-[18px] md:w-[21rem]"
             type="text"
             value={type}
             onChange={handletype}
@@ -83,7 +83,7 @@ export default function SerchEmbMenu() {
       </h1>
       <div className="relative z-50">
         {suggestions.length > 0 && (
-          <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-[#275e56] bg-opacity-100 text-base text-green-100 animate-duration-300 md:text-xl">
+          <ul className="animate-fade-in-down bg-opacity-100 animate-duration-300 absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-[#275e56] text-base text-green-100 md:text-xl">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <Link
                 href={`/embalses/${suggestion.toLowerCase()}`}

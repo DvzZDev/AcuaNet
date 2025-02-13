@@ -3,7 +3,7 @@ export default function ImageRef({ id, link }: { id: string; link: string }) {
     <a
       href={link}
       target="blank"
-      className="glow2 absolute bottom-1 right-2 flex w-fit items-center justify-center gap-2 rounded-2xl p-1 text-xs text-emerald-400 backdrop-blur-3xl transition-all hover:scale-105 md:bottom-8 md:right-8 md:p-3 md:text-sm"
+      className="glow2 absolute right-2 bottom-1 flex w-fit items-center justify-center gap-2 rounded-2xl p-1 text-xs text-emerald-400 backdrop-blur-3xl transition-all hover:scale-105 md:right-8 md:bottom-8 md:p-3 md:text-sm"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

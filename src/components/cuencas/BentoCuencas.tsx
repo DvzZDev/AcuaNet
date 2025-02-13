@@ -14,7 +14,7 @@ const BentoCuencas = ({ data }: { data: Cuenca[] }) => {
             href={`/cuencas/${cuenca.cuenca}`}
           >
             <div
-              className={`flex h-full cursor-pointer flex-col content-center items-center justify-center whitespace-normal rounded-md bg-opacity-70 p-1 ${ColorCuencas(cuenca.porcentaje_embalsada ?? 0)}`}
+              className={`bg-opacity-70 flex h-full cursor-pointer flex-col content-center items-center justify-center rounded-md p-1 whitespace-normal ${ColorCuencas(cuenca.porcentaje_embalsada ?? 0)}`}
             >
               <div className="flex flex-col content-center items-center justify-center p-2">
                 <p className="text-base">{cuenca.cuenca.replace(/_/g, " ").replace(/-/g, " ")}</p>

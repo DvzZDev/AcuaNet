@@ -18,7 +18,7 @@ export default function Info3() {
         </h2>
         <article
           ref={ref1}
-          className={`${inView1 && "animate-fade-in opacity-100 animate-delay-700 md:animate-delay-0"} rounded-xl bg-black/25 p-5 text-lg leading-relaxed text-emerald-50 opacity-0 backdrop-blur-lg md:text-xl md:leading-relaxed`}
+          className={`${inView1 && "animate-fade-in animate-delay-700 md:animate-delay-0 opacity-100"} rounded-xl bg-black/25 p-5 text-lg leading-relaxed text-emerald-50 opacity-0 backdrop-blur-lg md:text-xl md:leading-relaxed`}
         >
           La construcción de AcuaNet ha sido un proyecto personal que ha llevado mucho tiempo y esfuerzo. Por eso te
           agradeceríamos que compartieras esta web con todos los pescadores a los que conozcas. Así juntos podremos hacer de esta

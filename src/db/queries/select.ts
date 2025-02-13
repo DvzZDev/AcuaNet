@@ -15,33 +15,31 @@ export async function GetEmbalses() {
 }
 
 export async function GetEmbalseByName(ids: string[]) {
-  return (
-    db
-      .select()
-      .from(
-        db
-          .select({
-            id: AllData.id,
-            embalse: AllData.embalse,
-            cuenca: AllData.cuenca,
-            fecha: AllData.fecha,
-            capacidad_total: AllData.capacidad_total,
-            volumen_actual: AllData.volumen_actual,
-            porcentaje: AllData.porcentaje,
-            // Match the exact case in the column alias
-            rowNum: sql<number>`ROW_NUMBER() OVER (PARTITION BY ${AllData.embalse} ORDER BY ${AllData.fecha} DESC)`.as("rowNum"),
-          })
-          .from(AllData)
-          .where(
-            inArray(
-              sql`LOWER(${AllData.embalse})`,
-              ids.map((id) => id.toLowerCase())
-            )
+  return db
+    .select()
+    .from(
+      db
+        .select({
+          id: AllData.id,
+          embalse: AllData.embalse,
+          cuenca: AllData.cuenca,
+          fecha: AllData.fecha,
+          capacidad_total: AllData.capacidad_total,
+          volumen_actual: AllData.volumen_actual,
+          porcentaje: AllData.porcentaje,
+          // Match the exact case in the column alias
+          rowNum: sql<number>`ROW_NUMBER() OVER (PARTITION BY ${AllData.embalse} ORDER BY ${AllData.fecha} DESC)`.as("rowNum"),
+        })
+        .from(AllData)
+        .where(
+          inArray(
+            sql`LOWER(${AllData.embalse})`,
+            ids.map((id) => id.toLowerCase())
           )
-          .as("ranked_data")
-      )
-      .where(sql`"rowNum" <= 2`)
-  )
+        )
+        .as("ranked_data")
+    )
+    .where(sql`"rowNum" <= 2`)
 }
 export async function GetLiveData(emb: string) {
   return db

@@ -17,7 +17,7 @@ export default function Info4() {
         </h2>
         <div
           ref={ref1}
-          className={`${inView1 && "animate-fade-in opacity-100 animate-delay-700 md:animate-delay-0"} flex flex-wrap gap-3 rounded-xl bg-black/25 p-5 opacity-0 backdrop-blur-lg`}
+          className={`${inView1 && "animate-fade-in animate-delay-700 md:animate-delay-0 opacity-100"} flex flex-wrap gap-3 rounded-xl bg-black/25 p-5 opacity-0 backdrop-blur-lg`}
         >
           <a
             href="https://www.agrbaits.es/"

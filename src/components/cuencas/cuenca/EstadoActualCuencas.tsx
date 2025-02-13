@@ -47,7 +47,7 @@ export default function EstadoActualCuencas({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">Agua Embalsada</p>
+              <p className="text-lg leading-none font-semibold text-[#3d7764]">Agua Embalsada</p>
               <p className="text-3xl font-black text-green-950">
                 {agua_embalsada} <span className="text-lg">hm³</span>
               </p>
@@ -95,7 +95,7 @@ export default function EstadoActualCuencas({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">Capacidad Total</p>
+              <p className="text-lg leading-none font-semibold text-[#3d7764]">Capacidad Total</p>
               <p className="text-3xl font-black text-green-950">
                 {capacidad_total} <span className="text-lg">hm³</span>
               </p>
@@ -132,7 +132,7 @@ export default function EstadoActualCuencas({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">Cambios Semanales</p>
+              <p className="text-lg leading-none font-semibold text-[#3d7764]">Cambios Semanales</p>
               <p className="text-3xl font-black text-green-950">
                 {variacion} <span className="text-lg">hm³</span>
               </p>

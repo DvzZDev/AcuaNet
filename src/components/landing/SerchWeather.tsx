@@ -45,7 +45,7 @@ export default function SerchWeather() {
     <div>
       <form
         onSubmit={onSearch}
-        className="border-1 relative z-10 mt-3 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:w-[20rem] md:text-xl"
+        className="relative z-10 mt-3 flex max-h-16 w-[15rem] items-center justify-center rounded-2xl border-1 border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:w-[20rem] md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export default function SerchWeather() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="absolute left-1 top-1/2 -translate-y-1/2 transform stroke-green-100"
+          className="absolute top-1/2 left-1 -translate-y-1/2 transform stroke-green-100"
         >
           <path
             stroke="none"
@@ -73,7 +73,7 @@ export default function SerchWeather() {
           loop
         >
           <input
-            className="ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-hidden sm:text-[18px]"
+            className="placeholder-opacity-60 ml-8 w-full bg-transparent text-[16px] text-green-100 placeholder-green-100 focus:outline-hidden sm:text-[18px]"
             type="text"
             value={type}
             onChange={handleChange}
@@ -139,7 +139,7 @@ export default function SerchWeather() {
       )}
       <div className="relative z-50">
         {data.length > 0 && type && (
-          <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-[#23583a] text-base text-white backdrop-blur-md animate-duration-300 md:text-xl">
+          <ul className="animate-fade-in-down animate-duration-300 absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-[#23583a] text-base text-white backdrop-blur-md md:text-xl">
             {data.length > 0 && visible && (
               <div className="absolute flex w-full flex-col gap-1 rounded-lg bg-[#23583a] text-base text-green-100 backdrop-blur-md md:text-xl">
                 {data.map((item, index) => (

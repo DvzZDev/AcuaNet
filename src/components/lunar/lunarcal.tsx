@@ -70,7 +70,7 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
     calendarRows.push(
       <div
         key="week-header"
-        className="font-NecoBold mb-1 grid grid-cols-7 text-center text-xl font-black uppercase text-green-950"
+        className="font-NecoBold mb-1 grid grid-cols-7 text-center text-xl font-black text-green-950 uppercase"
       >
         {weekDays.map((day) => (
           <div
@@ -110,7 +110,7 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
               </div>
 
               {isToday && (
-                <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
+                <div className="absolute right-2 bottom-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
                   Hoy
                 </div>
               )}
@@ -166,7 +166,7 @@ const MobileView = ({ lunarDays }: { lunarDays: LunarDay[] }) => {
             className={`relative rounded-lg border p-2 text-xs shadow-md ${isToday ? "bg-lime-100" : "bg-blue-200"}`}
           >
             {isToday && (
-              <div className="absolute bottom-2 right-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
+              <div className="absolute right-2 bottom-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
                 Hoy
               </div>
             )}
@@ -237,7 +237,7 @@ const LunarCalendar = () => {
           >
             ◀
           </button>
-          <h2 className="text-3xl font-bold uppercase italic text-[#052e16]">
+          <h2 className="text-3xl font-bold text-[#052e16] uppercase italic">
             {new Date(startYear, startMonth)
               .toLocaleString("es-ES", { month: "long", year: "numeric" })
               .replace(/^\w/, (c) => c.toUpperCase())}

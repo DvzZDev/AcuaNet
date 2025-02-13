@@ -18,7 +18,7 @@ export default function Info2() {
         </h2>
         <article
           ref={ref1}
-          className={`${inView1 && "animate-fade-in opacity-100 animate-delay-700 md:animate-delay-0"} rounded-xl bg-black/20 p-5 text-lg leading-relaxed text-emerald-50 opacity-0 backdrop-blur-lg md:text-xl md:leading-relaxed`}
+          className={`${inView1 && "animate-fade-in animate-delay-700 md:animate-delay-0 opacity-100"} rounded-xl bg-black/20 p-5 text-lg leading-relaxed text-emerald-50 opacity-0 backdrop-blur-lg md:text-xl md:leading-relaxed`}
         >
           Nosotros te proporcionamos toda la información necesaria y relevante para tu jornada de pesca, desde los niveles de los
           embalses, hasta el pronóstico del tiempo y las condiciones de pesca en tu zona favorita.

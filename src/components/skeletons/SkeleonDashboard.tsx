@@ -6,7 +6,7 @@ export default function SkeleonDashboard() {
     <>
       <div className="font-NecoBold text-textsecondary m-auto mt-4 h-14 w-[15rem] animate-pulse rounded-lg bg-green-200 text-center text-[2.5rem] sm:mt-10 sm:w-[20rem] sm:text-6xl lg:w-[30rem]"></div>
       <Divider />
-      <main className="flex justify-center bg-green-50 px-6 pb-14 pt-4 text-black">
+      <main className="flex justify-center bg-green-50 px-6 pt-4 pb-14 text-black">
         <section className="flex w-[70rem] flex-col gap-7">
           <div className="flex animate-pulse justify-between">
             <div className="flex flex-col gap-2">

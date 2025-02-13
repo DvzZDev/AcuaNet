@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`fixed z-50 w-full animate-fade-in-down bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"}`}
+      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"}`}
     >
       <div className="container mx-auto mt-2 flex flex-col items-center justify-between gap-6 px-4 uppercase lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         {/* Logo */}
@@ -193,7 +193,7 @@ export default function Navbar() {
           <Link
             href="/cuencas"
             onClick={closeMenu}
-            className="animate-fade-in transition-all animate-delay-100 hover:text-green-300"
+            className="animate-fade-in animate-delay-100 transition-all hover:text-green-300"
           >
             Cuencas
           </Link>
@@ -201,20 +201,20 @@ export default function Navbar() {
           <Link
             href="/luna"
             onClick={closeMenu}
-            className="animate-fade-in transition-all animate-delay-300 hover:text-green-300"
+            className="animate-fade-in animate-delay-300 transition-all hover:text-green-300"
           >
             Calendario Lunar
           </Link>
           <Link
             href="/quienesSomos"
             onClick={closeMenu}
-            className="animate-fade-in transition-all animate-delay-400 hover:text-green-300"
+            className="animate-fade-in animate-delay-400 transition-all hover:text-green-300"
           >
             Quiénes Somos
           </Link>
           <Link
             href="https://www.instagram.com/acuanet.es/"
-            className="flex animate-fade-in items-center gap-1 transition-all animate-delay-400 hover:text-green-300"
+            className="animate-fade-in animate-delay-400 flex items-center gap-1 transition-all hover:text-green-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -301,7 +301,7 @@ export default function Navbar() {
             </svg>
             <p>¡Siguenos!</p>
           </Link>
-          <div className="animate-fade-in transition-all animate-delay-400">
+          <div className="animate-fade-in animate-delay-400 transition-all">
             <SerchEmbMenu />
           </div>
         </nav>

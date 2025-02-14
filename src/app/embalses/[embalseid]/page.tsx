@@ -25,9 +25,15 @@ interface Coordinates {
   name: string
 }
 
-async function Page({ params, searchParams }: { params: Promise<{ embalseid: string }>; searchParams: { pt?: string } }) {
+async function Page({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ embalseid: string }>
+  searchParams: Promise<{ pt?: string }>
+}) {
   const { embalseid } = await params
-  const pt = searchParams.pt
+  const { pt } = await searchParams
   const decodedEmbalseid = pt
     ? embalseid
         .replace(/-/g, " ")

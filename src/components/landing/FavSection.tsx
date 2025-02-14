@@ -93,7 +93,7 @@ export default async function FavSection() {
   const cookieStore = await cookies()
   const favoritesCookie = cookieStore.get("favorites")
   const favorites = favoritesCookie ? JSON.parse(favoritesCookie.value) : []
-  const data = await GetEmbalseByName(favorites)
+  const data = await GetEmbalseByName(favorites as string[])
   const lv = LastWeekVariationF(data)
 
   return (

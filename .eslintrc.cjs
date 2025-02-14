@@ -45,9 +45,12 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
         "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       rules: {
         "@next/next/no-img-element": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
+
       },
     },
   ],

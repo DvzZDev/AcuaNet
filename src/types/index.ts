@@ -46,12 +46,13 @@ export interface Embalses {
   cuenca: string | null
   volumen_actual: number | null
   porcentaje: number | null
-  variacion_ultima_semana: number | null
-  variacion_ultima_semanapor: number | null
+  variacion_ultima_semana?: number | null
+  variacion_ultima_semanapor?: number | null
   capacidad_total: number | null
-  lat: number | null
-  lon: number | null
-  pais: string | null
+  lat?: number | null
+  lon?: number | null
+  pais?: string | null
+  
 }
 export interface WeatherTypes {
   queryCost: number

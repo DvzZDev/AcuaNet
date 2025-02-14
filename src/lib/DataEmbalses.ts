@@ -24,7 +24,6 @@ export function LastWeekVariationF(embalses: Embalses[]) {
   const variations = Object.entries(groupedByName).map(([name, data]) => {
     // Sort by date to ensure newest first
     const sortedData = data.sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime())
-    console.log(sortedData)
 
     if (sortedData.length < 2) {
       return {

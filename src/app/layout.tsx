@@ -7,6 +7,7 @@ import { Suspense } from "react"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
+import { Bounce, ToastContainer } from "react-toastify"
 
 export const metadata = {
   metadataBase: new URL("https://www.acuanet.es"),
@@ -98,6 +99,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p className="font-black">¡Dona a AcuaNet!</p>
           </a> */}
           <Footer />
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
         </Providers>
       </body>
     </html>

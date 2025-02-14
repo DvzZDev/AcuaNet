@@ -55,15 +55,15 @@ const EmbalseCard = ({ embalse }: { embalse: FavSection }) => {
     <div className="max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-50/30 bg-emerald-400/15 shadow-lg transition-all hover:scale-95 md:max-h-auto">
       <Link href={`embalses/${embalse.name.toLowerCase().replace(/ /g, "-") ?? ""}`}>
         <div className="relative p-3">
-          <div className="absolute top-1 right-1 flex h-6 w-6 items-center justify-center overflow-hidden rounded-full">
+          <div className="absolute top-0 right-0 flex h-4 w-6 items-center justify-center overflow-hidden">
             <img
               src={embalse.pais === "España" ? "/es.webp" : "/pt.webp"}
               alt={embalse.pais + " flag"}
-              className="h-[2rem] w-[3rem] object-cover"
+              className="h-6 w-6 object-cover"
             />
           </div>
           <div className="mb-2 flex items-center justify-between">
-            <h2 className="truncate text-base font-semibold text-green-100 uppercase">{embalse.name}</h2>
+            <h2 className="truncate text-base font-semibold text-green-100">{embalse.name}</h2>
             {/* Icono */}
           </div>
           <div className="mb-1 flex items-center">

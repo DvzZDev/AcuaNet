@@ -12,7 +12,7 @@ export interface IntroEmbalsesProps {
   nombre_cuenca: string
   fecha_modificacion: Date
   weather?: WeatherTypes | null
-  embalse?: Embalses
+  embalse?: Embalses[]
   cuenca: boolean
 }
 
@@ -41,17 +41,18 @@ export interface BentoProps {
 }
 
 export interface Embalses {
-  id: string
+  fecha: Date | null
   embalse: string
-  cuenca: string
-  fecha: Date
-  capacidad_total: number
-  volumen_actual: number
-  porcentaje: number
-  lat?: number | null
-  lon?: number | null
+  cuenca: string | null
+  volumen_actual: number | null
+  porcentaje: number | null
+  variacion_ultima_semana: number | null
+  variacion_ultima_semanapor: number | null
+  capacidad_total: number | null
+  lat: number | null
+  lon: number | null
+  pais: string | null
 }
-
 export interface WeatherTypes {
   queryCost: number
   latitude: number

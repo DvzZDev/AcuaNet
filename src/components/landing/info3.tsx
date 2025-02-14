@@ -12,9 +12,9 @@ export default function Info3() {
       <div className="flex w-[45rem] flex-col gap-7 md:gap-16 xl:-mr-[30rem] 2xl:-mr-[50rem]">
         <h2
           ref={titleRef}
-          className={`${titleInView && "animate-fade-in-right opacity-100"} w-fit rounded-2xl bg-black/25 p-3 text-left text-4xl font-black text-emerald-200 opacity-0 backdrop-blur-xl md:text-5xl lg:text-6xl`}
+          className={`${titleInView && "animate-fade-in-right opacity-100"} w-fit rounded-2xl bg-black/25 p-3 text-left text-4xl font-semibold text-emerald-200 opacity-0 backdrop-blur-xl md:text-5xl lg:text-6xl`}
         >
-          Necesitamos tu <span className="glow2 text-[#93ffb7]">ayuda.</span>
+          Necesitamos tu <span className="glow2 text-[#93ffb7]">ayuda</span>
         </h2>
         <article
           ref={ref1}

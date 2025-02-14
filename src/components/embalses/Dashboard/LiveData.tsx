@@ -7,7 +7,7 @@ export default function LiveData({ data }: { data: LiveData[] }) {
   return (
     <>
       <div className="flex flex-col gap-1">
-        <h2 className="text-2xl font-black text-green-950">Datos en tiempo real</h2>
+        <h2 className="text-2xl font-bold text-green-950">Datos en tiempo real</h2>
         <div className="w-fit rounded-full bg-orange-200 px-2 py-[2px] text-xs">
           <p>Datos no contrastados</p>
         </div>
@@ -23,20 +23,20 @@ export default function LiveData({ data }: { data: LiveData[] }) {
         <table className="w-full table-fixed">
           <thead className="x text-left text-xs text-[#3d7764] lg:text-sm">
             <tr>
-              <th className="pb-1">Hora</th>
-              <th className="pb-1">
+              <th className="pb-1 font-bold">Hora</th>
+              <th className="pb-1 font-bold">
                 Volumen <br /> <span className="text-xs">(hm3)</span>
               </th>
-              <th className="pb-1">
+              <th className="pb-1 font-bold">
                 Capacidad <br /> <span className="text-xs">(%)</span>
               </th>
-              <th className="pb-1">
+              <th className="pb-1 font-bold">
                 Cota <br />
                 <span className="text-xs">(msnm)</span>
               </th>
             </tr>
           </thead>
-          <tbody className="font-green-950 text-xs font-thin lg:text-sm">
+          <tbody className="font-green-950 text-xs lg:text-sm">
             {data.map((i) => (
               <tr
                 className="odd:bg-[#c8ffdc] lg:text-balance"

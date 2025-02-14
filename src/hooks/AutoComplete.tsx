@@ -56,6 +56,7 @@ const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: 
     type,
     suggestions,
     err,
+    setErr,
     handletype,
     handleSuggestionClick,
     handleSubmit,

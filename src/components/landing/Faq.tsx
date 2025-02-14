@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 function Faq() {
   return (
     <section className="flex flex-col items-center justify-center bg-green-50 px-6 py-8 md:py-20">
-      <h2 className="mb-5 pt-1 text-center text-[2.3rem] leading-none font-black text-[#275e56] sm:text-[50px] md:mb-10">
+      <h2 className="mb-5 pt-1 text-center text-[2.3rem] leading-none font-semibold text-[#275e56] sm:text-[50px] md:mb-10">
         Preguntas Frecuentes
       </h2>
       <div className="w-full max-w-[60rem]">

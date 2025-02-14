@@ -72,6 +72,28 @@ export const AllData = pgTable(
   })
 )
 
+export const PortugalData = pgTable(
+  "portugal_data",
+  {
+    fecha: timestamp("fecha_modificacion", {
+      withTimezone: false,
+    }).defaultNow(),
+    embalse: varchar("nombre_embalse", { length: 255 }).notNull(),
+    cuenca: varchar("nombre_cuenca", { length: 255 }),
+    volumen_actual: integer("agua_embalsada"),
+    porcentaje: doublePrecision("agua_embalsadapor"),
+    variacion_ultima_semana: doublePrecision("variacion_ultima_semana"),
+    variacion_ultima_semanapor: doublePrecision("variacion_ultima_semanapor"),
+    capacidad_total: integer("capacidad_total"),
+    lat: doublePrecision("lat"),
+    lon: doublePrecision("lon"),
+    pais: varchar("pais"),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.embalse] }),
+  })
+)
+
 export const LiveData = pgTable(
   "live_data",
   {

@@ -20,7 +20,7 @@ export default function EstadoActual({
   return (
     <>
       <div className="flex flex-col gap-1">
-        <h2 className="text-2xl font-black text-green-950">Datos semanales</h2>
+        <h2 className="text-2xl font-bold text-green-950">Datos semanales</h2>
         <div className="w-fit rounded-full bg-blue-200 px-2 py-[2px] text-xs">
           <p>Datos contrastados</p>
         </div>

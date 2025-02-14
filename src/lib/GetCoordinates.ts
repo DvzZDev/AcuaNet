@@ -8,8 +8,8 @@ export default async function GetCoordinates(loc: string) {
     const data = await response.json()
     const result = {
       name: data[0].display_name,
-      lat: data[0].lat,
-      lon: data[0].lon,
+      lat: Number(data[0].lat),
+      lon: Number(data[0].lon),
     }
     return result
   } catch (error) {

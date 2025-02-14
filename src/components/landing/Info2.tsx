@@ -12,9 +12,9 @@ export default function Info2() {
       <div className="flex w-[45rem] flex-col gap-7 md:gap-16 xl:-ml-[30rem] 2xl:-ml-[50rem]">
         <h2
           ref={titleRef}
-          className={`${titleInView && "animate-fade-in-right opacity-100"} w-fit rounded-2xl bg-black/25 p-3 text-left text-4xl font-black text-emerald-200 opacity-0 backdrop-blur-2xl md:text-5xl lg:text-6xl`}
+          className={`${titleInView && "animate-fade-in-right opacity-100"} w-fit rounded-2xl bg-black/25 p-3 text-left text-4xl font-semibold text-emerald-200 opacity-0 backdrop-blur-2xl md:text-5xl lg:text-6xl`}
         >
-          Preocúpate de pescar, <span className="glow2 text-[#93ffb7]">AcuaNet</span> hace el resto.
+          Preocúpate de pescar, <span className="glow2 text-[#93ffb7]">AcuaNet</span> hace el resto
         </h2>
         <article
           ref={ref1}

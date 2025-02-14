@@ -115,10 +115,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-h1 {
-  font-weight: 200;
-}
-
 .animationGlow {
   text-shadow: 0 0 1px;
   transition: text-shadow 0.3s ease-in-out;
@@ -126,26 +122,10 @@ h1 {
 
 @font-face {
   font-family: "Inter";
-  src: url("../assets/fonts/Inter.ttf") format("truetype");
-  font-weight: 500;
+  src: url("../assets/fonts/Inter.ttf") format("truetype-variations");
+  font-weight: 100 900;
   font-display: swap;
   font-style: normal;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../assets/fonts/Inter.ttf") format("truetype");
-  font-weight: 600;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../assets/fonts/Inter.ttf") format("truetype");
-  font-weight: 700;
-  font-display: swap;
-  font-style: bold;
 }
 
 .iconoredes:hover {
@@ -156,6 +136,15 @@ h1 {
   }
 
   fill: #95cfb0;
+}
+
+:root {
+  --toastify-color-light: #4a0000c6 !important;
+  --toastify-text-color-light: #fff !important;
+}
+
+.Toastify__close-button {
+  color: #fff !important;
 }
 
 .glow {

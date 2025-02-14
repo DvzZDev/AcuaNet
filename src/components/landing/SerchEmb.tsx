@@ -3,6 +3,8 @@ import { ReactTyped } from "react-typed"
 import AutoCompleteHook from "@/hooks/AutoComplete"
 import { Link } from "next-view-transitions"
 import nombreEmbalses from "@/lib/nombresEmbalses.json"
+import { Bounce, toast } from "react-toastify"
+import { useEffect } from "react"
 
 const data = nombreEmbalses
 
@@ -12,7 +14,26 @@ export function FlagSelector(embalse: string) {
 }
 
 export default function SerchEmb() {
-  const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
+  const { type, suggestions, err, handletype, setErr, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
+
+  useEffect(() => {
+    if (err) {
+      toast.error("No se encontro el embalse", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        rtl: false,
+        pauseOnFocusLoss: true,
+        draggable: true,
+        pauseOnHover: true,
+        theme: "light",
+        transition: Bounce,
+      })
+      setErr(false)
+    }
+  }, [setErr, err])
+
   return (
     <div>
       <form
@@ -43,7 +64,7 @@ export default function SerchEmb() {
           loop
         >
           <input
-            className="placeholder-opacity-60 ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 focus:outline-hidden sm:text-[18px] md:w-[21rem]"
+            className="placeholder-opacity-60 ml-8 w-fit bg-transparent text-[16px] font-normal text-green-100 placeholder-green-100/80 placeholder:font-light focus:outline-hidden sm:text-[18px] md:w-[21rem]"
             type="text"
             value={type}
             onChange={handletype}
@@ -51,7 +72,7 @@ export default function SerchEmb() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-hidden active:scale-75"
+          className="absolute right-2 text-slate-400 transition-all group-hover:scale-105 focus:outline-hidden active:scale-75"
           type="submit"
         >
           <svg
@@ -64,6 +85,7 @@ export default function SerchEmb() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="group-hover:stroke-green-300 hover:stroke-green-300"
           >
             <path
               stroke="none"
@@ -76,15 +98,12 @@ export default function SerchEmb() {
         </button>
       </form>
 
-      <h1 className={`animate-fade-in-up pl-1 text-red-500 transition-all ${err ? "animate-fade block" : "hidden"}`}>
-        Embalse no encontrado
-      </h1>
       <div className="relative z-50">
         {suggestions.length > 0 && (
           <ul className="animate-blurred-fade-in animate-duration-300 absolute mt-2 flex w-full flex-col gap-1 rounded-lg bg-emerald-800 text-base text-green-100 uppercase md:text-xl">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <Link
-                href={`/embalses/${suggestion.replace(/ /g, "-").toLowerCase()}`}
+                href={`/embalses/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
                 key={index}
               >
                 <li

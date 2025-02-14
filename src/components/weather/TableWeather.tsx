@@ -39,17 +39,6 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
             <div className="flex w-full items-center justify-between text-sm md:text-base">
               <div className="flex items-center justify-center gap-1">
                 <svg
-                  fill="red"
-                  className="h-3 w-3 md:h-4 md:w-4"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M21,21H3L12,3Z" />
-                </svg>
-                <p>{day.tempmax} </p>
-              </div>
-              <div className="flex items-center justify-center gap-1">
-                <svg
                   fill="#09f"
                   className="h-3 w-3 rotate-180 md:h-4 md:w-4"
                   viewBox="0 0 24 24"
@@ -58,6 +47,17 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                   <path d="M21,21H3L12,3Z" />
                 </svg>
                 <p>{day.tempmin}</p>
+              </div>
+              <div className="flex items-center justify-center gap-1">
+                <svg
+                  fill="red"
+                  className="h-3 w-3 md:h-4 md:w-4"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M21,21H3L12,3Z" />
+                </svg>
+                <p>{day.tempmax} </p>
               </div>
             </div>
             {day.hours

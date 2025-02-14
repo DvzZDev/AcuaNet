@@ -15,7 +15,7 @@ export default function HistorialCambios({
 }) {
   return (
     <>
-      <h2 className="text-2xl font-black text-green-950">Historial de cambios</h2>
+      <h2 className="text-2xl font-bold text-green-950">Historial de cambios</h2>
 
       <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
         {/* Hace una semana */}

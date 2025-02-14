@@ -11,9 +11,9 @@ export default function Info4() {
       <div className="flex w-[45rem] flex-col items-center justify-center gap-7 md:gap-16">
         <h2
           ref={titleRef}
-          className={`${titleInView && "animate-fade-in-right opacity-100"} w-fit rounded-2xl bg-black/25 p-3 text-center text-4xl font-black text-emerald-200 opacity-0 backdrop-blur-xl md:text-5xl lg:text-6xl`}
+          className={`${titleInView && "animate-fade-in-right opacity-100"} w-fit rounded-2xl bg-black/25 p-3 text-center text-4xl font-semibold text-emerald-200 opacity-0 backdrop-blur-xl md:text-5xl lg:text-6xl`}
         >
-          Nuestros <span className="glow2 text-[#93ffb7]">Patrocinadores.</span>
+          Nuestros <span className="glow2 text-[#93ffb7]">Patrocinadores</span>
         </h2>
         <div
           ref={ref1}

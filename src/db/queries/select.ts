@@ -1,6 +1,6 @@
 import { db } from "@/db"
-import { Cuencas, España, Embalses, AllData, LiveData } from "@/db/schema"
-import { desc, inArray, sql } from "drizzle-orm"
+import { Cuencas, España, Embalses, AllData, LiveData, PortugalData } from "@/db/schema"
+import { desc, eq, inArray, sql } from "drizzle-orm"
 
 export async function GetCuencas() {
   return db.select().from(Cuencas)
@@ -65,4 +65,8 @@ export async function GetHistoricalData(emb: string) {
     .orderBy(desc(AllData.fecha))
 
   return result
+}
+
+export async function GetPortugalData(emb: string) {
+  return db.select().from(PortugalData).where(eq(PortugalData.embalse, emb))
 }

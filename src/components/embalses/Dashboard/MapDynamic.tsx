@@ -9,9 +9,16 @@ const MapaCercano = dynamic(() => import("@/components/embalses/Dashboard/MapaCe
   ),
 })
 
-export default function MapEmbData({ coords }: { coords: { lat: number; lon: number; name?: string } }) {
-  if (!coords) {
-    return <div>Error: Coordinates not found</div>
+interface Coordinates {
+  lat: number
+  lon: number
+  name: string
+}
+
+export default function MapEmbData({ coords }: { coords: Coordinates }) {
+  console.log("MapEmbData", coords)
+  if (!coords || typeof coords.lat !== "number" || typeof coords.lon !== "number" || !coords.name) {
+    return <div>Error: Invalid coordinates data</div>
   }
 
   return (

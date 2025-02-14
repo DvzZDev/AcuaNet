@@ -12,7 +12,7 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
   ${JSON.stringify(weather, null, 2)}
 
   - Nivel de los embalses:
-  ${JSON.stringify(embalse, null, 2)}
+  ${embalse ? JSON.stringify(embalse[0], null, 2) : "N/A"}
 
   - Fases de la luna:
   ${moonPhases}

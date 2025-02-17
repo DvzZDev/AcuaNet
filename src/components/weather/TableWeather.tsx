@@ -32,9 +32,9 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
             key={index}
             className="mb-1 flex h-full w-[15rem] shrink-0 flex-col items-center rounded-md bg-gradient-to-br from-teal-900 via-teal-950 to-teal-900 p-3 md:w-[17rem]"
           >
-            <p className="font-black">{dateFormater({ datetime: day.datetime.toString() }).toUpperCase()}</p>
+            <p className="font-bold">{dateFormater({ datetime: day.datetime.toString() }).toUpperCase()}</p>
             <p className="text-sm text-emerald-200">
-              {new Date(day.datetime).toLocaleDateString("es-ES", { day: "2-digit", month: "short" }).toUpperCase()}
+              {new Date(day.datetime).toLocaleDateString("es-ES", { day: "2-digit", month: "short" })}
             </p>
             <div className="flex w-full items-center justify-between text-sm md:text-base">
               <div className="flex items-center justify-center gap-1">
@@ -46,7 +46,7 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                 >
                   <path d="M21,21H3L12,3Z" />
                 </svg>
-                <p>{day.tempmin}</p>
+                <p>{day.tempmin}º</p>
               </div>
               <div className="flex items-center justify-center gap-1">
                 <svg
@@ -57,7 +57,7 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                 >
                   <path d="M21,21H3L12,3Z" />
                 </svg>
-                <p>{day.tempmax} </p>
+                <p>{day.tempmax}º</p>
               </div>
             </div>
             {day.hours
@@ -67,8 +67,13 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                   key={index}
                   className="flex w-full items-center justify-between gap-3 text-sm text-emerald-50 md:text-base"
                 >
-                  <p className="text-emerald-50"> {h.datetime.slice(0, -3)} </p>
-                  <p> {getWeatherCode(h.icon)} </p>
+                  <p className="text-sm text-emerald-50"> {h.datetime.slice(0, -3)} </p>
+                  <img
+                    loading="lazy"
+                    src={getWeatherCode(h.icon)}
+                    className="h-auto w-8"
+                    alt="ci"
+                  />
                   <p> {h.temp.toFixed(0)}º </p>
                   <div className="flex items-center gap-1">
                     <p>

@@ -9,7 +9,6 @@ import HistorialCambios from "@/components/embalses/Dashboard/HistorialCambios"
 import LunarCalendar from "@/components/lunar/lunarcal"
 import { LastWeekVariation, GetCountry, getSameWeekLastYearCapacity, getSameWeekLast10YearsAverage } from "@/lib/DataEmbalses"
 import LiveData from "@/components/embalses/Dashboard/LiveData"
-
 import GetCoordinates from "@/lib/GetCoordinates"
 import GetWeather from "@/lib/GetWeather"
 import ButtonUp from "@/components/lunar/up"

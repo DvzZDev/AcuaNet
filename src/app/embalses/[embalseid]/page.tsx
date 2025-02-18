@@ -153,7 +153,7 @@ async function Page({
           ) : (
             ""
           )}
-
+          {weatherData && <TableWeather data={weatherData} />}
           {coordsData ? <MapEmbData coords={coordsData} /> : null}
           <div className="flex flex-wrap items-center justify-center gap-3 rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg">
             <a
@@ -169,7 +169,6 @@ async function Page({
               />
             </a>
           </div>
-          {weatherData && <TableWeather data={weatherData} />}
           <h2 className="text-2xl font-bold text-green-950">Calendario Lunar</h2>
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
             <LunarCalendar />

@@ -1,19 +1,56 @@
 "use client"
-
+import { useState, useEffect, useCallback } from "react"
 import { Link } from "next-view-transitions"
 import SerchEmbMenu from "./SerchEmbMenu"
 import UseMenuStore from "@/store/useMenuStore"
 import Hamburger from "hamburger-react"
 
+function throttle<T extends (...args: any[]) => any>(func: T, limit: number): (...args: Parameters<T>) => void {
+  let inThrottle: boolean
+  return function (this: any, ...args: Parameters<T>) {
+    if (!inThrottle) {
+      func.apply(this, args)
+      inThrottle = true
+      setTimeout(() => (inThrottle = false), limit)
+    }
+  }
+}
+
+function useScroll() {
+  const [scroll, setScroll] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  const handleScroll = useCallback(
+    throttle(() => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setScroll(true)
+      } else if (currentScrollY < lastScrollY) {
+        setScroll(false)
+      }
+
+      setLastScrollY(currentScrollY)
+    }, 150),
+    [lastScrollY]
+  )
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [handleScroll])
+
+  return scroll
+}
+
 export default function Navbar() {
   const { isMenuOpen, toggleMenu, closeMenu } = UseMenuStore()
-
+  const scroll = useScroll()
   return (
     <div
-      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"}`}
+      className={`animate-fade-in-down fixed font-light z-50 w-full bg-[#112b27]/60 backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen backdrop-blur-md" : "z-30 h-[4rem]"} ${scroll ? "-translate-y-16" : "translate-y-0"}`}
     >
-      <div className="container mx-auto mt-2 flex flex-col items-center justify-between gap-6 px-4 uppercase lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
-        {/* Logo */}
+      <div className="container mx-auto mt-2 flex flex-col items-center justify-between px-4 lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         <div className="flex w-full items-center justify-between lg:w-auto">
           <Link
             href="/"
@@ -21,50 +58,16 @@ export default function Navbar() {
             aria-label="Ir a la página principal glow "
             onClick={closeMenu}
           >
-            <svg
-              fill="#93ffb7"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlSpace="preserve"
-              width={40}
-              height={40}
-              stroke="#93ffb7"
-              viewBox="58.63 -0.5 254.14 372.41"
-            >
-              {" "}
-              <path d="M270.265 149.448c-36.107-47.124-70.38-78.948-73.439-141.372 0-1.836-.612-3.06-1.836-4.284-.612-3.06-3.672-4.896-6.732-3.06-3.672 0-6.731 2.448-6.731 6.732-77.112 83.232-207.468 294.372-43.452 354.959 74.052 27.541 157.896-9.791 172.584-90.576 7.955-43.451-14.69-89.35-40.394-122.399zM138.686 323.256c-17.748-10.404-28.764-31.211-34.272-49.572-2.448-9.18-3.672-18.359-3.06-27.539 3.672-15.912 8.568-31.213 14.076-46.512 3.06 13.463 9.18 26.928 17.748 36.719 19.584 21.422 59.364 34.273 70.38 61.201 6.732 16.523-19.584 30.6-30.6 34.271-11.628 3.672-24.481-2.447-34.272-8.568z"></path>{" "}
-            </svg>
+            <img
+              src="/LogoH.webp"
+              alt="Logo de Acuanet"
+              className="drop h-auto w-36 transition-all duration-300 lg:w-44"
+            />
           </Link>
 
           <div className="flex items-center justify-center lg:hidden">
-            {/* <svg
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="3 5 18 14"
-                width={26}
-                height={20}
-              >
-                <g
-                  id="SVGRepo_bgCarrier"
-                  strokeWidth="0"
-                ></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <path
-                    d="M4 6H20M4 12H14M4 18H9"
-                    stroke="lightgreen"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>{" "}
-                </g>
-              </svg> */}
             <Hamburger
-              size={35}
+              size={27}
               color="#93ffb7"
               toggled={isMenuOpen}
               toggle={toggleMenu}
@@ -187,9 +190,7 @@ export default function Navbar() {
         </div>
 
         {/* Menú móvil */}
-        <nav
-          className={`${isMenuOpen ? "animate-appearance-in flex flex-col gap-5 text-2xl text-green-100 delay-200" : "hidden"}`}
-        >
+        <nav className={`${isMenuOpen ? "flex mt-14 flex-col gap-5 text-2xl text-green-100 delay-200" : "hidden"}`}>
           <Link
             href="/cuencas"
             onClick={closeMenu}

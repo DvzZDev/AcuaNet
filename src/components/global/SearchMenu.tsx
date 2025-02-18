@@ -1,49 +1,31 @@
 "use client"
+
 import { ReactTyped } from "react-typed"
 import AutoCompleteHook from "@/hooks/AutoComplete"
 import { Link } from "next-view-transitions"
 import nombreEmbalses from "@/lib/nombresEmbalses.json"
-import { Bounce, toast } from "react-toastify"
-import { useEffect } from "react"
+import useMenuStore from "@/store/useMenuStore"
+import { FlagSelector } from "../landing/SearchEmb"
 
 const data = nombreEmbalses
 
-export function FlagSelector(embalse: string) {
-  const result = nombreEmbalses.find((e) => e.nombre === embalse)
-  return result ? result.pais : "error"
-}
-
-export default function SerchEmb() {
-  const { type, suggestions, err, handletype, setErr, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
-
-  useEffect(() => {
-    if (err) {
-      toast.error("No se encontro el embalse", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        rtl: false,
-        pauseOnFocusLoss: true,
-        draggable: true,
-        pauseOnHover: true,
-        theme: "light",
-        transition: Bounce,
-      })
-      setErr(false)
-    }
-  }, [setErr, err])
+export default function SearchMenu() {
+  const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
+  const { closeMenu } = useMenuStore()
 
   return (
     <div>
       <form
-        onSubmit={handleSubmit}
-        className="relative z-10 flex h-[2.5rem] max-h-16 w-[19rem] items-center rounded-full border border-solid border-green-100/40 bg-emerald-200/15 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:h-[3rem] md:w-[30rem] md:text-xl"
+        onSubmit={(e) => {
+          handleSubmit(e)
+          closeMenu()
+        }}
+        className="relative z-10 flex h-[2.3rem] max-h-16 w-[15rem] items-center rounded-full border border-solid border-green-100/40 bg-green-100/20 p-1 transition-all focus-within:border-green-200"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="none"
           strokeWidth="2"
@@ -57,14 +39,14 @@ export default function SerchEmb() {
           <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546z" />
         </svg>
         <ReactTyped
-          strings={["Buscar embalse..."]}
+          strings={["Busqueda rápida..."]}
           typeSpeed={70}
           backSpeed={50}
           attr="placeholder"
           loop
         >
           <input
-            className="placeholder-opacity-60 ml-8 w-fit bg-transparent text-[16px] font-normal text-green-100 placeholder-green-100/80 placeholder:font-light focus:outline-hidden sm:text-[18px] md:w-[21rem]"
+            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100/70 focus:outline-hidden sm:text-[14px] md:w-[21rem]"
             type="text"
             value={type}
             onChange={handletype}
@@ -72,20 +54,19 @@ export default function SerchEmb() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="absolute right-2 text-slate-400 transition-all group-hover:scale-105 focus:outline-hidden active:scale-75"
+          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-hidden active:scale-75"
           type="submit"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="#dbfbe6"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="group-hover:stroke-green-300 hover:stroke-green-300"
           >
             <path
               stroke="none"
@@ -98,9 +79,12 @@ export default function SerchEmb() {
         </button>
       </form>
 
+      <h1 className={`animate-fade-in-up pl-1 text-xs text-red-500 transition-all ${err ? "animate-fade flex" : "hidden"}`}>
+        Embalse no encontrado
+      </h1>
       <div className="relative z-50">
         {suggestions.length > 0 && (
-          <ul className="animate-blurred-fade-in animate-duration-300 absolute mt-2 flex w-full flex-col gap-1 rounded-lg bg-emerald-800 text-base text-green-100 uppercase md:text-xl">
+          <ul className="animate-fade-in-down bg-opacity-100 animate-duration-300 absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-[#275e56] text-green-100">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <Link
                 href={`/embalses/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
@@ -108,15 +92,18 @@ export default function SerchEmb() {
               >
                 <li
                   key={index}
-                  onClick={() => handleSuggestionClick(suggestion)}
-                  className="z-30 flex cursor-pointer items-center justify-between rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
+                  onClick={() => {
+                    handleSuggestionClick(suggestion)
+                    closeMenu()
+                  }}
+                  className="z-30 flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1 text-sm hover:bg-slate-950/25"
                 >
-                  <span>{suggestion}</span>
                   <img
                     alt="Flag"
                     src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
-                    className="h-[1.5rem] w-[1.5rem] overflow-hidden rounded-xs"
+                    className="h-[1.2rem] w-[1.2rem] overflow-hidden rounded-xl"
                   />
+                  {suggestion}
                 </li>
               </Link>
             ))}

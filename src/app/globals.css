@@ -156,6 +156,9 @@ body::-webkit-scrollbar-thumb {
     0 0 3px rgba(147, 255, 183, 0.8),
     0 0 6px rgba(147, 255, 183, 0.7);
 }
+.glowLogo:hover {
+  filter: drop-shadow(0 0 3px rgba(147, 255, 183, 0.8));
+}
 
 #header-nav {
   background-color: orange;
@@ -299,4 +302,23 @@ body::-webkit-scrollbar-thumb {
   .section4bg {
     background-position: center right 70%;
   }
+}
+
+#mapjs
+  > div
+  > div.ol-overlaycontainer-stopevent
+  > div.m-areas
+  > div.m-area.m-bottom.m-right
+  > div.m-panel.m-map-info.m-with-scale.opened.no-collapsible
+  > div
+  > div {
+  height: 2rem !important;
+}
+
+.m-control.m-container.m-mousesrs-container {
+  height: 2rem !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  margin-top: auto !important;
+  background-color: #93ffb7 !important;
 }

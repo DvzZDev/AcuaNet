@@ -1,5 +1,5 @@
 import FavSection from "./FavSection"
-import SerchEmb from "./SerchEmb"
+import SearchEmb from "./SearchEmb"
 // import Patrocinio from "./Patrocinio"
 import { Suspense } from "react"
 import SkeletonFavorites from "../skeletons/SkeletonFavorites"
@@ -29,7 +29,7 @@ export default async function Hero() {
             Estado actualizado de embalses, meteorología, mapas y tablas lunares en AcuaNet. <br />
           </h2>
           <div className="animate-blurred-fade-in animate-delay-300 z-30 mt-4 flex duration-700">
-            <SerchEmb />
+            <SearchEmb />
           </div>
           <div className="animate-blurred-fade-in animate-delay-400 duration-700">
             <Suspense fallback={<SkeletonFavorites />}>

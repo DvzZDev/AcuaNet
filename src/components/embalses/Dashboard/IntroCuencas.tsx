@@ -29,14 +29,14 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
         <div className="flex flex-col gap-1">
           <h1 className="text-2xl font-bold text-green-950">Cuenca del {nombre_cuenca} </h1>
         </div>
-        <div className="flex gap-1">
+        <div className="flex items-center gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#166534"
+            stroke="#032e15"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

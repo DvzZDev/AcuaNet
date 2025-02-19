@@ -63,7 +63,7 @@ const EmbalseCard = ({ embalse }: { embalse: FavSection }) => {
             />
           </div>
           <div className="mb-2 flex items-center justify-between">
-            <h2 className="truncate text-base font-semibold text-green-100">{embalse.name}</h2>
+            <h2 className="truncate text-base text-green-100">{embalse.name}</h2>
             {/* Icono */}
           </div>
           <div className="mb-1 flex items-center">

@@ -16,10 +16,6 @@ interface Coordinates {
 }
 
 export default function MapEmbData({ coords }: { coords: Coordinates }) {
-  if (!coords || typeof coords.lat !== "number" || typeof coords.lon !== "number" || !coords.name) {
-    return <div>Error: Invalid coordinates data</div>
-  }
-
   return (
     <>
       <h2 className="text-2xl font-black text-green-950">Mapas</h2>

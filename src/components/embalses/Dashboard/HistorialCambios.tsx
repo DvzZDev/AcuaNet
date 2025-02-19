@@ -52,7 +52,7 @@ export default function HistorialCambios({
               <p className="text-3xl font-black text-green-950">
                 {variacion_ultima_semana} <span className="text-lg">hm³</span>
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">{variacion_ultima_semanapor}% capacidad total</p>
+              <p className="text-sm font-semibold text-[#3d7764]">{variacion_ultima_semanapor}% variación total</p>
             </div>
           </div>
           {/* Hace un año */}

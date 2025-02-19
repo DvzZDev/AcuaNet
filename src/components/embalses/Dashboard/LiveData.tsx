@@ -50,9 +50,9 @@ export default function LiveData({ data }: { data: LiveData[] }) {
                     month: "numeric",
                   })}
                 </td>
-                <td className="py-1">{i.volumen}</td>
-                <td className="py-1">{i.porcentaje}</td>
-                <td className="py-1">{i.cota}</td>
+                <td className="py-1">{i.volumen?.toFixed(2)}</td>
+                <td className="py-1">{i.porcentaje?.toFixed(2)}</td>
+                <td className="py-1">{i.cota?.toFixed(2)}</td>
               </tr>
             ))}
           </tbody>

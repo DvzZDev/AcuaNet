@@ -8,7 +8,7 @@ export default function VisorMap() {
       "https://componentes.cnig.es/api-core/assets/css/apiign.ol.min.css",
       "https://componentes.cnig.es/api-core/plugins/locator/locator.ol.min.css",
       "https://componentes.cnig.es/api-core/plugins/viewmanagement/viewmanagement.ol.min.css",
-      "https://componentes.cnig.es/api-core/plugins/layerswitcher/layerswitcher.ol.min.css",
+      // "https://componentes.cnig.es/api-core/plugins/layerswitcher/layerswitcher.ol.min.css",
       "https://componentes.cnig.es/api-core/plugins/measurebar/measurebar.ol.min.css",
     ]
     cssLinks.forEach((href) => {
@@ -53,7 +53,7 @@ export default function VisorMap() {
           center: [-467062.8225, 4983459.6216],
         })
 
-        mapjs.addPlugin(new M.plugin.Locator({ collapsed: true, collapsible: true, position: "TR", layerOpts: [] }))
+        mapjs.addPlugin(new M.plugin.Locator({ collapsed: true, collapsible: true, position: "TR" }))
         mapjs.addPlugin(new M.plugin.ViewManagement())
         mapjs.addPlugin(
           new M.plugin.MouseSRS({
@@ -76,7 +76,6 @@ export default function VisorMap() {
       id="mapjs"
       className="relative h-full w-full lg:pr-4"
     >
-      {/* <Instructor /> */}
     </div>
   )
 }

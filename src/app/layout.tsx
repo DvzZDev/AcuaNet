@@ -80,15 +80,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>
-          <header className="h-[3.6rem]">
-            <Navbar />
-          </header>
+          <Navbar />
           <Suspense fallback={null}>
             <PostHogPageView />
             <Analytics />
             <SpeedInsights />
           </Suspense>
-          {children}
+          <main className="pt-[4rem]">{children}</main>
           {/* <a
             href="https://buymeacoffee.com/dvzz"
             target="_blank"

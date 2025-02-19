@@ -120,17 +120,17 @@ const NavLinks = ({ mobile = false, onClickLink }: { mobile?: boolean; onClickLi
     <Link
       href="/luna"
       onClick={onClickLink}
-      className={`glow transition-all ${mobile ? "animate-fade-in animate-delay-300 hover:text-green-300" : ""}`}
+      className={`glow transition-all text-nowrap ${mobile ? "animate-fade-in animate-delay-300 hover:text-green-300" : ""}`}
     >
       Calendario Lunar
     </Link>
-    <Link
+    <a
       href="/visor"
       onClick={onClickLink}
       className={`glow text-nowrap transition-all ${mobile ? "animate-fade-in animate-delay-400 hover:text-green-300" : ""}`}
     >
       AcuaVisor
-    </Link>
+    </a>
     <Link
       href="/quienesSomos"
       onClick={onClickLink}
@@ -157,7 +157,7 @@ export default function Navbar() {
     <header
       className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 font-light backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen" : "z-30 h-[4rem]"} ${scroll && !isMenuOpen ? "-translate-y-16" : "translate-y-0"}`}
     >
-      <div className="container mx-auto mt-2 flex flex-col items-center justify-between px-4 lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
+      <div className="container mx-auto mt-2 flex flex-col items-center justify-between gap-4 px-4 lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         <div className="flex w-full items-center justify-between lg:w-auto">
           <Link
             href="/"
@@ -168,7 +168,7 @@ export default function Navbar() {
             <img
               src="/LogoH.webp"
               alt="Logo de Acuanet"
-              className="glowLogo h-auto w-36 transition-all duration-300 lg:w-44"
+              className="glowLogo h-auto w-36 transition-all duration-300 lg:w-36 xl:w-44"
             />
           </Link>
 
@@ -183,7 +183,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden gap-4 text-center text-xl leading-none text-green-100 lg:flex lg:items-center">
+        <nav className="hidden gap-4 text-center text-lg leading-none text-green-100 lg:flex lg:items-center">
           <NavLinks />
         </nav>
 

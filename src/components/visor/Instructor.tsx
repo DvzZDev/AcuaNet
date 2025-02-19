@@ -13,7 +13,7 @@ export default function Instructor() {
         <motion.section
           key="modal"
           exit={{ backdropFilter: "blur(0px)", opacity: 0 }}
-          className="absolute z-20 flex h-[calc(100vh-4rem)] w-full items-center justify-center bg-black/50 px-4 font-[Inter] text-sm text-emerald-950 backdrop-blur-sm lg:text-base"
+          className="absolute z-20 flex h-[calc(100svh-4rem)] w-full items-center justify-center bg-black/50 px-4 font-[Inter] text-sm text-emerald-950 backdrop-blur-sm lg:text-base"
         >
           {step === 0 ? (
             <motion.div

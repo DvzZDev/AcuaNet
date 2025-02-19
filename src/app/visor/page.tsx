@@ -86,7 +86,7 @@ export default function Page() {
   }, [])
 
   return (
-    <section className="h-[calc(100vh-4rem)] w-screen overflow-hidden bg-green-50">
+    <section className="h-[calc(100svh-4rem)] w-screen overflow-hidden bg-green-50">
       {!isDone && <Instructor />}
       <MapVisor />
     </section>

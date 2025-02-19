@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Instructor from "@/components/visor/Instructor"
 import dynamic from "next/dynamic"
 
 const MapVisor = dynamic(() => import("@/components/visor/VisorMap"), {
@@ -72,6 +71,10 @@ const MapVisor = dynamic(() => import("@/components/visor/VisorMap"), {
       </p>
     </section>
   ),
+  ssr: false,
+})
+
+const Instructor = dynamic(() => import("@/components/visor/Instructor"), {
   ssr: false,
 })
 

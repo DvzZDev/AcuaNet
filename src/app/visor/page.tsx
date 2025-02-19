@@ -1,12 +1,13 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Instructor from "@/components/visor/Instructor"
 import dynamic from "next/dynamic"
+
 const MapVisor = dynamic(() => import("@/components/visor/VisorMap"), {
   loading: () => (
     <section className="flex h-screen w-full items-center justify-center bg-green-50">
       <p>
-        {" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
@@ -75,7 +76,12 @@ const MapVisor = dynamic(() => import("@/components/visor/VisorMap"), {
 })
 
 export default function Page() {
-  const isDone = window.localStorage.getItem("tutorial")
+  const [isDone, setIsDone] = useState<boolean>(false)
+
+  useEffect(() => {
+    setIsDone(!!window.localStorage.getItem("tutorial"))
+  }, [])
+
   return (
     <section className="h-[calc(100vh-4rem)] w-screen overflow-hidden bg-green-50">
       {!isDone && <Instructor />}

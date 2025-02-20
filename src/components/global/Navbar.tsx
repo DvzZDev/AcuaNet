@@ -5,7 +5,6 @@ import UseMenuStore from "@/store/useMenuStore"
 import Hamburger from "hamburger-react"
 import SerchEmbMenu from "./SearchMenu"
 
-// Función throttle para limitar la frecuencia de ejecución
 function throttle<T extends (...args: any[]) => any>(func: T, limit: number): (...args: Parameters<T>) => void {
   let inThrottle: boolean
   return function (this: any, ...args: Parameters<T>) {
@@ -17,22 +16,35 @@ function throttle<T extends (...args: any[]) => any>(func: T, limit: number): (.
   }
 }
 
-// Hook useScroll modificado para devolver isScrollingDown e isAtTop
 function useScroll() {
   const [scrollState, setScrollState] = useState({ isScrollingDown: false, isAtTop: true })
   const lastScrollY = useRef(0)
+  const lastTimeRef = useRef(Date.now())
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleScroll = useCallback(
     throttle(() => {
       const currentScrollY = window.scrollY
+      const currentTime = Date.now()
+
+      // Ignorar cambios muy pequeños en el scroll (menos de 5px)
+      if (Math.abs(currentScrollY - lastScrollY.current) < 5) {
+        return
+      }
+
+      // Asegurarse de que ha pasado suficiente tiempo entre actualizaciones
+      if (currentTime - lastTimeRef.current < 100) {
+        return
+      }
+
       const isScrollingDown = currentScrollY > lastScrollY.current
-      const isAtTop = currentScrollY === 0
+      const isAtTop = currentScrollY < 10 // Un poco más tolerante con "estar arriba"
 
       setScrollState({ isScrollingDown, isAtTop })
 
       lastScrollY.current = currentScrollY
-    }, 150),
+      lastTimeRef.current = currentTime
+    }, 100), // Aumentado el tiempo de throttle
     []
   )
 
@@ -158,7 +170,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 font-light backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "z-50 h-screen bg-green-700" : "z-30 h-[4rem]"} ${isScrollingDown && !isMenuOpen && !isAtTop ? "-translate-y-16" : "translate-y-0"}`}
+      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 font-light backdrop-blur-md transition-transform duration-300 ease-out lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "z-50 h-screen bg-green-700" : "z-30 h-[4rem]"} ${isScrollingDown && !isMenuOpen && !isAtTop ? "-translate-y-16" : "translate-y-0"}`}
     >
       <div className="container mx-auto mt-2 flex flex-col items-center justify-between gap-4 px-4 lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         <div className="flex w-full items-center justify-between lg:w-auto">

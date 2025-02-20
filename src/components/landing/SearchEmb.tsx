@@ -3,6 +3,8 @@ import { ReactTyped } from "react-typed"
 import AutoCompleteHook from "@/hooks/AutoComplete"
 import { Link } from "next-view-transitions"
 import nombreEmbalses from "@/lib/nombresEmbalses.json"
+import { Bounce, toast } from "react-toastify"
+import { useEffect } from "react"
 
 const data = nombreEmbalses
 
@@ -11,8 +13,27 @@ export function FlagSelector(embalse: string) {
   return result ? result.pais : "error"
 }
 
-export default function SerchEmb() {
-  const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
+export default function SearchEmb() {
+  const { type, suggestions, err, handletype, setErr, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
+
+  useEffect(() => {
+    if (err) {
+      toast.error("No se encontro el embalse", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        rtl: false,
+        pauseOnFocusLoss: true,
+        draggable: true,
+        pauseOnHover: true,
+        theme: "light",
+        transition: Bounce,
+      })
+      setErr(false)
+    }
+  }, [setErr, err])
+
   return (
     <div>
       <form
@@ -26,7 +47,7 @@ export default function SerchEmb() {
           viewBox="0 0 24 24"
           fill="none"
           strokeWidth="2"
-          className="stroke absolute left-1 top-1/2 -translate-y-1/2 transform stroke-green-100"
+          className="stroke absolute top-1/2 left-1 -translate-y-1/2 transform stroke-green-100"
         >
           <path
             stroke="none"
@@ -43,7 +64,7 @@ export default function SerchEmb() {
           loop
         >
           <input
-            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-none sm:text-[18px] md:w-[21rem]"
+            className="placeholder-opacity-60 ml-8 w-fit bg-transparent text-[16px] font-normal text-green-100 placeholder-green-100/80 placeholder:font-light focus:outline-hidden sm:text-[18px] md:w-[21rem]"
             type="text"
             value={type}
             onChange={handletype}
@@ -51,7 +72,7 @@ export default function SerchEmb() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-none active:scale-75"
+          className="absolute right-2 text-slate-400 transition-all group-hover:scale-105 focus:outline-hidden active:scale-75"
           type="submit"
         >
           <svg
@@ -64,6 +85,7 @@ export default function SerchEmb() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="group-hover:stroke-green-300 hover:stroke-green-300"
           >
             <path
               stroke="none"
@@ -76,28 +98,25 @@ export default function SerchEmb() {
         </button>
       </form>
 
-      <h1 className={`animate-fade-in-up pl-1 text-red-500 transition-all ${err ? "animate-fade block" : "hidden"}`}>
-        Embalse no encontrado
-      </h1>
       <div className="relative z-50">
         {suggestions.length > 0 && (
-          <ul className="absolute mt-2 flex w-full animate-blurred-fade-in flex-col gap-1 rounded-lg bg-emerald-800 text-base uppercase text-green-100 animate-duration-300 md:text-xl">
+          <ul className="animate-blurred-fade-in animate-duration-300 absolute mt-2 flex w-full flex-col gap-1 rounded-lg bg-teal-800 text-base text-green-100 md:text-xl">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <Link
-                href={`/embalses/${suggestion.toLowerCase()}`}
+                href={`/embalse/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
                 key={index}
               >
                 <li
                   key={index}
                   onClick={() => handleSuggestionClick(suggestion)}
-                  className="z-30 flex cursor-pointer items-center justify-between rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
+                  className="z-30 flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1 text-sm hover:bg-teal-900 lg:text-base"
                 >
-                  <span>{suggestion}</span>
                   <img
                     alt="Flag"
                     src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
-                    className="h-[1.5rem] w-[1.5rem] overflow-hidden rounded-sm"
+                    className="h-[1.3rem] w-[1.3rem] overflow-hidden rounded-xl"
                   />
+                  <span>{suggestion}</span>
                 </li>
               </Link>
             ))}

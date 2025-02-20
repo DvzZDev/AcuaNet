@@ -1,7 +1,6 @@
 import EstadoActualCuencas from "@/components/cuencas/cuenca/EstadoActualCuencas"
-import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"
 import { GetCuencas } from "@/db/queries/select"
-import TitleEmb from "@/components/embalses/TitleEmb"
+import TitleCuencas from "@/components/cuencas/cuenca/TitleCuencas"
 
 export async function generateMetadata(props: { params: Promise<{ cuencaid: string }> }) {
   const params = await props.params
@@ -52,17 +51,12 @@ async function Page(props: { params: Promise<{ cuencaid: string }> }) {
   const data = await GetCuencas()
   const cuenca = data.find((cuenca) => cuenca.cuenca === params.cuencaid)
 
-  const { fecha_modificacion, capacidad, embalsada, variacion, porcentaje_embalsada, porcentaje_variacion, foto } = cuenca || {}
+  const { capacidad, embalsada, variacion, porcentaje_embalsada, porcentaje_variacion, foto } = cuenca || {}
   return (
     <>
-      <TitleEmb data={{ cuenca_id: params.cuencaid }} />
-      <main className="flex h-full justify-center bg-green-50 px-6 pb-14 pt-4 text-black">
+      <TitleCuencas name={params.cuencaid} />
+      <main className="flex h-full justify-center bg-green-50 px-6 pt-4 pb-14 text-black">
         <section className="flex w-[70rem] flex-col gap-7">
-          <IntroCuencas
-            nombre_cuenca={params.cuencaid || "No disponible"}
-            fecha_modificacion={fecha_modificacion ? new Date(fecha_modificacion) : new Date()}
-            cuenca={true}
-          />
           <EstadoActualCuencas
             agua_embalsada={embalsada ?? 0}
             agua_embalsadapor={porcentaje_embalsada ?? 0}

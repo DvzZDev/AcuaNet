@@ -25,6 +25,15 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/db/queries/select.js"],
+  "include": [
+    "next-env.d.ts",
+    "src/**/*",
+    ".eslintrc.cjs",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/db/queries/select.js",
+    "next.config.mjs"
+  ],
   "exclude": ["node_modules"]
 }

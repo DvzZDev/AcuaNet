@@ -22,7 +22,7 @@ export default function EstadoActualCuencas({
         <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">
           {/* Agua Embalsada */}
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -47,7 +47,7 @@ export default function EstadoActualCuencas({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">Agua Embalsada</p>
+              <p className="text-lg leading-none font-semibold text-[#3d7764]">Agua Embalsada</p>
               <p className="text-3xl font-black text-green-950">
                 {agua_embalsada} <span className="text-lg">hm³</span>
               </p>
@@ -69,7 +69,7 @@ export default function EstadoActualCuencas({
 
           {/* Capacidad Total */}
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -95,7 +95,7 @@ export default function EstadoActualCuencas({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">Capacidad Total</p>
+              <p className="text-lg leading-none font-semibold text-[#3d7764]">Capacidad Total</p>
               <p className="text-3xl font-black text-green-950">
                 {capacidad_total} <span className="text-lg">hm³</span>
               </p>
@@ -104,7 +104,7 @@ export default function EstadoActualCuencas({
 
           {/* Cambios Semanales */}
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -132,7 +132,7 @@ export default function EstadoActualCuencas({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">Cambios Semanales</p>
+              <p className="text-lg leading-none font-semibold text-[#3d7764]">Cambios Semanales</p>
               <p className="text-3xl font-black text-green-950">
                 {variacion} <span className="text-lg">hm³</span>
               </p>

@@ -7,6 +7,7 @@ import { Suspense } from "react"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
+import { Bounce, ToastContainer } from "react-toastify"
 
 export const metadata = {
   metadataBase: new URL("https://www.acuanet.es"),
@@ -47,7 +48,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html
+      lang="es"
+      className="scroll-smooth"
+    >
       <head>
         <Script
           id="structured-data"
@@ -76,15 +80,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>
-          <header className="h-[3.6rem]">
-            <Navbar />
-          </header>
+          <Navbar />
           <Suspense fallback={null}>
             <PostHogPageView />
             <Analytics />
             <SpeedInsights />
           </Suspense>
-          {children}
+          <main className="pt-[4rem]">{children}</main>
           {/* <a
             href="https://buymeacoffee.com/dvzz"
             target="_blank"
@@ -95,6 +97,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p className="font-black">¡Dona a AcuaNet!</p>
           </a> */}
           <Footer />
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
         </Providers>
       </body>
     </html>

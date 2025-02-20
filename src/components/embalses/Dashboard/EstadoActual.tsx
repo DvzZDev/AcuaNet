@@ -19,12 +19,18 @@ export default function EstadoActual({
 }) {
   return (
     <>
-      <h2 className="text-2xl font-black text-green-950">Estado Actual</h2>
+      <div className="flex flex-col gap-1">
+        <h2 className="text-2xl font-bold text-green-950">Datos semanales</h2>
+        <div className="w-fit rounded-full bg-blue-200 px-2 py-[2px] text-xs">
+          <p>Datos contrastados</p>
+        </div>
+      </div>
+
       <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
         {/* Agua Embalsada */}
         <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -48,7 +54,7 @@ export default function EstadoActual({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">Agua Embalsada</p>
+              <p className="text-lg leading-none font-semibold text-[#3d7764]">Agua Embalsada</p>
               <p className="text-3xl font-black text-green-950">
                 {agua_embalsada} <span className="text-lg">hm³</span>
               </p>
@@ -65,7 +71,7 @@ export default function EstadoActual({
           </div>
           {/* Capacidad Total */}
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-            <div className="rounded-sm bg-green-400/50 p-2">
+            <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -90,7 +96,7 @@ export default function EstadoActual({
               </svg>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <p className="text-lg font-semibold leading-none text-[#3d7764]">Capacidad Total</p>
+              <p className="text-lg leading-none font-semibold text-[#3d7764]">Capacidad Total</p>
               <p className="text-3xl font-black text-green-950">
                 {capacidad_total} <span className="text-lg">hm³</span>
               </p>
@@ -99,7 +105,7 @@ export default function EstadoActual({
 
           {pais === "España" ? (
             <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-              <div className="rounded-sm bg-green-400/50 p-2">
+              <div className="rounded-xs bg-green-400/50 p-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="35"
@@ -116,11 +122,11 @@ export default function EstadoActual({
                 </svg>
               </div>
               <div className="flex w-full flex-col gap-2">
-                <p className="text-lg font-semibold leading-none text-[#3d7764]">Nivel (Cota)</p>
+                <p className="text-lg leading-none font-semibold text-[#3d7764]">Nivel (Cota)</p>
                 <p className="text-3xl font-black text-green-950">
                   {cota > 0 ? (
                     <>
-                      {cota.toFixed()} <span className="text-lg">msnm</span>
+                      {cota} <span className="text-lg">msnm</span>
                     </>
                   ) : (
                     "N/D"
@@ -130,7 +136,7 @@ export default function EstadoActual({
             </div>
           ) : (
             <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-              <div className="rounded-sm bg-green-400/50 p-2">
+              <div className="rounded-xs bg-green-400/50 p-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="35"
@@ -157,7 +163,7 @@ export default function EstadoActual({
                 </svg>
               </div>
               <div className="flex w-full flex-col gap-2">
-                <p className="text-lg font-semibold leading-none text-[#3d7764]">Cambios Semanales</p>
+                <p className="text-lg leading-none font-semibold text-[#3d7764]">Cambios Semanales</p>
                 <p className="text-3xl font-black text-green-950">
                   {variacion_ultima_semana} <span className="text-lg">hm³</span>
                 </p>

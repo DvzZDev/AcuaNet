@@ -150,10 +150,10 @@ export default function TableWeather({ data: weatherData }: { data: WeatherTypes
                   >
                     <div className="my-2 flex w-[4rem] flex-col items-center justify-center md:w-[6rem]">
                       <div className="text-2xl">{getWeatherCode(day.icon)}</div>
-                      <span className="sm:text-medium text-center text-sm font-semibold uppercase text-green-50">
+                      <span className="sm:text-medium text-center text-sm font-semibold text-green-50 uppercase">
                         {dateFormater({ datetime: day.datetime })}
                       </span>
-                      <span className="w-[6rem] py-1 text-center text-xs font-thin uppercase text-green-50 sm:py-0 sm:text-sm">
+                      <span className="w-[6rem] py-1 text-center text-xs font-thin text-green-50 uppercase sm:py-0 sm:text-sm">
                         {new Date(day.datetime).toLocaleDateString("es-ES", {
                           day: "numeric",
                           month: "short",

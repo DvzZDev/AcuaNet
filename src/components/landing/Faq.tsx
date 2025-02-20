@@ -4,17 +4,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 function Faq() {
   return (
     <section className="flex flex-col items-center justify-center bg-green-50 px-6 py-8 md:py-20">
-      <h2 className="mb-5 pt-1 text-center text-[2.3rem] font-black leading-none text-[#275e56] sm:text-[50px] md:mb-10">
+      <h2 className="mb-5 pt-1 text-center text-[2.3rem] leading-none font-semibold text-[#275e56] sm:text-[50px] md:mb-10">
         Preguntas Frecuentes
       </h2>
       <div className="w-full max-w-[60rem]">
         <Accordion
           type="single"
           collapsible
-          className="w-full !border-green-950"
+          className="w-full border-green-950!"
         >
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-1"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -25,7 +25,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-2"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -36,7 +36,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-3"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -47,7 +47,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-4"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -59,7 +59,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-5"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -89,7 +89,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-6"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">
@@ -112,7 +112,7 @@ function Faq() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="!border-green-950"
+            className="border-green-950!"
             value="item-7"
           >
             <AccordionTrigger className="py-3 text-left text-lg text-green-950 md:py-5 md:text-xl">

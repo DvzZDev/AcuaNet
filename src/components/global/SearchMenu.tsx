@@ -5,10 +5,11 @@ import AutoCompleteHook from "@/hooks/AutoComplete"
 import { Link } from "next-view-transitions"
 import nombreEmbalses from "@/lib/nombresEmbalses.json"
 import useMenuStore from "@/store/useMenuStore"
+import { FlagSelector } from "../landing/SearchEmb"
 
 const data = nombreEmbalses
 
-export default function SerchEmbMenu() {
+export default function SearchMenu() {
   const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
   const { closeMenu } = useMenuStore()
 
@@ -19,16 +20,16 @@ export default function SerchEmbMenu() {
           handleSubmit(e)
           closeMenu()
         }}
-        className="relative z-10 flex h-[2.5rem] max-h-16 w-[15rem] items-center rounded-full border border-solid border-green-100/40 bg-green-100/20 p-1 text-sm transition-all focus-within:border-green-200 sm:w-[20rem] sm:text-base md:mt-8 md:h-[3rem] md:w-[25rem] md:text-xl"
+        className="relative z-10 flex h-[2.3rem] max-h-16 w-[15rem] items-center rounded-full border border-solid border-green-100/40 bg-green-100/20 p-1 transition-all focus-within:border-green-200"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="none"
           strokeWidth="2"
-          className="stroke absolute left-1 top-1/2 -translate-y-1/2 transform stroke-green-100"
+          className="stroke absolute top-1/2 left-1 -translate-y-1/2 transform stroke-green-100"
         >
           <path
             stroke="none"
@@ -38,14 +39,14 @@ export default function SerchEmbMenu() {
           <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546z" />
         </svg>
         <ReactTyped
-          strings={["Buscar embalse..."]}
+          strings={["Búsqueda rápida..."]}
           typeSpeed={70}
           backSpeed={50}
           attr="placeholder"
           loop
         >
           <input
-            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100 placeholder-opacity-60 focus:outline-none sm:text-[18px] md:w-[21rem]"
+            className="ml-8 w-fit bg-transparent text-[16px] text-green-100 placeholder-green-100/70 focus:outline-hidden sm:text-[14px] md:w-[21rem]"
             type="text"
             value={type}
             onChange={handletype}
@@ -53,13 +54,13 @@ export default function SerchEmbMenu() {
         </ReactTyped>
         <button
           aria-label="Buscar"
-          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-none active:scale-75"
+          className="hover:text-textsecondary absolute right-2 text-slate-400 transition-all focus:outline-hidden active:scale-75"
           type="submit"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="#dbfbe6"
@@ -83,10 +84,10 @@ export default function SerchEmbMenu() {
       </h1>
       <div className="relative z-50">
         {suggestions.length > 0 && (
-          <ul className="absolute mt-5 flex w-full animate-fade-in-down flex-col gap-1 rounded-lg bg-[#275e56] bg-opacity-100 text-base text-green-100 animate-duration-300 md:text-xl">
+          <ul className="animate-fade-in-down bg-opacity-100 animate-duration-300 absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-[#275e56] text-green-100">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <Link
-                href={`/embalses/${suggestion.toLowerCase()}`}
+                href={`/embalse/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
                 key={index}
               >
                 <li
@@ -95,8 +96,13 @@ export default function SerchEmbMenu() {
                     handleSuggestionClick(suggestion)
                     closeMenu()
                   }}
-                  className="z-30 cursor-pointer rounded-lg px-2 py-1 text-base hover:bg-slate-950/25"
+                  className="z-30 flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1 text-sm hover:bg-slate-950/25"
                 >
+                  <img
+                    alt="Flag"
+                    src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
+                    className="h-[1.2rem] w-[1.2rem] overflow-hidden rounded-xl"
+                  />
                   {suggestion}
                 </li>
               </Link>

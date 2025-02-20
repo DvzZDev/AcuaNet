@@ -1,48 +1,23 @@
-/**
- * @type {import("eslint").Linter.Config}
- */
 module.exports = {
-  globals: {
-    NodeJS: true,
-    NodeListOf: true,
-  },
-  env: {
-    es2022: true,
-    node: true,
-    browser: true,
-  },
-  extends: ["eslint-config-prettier", "eslint:recommended", "next"],
   parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
+  extends: ["plugin:@typescript-eslint/recommended", "next/core-web-vitals", "eslint-config-prettier"],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    project: "./tsconfig.json",
+    tsconfigRootDir: __dirname,
   },
-  plugins: ["unused-imports"],
   rules: {
-    "unused-imports/no-unused-imports": "warn", // La regla debe estar definida aquí
-    "eol-last": "off",
-    "jsx-quotes": ["warn", "prefer-double"],
-    quotes: ["warn", "double"],
-    semi: ["warn", "never"],
-    // Más reglas...
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "prefer-const": "error",
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/no-misused-promises": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
   },
   settings: {
-    react: {
-      version: "detect", // Esto detectará automáticamente la versión de React instalada
+    next: {
+      rootDir: "src/",
     },
   },
-  overrides: [
-    {
-      files: ["**/*.ts", "**/*.tsx"],
-      parser: "@typescript-eslint/parser",
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-      extends: ["plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:react/jsx-runtime"],
-      rules: {
-        "@typescript-eslint/no-explicit-any": "off", // Desactiva la regla aquí
-        "@next/next/no-img-element": "off",
-      },
-    },
-  ],
 }

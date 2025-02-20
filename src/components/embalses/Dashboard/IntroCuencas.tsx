@@ -6,17 +6,17 @@ import type { IntroEmbalsesProps } from "@/types"
 export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weather, embalse, cuenca }: IntroEmbalsesProps) {
   const moonPhases = getMoonPhasesForWeekAsRow()
   const prompt = `
-  Genera un pronóstico detallado de pesca para el fin de semana utilizando los siguientes datos. El pronóstico debe ser claro conciso y no exceder los 1000 caracteres. No incluyas un título: 
+  Genera un pronóstico detallado de pesca para el fin de semana utilizando los siguientes datos. El pronóstico debe ser claro conciso y no exceder los 1000 caracteres. No incluyas un título:
 
   - Pronóstico del tiempo, importante usar datos relevantes para la pesca.
   ${JSON.stringify(weather, null, 2)}
-  
+
   - Nivel de los embalses:
-  ${JSON.stringify(embalse, null, 2)}
-  
+  ${embalse ? JSON.stringify(embalse[0], null, 2) : "N/A"}
+
   - Fases de la luna:
   ${moonPhases}
-  
+
   - Información adicional de la cuenca:
   ${JSON.stringify(cuenca, null, 2)}
   `
@@ -27,16 +27,16 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
     <div className="relative flex flex-col justify-between md:h-16 md:flex-row">
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-black text-green-950">Cuenca del {nombre_cuenca} </h1>
+          <h1 className="text-2xl font-bold text-green-950">Cuenca del {nombre_cuenca} </h1>
         </div>
-        <div className="flex gap-1">
+        <div className="flex items-center gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#166534"
+            stroke="#032e15"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -70,7 +70,7 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
       </div>
 
       {!cuenca ? (
-        <div className="relative mb-2 mt-2 flex h-[9rem] w-full max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 md:mt-0 md:h-[7rem]">
+        <div className="relative mt-2 mb-2 flex h-[9rem] w-full max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 md:mt-0 md:h-[7rem]">
           {error ? (
             <article className="scroll-hide text-md my-2 flex h-full items-center justify-center overflow-auto px-3 text-center leading-tight">
               <span>Ha sucedido un error al generar el texto.</span>
@@ -84,93 +84,68 @@ export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weathe
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 200 200"
-                className="animate-spin h-16 w-16"
+                width="30"
+                height="30"
               >
                 <circle
-                  fill="#93ffb7"
-                  stroke="#93ffb7"
-                  strokeWidth="15"
-                  r="15"
-                  cx="40"
-                  cy="65"
+                  cx={40}
+                  cy={65}
+                  r={15}
+                  fill="#6FEEAC"
+                  stroke="#6FEEAC"
+                  strokeWidth={15}
                 >
                   <animate
                     attributeName="cy"
+                    begin={-0.4}
                     calcMode="spline"
-                    dur="2s"
-                    values="65;135;65;"
+                    dur={2}
                     keySplines=".5 0 .5 1;.5 0 .5 1"
                     repeatCount="indefinite"
-                    begin="-.4s"
+                    values="65;135;65;"
                   />
                 </circle>
                 <circle
-                  fill="#93ffb7"
-                  stroke="#93ffb7"
-                  strokeWidth="15"
-                  r="15"
-                  cx="100"
-                  cy="65"
+                  cx={100}
+                  cy={65}
+                  r={15}
+                  fill="#6FEEAC"
+                  stroke="#6FEEAC"
+                  strokeWidth={15}
                 >
                   <animate
                     attributeName="cy"
+                    begin={-0.2}
                     calcMode="spline"
-                    dur="2s"
-                    values="65;135;65;"
+                    dur={2}
                     keySplines=".5 0 .5 1;.5 0 .5 1"
                     repeatCount="indefinite"
-                    begin="-.2s"
+                    values="65;135;65;"
                   />
                 </circle>
                 <circle
-                  fill="#93ffb7"
-                  stroke="#93ffb7"
-                  strokeWidth="15"
-                  r="15"
-                  cx="160"
-                  cy="65"
+                  cx={160}
+                  cy={65}
+                  r={15}
+                  fill="#6FEEAC"
+                  stroke="#6FEEAC"
+                  strokeWidth={15}
                 >
                   <animate
                     attributeName="cy"
+                    begin={0}
                     calcMode="spline"
-                    dur="2s"
-                    values="65;135;65;"
+                    dur={2}
                     keySplines=".5 0 .5 1;.5 0 .5 1"
                     repeatCount="indefinite"
-                    begin="0s"
+                    values="65;135;65;"
                   />
                 </circle>
               </svg>
             </article>
           )}
 
-          <div className="absolute -bottom-[16px] right-0 flex animate-blurred-fade-in justify-center rounded-full text-xs text-green-950">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path
-                stroke="none"
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path d="M6 4m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z" />
-              <path d="M12 2v2" />
-              <path d="M9 12v9" />
-              <path d="M15 12v9" />
-              <path d="M5 16l4 -2" />
-              <path d="M15 14l4 2" />
-              <path d="M9 18h6" />
-              <path d="M10 8v.01" />
-              <path d="M14 8v.01" />
-            </svg>
+          <div className="animate-blurred-fade-in absolute right-0 -bottom-[16px] flex justify-center rounded-full text-xs text-green-950">
             <span>AcuaNet IA (puede contener errores)</span>
           </div>
         </div>

@@ -5,7 +5,7 @@ export default function Patrocinio() {
       target="_blank"
       href="https://agrbaits.es"
     >
-      <div className="absolute right-1 top-7 flex w-[7rem] rotate-12 animate-wiggle flex-col items-center justify-center gap-1 transition-transform duration-1000 repeat-infinite hover:scale-105 md:right-12 md:w-[10rem]">
+      <div className="animate-wiggle repeat-infinite absolute top-7 right-1 flex w-[7rem] rotate-12 flex-col items-center justify-center gap-1 transition-transform duration-1000 hover:scale-105 md:right-12 md:w-[10rem]">
         <img
           src={"/AGRLogo.webp"}
           width={65}
@@ -16,7 +16,7 @@ export default function Patrocinio() {
         />
         <p className="text-center text-[13px] font-light text-green-100 md:text-[20px]">
           Patrocinado por <br />
-          <span className="animationGlow bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text font-black text-transparent md:text-2xl">
+          <span className="animationGlow bg-linear-to-r from-red-500 to-yellow-400 bg-clip-text font-black text-transparent md:text-2xl">
             AGR Baits
           </span>
         </p>

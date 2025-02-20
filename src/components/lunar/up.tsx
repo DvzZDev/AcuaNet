@@ -11,7 +11,7 @@ export default function ButtonUp() {
     <button
       aria-label="Ir arriba"
       onClick={handleScrollToTop}
-      className="fixed bottom-4 left-4 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-green-300 outline-none backdrop-blur-lg transition-all active:scale-105 md:hidden"
+      className="fixed bottom-4 left-4 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-green-300 outline-hidden backdrop-blur-lg transition-all active:scale-105 md:hidden"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

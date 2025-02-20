@@ -9,11 +9,13 @@ const MapaCercano = dynamic(() => import("@/components/embalses/Dashboard/MapaCe
   ),
 })
 
-export default function MapEmbData({ coords }: { coords: { lat: number; lon: number; name?: string } }) {
-  if (!coords) {
-    return <div>Error: Coordinates not found</div>
-  }
+interface Coordinates {
+  lat: number
+  lon: number
+  name: string
+}
 
+export default function MapEmbData({ coords }: { coords: Coordinates }) {
   return (
     <>
       <h2 className="text-2xl font-black text-green-950">Mapas</h2>

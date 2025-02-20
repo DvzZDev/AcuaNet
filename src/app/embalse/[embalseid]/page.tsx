@@ -44,8 +44,6 @@ async function Page({
         .replace(/-/g, " ")
         .replace(/torrejón \(tajo\s+tietar\)/i, "Torrejón (Tajo - Tietar)")
 
-  console.log(decodedEmbalseid)
-
   let resEmbalse
   let pActual = 0
   let LastWeek = { lastWeek: 0, pctDifference: 0 }
@@ -78,6 +76,7 @@ async function Page({
     pActual = embalses[0].porcentaje || 0
     LastWeek = LastWeekVariation(embalses.slice(0, 2))
     lData = await GetLiveData(decodedEmbalseid)
+    console.log(lData)
     FilterHistoricalData({ data: embalses })
     pais = GetCountry(decodedEmbalseid)
 
@@ -124,7 +123,7 @@ async function Page({
             embalse={resEmbalse}
             cuenca={false}
           />
-          {!pt && lData ? <LiveData data={lData} /> : ""}
+          {!pt && lData && lData.length > 0 ? <LiveData data={lData} /> : ""}
 
           <EstadoActual
             agua_embalsada={volumen_actual || 0}

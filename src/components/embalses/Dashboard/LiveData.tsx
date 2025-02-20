@@ -13,7 +13,7 @@ export default function LiveData({ data }: { data: LiveData[] }) {
         </div>
       </div>
 
-      <section className="relative h-fit w-full overflow-hidden rounded-lg border border-green-900/30 bg-green-100 p-4 text-black">
+      <section className="relative h-fit w-full overflow-hidden rounded-lg border border-green-900/30 bg-green-100 px-4 py-2 text-black">
         <DotLottieReact
           src="https://lottie.host/30e44493-9a5d-40b0-94c7-90980ca0dfbf/IRfsIC8rii.lottie"
           loop
@@ -21,7 +21,7 @@ export default function LiveData({ data }: { data: LiveData[] }) {
           className="absolute -top-0 -right-6 w-25"
         />
         <table className="w-full table-fixed">
-          <thead className="x text-left text-xs text-[#3d7764] lg:text-sm">
+          <thead className="text-left text-xs text-[#3d7764] lg:text-sm">
             <tr>
               <th className="pb-1 font-bold">Hora</th>
               <th className="pb-1 font-bold">

@@ -39,7 +39,12 @@ async function Page({
         .split(" ")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ")
-    : decodeURIComponent(embalseid).replace(/-/g, " ")
+        .replace(/Torrejón \(Tajo\s+Tietar\)/i, "Torrejón (Tajo - Tietar)")
+    : decodeURIComponent(embalseid)
+        .replace(/-/g, " ")
+        .replace(/torrejón \(tajo\s+tietar\)/i, "Torrejón (Tajo - Tietar)")
+
+  console.log(decodedEmbalseid)
 
   let resEmbalse
   let pActual = 0

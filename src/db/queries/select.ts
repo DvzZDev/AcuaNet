@@ -1,5 +1,5 @@
 import { db } from "@/db"
-import { Cuencas, España, Embalses, AllData, LiveData, PortugalData } from "@/db/schema"
+import { Cuencas, España, Embalses, AllData, LiveData, PortugalData, EmbalsesCoords } from "@/db/schema"
 import { desc, eq, inArray, sql } from "drizzle-orm"
 
 export async function GetCuencas() {
@@ -69,4 +69,8 @@ export async function GetHistoricalData(emb: string) {
 
 export async function GetPortugalData(emb: string) {
   return db.select().from(PortugalData).where(eq(PortugalData.embalse, emb))
+}
+
+export async function GetManualCoords(emb: string) {
+  return db.select().from(EmbalsesCoords).where(eq(EmbalsesCoords.embalse, emb))
 }

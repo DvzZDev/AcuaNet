@@ -1,6 +1,6 @@
 import type { Embalses } from "@/types"
 import TitleEmb from "@/components/embalses/TitleEmb"
-import { GetHistoricalData, GetLiveData, GetPortugalData } from "@/db/queries/select"
+import { GetHistoricalData, GetLiveData, GetManualCoords, GetPortugalData } from "@/db/queries/select"
 import NotFound from "@/app/not-found"
 import FavButton from "@/components/embalses/FavButton"
 import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"
@@ -64,9 +64,17 @@ async function Page({
     } as Coordinates
     weatherData = await GetWeather(coordsData.lat, coordsData.lon)
   } else {
+    const MCoords = await GetManualCoords(embalseid)
+    if (MCoords[0].lat && MCoords[0].long) {
+      coordsData = {
+        lat: MCoords[0].lat,
+        lon: MCoords[0].long,
+      } as Coordinates
+    } else {
+      coordsData = await GetCoordinates(decodedEmbalseid)
+    }
     const embalses = (await GetHistoricalData(decodedEmbalseid)) as unknown as Embalses[]
     resEmbalse = embalses
-    coordsData = await GetCoordinates(embalses[0].embalse)
     if (coordsData) weatherData = await GetWeather(coordsData.lat, coordsData.lon)
 
     if (!resEmbalse) {
@@ -76,7 +84,6 @@ async function Page({
     pActual = embalses[0].porcentaje || 0
     LastWeek = LastWeekVariation(embalses.slice(0, 2))
     lData = await GetLiveData(decodedEmbalseid)
-    console.log(lData)
     FilterHistoricalData({ data: embalses })
     pais = GetCountry(decodedEmbalseid)
 

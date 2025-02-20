@@ -34,12 +34,12 @@ async function Page({
   const { embalseid } = await params
   const { pt } = await searchParams
   const decodedEmbalseid = pt
-    ? embalseid
+    ? decodeURIComponent(embalseid)
         .replace(/-/g, " ")
         .split(" ")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ")
-    : embalseid.replace(/-/g, " ")
+    : decodeURIComponent(embalseid).replace(/-/g, " ")
 
   let resEmbalse
   let pActual = 0

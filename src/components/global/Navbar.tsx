@@ -170,7 +170,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 font-light backdrop-blur-md transition-transform duration-300 ease-out lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "z-50 h-screen bg-green-700" : "z-30 h-[4rem]"} ${isScrollingDown && !isMenuOpen && !isAtTop ? "-translate-y-16" : "translate-y-0"}`}
+      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 font-light backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen" : "z-30 h-[4rem]"} ${isScrollingDown && !isMenuOpen && !isAtTop ? "-translate-y-16" : "translate-y-0"}`}
     >
       <div className="container mx-auto mt-2 flex flex-col items-center justify-between gap-4 px-4 lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         <div className="flex w-full items-center justify-between lg:w-auto">

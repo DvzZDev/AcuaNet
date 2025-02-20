@@ -5,6 +5,7 @@ import UseMenuStore from "@/store/useMenuStore"
 import Hamburger from "hamburger-react"
 import SerchEmbMenu from "./SearchMenu"
 
+// Función throttle para limitar la frecuencia de ejecución
 function throttle<T extends (...args: any[]) => any>(func: T, limit: number): (...args: Parameters<T>) => void {
   let inThrottle: boolean
   return function (this: any, ...args: Parameters<T>) {
@@ -16,19 +17,19 @@ function throttle<T extends (...args: any[]) => any>(func: T, limit: number): (.
   }
 }
 
+// Hook useScroll modificado para devolver isScrollingDown e isAtTop
 function useScroll() {
-  const [scroll, setScroll] = useState(false)
+  const [scrollState, setScrollState] = useState({ isScrollingDown: false, isAtTop: true })
   const lastScrollY = useRef(0)
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleScroll = useCallback(
     throttle(() => {
       const currentScrollY = window.scrollY
+      const isScrollingDown = currentScrollY > lastScrollY.current
+      const isAtTop = currentScrollY === 0
 
-      if (currentScrollY > lastScrollY.current) {
-        setScroll(true)
-      } else {
-        setScroll(false)
-      }
+      setScrollState({ isScrollingDown, isAtTop })
 
       lastScrollY.current = currentScrollY
     }, 150),
@@ -40,9 +41,10 @@ function useScroll() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [handleScroll])
 
-  return scroll
+  return scrollState
 }
 
+// Componente InstagramIcon
 const InstagramIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -107,6 +109,7 @@ const InstagramIcon = () => (
   </svg>
 )
 
+// Componente NavLinks
 const NavLinks = ({ mobile = false, onClickLink }: { mobile?: boolean; onClickLink?: () => void }) => (
   <>
     <Link
@@ -148,13 +151,14 @@ const NavLinks = ({ mobile = false, onClickLink }: { mobile?: boolean; onClickLi
   </>
 )
 
+// Componente Navbar corregido
 export default function Navbar() {
   const { isMenuOpen, toggleMenu, closeMenu } = UseMenuStore()
-  const scroll = useScroll()
+  const { isScrollingDown, isAtTop } = useScroll()
 
   return (
     <header
-      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 font-light backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "bg-gren-700 z-50 h-screen" : "z-30 h-[4rem]"} ${scroll && !isMenuOpen ? "-translate-y-16" : "translate-y-0"}`}
+      className={`animate-fade-in-down fixed z-50 w-full bg-[#112b27]/60 font-light backdrop-blur-md duration-500 lg:flex lg:items-center lg:justify-center ${isMenuOpen ? "z-50 h-screen bg-green-700" : "z-30 h-[4rem]"} ${isScrollingDown && !isMenuOpen && !isAtTop ? "-translate-y-16" : "translate-y-0"}`}
     >
       <div className="container mx-auto mt-2 flex flex-col items-center justify-between gap-4 px-4 lg:mt-0 lg:flex-row lg:px-0 xl:px-28">
         <div className="flex w-full items-center justify-between lg:w-auto">

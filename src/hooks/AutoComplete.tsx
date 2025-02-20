@@ -38,7 +38,7 @@ const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: 
     e.preventDefault()
     const selectedEmbalse = data.find((embalse) => embalse.nombre.toLowerCase() === type.toLowerCase())
     if (selectedEmbalse) {
-      router.push(`/embalses/${selectedEmbalse.nombre.replace(/ /g, "-").toLowerCase()}`)
+      router.push(`/embalse/${selectedEmbalse.nombre.replace(/ /g, "-").toLowerCase()}`)
       setFine(true)
       setErr(false)
       setSuggestions([])

@@ -87,7 +87,7 @@ export default function SearchMenu() {
           <ul className="animate-fade-in-down bg-opacity-100 animate-duration-300 absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-[#275e56] text-green-100">
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <Link
-                href={`/embalses/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
+                href={`/embalse/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
                 key={index}
               >
                 <li

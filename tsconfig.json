@@ -33,7 +33,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/db/queries/select.js",
-    "next.config.mjs"
+    "next.config.mjs",
+    "next-sitemap.config.mjs"
   ],
   "exclude": ["node_modules"]
 }

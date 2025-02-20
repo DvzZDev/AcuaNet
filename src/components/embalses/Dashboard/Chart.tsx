@@ -40,7 +40,7 @@ const Chart = ({ data }: { data: Embalses[] }) => {
     )
 
     data.forEach(({ fecha, porcentaje }) => {
-      if (!fecha ||!porcentaje) return
+      if (!fecha || !porcentaje) return
       const date = new Date(fecha)
       const monthIndex = date.getMonth()
       const monthKey = MONTHS[monthIndex]

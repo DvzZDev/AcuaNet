@@ -2,7 +2,7 @@ import { Link } from "next-view-transitions"
 
 function Footer() {
   return (
-    <footer className="flex z-50 h-[10rem] flex-col items-center justify-center bg-[#112b27] px-6">
+    <footer className="z-50 flex h-[10rem] flex-col items-center justify-center bg-[#112b27] px-6">
       <nav className="md:text-md flex flex-wrap justify-center gap-3 text-sm text-wrap text-green-100">
         <Link href="/#search">
           <span className="inline-block transition-all hover:scale-105 hover:text-green-200">Buscador</span>

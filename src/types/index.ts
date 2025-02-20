@@ -52,7 +52,6 @@ export interface Embalses {
   lat?: number | null
   lon?: number | null
   pais?: string | null
-  
 }
 export interface WeatherTypes {
   queryCost: number

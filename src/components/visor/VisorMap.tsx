@@ -75,7 +75,6 @@ export default function VisorMap() {
     <div
       id="mapjs"
       className="relative h-full w-full lg:pr-4"
-    >
-    </div>
+    ></div>
   )
 }

@@ -19,15 +19,14 @@ function throttle<T extends (...args: any[]) => any>(func: T, limit: number): (.
 function useScroll() {
   const [scroll, setScroll] = useState(false)
   const lastScrollY = useRef(0)
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleScroll = useCallback(
     throttle(() => {
       const currentScrollY = window.scrollY
 
-      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY.current) {
         setScroll(true)
-      } else if (currentScrollY < lastScrollY.current) {
+      } else {
         setScroll(false)
       }
 
@@ -120,7 +119,7 @@ const NavLinks = ({ mobile = false, onClickLink }: { mobile?: boolean; onClickLi
     <Link
       href="/luna"
       onClick={onClickLink}
-      className={`glow transition-all text-nowrap ${mobile ? "animate-fade-in animate-delay-300 hover:text-green-300" : ""}`}
+      className={`glow text-nowrap transition-all ${mobile ? "animate-fade-in animate-delay-300 hover:text-green-300" : ""}`}
     >
       Calendario Lunar
     </Link>

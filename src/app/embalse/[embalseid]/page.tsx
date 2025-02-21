@@ -32,6 +32,7 @@ async function Page({
   searchParams: Promise<{ pt?: string }>
 }) {
   const { embalseid } = await params
+  const refinedEmbalseid = decodeURIComponent(embalseid)
   const { pt } = await searchParams
   const decodedEmbalseid = pt
     ? decodeURIComponent(embalseid)
@@ -58,24 +59,33 @@ async function Page({
 
   if (pt) {
     resEmbalse = await GetPortugalData(decodedEmbalseid.toLowerCase())
-    coordsData = {
-      lat: resEmbalse[0].lat,
-      lon: resEmbalse[0].lon,
-    } as Coordinates
-    weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+    if (resEmbalse.length > 0) {
+      coordsData = {
+        lat: resEmbalse[0].lat,
+        lon: resEmbalse[0].lon,
+      } as Coordinates
+      weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+    }
   } else {
-    const MCoords = await GetManualCoords(embalseid)
+    const MCoords = await GetManualCoords(refinedEmbalseid)
+    console.log(MCoords)
+
     if (MCoords[0].lat && MCoords[0].long) {
       coordsData = {
         lat: MCoords[0].lat,
         lon: MCoords[0].long,
       } as Coordinates
+      console.log(MCoords)
     } else {
       coordsData = await GetCoordinates(decodedEmbalseid)
     }
+
     const embalses = (await GetHistoricalData(decodedEmbalseid)) as unknown as Embalses[]
     resEmbalse = embalses
-    if (coordsData) weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+
+    if (coordsData.lat && coordsData.lon) {
+      weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+    }
 
     if (!resEmbalse) {
       return <NotFound />
@@ -165,7 +175,7 @@ async function Page({
             ""
           )}
           {weatherData && <TableWeather data={weatherData} />}
-          {coordsData ? <MapEmbData coords={coordsData} /> : null}
+          {coordsData?.lat ? <MapEmbData coords={coordsData} /> : null}
           <div className="flex flex-wrap items-center justify-center gap-3 rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg">
             <a
               href="https://www.agrbaits.es/"

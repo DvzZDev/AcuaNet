@@ -286,6 +286,11 @@ ul.m-layerswitcher-ullayers
   padding: 5px;
   width: 90px;
 }
+
+input {
+  font-size: 16px !important;
+}
+
 .m-layerswitcher-sectionPanel-header div input[type="radio"] {
   margin-left: 10px;
   margin-right: 5px;

@@ -68,7 +68,6 @@ async function Page({
     }
   } else {
     const MCoords = await GetManualCoords(refinedEmbalseid)
-    console.log(MCoords)
 
     if (MCoords[0].lat && MCoords[0].long) {
       coordsData = {

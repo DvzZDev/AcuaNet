@@ -24,6 +24,16 @@ interface Coordinates {
   name: string
 }
 
+const formatReservoirName = (name: string): string => {
+  const specialCases: Record<string, string> = {
+    "torrejón-(tajo---tietar)": "Torrejón (Tajo - Tietar)",
+    "tous---la-ribera": "Tous - La Ribera",
+  }
+
+  const normalizedName = name.toLowerCase().trim()
+  return specialCases[normalizedName] || name.replace(/-/g, " ")
+}
+
 async function Page({
   params,
   searchParams,
@@ -34,17 +44,15 @@ async function Page({
   const { embalseid } = await params
   const refinedEmbalseid = decodeURIComponent(embalseid)
   const { pt } = await searchParams
+
   const decodedEmbalseid = pt
     ? decodeURIComponent(embalseid)
-        .replace(/-/g, " ")
         .split(" ")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ")
-        .replace(/Torrejón \(Tajo\s+Tietar\)/i, "Torrejón (Tajo - Tietar)")
-    : decodeURIComponent(embalseid)
-        .replace(/-/g, " ")
-        .replace(/torrejón \(tajo\s+tietar\)/i, "Torrejón (Tajo - Tietar)")
+    : formatReservoirName(decodeURIComponent(embalseid))
 
+  console.log(decodedEmbalseid)
   let resEmbalse
   let pActual = 0
   let LastWeek = { lastWeek: 0, pctDifference: 0 }

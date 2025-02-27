@@ -10,7 +10,8 @@
     "lint:fix": "next lint --fix",
     "check-types": "tsc --noemit",
     "lint": "next lint && pnpm run check-types",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "remove": "rm -rf pnpm-lock.yaml node_modules"
   },
   "dependencies": {
     "@ai-sdk/google": "^1.0.13",

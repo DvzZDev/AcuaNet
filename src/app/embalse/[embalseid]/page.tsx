@@ -1,6 +1,6 @@
 import type { Embalses } from "@/types"
 import TitleEmb from "@/components/embalses/TitleEmb"
-import { GetHistoricalData, GetLiveData, GetPortugalData } from "@/db/queries/select"
+import { GetHistoricalData, GetLiveData, GetManualCoords, GetPortugalData } from "@/db/queries/select"
 import NotFound from "@/app/not-found"
 import FavButton from "@/components/embalses/FavButton"
 import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"
@@ -24,6 +24,16 @@ interface Coordinates {
   name: string
 }
 
+const formatReservoirName = (name: string): string => {
+  const specialCases: Record<string, string> = {
+    "torrejón-(tajo---tietar)": "Torrejón (Tajo - Tietar)",
+    "tous---la-ribera": "Tous - La Ribera",
+  }
+
+  const normalizedName = name.toLowerCase().trim()
+  return specialCases[normalizedName] || name.replace(/-/g, " ")
+}
+
 async function Page({
   params,
   searchParams,
@@ -32,14 +42,10 @@ async function Page({
   searchParams: Promise<{ pt?: string }>
 }) {
   const { embalseid } = await params
+  const refinedEmbalseid = decodeURIComponent(embalseid)
   const { pt } = await searchParams
-  const decodedEmbalseid = pt
-    ? embalseid
-        .replace(/-/g, " ")
-        .split(" ")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ")
-    : embalseid.replace(/-/g, " ")
+
+  const decodedEmbalseid = formatReservoirName(decodeURIComponent(embalseid))
 
   let resEmbalse
   let pActual = 0
@@ -55,16 +61,32 @@ async function Page({
 
   if (pt) {
     resEmbalse = await GetPortugalData(decodedEmbalseid.toLowerCase())
-    coordsData = {
-      lat: resEmbalse[0].lat,
-      lon: resEmbalse[0].lon,
-    } as Coordinates
-    weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+    if (resEmbalse.length > 0) {
+      coordsData = {
+        lat: resEmbalse[0].lat,
+        lon: resEmbalse[0].lon,
+      } as Coordinates
+      weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+    }
   } else {
+    const MCoords = await GetManualCoords(refinedEmbalseid)
+
+    if (MCoords[0].lat && MCoords[0].long) {
+      coordsData = {
+        lat: MCoords[0].lat,
+        lon: MCoords[0].long,
+      } as Coordinates
+      console.log(MCoords)
+    } else {
+      coordsData = await GetCoordinates(decodedEmbalseid)
+    }
+
     const embalses = (await GetHistoricalData(decodedEmbalseid)) as unknown as Embalses[]
     resEmbalse = embalses
-    coordsData = await GetCoordinates(embalses[0].embalse)
-    if (coordsData) weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+
+    if (coordsData.lat && coordsData.lon) {
+      weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+    }
 
     if (!resEmbalse) {
       return <NotFound />
@@ -85,6 +107,7 @@ async function Page({
     const diffMedia10 = actualVolume - media_10_anos
     pctMedia10 = media_10_anos ? Number(((diffMedia10 / media_10_anos) * 100).toFixed(2)) : 0
   }
+  console.log(decodedEmbalseid)
 
   const {
     embalse,
@@ -119,7 +142,7 @@ async function Page({
             embalse={resEmbalse}
             cuenca={false}
           />
-          {!pt && lData ? <LiveData data={lData} /> : ""}
+          {!pt && lData && lData.length > 0 ? <LiveData data={lData} /> : ""}
 
           <EstadoActual
             agua_embalsada={volumen_actual || 0}
@@ -154,7 +177,7 @@ async function Page({
             ""
           )}
           {weatherData && <TableWeather data={weatherData} />}
-          {coordsData ? <MapEmbData coords={coordsData} /> : null}
+          {coordsData?.lat ? <MapEmbData coords={coordsData} /> : null}
           <div className="flex flex-wrap items-center justify-center gap-3 rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg">
             <a
               href="https://www.agrbaits.es/"

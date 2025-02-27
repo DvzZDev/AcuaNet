@@ -108,3 +108,15 @@ export const LiveData = pgTable(
     pk: primaryKey({ columns: [table.id] }),
   })
 )
+
+export const EmbalsesCoords = pgTable(
+  "embalses_coords",
+  {
+    embalse: varchar("embalse").notNull(),
+    lat: doublePrecision("lat"),
+    long: doublePrecision("long"),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.embalse] }),
+  })
+)

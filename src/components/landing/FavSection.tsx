@@ -53,7 +53,7 @@ const EmbalseCard = ({ embalse }: { embalse: FavSection }) => {
 
   return (
     <div className="max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-50/30 bg-emerald-400/15 shadow-lg transition-all hover:scale-95 md:max-h-auto">
-      <Link href={`embalses/${embalse.name.toLowerCase().replace(/ /g, "-") ?? ""}`}>
+      <Link href={`embalse/${embalse.name.toLowerCase().replace(/ /g, "-") ?? ""}`}>
         <div className="relative p-3">
           <div className="absolute top-0 right-0 flex h-4 w-6 items-center justify-center overflow-hidden">
             <img

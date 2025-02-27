@@ -6,12 +6,33 @@ import { Link } from "next-view-transitions"
 import nombreEmbalses from "@/lib/nombresEmbalses.json"
 import useMenuStore from "@/store/useMenuStore"
 import { FlagSelector } from "../landing/SearchEmb"
+import { motion, AnimatePresence } from "motion/react"
+import { Bounce, toast } from "react-toastify"
+import { useEffect } from "react"
 
 const data = nombreEmbalses
 
 export default function SearchMenu() {
-  const { type, suggestions, err, handletype, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
+  const { type, suggestions, err, handletype, setErr, handleSuggestionClick, handleSubmit } = AutoCompleteHook(data)
   const { closeMenu } = useMenuStore()
+
+  useEffect(() => {
+    if (err) {
+      toast.error("No se encontro el embalse", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        rtl: false,
+        pauseOnFocusLoss: true,
+        draggable: true,
+        pauseOnHover: true,
+        theme: "light",
+        transition: Bounce,
+      })
+      setErr(false)
+    }
+  }, [setErr, err])
 
   return (
     <div>
@@ -83,32 +104,43 @@ export default function SearchMenu() {
         Embalse no encontrado
       </h1>
       <div className="relative z-50">
-        {suggestions.length > 0 && (
-          <ul className="animate-fade-in-down bg-opacity-100 animate-duration-300 absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-[#275e56] text-green-100">
-            {suggestions.slice(0, 5).map((suggestion, index) => (
-              <Link
-                href={`/embalse/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
-                key={index}
-              >
-                <li
+        <AnimatePresence>
+          {suggestions.length > 0 && (
+            <motion.ul
+              layout
+              initial={{ height: 0, opacity: 0, overflow: "hidden" }}
+              animate={{ height: "auto", opacity: 1, overflow: "hidden" }}
+              exit={{ height: 0, opacity: 0, overflow: "hidden" }}
+              transition={{
+                duration: 0.3,
+                layout: { duration: 0.08 },
+              }}
+              className="absolute mt-5 flex w-full flex-col gap-1 rounded-lg bg-[#275e56] text-green-100"
+            >
+              {suggestions.slice(0, 5).map((suggestion, index) => (
+                <Link
+                  href={`/embalse/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
                   key={index}
-                  onClick={() => {
-                    handleSuggestionClick(suggestion)
-                    closeMenu()
-                  }}
-                  className="z-30 flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1 text-sm hover:bg-slate-950/25"
                 >
-                  <img
-                    alt="Flag"
-                    src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
-                    className="h-[1.2rem] w-[1.2rem] overflow-hidden rounded-xl"
-                  />
-                  {suggestion}
-                </li>
-              </Link>
-            ))}
-          </ul>
-        )}
+                  <li
+                    onClick={() => {
+                      handleSuggestionClick(suggestion)
+                      closeMenu()
+                    }}
+                    className="z-30 flex cursor-pointer items-center gap-1 rounded-lg px-2 py-1 text-sm hover:bg-slate-950/25"
+                  >
+                    <img
+                      alt="Flag"
+                      src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
+                      className="h-[1.2rem] w-[1.2rem] overflow-hidden rounded-xl"
+                    />
+                    {suggestion}
+                  </li>
+                </Link>
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   )

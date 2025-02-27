@@ -5,6 +5,7 @@ import { Link } from "next-view-transitions"
 import nombreEmbalses from "@/lib/nombresEmbalses.json"
 import { Bounce, toast } from "react-toastify"
 import { useEffect } from "react"
+import { motion, AnimatePresence } from "motion/react"
 
 const data = nombreEmbalses
 
@@ -98,16 +99,25 @@ export default function SearchEmb() {
         </button>
       </form>
 
-      <div className="relative z-50">
+      <AnimatePresence>
         {suggestions.length > 0 && (
-          <ul className="animate-blurred-fade-in animate-duration-300 absolute mt-2 flex w-full flex-col gap-1 rounded-lg bg-teal-800 text-base text-green-100 md:text-xl">
+          <motion.ul
+            layout
+            initial={{ height: 0, opacity: 0, overflow: "hidden" }}
+            animate={{ height: "auto", opacity: 1, overflow: "hidden" }}
+            exit={{ height: 0, opacity: 0, overflow: "hidden" }}
+            transition={{
+              duration: 0.3,
+              layout: { duration: 0.08 },
+            }}
+            className="absolute mt-2 flex w-full flex-col rounded-lg bg-teal-800 text-base text-green-100 md:text-xl"
+          >
             {suggestions.slice(0, 5).map((suggestion, index) => (
               <Link
                 href={`/embalse/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
                 key={index}
               >
                 <li
-                  key={index}
                   onClick={() => handleSuggestionClick(suggestion)}
                   className="z-30 flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1 text-sm hover:bg-teal-900 lg:text-base"
                 >
@@ -120,9 +130,9 @@ export default function SearchEmb() {
                 </li>
               </Link>
             ))}
-          </ul>
+          </motion.ul>
         )}
-      </div>
+      </AnimatePresence>
     </div>
   )
 }

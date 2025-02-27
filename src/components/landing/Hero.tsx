@@ -1,12 +1,11 @@
 import FavSection from "./FavSection"
 import SearchEmb from "./SearchEmb"
-// import Patrocinio from "./Patrocinio"
 import { Suspense } from "react"
 import SkeletonFavorites from "../skeletons/SkeletonFavorites"
 
 export default async function Hero() {
   return (
-    <div className="animate-blurred-fade-in -z-10 h-fit bg-black/40 py-10 lg:h-svh">
+    <div className="animate-blurred-fade-in -z-10 h-fit bg-black/40 py-10 lg:h-[calc(100vh-4rem)]">
       <section className="relative z-10 flex h-full flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-4 px-2 lg:gap-6 xl:w-[60rem] 2xl:gap-8">
           <svg
@@ -37,7 +36,6 @@ export default async function Hero() {
             </Suspense>
           </div>
         </div>
-        {/* <Patrocinio /> */}
       </section>
     </div>
   )

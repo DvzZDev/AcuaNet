@@ -45,14 +45,8 @@ async function Page({
   const refinedEmbalseid = decodeURIComponent(embalseid)
   const { pt } = await searchParams
 
-  const decodedEmbalseid = pt
-    ? decodeURIComponent(embalseid)
-        .split(" ")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ")
-    : formatReservoirName(decodeURIComponent(embalseid))
+  const decodedEmbalseid = formatReservoirName(decodeURIComponent(embalseid))
 
-  console.log(decodedEmbalseid)
   let resEmbalse
   let pActual = 0
   let LastWeek = { lastWeek: 0, pctDifference: 0 }
@@ -113,6 +107,7 @@ async function Page({
     const diffMedia10 = actualVolume - media_10_anos
     pctMedia10 = media_10_anos ? Number(((diffMedia10 / media_10_anos) * 100).toFixed(2)) : 0
   }
+  console.log(decodedEmbalseid)
 
   const {
     embalse,

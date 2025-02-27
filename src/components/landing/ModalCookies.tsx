@@ -47,10 +47,16 @@ export default function ModalCookies() {
         <AlertDialog open>
           <AlertDialogContent className="sm:max-w-m animate-fade-in w-11/12 bg-green-50 backdrop-blur-xs">
             <AlertDialogHeader>
-              <AlertDialogTitle className="text-2xl font-black text-[#1b7b6e]">Uso de Cookies</AlertDialogTitle>
-              <AlertDialogDescription>
+              <AlertDialogTitle className="text-3xl font-semibold text-[#1b7b6e]">Uso de Cookies</AlertDialogTitle>
+              <AlertDialogDescription className="text-sm lg:text-base">
                 Este sitio web utiliza cookies para mejorar su experiencia de usuario. Al aceptar, consiente el uso de cookies de
-                acuerdo con nuestra política de cookies.
+                acuerdo con nuestra política de cookies que puede ver{" "}
+                <a
+                  className="text-green-800"
+                  href="/legal"
+                >
+                  aqui.
+                </a>
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
@@ -59,10 +65,11 @@ export default function ModalCookies() {
                 className="bg-green-300"
                 onClick={handleAcceptCookies}
               >
-                Sí
+                Aceptar
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
+          s
         </AlertDialog>
       )}
     </>

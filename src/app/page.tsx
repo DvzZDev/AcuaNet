@@ -1,8 +1,3 @@
-// import Fuentes from "@/components/landing/Fuentes"
-// import SkeletonBento from "@/components/skeletons/BentoSkeleton"
-// import AboutLanding from "@/components/landing/AboutLanding"
-// import { Suspense } from "react"
-// import BentoDataLandin from "@/components/landing/BentoDataLanding"
 import Faq from "@/components/landing/Faq"
 import Hero from "@/components/landing/Hero"
 import Info1 from "@/components/landing/Info1"

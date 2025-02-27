@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "motion/react"
 import "@justinribeiro/lite-youtube"
 
 export default function Instructor() {

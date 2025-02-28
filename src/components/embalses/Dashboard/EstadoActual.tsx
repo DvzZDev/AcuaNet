@@ -1,5 +1,9 @@
 "use client"
 
+import NumberFlow from "@number-flow/react"
+import { useEffect, useState } from "react"
+import { useInView } from "react-intersection-observer"
+
 export default function EstadoActual({
   agua_embalsada,
   agua_embalsadapor,
@@ -17,6 +21,32 @@ export default function EstadoActual({
   variacion_ultima_semana: number
   variacion_ultima_semanapor: number
 }) {
+  const { ref, inView } = useInView({
+    threshold: 0.4,
+  })
+
+  const [valoresAnimados, setValoresAnimados] = useState({
+    agua_embalsada: 0,
+    agua_embalsadapor: 0,
+    capacidad_total: 0,
+    cota: 0,
+    variacion_ultima_semana: 0,
+    variacion_ultima_semanapor: 0,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      setValoresAnimados({
+        agua_embalsada,
+        agua_embalsadapor,
+        capacidad_total,
+        cota,
+        variacion_ultima_semana,
+        variacion_ultima_semanapor,
+      })
+    }
+  }, [inView, agua_embalsada, agua_embalsadapor, capacidad_total, cota, variacion_ultima_semana, variacion_ultima_semanapor])
+
   return (
     <>
       <div className="flex flex-col gap-1">
@@ -26,7 +56,10 @@ export default function EstadoActual({
         </div>
       </div>
 
-      <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
+      <section
+        ref={ref}
+        className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2"
+      >
         {/* Agua Embalsada */}
         <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
@@ -56,7 +89,11 @@ export default function EstadoActual({
             <div className="flex w-full flex-col gap-2">
               <p className="text-lg leading-none font-semibold text-[#3d7764]">Agua Embalsada</p>
               <p className="text-3xl font-black text-green-950">
-                {agua_embalsada} <span className="text-lg">hm³</span>
+                <NumberFlow
+                  suffix="hm³"
+                  value={valoresAnimados.agua_embalsada}
+                  willChange={true}
+                />
               </p>
               <div className="relative h-3 w-full rounded-full bg-green-950">
                 <div
@@ -65,7 +102,7 @@ export default function EstadoActual({
                 ></div>
               </div>
               <p className="text-sm font-semibold text-green-950">
-                {agua_embalsadapor} <span className="text-[#3d7764]">% capacidad total</span>
+                <NumberFlow value={valoresAnimados.agua_embalsadapor} /> <span className="text-[#3d7764]">% capacidad total</span>
               </p>
             </div>
           </div>
@@ -98,7 +135,10 @@ export default function EstadoActual({
             <div className="flex w-full flex-col gap-2">
               <p className="text-lg leading-none font-semibold text-[#3d7764]">Capacidad Total</p>
               <p className="text-3xl font-black text-green-950">
-                {capacidad_total} <span className="text-lg">hm³</span>
+                <NumberFlow
+                  suffix="hm³"
+                  value={valoresAnimados.capacidad_total}
+                />{" "}
               </p>
             </div>
           </div>
@@ -126,7 +166,10 @@ export default function EstadoActual({
                 <p className="text-3xl font-black text-green-950">
                   {cota > 0 ? (
                     <>
-                      {cota} <span className="text-lg">msnm</span>
+                      <NumberFlow
+                        suffix="msnm"
+                        value={valoresAnimados.cota}
+                      />
                     </>
                   ) : (
                     "N/D"
@@ -165,9 +208,14 @@ export default function EstadoActual({
               <div className="flex w-full flex-col gap-2">
                 <p className="text-lg leading-none font-semibold text-[#3d7764]">Cambios Semanales</p>
                 <p className="text-3xl font-black text-green-950">
-                  {variacion_ultima_semana} <span className="text-lg">hm³</span>
+                  <NumberFlow
+                    suffix="hm³"
+                    value={valoresAnimados.variacion_ultima_semana}
+                  />
                 </p>
-                <p className="text-sm font-semibold text-[#3d7764]">{variacion_ultima_semanapor}% capacidad total</p>
+                <p className="text-sm font-semibold text-[#3d7764]">
+                  <NumberFlow value={valoresAnimados.variacion_ultima_semanapor} />% capacidad total
+                </p>
               </div>
             </div>
           )}

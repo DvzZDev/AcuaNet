@@ -18,6 +18,7 @@
     "@justinribeiro/lite-youtube": "^1.7.1",
     "@lottiefiles/dotlottie-react": "^0.13.0",
     "@midudev/tailwind-animations": "^0.1.0",
+    "@number-flow/react": "^0.5.5",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",

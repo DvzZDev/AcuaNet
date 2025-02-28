@@ -89,13 +89,12 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
               <div className="flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
                   viewBox="0 0 64 64"
                   className="h-8 w-8"
                 >
                   <defs>
                     <linearGradient
-                      id="uniqueGradientA"
+                      id="gradientA"
                       x1="27.56"
                       x2="38.27"
                       y1="17.64"
@@ -116,17 +115,17 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                       />
                     </linearGradient>
                     <linearGradient
-                      id="uniqueGradientB"
+                      id="gradientB"
                       x1="19.96"
                       x2="31.37"
                       y1="29.03"
                       y2="48.8"
-                      xlinkHref="#uniqueGradientA"
+                      href="#gradientA"
                     />
                   </defs>
                   <path
                     fill="none"
-                    stroke="url(#uniqueGradientA)"
+                    stroke="url(#gradientA)"
                     strokeDasharray="35 22"
                     strokeLinecap="round"
                     strokeMiterlimit="10"
@@ -142,7 +141,7 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                   </path>
                   <path
                     fill="none"
-                    stroke="url(#uniqueGradientB)"
+                    stroke="url(#gradientB)"
                     strokeDasharray="24 15"
                     strokeLinecap="round"
                     strokeMiterlimit="10"
@@ -174,34 +173,34 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                   <defs>
                     <linearGradient
                       id="uniqueGradientA"
-                      x1={23}
-                      x2={41}
-                      y1={16.41}
-                      y2={47.59}
+                      x1="23"
+                      x2="41"
+                      y1="16.41"
+                      y2="47.59"
                       gradientUnits="userSpaceOnUse"
                     >
                       <stop
-                        offset={0}
+                        offset="0"
                         stopColor="#6b7280"
                       />
                       <stop
-                        offset={0.45}
+                        offset="0.45"
                         stopColor="#6b7280"
                       />
                       <stop
-                        offset={1}
+                        offset="1"
                         stopColor="#374151"
                       />
                     </linearGradient>
                   </defs>
                   <circle
-                    cx={32}
-                    cy={32}
-                    r={18}
+                    cx="32"
+                    cy="32"
+                    r="18"
                     fill="url(#uniqueGradientA)"
                     stroke="#e5e7eb"
-                    strokeMiterlimit={10}
-                    strokeWidth={2}
+                    strokeMiterlimit="10"
+                    strokeWidth="2"
                   />
                   <path
                     fill="none"
@@ -211,28 +210,21 @@ function RefactorWeather({ data: weatherData }: { data: WeatherTypes }) {
                     d="M32 25v-6m13.5 13h-6M25 32h-6m22.5-8.5-3 3m-13 0-3-3m16 14 3 3m-19 0 3-3"
                   />
                   <circle
-                    cx={32}
-                    cy={32}
-                    r={3}
+                    cx="32"
+                    cy="32"
+                    r="3"
                     fill="#ef4444"
                   />
                   <path
                     fill="none"
                     stroke="#ef4444"
                     strokeLinecap="round"
-                    strokeMiterlimit={10}
-                    strokeWidth={2}
+                    strokeMiterlimit="10"
+                    strokeWidth="2"
                     d="M32 35.5v-15"
-                  >
-                    <animateTransform
-                      attributeName="transform"
-                      dur="9s"
-                      repeatCount="indefinite"
-                      type="rotate"
-                      values="30 32 32; 55 32 32; 45 32 32; 55 32 32; 30 32 32"
-                    />
-                  </path>
+                  />
                 </svg>
+
                 <span>Presión</span>
               </div>
               <p>

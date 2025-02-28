@@ -1,3 +1,9 @@
+"use client"
+
+import NumberFlow from "@number-flow/react"
+import { useEffect, useState } from "react"
+import { useInView } from "react-intersection-observer"
+
 export default function HistorialCambios({
   variacion_ultima_semana,
   variacion_ultima_semanapor,
@@ -13,13 +19,50 @@ export default function HistorialCambios({
   misma_semana_10años: number
   misma_semana_10añospor: number
 }) {
+  const { ref, inView } = useInView({
+    threshold: 0.4,
+  })
+
+  const [valoresAnimados, setValoresAnimados] = useState({
+    variacion_ultima_semana: 0,
+    variacion_ultima_semanapor: 0,
+    misma_semana_ultimo_año: 0,
+    misma_semana_ultimo_añopor: 0,
+    misma_semana_10años: 0,
+    misma_semana_10añospor: 0,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      setValoresAnimados({
+        variacion_ultima_semana,
+        variacion_ultima_semanapor,
+        misma_semana_ultimo_año,
+        misma_semana_ultimo_añopor,
+        misma_semana_10años,
+        misma_semana_10añospor,
+      })
+    }
+  }, [
+    inView,
+    variacion_ultima_semana,
+    variacion_ultima_semanapor,
+    misma_semana_ultimo_año,
+    misma_semana_ultimo_añopor,
+    misma_semana_10años,
+    misma_semana_10añospor,
+  ])
+
   return (
     <>
       <h2 className="text-2xl font-bold text-green-950">Historial de cambios</h2>
 
       <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
         {/* Hace una semana */}
-        <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">
+        <div
+          ref={ref}
+          className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32"
+        >
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
             <div className="rounded-xs bg-green-400/50 p-2">
               <svg
@@ -50,9 +93,15 @@ export default function HistorialCambios({
             <div className="flex w-full flex-col gap-2">
               <p className="text-lg leading-none font-semibold text-[#3d7764]">Cambios Semanales</p>
               <p className="text-3xl font-black text-green-950">
-                {variacion_ultima_semana} <span className="text-lg">hm³</span>
+                <NumberFlow
+                  suffix="hm³"
+                  value={valoresAnimados.variacion_ultima_semana}
+                />
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">{variacion_ultima_semanapor}% variación total</p>
+              <p className="text-sm font-semibold text-[#3d7764]">
+                {" "}
+                <NumberFlow value={valoresAnimados.variacion_ultima_semanapor} /> % variación total
+              </p>
             </div>
           </div>
           {/* Hace un año */}
@@ -80,9 +129,15 @@ export default function HistorialCambios({
             <div className="flex w-full flex-col gap-2">
               <p className="text-lg leading-none font-semibold text-[#3d7764]">Hace un año</p>
               <p className="text-3xl font-black text-green-950">
-                {misma_semana_ultimo_año} <span className="text-lg">hm³</span>
+                <NumberFlow
+                  suffix="hm³"
+                  value={valoresAnimados.misma_semana_ultimo_año}
+                />{" "}
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">{misma_semana_ultimo_añopor}% capacidad total</p>
+              <p className="text-sm font-semibold text-[#3d7764]">
+                {" "}
+                <NumberFlow value={valoresAnimados.misma_semana_ultimo_añopor} /> % capacidad total
+              </p>
             </div>
           </div>
           {/* Hace 10 años */}
@@ -111,9 +166,14 @@ export default function HistorialCambios({
             <div className="flex w-full flex-col gap-2">
               <p className="text-lg leading-none font-semibold text-[#3d7764]">Hace 10 años</p>
               <p className="text-3xl font-black text-green-950">
-                {misma_semana_10años} <span className="text-lg">hm³</span>
+                <NumberFlow
+                  suffix="hm³"
+                  value={valoresAnimados.misma_semana_10años}
+                />
               </p>
-              <p className="text-sm font-semibold text-[#3d7764]">{misma_semana_10añospor}% capacidad total</p>
+              <p className="text-sm font-semibold text-[#3d7764]">
+                <NumberFlow value={valoresAnimados.misma_semana_10añospor} /> % capacidad total
+              </p>
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 "use client"
 
 import NumberFlow from "@number-flow/react"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useInView } from "react-intersection-observer"
+import { motion, useInView as motionUseInView } from "motion/react"
 
 export default function EstadoActual({
   agua_embalsada,
@@ -24,6 +25,9 @@ export default function EstadoActual({
   const { ref, inView } = useInView({
     threshold: 0.8,
   })
+
+  const refM = useRef(null)
+  const isInViewMotion = motionUseInView(refM, { once: true })
 
   const [valoresAnimados, setValoresAnimados] = useState({
     agua_embalsada: 0,
@@ -61,7 +65,10 @@ export default function EstadoActual({
         className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2"
       >
         {/* Agua Embalsada */}
-        <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">
+        <div
+          ref={refM}
+          className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32"
+        >
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
             <div className="rounded-xs bg-green-400/50 p-2">
               <svg
@@ -97,10 +104,12 @@ export default function EstadoActual({
                 />
               </p>
               <div className="relative h-3 w-full rounded-full bg-green-950">
-                <div
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={isInViewMotion ? { width: `${agua_embalsadapor}%` } : { width: 0 }}
+                  transition={{ type: "spring", duration: 1 }}
                   className="relative h-3 rounded-full bg-[#1ca077]"
-                  style={{ width: `${agua_embalsadapor}%` }}
-                ></div>
+                ></motion.div>
               </div>
               <p className="text-sm font-semibold text-green-950">
                 <NumberFlow value={valoresAnimados.agua_embalsadapor} /> <span className="text-[#3d7764]">% capacidad total</span>

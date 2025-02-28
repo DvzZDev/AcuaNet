@@ -2,6 +2,9 @@
 
 import Link from "next/link"
 import { motion } from "motion/react"
+import NumberFlow from "@number-flow/react"
+import { useEffect, useState } from "react"
+import { useInView } from "react-intersection-observer"
 
 interface FavSection {
   name: string
@@ -49,22 +52,45 @@ const TrendingDown = ({ className }: { className?: string }) => (
 )
 
 export const FavCard = ({ embalse }: { embalse: FavSection }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.8,
+  })
+
+  const [valoresAnimados, setValoresAnimados] = useState({
+    lastWeek: 0,
+    pctDifference: 0,
+    porcentaje: 0,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      setTimeout(() => {
+        setValoresAnimados({
+          lastWeek: embalse.lastWeek,
+          pctDifference: embalse.pctDifference,
+          porcentaje: embalse.porcentaje,
+        })
+      }, 700)
+    }
+  }, [inView, embalse.lastWeek, embalse.pctDifference, embalse.porcentaje])
+
   const variacion = embalse.pctDifference || 0
 
   return (
-    <div className="max-h-64 w-[15rem] overflow-auto rounded-lg border border-green-50/30 bg-emerald-400/15 shadow-lg transition-all hover:scale-95 md:max-h-auto">
-      <Link href={`embalse/${embalse.name.toLowerCase().replace(/ /g, "-") ?? ""}`}>
+    <div className="max-h-64 w-[15rem] overflow-hidden rounded-lg border border-green-50/30 bg-emerald-400/15 shadow-lg transition-all hover:scale-95 md:max-h-auto">
+      <Link
+        ref={ref}
+        href={`embalse/${embalse.name.toLowerCase().replace(/ /g, "-") ?? ""}`}
+      >
         <div className="relative p-3">
-          <div className="absolute top-0 right-0 flex h-4 w-6 items-center justify-center overflow-hidden">
-            <img
-              src={embalse.pais === "España" ? "/es.webp" : "/pt.webp"}
-              alt={embalse.pais + " flag"}
-              className="h-6 w-6 object-cover"
-            />
-          </div>
           <div className="mb-2 flex items-center justify-between">
             <h2 className="truncate text-base text-green-100">{embalse.name}</h2>
             {/* Icono */}
+            <img
+              src={embalse.pais === "España" ? "/es.webp" : "/pt.webp"}
+              alt={embalse.pais + " flag"}
+              className="h-5 w-5 object-cover"
+            />
           </div>
           <div className="mb-1 flex items-center">
             <div className="mr-2 h-2 w-full rounded-full bg-green-950">
@@ -75,15 +101,27 @@ export const FavCard = ({ embalse }: { embalse: FavSection }) => {
                 className="h-2 rounded-full bg-green-400"
               ></motion.div>
             </div>
-            <span className="min-w-[36px] text-right text-sm font-bold text-green-100">{embalse.porcentaje?.toFixed()}%</span>
+            <motion.span
+              layout
+              className="min-w-[36px] text-right text-sm font-bold text-green-100"
+            >
+              {" "}
+              <NumberFlow value={parseFloat(valoresAnimados.porcentaje.toFixed(0))} /> %
+            </motion.span>
           </div>
           <div className="flex items-center justify-between text-xs">
-            <span className="text-green-100">Variación semanal</span>
-            <span className={`flex items-center font-bold ${variacion >= 0 ? "text-green-300" : "text-red-300"}`}>
+            <span className="text-green-100/80">Variación semanal</span>
+            <motion.span
+              layout
+              className={`flex items-center font-bold ${variacion >= 0 ? "text-green-300" : "text-red-300"}`}
+            >
               {variacion >= 0 ? <TrendingUp className="mr-1 h-3 w-3" /> : <TrendingDown className="mr-1 h-3 w-3" />}
-              {variacion > 0 ? "+" : ""}
-              {variacion}%
-            </span>
+              <NumberFlow
+                prefix={variacion > 0 ? "+" : ""}
+                value={valoresAnimados.pctDifference}
+              />
+              %
+            </motion.span>
           </div>
         </div>
       </Link>

@@ -20,7 +20,7 @@ export default function HistorialCambios({
   misma_semana_10añospor: number
 }) {
   const { ref, inView } = useInView({
-    threshold: 0.4,
+    threshold: 0.8,
   })
 
   const [valoresAnimados, setValoresAnimados] = useState({
@@ -57,12 +57,12 @@ export default function HistorialCambios({
     <>
       <h2 className="text-2xl font-bold text-green-950">Historial de cambios</h2>
 
-      <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">
+      <section
+        ref={ref}
+        className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2"
+      >
         {/* Hace una semana */}
-        <div
-          ref={ref}
-          className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32"
-        >
+        <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
             <div className="rounded-xs bg-green-400/50 p-2">
               <svg

@@ -100,38 +100,40 @@ export default function SearchEmb() {
       </form>
 
       <AnimatePresence>
-        {suggestions.length > 0 && (
-          <motion.ul
-            layout
-            initial={{ height: 0, opacity: 0, overflow: "hidden" }}
-            animate={{ height: "auto", opacity: 1, overflow: "hidden" }}
-            exit={{ height: 0, opacity: 0, overflow: "hidden" }}
-            transition={{
-              duration: 0.3,
-              layout: { duration: 0.08 },
-            }}
-            className="absolute mt-2 flex w-full flex-col rounded-lg bg-teal-800 text-base text-green-100 md:text-xl"
-          >
-            {suggestions.slice(0, 5).map((suggestion, index) => (
-              <Link
-                href={`/embalse/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
-                key={index}
-              >
-                <li
-                  onClick={() => handleSuggestionClick(suggestion)}
-                  className="z-30 flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1 text-sm hover:bg-teal-900 lg:text-base"
+        <div>
+          {suggestions.length > 0 && (
+            <motion.ul
+              layout
+              initial={{ height: 0, opacity: 0, overflow: "hidden" }}
+              animate={{ height: "auto", opacity: 1, overflow: "hidden" }}
+              exit={{ height: 0, opacity: 0, overflow: "hidden" }}
+              transition={{
+                duration: 0.3,
+                layout: { duration: 0.08 },
+              }}
+              className="absolute mt-2 flex w-full flex-col rounded-lg bg-teal-800 text-base text-green-100 md:text-xl"
+            >
+              {suggestions.slice(0, 5).map((suggestion, index) => (
+                <Link
+                  href={`/embalse/${suggestion.replace(/ /g, "-").toLowerCase()}${FlagSelector(suggestion) === "Portugal" ? "?pt=true" : ""}`}
+                  key={index}
                 >
-                  <img
-                    alt="Flag"
-                    src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
-                    className="h-[1.3rem] w-[1.3rem] overflow-hidden rounded-xl"
-                  />
-                  <span>{suggestion}</span>
-                </li>
-              </Link>
-            ))}
-          </motion.ul>
-        )}
+                  <li
+                    onClick={() => handleSuggestionClick(suggestion)}
+                    className="z-30 flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1 text-sm hover:bg-teal-900 lg:text-base"
+                  >
+                    <img
+                      alt="Flag"
+                      src={FlagSelector(suggestion) === "España" ? "/es.webp" : "/pt.webp"}
+                      className="h-[1.3rem] w-[1.3rem] overflow-hidden rounded-xl"
+                    />
+                    <span>{suggestion}</span>
+                  </li>
+                </Link>
+              ))}
+            </motion.ul>
+          )}
+        </div>
       </AnimatePresence>
     </div>
   )

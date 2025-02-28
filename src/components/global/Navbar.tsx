@@ -28,7 +28,7 @@ function useScroll() {
       const currentTime = Date.now()
 
       // Ignorar cambios muy pequeños en el scroll (menos de 5px)
-      if (Math.abs(currentScrollY - lastScrollY.current) < 5) {
+      if (Math.abs(currentScrollY - lastScrollY.current) < 40) {
         return
       }
 
@@ -38,13 +38,13 @@ function useScroll() {
       }
 
       const isScrollingDown = currentScrollY > lastScrollY.current
-      const isAtTop = currentScrollY < 10 // Un poco más tolerante con "estar arriba"
+      const isAtTop = currentScrollY < 300
 
       setScrollState({ isScrollingDown, isAtTop })
 
       lastScrollY.current = currentScrollY
       lastTimeRef.current = currentTime
-    }, 100), // Aumentado el tiempo de throttle
+    }, 100),
     []
   )
 

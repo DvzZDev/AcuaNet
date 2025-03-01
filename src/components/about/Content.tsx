@@ -35,15 +35,13 @@ function Content() {
           </p>
           <p className="mb-4">
             Tras unas semanas de desarrollo, lancé la primera versión en junio de 2024. Al principio nadie la usaba, pero tampoco
-            me preocupaba mucho, ya que solo era un proyecto para practicar. Lo dejé en pausa unos meses mientras aprendía más y
-            trabajaba en otros proyectos.
+            me preocupaba mucho, ya que solo era un proyecto para practicar. Lo dejé en pausa unos meses mientras seguia
+            aprendiendo y mejorando mis dotes en programación y a la vez trabajaba en otros proyectos.
           </p>
           <p className="mb-4">
-            Tiempo después, con más experiencia y con la ayuda de mi amigo Ángel, decidí darle un giro a AcuaNet. Mejoramos el
-            diseño y lo enfocamos en los pescadores. Gracias a la difusión en Instagram y al feedback de la comunidad, la web
-            empezó a crecer y recibí muchas ideas para mejorarla.
+            Unos meses más tarde, con más experiencia y con la ayuda de mi amigo y sponsor de esta web Ángel de AGR Baits,
+            decidímos darle un giro a AcuaNet. Mejoré el diseño y enfocamos la página directamente en la pesca.
           </p>
-
           <div className="flex justify-center gap-2 py-7 lg:gap-8">
             <div className="text-center">
               <img
@@ -68,11 +66,14 @@ function Content() {
               </blockquote>
             </div>
           </div>
-
           <p className="mb-4">
-            En diciembre de 2024, lancé una nueva versión con una interfaz más atractiva, datos en tiempo real y mejor
-            rendimiento. A partir de ahí, AcuaNet se convirtió en una herramienta útil para muchos pescadores que la consultan
-            antes de cada salida. El proyecto sigue evolucionando, con mejoras constantes y nuevas ideas en camino.
+            Este año ya ha habído una gran actualización en la que se ha mejorado la interfaz mas aún y se han añadido nuevas
+            funcionalidades como los datos historicos, datos en tiempo real y AcuaVisor, un visor de mapas y ortofotos de los
+            embalses.
+          </p>
+          <p className="mb-4">
+            Gracias a la difusión en Instagram y al feedback de la comunidad, la web ya tiene mas de 6000 visitas mensuales por
+            pescadores de toda España y Portugal. Este año seguiremos mejorando la web y añadiendo nuevas funcionalidades.{" "}
           </p>
         </div>
 
@@ -86,7 +87,7 @@ function Content() {
           >
             repositorio de GitHub
           </a>
-          , donde cualquier persona puede hacer uso de los scrapers desarrollados en NodeJS.
+          , donde cualquier persona puede hacer uso de los scrapers que he desarollado en este tiempo en NodeJS. (En proceso...)
         </p>
 
         <p className="mb-4">
@@ -96,20 +97,21 @@ function Content() {
         </p>
 
         <p className="mb-4">
-          En la segunda versión de AcuaNet, cambié por completo la forma de recolectar los datos. Vi que los usuarios pedían
-          históricos de cada embalse, datos en tiempo real y más información que no podía obtener desde Embalses.net.
+          En la segunda versión de AcuaNet, decidí cambiar por completo la forma de recolectar los datos. Vi que los usuarios me
+          pedían históricos de cada embalse, datos en tiempo real y más información que no podía obtener fácilmente desde
+          Embalses.net.
         </p>
 
         <h3 className="mb-2 text-lg font-semibold text-emerald-800 italic">Datos Históricos</h3>
         <p className="mb-4">
-          Decidí investigar más a fondo y encontré una base de datos proporcionada por el MITECO, que contenía datos históricos
-          desde 1998 hasta la actualidad y se actualizaba semanalmente con los boletines de las cuencas hidrográficas.
+          Investigué más a fondo y encontré una base de datos proporcionada por el MITECO, que contenía datos históricos desde
+          1998 hasta la actualidad y se actualizaba semanalmente con los boletines de las cuencas hidrográficas.
         </p>
         <p className="mb-4">
-          El problema era que esta base de datos estaba en <strong>Microsoft Access</strong>, un formato poco práctico para
-          transformar los datos. Tras un buen proceso de programación, conseguí convertir la base de datos a <strong>JSON</strong>{" "}
-          y realizar un <strong>UPSERT</strong> en mi base de datos <strong>PostgreSQL</strong>. Esto me permitió insertar todos
-          los registros asegurando que no se duplicaran al añadir nuevos datos.
+          El problema era que esta base de datos estaba en <strong>Microsoft Access</strong>, un formato poco práctico y antiguo
+          para transformar los datos. Tras un buen proceso de programación, conseguí convertir la base de datos a{" "}
+          <strong>JSON</strong> y insertar todos los registros en mi base de datos <strong>PostgreSQL</strong> alojada en
+          Supabase.
         </p>
 
         <img
@@ -134,9 +136,9 @@ function Content() {
             plataforma centralizada, sino una distinta para cada cuenca hidrográfica.
           </p>
           <p className="mb-4">
-            Para solucionar esto, tuve que desarrollar un <strong>script personalizado</strong> para extraer datos de cada SAHI de
-            forma individual y configurar su ejecución automática mediante <strong>GitHub Actions</strong> cada hora. De esta
-            manera, AcuaNet puede ofrecer información actualizada constantemente.
+            Para solucionar esto, tuve que desarrollar varios <strong>scripts personalizado</strong> para extraer datos de cada
+            SAHI de forma individual y configurar su ejecución automática mediante <strong>GitHub Actions</strong> cada hora. De
+            esta manera, AcuaNet puede ofrecer información actualizada constantemente.
           </p>
         </div>
 
@@ -148,7 +150,7 @@ function Content() {
             className="mb-4 w-full max-w-full rounded-md"
           />
           <blockquote className="mt-3 flex h-fit items-center justify-center border-l-2 border-green-500 bg-green-100 py-1 text-xs lg:text-sm">
-            <p className="p-2">Recolección datos históricos (esto se ejecuta cada 2 horas)</p>
+            <p className="p-2">Recolección datos en tiempo real (esto se ejecuta cada 2 horas)</p>
           </blockquote>
         </div>
         <div>
@@ -159,22 +161,21 @@ function Content() {
           </p>
           <p className="mb-4">
             La página está hecha con <strong>Next.js 15</strong>, que es un framework de React que nos permite crear aplicaciones
-            web completas y súper escalables. <strong>Next.js</strong> facilita que las páginas se carguen rápido (¡y cuando
-            tienes tantos datos como AcuaNet, eso es muy importante!) gracias a su renderización del lado del servidor (SSR).
+            web completas y súper escalables. <strong>Next.js</strong> facilita que las páginas se carguen rápido teniendo en
+            cuenta la gran cantidad de datos que manejamos.
           </p>
           <p className="mb-4">
-            Para los estilos, utilizo <strong>Tailwind CSS</strong>, que es un framework que hace que diseñar sea muy rápido y
-            flexible. Me ha permitido crear una interfaz fácil de usar y que se adapta bien a dispositivos móviles. La idea es
-            que, cuando entres a AcuaNet, encuentres lo que necesitas rápidamente, sin perder tiempo.
+            Para los estilos, utilizo <strong>Tailwind CSS</strong>, que es una maravilla de framework que hace que diseñar sea
+            muy rápido y flexible. Me ha permitido crear una interfaz sencilla, fácil de usar y que da gusto ver. La idea es que,
+            cuando entres a AcuaNet, encuentres lo que necesitas rápidamente, sin perder tiempo.
           </p>
           <p className="mb-4">
             La información está guardada en <strong>PostgreSQL</strong>, una base de datos bastante robusta que maneja tanto los
             datos históricos como los de tiempo real. Para gestionar todo esto, usamos <strong>Supabase</strong>, que nos ayuda a
-            manejar los datos.
+            manejar y visualizar los datos en una plataforma muy completa y con buenos planes de precios.
           </p>
           <p className="mb-4">
-            El código está escrito en <strong>TypeScript</strong>, lo que nos da mayor seguridad al desarrollar. Esto nos ayuda a
-            evitar esos errores típicos que pueden aparecer cuando no tienes tipado estático.
+            El código está escrito en <strong>TypeScript</strong>, el cual nos ayuda a tener un código más limpio y seguro.
           </p>
         </div>
 
@@ -227,7 +228,7 @@ function Content() {
           </p>
           <p>
             Espero que te haya gustado esta pequeña memoria y que no te haya aburrido con tantas cosas técnicas. ¡Nos vemos por
-            AcuaNet! 😊
+            las orillas! 😊
           </p>
         </div>
       </div>

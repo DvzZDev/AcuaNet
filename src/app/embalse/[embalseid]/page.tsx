@@ -150,6 +150,7 @@ async function Page({
             capacidad_total={capacidad_total || 0}
             cota={lData?.[0]?.cota ?? 0}
             pais={pais || "N/D"}
+            fecha_modificacion={fecha ? new Date(fecha) : new Date()}
             variacion_ultima_semana={LastWeek.lastWeek ? LastWeek.lastWeek : variacion_ultima_semana || 0}
             variacion_ultima_semanapor={LastWeek.pctDifference ? LastWeek.pctDifference : variacion_ultima_semanapor || 0}
           />

@@ -12,7 +12,7 @@ export default function LiveData({ data }: { data: LiveData[] }) {
           <p>Datos no contrastados</p>
         </div>
         <div className="w-fit rounded-full bg-red-200 px-2 py-[2px] text-xs">
-          <p>⚠️ Flujo de actualización reducido hasta el 29/3 ⚠️</p>
+          <p>⚠️ Frecuencia de actualización reducida hasta el 29/3. ⚠️</p>
         </div>
       </div>
 

@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^1.0.13",
+    "@ai-sdk/react": "^1.2.5",
     "@justinribeiro/lite-youtube": "^1.7.1",
     "@lottiefiles/dotlottie-react": "^0.13.0",
     "@midudev/tailwind-animations": "^0.1.0",

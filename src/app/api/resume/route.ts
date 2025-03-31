@@ -5,8 +5,7 @@ import CacheClient from "@/cache"
 import hashText from "@/lib/HashText"
 
 const google = createGoogleGenerativeAI({
-  apiKey: process.env.GEMINI_APIKEY,
-  baseURL: "https://generativelanguage.googleapis.com/v1beta",
+  apiKey: process.env.GEMINI_APIKEY2,
 })
 
 await CacheClient.connect()
@@ -30,10 +29,10 @@ export async function POST(request: NextRequest) {
         return new Response(cacheQuery, { status: 200 })
       } else {
         const result = await streamText({
-          model: google("gemini-1.5-flash"),
+          model: google("models/gemini-2.0-flash"),
           prompt: requestBody.prompt,
           temperature: 0.4,
-          maxTokens: 150,
+          maxTokens: 180,
         }).toDataStreamResponse()
 
         const resultClone = result.clone()

@@ -11,9 +11,6 @@ export default function LiveData({ data }: { data: LiveData[] }) {
         <div className="w-fit rounded-full bg-orange-200 px-2 py-[2px] text-xs">
           <p>Datos no contrastados</p>
         </div>
-        <div className="w-fit rounded-full bg-red-200 px-2 py-[2px] text-xs">
-          <p>⚠️ Flujo de actualización reducido hasta el 29/3 ⚠️</p>
-        </div>
       </div>
 
       <section className="relative h-fit w-full overflow-hidden rounded-lg border border-green-900/30 bg-green-100 px-4 py-2 text-black">

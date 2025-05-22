@@ -11,7 +11,9 @@ export default async function FavSection() {
   const lv = LastWeekVariationF(data)
 
   return (
-    <section className={`mt-4 h-[16.5rem] w-[15rem] ${data.length > 0 ? "overflow-y-auto" : "overflow-hidden"} sm:w-[32rem]`}>
+    <section
+      className={`scroll-hide mt-4 h-[17.1rem] w-[15rem] ${data.length > 0 ? "overflow-x-hidden overflow-y-auto" : "overflow-hidden"} sm:w-[32rem]`}
+    >
       {data.length > 0 ? (
         <>
           <h2 className="mb-4 text-xl text-green-100 md:text-2xl">Embalses Favoritos</h2>

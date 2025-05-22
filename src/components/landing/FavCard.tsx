@@ -103,7 +103,7 @@ export const FavCard = ({ embalse }: { embalse: FavSection }) => {
             </div>
             <motion.span
               layout
-              className="min-w-[36px] text-right text-sm font-bold text-green-100"
+              className="text-right text-sm font-bold text-nowrap text-green-100"
             >
               {" "}
               <NumberFlow value={parseFloat(valoresAnimados.porcentaje.toFixed(0))} /> %

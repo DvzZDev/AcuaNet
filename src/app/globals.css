@@ -250,8 +250,29 @@ body::-webkit-scrollbar-thumb {
 }
 
 .scroll-hide {
-  scrollbar-width: thin;
-  scrollbar-color: #93ffb7 #dcfce7;
+  --sb-track-color: #011e16;
+  --sb-thumb-color: #93ffb7;
+  --sb-size: 6px;
+}
+
+.scroll-hide::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.scroll-hide::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 25px;
+}
+
+.scroll-hide::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 25px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .scroll-hide {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }
 
 ::selection {

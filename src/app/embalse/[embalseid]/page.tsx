@@ -103,9 +103,8 @@ async function Page({
     misma_semana_ultimo_año_por = yearCapacity?.por || 0
 
     media_10_anos = getSameWeekLast10YearsAverage(embalses) || 0
-    const actualVolume = embalses[0]?.volumen_actual || 0
-    const diffMedia10 = actualVolume - media_10_anos
-    pctMedia10 = media_10_anos ? Number(((diffMedia10 / media_10_anos) * 100).toFixed(2)) : 0
+    const capacidadTotal = embalses[0]?.capacidad_total || 1
+    pctMedia10 = capacidadTotal ? Number(((media_10_anos / capacidadTotal) * 100).toFixed(2)) : 0
   }
   console.log(decodedEmbalseid)
 

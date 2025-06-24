@@ -16,12 +16,6 @@ interface Coordinates {
 }
 
 export default function MapEmbData({ coords }: { coords: Coordinates }) {
-  // Validar coordenadas antes de renderizar
-  if (!coords || !coords.lat || !coords.lon) {
-    console.warn("Invalid coordinates for map:", coords)
-    return null
-  }
-
   return (
     <>
       <h2 className="text-2xl font-black text-green-950">Mapas</h2>
@@ -40,9 +34,6 @@ export default function MapEmbData({ coords }: { coords: Coordinates }) {
             className="rounded-lg"
             loading="lazy"
             src={`https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=${coords.lat}&lon=${coords.lon}&detailLat=${coords.lat}&detailLon=${coords.lon}&marker=true&message=true`}
-            onError={(e) => {
-              console.error("Error loading Windy iframe:", e)
-            }}
           ></iframe>
         </div>
       </section>

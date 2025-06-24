@@ -1,7 +1,7 @@
 "use client"
 
 import type { LiveData } from "@/types"
-import { DotLottieReact } from "@lottiefiles/dotlottie-react"
+// import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 
 export default function LiveData({ data }: { data: LiveData[] }) {
   return (
@@ -14,12 +14,12 @@ export default function LiveData({ data }: { data: LiveData[] }) {
       </div>
 
       <section className="relative h-fit w-full overflow-hidden rounded-lg border border-green-900/30 bg-green-100 px-4 py-2 text-black">
-        <DotLottieReact
-          src="https://lottie.host/30e44493-9a5d-40b0-94c7-90980ca0dfbf/IRfsIC8rii.lottie"
+        {/* <DotLottieReact
+          src="https://app.lottiefiles.com/share/fa4c008f-f284-4870-bc55-03b2ffa2d284"
           loop
           autoplay
           className="absolute -top-0 -right-6 w-25"
-        />
+        /> */}
         <table className="w-full table-fixed">
           <thead className="text-left text-xs text-[#3d7764] lg:text-sm">
             <tr>

@@ -47,7 +47,7 @@ export default function Info1() {
                 <path d="M21 21l-6 -6" />
               </svg>
             </div>
-            <h3 className="text-xl font-black text-white md:text-2xl">Busca tu embalse favorito</h3>
+            <h3 className="text-xl text-blue-100 md:text-xl">Busca tu embalse favorito</h3>
           </div>
           <div
             ref={ref2}
@@ -98,7 +98,7 @@ export default function Info1() {
                 <path d="M15 17v-3" />
               </svg>
             </div>
-            <h3 className="text-xl font-black text-green-50 md:text-2xl">Interpreta los datos</h3>
+            <h3 className="text-xl text-green-100 md:text-xl">Interpreta los datos</h3>
           </div>
 
           <div
@@ -127,7 +127,7 @@ export default function Info1() {
                 <path d="M16 5v-2" />
               </svg>
             </div>
-            <h3 className="text-xl font-black text-green-50 md:text-2xl">Saca un pepino</h3>
+            <h3 className="text-xl text-purple-100 md:text-xl">Saca un pepino</h3>
           </div>
           <div
             ref={ref6}

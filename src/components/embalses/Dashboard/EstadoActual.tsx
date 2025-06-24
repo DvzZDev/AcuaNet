@@ -1,8 +1,9 @@
 "use client"
 
 import NumberFlow from "@number-flow/react"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useInView } from "react-intersection-observer"
+import { motion, useInView as motionUseInView } from "motion/react"
 
 export default function EstadoActual({
   agua_embalsada,
@@ -12,6 +13,7 @@ export default function EstadoActual({
   pais,
   variacion_ultima_semana,
   variacion_ultima_semanapor,
+  fecha_modificacion,
 }: {
   agua_embalsada: number
   agua_embalsadapor: number
@@ -20,10 +22,14 @@ export default function EstadoActual({
   pais: string
   variacion_ultima_semana: number
   variacion_ultima_semanapor: number
+  fecha_modificacion: Date
 }) {
   const { ref, inView } = useInView({
     threshold: 0.8,
   })
+
+  const refM = useRef(null)
+  const isInViewMotion = motionUseInView(refM, { once: true })
 
   const [valoresAnimados, setValoresAnimados] = useState({
     agua_embalsada: 0,
@@ -51,8 +57,46 @@ export default function EstadoActual({
     <>
       <div className="flex flex-col gap-1">
         <h2 className="text-2xl font-bold text-green-950">Datos semanales</h2>
-        <div className="w-fit rounded-full bg-blue-200 px-2 py-[2px] text-xs">
-          <p>Datos contrastados</p>
+        <div className="flex items-center gap-3">
+          <div className="w-fit rounded-full bg-blue-200 px-2 py-[2px] text-xs">
+            <p>Datos contrastados</p>
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="flex w-fit items-center justify-center gap-1 rounded-full bg-cyan-200 px-2 py-[2px] text-xs">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="black"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path
+                  stroke="none"
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+                <path d="M16 3v4" />
+                <path d="M8 3v4" />
+                <path d="M4 11h16" />
+                <path d="M11 15h1" />
+                <path d="M12 15v3" />
+              </svg>
+              <p>
+                Últ. Boletin{" "}
+                {fecha_modificacion
+                  ? new Date(fecha_modificacion).toLocaleString("es-ES", {
+                      month: "short",
+                      day: "numeric",
+                    })
+                  : "N/A"}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -61,7 +105,10 @@ export default function EstadoActual({
         className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2"
       >
         {/* Agua Embalsada */}
-        <div className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32">
+        <div
+          ref={refM}
+          className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32"
+        >
           <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
             <div className="rounded-xs bg-green-400/50 p-2">
               <svg
@@ -97,10 +144,12 @@ export default function EstadoActual({
                 />
               </p>
               <div className="relative h-3 w-full rounded-full bg-green-950">
-                <div
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={isInViewMotion ? { width: `${agua_embalsadapor}%` } : { width: 0 }}
+                  transition={{ type: "spring", duration: 1 }}
                   className="relative h-3 rounded-full bg-[#1ca077]"
-                  style={{ width: `${agua_embalsadapor}%` }}
-                ></div>
+                ></motion.div>
               </div>
               <p className="text-sm font-semibold text-green-950">
                 <NumberFlow value={valoresAnimados.agua_embalsadapor} /> <span className="text-[#3d7764]">% capacidad total</span>

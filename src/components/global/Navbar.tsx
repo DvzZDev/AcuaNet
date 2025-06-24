@@ -150,7 +150,7 @@ const NavLinks = ({ mobile = false, onClickLink }: { mobile?: boolean; onClickLi
       onClick={onClickLink}
       className={`glow text-nowrap transition-all ${mobile ? "animate-fade-in animate-delay-400 hover:text-green-300" : ""}`}
     >
-      Quiénes Somos
+      Memoria AcuaNet
     </Link>
     <Link
       href="https://www.instagram.com/acuanet.es/"

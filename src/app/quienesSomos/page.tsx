@@ -39,7 +39,7 @@ function Page() {
   return (
     <>
       <section>
-        <Intro title="Sobre Nosotros" />
+        <Intro title="Memoria AcuaNet" />
         <Content />
       </section>
     </>

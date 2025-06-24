@@ -6,20 +6,17 @@ import type { IntroEmbalsesProps } from "@/types"
 export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weather, embalse, cuenca }: IntroEmbalsesProps) {
   const moonPhases = getMoonPhasesForWeekAsRow()
   const prompt = `
-  Genera un pronóstico detallado de pesca para el fin de semana utilizando los siguientes datos. El pronóstico debe ser claro conciso y no exceder los 1000 caracteres. No incluyas un título:
+Genera un resumen breve y natural sobre las condiciones de pesca en los próximos días basándote en los siguientes datos. Usa frases fluidas y útiles, sin listas ni formato estructurado.
 
-  - Pronóstico del tiempo, importante usar datos relevantes para la pesca.
-  ${JSON.stringify(weather, null, 2)}
+📊 **Datos:**
+- **Clima:** ${JSON.stringify(weather, null, 2)}
+- **Embalse:** ${embalse ? JSON.stringify(embalse[0], null, 2) : "N/A"}
+- **Fase lunar:** ${moonPhases}
+- **Datos adicionales:** ${JSON.stringify(cuenca, null, 2)}
 
-  - Nivel de los embalses:
-  ${embalse ? JSON.stringify(embalse[0], null, 2) : "N/A"}
-
-  - Fases de la luna:
-  ${moonPhases}
-
-  - Información adicional de la cuenca:
-  ${JSON.stringify(cuenca, null, 2)}
-  `
+🔹 **Ejemplo de Respuesta Esperada:**  
+"Este fin de semana se esperan temperaturas alrededor de los 20°C. El sábado habrá un pico de actividad con vientos fuertes superando los 28 km/h a las 18:00. El domingo será más estable con actividad media. El embalse está alto, al 89%, así que tenlo en cuenta para acceder a ciertas zonas."
+`
 
   const { error, completion } = GetResume({ prompt })
 

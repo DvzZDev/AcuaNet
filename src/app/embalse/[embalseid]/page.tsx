@@ -13,7 +13,7 @@ import GetCoordinates from "@/lib/GetCoordinates"
 import GetWeather from "@/lib/GetWeather"
 import ButtonUp from "@/components/lunar/up"
 import MapEmbData from "@/components/embalses/Dashboard/MapDynamic"
-import TableWeather from "@/components/weather/TableWeather"
+import WeatherWrapper from "@/components/weather/WeatherWrapper"
 import Publi from "@/components/embalses/Dashboard/Publi"
 import FilterHistoricalData from "@/lib/FilterHistoricalData"
 import Chart from "@/components/embalses/Dashboard/Chart"
@@ -59,6 +59,10 @@ async function Page({
   let coordsData
   let weatherData
 
+  // Logging para diagnóstico
+  console.log("Embalse:", decodedEmbalseid)
+  console.log("Weather API Key available:", !!process.env.NEXT_PUBLIC_WEATHER_API_KEY)
+
   if (pt) {
     resEmbalse = await GetPortugalData(decodedEmbalseid.toLowerCase())
     if (resEmbalse.length > 0) {
@@ -66,7 +70,14 @@ async function Page({
         lat: resEmbalse[0].lat,
         lon: resEmbalse[0].lon,
       } as Coordinates
-      weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+      console.log("Portugal coords:", coordsData)
+
+      try {
+        weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+        console.log("Weather data obtained:", !!weatherData)
+      } catch (error) {
+        console.error("Error getting weather data:", error)
+      }
     }
   } else {
     const MCoords = await GetManualCoords(refinedEmbalseid)
@@ -76,16 +87,28 @@ async function Page({
         lat: MCoords[0].lat,
         lon: MCoords[0].long,
       } as Coordinates
-      console.log(MCoords)
+      console.log("Manual coords:", coordsData)
     } else {
-      coordsData = await GetCoordinates(decodedEmbalseid)
+      try {
+        coordsData = await GetCoordinates(decodedEmbalseid)
+        console.log("OSM coords:", coordsData)
+      } catch (error) {
+        console.error("Error getting coordinates:", error)
+      }
     }
 
     const embalses = (await GetHistoricalData(decodedEmbalseid)) as unknown as Embalses[]
     resEmbalse = embalses
 
-    if (coordsData.lat && coordsData.lon) {
-      weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+    if (coordsData?.lat && coordsData?.lon) {
+      try {
+        weatherData = await GetWeather(coordsData.lat, coordsData.lon)
+        console.log("Weather data obtained:", !!weatherData)
+      } catch (error) {
+        console.error("Error getting weather data:", error)
+      }
+    } else {
+      console.warn("No coordinates available for weather")
     }
 
     if (!resEmbalse) {
@@ -106,7 +129,6 @@ async function Page({
     const capacidadTotal = embalses[0]?.capacidad_total || 1
     pctMedia10 = capacidadTotal ? Number(((media_10_anos / capacidadTotal) * 100).toFixed(2)) : 0
   }
-  console.log(decodedEmbalseid)
 
   const {
     embalse,
@@ -176,7 +198,10 @@ async function Page({
           ) : (
             ""
           )}
-          {weatherData && <TableWeather data={weatherData} />}
+          <WeatherWrapper
+            weatherData={weatherData || null}
+            embalseName={decodedEmbalseid}
+          />
           {coordsData?.lat ? <MapEmbData coords={coordsData} /> : null}
           <div className="flex flex-wrap items-center justify-center gap-3 rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg">
             <a

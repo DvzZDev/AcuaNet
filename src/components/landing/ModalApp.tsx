@@ -82,19 +82,21 @@ export default function ModalApp() {
               <li>🔔 Notificaciones personalizadas con información actualizada en tiempo real.</li>
             </ul>
 
-            <div className="mt-2 flex w-full flex-row items-center justify-center gap-2">
-              <div className="flex h-full w-1/2">
+            <div className="mt-2 flex w-full flex-row items-center justify-center gap-2 aspect-auto">
+              <div className="flex h-full w-1/2 animate-fade-in">
                 <img
                   className="h-full w-full rounded-xl object-cover"
                   src="/CatchReport.png"
                   alt="Catch Report Image Preview"
                 />
               </div>
-              <div className="flex h-full w-1/2">
+              <div className="flex h-full w-1/2 animate-fade-in">
                 <video
                   className="h-full w-full rounded-xl object-cover"
                   src="/CatchGallery.mp4"
                   autoPlay
+                  playsInline
+                  preload="auto"
                   loop
                   muted
                 />

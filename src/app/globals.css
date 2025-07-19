@@ -370,3 +370,12 @@ number-flow-react::part(suffix) {
   font-size: 0.6em;
   font-weight: 500;
 }
+
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

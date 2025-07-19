@@ -178,19 +178,43 @@ async function Page({
           )}
           {weatherData && <TableWeather data={weatherData} />}
           {coordsData?.lat ? <MapEmbData coords={coordsData} /> : null}
-          <div className="flex flex-wrap items-center justify-center gap-3 rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg">
+          <h2 className="text-2xl font-bold text-yellow-600">Patrocinadores y anuncios</h2>
+
+          <div className="flex flex-col md:flex-row gap-6 items-center justify-evenly rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg">
             <a
               href="https://www.agrbaits.es/"
               target="blank"
-              className="transition-all hover:scale-105"
+              className="flex items-center  transition-all hover:scale-105"
+              style={{ aspectRatio: "auto" }}
             >
               <img
                 src="/Sponspors/AGRBaits.webp"
                 alt="AGR Baits"
-                className="h-28 md:h-36"
+                className="h-24 object-contain md:h-36"
                 draggable="false"
+                style={{ aspectRatio: "auto" }}
               />
             </a>
+            <div className="mt-2 flex flex-1 flex-col md:flex-row items-center justify-center gap-4">
+              <p className="rounded-xl bg-green-100 p-2 text-left font-semibold text-green-950 text-sm lg:text-base">
+                La aplicación móvil de AcuaNet estará disponible a <strong>finales de verano</strong>. Actualmente se encuentra en
+                su fase final de desarrollo.
+              </p>
+              <img
+                className="h-auto w-52 rounded-xl object-contain"
+                src="/CatchReport.png"
+                alt="Catch Report Image Preview"
+              />
+              <video
+                className="h-auto w-52 rounded-xl object-contain"
+                src="/CatchGallery.mp4"
+                autoPlay
+                playsInline
+                preload="auto"
+                loop
+                muted
+              />
+            </div>
           </div>
           <h2 className="text-2xl font-bold text-green-950">Calendario Lunar</h2>
           <section className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2">

@@ -5,6 +5,7 @@ import { ViewTransitions } from "next-view-transitions"
 import dotenv from "dotenv"
 
 const ModalCookies = dynamic(() => import("@/components/landing/ModalCookies"), { ssr: false })
+const ModalApp = dynamic(() => import("@/components/landing/ModalApp"), { ssr: false })
 
 dotenv.config()
 
@@ -28,6 +29,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <PostHogProvider client={posthog}>
       <ViewTransitions>
         <ModalCookies />
+        <ModalApp />
         {children}
       </ViewTransitions>
     </PostHogProvider>

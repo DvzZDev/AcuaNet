@@ -31,6 +31,7 @@
     "clsx": "^2.1.1",
     "dotenv": "16.4.5",
     "drizzle-orm": "0.34.1",
+    "fuse.js": "^7.1.0",
     "hamburger-react": "^2.5.2",
     "js-cookie": "^3.0.5",
     "leaflet": "1.4.x",

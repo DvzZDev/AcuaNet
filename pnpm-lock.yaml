@@ -59,6 +59,9 @@ importers:
       drizzle-orm:
         specifier: 0.34.1
         version: 0.34.1(@opentelemetry/api@1.9.0)(@types/react@19.0.8)(postgres@3.4.4)(react@19.0.0)
+      fuse.js:
+        specifier: ^7.1.0
+        version: 7.1.0
       hamburger-react:
         specifier: ^2.5.2
         version: 2.5.2(react@19.0.0)
@@ -1926,6 +1929,10 @@ packages:
 
   functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
+
+  fuse.js@7.1.0:
+    resolution: {integrity: sha512-trLf4SzuuUxfusZADLINj+dE8clK1frKdmqiJNb1Es75fmI5oY6X2mxLVUciLLjxqw/xr72Dhy+lER6dGd02FQ==}
+    engines: {node: '>=10'}
 
   generic-pool@3.9.0:
     resolution: {integrity: sha512-hymDOu5B53XvN4QT9dBmZxPX4CWhBPPLguTZ9MMFeFa/Kg0xWVfylOVNlJji/E7yTZWFd/q9GO5TxDLq156D7g==}
@@ -4609,6 +4616,8 @@ snapshots:
       is-callable: 1.2.7
 
   functions-have-names@1.2.3: {}
+
+  fuse.js@7.1.0: {}
 
   generic-pool@3.9.0: {}
 

@@ -88,6 +88,8 @@ export const PortugalData = pgTable(
     lat: doublePrecision("lat"),
     lon: doublePrecision("lon"),
     pais: varchar("pais"),
+    cota: doublePrecision("cota"),
+    cota_date: varchar("cota_date"),
   },
   (table) => ({
     pk: primaryKey({ columns: [table.embalse] }),

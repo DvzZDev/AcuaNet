@@ -1,14 +1,11 @@
+import { createClient } from "@supabase/supabase-js"
 import { config } from "dotenv"
-import { drizzle } from "drizzle-orm/postgres-js"
-import postgres from "postgres"
 
 config({ path: ".env" })
 
-// Configuración del pool de conexiones
-const client = postgres(process.env.DATABASE_URL!, {
-  max: 20, // Número máximo de conexiones activas en el pool
-  idle_timeout: 5, // Tiempo máximo que una conexión inactiva estará abierta (en segundos)
-  connect_timeout: 30, // Tiempo máximo para intentar una conexión (en segundos)
-})
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
-export const db = drizzle(client)
+export const supabase = createClient(supabaseUrl, supabaseKey)
+
+export const db = supabase

@@ -1,7 +1,8 @@
-import FavSection from "./FavSection"
+// import FavSection from "./FavSection"
 import SearchEmb from "./SearchEmb"
 import { Suspense } from "react"
 import SkeletonFavorites from "../skeletons/SkeletonFavorites"
+import FavSection from "./FavSection"
 
 export default async function Hero() {
   return (

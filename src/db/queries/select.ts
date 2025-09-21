@@ -1,76 +1,112 @@
-import { db } from "@/db"
-import { Cuencas, España, Embalses, AllData, LiveData, PortugalData, EmbalsesCoords } from "@/db/schema"
-import { desc, eq, inArray, sql } from "drizzle-orm"
+import { supabase } from "@/db"
+import { Cuencas, España, Embalses, AllData, LiveData, PortugalData, EmbalsesCoords, TABLE_NAMES } from "@/db/schema"
 
-export async function GetCuencas() {
-  return db.select().from(Cuencas)
+export async function GetCuencas(): Promise<Cuencas[]> {
+  const { data, error } = await supabase.from(TABLE_NAMES.CUENCAS).select("*")
+
+  if (error) {
+    console.error("Error fetching cuencas:", error)
+    throw new Error(`Error fetching cuencas: ${error.message}`)
+  }
+
+  return data || []
 }
 
-export async function GetEsp() {
-  return db.select().from(España)
+export async function GetEsp(): Promise<España[]> {
+  const { data, error } = await supabase.from(TABLE_NAMES.ESPAÑA).select("*")
+
+  if (error) {
+    console.error("Error fetching España data:", error)
+    throw new Error(`Error fetching España data: ${error.message}`)
+  }
+
+  return data || []
 }
 
-export async function GetEmbalses() {
-  return db.select().from(Embalses)
+export async function GetEmbalses(): Promise<Embalses[]> {
+  const { data, error } = await supabase.from(TABLE_NAMES.EMBALSES).select("*")
+
+  if (error) {
+    console.error("Error fetching embalses:", error)
+    throw new Error(`Error fetching embalses: ${error.message}`)
+  }
+
+  return data || []
 }
 
-export async function GetEmbalseByName(ids: string[]) {
-  return db
-    .select()
-    .from(
-      db
-        .select({
-          id: AllData.id,
-          embalse: AllData.embalse,
-          cuenca: AllData.cuenca,
-          fecha: AllData.fecha,
-          capacidad_total: AllData.capacidad_total,
-          volumen_actual: AllData.volumen_actual,
-          porcentaje: AllData.porcentaje,
-          // Match the exact case in the column alias
-          rowNum: sql<number>`ROW_NUMBER() OVER (PARTITION BY ${AllData.embalse} ORDER BY ${AllData.fecha} DESC)`.as("rowNum"),
-        })
-        .from(AllData)
-        .where(
-          inArray(
-            sql`LOWER(${AllData.embalse})`,
-            ids.map((id) => id.toLowerCase())
-          )
-        )
-        .as("ranked_data")
+export async function GetEmbalseByName(ids: string[]): Promise<AllData[]> {
+  const lowerCaseIds = ids.map((id) => id.toLowerCase())
+
+  const { data, error } = await supabase.rpc("get_embalse_by_name_with_row_number", {
+    embalse_names: lowerCaseIds,
+  })
+
+  if (error) {
+    console.error("Error fetching embalse by name:", error)
+    throw new Error(`Error fetching embalse by name: ${error.message}`)
+  }
+
+  return data || []
+}
+
+export async function GetLiveData(emb: string): Promise<LiveData[]> {
+  const { data, error } = await supabase
+    .from(TABLE_NAMES.LIVE_DATA)
+    .select("*")
+    .ilike("embalse", emb)
+    .order("timestamp", { ascending: false })
+
+  if (error) {
+    console.error("Error fetching live data:", error)
+    throw new Error(`Error fetching live data: ${error.message}`)
+  }
+
+  return data || []
+}
+
+export async function GetHistoricalData(emb: string): Promise<AllData[]> {
+  const { data, error } = await supabase
+    .from(TABLE_NAMES.ALL_DATA)
+    .select(
+      `
+      id,
+      embalse,
+      cuenca,
+      fecha,
+      capacidad_total,
+      volumen_actual,
+      porcentaje
+    `
     )
-    .where(sql`"rowNum" <= 2`)
-}
-export async function GetLiveData(emb: string) {
-  return db
-    .select()
-    .from(LiveData)
-    .where(sql`LOWER(${LiveData.embalse}) = LOWER(${emb})`)
-    .orderBy(desc(LiveData.timestamp))
-}
+    .ilike("embalse", emb)
+    .order("fecha", { ascending: false })
 
-export async function GetHistoricalData(emb: string) {
-  const result = await db
-    .select({
-      id: AllData.id,
-      embalse: AllData.embalse,
-      cuenca: AllData.cuenca,
-      fecha: sql<Date>`COALESCE(${AllData.fecha}, NOW())`,
-      capacidad_total: AllData.capacidad_total,
-      volumen_actual: AllData.volumen_actual,
-      porcentaje: AllData.porcentaje,
-    })
-    .from(AllData)
-    .where(sql`LOWER(${AllData.embalse}) = LOWER(${emb})`)
-    .orderBy(desc(AllData.fecha))
+  if (error) {
+    console.error("Error fetching historical data:", error)
+    throw new Error(`Error fetching historical data: ${error.message}`)
+  }
 
-  return result
+  return data || []
 }
 
-export async function GetPortugalData(emb: string) {
-  return db.select().from(PortugalData).where(eq(PortugalData.embalse, emb))
+export async function GetPortugalData(emb: string): Promise<PortugalData[]> {
+  const { data, error } = await supabase.from(TABLE_NAMES.PORTUGAL_DATA).select("*").eq("embalse", emb)
+
+  if (error) {
+    console.error("Error fetching Portugal data:", error)
+    throw new Error(`Error fetching Portugal data: ${error.message}`)
+  }
+
+  return data || []
 }
 
-export async function GetManualCoords(emb: string) {
-  return db.select().from(EmbalsesCoords).where(eq(EmbalsesCoords.embalse, emb))
+export async function GetManualCoords(emb: string): Promise<EmbalsesCoords[]> {
+  const { data, error } = await supabase.from(TABLE_NAMES.EMBALSES_COORDS).select("*").eq("embalse", emb)
+
+  if (error) {
+    console.error("Error fetching manual coords:", error)
+    throw new Error(`Error fetching manual coords: ${error.message}`)
+  }
+
+  return data || []
 }

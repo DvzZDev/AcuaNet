@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useMemo } from "react"
 import { useRouter } from "next/navigation"
+import Fuse from "fuse.js"
 
 const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: () => void, isMenuOpen?: boolean) => {
   const router = useRouter()
@@ -7,6 +8,19 @@ const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: 
   const [suggestions, setSuggestions] = useState<string[]>([])
   const [err, setErr] = useState(false)
   const [fine, setFine] = useState(false)
+
+  // Initialize Fuse.js with configuration
+  const fuse = useMemo(
+    () =>
+      new Fuse(data, {
+        keys: ["nombre"],
+        threshold: 0.4,
+        includeScore: true,
+        minMatchCharLength: 1,
+      }),
+    [data]
+  )
+
   const errHandler = () => {
     setErr(true)
     setType("")
@@ -15,11 +29,12 @@ const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: 
   const handletype = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value
     setType(inputValue)
-    if (inputValue) {
-      const filteredSuggestions = data
-        .filter((embalse) => embalse.nombre.toLowerCase().includes(inputValue.toLowerCase()))
-        .map((embalse) => embalse.nombre)
-      setSuggestions(filteredSuggestions)
+    if (inputValue.trim()) {
+      const searchResults = fuse
+        .search(inputValue)
+        .slice(0, 5)
+        .map((result) => result.item.nombre)
+      setSuggestions(searchResults)
     } else {
       setSuggestions([])
     }
@@ -36,18 +51,38 @@ const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: 
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const selectedEmbalse = data.find((embalse) => embalse.nombre.toLowerCase() === type.toLowerCase())
-    if (selectedEmbalse) {
-      router.push(`/embalse/${selectedEmbalse.nombre.replace(/ /g, "-").toLowerCase()}`)
+    if (!type.trim()) return
+
+    // First try to find exact match
+    const exactMatch = data.find((embalse) => embalse.nombre.toLowerCase() === type.toLowerCase().trim())
+
+    if (exactMatch) {
+      router.push(
+        `/embalse/${exactMatch.nombre.replace(/ /g, "-").toLowerCase()}${exactMatch.pais === "Portugal" ? "?pt=true" : ""}`
+      )
       setFine(true)
       setErr(false)
       setSuggestions([])
       setType("")
       if (isMenuOpen && closeMenu) closeMenu()
     } else {
-      errHandler()
-      setFine(false)
-      setSuggestions([])
+      // If no exact match, try fuzzy search and take the best result
+      const searchResults = fuse.search(type)
+      if (searchResults.length > 0 && searchResults[0].score && searchResults[0].score < 0.6) {
+        const bestMatch = searchResults[0].item
+        router.push(
+          `/embalse/${bestMatch.nombre.replace(/ /g, "-").toLowerCase()}${bestMatch.pais === "Portugal" ? "?pt=true" : ""}`
+        )
+        setFine(true)
+        setErr(false)
+        setSuggestions([])
+        setType("")
+        if (isMenuOpen && closeMenu) closeMenu()
+      } else {
+        errHandler()
+        setFine(false)
+        setSuggestions([])
+      }
     }
   }
 

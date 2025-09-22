@@ -7,7 +7,7 @@ import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"
 import EstadoActual from "@/components/embalses/Dashboard/EstadoActual"
 import HistorialCambios from "@/components/embalses/Dashboard/HistorialCambios"
 import LunarCalendar from "@/components/lunar/lunarcal"
-import { LastWeekVariation, GetCountry, getSameWeekLastYearCapacity, getSameWeekLast10YearsAverage } from "@/lib/DataEmbalses"
+import { LastWeekVariation, getSameWeekLastYearCapacity, getSameWeekLast10YearsAverage } from "@/lib/DataEmbalses"
 import LiveData from "@/components/embalses/Dashboard/LiveData"
 import GetCoordinates from "@/lib/GetCoordinates"
 import GetWeather from "@/lib/GetWeather"
@@ -51,7 +51,6 @@ async function Page({
   let pActual = 0
   let LastWeek = { lastWeek: 0, pctDifference: 0 }
   let lData
-  let pais
   let misma_semana_ultimo_año_vol = 0
   let misma_semana_ultimo_año_por = 0
   let media_10_anos = 0
@@ -60,7 +59,12 @@ async function Page({
   let weatherData
 
   if (pt) {
-    resEmbalse = await GetPortugalData(decodedEmbalseid.toLowerCase())
+    const portugalData = await GetPortugalData(decodedEmbalseid.toLowerCase())
+    // Convertir el cota_date de string a Date para mantener consistencia con el tipo Embalses
+    resEmbalse = portugalData.map((item) => ({
+      ...item,
+      cota_date: item.cota_date ? new Date(item.cota_date) : null,
+    }))
     if (resEmbalse.length > 0) {
       coordsData = {
         lat: resEmbalse[0].lat,
@@ -96,7 +100,6 @@ async function Page({
     LastWeek = LastWeekVariation(embalses.slice(0, 2))
     lData = await GetLiveData(decodedEmbalseid)
     FilterHistoricalData({ data: embalses })
-    pais = GetCountry(decodedEmbalseid)
 
     const yearCapacity = getSameWeekLastYearCapacity(embalses)
     misma_semana_ultimo_año_vol = yearCapacity?.vol || 0
@@ -118,6 +121,8 @@ async function Page({
     variacion_ultima_semana,
     variacion_ultima_semanapor,
   } = resEmbalse[0]
+
+  console.log(resEmbalse)
 
   return (
     <>
@@ -147,11 +152,12 @@ async function Page({
             agua_embalsada={volumen_actual || 0}
             agua_embalsadapor={pActual ? pActual : porcentaje || 0}
             capacidad_total={capacidad_total || 0}
-            cota={lData?.[0]?.cota ?? 0}
-            pais={pais || "N/D"}
+            cota={pt ? (resEmbalse[0]?.cota ?? 0) : (lData?.[0]?.cota ?? 0)}
             fecha_modificacion={fecha ? new Date(fecha) : new Date()}
             variacion_ultima_semana={LastWeek.lastWeek ? LastWeek.lastWeek : variacion_ultima_semana || 0}
             variacion_ultima_semanapor={LastWeek.pctDifference ? LastWeek.pctDifference : variacion_ultima_semanapor || 0}
+            pt={!!pt}
+            cota_date={resEmbalse[0]?.cota_date ? new Date(resEmbalse[0].cota_date) : null}
           />
 
           {!pt ? (
@@ -180,11 +186,11 @@ async function Page({
           {coordsData?.lat ? <MapEmbData coords={coordsData} /> : null}
           <h2 className="text-2xl font-bold text-yellow-600">Patrocinadores y anuncios</h2>
 
-          <div className="flex flex-col md:flex-row gap-6 items-center justify-evenly rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg">
+          <div className="flex flex-col items-center justify-evenly gap-6 rounded-xl bg-emerald-900/25 p-5 backdrop-blur-lg md:flex-row">
             <a
               href="https://www.agrbaits.es/"
               target="blank"
-              className="flex items-center  transition-all hover:scale-105"
+              className="flex items-center transition-all hover:scale-105"
               style={{ aspectRatio: "auto" }}
             >
               <img
@@ -195,8 +201,8 @@ async function Page({
                 style={{ aspectRatio: "auto" }}
               />
             </a>
-            <div className="mt-2 flex flex-1 flex-col md:flex-row items-center justify-center gap-4">
-              <p className="rounded-xl bg-green-100 p-2 text-left font-semibold text-green-950 text-sm lg:text-base">
+            <div className="mt-2 flex flex-1 flex-col items-center justify-center gap-4 md:flex-row">
+              <p className="rounded-xl bg-green-100 p-2 text-left text-sm font-semibold text-green-950 lg:text-base">
                 La aplicación móvil de AcuaNet estará disponible a <strong>finales de verano</strong>. Actualmente se encuentra en
                 su fase final de desarrollo.
               </p>

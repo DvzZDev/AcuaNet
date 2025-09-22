@@ -52,6 +52,8 @@ export interface Embalses {
   lat?: number | null
   lon?: number | null
   pais?: string | null
+  cota?: number | null
+  cota_date?: Date | null
 }
 export interface WeatherTypes {
   queryCost: number

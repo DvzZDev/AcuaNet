@@ -4,25 +4,28 @@ import NumberFlow from "@number-flow/react"
 import { useEffect, useState, useRef } from "react"
 import { useInView } from "react-intersection-observer"
 import { motion, useInView as motionUseInView } from "motion/react"
+import { twMerge } from "tailwind-merge"
 
 export default function EstadoActual({
   agua_embalsada,
   agua_embalsadapor,
   capacidad_total,
   cota,
-  pais,
   variacion_ultima_semana,
+  cota_date,
   variacion_ultima_semanapor,
   fecha_modificacion,
+  pt,
 }: {
   agua_embalsada: number
   agua_embalsadapor: number
   capacidad_total: number
   cota: number
-  pais: string
+  cota_date: Date | null
   variacion_ultima_semana: number
   variacion_ultima_semanapor: number
   fecha_modificacion: Date
+  pt: boolean
 }) {
   const { ref, inView } = useInView({
     threshold: 0.8,
@@ -36,6 +39,7 @@ export default function EstadoActual({
     agua_embalsadapor: 0,
     capacidad_total: 0,
     cota: 0,
+    cota_date: null as Date | null,
     variacion_ultima_semana: 0,
     variacion_ultima_semanapor: 0,
   })
@@ -49,9 +53,19 @@ export default function EstadoActual({
         cota,
         variacion_ultima_semana,
         variacion_ultima_semanapor,
+        cota_date,
       })
     }
-  }, [inView, agua_embalsada, agua_embalsadapor, capacidad_total, cota, variacion_ultima_semana, variacion_ultima_semanapor])
+  }, [
+    inView,
+    agua_embalsada,
+    agua_embalsadapor,
+    cota_date,
+    capacidad_total,
+    cota,
+    variacion_ultima_semana,
+    variacion_ultima_semanapor,
+  ])
 
   return (
     <>
@@ -107,9 +121,9 @@ export default function EstadoActual({
         {/* Agua Embalsada */}
         <div
           ref={refM}
-          className="flex flex-col gap-4 md:flex-row md:gap-10 lg:gap-32"
+          className={twMerge("grid grid-cols-1 justify-between gap-4 md:grid-cols-2", pt ? "lg:grid-cols-4" : "lg:grid-cols-3")}
         >
-          <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
+          <div className="flex w-full items-center gap-5 rounded-md p-2">
             <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -156,8 +170,7 @@ export default function EstadoActual({
               </p>
             </div>
           </div>
-          {/* Capacidad Total */}
-          <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
+          <div className="flex w-full items-center gap-5 rounded-md p-2">
             <div className="rounded-xs bg-green-400/50 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -193,42 +206,8 @@ export default function EstadoActual({
             </div>
           </div>
 
-          {pais === "España" ? (
-            <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
-              <div className="rounded-xs bg-green-400/50 p-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-mountain"
-                >
-                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
-                </svg>
-              </div>
-              <div className="flex w-full flex-col gap-2">
-                <p className="text-lg leading-none font-semibold text-[#3d7764]">Nivel (Cota)</p>
-                <p className="text-3xl font-black text-green-950">
-                  {cota > 0 ? (
-                    <>
-                      <NumberFlow
-                        suffix="msnm"
-                        value={valoresAnimados.cota}
-                      />
-                    </>
-                  ) : (
-                    "N/D"
-                  )}
-                </p>
-              </div>
-            </div>
-          ) : (
-            <div className="flex w-full items-center gap-5 rounded-md p-2 md:w-1/3">
+          {pt && (
+            <div className="flex w-full items-center gap-5 rounded-md p-2">
               <div className="rounded-xs bg-green-400/50 p-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -266,6 +245,70 @@ export default function EstadoActual({
                 <p className="text-sm font-semibold text-[#3d7764]">
                   <NumberFlow value={valoresAnimados.variacion_ultima_semanapor} />% capacidad total
                 </p>
+              </div>
+            </div>
+          )}
+
+          {/* Nivel (Cota) - Condicional */}
+          {cota != null && cota !== undefined && cota > 0 ? (
+            <div className="flex w-full items-center gap-5 rounded-md p-2">
+              <div className="rounded-xs bg-green-400/50 p-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-mountain"
+                >
+                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                </svg>
+              </div>
+              <div className="flex w-full flex-col gap-2">
+                <p className="text-lg leading-none font-semibold text-[#3d7764]">Nivel (Cota)</p>
+                <p className="text-3xl font-black text-green-950">
+                  <NumberFlow
+                    suffix="msnm"
+                    value={valoresAnimados.cota}
+                  />
+                </p>
+                {pt && valoresAnimados.cota_date && (
+                  <p className="text-sm font-semibold text-[#3d7764]">
+                    Últ. medición:{" "}
+                    {new Date(valoresAnimados.cota_date).toLocaleDateString("es-ES", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </p>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="flex w-full items-center gap-5 rounded-md p-2">
+              <div className="rounded-xs bg-green-400/50 p-2 opacity-50">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-mountain"
+                >
+                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                </svg>
+              </div>
+              <div className="flex w-full flex-col gap-2">
+                <p className="text-lg leading-none font-semibold text-[#3d7764] opacity-50">Nivel (Cota)</p>
+                <p className="text-3xl font-black text-green-950 opacity-50">N/D</p>
               </div>
             </div>
           )}

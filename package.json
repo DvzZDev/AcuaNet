@@ -1,6 +1,6 @@
 {
-  "name": "acua",
-  "version": "0.1.0",
+  "name": "acuanet-web",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint:fix": "eslint --fix .",
-    "check-types": "tsc --noemit",
+    "ct": "tsc --noemit",
     "lint": "eslint . && pnpm run check-types",
     "format": "prettier --write .",
     "remove": "rm -rf pnpm-lock.yaml node_modules"

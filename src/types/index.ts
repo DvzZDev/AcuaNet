@@ -18,7 +18,7 @@ export interface IntroEmbalsesProps {
 
 export interface Cuenca {
   cuenca: string
-  fecha_modificacion: Date | null
+  fecha_modificacion?: Date | null | undefined
   capacidad: number | null
   embalsada: number | null
   variacion: number | null

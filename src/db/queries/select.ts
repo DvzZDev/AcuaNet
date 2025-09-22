@@ -1,5 +1,5 @@
+import { AllData, Cuencas, Embalses, EmbalsesCoords, España, LiveData, PortugalData, TABLE_NAMES } from "@/db/schema"
 import { withServerClient } from "@/db/server"
-import { Cuencas, España, Embalses, AllData, LiveData, PortugalData, EmbalsesCoords, TABLE_NAMES } from "@/db/schema"
 
 export async function GetCuencas(): Promise<Cuencas[]> {
   return withServerClient(async (supabase) => {
@@ -102,14 +102,15 @@ export async function GetHistoricalData(emb: string): Promise<AllData[]> {
 }
 
 export async function GetPortugalData(emb: string): Promise<PortugalData[]> {
+  console.log("Fetching Portugal data for embalse:", emb)
   return withServerClient(async (supabase) => {
-    const { data, error } = await supabase.from(TABLE_NAMES.PORTUGAL_DATA).select("*").eq("embalse", emb)
+    const { data, error } = await supabase.from(TABLE_NAMES.PORTUGAL_DATA).select("*").eq("nombre_embalse", emb)
 
     if (error) {
       console.error("Error fetching Portugal data:", error)
       throw new Error(`Error fetching Portugal data: ${error.message}`)
     }
-
+    console.log("Fetched Portugal data:", data)
     return data || []
   })
 }

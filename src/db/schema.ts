@@ -47,7 +47,7 @@ export interface AllData {
 
 export interface PortugalData {
   fecha?: Date | null
-  embalse: string
+  nombre_embalse: string
   cuenca?: string | null
   volumen_actual?: number | null
   porcentaje?: number | null
@@ -56,6 +56,8 @@ export interface PortugalData {
   capacidad_total?: number | null
   lat?: number | null
   lon?: number | null
+  cota?: number | null
+  cota_date?: Date | null
   pais?: string | null
 }
 

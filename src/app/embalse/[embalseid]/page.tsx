@@ -1,22 +1,22 @@
-import type { Embalses } from "@/types"
-import TitleEmb from "@/components/embalses/TitleEmb"
-import { GetHistoricalData, GetLiveData, GetManualCoords, GetPortugalData } from "@/db/queries/select"
 import NotFound from "@/app/not-found"
-import FavButton from "@/components/embalses/FavButton"
-import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"
+import Chart from "@/components/embalses/Dashboard/Chart"
 import EstadoActual from "@/components/embalses/Dashboard/EstadoActual"
 import HistorialCambios from "@/components/embalses/Dashboard/HistorialCambios"
-import LunarCalendar from "@/components/lunar/lunarcal"
-import { LastWeekVariation, getSameWeekLastYearCapacity, getSameWeekLast10YearsAverage } from "@/lib/DataEmbalses"
+import IntroCuencas from "@/components/embalses/Dashboard/IntroCuencas"
 import LiveData from "@/components/embalses/Dashboard/LiveData"
+import MapEmbData from "@/components/embalses/Dashboard/MapDynamic"
+import Publi from "@/components/embalses/Dashboard/Publi"
+import FavButton from "@/components/embalses/FavButton"
+import TitleEmb from "@/components/embalses/TitleEmb"
+import LunarCalendar from "@/components/lunar/lunarcal"
+import ButtonUp from "@/components/lunar/up"
+import TableWeather from "@/components/weather/TableWeather"
+import { GetHistoricalData, GetLiveData, GetManualCoords, GetPortugalData } from "@/db/queries/select"
+import { LastWeekVariation, getSameWeekLast10YearsAverage, getSameWeekLastYearCapacity } from "@/lib/DataEmbalses"
+import FilterHistoricalData from "@/lib/FilterHistoricalData"
 import GetCoordinates from "@/lib/GetCoordinates"
 import GetWeather from "@/lib/GetWeather"
-import ButtonUp from "@/components/lunar/up"
-import MapEmbData from "@/components/embalses/Dashboard/MapDynamic"
-import TableWeather from "@/components/weather/TableWeather"
-import Publi from "@/components/embalses/Dashboard/Publi"
-import FilterHistoricalData from "@/lib/FilterHistoricalData"
-import Chart from "@/components/embalses/Dashboard/Chart"
+import type { Embalses, LiveData as LiveDataType } from "@/types"
 
 interface Coordinates {
   lat: number
@@ -60,11 +60,21 @@ async function Page({
 
   if (pt) {
     const portugalData = await GetPortugalData(decodedEmbalseid.toLowerCase())
-    // Convertir el cota_date de string a Date para mantener consistencia con el tipo Embalses
-    resEmbalse = portugalData.map((item) => ({
-      ...item,
+    resEmbalse = portugalData.map((item: any) => ({
+      embalse: item.nombre_embalse || "",
+      cuenca: item.nombre_cuenca || null,
+      fecha: item.fecha_modificacion ? new Date(item.fecha_modificacion) : null,
+      volumen_actual: item.agua_embalsada || null,
+      porcentaje: item.agua_embalsadapor || null,
+      capacidad_total: item.capacidad_total || null,
+      variacion_ultima_semana: item.variacion_ultima_semana || null,
+      variacion_ultima_semanapor: item.variacion_ultima_semanapor || null,
+      lat: item.lat || null,
+      lon: item.lon || null,
+      cota: item.cota || null,
       cota_date: item.cota_date ? new Date(item.cota_date) : null,
-    }))
+      pais: item.pais || null,
+    })) as Embalses[]
     if (resEmbalse.length > 0) {
       coordsData = {
         lat: resEmbalse[0].lat,
@@ -111,6 +121,10 @@ async function Page({
   }
   console.log(decodedEmbalseid)
 
+  if (!resEmbalse || resEmbalse.length === 0) {
+    return <NotFound />
+  }
+
   const {
     embalse,
     cuenca,
@@ -122,18 +136,18 @@ async function Page({
     variacion_ultima_semanapor,
   } = resEmbalse[0]
 
-  console.log(resEmbalse)
-
   return (
     <>
       <TitleEmb
         data={
           pt
             ? embalse
-                .split(" ")
+                ?.split(" ")
                 .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ")
-            : embalse
+                .join(" ") ||
+              embalse ||
+              "Sin nombre"
+            : embalse || "Sin nombre"
         }
       />
       <FavButton url={{ embalseid: decodedEmbalseid }} />
@@ -146,7 +160,21 @@ async function Page({
             embalse={resEmbalse}
             cuenca={false}
           />
-          {!pt && lData && lData.length > 0 ? <LiveData data={lData} /> : ""}
+          {!pt && lData && lData.length > 0 ? (
+            <LiveData
+              data={
+                lData.map((item) => ({
+                  ...item,
+                  volumen: item.volumen ?? null,
+                  porcentaje: item.porcentaje ?? null,
+                  timestamp: item.timestamp ?? null,
+                  cota: item.cota ?? null,
+                })) as LiveDataType[]
+              }
+            />
+          ) : (
+            ""
+          )}
 
           <EstadoActual
             agua_embalsada={volumen_actual || 0}

@@ -7,9 +7,9 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint:fix": "next lint --fix",
+    "lint:fix": "eslint --fix .",
     "check-types": "tsc --noemit",
-    "lint": "next lint && pnpm run check-types",
+    "lint": "eslint . && pnpm run check-types",
     "format": "prettier --write .",
     "remove": "rm -rf pnpm-lock.yaml node_modules"
   },
@@ -58,6 +58,8 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.36.0",
     "@next/eslint-plugin-next": "15.1.7",
     "@tailwindcss/postcss": "^4.0.0",
     "@types/js-cookie": "^3.0.6",
@@ -69,7 +71,7 @@
     "@types/recharts": "^1.8.29",
     "@typescript-eslint/eslint-plugin": "^8.8.1",
     "@typescript-eslint/parser": "^8.24.0",
-    "eslint": "^8.57.1",
+    "eslint": "^9.36.0",
     "eslint-config-next": "15.1.7",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",

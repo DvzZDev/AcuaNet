@@ -1,14 +1,11 @@
 "use client"
 
-import { useState } from "react"
-import { useForm } from "@tanstack/react-form"
-import { useRouter } from "next/navigation"
-import { EyeIcon, LockPasswordIcon, Mail01Icon, ViewOffIcon } from "hugeicons-react"
 import { login, signInWithGoogle } from "@/db/actions"
-import { supabase } from "@/db/client"
+import { useForm } from "@tanstack/react-form"
+import { EyeIcon, LockPasswordIcon, Mail01Icon, ViewOffIcon } from "hugeicons-react"
+import { useState } from "react"
 
-export default function page() {
-  const router = useRouter()
+export default function Page() {
   const [pwVisible, setPwVisible] = useState(false)
   const [focused, setFocused] = useState<"email" | "password" | null>(null)
 
@@ -55,7 +52,7 @@ export default function page() {
           <form
             onSubmit={(e) => {
               e.preventDefault()
-              form.handleSubmit()
+              void form.handleSubmit()
             }}
             className="my-6 space-y-4 lg:my-7"
           >

@@ -1,11 +1,11 @@
 "use client"
 
-import React, { useState } from "react"
-import { useRouter } from "next/navigation"
+import { supabase } from "@/db/client"
 import { useForm } from "@tanstack/react-form"
 import { EyeIcon, LockPasswordIcon, Mail01Icon, ViewOffIcon } from "hugeicons-react"
 import { User } from "lucide-react"
-import { supabase } from "@/db/client"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
 import { Bounce, toast } from "react-toastify"
 
 async function emailVerification(email: string): Promise<boolean> {
@@ -61,7 +61,7 @@ export default function SignUpPage() {
         return
       }
 
-      const { data, error } = await supabase.auth.signUp({
+      const { error } = await supabase.auth.signUp({
         email: value.email,
         password: value.password,
         options: {
@@ -108,7 +108,7 @@ export default function SignUpPage() {
           <form
             onSubmit={(e) => {
               e.preventDefault()
-              form.handleSubmit()
+              void form.handleSubmit()
             }}
             className="my-6 space-y-4 lg:my-7"
           >

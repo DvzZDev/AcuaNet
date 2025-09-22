@@ -13,12 +13,23 @@
 
 @layer fonts {
   @font-face {
-    font-family: "Inter";
+    font-family: "BlackRolmer";
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("/fonts/Inter-roman.var.woff2") format("woff2");
+    src: url("../assets/fonts/BlackRolmer-Regular.woff2") format("woff2");
   }
+  @font-face {
+    font-family: "BlackRolmerOblique";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../assets/fonts/BlackRolmer-Oblique.woff2") format("woff2");
+  }
+}
+
+@theme {
+  --BlackRolmer: "BlackRolmer", sans-serif;
 }
 
 body {
@@ -370,7 +381,6 @@ number-flow-react::part(suffix) {
   font-size: 0.6em;
   font-weight: 500;
 }
-
 
 .hide-scrollbar {
   scrollbar-width: none; /* Firefox */

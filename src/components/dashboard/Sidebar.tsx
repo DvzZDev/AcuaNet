@@ -67,7 +67,7 @@ export default function Sidebar() {
               <Link
                 href={link.href}
                 className={cn(
-                  "relative ml-1.5 flex items-center gap-3 rounded-md px-3 py-2 text-base font-medium transition-colors",
+                  "relative ml-1.5 flex h-10 items-center gap-3 rounded-md px-3 text-base font-medium transition-colors",
                   pathname === link.href ? "text-emerald-700" : "text-gray-700 hover:bg-gray-100"
                 )}
               >

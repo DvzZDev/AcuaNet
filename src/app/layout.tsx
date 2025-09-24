@@ -1,15 +1,15 @@
-import "./globals.css"
-import Footer from "@/components/global/Footer"
-import { Providers } from "./providers"
-import Navbar from "@/components/global/Navbar"
-import PostHogPageView from "./PostHogPageView"
-import { Suspense } from "react"
+import ConditionalLayout from "@/components/global/ConditionalLayout"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import type { Metadata } from "next"
 import Script from "next/script"
+import { Suspense } from "react"
 import { Bounce, ToastContainer } from "react-toastify"
+import "./globals.css"
+import PostHogPageView from "./PostHogPageView"
+import { Providers } from "./providers"
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://www.acuanet.es"),
   title: "AcuaNet - Planifica tu jornada de pesca",
   description:
@@ -80,14 +80,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>
-          <Navbar />
+          <ConditionalLayout>{children}</ConditionalLayout>
           <Suspense fallback={null}>
             <PostHogPageView />
             <Analytics />
             <SpeedInsights />
           </Suspense>
-          <main className="pt-[4rem]">{children}</main>
-          <Footer />
           <ToastContainer
             position="bottom-right"
             autoClose={5000}

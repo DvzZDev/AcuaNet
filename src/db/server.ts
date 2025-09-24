@@ -18,6 +18,7 @@ export async function createClient() {
   })
 }
 
+
 export async function withServerClient<T>(queryFn: (supabase: any) => Promise<T>): Promise<T> {
   const supabase = await createClient()
   return queryFn(supabase)

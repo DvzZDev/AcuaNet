@@ -1,8 +1,7 @@
-import Close from "@/components/dashboard/Close"
 import { createClient } from "@/db/server"
 import { redirect } from "next/navigation"
 
-export default async function Dashboard() {
+export default async function CatchGallery() {
   const supabase = await createClient()
 
   const { data, error } = await supabase.auth.getUser()
@@ -11,9 +10,8 @@ export default async function Dashboard() {
   }
 
   return (
-    <div className="h-full bg-green-100 p-4">
-      <p>Hello {data.user.email}</p>
-      <Close />
+    <div className="h-full bg-orange-100 p-4">
+      <p>CatchGallery page for {data.user.email}</p>
     </div>
   )
 }

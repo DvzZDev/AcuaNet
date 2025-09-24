@@ -1,8 +1,9 @@
 "use client"
 
 import { login, signInWithGoogle } from "@/db/actions"
+import { EyeIcon, LockPasswordIcon, Mail01Icon, ViewOffIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 import { useForm } from "@tanstack/react-form"
-import { EyeIcon, LockPasswordIcon, Mail01Icon, ViewOffIcon } from "hugeicons-react"
 import { useState } from "react"
 
 export default function Page() {
@@ -77,7 +78,8 @@ export default function Page() {
                         field.state.meta.errors.length > 0 ? "#ef4444" : focused === "email" ? "#10b981" : "transparent",
                     }}
                   >
-                    <Mail01Icon
+                    <HugeiconsIcon
+                      icon={Mail01Icon}
                       color="#047857"
                       strokeWidth={1.5}
                       className="h-5 w-5 lg:h-6 lg:w-6"
@@ -123,7 +125,8 @@ export default function Page() {
                         field.state.meta.errors.length > 0 ? "#ef4444" : focused === "password" ? "#10b981" : "transparent",
                     }}
                   >
-                    <LockPasswordIcon
+                    <HugeiconsIcon
+                      icon={LockPasswordIcon}
                       className="h-5 w-5 lg:h-6 lg:w-6"
                       color="#047857"
                       strokeWidth={1.5}
@@ -147,13 +150,15 @@ export default function Page() {
                       className="ml-auto cursor-pointer"
                     >
                       {pwVisible ? (
-                        <ViewOffIcon
+                        <HugeiconsIcon
+                          icon={ViewOffIcon}
                           className="h-5 w-5 lg:h-6 lg:w-6"
                           color="#047857"
                           strokeWidth={1.5}
                         />
                       ) : (
-                        <EyeIcon
+                        <HugeiconsIcon
+                          icon={EyeIcon}
                           className="h-5 w-5 lg:h-6 lg:w-6"
                           color="#047857"
                           strokeWidth={1.5}
@@ -193,7 +198,13 @@ export default function Page() {
             </a>
           </div>
 
-          <div className="mt-5">
+          <div className="mt-6">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="h-px flex-1 bg-emerald-700"></div>
+              <span className="text-sm text-emerald-200">O inicia sesión con</span>
+              <div className="h-px flex-1 bg-emerald-700"></div>
+            </div>
+
             <form>
               <button
                 formAction={signInWithGoogle}

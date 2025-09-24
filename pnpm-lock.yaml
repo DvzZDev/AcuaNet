@@ -14,6 +14,12 @@ importers:
       '@ai-sdk/react':
         specifier: ^1.2.5
         version: 1.2.12(react@19.0.0)(zod@3.25.76)
+      '@hugeicons/core-free-icons':
+        specifier: ^1.0.17
+        version: 1.0.17
+      '@hugeicons/react':
+        specifier: ^1.1.1
+        version: 1.1.1(react@19.0.0)
       '@justinribeiro/lite-youtube':
         specifier: ^1.7.1
         version: 1.8.2
@@ -44,6 +50,9 @@ importers:
       '@tanstack/react-form':
         specifier: ^1.23.0
         version: 1.23.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@tanstack/react-query':
+        specifier: ^5.90.2
+        version: 5.90.2(react@19.0.0)
       '@vercel/analytics':
         specifier: ^1.4.1
         version: 1.5.0(next@15.5.3(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
@@ -71,9 +80,6 @@ importers:
       hamburger-react:
         specifier: ^2.5.2
         version: 2.5.2(react@19.0.0)
-      hugeicons-react:
-        specifier: ^0.3.0
-        version: 0.3.0(react@19.0.0)
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
@@ -298,6 +304,14 @@ packages:
   '@eslint/plugin-kit@0.3.5':
     resolution: {integrity: sha512-Z5kJ+wU3oA7MMIqVR9tyZRtjYPr4OC004Q4Rw7pgOKUOKkJfZ3O24nz3WYfGRpMDNmcOi3TwQOmgm7B7Tpii0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@hugeicons/core-free-icons@1.0.17':
+    resolution: {integrity: sha512-+o5GCTJ+JSvYfJtSw7cyQXc9wOkRYa0FywKZAQPsD/lZE0j+3O52fZsAmQLekqViDybI4volujsqLfS+Mi9/SQ==}
+
+  '@hugeicons/react@1.1.1':
+    resolution: {integrity: sha512-BAbFVtx0XZ/yF2poPLFn0N9Ji6ebV/MpI5+WRqooFp3smQDwpL+72m+BBs4KAM5djgWUpg12weyc5SJtTsOwsw==}
+    peerDependencies:
+      react: '>=16.0.0'
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -969,6 +983,9 @@ packages:
   '@tanstack/form-core@1.23.0':
     resolution: {integrity: sha512-aBJnO5iA1TtMK/SSpAvd/y6cVsBgbu5Br2FftvW6r7TkHCcZ/lB2DMx3G2dk6SG7sW0g8s6F7iaMjrvqBGooDw==}
 
+  '@tanstack/query-core@5.90.2':
+    resolution: {integrity: sha512-k/TcR3YalnzibscALLwxeiLUub6jN5EDLwKDiO7q5f4ICEoptJ+n9+7vcEFy5/x/i6Q+Lb/tXrsKCggf5uQJXQ==}
+
   '@tanstack/react-form@1.23.0':
     resolution: {integrity: sha512-wZ/cBjqj5dgWG79TQOsilbs8WzdouJj3iXw1DAZvQ4nejobsTGl0huU7SZZ0mnFtdNHbre1bFSdWyw+GqFcIhQ==}
     peerDependencies:
@@ -977,6 +994,11 @@ packages:
     peerDependenciesMeta:
       '@tanstack/react-start':
         optional: true
+
+  '@tanstack/react-query@5.90.2':
+    resolution: {integrity: sha512-CLABiR+h5PYfOWr/z+vWFt5VsOA2ekQeRQBFSKlcoW6Ndx/f8rfyVmq4LbgOM4GG2qtxAxjLYLOpCNTYm4uKzw==}
+    peerDependencies:
+      react: ^18 || ^19
 
   '@tanstack/react-store@0.7.7':
     resolution: {integrity: sha512-qqT0ufegFRDGSof9D/VqaZgjNgp4tRPHZIJq2+QIHkMUtHjaJ0lYrrXjeIUJvjnTbgPfSD1XgOMEt0lmANn6Zg==}
@@ -1839,11 +1861,6 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
-
-  hugeicons-react@0.3.0:
-    resolution: {integrity: sha512-znmC+uX7xVqcIs0q09LvwEvJkjX0U3xgT05BSiRV19farS4lPONOKjYT0JkcQG5cvfV0rXHSEAEVNjbHAu81rg==}
-    peerDependencies:
-      react: '>=16.0.0'
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -2962,6 +2979,12 @@ snapshots:
       '@eslint/core': 0.15.2
       levn: 0.4.1
 
+  '@hugeicons/core-free-icons@1.0.17': {}
+
+  '@hugeicons/react@1.1.1(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.7':
@@ -3529,6 +3552,8 @@ snapshots:
       '@tanstack/store': 0.7.7
       uuid: 13.0.0
 
+  '@tanstack/query-core@5.90.2': {}
+
   '@tanstack/react-form@1.23.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tanstack/form-core': 1.23.0
@@ -3538,6 +3563,11 @@ snapshots:
       react: 19.0.0
     transitivePeerDependencies:
       - react-dom
+
+  '@tanstack/react-query@5.90.2(react@19.0.0)':
+    dependencies:
+      '@tanstack/query-core': 5.90.2
+      react: 19.0.0
 
   '@tanstack/react-store@0.7.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -4507,10 +4537,6 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
-
-  hugeicons-react@0.3.0(react@19.0.0):
-    dependencies:
-      react: 19.0.0
 
   ignore@5.3.2: {}
 

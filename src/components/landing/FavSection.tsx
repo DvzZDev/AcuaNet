@@ -1,6 +1,6 @@
-import { cookies } from "next/headers"
-import { GetEmbalseByName } from "@/db/queries/select"
+import { GetEmbalseByName } from "@/db/queriesServer/select"
 import { LastWeekVariationF } from "@/lib/DataEmbalses"
+import { cookies } from "next/headers"
 import { FavCard } from "./FavCard"
 
 export default async function FavSection() {

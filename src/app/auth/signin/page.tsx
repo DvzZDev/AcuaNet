@@ -33,7 +33,7 @@ export default function Page() {
         <div className="w-[13rem] lg:w-[16rem]">
           <img
             className="h-full w-full object-cover"
-            src="/Banner.png"
+            src="/bannerwhite.webp"
             alt="Acuanet logo white"
           />
         </div>

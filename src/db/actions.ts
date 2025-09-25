@@ -3,10 +3,10 @@
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
-import { createClient } from "@/db/server"
+import { createSvClient } from "@/db/server"
 
 export async function login(credentials: { email: string; password: string }) {
-  const supabase = await createClient()
+  const supabase = await createSvClient()
 
   const { error } = await supabase.auth.signInWithPassword(credentials)
 
@@ -19,7 +19,7 @@ export async function login(credentials: { email: string; password: string }) {
 }
 
 export async function signup(credentials: { email: string; password: string }) {
-  const supabase = await createClient()
+  const supabase = await createSvClient()
 
   const { error } = await supabase.auth.signUp(credentials)
 
@@ -32,7 +32,7 @@ export async function signup(credentials: { email: string; password: string }) {
 }
 
 export async function logout() {
-  const supabase = await createClient()
+  const supabase = await createSvClient()
 
   const { error } = await supabase.auth.signOut()
   if (error) {
@@ -43,7 +43,7 @@ export async function logout() {
 }
 
 export async function signInWithGoogle() {
-  const supabase = await createClient()
+  const supabase = await createSvClient()
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000"
   const redirectTo = `${siteUrl.replace(/\/$/, "")}/auth/callback`

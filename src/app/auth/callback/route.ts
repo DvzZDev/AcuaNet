@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { createClient } from "@/db/server"
+import { createSvClient } from "@/db/server"
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
@@ -10,7 +10,7 @@ export async function GET(request: Request) {
   }
 
   if (code) {
-    const supabase = await createClient()
+    const supabase = await createSvClient()
     const { error } = await supabase.auth.exchangeCodeForSession(code)
     if (!error) {
       const forwardedHost = request.headers.get("x-forwarded-host")

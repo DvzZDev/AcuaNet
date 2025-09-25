@@ -1,11 +1,14 @@
 "use client"
 
+import { logout } from "@/db/actions"
 import { cn } from "@/lib/utils"
 import {
   Album02Icon,
   ArrowLeft03Icon,
   ArrowRight03Icon,
   DashboardSquare02Icon,
+  Delete01Icon,
+  Logout03Icon,
   MapsIcon,
   UserStoryIcon,
 } from "@hugeicons/core-free-icons"
@@ -56,9 +59,8 @@ export default function Sidebar() {
           )}
         </AnimatePresence>
       </div>
-      <nav className="mx-2 flex flex-1 flex-col gap-2">
-        <div className="my-3 h-[1px] w-full bg-emerald-500 px-2"></div>
-        <div className="flex flex-col gap-2">
+      <nav className="mx-2 mt-7 flex flex-1 flex-col gap-2">
+        <div className="flex flex-col gap-3">
           {links.map((link) => (
             <div
               key={link.href}
@@ -106,11 +108,74 @@ export default function Sidebar() {
             </div>
           ))}
         </div>
+        <div className="h-[1px] w-full bg-emerald-500 px-2"></div>
+        <div className="flex flex-col gap-3">
+          <div className="relative">
+            <button
+              className="relative ml-1.5 flex h-10 w-full cursor-pointer items-center gap-3 rounded-md px-3 text-base font-medium text-gray-700 transition-colors hover:bg-gray-100"
+              onClick={() => {
+                void logout()
+              }}
+            >
+              <HugeiconsIcon
+                icon={Logout03Icon}
+                size={25}
+                color="currentColor"
+                strokeWidth={1.5}
+                className="relative z-10 flex-shrink-0"
+              />
+              <AnimatePresence mode="wait">
+                {isExpanded && (
+                  <motion.span
+                    initial={{ opacity: 0, width: 0, x: -15 }}
+                    animate={{ opacity: 1, width: "auto", x: 0 }}
+                    exit={{ opacity: 0, width: 0, x: -5 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    className="relative z-10 overflow-hidden font-['BlackRolmer'] text-lg whitespace-nowrap"
+                  >
+                    Cerrar sesión
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
+          <div className="relative">
+            <button
+              className="relative ml-1.5 flex h-10 w-full cursor-pointer items-center gap-3 rounded-md px-3 text-base font-medium text-red-600 transition-colors hover:bg-red-50"
+              onClick={() => {
+                // Lógica de borrar cuenta
+              }}
+            >
+              <HugeiconsIcon
+                icon={Delete01Icon}
+                size={25}
+                color="currentColor"
+                strokeWidth={1.5}
+                className="relative z-10 flex-shrink-0"
+              />
+              <AnimatePresence mode="wait">
+                {isExpanded && (
+                  <motion.span
+                    initial={{ opacity: 0, width: 0, x: -15 }}
+                    animate={{ opacity: 1, width: "auto", x: 0 }}
+                    exit={{ opacity: 0, width: 0, x: -5 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    className="relative z-10 overflow-hidden font-['BlackRolmer'] text-lg whitespace-nowrap"
+                  >
+                    Borrar cuenta
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
+        </div>
       </nav>
       <div className="my-5 h-[1px] w-full bg-emerald-500 px-2"></div>
 
       <button
-        className={cn("relative mb-5 ml-2 flex items-center gap-3 rounded-md px-3 py-2 text-base font-medium transition-colors")}
+        className={cn(
+          "relative mb-5 ml-2 flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-base font-medium transition-colors"
+        )}
         onClick={() => {
           setIsExpanded(!isExpanded)
         }}

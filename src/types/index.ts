@@ -1,6 +1,6 @@
 export interface UserData {
   avatar_url: string
-  custom_claims: { auth_time: number }
+  custom_claims: Record<string, any>
   email: string
   email_verified: boolean
   full_name: string

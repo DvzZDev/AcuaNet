@@ -1,8 +1,8 @@
-import { createClient } from "@/db/server"
+import { createSvClient } from "@/db/server"
 import { redirect } from "next/navigation"
 
 export default async function CatchMap() {
-  const supabase = await createClient()
+  const supabase = await createSvClient()
 
   const { data, error } = await supabase.auth.getUser()
   if (error || !data?.user) {

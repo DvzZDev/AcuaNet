@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr"
 import { cookies } from "next/headers"
 
-export async function createClient() {
+export async function createSvClient() {
   const cookieStore = await cookies()
 
   return createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
@@ -20,6 +20,6 @@ export async function createClient() {
 
 
 export async function withServerClient<T>(queryFn: (supabase: any) => Promise<T>): Promise<T> {
-  const supabase = await createClient()
+  const supabase = await createSvClient()
   return queryFn(supabase)
 }

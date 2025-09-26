@@ -1,52 +1,21 @@
-import "./globals.css"
+"use client" // Necesario para usar hooks
+
 import Footer from "@/components/global/Footer"
-import { Providers } from "./providers"
 import Navbar from "@/components/global/Navbar"
-import PostHogPageView from "./PostHogPageView"
-import { Suspense } from "react"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { usePathname } from "next/navigation"
 import Script from "next/script"
+import { Suspense } from "react"
 import { Bounce, ToastContainer } from "react-toastify"
-
-export const metadata = {
-  metadataBase: new URL("https://www.acuanet.es"),
-  title: "AcuaNet - Planifica tu jornada de pesca",
-  description:
-    "Accede a datos actualizados sobre niveles de embalses, pronósticos meteorológicos y condiciones de pesca en toda España para planificar tu próxima jornada de pesca.",
-  keywords: [
-    "pesca, pesca de blackbass, herramientas de pesca, pesca de lucio, pesca en embalses, embalses de España, acuanet, pesca depredadores, pesca de lucio",
-  ],
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "AcuaNet - Planifica tu jornada de pesca",
-    description:
-      "Accede a datos actualizados sobre niveles de embalses, pronósticos meteorológicos y condiciones de pesca en toda España para planificar tu próxima jornada de pesca.",
-    url: "https://www.acuanet.es",
-    siteName: "AcuaNet",
-    images: [
-      {
-        url: "https://i.imgur.com/LQvr7AX.png",
-        width: 1800,
-        height: 1600,
-        alt: "AcuaNet - La herramienta definitiva para pescadores",
-      },
-    ],
-    locale: "es_ES",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "AcuaNet - Planifica tu jornada de pesca",
-    description:
-      "Descubre los niveles de embalses, pronósticos de clima y más para aprovechar al máximo tus jornadas de pesca en toda España.",
-    images: ["https://i.imgur.com/LQvr7AX.png"],
-  },
-}
+import "./globals.css"
+import PostHogPageView from "./PostHogPageView"
+import { Providers } from "./providers"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
+  const isMantenimiento = pathname === "/mantenimiento"
+
   return (
     <html
       lang="es"
@@ -80,14 +49,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>
-          <Navbar />
+          {!isMantenimiento && <Navbar />}
           <Suspense fallback={null}>
             <PostHogPageView />
             <Analytics />
             <SpeedInsights />
           </Suspense>
-          <main className="pt-[4rem]">{children}</main>
-          <Footer />
+          <main className={isMantenimiento ? "h-svh" : "pt-[4rem]"}>{children}</main>
+          {!isMantenimiento && <Footer />}
           <ToastContainer
             position="bottom-right"
             autoClose={5000}

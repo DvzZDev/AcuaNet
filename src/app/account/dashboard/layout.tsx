@@ -48,7 +48,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <Sidebar />
         <div className="flex flex-1 flex-col">
           <UpperBar />
-          <main className="flex-1 overflow-auto">{children}</main>
+          <main className="flex-1 p-6 bg-green-100 overflow-auto">{children}</main>
         </div>
       </div>
       <Footer />

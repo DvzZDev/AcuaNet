@@ -1,5 +1,5 @@
 import { AllData, Cuencas, Embalses, EmbalsesCoords, España, LiveData, PortugalData, TABLE_NAMES } from "@/db/schema"
-import { withServerClient } from "@/db/server"
+import { createSvClient, withServerClient } from "@/db/server"
 
 export async function GetCuencas(): Promise<Cuencas[]> {
   return withServerClient(async (supabase) => {
@@ -126,4 +126,63 @@ export async function GetManualCoords(emb: string): Promise<EmbalsesCoords[]> {
 
     return data || []
   })
+}
+
+export const getFavSection = async (id: string) => {
+  const supabase = await createSvClient()
+  try {
+    const { data, error } = await supabase.from("favorite_reservoirs").select().eq("user_id", id)
+
+    if (error) {
+      throw new Error(error.message)
+    }
+
+    const favorites = data[0]?.favorites || []
+    const españa = favorites.filter((embalse: { pais: string }) => embalse.pais === "España")
+    const portugal = favorites.filter((embalse: { pais: string }) => embalse.pais === "Portugal")
+
+    const nombresPt = portugal.map((embalse: { embalse: string }) => embalse.embalse?.toLowerCase()).filter(Boolean)
+
+    const nombresEs = españa.map((embalse: { embalse: string }) => embalse.embalse)
+
+    const { data: portugalData, error: portugalError } = await supabase
+      .from("portugal_data")
+      .select()
+      .in("nombre_embalse", nombresPt)
+
+    if (portugalError) {
+      throw new Error(portugalError.message)
+    }
+
+    const { data: españaData, error: españaError } = await supabase.rpc("obtener_ultimo_registro_por_embalse", {
+      nombres_embalses: nombresEs,
+    })
+
+    if (españaError) {
+      throw new Error(españaError.message)
+    }
+
+    const normalizedPortugalData = (portugalData || []).map((item: any) => ({
+      id: `${item.nombre_embalse}_${item.fecha_modificacion}`,
+      embalse: item.nombre_embalse,
+      cuenca: item.nombre_cuenca,
+      fecha: item.fecha_modificacion?.split("T")[0] || item.fecha_modificacion,
+      capacidad_total: item.capacidad_total,
+      volumen_actual: item.agua_embalsada,
+      porcentaje: item.agua_embalsadapor,
+      pais: "Portugal",
+    }))
+
+    const normalizedEspañaData = (españaData || []).map((item: any) => ({
+      ...item,
+      pais: "España",
+    }))
+
+    const finalData = [...normalizedEspañaData, ...normalizedPortugalData]
+
+    return finalData
+  } catch (error) {
+    console.error("Error fetching favorite sections:", error)
+    return []
+  }
 }

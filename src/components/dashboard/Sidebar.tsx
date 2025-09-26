@@ -32,7 +32,7 @@ export default function Sidebar() {
   return (
     <aside
       className={cn(
-        "flex h-screen flex-col overflow-hidden bg-emerald-50 shadow-sm transition-all duration-300 ease-in-out",
+        "flex grow-0 shrink-0 h-screen flex-col overflow-hidden bg-emerald-50 shadow-sm transition-all duration-300 ease-in-out",
         isExpanded ? "w-64" : "w-20"
       )}
     >

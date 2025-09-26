@@ -4,11 +4,12 @@ import { UserData } from "@/types"
 
 export default function AccountBanner({ userdata }: { userdata?: UserData }) {
   return (
-    <div className="ml-auto mr-7 flex items-center gap-2">
+    <div className="mr-7 ml-auto flex items-center gap-2">
       <img
         src={userdata?.avatar_url}
         alt="User Avatar"
         className="h-16 w-16 rounded-full border border-emerald-300 object-cover"
+        referrerPolicy="no-referrer"
       />
       <div className="flex flex-col gap-1">
         <p className="font-['BlackRolmer'] text-xl">
@@ -18,7 +19,7 @@ export default function AccountBanner({ userdata }: { userdata?: UserData }) {
             .filter(Boolean)
             .join(" ")}
         </p>
-        <div className="bg-gradient-to-br font-semibold w-fit text-purple-100 rounded-full from-purple-300 to-purple-900 px-2 py-1 text-[10px]">
+        <div className="w-fit rounded-full bg-gradient-to-br from-purple-300 to-purple-900 px-2 py-1 text-[10px] font-semibold text-purple-100">
           <p>AN Pro</p>
         </div>
       </div>

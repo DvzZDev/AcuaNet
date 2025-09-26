@@ -8,7 +8,6 @@ export default async function UpperBar() {
   const supabase = await createSvClient()
 
   const { data, error } = await supabase.auth.getUser()
-  console.log("User data in UpperBar:", data, error)
   const user = data?.user || null
 
   return (

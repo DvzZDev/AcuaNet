@@ -25,14 +25,14 @@ const links = [
   { href: "/account/dashboard/account", label: "Cuenta", icon: UserStoryIcon },
 ]
 
-export default function Sidebar() {
+export default function SidebarWide() {
   const pathname = usePathname()
   const [isExpanded, setIsExpanded] = useState(true)
 
   return (
     <aside
       className={cn(
-        "flex grow-0 shrink-0 h-screen flex-col overflow-hidden bg-emerald-50 shadow-sm transition-all duration-300 ease-in-out",
+        "flex min-h-screen shrink-0 grow-0 flex-col overflow-hidden bg-emerald-50 shadow-sm transition-all duration-300 ease-in-out",
         isExpanded ? "w-64" : "w-20"
       )}
     >

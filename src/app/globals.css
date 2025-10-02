@@ -260,6 +260,38 @@ body::-webkit-scrollbar-thumb {
   gap: 0.5rem;
 }
 
+/* Mobile-specific map styles */
+@media screen and (max-width: 768px) {
+  .leaflet-container {
+    height: 300px !important;
+    min-height: 300px !important;
+    touch-action: pan-x pan-y;
+  }
+
+  .custom-marker {
+    touch-action: manipulation;
+  }
+
+  .leaflet-touch .leaflet-control-layers,
+  .leaflet-touch .leaflet-bar {
+    border: none;
+    border-radius: 12px;
+  }
+
+  .leaflet-touch .leaflet-bar a {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Fix for marker positioning on mobile */
+.custom-marker {
+  transform-origin: center bottom;
+}
+
 .scroll-hide {
   --sb-track-color: #011e16;
   --sb-thumb-color: #93ffb7;
@@ -380,6 +412,11 @@ number-flow-react::part(suffix) {
   margin-left: 0.0625em;
   font-size: 0.6em;
   font-weight: 500;
+}
+
+swiper {
+  width: 100%;
+  height: 100%;
 }
 
 .hide-scrollbar {

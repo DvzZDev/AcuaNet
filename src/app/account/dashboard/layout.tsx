@@ -1,5 +1,5 @@
 import "@/app/globals.css"
-import Sidebar from "@/components/dashboard/Sidebar"
+import Sidebar from "@/components/dashboard/SidebarWide"
 import UpperBar from "@/components/dashboard/UpperBar"
 import Footer from "@/components/global/Footer"
 import type { Metadata } from "next"
@@ -43,13 +43,21 @@ export const metadata: Metadata = {
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col">
-      <div className="flex flex-1">
+    <div className="flex h-full min-h-screen flex-col">
+      {/* Wide Layout */}
+      <div className="hidden flex-1 md:flex">
         <Sidebar />
         <div className="flex flex-1 flex-col">
           <UpperBar />
-          <main className="flex-1 p-6 bg-green-100 overflow-auto">{children}</main>
+          <main className="flex-1 bg-green-100 py-6 pr-16 pl-14">{children}</main>
         </div>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="flex-1 md:hidden">
+        <UpperBar />
+
+        <main className="min-h-screen flex-1 bg-green-100 px-4 py-4">{children}</main>
       </div>
       <Footer />
     </div>

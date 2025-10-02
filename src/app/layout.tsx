@@ -44,6 +44,9 @@ export const metadata: Metadata = {
       "Descubre los niveles de embalses, pronósticos de clima y más para aprovechar al máximo tus jornadas de pesca en toda España.",
     images: ["https://i.imgur.com/LQvr7AX.png"],
   },
+  icons: {
+    icon: "/favicon.ico", // favicon estándar
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

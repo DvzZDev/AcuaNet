@@ -1,6 +1,6 @@
 import "@/app/globals.css"
-import Sidebar from "@/components/dashboard/SidebarWide"
-import UpperBar from "@/components/dashboard/UpperBar"
+import Sidebar from "@/components/dashboard/Navegation/SidebarWide"
+import UpperBar from "@/components/dashboard/Navegation/UpperBar"
 import Footer from "@/components/global/Footer"
 import type { Metadata } from "next"
 

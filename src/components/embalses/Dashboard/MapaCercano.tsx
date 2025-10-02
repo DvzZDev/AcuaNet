@@ -1,8 +1,8 @@
 "use client"
 
+import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, useMap } from "react-leaflet"
-import L from "leaflet"
 
 import { useEffect } from "react"
 
@@ -32,15 +32,16 @@ export default function MapaCercano({ coords }: { coords: Coords }) {
           </p>
         )}
         <MapContainer
-          className="map-container z-0"
+          className="z-0"
           center={[coords.lat, coords.lon]}
           zoom={13}
           scrollWheelZoom={false}
         >
           <MapController />
+
           <TileLayer
-            attribution='Map tiles by <a href="https://www.esri.com/">Esri</a>, &copy; OpenStreetMap contributors'
-            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
         </MapContainer>
       </section>

@@ -1,5 +1,6 @@
 "use client"
 
+import { useScreenWidth } from "@/hooks/useScreenWidth"
 import { cn } from "@/lib/utils"
 import { motion } from "motion/react"
 import React, { memo, useCallback } from "react"
@@ -229,14 +230,14 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
             className={cn(
               "min-w-[40px] text-right text-lg font-black sm:min-w-[50px] sm:text-xl md:text-2xl",
               percentage >= 90
-                ? "text-blue-900"
+                ? "text-blue-700" // nivel óptimo-alto
                 : percentage >= 70
-                  ? "text-green-900"
+                  ? "text-cyan-600" // lleno
                   : percentage >= 50
-                    ? "text-yellow-900"
+                    ? "text-green-600" // medio
                     : percentage >= 30
-                      ? "text-orange-900"
-                      : "text-red-900"
+                      ? "text-yellow-700" // bajo
+                      : "text-red-600" // crítico
             )}
           >
             {percentage.toFixed(0)}%
@@ -255,14 +256,14 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
                 className={cn(
                   "absolute left-0 h-full w-full origin-left rounded-full",
                   percentage >= 90
-                    ? "bg-blue-500"
+                    ? "bg-blue-700" // nivel óptimo-alto
                     : percentage >= 70
-                      ? "bg-green-500"
+                      ? "bg-cyan-600" // lleno
                       : percentage >= 50
-                        ? "bg-yellow-200"
+                        ? "bg-green-600" // medio
                         : percentage >= 30
-                          ? "bg-orange-500"
-                          : "bg-red-600"
+                          ? "bg-yellow-700" // bajo
+                          : "bg-red-600" // crítico
                 )}
               />
             </div>
@@ -330,10 +331,14 @@ EmbalseCard.displayName = "EmbalseCard"
 export default function FavoriteZReservoirsClient({ favorite_reservoirs }: { favorite_reservoirs: ReservoirData[] }) {
   const accessType = "subscription"
   const processedData = processReservoirData(favorite_reservoirs)
+  const { getDynamicStyle } = useScreenWidth()
 
   return (
     <div>
-      <div className="scroll-tab flex w-[22rem] gap-3 overflow-x-scroll sm:w-[30rem] sm:gap-4 md:w-[40rem] md:pb-2 lg:w-[50rem] xl:w-[65rem] 2xl:w-[80rem]">
+      <div
+        className="scroll-tab flex gap-3 overflow-x-scroll sm:gap-4 md:pb-2"
+        style={getDynamicStyle()}
+      >
         {processedData.map((embalse, index) => (
           <EmbalseCard
             key={index}

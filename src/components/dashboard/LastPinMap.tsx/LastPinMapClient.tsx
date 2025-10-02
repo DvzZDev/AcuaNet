@@ -49,6 +49,18 @@ export default function LastPinMap({ reportData }: { reportData: CatchReportDB[]
   const position: [number, number] = [reportData[0]?.lat || 40.4168, reportData[0]?.lng || -3.7038]
   const L = useLeaflet()
   const [mapInstance, setMapInstance] = useState<any>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkIsMobile()
+    window.addEventListener("resize", checkIsMobile)
+
+    return () => window.removeEventListener("resize", checkIsMobile)
+  }, [])
 
   const createCustomIcon = (imageUrl: string) => {
     if (!L) return null
@@ -202,7 +214,7 @@ export default function LastPinMap({ reportData }: { reportData: CatchReportDB[]
     <div className="relative h-full min-h-[300px] w-full md:min-h-[400px]">
       <MapContainer
         center={position}
-        zoom={position ? 13 : 2}
+        zoom={position ? (isMobile ? 15 : 16) : 2}
         scrollWheelZoom={false}
         zoomControl={false}
         touchZoom={true}

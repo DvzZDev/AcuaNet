@@ -1,5 +1,6 @@
 import { AllData, Cuencas, Embalses, EmbalsesCoords, España, LiveData, PortugalData, TABLE_NAMES } from "@/db/schema"
 import { createSvClient, withServerClient } from "@/db/server"
+import { CatchReportDB } from "@/types"
 
 export async function GetCuencas(): Promise<Cuencas[]> {
   return withServerClient(async (supabase) => {
@@ -185,4 +186,37 @@ export const getFavSection = async (id: string) => {
     console.error("Error fetching favorite sections:", error)
     return []
   }
+}
+
+export async function getAllUserCaches(): Promise<CatchReportDB[]> {
+  const supabase = await createSvClient()
+  const id = await getUserId()
+
+  const { data, error } = await supabase
+    .from("catch_reports")
+    .select()
+    .eq("user_id", id)
+    .order("created_at", { ascending: false })
+
+  if (error) {
+    console.error("Error fetching user caches:", error)
+    return []
+  }
+
+  return data || []
+}
+
+export async function getUserId() {
+  const supabase = await createSvClient()
+  const { data, error } = await supabase.auth.getUser()
+  if (error) {
+    console.error("Error fetching user:", error)
+    return null
+  }
+  return data.user?.id || null
+}
+
+export async function userLastPin() {
+  const allCaches = await getAllUserCaches()
+  return allCaches.length > 0 ? allCaches[0] : null
 }

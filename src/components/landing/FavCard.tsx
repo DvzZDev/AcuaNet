@@ -77,7 +77,7 @@ export const FavCard = ({ embalse }: { embalse: FavSection }) => {
   const variacion = embalse.pctDifference || 0
 
   return (
-    <div className="max-h-64 w-[15rem] overflow-hidden rounded-lg border border-green-50/30 bg-emerald-400/15 shadow-lg transition-all hover:scale-95 md:max-h-auto">
+    <div className="max-h-64 w-[7rem] lg:w-[15rem] overflow-hidden rounded-lg border border-green-50/30 bg-emerald-400/15 shadow-lg transition-all hover:scale-95 md:max-h-auto">
       <Link
         ref={ref}
         href={`embalse/${embalse.name.toLowerCase().replace(/ /g, "-") ?? ""}`}

@@ -201,10 +201,10 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
         damping: 20,
         delay: delay,
       }}
-      className="relative mb-4 w-72 shrink-0 grow-0 overflow-hidden rounded-lg border border-green-500/50 bg-green-500/20 px-3 py-2"
+      className="relative mb-4 w-60 shrink-0 grow-0 overflow-hidden rounded-lg border border-green-500/50 bg-green-500/20 px-2 py-2 sm:w-72 sm:px-3"
     >
       {/* Country Flag Background */}
-      <div className="absolute -top-[3rem] -right-[3rem] h-[7rem] w-[7rem] -rotate-12 overflow-hidden rounded-full opacity-20">
+      <div className="absolute -top-[2rem] -right-[2rem] h-[5rem] w-[5rem] -rotate-12 overflow-hidden rounded-full opacity-20 sm:-top-[3rem] sm:-right-[3rem] sm:h-[7rem] sm:w-[7rem]">
         <img
           src={embalse.pais === "Portugal" ? "/pt.webp" : "/spain.webp"}
           className="h-full w-full object-cover"
@@ -219,13 +219,15 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
         >
           {/* Header */}
           <div className="mb-1 flex items-center justify-between">
-            <h3 className="truncate font-[BlackRolmer] text-3xl font-bold text-teal-900">{displayName}</h3>
+            <h3 className="truncate font-[BlackRolmer] text-2xl font-bold text-teal-900 sm:text-2xl md:text-3xl">
+              {displayName}
+            </h3>
           </div>
 
           {/* Progress Bar */}
           <span
             className={cn(
-              "min-w-[50px] text-right text-2xl font-black",
+              "min-w-[40px] text-right text-lg font-black sm:min-w-[50px] sm:text-xl md:text-2xl",
               percentage >= 90
                 ? "text-blue-900"
                 : percentage >= 70
@@ -241,7 +243,7 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
           </span>
 
           <div className="flex items-center gap-2">
-            <div className="relative h-3 flex-1 overflow-hidden rounded-full bg-emerald-950">
+            <div className="relative h-2 flex-1 overflow-hidden rounded-full bg-emerald-950 sm:h-3">
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: percentage / 100 }}
@@ -267,11 +269,13 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
           </div>
 
           {/* Footer Info */}
-          <div className="mt-3 flex items-center justify-between">
+          <div className="mt-2 flex items-center justify-between sm:mt-3">
             <div className="flex items-center gap-1">
-              <span className="text-sm font-medium text-teal-900">Var. Semanal: </span>
+              <span className="text-xs font-medium text-teal-900 sm:text-sm">Var. Semanal: </span>
               {weeklyVariation && weeklyVariation > 0 ? <TrendUp color="#16a34a" /> : <TrendDown color="#dc2626" />}
-              <span className={`text-sm font-bold ${weeklyVariation && weeklyVariation > 0 ? "text-green-600" : "text-red-600"}`}>
+              <span
+                className={`text-xs font-bold sm:text-sm ${weeklyVariation && weeklyVariation > 0 ? "text-green-600" : "text-red-600"}`}
+              >
                 {weeklyVariation?.toFixed(1) || 0}%
               </span>
             </div>
@@ -295,19 +299,19 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
           >
             {/* Header */}
             <div className="flex items-center justify-between">
-              <h3 className="truncate text-2xl font-bold text-teal-900">{displayName}</h3>
+              <h3 className="truncate text-lg font-bold text-teal-900 sm:text-xl md:text-2xl">{displayName}</h3>
             </div>
 
             {/* Skeleton Progress Bar */}
-            <div className="mt-4 flex items-center gap-2">
-              <div className="h-5 flex-1 animate-pulse rounded-full bg-green-200" />
-              <div className="h-5 w-5 animate-pulse rounded bg-green-200" />
+            <div className="mt-3 flex items-center gap-2 sm:mt-4">
+              <div className="h-4 flex-1 animate-pulse rounded-full bg-green-200 sm:h-5" />
+              <div className="h-4 w-4 animate-pulse rounded bg-green-200 sm:h-5 sm:w-5" />
             </div>
 
             {/* Premium Notice */}
-            <div className="mt-3 flex items-center gap-2">
+            <div className="mt-2 flex items-center gap-2 sm:mt-3">
               <InfoIcon color="#fb923c" />
-              <span className="text-sm text-teal-800">Desbloquea contenido premium</span>
+              <span className="text-xs text-teal-800 sm:text-sm">Desbloquea contenido premium</span>
             </div>
           </button>
 
@@ -328,8 +332,8 @@ export default function FavoriteZReservoirsClient({ favorite_reservoirs }: { fav
   const processedData = processReservoirData(favorite_reservoirs)
 
   return (
-    <div className="pt-2">
-      <div className="scroll-tab flex w-[75rem] gap-4 overflow-x-scroll pb-2">
+    <div>
+      <div className="scroll-tab flex w-[22rem] gap-3 overflow-x-scroll sm:w-[30rem] sm:gap-4 md:w-[40rem] md:pb-2 lg:w-[50rem] xl:w-[65rem] 2xl:w-[80rem]">
         {processedData.map((embalse, index) => (
           <EmbalseCard
             key={index}

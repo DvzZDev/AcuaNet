@@ -156,6 +156,7 @@ body::-webkit-scrollbar-thumb {
 :root {
   --toastify-color-light: #4a0000c6 !important;
   --toastify-text-color-light: #fff !important;
+  background-color: #ecfdf5 !important;
 }
 
 .Toastify__close-button {

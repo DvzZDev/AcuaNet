@@ -302,7 +302,7 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
       <div className="absolute right-2 bottom-2 z-[1000] flex flex-col gap-2 md:right-4 md:bottom-4">
         <button
           onClick={handleZoomIn}
-          className="touch-manipulation rounded-xl bg-[#14141c] p-3 shadow-lg transition-colors hover:bg-[#1f1f2e] md:p-2"
+          className="touch-manipulation rounded-xl border bg-[#14141c] p-3 shadow-lg transition-colors hover:bg-[#1f1f2e] md:p-2"
           title="Zoom In"
         >
           <HugeiconsIcon
@@ -314,7 +314,7 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
         </button>
         <button
           onClick={handleZoomOut}
-          className="touch-manipulation rounded-xl bg-[#14141c] p-3 shadow-lg transition-colors hover:bg-[#1f1f2e] md:p-2"
+          className="touch-manipulation rounded-xl border bg-[#14141c] p-3 shadow-lg transition-colors hover:bg-[#1f1f2e] md:p-2"
           title="Zoom Out"
         >
           <HugeiconsIcon

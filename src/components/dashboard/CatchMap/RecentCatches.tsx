@@ -3,7 +3,7 @@
 import { CatchReportDB } from "@/types"
 import ChipsReport from "./ChipsReport"
 
-export default function LastCapture({ reportData }: { reportData: CatchReportDB[] }) {
+export default function RecentCatches({ reportData }: { reportData: CatchReportDB[] }) {
   return (
     <section className="flex h-auto w-full flex-col gap-6">
       <div className="flex w-full flex-col gap-4">

@@ -1,17 +1,18 @@
-import { createSvClient } from "@/db/server"
-import { redirect } from "next/navigation"
+import Gallery from "@/components/dashboard/CatchGallery/Gallery"
+import { getAllUserCaches } from "@/db/queriesServer/select"
+import { Suspense } from "react"
 
 export default async function CatchGallery() {
-  const supabase = await createSvClient()
-
-  const { data, error } = await supabase.auth.getUser()
-  if (error || !data?.user) {
-    redirect("/login")
-  }
+  const catches = await getAllUserCaches()
 
   return (
-    <div className="h-full bg-orange-100 p-4">
-      <p>CatchGallery page for {data.user.email}</p>
-    </div>
+     <section className="flex h-auto w-full flex-col gap-6">
+      <div className="flex w-full flex-col gap-6">
+        <h1 className="font-['BlackRolmer'] text-3xl text-emerald-900 md:text-4xl">Catch Gallery</h1>
+        <Suspense fallback={<div>Loading gallery...</div>}>
+          <Gallery reportData={catches} />
+        </Suspense>
+      </div>
+    </section>
   )
 }

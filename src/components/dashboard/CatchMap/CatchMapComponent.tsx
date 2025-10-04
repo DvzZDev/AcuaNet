@@ -1,7 +1,7 @@
 import { getAllUserCaches } from "@/db/queriesServer/select"
 import { Suspense } from "react"
 import CatchMapDynamic from "./CatchMapDynamic"
-import LastCapture from "./LastCapture"
+import RecentCatches from "./RecentCatches"
 
 export default async function CatchMapComponent() {
   const allCaches = await getAllUserCaches()
@@ -15,7 +15,7 @@ export default async function CatchMapComponent() {
           <CatchMapDynamic reportData={recentCaches} />
         </Suspense>
         <Suspense fallback={<div>Cargando capturas...</div>}>
-          <LastCapture reportData={recentCaches} />
+          <RecentCatches reportData={recentCaches} />
         </Suspense>
       </div>
     </section>

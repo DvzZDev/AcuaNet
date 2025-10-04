@@ -427,3 +427,21 @@ swiper {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+/* Swiper Pagination Bullets */
+.swiper-pagination-bullet {
+  background-color: #d1d5db; /* Color gris por defecto */
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #10b981 !important; /* Emerald-500 cuando está activo */
+  opacity: 1;
+}
+.text-glow {
+  text-shadow:
+    0 0 10px rgba(16, 185, 129, 0.6),
+    0 0 20px rgba(16, 185, 129, 0.4),
+    0 0 30px rgba(16, 185, 129, 0.3),
+    0 0 40px rgba(16, 185, 129, 0.1);
+}

@@ -152,3 +152,5 @@ export interface Day {
   normal: { [key: string]: number[] }
   hours?: CurrentConditions[]
 }
+
+

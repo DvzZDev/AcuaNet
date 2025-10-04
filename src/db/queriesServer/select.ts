@@ -220,3 +220,35 @@ export async function userLastPin() {
   const allCaches = await getAllUserCaches()
   return allCaches.length > 0 ? allCaches[0] : null
 }
+
+export async function getUserCatchWhitId({ catchId }: { catchId: string }): Promise<CatchReportDB | null> {
+  const supabase = await createSvClient()
+  const { data, error } = await supabase.from("catch_reports").select().eq("catch_id", catchId).single()
+  if (error) {
+    console.error("Error fetching user:", error)
+    return null
+  }
+  return data
+}
+
+export const getHistoricalWeather = async (lat: number | null, lng: number | null, date: Date) => {
+  try {
+    const formattedDate = date.toISOString().split("T")[0]
+    const weatherApi = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lng}/${formattedDate}?unitGroup=metric&elements=datetime%2CresolvedAddress%2Ctempmax%2Ctempmin%2Ctemp%2Cwindspeed%2Cwinddir%2Cpressure%2Cconditions%2Cdescription%2Cicon&key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&contentType=json&lang=es`
+    const res = await fetch(weatherApi, {
+      headers: {
+        "User-Agent": "AcuaNet-App/1.0.0",
+      },
+    })
+
+    if (!res.ok) {
+      throw new Error(`Weather API error: ${res.status} ${res.statusText}`)
+    }
+
+    const weatherData = await res.json()
+    return weatherData
+  } catch (error) {
+    console.error("Error fetching historical weather:", error)
+    throw new Error("Failed to fetch historical weather data")
+  }
+}

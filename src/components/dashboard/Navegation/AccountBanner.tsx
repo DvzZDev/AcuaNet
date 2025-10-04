@@ -5,16 +5,15 @@ import { UserStoryIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
 export default function AccountBanner({ userdata }: { userdata?: UserData }) {
-
-  console.log("User Data in AccountBanner:", userdata)
   return (
-    <div className="mr-8 z-50 ml-auto flex items-center gap-3 border-b border-emerald-200 pb-3">
+    <div className="z-50 mr-8 ml-auto flex items-center gap-3 border-b border-emerald-200 pb-3">
       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-200">
         {userdata?.avatar_url || userdata?.picture ? (
           <img
             className="h-12 w-12 rounded-full object-cover"
             src={userdata?.avatar_url || userdata?.picture}
             alt="User avatar"
+            referrerPolicy="no-referrer"
           />
         ) : (
           <HugeiconsIcon

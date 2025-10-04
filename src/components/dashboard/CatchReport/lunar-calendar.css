@@ -1,0 +1,80 @@
+.lunar-calendar-container .react-calendar {
+  background: #064e3b;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  color: #d1fae5;
+  font-size: 0.7rem;
+}
+
+.lunar-calendar-container .react-calendar__navigation {
+  margin-bottom: 0.25rem;
+  height: 28px;
+}
+
+.lunar-calendar-container .react-calendar__navigation button {
+  color: #5ee9aa;
+  font-weight: bold;
+  font-size: 0.7rem;
+  min-width: 28px;
+  padding: 0.125rem;
+}
+
+.lunar-calendar-container .react-calendar__navigation button:enabled:hover,
+.lunar-calendar-container .react-calendar__navigation button:enabled:focus {
+  background-color: #065f46;
+}
+
+.lunar-calendar-container .react-calendar__month-view__weekdays {
+  color: #5ee9aa;
+  font-weight: bold;
+  font-size: 0.55rem;
+}
+
+.lunar-calendar-container .react-calendar__month-view__weekdays__weekday {
+  padding: 0.125rem;
+}
+
+.lunar-calendar-container .react-calendar__tile {
+  background: transparent;
+  color: #d1fae5;
+  padding: 0.05rem;
+  max-height: 52px;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.lunar-calendar-container .react-calendar__tile:enabled:hover,
+.lunar-calendar-container .react-calendar__tile:enabled:focus {
+  background-color: #065f46;
+  border-radius: 0.25rem;
+}
+
+.lunar-calendar-container .react-calendar__tile--now {
+  background: #0c4a6e !important;
+  border-radius: 0.25rem;
+}
+
+.lunar-calendar-container .react-calendar__tile--active {
+  background: #0369a1;
+  border-radius: 0.25rem;
+}
+
+.lunar-calendar-container .react-calendar__tile--active:enabled:hover,
+.lunar-calendar-container .react-calendar__tile--active:enabled:focus {
+  background: #0284c7;
+}
+
+.lunar-calendar-container .react-calendar__month-view__days__day--neighboringMonth {
+  color: #6b7280;
+}
+
+.lunar-calendar-container .react-calendar__tile abbr {
+  font-weight: bold;
+  font-size: 0.6rem;
+  margin-bottom: 0.05rem;
+}

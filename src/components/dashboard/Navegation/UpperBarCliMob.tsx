@@ -131,6 +131,7 @@ export default function UpperBarCliMob({ userData }: UpperBarCliMobProps) {
                     className="h-12 w-12 rounded-full object-cover"
                     src={userData?.avatar_url || userData?.picture}
                     alt="User avatar"
+                    referrerPolicy="no-referrer"
                   />
                 ) : (
                   <HugeiconsIcon

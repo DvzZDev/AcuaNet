@@ -13,7 +13,7 @@ export default async function UpperBar() {
 
   return (
     <>
-      <div className="relative z-[1100] hidden h-20 w-full items-center bg-emerald-50 p-3 md:flex">
+      <div className="relative z-[100] hidden h-20 w-full items-center bg-emerald-50 p-3 md:flex">
         <UpperBarCliPc />
         <Suspense fallback={<div>Loading user info...</div>}>
           <AccountBanner userdata={user?.user_metadata as UserData} />

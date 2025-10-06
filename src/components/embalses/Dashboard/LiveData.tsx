@@ -7,13 +7,13 @@ export default function LiveData({ data }: { data: LiveData[] }) {
   return (
     <>
       <div className="flex flex-col gap-1">
-        <h2 className="text-2xl font-bold text-green-950">Datos en tiempo real</h2>
+        <h2 className="text-3xl font-['BlackRolmer'] font-bold text-green-950">Datos en tiempo real</h2>
         <div className="w-fit rounded-full bg-orange-200 px-2 py-[2px] text-xs">
           <p>Datos no contrastados</p>
         </div>
       </div>
 
-      <section className="relative h-fit w-full overflow-hidden rounded-lg border border-green-900/30 bg-green-100 px-4 py-2 text-black">
+      <section className="relative h-fit w-full overflow-hidden rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-2 text-black">
         {/* <DotLottieReact
           src="https://app.lottiefiles.com/share/fa4c008f-f284-4870-bc55-03b2ffa2d284"
           loop
@@ -39,7 +39,7 @@ export default function LiveData({ data }: { data: LiveData[] }) {
           <tbody className="font-green-950 text-xs lg:text-sm">
             {data.map((i) => (
               <tr
-                className="odd:bg-[#c8ffdc] lg:text-balance"
+                className="first:bg-emerald-100 lg:text-balance"
                 key={i.id}
               >
                 <td className="py-1">

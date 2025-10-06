@@ -8,12 +8,12 @@ import LunarCalendarSkeleton from "./LunarCalendarSkeleton"
 import MapEmbDataSkeleton from "./MapEmbDataSkeleton"
 import PubliSkeleton from "./PubliSkeleton"
 
-export default function SkeleonDashboard() {
+export default function DashboardPageSkeleton() {
   return (
     <>
       <FavButtonSkeleton />
       <main className="flex justify-center pb-14 text-black">
-        <section className="flex w-full max-w-[70rem] flex-col gap-7 px-6">
+        <section className="flex w-full max-w-[70rem] flex-col gap-7">
           {/* Title and flag */}
           <div className="flex animate-pulse items-center justify-between">
             <div className="h-12 w-80 rounded-lg bg-green-200" />
@@ -23,7 +23,7 @@ export default function SkeleonDashboard() {
           {/* IntroCuencas */}
           <IntroCuencasSkeleton />
 
-          {/* LiveData (optional - datos en tiempo real) */}
+          {/* LiveData */}
           <LiveDataSkeleton />
 
           {/* Estado Actual title */}

@@ -1,9 +1,11 @@
 "use client"
 
+import { Analytics03Icon, DropletIcon, RulerIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 import NumberFlow from "@number-flow/react"
-import { useEffect, useState, useRef } from "react"
-import { useInView } from "react-intersection-observer"
 import { motion, useInView as motionUseInView } from "motion/react"
+import { useEffect, useRef, useState } from "react"
+import { useInView } from "react-intersection-observer"
 import { twMerge } from "tailwind-merge"
 
 export default function EstadoActual({
@@ -70,7 +72,7 @@ export default function EstadoActual({
   return (
     <>
       <div className="flex flex-col gap-1">
-        <h2 className="text-2xl font-bold text-green-950">Datos semanales</h2>
+        <h2 className="font-['BlackRolmer'] text-3xl font-bold text-green-950">Datos semanales</h2>
         <div className="flex items-center gap-3">
           <div className="w-fit rounded-full bg-blue-200 px-2 py-[2px] text-xs">
             <p>Datos contrastados</p>
@@ -116,7 +118,7 @@ export default function EstadoActual({
 
       <section
         ref={ref}
-        className="h-fit w-full rounded-lg border border-green-900/30 bg-green-100 p-2"
+        className="h-fit w-full rounded-2xl border border-green-300 bg-emerald-50 p-2"
       >
         {/* Agua Embalsada */}
         <div
@@ -124,28 +126,12 @@ export default function EstadoActual({
           className={twMerge("grid grid-cols-1 justify-between gap-4 md:grid-cols-2", pt ? "lg:grid-cols-4" : "lg:grid-cols-3")}
         >
           <div className="flex w-full items-center gap-5 rounded-md p-2">
-            <div className="rounded-xs bg-green-400/50 p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35"
-                height="35"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-droplets"
-              >
-                <path
-                  stroke="none"
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path d="M4.072 20.3a2.999 2.999 0 0 0 3.856 0a3.002 3.002 0 0 0 .67 -3.798l-2.095 -3.227a.6 .6 0 0 0 -1.005 0l-2.098 3.227a3.003 3.003 0 0 0 .671 3.798z" />
-                <path d="M16.072 20.3a2.999 2.999 0 0 0 3.856 0a3.002 3.002 0 0 0 .67 -3.798l-2.095 -3.227a.6 .6 0 0 0 -1.005 0l-2.098 3.227a3.003 3.003 0 0 0 .671 3.798z" />
-                <path d="M10.072 10.3a2.999 2.999 0 0 0 3.856 0a3.002 3.002 0 0 0 .67 -3.798l-2.095 -3.227a.6 .6 0 0 0 -1.005 0l-2.098 3.227a3.003 3.003 0 0 0 .671 3.798z" />
-              </svg>
+            <div className="rounded-2xl bg-emerald-200 p-3">
+              <HugeiconsIcon
+                icon={DropletIcon}
+                size={35}
+                color="#032e15"
+              />
             </div>
 
             <div className="flex w-full flex-col gap-2">
@@ -162,38 +148,21 @@ export default function EstadoActual({
                   initial={{ width: 0 }}
                   animate={isInViewMotion ? { width: `${agua_embalsadapor}%` } : { width: 0 }}
                   transition={{ type: "spring", duration: 1 }}
-                  className="relative h-3 rounded-full bg-[#1ca077]"
+                  className="relative h-3 rounded-full bg-[#a4f4cf]"
                 ></motion.div>
               </div>
               <p className="text-sm font-semibold text-green-950">
-                <NumberFlow value={valoresAnimados.agua_embalsadapor} /> <span className="text-[#3d7764]">% capacidad total</span>
+                <NumberFlow value={valoresAnimados.agua_embalsadapor} /> <span className="text-[#032e15]">% capacidad total</span>
               </p>
             </div>
           </div>
           <div className="flex w-full items-center gap-5 rounded-md p-2">
-            <div className="rounded-xs bg-green-400/50 p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35"
-                height="35"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path
-                  stroke="none"
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path d="M17 3l4 4l-14 14l-4 -4z" />
-                <path d="M16 7l-1.5 -1.5" />
-                <path d="M13 10l-1.5 -1.5" />
-                <path d="M10 13l-1.5 -1.5" />
-                <path d="M7 16l-1.5 -1.5" />
-              </svg>
+            <div className="rounded-2xl bg-emerald-200 p-3">
+              <HugeiconsIcon
+                icon={RulerIcon}
+                size={35}
+                color="#032e15"
+              />
             </div>
             <div className="flex w-full flex-col gap-2">
               <p className="text-lg leading-none font-semibold text-[#3d7764]">Capacidad Total</p>
@@ -252,21 +221,12 @@ export default function EstadoActual({
           {/* Nivel (Cota) - Condicional */}
           {cota != null && cota !== undefined && cota > 0 ? (
             <div className="flex w-full items-center gap-5 rounded-md p-2">
-              <div className="rounded-xs bg-green-400/50 p-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-mountain"
-                >
-                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
-                </svg>
+              <div className="rounded-2xl bg-emerald-200 p-3">
+                <HugeiconsIcon
+                  icon={Analytics03Icon}
+                  size={35}
+                  color="#032e15"
+                />
               </div>
               <div className="flex w-full flex-col gap-2">
                 <p className="text-lg leading-none font-semibold text-[#3d7764]">Nivel (Cota)</p>
@@ -290,21 +250,12 @@ export default function EstadoActual({
             </div>
           ) : (
             <div className="flex w-full items-center gap-5 rounded-md p-2">
-              <div className="rounded-xs bg-green-400/50 p-2 opacity-50">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-mountain"
-                >
-                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
-                </svg>
+              <div className="rounded-2xl bg-emerald-200 p-3">
+                <HugeiconsIcon
+                  icon={Analytics03Icon}
+                  size={35}
+                  color="#032e15"
+                />
               </div>
               <div className="flex w-full flex-col gap-2">
                 <p className="text-lg leading-none font-semibold text-[#3d7764] opacity-50">Nivel (Cota)</p>

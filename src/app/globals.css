@@ -92,8 +92,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .scroll-tab {
-  --sb-track-color: #f0fdf4;
-  --sb-thumb-color: #275e56;
+  --sb-track-color: #dbfce7;
+  --sb-thumb-color: #111b2f;
   --sb-size: 10px;
 }
 
@@ -444,4 +444,34 @@ swiper {
     0 0 20px rgba(16, 185, 129, 0.4),
     0 0 30px rgba(16, 185, 129, 0.3),
     0 0 40px rgba(16, 185, 129, 0.1);
+}
+
+/* en tu globals.css o tailwind.css */
+
+
+
+.scrollweather {
+  --sb-track-color: #111a2e;
+  --sb-thumb-color: #93c5fd;
+  --sb-size: 6px;
+}
+
+.scrollweather::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.scrollweather::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 25px;
+}
+
+.scrollweather::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 25px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .scrollweather {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }

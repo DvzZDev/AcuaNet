@@ -1,8 +1,8 @@
 "use client"
 
-import { JSX, useState } from "react"
-import { Moon } from "lunarphase-js"
 import { MoonVisibility } from "@/lib/MoonVisibility"
+import { Moon } from "lunarphase-js"
+import { JSX, useState } from "react"
 
 type LunarDay = {
   date: Date
@@ -58,7 +58,7 @@ const generateLunarData = (month: number, year: number): LunarDay[] => {
 // Componente Vista de Escritorio
 const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay[]; startYear: number; startMonth: number }) => {
   const daysInMonth = new Date(startYear, startMonth + 1, 0).getDate()
-  const firstDayOfMonth = (new Date(startYear, startMonth, 1).getDay() + 6) % 7 // Lunes como inicio
+  const firstDayOfMonth = (new Date(startYear, startMonth, 1).getDay() + 6) % 7
   const currentDate = new Date()
 
   const generateCalendar = () => {
@@ -70,12 +70,12 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
     calendarRows.push(
       <div
         key="week-header"
-        className="font-NecoBold mb-1 grid grid-cols-7 text-center text-xl font-black text-green-950 uppercase"
+        className="mb-3 grid grid-cols-7 gap-2 text-center"
       >
         {weekDays.map((day) => (
           <div
             key={day}
-            className="mx-1 rounded-full bg-[#97ceaab1] p-2 pb-2"
+            className="text-sm font-semibold tracking-wide text-slate-600"
           >
             {day}
           </div>
@@ -88,12 +88,7 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
       const week = []
       for (let j = 0; j < 7; j++) {
         if (i === 0 && j < firstDayOfMonth) {
-          week.push(
-            <div
-              key={`empty-${i}-${j}`}
-              className=""
-            ></div>
-          )
+          week.push(<div key={`empty-${i}-${j}`}></div>)
         } else if (dayCount > daysInMonth) {
           week.push(<div key={`empty-${i}-${j}`}></div>)
         } else {
@@ -102,37 +97,38 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
           week.push(
             <div
               key={dayCount}
-              className={`relative m-1 rounded-md p-2 text-center ${isToday ? "bg-lime-100" : "bg-blue-200"} `}
+              className={`relative rounded-xl p-3 transition-all hover:shadow-lg ${
+                isToday
+                  ? "border-2 border-indigo-400 bg-gradient-to-br from-blue-50 to-indigo-100 shadow-md"
+                  : "border border-slate-200 bg-white hover:border-slate-300"
+              }`}
             >
-              <div className="flex justify-between">
-                <p className="text-left font-black text-red-700">{dayCount}</p>
-                <p className="text-3xl">{lunarDay?.phaseEmoji}</p>
+              <div className="mb-2 flex items-start justify-between">
+                <span className={`text-lg font-bold ${isToday ? "text-indigo-600" : "text-slate-700"}`}>{dayCount}</span>
+                <span className="text-3xl">{lunarDay?.phaseEmoji}</span>
               </div>
 
               {isToday && (
-                <div className="absolute right-2 bottom-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
+                <div className="absolute -top-2 -right-2 rounded-full bg-indigo-500 px-2 py-1 text-xs font-bold text-white shadow-md">
                   Hoy
                 </div>
               )}
 
-              <p className="text-left text-base font-bold">{lunarDay?.phase}</p>
-              <p className="-ml-1 text-left text-base">{lunarDay?.activityIcon}</p>
-              <p className="flex items-center text-left text-sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="2 9 44 30"
-                  className="mr-1 h-4 w-4"
-                >
-                  {" "}
-                  <path
-                    fill="none"
-                    d="M0 0h48v48H0z"
-                  ></path>{" "}
-                  <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"></path>{" "}
-                </svg>{" "}
-                {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />}{" "}
-                <span className="text-[11px] font-black">%</span>
-              </p>
+              <div className="space-y-1">
+                <p className="text-sm font-medium text-slate-600">{lunarDay?.phase}</p>
+                <p className="text-base">{lunarDay?.activityIcon}</p>
+                <div className="mt-2 flex items-center text-sm text-slate-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="2 9 44 30"
+                    className="mr-1 h-3 w-3 fill-current"
+                  >
+                    <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"></path>
+                  </svg>
+                  {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />}
+                  <span className="ml-0.5 font-semibold">%</span>
+                </div>
+              </div>
             </div>
           )
           dayCount++
@@ -141,7 +137,7 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
       calendarRows.push(
         <div
           key={i}
-          className="grid grid-cols-7"
+          className="mb-2 grid grid-cols-7 gap-2"
         >
           {week}
         </div>
@@ -157,45 +153,46 @@ const DesktopView = ({ lunarDays, startYear, startMonth }: { lunarDays: LunarDay
 const MobileView = ({ lunarDays }: { lunarDays: LunarDay[] }) => {
   const currentDate = new Date()
   return (
-    <div className="grid grid-cols-2 gap-2 md:hidden">
+    <div className="grid grid-cols-2 gap-3 md:hidden">
       {lunarDays.map((lunarDay, index) => {
         const isToday = lunarDay.date.toDateString() === currentDate.toDateString()
         return (
           <div
             key={index}
-            className={`relative rounded-lg border p-2 text-xs shadow-md ${isToday ? "bg-lime-100" : "bg-blue-200"}`}
+            className={`relative rounded-xl p-3 transition-all ${
+              isToday
+                ? "border-2 border-indigo-400 bg-gradient-to-br from-blue-50 to-indigo-100 shadow-md"
+                : "border border-slate-200 bg-white"
+            }`}
           >
             {isToday && (
-              <div className="absolute right-2 bottom-2 rotate-12 rounded-full bg-orange-700 p-1 py-2 text-xs font-black text-white">
+              <div className="absolute -top-2 -right-2 rounded-full bg-indigo-500 px-2 py-1 text-xs font-bold text-white shadow-md">
                 Hoy
               </div>
             )}
-            <div className="flex items-center justify-between">
-              <p className="text-base font-black text-red-700">
+            <div className="mb-2 flex items-center justify-between">
+              <p className={`text-sm font-bold ${isToday ? "text-indigo-600" : "text-slate-700"}`}>
                 {lunarDay.date
                   .toLocaleDateString("es-ES", { weekday: "short", day: "numeric" })
                   .replace(/^\w/, (c) => c.toUpperCase())}
               </p>
               <span className="text-2xl">{lunarDay.phaseEmoji}</span>
             </div>
-            <p className="text-xs">{lunarDay.phase}</p>
-            <p className="text-sm">{lunarDay.activityIcon}</p>
-            <p className="flex items-center text-left text-xs">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="2 9 44 30"
-                className="mr-1 h-4 w-4"
-              >
-                {" "}
-                <path
-                  fill="none"
-                  d="M0 0h48v48H0z"
-                ></path>{" "}
-                <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"></path>{" "}
-              </svg>{" "}
-              {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />}{" "}
-              <span className="text-[11px] font-black">%</span>
-            </p>
+            <div className="space-y-1">
+              <p className="text-xs font-medium text-slate-600">{lunarDay.phase}</p>
+              <p className="text-sm">{lunarDay.activityIcon}</p>
+              <div className="mt-1 flex items-center text-xs text-slate-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="2 9 44 30"
+                  className="mr-1 h-3 w-3 fill-current"
+                >
+                  <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"></path>
+                </svg>
+                {lunarDay?.age !== undefined && <MoonVisibility age={lunarDay.age} />}
+                <span className="ml-0.5 font-semibold">%</span>
+              </div>
+            </div>
           </div>
         )
       })}
@@ -227,37 +224,62 @@ const LunarCalendar = () => {
   }
 
   return (
-    <section className="flex items-center justify-center">
-      <div className="w-full overflow-hidden rounded-lg bg-green-100 shadow-md">
-        <div className="flex justify-between pb-6">
-          <button
-            onClick={() => handleMonthChange("prev")}
-            aria-label="Mes anterior"
-            className="rounded-2xl bg-emerald-400 p-1"
+    <div className="w-full">
+      <div className="mb-6 flex items-center justify-between">
+        <button
+          onClick={() => handleMonthChange("prev")}
+          aria-label="Mes anterior"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition-colors hover:bg-slate-200"
+        >
+          <svg
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            ◀
-          </button>
-          <h2 className="text-3xl font-bold text-[#052e16] uppercase italic">
-            {new Date(startYear, startMonth)
-              .toLocaleString("es-ES", { month: "long", year: "numeric" })
-              .replace(/^\w/, (c) => c.toUpperCase())}
-          </h2>
-          <button
-            onClick={() => handleMonthChange("next")}
-            aria-label="Mes siguiente"
-            className="rounded-2xl bg-emerald-400 p-1"
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        <h2 className="font-['BlackRolmer'] text-2xl font-bold tracking-tight text-slate-800 md:text-3xl">
+          {new Date(startYear, startMonth)
+            .toLocaleString("es-ES", { month: "long", year: "numeric" })
+            .replace(/^\w/, (c) => c.toUpperCase())}
+        </h2>
+
+        <button
+          onClick={() => handleMonthChange("next")}
+          aria-label="Mes siguiente"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition-colors hover:bg-slate-200"
+        >
+          <svg
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            ▶
-          </button>
-        </div>
-        <DesktopView
-          lunarDays={lunarDays}
-          startYear={startYear}
-          startMonth={startMonth}
-        />
-        <MobileView lunarDays={lunarDays} />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
       </div>
-    </section>
+
+      <DesktopView
+        lunarDays={lunarDays}
+        startYear={startYear}
+        startMonth={startMonth}
+      />
+      <MobileView lunarDays={lunarDays} />
+    </div>
   )
 }
 

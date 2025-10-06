@@ -2,6 +2,8 @@
 import { getMoonPhasesForWeekAsRow } from "@/lib/GetMoonPhaseWeek"
 import GetResume from "@/lib/GetResume"
 import type { IntroEmbalsesProps } from "@/types"
+import { Calendar03Icon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 export default function IntroCuencas({ nombre_cuenca, fecha_modificacion, weather, embalse, cuenca }: IntroEmbalsesProps) {
   const moonPhases = getMoonPhasesForWeekAsRow()
@@ -24,32 +26,14 @@ Genera un resumen breve y natural sobre las condiciones de pesca en los próximo
     <div className="relative flex flex-col justify-between md:h-16 md:flex-row">
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-bold text-green-950">Cuenca del {nombre_cuenca} </h1>
+          <h1 className="font-['BlackRolmer'] text-3xl font-bold text-green-950">Cuenca del {nombre_cuenca} </h1>
         </div>
         <div className="flex items-center gap-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#032e15"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path
-              stroke="none"
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
-            <path d="M16 3v4" />
-            <path d="M8 3v4" />
-            <path d="M4 11h16" />
-            <path d="M11 15h1" />
-            <path d="M12 15v3" />
-          </svg>
+          <HugeiconsIcon
+            icon={Calendar03Icon}
+            size={18}
+            color="#047857"
+          />
           <p>
             Últ. Actualización -{" "}
             {fecha_modificacion
@@ -67,7 +51,7 @@ Genera un resumen breve y natural sobre las condiciones de pesca en los próximo
       </div>
 
       {!cuenca ? (
-        <div className="relative mt-2 mb-2 flex h-[9rem] w-full max-w-[35rem] flex-col items-center gap-2 rounded-md bg-green-100 md:mt-0 md:h-[7rem]">
+        <div className="relative mt-2 mb-2 flex h-[9rem] w-full max-w-[35rem] flex-col items-center gap-2 rounded-md bg-emerald-50 md:mt-0 md:h-[7rem]">
           {error ? (
             <article className="scroll-hide text-md my-2 flex h-full items-center justify-center overflow-auto px-3 text-center leading-tight">
               <span>Ha sucedido un error al generar el texto.</span>

@@ -16,11 +16,12 @@ interface Coordinates {
 }
 
 export default function MapEmbData({ coords }: { coords: Coordinates }) {
+  console.log(coords)
   return (
     <>
-      <h2 className="text-2xl font-black text-green-950">Mapas</h2>
+      <h2 className="text-3xl font-black font-['BlackRolmer'] text-green-950">Mapas</h2>
       <section className="grid gap-4 md:grid-cols-2">
-        <div className="col-span-1">
+        <div className="col-span-1 w-full h-full">
           <MapaCercano
             key={`${coords.lat}-${coords.lon}-${coords.name}`}
             coords={{ lat: coords.lat, lon: coords.lon, name: coords.name }}

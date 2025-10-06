@@ -14,7 +14,7 @@ export const WindDirectionIcon = ({ degree }: { degree: number }) => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 64 64"
-        className="h-8 w-8"
+        className="h-7 w-7"
         style={{ transform: `rotate(${rotation}deg)` }}
       >
         <defs>
@@ -28,42 +28,32 @@ export const WindDirectionIcon = ({ degree }: { degree: number }) => {
           >
             <stop
               offset="0"
-              stopColor="#7f9cf5"
-            />
-            <stop
-              offset="0.45"
-              stopColor="#7f9cf5"
+              stopColor="#7dd3fc"
             />
             <stop
               offset="1"
-              stopColor="#3b82f6"
+              stopColor="#2563eb"
             />
           </linearGradient>
         </defs>
+
+        {/* Círculo base */}
         <circle
           cx="32"
           cy="32"
           r="18"
           fill="url(#gradientWind)"
-          stroke="#e5e7eb"
+          stroke="#e2e8f0"
           strokeWidth="2"
         />
+
+        {/* Flecha de dirección */}
         <path
           fill="#fff"
           stroke="#fff"
-          strokeWidth=".5"
+          strokeWidth="0.5"
           d="M36.47 39.46l-4.3-15.09a.17.17 0 00-.34 0l-4.32 15.09a.35.35 0 00.07.29c.06.11.24 0 4-1.5a.47.47 0 01.33 0l4 1.5c.13.07.22.07.28 0a.26.26 0 00.04-.29z"
-        >
-          <animateTransform
-            attributeName="transform"
-            type="rotate"
-            values="-3 32 32; 3 32 32; -3 32 32"
-            dur="1s"
-            repeatCount="indefinite"
-            calcMode="spline"
-            keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"
-          />
-        </path>
+        />
       </svg>
     </div>
   )

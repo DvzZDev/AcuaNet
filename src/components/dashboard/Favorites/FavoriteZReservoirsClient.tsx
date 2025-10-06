@@ -27,7 +27,6 @@ interface ProcessedReservoirData {
   pais?: string
 }
 
-// SVG Icons Components
 const TrendUp = ({ color = "#16a34a" }: { color?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -230,14 +229,14 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
             className={cn(
               "min-w-[40px] text-right text-lg font-black sm:min-w-[50px] sm:text-xl md:text-2xl",
               percentage >= 90
-                ? "text-blue-700" // nivel óptimo-alto
+                ? "text-blue-700" 
                 : percentage >= 70
-                  ? "text-cyan-600" // lleno
+                  ? "text-cyan-600"
                   : percentage >= 50
-                    ? "text-green-600" // medio
+                    ? "text-green-600"
                     : percentage >= 30
-                      ? "text-yellow-700" // bajo
-                      : "text-red-600" // crítico
+                      ? "text-yellow-700" 
+                      : "text-red-600" 
             )}
           >
             {percentage.toFixed(0)}%
@@ -256,14 +255,14 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
                 className={cn(
                   "absolute left-0 h-full w-full origin-left rounded-full",
                   percentage >= 90
-                    ? "bg-blue-700" // nivel óptimo-alto
+                    ? "bg-blue-700" 
                     : percentage >= 70
-                      ? "bg-cyan-600" // lleno
+                      ? "bg-cyan-600" 
                       : percentage >= 50
-                        ? "bg-green-600" // medio
+                        ? "bg-green-600"
                         : percentage >= 30
-                          ? "bg-yellow-700" // bajo
-                          : "bg-red-600" // crítico
+                          ? "bg-yellow-700"
+                          : "bg-red-600"
                 )}
               />
             </div>
@@ -305,8 +304,8 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
 
             {/* Skeleton Progress Bar */}
             <div className="mt-3 flex items-center gap-2 sm:mt-4">
-              <div className="h-4 flex-1 animate-pulse rounded-full bg-green-200 sm:h-5" />
-              <div className="h-4 w-4 animate-pulse rounded bg-green-200 sm:h-5 sm:w-5" />
+              <div className="h-4 flex-1 animate-pulse rounded-full bg-green-50 sm:h-5" />
+              <div className="h-4 w-4 animate-pulse rounded bg-green-50 sm:h-5 sm:w-5" />
             </div>
 
             {/* Premium Notice */}
@@ -317,7 +316,7 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
           </button>
 
           {/* Lock Icon */}
-          <div className="absolute top-2 right-2 z-20">
+          <div className="absolute top-1 right-0 z-20">
             <LockIcon color="#fb923c" />
           </div>
         </div>
@@ -329,7 +328,7 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
 EmbalseCard.displayName = "EmbalseCard"
 
 export default function FavoriteZReservoirsClient({ favorite_reservoirs }: { favorite_reservoirs: ReservoirData[] }) {
-  const accessType = "subscription"
+  const accessType = "free"
   const processedData = processReservoirData(favorite_reservoirs)
   const { getDynamicStyle } = useScreenWidth()
 

@@ -45,8 +45,15 @@ const MapRef = ({ setMapInstance }: { setMapInstance: (map: any) => void }) => {
 }
 
 export default function LastPinMap({ reportData }: { reportData: CatchReportDB[] }) {
+  // Simular que no hay capturas
+  // reportData = []
+
   console.log("Report Data in LastPinMap:", reportData)
-  const position: [number, number] = [reportData[0]?.lat || 40.4168, reportData[0]?.lng || -3.7038]
+  // Centro de España cuando no hay capturas
+  const position: [number, number] =
+    reportData.length > 0 && reportData[0]?.lat && reportData[0]?.lng
+      ? [reportData[0].lat, reportData[0].lng]
+      : [40.4168, -3.7038]
   const L = useLeaflet()
   const [mapInstance, setMapInstance] = useState<any>(null)
   const [isMobile, setIsMobile] = useState(false)
@@ -214,7 +221,7 @@ export default function LastPinMap({ reportData }: { reportData: CatchReportDB[]
     <div className="relative h-full min-h-[300px] w-full md:min-h-[400px]">
       <MapContainer
         center={position}
-        zoom={position ? (isMobile ? 15 : 16) : 2}
+        zoom={reportData.length > 0 ? (isMobile ? 15 : 16) : isMobile ? 5 : 6}
         scrollWheelZoom={false}
         zoomControl={false}
         touchZoom={true}
@@ -224,7 +231,7 @@ export default function LastPinMap({ reportData }: { reportData: CatchReportDB[]
       >
         <MapController />
         <MapRef setMapInstance={setMapInstance} />
-        {markerIcon && (
+        {markerIcon && reportData.length > 0 && (
           <Marker
             position={position}
             icon={markerIcon}

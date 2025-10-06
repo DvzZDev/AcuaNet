@@ -4,8 +4,9 @@ import { GooglePhotosIcon, MinimizeScreenIcon } from "@hugeicons/core-free-icons
 import { HugeiconsIcon } from "@hugeicons/react"
 import { AnimatePresence, motion } from "motion/react"
 import "swiper/css"
+import "swiper/css/navigation"
 import "swiper/css/pagination"
-import { Pagination } from "swiper/modules"
+import { Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import ChipTitle from "./ChipTitle"
 
@@ -28,12 +29,26 @@ export default function ImageCarousel({ images, onImageClick, selectedImage, set
         textColor="text-emerald-300"
       />
       <div className="aspect-square w-full overflow-hidden rounded-2xl">
+        <style
+          jsx
+          global
+        >{`
+          .mySwiper .swiper-button-next,
+          .mySwiper .swiper-button-prev {
+            color: #10b981 !important;
+          }
+          .mySwiper .swiper-button-next:after,
+          .mySwiper .swiper-button-prev:after {
+            font-size: 24px;
+          }
+        `}</style>
         <Swiper
           pagination={{
             dynamicBullets: true,
           }}
+          navigation={true}
           loop={true}
-          modules={[Pagination]}
+          modules={[Pagination, Navigation]}
           className="mySwiper h-full w-full"
         >
           {images.map((imgUrl, index) => (

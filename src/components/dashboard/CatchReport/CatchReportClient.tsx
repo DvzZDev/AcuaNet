@@ -1,7 +1,7 @@
 "use client"
 
 import { CatchReportDB } from "@/types"
-import { AvalancheIcon, Calendar01FreeIcons, MoonIcon, SunCloud02Icon } from "@hugeicons/core-free-icons"
+import { AvalancheIcon, Calendar03Icon, MoonIcon, SunCloud02Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { useState } from "react"
 import ChipsReport from "./ChipsReport"
@@ -35,14 +35,24 @@ export default function CatchReportClient({ report }: { report: CatchReportDB })
             </h1>
           </div>
 
-          <div className="flex items-center justify-center">
-            <span className="flex items-center gap-1 rounded-full border-2 border-emerald-800 bg-emerald-950 px-2 py-1 text-[10px] text-emerald-200 shadow-md lg:text-xs">
-              <HugeiconsIcon
-                icon={Calendar01FreeIcons}
-                size={15}
-                color={"#5ee9aa"}
-                strokeWidth={1.5}
-              />
+          <div className="ml-auto flex items-center justify-center">
+            <span className="flex items-center gap-1 rounded-full border-2 border-emerald-800 bg-emerald-950 px-2 py-1 text-[10px] text-emerald-200 shadow-md lg:text-sm">
+              <div className="hidden lg:block">
+                <HugeiconsIcon
+                  icon={Calendar03Icon}
+                  size={18}
+                  color={"#5ee9aa"}
+                  strokeWidth={1.5}
+                />
+              </div>
+              <div className="block lg:hidden">
+                <HugeiconsIcon
+                  icon={Calendar03Icon}
+                  size={15}
+                  color={"#a4f4cf"}
+                  strokeWidth={1.5}
+                />
+              </div>
               {formatDate(report.fecha)}
             </span>
           </div>

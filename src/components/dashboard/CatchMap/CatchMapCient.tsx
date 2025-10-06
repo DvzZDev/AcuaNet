@@ -4,6 +4,7 @@ import { CatchReportDB } from "@/types"
 import { MinusSignIcon, PlusSignIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import "leaflet/dist/leaflet.css"
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet"
 import MarkerClusterGroup from "react-leaflet-cluster"
@@ -48,6 +49,8 @@ const MapRef = ({ setMapInstance }: { setMapInstance: (map: any) => void }) => {
 }
 
 export default function CatchMapClient({ reportData }: { reportData: CatchReportDB[] }) {
+  const router = useRouter()
+
   // Agregar estilos CSS para los clusters
   useEffect(() => {
     if (typeof document !== "undefined") {
@@ -103,12 +106,12 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
     return () => window.removeEventListener("resize", checkIsMobile)
   }, [])
 
-  const createCustomIcon = (imageUrl: string) => {
+  const createCustomIcon = (imageUrl: string, catchId: string) => {
     if (!L) return null
     return L.divIcon({
       className: "custom-marker",
       html: `
-        <div style="position: relative; touch-action: manipulation;">
+        <div style="position: relative; touch-action: manipulation;" data-catch-id="${catchId}">
           <!-- Main Marker -->
           <div style="
             width: 50px;
@@ -120,7 +123,10 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             position: relative;
             cursor: pointer;
-          ">
+            transition: transform 0.2s;
+          "
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'">
             <img 
               src="${imageUrl}" 
               style="
@@ -166,12 +172,12 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
     })
   }
 
-  const createDefaultIcon = () => {
+  const createDefaultIcon = (catchId: string) => {
     if (!L) return null
     return L.divIcon({
       className: "custom-marker",
       html: `
-        <div style="position: relative; touch-action: manipulation;">
+        <div style="position: relative; touch-action: manipulation;" data-catch-id="${catchId}">
           <!-- Main Marker -->
           <div style="
             width: 50px;
@@ -185,7 +191,10 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
             align-items: center;
             justify-content: center;
             cursor: pointer;
-          ">
+            transition: transform 0.2s;
+          "
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'">
             <span style="
               font-size: 20px;
               color: white;
@@ -228,10 +237,30 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
 
   const getMarkerIcon = (report: CatchReportDB) => {
     if (report.imagenes && report.imagenes.length > 0) {
-      return createCustomIcon(report.imagenes[0])
+      return createCustomIcon(report.imagenes[0], report.catch_id)
     }
-    return createDefaultIcon()
+    return createDefaultIcon(report.catch_id)
   }
+
+  const handleMarkerClick = (catchId: string) => {
+    router.push(`/account/dashboard/catchreport/${catchId}`)
+  }
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      const markerElement = target.closest("[data-catch-id]") as HTMLElement
+      if (markerElement) {
+        const catchId = markerElement.getAttribute("data-catch-id")
+        if (catchId) {
+          handleMarkerClick(catchId)
+        }
+      }
+    }
+
+    document.addEventListener("click", handleClick)
+    return () => document.removeEventListener("click", handleClick)
+  }, [router])
 
   const handleZoomIn = () => {
     if (mapInstance) {

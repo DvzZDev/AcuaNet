@@ -13,6 +13,24 @@ export interface UserData {
   sub: string
 }
 
+export interface WeatherTypes {
+  queryCost: number
+  latitude: number
+  longitude: number
+  resolvedAddress: string
+  address: string
+  timezone: string
+  tzoffset: number
+  days: Day[]
+}
+
+export interface IntroEmbalsesProps {
+  nombre_cuenca: string
+  fecha_modificacion: Date
+  weather?: WeatherTypes | null
+  embalse?: Embalses[]
+  cuenca: boolean
+}
 
 export interface CatchReportDB {
   catch_id: string
@@ -38,6 +56,31 @@ export interface CatchReportDB {
   epoca?: string
 }
 
+export interface Embalses {
+  fecha: Date | null
+  embalse: string
+  cuenca: string | null
+  volumen_actual: number | null
+  porcentaje: number | null
+  variacion_ultima_semana?: number | null
+  variacion_ultima_semanapor?: number | null
+  capacidad_total: number | null
+  lat?: number | null
+  lon?: number | null
+  pais?: string | null
+  cota?: number | null
+  cota_date?: Date | null
+}
+
+export interface LiveData {
+  id: string
+  embalse: string
+  volumen: number | null
+  porcentaje: number | null
+  timestamp: Date | null
+  cota: number | null
+}
+
 export interface EmbalseDataHistorical {
   capacidad_total: number
   cuenca: string
@@ -47,7 +90,6 @@ export interface EmbalseDataHistorical {
   porcentaje: number
   volumen_actual: number
 }
-
 
 export interface WeatherData {
   queryCost: number
@@ -106,7 +148,6 @@ export enum Icon {
   PartlyCloudyNight = "partly-cloudy-night",
 }
 
-
 export enum Source {
   Fcst = "fcst",
   Stats = "stats",
@@ -152,5 +193,3 @@ export interface Day {
   normal: { [key: string]: number[] }
   hours?: CurrentConditions[]
 }
-
-

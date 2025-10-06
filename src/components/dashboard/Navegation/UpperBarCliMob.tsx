@@ -80,23 +80,27 @@ export default function UpperBarCliMob({ userData }: UpperBarCliMobProps) {
               className="absolute top-full left-0 mt-2 max-h-60 w-full overflow-y-auto rounded-lg border border-emerald-200 bg-emerald-50 shadow-lg"
             >
               {suggestions.map((suggestion, index) => (
-                <motion.div
+                <Link
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.2,
-                    delay: index * 0.05,
-                  }}
-                  layout
-                  onClick={() => {
+                  href={`/account/dashboard/${suggestion}`}
+                  onMouseDown={(e) => {
+                    e.preventDefault()
                     handleSuggestionClick(suggestion)
-                    setActive(false)
                   }}
-                  className="cursor-pointer px-4 py-2 text-sm transition-colors hover:bg-emerald-100"
                 >
-                  {suggestion}
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.2,
+                      delay: index * 0.05,
+                    }}
+                    layout
+                    className="cursor-pointer px-4 py-2 text-sm transition-colors hover:bg-emerald-100"
+                  >
+                    {suggestion}
+                  </motion.div>
+                </Link>
               ))}
             </motion.div>
           )}

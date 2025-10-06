@@ -48,7 +48,6 @@ export default function LastPinMap({ reportData }: { reportData: CatchReportDB[]
   // Simular que no hay capturas
   // reportData = []
 
-  console.log("Report Data in LastPinMap:", reportData)
   // Centro de España cuando no hay capturas
   const position: [number, number] =
     reportData.length > 0 && reportData[0]?.lat && reportData[0]?.lng

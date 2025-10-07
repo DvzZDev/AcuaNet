@@ -23,10 +23,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://i.imgur.com/gQ3VYVH.png" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/GG54PMK.png" alt="Logo" width="150" height="150">
   </a>
 
-<h3 align="center">AcuaNet</h3>
+  # AcuaNet
 
   <p align="center">
     AcuaNet es una plataforma innovadora diseñada para recopilar y centralizar datos esenciales para todos los pescadores.

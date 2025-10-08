@@ -1,7 +1,9 @@
 import "@/app/globals.css"
+import MainContent from "@/components/dashboard/MainContent"
 import Sidebar from "@/components/dashboard/Navegation/SidebarWide"
 import UpperBar from "@/components/dashboard/Navegation/UpperBar"
 import Footer from "@/components/global/Footer"
+import { checkSubscription } from "@/db/actions"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -41,25 +43,28 @@ export const metadata: Metadata = {
   },
 }
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const subscriptionType = await checkSubscription()
+
   return (
     <div className="flex h-full min-h-screen flex-col">
       {/* Wide Layout */}
       <div className="hidden flex-1 md:flex">
         <Sidebar />
-        <div className="flex flex-1 flex-col">
-          <UpperBar />
+        {/* Contenedor que ocupa el espacio del sidebar y se ajusta cuando este cambia de tamaño */}
+        <MainContent>
+          <UpperBar subscriptionType={subscriptionType} />
           <main className="flex-1 bg-green-100 py-6 pr-16 pl-14">{children}</main>
-        </div>
+          <Footer />
+        </MainContent>
       </div>
 
       {/* Mobile Layout */}
       <div className="flex-1 md:hidden">
-        <UpperBar />
-
+        <UpperBar subscriptionType={subscriptionType} />
         <main className="min-h-screen flex-1 bg-green-100 px-4 py-4">{children}</main>
+        <Footer />
       </div>
-      <Footer />
     </div>
   )
 }

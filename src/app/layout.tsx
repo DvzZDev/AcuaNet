@@ -1,4 +1,5 @@
 import ConditionalLayout from "@/components/global/ConditionalLayout"
+import { RevenueCatInitializer } from "@/components/global/RevenueCatInitializer"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <PostHogPageView />
             <Analytics />
             <SpeedInsights />
+            <RevenueCatInitializer />
           </Suspense>
           <ToastContainer
             position="bottom-right"

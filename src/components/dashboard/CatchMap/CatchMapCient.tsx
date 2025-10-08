@@ -51,7 +51,11 @@ const MapRef = ({ setMapInstance }: { setMapInstance: (map: any) => void }) => {
 export default function CatchMapClient({ reportData }: { reportData: CatchReportDB[] }) {
   const router = useRouter()
 
-  // Agregar estilos CSS para los clusters
+  const position: [number, number] = [reportData[0]?.lat || 40.4168, reportData[0]?.lng || -3.7038]
+  const L = useLeaflet()
+  const [mapInstance, setMapInstance] = useState<any>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
   useEffect(() => {
     if (typeof document !== "undefined") {
       const style = document.createElement("style")
@@ -90,10 +94,6 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
       }
     }
   }, [])
-  const position: [number, number] = [reportData[0]?.lat || 40.4168, reportData[0]?.lng || -3.7038]
-  const L = useLeaflet()
-  const [mapInstance, setMapInstance] = useState<any>(null)
-  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const checkIsMobile = () => {
@@ -276,17 +276,101 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
 
   if (!L) {
     return (
-      <div className="flex h-full items-center justify-center rounded-lg bg-green-100">
-        <div className="text-emerald-700">Cargando mapa...</div>
+      <div className="flex h-full items-center justify-center overflow-hidden rounded-2xl border border-emerald-300 bg-green-50">
+        <div className="text-emerald-700">
+          <svg
+            width="100"
+            height="100"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="0"
+              fill="#5ee9b5"
+            >
+              <animate
+                id="spinner_0Nme"
+                begin="0;spinner_ITag.begin+0.4s"
+                attributeName="r"
+                calcMode="spline"
+                dur="1.2s"
+                values="0;11"
+                keySplines=".52,.6,.25,.99"
+                fill="freeze"
+              />
+              <animate
+                begin="0;spinner_ITag.begin+0.4s"
+                attributeName="opacity"
+                calcMode="spline"
+                dur="1.2s"
+                values="1;0"
+                keySplines=".52,.6,.25,.99"
+                fill="freeze"
+              />
+            </circle>
+            <circle
+              cx="12"
+              cy="12"
+              r="0"
+            >
+              <animate
+                id="spinner_f83A"
+                begin="spinner_0Nme.begin+0.4s"
+                attributeName="r"
+                calcMode="spline"
+                dur="1.2s"
+                values="0;11"
+                keySplines=".52,.6,.25,.99"
+                fill="freeze"
+              />
+              <animate
+                begin="spinner_0Nme.begin+0.4s"
+                attributeName="opacity"
+                calcMode="spline"
+                dur="1.2s"
+                values="1;0"
+                keySplines=".52,.6,.25,.99"
+                fill="freeze"
+              />
+            </circle>
+            <circle
+              cx="12"
+              cy="12"
+              r="0"
+            >
+              <animate
+                id="spinner_ITag"
+                begin="spinner_0Nme.begin+0.8s"
+                attributeName="r"
+                calcMode="spline"
+                dur="1.2s"
+                values="0;11"
+                keySplines=".52,.6,.25,.99"
+                fill="freeze"
+              />
+              <animate
+                begin="spinner_0Nme.begin+0.8s"
+                attributeName="opacity"
+                calcMode="spline"
+                dur="1.2s"
+                values="1;0"
+                keySplines=".52,.6,.25,.99"
+                fill="freeze"
+              />
+            </circle>
+          </svg>
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="relative h-full min-h-[300px] w-full md:min-h-[550px]">
+    <div className="relative h-full min-h-[400px] w-full md:min-h-[550px]">
       <MapContainer
         center={position}
-        zoom={position ? (isMobile ? 15 : 16) : 2}
+        zoom={position ? (isMobile ? 2 : 4) : 2}
         maxZoom={18}
         minZoom={6}
         scrollWheelZoom={false}
@@ -294,7 +378,7 @@ export default function CatchMapClient({ reportData }: { reportData: CatchReport
         touchZoom={true}
         doubleClickZoom={true}
         dragging={true}
-        className="z-0 h-full min-h-full rounded-lg border-green-900/30 bg-green-100 md:min-h-[550px]"
+        className="z-0 !h-[400px] rounded-2xl border-green-900/30 bg-green-100 md:min-h-[550px]"
       >
         <MapController />
         <MapRef setMapInstance={setMapInstance} />

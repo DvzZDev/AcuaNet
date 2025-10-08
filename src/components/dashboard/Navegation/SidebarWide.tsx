@@ -2,6 +2,7 @@
 
 import { logout } from "@/db/actions"
 import { cn } from "@/lib/utils"
+import useSidebarStore from "@/store/useSidebarStore"
 import {
   Album02Icon,
   ArrowLeft03Icon,
@@ -16,7 +17,6 @@ import { HugeiconsIcon } from "@hugeicons/react"
 import { AnimatePresence, motion } from "motion/react"
 import { Link } from "next-view-transitions"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
 
 const links = [
   { href: "/account/dashboard", label: "Resumen", icon: DashboardSquare02Icon },
@@ -27,16 +27,19 @@ const links = [
 
 export default function SidebarWide() {
   const pathname = usePathname()
-  const [isExpanded, setIsExpanded] = useState(true)
+  const { isExpanded, toggleSidebar } = useSidebarStore()
 
   return (
     <aside
       className={cn(
-        "flex min-h-screen shrink-0 grow-0 flex-col overflow-hidden bg-emerald-50 shadow-sm transition-all duration-300 ease-in-out",
+        "fixed top-0 left-0 z-40 flex h-screen shrink-0 grow-0 flex-col overflow-hidden bg-emerald-50 shadow-sm transition-all duration-300 ease-in-out",
         isExpanded ? "w-64" : "w-20"
       )}
     >
-      <div className="flex items-center overflow-hidden">
+      <Link
+        href="/account/dashboard"
+        className="flex items-center overflow-hidden"
+      >
         <div className="flex max-w-[5rem] border-b p-2 text-lg font-bold">
           <img
             className="object-fit h-full w-full shrink-0"
@@ -58,7 +61,7 @@ export default function SidebarWide() {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </Link>
       <nav className="mx-2 mt-7 flex flex-1 flex-col gap-2">
         <div className="flex flex-col gap-3">
           {links.map((link) => (
@@ -176,9 +179,7 @@ export default function SidebarWide() {
         className={cn(
           "relative mb-5 ml-2 flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-base font-medium transition-colors"
         )}
-        onClick={() => {
-          setIsExpanded(!isExpanded)
-        }}
+        onClick={toggleSidebar}
       >
         <AnimatePresence mode="wait">
           {isExpanded ? (

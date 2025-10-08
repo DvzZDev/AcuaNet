@@ -2,8 +2,9 @@
 
 import { useScreenWidth } from "@/hooks/useScreenWidth"
 import { cn } from "@/lib/utils"
+import type { SubscriptionType } from "@/types"
 import { motion } from "motion/react"
-import React, { memo, useCallback } from "react"
+import React, { memo, use, useCallback } from "react"
 
 interface ReservoirData {
   id: string
@@ -173,9 +174,10 @@ interface EmbalseCardProps {
   embalse: ProcessedReservoirData
   accessType?: "subscription" | "lifetime" | "free"
   delay: number
+  index: number
 }
 
-const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "free", delay }) => {
+const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, index, accessType = "free", delay }) => {
   const navigateToEmbalse = useCallback((nombre: string) => {
     window.location.href = `/embalse/${encodeURIComponent(nombre)}`
   }, [])
@@ -189,19 +191,19 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
     <motion.div
       initial={{
         opacity: 0,
-        y: 20,
       }}
       animate={{
         opacity: 1,
-        y: 0,
       }}
       transition={{
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
-        delay: delay,
+        duration: 0.4,
+        ease: "easeOut",
+        delay: delay * 1.2,
       }}
-      className="relative mb-4 w-60 shrink-0 grow-0 overflow-hidden rounded-lg border border-green-500/50 bg-green-500/20 px-2 py-2 sm:w-72 sm:px-3"
+      className={cn(
+        "relative mb-4 w-60 shrink-0 grow-0 overflow-hidden rounded-lg border border-green-500/50 bg-green-500/20 px-2 py-2 opacity-0 transition-all hover:scale-95 sm:w-72 sm:px-3",
+        index % 2 === 0 ? "hover:-rotate-6" : "hover:rotate-6"
+      )}
     >
       {/* Country Flag Background */}
       <div className="absolute -top-[2rem] -right-[2rem] h-[5rem] w-[5rem] -rotate-12 overflow-hidden rounded-full opacity-20 sm:-top-[3rem] sm:-right-[3rem] sm:h-[7rem] sm:w-[7rem]">
@@ -229,14 +231,14 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
             className={cn(
               "min-w-[40px] text-right text-lg font-black sm:min-w-[50px] sm:text-xl md:text-2xl",
               percentage >= 90
-                ? "text-blue-700" 
+                ? "text-blue-700"
                 : percentage >= 70
                   ? "text-cyan-600"
                   : percentage >= 50
                     ? "text-green-600"
                     : percentage >= 30
-                      ? "text-yellow-700" 
-                      : "text-red-600" 
+                      ? "text-yellow-700"
+                      : "text-red-600"
             )}
           >
             {percentage.toFixed(0)}%
@@ -255,9 +257,9 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
                 className={cn(
                   "absolute left-0 h-full w-full origin-left rounded-full",
                   percentage >= 90
-                    ? "bg-blue-700" 
+                    ? "bg-blue-700"
                     : percentage >= 70
-                      ? "bg-cyan-600" 
+                      ? "bg-cyan-600"
                       : percentage >= 50
                         ? "bg-green-600"
                         : percentage >= 30
@@ -327,23 +329,31 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, accessType = "f
 
 EmbalseCard.displayName = "EmbalseCard"
 
-export default function FavoriteZReservoirsClient({ favorite_reservoirs }: { favorite_reservoirs: ReservoirData[] }) {
-  const accessType = "free"
-  const processedData = processReservoirData(favorite_reservoirs)
+interface FavoriteZReservoirsClientProps {
+  favorite_reservoirs: Promise<ReservoirData[]>
+  subscriptionType: Promise<SubscriptionType>
+}
+
+export default function FavoriteZReservoirsClient({ favorite_reservoirs, subscriptionType }: FavoriteZReservoirsClientProps) {
+  const resolvedReservoirs = use(favorite_reservoirs)
+  const resolvedSubscription = use(subscriptionType)
+
+  const processedData = processReservoirData(resolvedReservoirs)
   const { getDynamicStyle } = useScreenWidth()
 
   return (
     <div>
       <div
-        className="scroll-tab flex gap-3 overflow-x-scroll sm:gap-4 md:pb-2"
+        className="scroll-tab flex gap-3 overflow-visible overflow-x-auto pt-5 sm:gap-4 md:pb-2"
         style={getDynamicStyle()}
       >
         {processedData.map((embalse, index) => (
           <EmbalseCard
             key={index}
             delay={index * 0.1}
+            index={index}
             embalse={embalse}
-            accessType={accessType as "subscription" | "lifetime" | "free"}
+            accessType={resolvedSubscription as "subscription" | "lifetime" | "free"}
           />
         ))}
       </div>

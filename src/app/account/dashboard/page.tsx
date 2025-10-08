@@ -1,4 +1,4 @@
-import FavoriteZReservoirsClient from "@/components/dashboard/Favorites/FavoriteZReservoirsClient"
+import FavoriteReservoirsClient from "@/components/dashboard/Favorites/FavoritesReservoirsClient"
 import GalleryResumeClient from "@/components/dashboard/Gallery/GalleryResumeClient"
 import LastPinMapDynamic from "@/components/dashboard/LastPinMap.tsx/LastPinMapDynamic"
 import FavSectionSkl from "@/components/skeletonsV2/Resume/FavSectionSkl"
@@ -18,7 +18,7 @@ export default async function Dashboard() {
       <section className="flex flex-col ">
         <h2 className="font-['BlackRolmer'] leading-none text-3xl text-emerald-900 lg:text-4xl">Embalses Favoritos</h2>
         <Suspense fallback={<FavSectionSkl />}>
-          <FavoriteZReservoirsClient
+          <FavoriteReservoirsClient
             favorite_reservoirs={favSection}
             subscriptionType={subscriptionType}
           />

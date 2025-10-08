@@ -210,7 +210,7 @@ export default function LastPinMap({ reportData }: { reportData: CatchReportDB[]
 
   if (!L) {
     return (
-      <div className="flex h-full w-full items-center justify-center rounded-lg bg-green-100">
+      <div className="flex h-full w-full items-center justify-center rounded-2xl bg-green-100">
         <div className="text-emerald-700">Cargando mapa...</div>
       </div>
     )
@@ -226,7 +226,7 @@ export default function LastPinMap({ reportData }: { reportData: CatchReportDB[]
         touchZoom={true}
         doubleClickZoom={true}
         dragging={true}
-        className="h-full min-h-[300px] w-full rounded-lg border-green-900/30 bg-green-100 md:min-h-[400px]"
+        className="h-full min-h-[300px] w-full rounded-2xl border-green-900/30 bg-green-100 md:min-h-[400px]"
       >
         <MapController />
         <MapRef setMapInstance={setMapInstance} />

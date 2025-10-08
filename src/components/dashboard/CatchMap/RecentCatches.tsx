@@ -1,17 +1,23 @@
 "use client"
 
 import { CatchReportDB } from "@/types"
+import { motion } from "motion/react"
+import { use } from "react"
 import ChipsReport from "./ChipsReport"
 
-export default function RecentCatches({ reportData }: { reportData: CatchReportDB[] }) {
+export default function RecentCatches({ allCaches }: { allCaches: Promise<CatchReportDB[]> }) {
+  const recentCaches = use(allCaches).slice(0, 3)
+
   return (
     <section className="flex h-auto w-full flex-col gap-6">
       <div className="flex w-full flex-col gap-4">
-        <h1 className="font-['BlackRolmer'] text-3xl text-emerald-900 md:text-4xl">Últimas capturas</h1>
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {reportData.slice(0, 3).map((report, i) => (
-            <div
-              className="relative h-[20rem] w-full overflow-hidden rounded-2xl"
+          {recentCaches.map((report, i) => (
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: i * 0.2, stiffness: 60, duration: 0.3 }}
+              className="relative h-[20rem] w-full overflow-hidden rounded-2xl opacity-0"
               key={i}
             >
               <div className="absolute h-full w-full bg-gradient-to-b from-transparent to-black/60" />
@@ -34,7 +40,7 @@ export default function RecentCatches({ reportData }: { reportData: CatchReportD
                   fecha={report.fecha}
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

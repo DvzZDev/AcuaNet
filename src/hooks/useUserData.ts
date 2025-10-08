@@ -1,5 +1,4 @@
 import { createClient } from "@/db/client"
-import { UserData } from "@/types/index"
 import { useQuery } from "@tanstack/react-query"
 import { useEffect, useState } from "react"
 
@@ -35,7 +34,7 @@ export function useUserData() {
 
   return useQuery({
     queryKey: ["user-data"],
-    queryFn: async (): Promise<UserData | null> => {
+    queryFn: async () => {
       try {
         const { data, error } = await supabase.auth.getUser()
 
@@ -51,8 +50,7 @@ export function useUserData() {
           return null
         }
 
-        console.log("User metadata:", data.user.user_metadata)
-        return data.user.user_metadata as UserData
+        return data.user
       } catch (error) {
         console.error("Exception in queryFn:", error)
         return null

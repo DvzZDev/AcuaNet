@@ -193,3 +193,61 @@ export interface Day {
   normal: { [key: string]: number[] }
   hours?: CurrentConditions[]
 }
+
+// types/revenuecat.ts
+
+export type SubscriptionType = "free" | "pro" | "lifetime"
+
+export interface RevenueCatResponse {
+  request_date: string
+  request_date_ms: number
+  subscriber: RevenueCatSubscriber
+}
+
+export interface RevenueCatSubscriber {
+  entitlements: Record<string, RevenueCatEntitlement>
+  first_seen: string
+  last_seen: string
+  management_url: string | null
+  non_subscriptions: Record<string, unknown>
+  original_app_user_id: string
+  original_application_version: string | null
+  original_purchase_date: string | null
+  other_purchases: Record<string, unknown>
+  subscriber_attributes: Record<string, RevenueCatSubscriberAttribute>
+  subscriptions: Record<string, RevenueCatSubscription>
+}
+
+export interface RevenueCatEntitlement {
+  expires_date: string | null
+  grace_period_expires_date: string | null
+  product_identifier: string
+  purchase_date: string
+}
+
+export interface RevenueCatSubscriberAttribute {
+  updated_at_ms: number
+  value: string | null
+}
+
+export interface RevenueCatSubscription {
+  auto_resume_date: string | null
+  billing_issues_detected_at: string | null
+  display_name: string
+  expires_date: string
+  grace_period_expires_date: string | null
+  is_sandbox: boolean
+  management_url: string | null
+  original_purchase_date: string
+  ownership_type: "PURCHASED" | "FAMILY_SHARED" | "UNKNOWN"
+  period_type: "normal" | "trial" | "intro"
+  price: {
+    amount: number
+    currency: string
+  }
+  purchase_date: string
+  refunded_at: string | null
+  store: "app_store" | "play_store" | "stripe" | "promotional" | "mac_app_store"
+  store_transaction_id: string
+  unsubscribe_detected_at: string | null
+}

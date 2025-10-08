@@ -1,10 +1,16 @@
 "use client"
 
-import { UserData } from "@/types"
+import { SubscriptionType, UserData } from "@/types"
 import { UserStoryIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
+import SubscriptionBadge from "./SubscriptionBadge"
 
-export default function AccountBanner({ userdata }: { userdata?: UserData }) {
+interface AccountBannerProps {
+  userdata?: UserData
+  subscriptionType: SubscriptionType
+}
+
+export default function AccountBanner({ userdata, subscriptionType }: AccountBannerProps) {
   return (
     <div className="z-50 mr-8 ml-auto flex items-center gap-3 border-b border-emerald-200 pb-3">
       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-200">
@@ -29,9 +35,10 @@ export default function AccountBanner({ userdata }: { userdata?: UserData }) {
           <span className="font-['BlackRolmer'] text-base font-semibold text-gray-800">
             {userdata?.full_name || userdata?.name || "Usuario"}
           </span>
-          <div className="w-fit rounded-full bg-gradient-to-br from-purple-300 to-purple-900 p-1 text-[8px] font-semibold text-purple-100">
-            <p className="leading-none">AN Pro</p>
-          </div>
+          <SubscriptionBadge
+            subscriptionType={subscriptionType}
+            size="sm"
+          />
         </div>
         <span className="font-['BlackRolmer'] text-sm text-gray-600">{userdata?.email || "usuario@ejemplo.com"}</span>
       </div>

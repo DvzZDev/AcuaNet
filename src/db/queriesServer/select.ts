@@ -129,7 +129,7 @@ export async function GetManualCoords(emb: string): Promise<EmbalsesCoords[]> {
   })
 }
 
-export const getFavSection = async (id: string) => {
+export const getFavSection = async (id: string | null) => {
   const supabase = await createSvClient()
   try {
     const { data, error } = await supabase.from("favorite_reservoirs").select().eq("user_id", id)

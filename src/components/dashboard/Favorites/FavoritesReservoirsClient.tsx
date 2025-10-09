@@ -3,6 +3,8 @@
 import { useScreenWidth } from "@/hooks/useScreenWidth"
 import { cn } from "@/lib/utils"
 import type { SubscriptionType } from "@/types"
+import { HeartRemoveIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 import { motion } from "motion/react"
 import React, { memo, use, useCallback } from "react"
 
@@ -329,6 +331,28 @@ const EmbalseCard: React.FC<EmbalseCardProps> = memo(({ embalse, index, accessTy
 
 EmbalseCard.displayName = "EmbalseCard"
 
+const NoFavoritesCard = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="flex h-[10rem] w-[20rem] p-3 flex-col items-center justify-center gap-2 rounded-2xl border-1 border-emerald-300 bg-emerald-50 text-emerald-400"
+    >
+      <div className="rounded-full bg-[#d0fae5] p-3">
+        <HugeiconsIcon
+          icon={HeartRemoveIcon}
+          size={30}
+          color="#059669"
+          strokeWidth={1.5}
+        />
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">Aun no tienes embalses favoritos.</h3>
+      <p className="text-sm text-center text-gray-600">Añade tus primeras capturas desde la App móvil para verlas aquí.</p>
+    </motion.div>
+  )
+}
+
 interface FavoriteZReservoirsClientProps {
   favorite_reservoirs: Promise<ReservoirData[]>
   subscriptionType: Promise<SubscriptionType>
@@ -339,6 +363,7 @@ export default function FavoriteZReservoirsClient({ favorite_reservoirs, subscri
   const resolvedSubscription = use(subscriptionType)
 
   const processedData = processReservoirData(resolvedReservoirs)
+  console.log(processedData)
   const { getDynamicStyle } = useScreenWidth()
 
   return (
@@ -347,15 +372,19 @@ export default function FavoriteZReservoirsClient({ favorite_reservoirs, subscri
         className="scroll-tab flex gap-3 overflow-visible overflow-x-auto pt-5 sm:gap-4 md:pb-2"
         style={getDynamicStyle()}
       >
-        {processedData.map((embalse, index) => (
-          <EmbalseCard
-            key={index}
-            delay={index * 0.1}
-            index={index}
-            embalse={embalse}
-            accessType={resolvedSubscription as "subscription" | "lifetime" | "free"}
-          />
-        ))}
+        {processedData.length > 0 ? (
+          processedData.map((embalse, index) => (
+            <EmbalseCard
+              key={index}
+              delay={index * 0.1}
+              index={index}
+              embalse={embalse}
+              accessType={resolvedSubscription as "subscription" | "lifetime" | "free"}
+            />
+          ))
+        ) : (
+          <NoFavoritesCard />
+        )}
       </div>
     </div>
   )

@@ -232,7 +232,7 @@ export default function LastPinMap({ reportData }: { reportData: CatchReportDB[]
         <MapRef setMapInstance={setMapInstance} />
         {markerIcon && reportData.length > 0 && (
           <Marker
-            position={position}
+            position={[38.99403095459444, -5.4466315453438]}
             icon={markerIcon}
           />
         )}

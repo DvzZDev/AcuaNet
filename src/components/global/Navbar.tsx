@@ -180,7 +180,7 @@ export default function Navbar() {
             onClick={closeMenu}
           >
             <img
-              src="/LogoH.webp"
+              src="/whitebanner.png"
               alt="Logo de Acuanet"
               className="glowLogo h-auto w-36 transition-all duration-300 lg:w-36 xl:w-44"
             />

@@ -117,7 +117,7 @@ export default function SidebarWide() {
           <div className="relative">
             <button
               data-tooltip-id="my-tooltip"
-              data-tooltip-content="Funcionalidad en desarrollo"
+              data-tooltip-content="En desarrollo, usa la App"
               className="relative flex h-10 w-full items-center gap-3 rounded-md px-3 text-base font-medium text-gray-700 transition-colors hover:bg-gray-100"
             >
               <HugeiconsIcon

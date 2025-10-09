@@ -35,13 +35,20 @@
 body {
   background-color: #000000;
   font-family: "Inter", sans-serif;
-  background-image: url(/sanfruHero.webp);
+  background-image: url(/landing.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 110vh;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .drop:hover {
@@ -50,15 +57,17 @@ body {
 
 @media screen and (max-width: 1023px) {
   body {
-    background-position: top right 37%;
+    background-image: url(/landing-mob.webp);
+    background-position: 50% center;
+    background-attachment: scroll;
   }
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   body {
     background-attachment: fixed;
   }
-}
+} */
 
 body {
   --sb-track-color: #f0fdf4;
@@ -177,6 +186,11 @@ body::-webkit-scrollbar-thumb {
   text-shadow:
     0 0 3px rgba(147, 255, 183, 0.8),
     0 0 6px rgba(147, 255, 183, 0.7);
+}
+.glow3 {
+  text-shadow:
+    0 0 1px rgba(147, 255, 183, 0.8),
+    0 0 3px rgba(147, 255, 183, 0.7);
 }
 .glowLogo:hover {
   filter: drop-shadow(0 0 3px rgba(147, 255, 183, 0.8));
@@ -325,7 +339,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .section1bg {
-  background-image: url(/sanfru.webp);
+  background-image: url(/landing.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom 20% center;
@@ -478,4 +492,27 @@ swiper {
   z-index: 100 !important;
   background-color: #064e3b !important;
   font-family: "Inter";
+}
+
+/* Animación para chips flotantes - reutilizable con variables CSS */
+@keyframes floatingChip {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(var(--float-x, 8px), var(--float-y, -10px)) rotate(var(--float-rotate, 2deg));
+  }
+  50% {
+    transform: translate(0, calc(var(--float-y, -10px) * 1.5)) rotate(0deg);
+  }
+  75% {
+    transform: translate(calc(var(--float-x, 8px) * -1), var(--float-y, -10px)) rotate(calc(var(--float-rotate, 2deg) * -1));
+  }
+}
+
+.floating-chip {
+  animation: floatingChip var(--float-duration, 6s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+  will-change: transform;
 }

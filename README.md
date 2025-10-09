@@ -44,7 +44,7 @@
 
 ## Sobre el proyecto
 
-![AcuaNet Hero](https://i.imgur.com/bjEFoZe.png)
+![AcuaNet Hero](https://i.imgur.com/QKdIMKR.png)
 
 **AcuaNet** nació como un proyecto personal pensado para todos los pescadores de España y Portugal. La idea es sencilla: reunir en un solo lugar toda la información que necesitas para disfrutar de tu pasión por la pesca.
 

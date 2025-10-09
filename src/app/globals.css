@@ -448,8 +448,6 @@ swiper {
 
 /* en tu globals.css o tailwind.css */
 
-
-
 .scrollweather {
   --sb-track-color: #111a2e;
   --sb-thumb-color: #93c5fd;
@@ -474,4 +472,10 @@ swiper {
   .scrollweather {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
+}
+
+.react-tooltip {
+  z-index: 100 !important;
+  background-color: #064e3b !important;
+  font-family: "Inter";
 }

@@ -9,6 +9,7 @@ import {
   ArrowRight03Icon,
   DashboardSquare02Icon,
   Delete01Icon,
+  ImageUploadIcon,
   Logout03Icon,
   MapsIcon,
   UserStoryIcon,
@@ -17,6 +18,8 @@ import { HugeiconsIcon } from "@hugeicons/react"
 import { AnimatePresence, motion } from "motion/react"
 import { Link } from "next-view-transitions"
 import { usePathname } from "next/navigation"
+import { Tooltip } from "react-tooltip"
+import "react-tooltip/dist/react-tooltip.css"
 
 const links = [
   { href: "/account/dashboard", label: "Resumen", icon: DashboardSquare02Icon },
@@ -36,6 +39,7 @@ export default function SidebarWide() {
         isExpanded ? "w-64" : "w-20"
       )}
     >
+      <Tooltip id="my-tooltip" />
       <Link
         href="/account/dashboard"
         className="flex items-center overflow-hidden"
@@ -72,7 +76,7 @@ export default function SidebarWide() {
               <Link
                 href={link.href}
                 className={cn(
-                  "relative ml-1.5 flex h-10 items-center gap-3 rounded-md px-3 text-base font-medium transition-colors",
+                  "relative flex h-10 items-center gap-3 rounded-md px-3 text-base font-medium transition-colors",
                   pathname === link.href ? "text-emerald-700" : "text-gray-700 hover:bg-gray-100"
                 )}
               >
@@ -81,7 +85,7 @@ export default function SidebarWide() {
                   size={25}
                   color="currentColor"
                   strokeWidth={1.5}
-                  className="relative z-10 flex-shrink-0"
+                  className="relative z-10 ml-1.5 flex-shrink-0"
                 />
                 <AnimatePresence mode="wait">
                   {isExpanded && (
@@ -110,12 +114,40 @@ export default function SidebarWide() {
               )}
             </div>
           ))}
+          <div className="relative">
+            <button
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Funcionalidad en desarrollo"
+              className="relative flex h-10 w-full items-center gap-3 rounded-md px-3 text-base font-medium text-gray-700 transition-colors hover:bg-gray-100"
+            >
+              <HugeiconsIcon
+                icon={ImageUploadIcon}
+                size={25}
+                color="currentColor"
+                strokeWidth={1.5}
+                className="relative z-10 ml-1.5 flex-shrink-0"
+              />
+              <AnimatePresence mode="wait">
+                {isExpanded && (
+                  <motion.span
+                    initial={{ opacity: 0, width: 0, x: -15 }}
+                    animate={{ opacity: 1, width: "auto", x: 0 }}
+                    exit={{ opacity: 0, width: 0, x: -5 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    className="relative z-10 overflow-hidden font-['BlackRolmer'] text-lg whitespace-nowrap"
+                  >
+                    Subir Captura
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </div>
         <div className="h-[1px] w-full bg-emerald-500 px-2"></div>
         <div className="flex flex-col gap-3">
           <div className="relative">
             <button
-              className="relative ml-1.5 flex h-10 w-full cursor-pointer items-center gap-3 rounded-md px-3 text-base font-medium text-gray-700 transition-colors hover:bg-gray-100"
+              className="relative flex h-10 w-full cursor-pointer items-center gap-3 rounded-md px-3 text-base font-medium text-gray-700 transition-colors hover:bg-gray-100"
               onClick={() => {
                 void logout()
               }}
@@ -125,7 +157,7 @@ export default function SidebarWide() {
                 size={25}
                 color="currentColor"
                 strokeWidth={1.5}
-                className="relative z-10 flex-shrink-0"
+                className="relative z-10 ml-1.5 flex-shrink-0"
               />
               <AnimatePresence mode="wait">
                 {isExpanded && (
@@ -144,7 +176,7 @@ export default function SidebarWide() {
           </div>
           <div className="relative">
             <button
-              className="relative ml-1.5 flex h-10 w-full cursor-pointer items-center gap-3 rounded-md px-3 text-base font-medium text-red-600 transition-colors hover:bg-red-50"
+              className="relative flex h-10 w-full cursor-pointer items-center gap-3 rounded-md px-3 text-base font-medium text-red-600 transition-colors hover:bg-red-50"
               onClick={() => {
                 // Lógica de borrar cuenta
               }}
@@ -154,7 +186,7 @@ export default function SidebarWide() {
                 size={25}
                 color="currentColor"
                 strokeWidth={1.5}
-                className="relative z-10 flex-shrink-0"
+                className="relative z-10 ml-1.5 flex-shrink-0"
               />
               <AnimatePresence mode="wait">
                 {isExpanded && (

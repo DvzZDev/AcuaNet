@@ -13,7 +13,7 @@ export default function LiveData({ data }: { data: LiveData[] }) {
         </div>
       </div>
 
-      <section className="relative h-fit w-full overflow-hidden rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-2 text-black">
+      <section className="relative h-fit w-full overflow-hidden rounded-2xl border border-emerald-300 bg-emerald-50 px-4 py-2 text-black">
         {/* <DotLottieReact
           src="https://app.lottiefiles.com/share/fa4c008f-f284-4870-bc55-03b2ffa2d284"
           loop

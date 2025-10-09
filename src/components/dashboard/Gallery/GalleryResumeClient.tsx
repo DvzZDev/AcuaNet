@@ -15,7 +15,7 @@ export default function GalleryResumeClient({ allCaches }: { allCaches: Promise<
     <>
       {recentCaches.length === 0 ? (
         <div className="flex h-full w-full items-center justify-center">
-          <div className="flex max-w-sm flex-col items-center gap-4 rounded-2xl bg-emerald-50 p-8 text-center shadow-sm">
+          <div className="flex max-w-sm flex-col items-center gap-4 rounded-2xl border-1 border-emerald-300 bg-emerald-50 p-8 text-center shadow-sm">
             <div className="rounded-full bg-emerald-100 p-3">
               <HugeiconsIcon
                 icon={Alert02Icon}

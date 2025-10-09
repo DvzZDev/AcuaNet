@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from "react"
-import { useRouter } from "next/navigation"
+import { checkAndConsumeQuota, getRemainingSearches } from "@/db/actions"
 import Fuse from "fuse.js"
+import { useRouter } from "next/navigation"
+import React, { useEffect, useMemo, useState } from "react"
 
 const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: () => void, isMenuOpen?: boolean) => {
   const router = useRouter()
@@ -8,8 +9,13 @@ const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: 
   const [suggestions, setSuggestions] = useState<string[]>([])
   const [err, setErr] = useState(false)
   const [fine, setFine] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+  const [searchData, setSearchData] = useState<{
+    remaining: number
+    daysUntilReset?: number
+    unlimited?: boolean
+  }>({ remaining: 0 })
 
-  // Initialize Fuse.js with configuration
   const fuse = useMemo(
     () =>
       new Fuse(data, {
@@ -20,6 +26,22 @@ const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: 
       }),
     [data]
   )
+
+  useEffect(() => {
+    const fetchRemaining = async () => {
+      setIsLoading(true)
+      const result = await getRemainingSearches()
+      if (result.success) {
+        setSearchData({
+          remaining: result.remaining ?? 0,
+          daysUntilReset: result.daysUntilReset,
+          unlimited: result.unlimited,
+        })
+      }
+      setIsLoading(false)
+    }
+    void fetchRemaining()
+  }, [])
 
   const errHandler = () => {
     setErr(true)
@@ -40,44 +62,71 @@ const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: 
     }
   }
 
-  const handleSuggestionClick = (nombreEmbalse: string) => {
-    setType(nombreEmbalse)
-    setSuggestions([])
-    setSuggestions([])
+  const navigateToEmbalse = async (nombreEmbalse: string, pais: string) => {
+    // Check if user can search
+    if (!searchData.unlimited && searchData.remaining === 0) {
+      setErr(true)
+      setType("")
+      setSuggestions([])
+      return
+    }
+
+    // Consume quota
+    const result = await checkAndConsumeQuota()
+    if (!result.success) {
+      setErr(true)
+      setType("")
+      setSuggestions([])
+      return
+    }
+
+    // Update remaining searches
+    if (result.success && "remaining" in result) {
+      setSearchData((prev) => ({
+        ...prev,
+        remaining: result.remaining ?? prev.remaining,
+      }))
+    }
+
+    // Navigate
+    router.push(`/account/dashboard/${nombreEmbalse}${pais === "Portugal" ? "?pt=true" : ""}`)
     setFine(true)
+    setErr(false)
+    setSuggestions([])
     setType("")
     if (isMenuOpen && closeMenu) closeMenu()
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSuggestionClick = async (nombreEmbalse: string) => {
+    const embalse = data.find((e) => e.nombre === nombreEmbalse)
+    if (embalse) {
+      await navigateToEmbalse(embalse.nombre, embalse.pais)
+    }
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!type.trim()) return
+
+    // Check if user can search
+    if (!searchData.unlimited && searchData.remaining === 0) {
+      setErr(true)
+      setType("")
+      setSuggestions([])
+      return
+    }
 
     // First try to find exact match
     const exactMatch = data.find((embalse) => embalse.nombre.toLowerCase() === type.toLowerCase().trim())
 
     if (exactMatch) {
-      router.push(
-        `/embalse/${exactMatch.nombre.replace(/ /g, "-").toLowerCase()}${exactMatch.pais === "Portugal" ? "?pt=true" : ""}`
-      )
-      setFine(true)
-      setErr(false)
-      setSuggestions([])
-      setType("")
-      if (isMenuOpen && closeMenu) closeMenu()
+      await navigateToEmbalse(exactMatch.nombre, exactMatch.pais)
     } else {
       // If no exact match, try fuzzy search and take the best result
       const searchResults = fuse.search(type)
       if (searchResults.length > 0 && searchResults[0].score && searchResults[0].score < 0.6) {
         const bestMatch = searchResults[0].item
-        router.push(
-          `/embalse/${bestMatch.nombre.replace(/ /g, "-").toLowerCase()}${bestMatch.pais === "Portugal" ? "?pt=true" : ""}`
-        )
-        setFine(true)
-        setErr(false)
-        setSuggestions([])
-        setType("")
-        if (isMenuOpen && closeMenu) closeMenu()
+        await navigateToEmbalse(bestMatch.nombre, bestMatch.pais)
       } else {
         errHandler()
         setFine(false)
@@ -95,6 +144,8 @@ const AutoCompleteHook = (data: { nombre: string; pais: string }[], closeMenu?: 
     handletype,
     handleSuggestionClick,
     handleSubmit,
+    searchData,
+    isLoading,
   }
 }
 

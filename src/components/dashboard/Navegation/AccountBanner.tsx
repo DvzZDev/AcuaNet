@@ -11,8 +11,9 @@ interface AccountBannerProps {
 }
 
 export default function AccountBanner({ userdata, subscriptionType }: AccountBannerProps) {
+  console.log("Userdata in AccountBanner:", subscriptionType)
   return (
-    <div className="z-50 mr-8 ml-auto flex items-center gap-3 border-b border-emerald-200 pb-3">
+    <div className="z-50 mr-8 ml-auto flex items-center gap-3 border-emerald-200 ">
       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-200">
         {userdata?.avatar_url || userdata?.picture ? (
           <img
@@ -32,7 +33,7 @@ export default function AccountBanner({ userdata, subscriptionType }: AccountBan
       </div>
       <div className="flex flex-col">
         <div className="flex items-center gap-2">
-          <span className="font-['BlackRolmer'] text-base font-semibold text-gray-800">
+          <span className="font-['BlackRolmer'] text-nowrap text-base font-semibold text-gray-800">
             {userdata?.full_name || userdata?.name || "Usuario"}
           </span>
           <SubscriptionBadge

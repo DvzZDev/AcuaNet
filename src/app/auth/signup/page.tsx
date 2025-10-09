@@ -1,9 +1,9 @@
 "use client"
 
 import { supabase } from "@/db/client"
+import { EyeIcon, LockPasswordIcon, Mail01Icon, UserIcon, ViewOffIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 import { useForm } from "@tanstack/react-form"
-import { EyeIcon, LockPasswordIcon, Mail01Icon, ViewOffIcon } from "hugeicons-react"
-import { User } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { Bounce, toast } from "react-toastify"
@@ -88,7 +88,7 @@ export default function SignUpPage() {
         <div className="w-[13rem] lg:w-[16rem]">
           <img
             className="h-full w-full object-cover"
-            src="/Banner.png"
+            src="/bannerwhite.webp"
             alt="Acuanet logo white"
           />
         </div>
@@ -131,10 +131,11 @@ export default function SignUpPage() {
                           field.state.meta.errors.length > 0 ? "#ef4444" : focused === "name" ? "#10b981" : "transparent",
                       }}
                     >
-                      <User
+                      <HugeiconsIcon
+                        icon={UserIcon}
+                        size={20}
                         color="#047857"
                         strokeWidth={1.5}
-                        className="h-5 w-5 lg:h-6 lg:w-6"
                       />
                       <input
                         className="h-10 w-[7rem] bg-transparent text-sm font-medium text-emerald-900 outline-none placeholder:text-emerald-700 lg:h-12 lg:w-[10rem] lg:text-base"
@@ -173,10 +174,11 @@ export default function SignUpPage() {
                           field.state.meta.errors.length > 0 ? "#ef4444" : focused === "lastName" ? "#10b981" : "transparent",
                       }}
                     >
-                      <User
+                      <HugeiconsIcon
+                        icon={UserIcon}
+                        size={20}
                         color="#047857"
                         strokeWidth={1.5}
-                        className="h-5 w-5 lg:h-6 lg:w-6"
                       />
                       <input
                         className="h-10 w-[7rem] self-center bg-transparent text-sm font-medium text-emerald-900 outline-none placeholder:text-emerald-700 lg:h-12 lg:w-[10rem] lg:text-base"
@@ -220,10 +222,11 @@ export default function SignUpPage() {
                         field.state.meta.errors.length > 0 ? "#ef4444" : focused === "email" ? "#10b981" : "transparent",
                     }}
                   >
-                    <Mail01Icon
+                    <HugeiconsIcon
+                      icon={Mail01Icon}
+                      size={20}
                       color="#047857"
                       strokeWidth={1.5}
-                      className="h-5 w-5 lg:h-6 lg:w-6"
                     />
                     <input
                       className="h-10 flex-1 bg-transparent text-sm font-medium text-emerald-900 outline-none placeholder:text-emerald-700 lg:h-12 lg:text-base"
@@ -267,8 +270,9 @@ export default function SignUpPage() {
                         field.state.meta.errors.length > 0 ? "#ef4444" : focused === "password" ? "#10b981" : "transparent",
                     }}
                   >
-                    <LockPasswordIcon
-                      className="h-5 w-5 lg:h-6 lg:w-6"
+                    <HugeiconsIcon
+                      icon={LockPasswordIcon}
+                      size={20}
                       color="#047857"
                       strokeWidth={1.5}
                     />
@@ -291,14 +295,16 @@ export default function SignUpPage() {
                       className="ml-auto cursor-pointer"
                     >
                       {pwVisible ? (
-                        <ViewOffIcon
-                          className="h-5 w-5 lg:h-6 lg:w-6"
+                        <HugeiconsIcon
+                          icon={ViewOffIcon}
+                          size={20}
                           color="#047857"
                           strokeWidth={1.5}
                         />
                       ) : (
-                        <EyeIcon
-                          className="h-5 w-5 lg:h-6 lg:w-6"
+                        <HugeiconsIcon
+                          icon={EyeIcon}
+                          size={20}
                           color="#047857"
                           strokeWidth={1.5}
                         />

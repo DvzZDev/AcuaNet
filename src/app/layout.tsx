@@ -1,4 +1,5 @@
 import ConditionalLayout from "@/components/global/ConditionalLayout"
+import ModalProvider from "@/components/global/ModalProvider"
 import { RevenueCatInitializer } from "@/components/global/RevenueCatInitializer"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Providers>
           <ConditionalLayout>{children}</ConditionalLayout>
+          <ModalProvider />
           <Suspense fallback={null}>
             <PostHogPageView />
             <Analytics />

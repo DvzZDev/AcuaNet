@@ -241,9 +241,9 @@ async function Page({
           )}
           {weatherData && <TableWeather data={weatherData} />}
           {coordsData?.lat ? <MapEmbData coords={coordsData} /> : null}
-          <h2 className="font-['BlackRolmer'] text-3xl font-bold text-emerald-900">Patrocinadores</h2>
+          <h2 className="font-['BlackRolmer'] text-3xl font-bold text-emerald-950">Patrocinadores</h2>
 
-          <div className="flex flex-col items-center justify-evenly gap-6 rounded-xl bg-emerald-50 p-5 backdrop-blur-lg md:flex-row">
+          <div className="flex flex-col items-center justify-evenly gap-6 rounded-xl border border-emerald-300 bg-emerald-50 p-5 backdrop-blur-lg md:flex-row">
             <a
               href="https://www.agrbaits.es/"
               target="blank"
